@@ -1,0 +1,17 @@
+<?php
+/**
+ * Fired when the plugin is uninstalled.
+ *
+ * @package   Aesop_Core
+ * @author    Nick Haskins <email@nickhaskins.com>
+ * @license   GPL-2.0+
+ * @link      http://example.com
+ * @copyright 2013 Nick Haskins
+ */
+
+// If uninstall not called from WordPress, then exit
+if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
+	exit;
+}
+
+// @TODO: Define uninstall functionality here
