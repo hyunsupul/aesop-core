@@ -13,8 +13,7 @@
 
 	$shortcode = aesop_shortcodes( $_GET['shortcode'] );
 
-	$return = null;
-	
+	$return = '';
 	// Shortcode has atts
 	if ( count( $shortcode['atts'] ) && $shortcode['atts'] ) {
 		foreach ( $shortcode['atts'] as $attr_name => $attr_info ) {

@@ -3,7 +3,7 @@
 	/**
 	 * List of available shortcodes
 	 */
-	function aesop_shortcodes( $shortcode = false ) {
+	function aesop_shortcodes( $shortcode = null ) {
 		$shortcodes = array(
 			'parallax' => array(
 				'name' => 'Aesop Parallax',
