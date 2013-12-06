@@ -84,7 +84,7 @@ class Aesop_Core_Admin {
 		add_action('init', array($this,'register_shortcodes'));
 		add_action('admin_init', array($this,'load'));
 
-		require_once(AI_CORE_DIR.'admin/includes/available.php');
+
 	}
 
 	/**
@@ -117,13 +117,13 @@ class Aesop_Core_Admin {
 	public function load(){
 
 		// Register Scripts
-		wp_register_script( 'aesop-shortcodes-generator-script', AI_CORE_DIR. '/js/generator.min.js', AI_CORE_VERSION, true);
-		wp_register_script( 'aesop-shortcodes-selectbox', AI_CORE_DIR. '/js/jquery.dropkick.min.js', AI_CORE_VERSION, true);
-        wp_register_script( 'aesop-shortcodes-selectivizr', AI_CORE_DIR. '/js/selectivizr-min.js', AI_CORE_VERSION, true);
+		wp_register_script( 'aesop-shortcodes-generator-script', AI_CORE_URL. '/admin/assets/js/generator.js', AI_CORE_VERSION, true);
+		wp_register_script( 'aesop-shortcodes-selectbox', AI_CORE_URL. '/admin/assets/js/jquery.dropkick.min.js', AI_CORE_VERSION, true);
+        wp_register_script( 'aesop-shortcodes-selectivizr', AI_CORE_URL. '/admin/assets/js/selectivizr-min.js', AI_CORE_VERSION, true);
 
 
         //Register Styles
-		wp_register_style( 'aesop-shortcodes-generator', AI_CORE_DIR. '/css/generator.css', AI_CORE_VERSION, true);
+		wp_register_style( 'aesop-shortcodes-generator', AI_CORE_URL. '/admin/assets/css/generator.css', AI_CORE_VERSION, true);
 
 		// Load styles and scripts for bad ass generator
 		if ( is_admin() ) {
@@ -152,7 +152,7 @@ class Aesop_Core_Admin {
 	}
 
 	public function generator_button() {
-		echo '<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" class="thickbox"><img src="' . AI_CORE_DIR . '/img/admin/media-icon.png" alt="" /></a>';
+		echo '<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" class="thickbox"><img src="' . AI_CORE_URL . '/admin/assets/img/media-icon.png" alt="" /></a>';
 	}
 
 	// Auto compatability mode but this really isn't doing shit anymore so we need to take it out on the next update
@@ -169,7 +169,7 @@ class Aesop_Core_Admin {
 
 					<div class="aesop-generator-header">
 						<div class="aesop-generator-welcome fix">
-							<img class="aesop-generator-logo" src="<?php echo $this->base_url.'/img/admin/logo.png';?>">
+							<img class="aesop-generator-logo" src="<?php echo AI_CORE_URL.'/admin/assets/img/logo.png';?>">
 							<h2 class="aesop-generator-welcome-heading"><?php _e('Insert Aesop Shortcode','aesop-shortcode-generator');?></h2>
 							<p class="aesop-generator-welcome-message"><?php _e('Use the dropdown below to select a shortcode, adjust any available options, then add it to your post.','aesop-shortcode-generator');?></p>
 						</div>
@@ -190,7 +190,7 @@ class Aesop_Core_Admin {
 
 					<div id="aesop-generator-settings-outer"><div id="aesop-generator-settings"></div></div>
 
-					<input type="hidden" name="aesop-generator-url" id="aesop-generator-url" value="<?php echo $this->base_url; ?>" />
+					<input type="hidden" name="aesop-generator-url" id="aesop-generator-url" value="<?php echo AI_CORE_URL; ?>" />
 					<input type="hidden" name="aesop-compatibility-mode-prefix" id="aesop-compatibility-mode-prefix" value="<?php echo $this->aesop_compatibility_mode_prefix(); ?>" />
 
 				</div>
