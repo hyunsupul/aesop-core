@@ -3,6 +3,7 @@
 	/**
 	 * List of available shortcodes
 	 */
+if(!function_exists('aesop_shortcodes')){
 	function aesop_shortcodes( $shortcode = null ) {
 		$shortcodes = array(
 			'parallax' => array(
@@ -150,5 +151,6 @@
 		else
 			return apply_filters('aesop_avail_shortcodes', $shortcodes);
 	}
+}
 
 ?>

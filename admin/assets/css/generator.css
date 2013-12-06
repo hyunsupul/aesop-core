@@ -4,7 +4,7 @@
 }
 
 .aesop-generator-inner-wrap {
- 	background: #333 url(../img/bg.png);
+ 	background: #282828;
 }
 
 #aesop-generator {
@@ -28,7 +28,7 @@
 }
 
 .aesop-generator-welcome-heading {
-	background: #020202;
+	background: #222;
 	margin: 0 0 15px;
 	padding: 18px 0px 18px 50px;
 	margin-left: -20px;
@@ -110,7 +110,7 @@
 
 #aesop-generator-settings {
 	padding: 20px;
-	border: 1px solid #010101;
+	border: 1px solid #181818;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	border-radius:5px;
@@ -216,14 +216,7 @@ a#aesop-generator-insert.button-primary:hover {
 }
 
 a#aesop-generator-insert.button-primary:active {
-	background: rgb(37,141,200);
-	background: -moz-linear-gradient(top,  #31b6e3 0%, #258dc8 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#31b6e3), color-stop(100%,#258dc8));
-	background: -webkit-linear-gradient(top,  #31b6e3 0%,#258dc8 100%);
-	background: -o-linear-gradient(top,  #31b6e3 0%,#258dc8 100%);
-	background: -ms-linear-gradient(top,  #31b6e3 0%,#258dc8 100%);
-	background: linear-gradient(top,  #31b6e3 0%,#258dc8 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#31b6e3', endColorstr='#258dc8',GradientType=0 );
+	background:#282828;
     position: relative;
     top: 3px;
     outline: none;
@@ -238,10 +231,7 @@ a#aesop-generator-insert.button-primary:active {
 }
 
 .dk_container {
-  background: -webkit-gradient(linear, left top, left bottom, from(#333333), to(#222222));
-  background: -moz-linear-gradient(top, #333333, #222222);
-  background: -o-linear-gradient(top, #333333, #222222);
-  background-color: #333333;
+  background: #333333;
   font-family:_ 'Helvetica', Arial, sans-serif;
   font-size: 12px;
   font-weight: bold;
@@ -265,7 +255,7 @@ a#aesop-generator-insert.button-primary:active {
   	background-image: url('../img/arrows.png');
   	background-repeat: no-repeat;
   	background-position: 98% center;
-  	border: 1px solid #010101;
+  	border: 1px solid #181818;
   	color: #aaa;
   	padding: 10px;
   	text-transform: capitalize;
