@@ -45,6 +45,14 @@ register_deactivation_hook( __FILE__, array( 'Aesop_Core', 'deactivate' ) );
 
 add_action( 'plugins_loaded', array( 'Aesop_Core', 'get_instance' ) );
 
+
+// constnats
+// Set some constants
+define('AI_CORE_VERSION', '0.1');
+
+define('AI_CORE_DIR', plugin_dir_path( __FILE__ ));
+define('AI_CORE_URL', plugins_url( '', __FILE__ ));
+
 /*----------------------------------------------------------------------------*
  * Dashboard and Administrative Functionality
  *----------------------------------------------------------------------------*/

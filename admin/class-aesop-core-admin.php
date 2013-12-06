@@ -10,18 +10,20 @@
  */
 
 /**
- * Plugin class. This class should ideally be used to work with the
- * administrative side of the WordPress site.
- *
- * If you're interested in introducing public-facing
- * functionality, then refer to `class-plugin-name.php`
- *
- * @TODO: Rename this class to a proper name for your plugin.
  *
  * @package Aesop_Core_Admin
  * @author  Your Name <email@example.com>
  */
 class Aesop_Core_Admin {
+
+	/**
+	 * Plugin version, used for cache-busting of style and script file references.
+	 *
+	 * @since   1.0.0
+	 *
+	 * @var     string
+	 */
+	const version = '0.1';
 
 	/**
 	 * Instance of this class.
@@ -40,6 +42,7 @@ class Aesop_Core_Admin {
 	 * @var      string
 	 */
 	protected $plugin_screen_hook_suffix = null;
+
 
 	/**
 	 * Initialize the plugin by loading admin scripts & styles and adding a
@@ -69,16 +72,6 @@ class Aesop_Core_Admin {
 		$plugin = Aesop_Core::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
 
-		// Load admin style sheet and JavaScript.
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
-
-		// Add the options page and menu item.
-		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
-
-		// Add an action link pointing to the options page.
-		$plugin_basename = plugin_basename( plugin_dir_path( __DIR__ ) . $this->plugin_slug . '.php' );
-		add_filter( 'plugin_action_links_' . $plugin_basename, array( $this, 'add_action_links' ) );
 
 		/*
 		 * Define custom functionality.
@@ -86,9 +79,12 @@ class Aesop_Core_Admin {
 		 * Read more about actions and filters:
 		 * http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		 */
-		add_action( '@TODO', array( $this, 'action_method_name' ) );
-		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
+		add_action( 'media_buttons', array($this,'generator_button' ),100);
+		add_action( 'admin_footer', array($this,'generator_popup' ));
+		add_action('init', array($this,'register_shortcodes'));
+		add_action('admin_init', array($this,'load'));
 
+		require_once(AI_CORE_DIR.'admin/includes/available.php');
 	}
 
 	/**
@@ -117,134 +113,90 @@ class Aesop_Core_Admin {
 		return self::$instance;
 	}
 
-	/**
-	 * Register and enqueue admin-specific style sheet.
-	 *
-	 * @TODO:
-	 *
-	 * - Rename "Aesop_Core" to the name your plugin
-	 *
-	 * @since     1.0.0
-	 *
-	 * @return    null    Return early if no settings page is registered.
-	 */
-	public function enqueue_admin_styles() {
 
-		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
-			return;
+	public function load(){
+
+		// Register Scripts
+		wp_register_script( 'aesop-shortcodes-generator-script', AI_CORE_DIR. '/js/generator.min.js', AI_CORE_VERSION, true);
+		wp_register_script( 'aesop-shortcodes-selectbox', AI_CORE_DIR. '/js/jquery.dropkick.min.js', AI_CORE_VERSION, true);
+        wp_register_script( 'aesop-shortcodes-selectivizr', AI_CORE_DIR. '/js/selectivizr-min.js', AI_CORE_VERSION, true);
+
+
+        //Register Styles
+		wp_register_style( 'aesop-shortcodes-generator', AI_CORE_DIR. '/css/generator.css', AI_CORE_VERSION, true);
+
+		// Load styles and scripts for bad ass generator
+		if ( is_admin() ) {
+			global $pagenow;
+
+			// Load styles and scripts for bad ass generator only on these pages
+			$aesop_generator_includes_pages = array( 'post.php', 'edit.php', 'post-new.php', 'index.php' );
+			if ( in_array( $pagenow, $aesop_generator_includes_pages ) ) {
+
+				// Enqueue styles
+				wp_enqueue_style( 'aesop-shortcodes-generator' );
+
+				// Enqueue scripts
+				wp_enqueue_script( 'aesop-shortcodes-generator-script' );
+				wp_enqueue_script('aesop-shortcodes-selectbox');
+			}
 		}
-
-		$screen = get_current_screen();
-		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
-			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), Aesop_Core::VERSION );
-		}
-
 	}
 
-	/**
-	 * Register and enqueue admin-specific JavaScript.
-	 *
-	 * @TODO:
-	 *
-	 * - Rename "Aesop_Core" to the name your plugin
-	 *
-	 * @since     1.0.0
-	 *
-	 * @return    null    Return early if no settings page is registered.
-	 */
-	public function enqueue_admin_scripts() {
-
-		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
-			return;
-		}
-
-		$screen = get_current_screen();
-		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
-			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), Aesop_Core::VERSION );
+	public function register_shortcodes(){
+		// Register Shortcodes
+		foreach ( aesop_shortcodes() as $shortcode => $params ) {
+			add_shortcode ( $this->aesop_compatibility_mode_prefix() . $shortcode, 'aesop_' . $shortcode . '_shortcode' );
 		}
 
 	}
 
-	/**
-	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
-	 *
-	 * @since    1.0.0
-	 */
-	public function add_plugin_admin_menu() {
-
-		/*
-		 * Add a settings page for this plugin to the Settings menu.
-		 *
-		 * NOTE:  Alternative menu locations are available via WordPress administration menu functions.
-		 *
-		 *        Administration Menus: http://codex.wordpress.org/Administration_Menus
-		 *
-		 * @TODO:
-		 *
-		 * - Change 'Page Title' to the title of your plugin admin page
-		 * - Change 'Menu Text' to the text for menu item for the plugin settings page
-		 * - Change 'manage_options' to the capability you see fit
-		 *   For reference: http://codex.wordpress.org/Roles_and_Capabilities
-		 */
-		$this->plugin_screen_hook_suffix = add_options_page(
-			__( 'Page Title', $this->plugin_slug ),
-			__( 'Menu Text', $this->plugin_slug ),
-			'manage_options',
-			$this->plugin_slug,
-			array( $this, 'display_plugin_admin_page' )
-		);
-
+	public function generator_button() {
+		echo '<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" class="thickbox"><img src="' . AI_CORE_DIR . '/img/admin/media-icon.png" alt="" /></a>';
 	}
 
-	/**
-	 * Render the settings page for this plugin.
-	 *
-	 * @since    1.0.0
-	 */
-	public function display_plugin_admin_page() {
-		include_once( 'views/admin.php' );
+	// Auto compatability mode but this really isn't doing shit anymore so we need to take it out on the next update
+    public function aesop_compatibility_mode_prefix() {
+		$prefix = ( get_option( 'aesop_compatibility_mode' ) == 'on' ) ? 'aesop_' : 'aesop_';
+		return $prefix;
 	}
 
-	/**
-	 * Add settings action link to the plugins page.
-	 *
-	 * @since    1.0.0
-	 */
-	public function add_action_links( $links ) {
+	public function generator_popup() {
+		?>
+		<div id="aesop-generator-wrap" style="display:none">
+			<div id="aesop-generator" class="aesop-generator-inner-wrap">
+				<div id="aesop-generator-shell">
 
-		return array_merge(
-			array(
-				'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_slug ) . '">' . __( 'Settings', $this->plugin_slug ) . '</a>'
-			),
-			$links
-		);
+					<div class="aesop-generator-header">
+						<div class="aesop-generator-welcome fix">
+							<img class="aesop-generator-logo" src="<?php echo $this->base_url.'/img/admin/logo.png';?>">
+							<h2 class="aesop-generator-welcome-heading"><?php _e('Insert Aesop Shortcode','aesop-shortcode-generator');?></h2>
+							<p class="aesop-generator-welcome-message"><?php _e('Use the dropdown below to select a shortcode, adjust any available options, then add it to your post.','aesop-shortcode-generator');?></p>
+						</div>
+					</div>
 
-	}
+					<div class="aesop-select-wrap fix">
+						<select name="aesop-select" class="aesop-generator" id="aesop-generator-select">
+							<option value="raw"><?php _e( 'Select', 'aesop-shortcode-generator' ); ?></option>
+							<?php
+							foreach ( aesop_shortcodes() as $name => $shortcode ) {
+							?>
+							<option value="<?php echo $name; ?>"><?php echo strtoupper( $name ); ?>:&nbsp;&nbsp;<?php echo $shortcode['desc']; ?></option>
+							<?php
+							}
+							?>
+						</select>
+					</div>
 
-	/**
-	 * NOTE:     Actions are points in the execution of a page or process
-	 *           lifecycle that WordPress fires.
-	 *
-	 *           Actions:    http://codex.wordpress.org/Plugin_API#Actions
-	 *           Reference:  http://codex.wordpress.org/Plugin_API/Action_Reference
-	 *
-	 * @since    1.0.0
-	 */
-	public function action_method_name() {
-		// @TODO: Define your action hook callback here
-	}
+					<div id="aesop-generator-settings-outer"><div id="aesop-generator-settings"></div></div>
 
-	/**
-	 * NOTE:     Filters are points of execution in which WordPress modifies data
-	 *           before saving it or sending it to the browser.
-	 *
-	 *           Filters: http://codex.wordpress.org/Plugin_API#Filters
-	 *           Reference:  http://codex.wordpress.org/Plugin_API/Filter_Reference
-	 *
-	 * @since    1.0.0
-	 */
-	public function filter_method_name() {
-		// @TODO: Define your filter hook callback here
+					<input type="hidden" name="aesop-generator-url" id="aesop-generator-url" value="<?php echo $this->base_url; ?>" />
+					<input type="hidden" name="aesop-compatibility-mode-prefix" id="aesop-compatibility-mode-prefix" value="<?php echo $this->aesop_compatibility_mode_prefix(); ?>" />
+
+				</div>
+			</div>
+		</div>
+		<?php
 	}
 
 }

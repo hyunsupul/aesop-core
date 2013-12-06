@@ -63,6 +63,8 @@ class Aesop_Core {
 	 */
 	private function __construct() {
 
+		//defines
+
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
