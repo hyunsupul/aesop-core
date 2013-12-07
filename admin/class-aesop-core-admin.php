@@ -121,7 +121,7 @@ class Aesop_Core_Admin {
 
 
         //Register Styles
-		wp_register_style( 'aesop-shortcodes-generator', AI_CORE_URL. '/admin/assets/css/generator.css', AI_CORE_VERSION, true);
+		wp_register_style( 'aesop-shortcodes-generator', AI_CORE_URL. '/admin/assets/css/style.css', AI_CORE_VERSION, true);
 
 		// Load styles and scripts for bad ass generator
 		if ( is_admin() ) {
