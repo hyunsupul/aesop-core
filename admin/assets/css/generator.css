@@ -309,8 +309,66 @@ a#aesop-generator-insert.button-primary:active {
 	display: inline-block;
 	vertical-align: top;
 	min-height:60px;
+	background-image: url(../img/ai-core-sprite.png);
+	background-repeat: repeat-x;
+	text-indent: -1000px;
+}
+.dk_options li a {
+	min-height: 44px;
+}
+.dk_options li.dk_option_current a,
+.dk_options li a:hover {
+	background-image: url(../img/ai-core-sprite-hover.png);
+	background-repeat: repeat-x;
 }
 
+.dk_options li.parallax {
+	background-position: 0 0;
+}
+.dk_options li.parallax.dk_option_current a,
+.dk_options li.parallax a:hover {
+	background-position: 0 0;
+}
+
+.dk_options li.quote {
+	background-position: 0 -60px;
+}
+.dk_options li.quote.dk_option_current a,
+.dk_options li.quote a:hover {
+	background-position: 0 -60px;
+}
+
+.dk_options li.image_back {
+	background-position: 0 -120px;
+}
+.dk_options li.image_back.dk_option_current a,
+.dk_options li.image_back a:hover {
+	background-position: 0 -120px;
+}
+
+.dk_options li.columns {
+	background-position: 0 -180px;
+}
+.dk_options li.columns.dk_option_current a,
+.dk_options li.columns a:hover {
+	background-position: 0 -180px;
+}
+
+.dk_options li.chapter_head {
+	background-position: 0 -240px;
+}
+.dk_options li.chapter_head.dk_option_current a,
+.dk_options li.chapter_head a:hover {
+	background-position: 0 -240px;
+}
+
+.dk_options li.video {
+	background-position: 0 -300px;
+}
+.dk_options li.video.dk_option_current a,
+.dk_options li.video a:hover {
+	background-position: 0 -300px;
+}
 
 .dk_container {
   	display: none;

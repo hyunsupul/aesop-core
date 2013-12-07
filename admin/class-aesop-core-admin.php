@@ -138,8 +138,8 @@ class Aesop_Core_Admin {
 				wp_enqueue_script( 'aesop-shortcodes-generator-script' );
 				wp_enqueue_script('aesop-shortcodes-selectbox');
 
-				        wp_enqueue_style( 'wp-color-picker' );
-        wp_enqueue_script('wp-color-picker');
+				wp_enqueue_style( 'wp-color-picker' );
+        		wp_enqueue_script('wp-color-picker');
 			}
 		}
 	}
