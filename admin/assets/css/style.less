@@ -1,4 +1,34 @@
 // inner options
+.dk_container {
+    background: #333333;
+    font-family:_ 'Helvetica', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    margin: 13px auto 25px;
+    width:100%;
+    position: relative;
+
+    .dk_options a {
+        display: block;
+        padding: 8px 10px;
+        cursor: pointer;
+        text-decoration: none;
+
+        &:active {
+            outline: none;
+        }
+    }
+
+    &:focus {
+        outline:0;
+    }
+}
+
+// hide select
+.dk_toggle {
+    display: none !important;
+}
 .dk_options_inner {
     border: 1px solid #111;
     color: #333;
@@ -78,7 +108,7 @@
 }
 
 
-
+// main generatoe
 #aesop-generator {
     width: 100%;
     height: 100%;
@@ -88,6 +118,7 @@
     position: absolute;
     left:0;
     top:0;
+    background: #282828;
 
     #aesop-generator-shell {
         padding: 20px;
@@ -95,79 +126,67 @@
     }
 }
 
-
-
-.aesop-generator-inner-wrap {
-    background: #282828;
-}
-
-
-
-.aesop-select-wrap {
-    position: relative;
-}
-
+// settings view
 #aesop-generator-settings-outer {
     background: #333;
     clear:both;
-}
 
-#aesop-generator-settings {
-    padding: 20px;
-    border: 1px solid #181818;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px;
-    box-shadow:inset 0px 0px 8px #222;
-
-
-    p{
-        margin:1em 0 1.8em;
-    }
-
-    label {
-        float: left;
-        color:#cdcdcd;
-        display: block;
-        width: 200px;
-        padding: 5px;
-        position: relative;
-
-    }
-    input[type="text"] {
-        width: 63%;
-        padding: 5px 8px;
-    }
-
-    input {
-        background:#cdcdcd;
-        color: #333;
-        border: 1px solid black;
+    #aesop-generator-settings {
+        padding: 20px;
+        border: 1px solid #181818;
         -webkit-border-radius:5px;
         -moz-border-radius:5px;
         border-radius:5px;
-        position: relative;
+        box-shadow:inset 0px 0px 8px #222;
 
-        &:focus {
-            border-color:#31b6e3;
-            -webkit-box-shadow: 0 0 3px #31b6e3;
-            -moz-box-shadow: 0 0 3px #31b6e3;
-            box-shadow: 0 0 3px #31b6e3;
+
+        p{
+            margin:1em 0 1.8em;
+        }
+
+        label {
+            float: left;
+            color:#cdcdcd;
+            display: block;
+            width: 200px;
+            padding: 5px;
+            position: relative;
+
+        }
+        input[type="text"] {
+            width: 63%;
+            padding: 5px 8px;
+        }
+
+        input {
+            background:#cdcdcd;
+            color: #333;
+            border: 1px solid black;
+            -webkit-border-radius:5px;
+            -moz-border-radius:5px;
+            border-radius:5px;
+            position: relative;
+
+            &:focus {
+                border-color:#31b6e3;
+                -webkit-box-shadow: 0 0 3px #31b6e3;
+                -moz-box-shadow: 0 0 3px #31b6e3;
+                box-shadow: 0 0 3px #31b6e3;
+            }
+        }
+        select {
+            background:#cdcdcd;
+            color: #333;
+            border: 1px solid black;
+            -webkit-border-radius:5px;
+            -moz-border-radius:5px;
+            border-radius:5px;
+            width: 63%;
+            height:2.2em;
+            position: relative;
         }
     }
-    select {
-        background:#cdcdcd;
-        color: #333;
-        border: 1px solid black;
-        -webkit-border-radius:5px;
-        -moz-border-radius:5px;
-        border-radius:5px;
-        width: 63%;
-        height:2.2em;
-        position: relative;
-    }
 }
-
 
 .aesop-buttoninsert-wrap {
     margin:0 !important;
@@ -199,43 +218,3 @@
 .aesop-loading-animation * {
     display: none;
 }
-
-.dk_container {
-  background: #333333;
-  font-family:_ 'Helvetica', Arial, sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 14px;
-  margin: 13px auto 25px;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  width:100%;
-}
-.dk_container:focus {
-    outline: 0;
-}
-.dk_container a {
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.dk_toggle {
-    display: none !important;
-}
-
-.dk_options a {
-    display: block;
-    padding: 8px 10px;
-
-    &:active {
-        outline: none;
-    }
-}
-
-
-.dk_container {
-    display: none;
-    position: relative;
-}
-
