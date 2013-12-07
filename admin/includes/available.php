@@ -13,7 +13,7 @@ if(!function_exists('aesop_shortcodes')){
 					'img' => array(
 						'values' => array( ),
 						'default' => '#',
-						'desc' => __( 'Image', 'aesop-shortcode-generator' )
+						'desc' => __( 'Image', 'aesop-shortcode-generator' ),
 					),
 					'height' => array(
 						'values' => array(),
@@ -54,11 +54,13 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' => array(
 					'background' => array(
 						'values' => array( ),
+						'type'	=> 'color',
 						'default' => '#282828',
 						'desc' => __( 'Hex Color of Background', 'aesop-shortcode-generator' )
 					),
 					'text' => array(
 						'values' => array(),
+						'type'	=> 'color',
 						'default' => '#FFFFFF',
 						'desc' => __('Hex Color of Text', 'aesop-shortcode-generator' )
 					),
@@ -83,6 +85,7 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'color' => array(
 						'values' => array(),
+						'type'	=> 'color',
 						'default' => '#FFFFFF',
 						'desc' => __('Color of Text', 'aesop-shortcode-generator' )
 					)

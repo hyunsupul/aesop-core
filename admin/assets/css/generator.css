@@ -251,24 +251,7 @@ a#aesop-generator-insert.button-primary:active {
   	}
 
 .dk_toggle {
-	width:100% !important;
-  	background-image: url('../img/arrows.png');
-  	background-repeat: no-repeat;
-  	background-position: 98% center;
-  	border: 1px solid #181818;
-  	color: #aaa;
-  	padding: 10px;
-  	text-transform: capitalize;
-  	box-sizing:border-box;
-  	-moz-box-sizing:border-box;
-  	-webkit-box-sizing:border-box;
-  	border-radius: 5px;
-  	-moz-border-radius: 5px;
-  	-webkit-border-radius: 5px;
-  	-webkit-transition: border-color .5s;
-  	-moz-transition: border-color .5s;
-  	-o-transition: border-color .5s;
-  	transition: border-color .5s;
+	display: none !important;
 }
   	.dk_toggle:hover {
     	border-color: #111;
@@ -290,26 +273,13 @@ a#aesop-generator-insert.button-primary:active {
   	z-index: 10;
 }
   	.dk_open .dk_toggle {
-    	background-color: #191919;
-    	border-color: #000;
-    	color: #ccc !important;
-    	border-radius: 5px 5px 0 0;
-    	-moz-border-radius: 5px 5px 0 0;
-    	-webkit-border-radius: 5px 5px 0 0;
+
   	}
 
 .dk_options {
-  	box-shadow: rgba(0, 0, 0, .2) 0 2px 8px;
-  	-moz-box-shadow: rgba(0, 0, 0, .2) 0 2px 8px;
-  	-webkit-box-shadow: rgba(0, 0, 0, .2) 0 2px 8px;
-  	border-radius: 0 0 5px 5px;
- 	-moz-border-radius: 0 0 5px 5px;
-  	-webkit-border-radius: 0 0 5px 5px;
+
 }
   	.dk_options a {
-  		color:rgba(145,145,145,1.0);
-    	background-color: #222222;
-    	border-bottom: 1px solid #111;
     	font-weight: bold;
     	padding: 8px 10px;
  	}
@@ -318,9 +288,7 @@ a#aesop-generator-insert.button-primary:active {
   	}
   	.dk_options a:hover,
   	.dk_option_current a {
-    	background-color: #333;
-    	color:#31b6e3;
-    	color:rgba(79,199,241,0.9) !important;
+
     	text-decoration: none;
     	text-shadow: rgba(0, 0, 0, .5) 0 1px 0;
   	}
@@ -336,13 +304,13 @@ a#aesop-generator-insert.button-primary:active {
   	-webkit-border-radius: 0 0 5px 5px;
 }
 .dk_options_inner li {
-	margin:0;
+	margin:0 -4px 0 0;
+	width:33.333%;
+	display: inline-block;
+	vertical-align: top;
+	min-height:60px;
 }
 
-.dk_options_inner,
-.dk_touch .dk_options {
-  	max-height: 400px;
-}
 
 .dk_container {
   	display: none;
@@ -372,9 +340,6 @@ a#aesop-generator-insert.button-primary:active {
   	}
 
 .dk_options {
-  	display: none;
-  	margin-top: -1px;
-  	position: absolute;
   	right: 0;
   	width: 100%;
 }
