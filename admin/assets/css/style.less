@@ -1,6 +1,10 @@
+@main:      #333333;
+@accent:    #222222;
+@link:      #0074a2;
+
 // inner options
 .dk_container {
-    background: #333333;
+    background: @main;
     margin: 13px auto 25px;
     width:100%;
     position: relative;
@@ -26,7 +30,6 @@
     display: none !important;
 }
 .dk_options_inner {
-    color: #333;
     max-height: 250px;
     margin:0;
     text-shadow: #000 0 1px 0;
@@ -112,7 +115,7 @@
     position: absolute;
     left:0;
     top:0;
-    background: #282828;
+    background: @accent;
 
     #aesop-generator-shell {
         padding: 20px;
@@ -133,11 +136,11 @@
         display: block;
         text-align: center;
         line-height: 2em;
-        background: #07a1cd;
+        background: @link;
         margin: 30px auto 0;
 
         &:hover {
-            background: darken(#07A1CD,5);
+            background: darken(@link,5);
         }
     }
 
@@ -145,7 +148,7 @@
 
 // settings view
 #aesop-generator-settings-outer {
-    background: #333;
+    background: @main;
     clear:both;
 
     #aesop-generator-settings {
@@ -155,12 +158,8 @@
             margin:1em 0 2em;
 
             &:nth-child(even) {
-                background: darken(#333,1);
+                background: darken(@main,1);
                 padding: 8px 0;
-
-                label {
-                    margin-top:4px;
-                }
             }
         }
 
@@ -183,6 +182,7 @@
         select {
             font-size:1.25em;
             line-height: 1.4em;
+            height:32px;
         }
 
         input {
@@ -200,10 +200,11 @@
             background:#cdcdcd;
             color: #333;
             border: 1px solid black;
-            border-radius:5px;
+            border-radius:3px;
             width: 63%;
             position: relative;
         }
+
     }
 }
 
