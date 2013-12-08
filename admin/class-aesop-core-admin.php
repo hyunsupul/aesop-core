@@ -153,7 +153,7 @@ class Aesop_Core_Admin {
 	}
 
 	public function generator_button() {
-		echo '<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" class="thickbox"><img src="' . AI_CORE_URL . '/admin/assets/img/media-icon.png" alt="" /></a>';
+		echo '<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" id="insert-media-button" class="button thickbox" title="Add Story Component">Add Component</a>';
 	}
 
 	// Auto compatability mode but this really isn't doing shit anymore so we need to take it out on the next update
