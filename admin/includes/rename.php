@@ -6,7 +6,8 @@ class aiCoreStrings {
 
 		add_action( 'admin_menu', 	array($this,'edit_admin_menus' ));
 		add_action( 'init', 		array($this,'change_post_labels' ));
-		add_filter( 'gettext', 		array($this,'kia_text_strings'), 20, 3 );
+		add_filter(  'gettext',  array($this,'replace_strings'  ));
+		add_filter(  'ngettext',  array($this,'replace_strings'  ));
 
 	}
 
@@ -49,27 +50,20 @@ class aiCoreStrings {
 	 * Change text strings
 	 */
 
-	function kia_text_strings( $translated_text, $text, $domain ) {
+	function replace_strings( $translated ) {
 
-        switch ( $translated_text ) {
+        $words = array(
+            'Add New Category' => 'Add New Collection',
+            'Categories' => 'Collections',
+            'category'	=> 'collection',
+            'posts'	=> 'stories',
+            'post' => 'story',
+            'Post' => 'Story'
 
-            case 'Add New Category' :
+        );
 
-                $translated_text = __( 'Add New Collection', 'aesop-core' );
-                break;
-
-            case 'All Categories' :
-
-                $translated_text = __( 'All Collections', 'aesop-core' );
-                break;
-
-            case 'Categories' :
-
-                $translated_text = __( 'Collections', 'aesop-core' );
-                break;
-        }
-
-	    return $translated_text;
+	    $translated = str_ireplace(  array_keys($words),  $words,  $translated );
+	    return $translated;
 	}
 
 }

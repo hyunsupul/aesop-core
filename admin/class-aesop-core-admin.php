@@ -147,19 +147,13 @@ class Aesop_Core_Admin {
 	public function register_shortcodes(){
 		// Register Shortcodes
 		foreach ( aesop_shortcodes() as $shortcode => $params ) {
-			add_shortcode ( $this->aesop_compatibility_mode_prefix() . $shortcode, 'aesop_' . $shortcode . '_shortcode' );
+			add_shortcode ( 'aesop_'.$shortcode, 'aesop_'.$shortcode.'_shortcode' );
 		}
 
 	}
 
 	public function generator_button() {
 		echo '<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" id="insert-media-button" class="button thickbox" title="Add Story Component">Add Component</a>';
-	}
-
-	// Auto compatability mode but this really isn't doing shit anymore so we need to take it out on the next update
-    public function aesop_compatibility_mode_prefix() {
-		$prefix = ( get_option( 'aesop_compatibility_mode' ) == 'on' ) ? 'aesop_' : 'aesop_';
-		return $prefix;
 	}
 
 	public function generator_popup() {
@@ -185,7 +179,7 @@ class Aesop_Core_Admin {
 					<div id="aesop-generator-settings-outer"><div id="aesop-generator-settings"></div></div>
 
 					<input type="hidden" name="aesop-generator-url" id="aesop-generator-url" value="<?php echo AI_CORE_URL; ?>" />
-					<input type="hidden" name="aesop-compatibility-mode-prefix" id="aesop-compatibility-mode-prefix" value="<?php echo $this->aesop_compatibility_mode_prefix(); ?>" />
+					<input type="hidden" name="aesop-compatibility-mode-prefix" id="aesop-compatibility-mode-prefix" value="aesop_" />
 
 				</div>
 			</div>
