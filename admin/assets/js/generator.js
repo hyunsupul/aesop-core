@@ -30,8 +30,6 @@ jQuery(document).ready(function($) {
 		return false;
 	});
 
-	$('.wp-color-picker-field').wpColorPicker();
-
 });
 
 /**
