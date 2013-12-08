@@ -6,7 +6,6 @@ class aiCoreStrings {
 
 		add_action( 'admin_menu', 	array($this,'edit_admin_menus' ));
 		add_action( 'init', 		array($this,'change_post_labels' ));
-		add_action( 'do_meta_boxes', array($this,'replace_category_box'));
 		add_filter( 'gettext', 		array($this,'kia_text_strings'), 20, 3 );
 
 	}
@@ -35,24 +34,14 @@ class aiCoreStrings {
 	  	$postLabels = $wp_post_types['post']->labels;
 	  	$postLabels->name = __('Stories','aesop-core');
 	  	$postLabels->singular_name = __('Stories','aesop-core');
-	  	$postLabels->add_new = __('Add Stories','aesop-core');
-	  	$postLabels->add_new_item = __('Add Stories','aesop-core');
+	  	$postLabels->add_new = __('Add Story','aesop-core');
+	  	$postLabels->add_new_item = __('Add Story','aesop-core');
 	  	$postLabels->edit_item = __('Edit Story','aesop-core');
 	  	$postLabels->new_item = __('Stories','aesop-core');
-	  	$postLabels->view_item = __('View Stories','aesop-core');
+	  	$postLabels->view_item = __('View Story','aesop-core');
 	  	$postLabels->search_items = __('Search Stories','aesop-core');
 	  	$postLabels->not_found = __('No Stories found','aesop-core');
 	  	$postLabels->not_found_in_trash = __('No Stories found in Trash','aesop-core');
-	}
-
-
-	/**
-	 * Change Category to Collections
-	 */
-
-	function replace_category_box()  {
-	    remove_meta_box( 'categorydiv', 'post', 'side' );
-	    add_meta_box('categorydiv', __('Collections'), 'post_categories_meta_box', 'post', 'side', 'low');
 	}
 
 
