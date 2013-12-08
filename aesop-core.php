@@ -70,7 +70,12 @@ define('AI_CORE_URL', plugins_url( '', __FILE__ ));
  */
 if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 
+
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-aesop-core-admin.php' );
+	require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/rename.php' );
+	require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/welcome.php' );
+	require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/dashboard.php' );
+
 	add_action( 'plugins_loaded', array( 'Aesop_Core_Admin', 'get_instance' ) );
 
 }
