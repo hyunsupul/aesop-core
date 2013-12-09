@@ -1,0 +1,35 @@
+
+.aesop-admin-story-grid li {
+    cursor: pointer;
+    float: left;
+    margin: 0 4% 4% 0;
+    position: relative;
+    width: 30.6%;
+    border: 1px solid #dedede;
+    -webkit-box-shadow: 0 1px 1px -1px rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px -1px rgba(0,0,0,.1);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.aesop-admin-story-grid-story {
+	min-height: 300px;
+	position: relative;
+}
+.aesop-admin-story-edit-meta {
+    background: #2f2f2f;
+    color: #fff;
+    padding:10px;
+    font-weight: 300;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.5);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.5);
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align: right;
+}
+.aesop-admin-story-grid-title {
+	float: left;
+	margin:3px 0 0 3px;
+}

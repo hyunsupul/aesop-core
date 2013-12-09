@@ -153,7 +153,7 @@ class Aesop_Core_Admin {
 	}
 
 	public function generator_button() {
-		echo '<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" id="insert-media-button" class="button thickbox" title="Add Story Component">Add Component</a>';
+		echo '<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" class="button thickbox" title="Add Story Component"><span class="aesop-admin-button-icon dashicons dashicons-plus"></span> Add Component</a>';
 	}
 
 	public function generator_popup() {

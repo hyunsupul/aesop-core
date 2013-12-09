@@ -77,6 +77,7 @@ if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/dashboard.php' );
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/menuclean.php' );
 	require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/postclean.php' );
+	require_once( plugin_dir_path( __FILE__ ) . 'admin/includes/storytab.php' );
 
 	add_action( 'plugins_loaded', array( 'Aesop_Core_Admin', 'get_instance' ) );
 

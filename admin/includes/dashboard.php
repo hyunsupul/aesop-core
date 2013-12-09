@@ -41,21 +41,8 @@ class aiCoreDash {
 	function custom_widgets() {
 		global $wp_meta_boxes;
 
-		wp_add_dashboard_widget('custom_help_widget', 'Welcome to Aesop', array($this,'custom_dashboard_help'));
 		wp_add_dashboard_widget('stories_view', 'Your Stories', array($this,'stories_view'));
 	}
-
-	/**
-	 	* Return an instance of this class.
-	 	*
-	 	* @since     1.0.0
-	 	*
-	 	* @return    object    HTML for dashboard ewidget
-	*/
-	function custom_dashboard_help() {
-		echo '<p>Custom Dashboard WIdget.</p>';
-	}
-
 
 	/**
 	 	* Return the current users story list
@@ -76,19 +63,26 @@ class aiCoreDash {
 
 	  	$q = new WP_Query($args);
 
-	  	if( $q->have_posts() ): while ($q->have_posts()) : $q->the_post();
+	  	?><ul class="aesop-admin-post-list"><?php
 
-	  	 	?>
-	  	 	<ul>
-		      	<li>
-		      		<a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-		      	</li>
-		    </ul>
-	    	<?php
+		  	if( $q->have_posts() ): while ($q->have_posts()) : $q->the_post();
 
-	    endwhile;endif;
+		  	 	?>
+			      	<li>
+			      		<span class="aesop-admin-story-title"><?php the_title(); ?></span>
+			      		<div class="aesop-admin-edit-meta">
+			      			<a class="aesop-admin-edit-story-link button button-small" href="<?php echo admin_url();?>post.php?post=<?php echo the_ID();?>&action=edit"><i class="aesop-admin-button-icon dashicons dashicons-welcome-write-blog"></i> Edit</a>
+			      			<a class="aesop-admin-view-story-link button button-small" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" target="_new"><i class="aesop-admin-button-icon dashicons dashicons-share-alt2"></i> View</a>
+			      		</div>
+			      		</p>
+			      	</li>
+		    	<?php
 
-	  	wp_reset_query();  // Restore global post data stomped by the_post().
+		    endwhile;endif;
+
+		  	wp_reset_query();
+
+	  	?></ul><?php
 	}
 }
 new aiCoreDash;
