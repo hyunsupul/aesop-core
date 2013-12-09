@@ -1,10 +1,17 @@
 
+.aesop-clear:before, 
+.aesop-clear:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.aesop-clear:after  {
+	clear:both;
+}
 .aesop-admin-story-grid li {
-    cursor: pointer;
     float: left;
-    margin: 0 4% 4% 0;
+    margin: 0 2% 2% 0;
     position: relative;
-    width: 30.6%;
+    width: 23%;
     border: 1px solid #dedede;
     -webkit-box-shadow: 0 1px 1px -1px rgba(0,0,0,.1);
     box-shadow: 0 1px 1px -1px rgba(0,0,0,.1);
@@ -32,4 +39,71 @@
 .aesop-admin-story-grid-title {
 	float: left;
 	margin:3px 0 0 3px;
+}
+.aesop-admin-button-icon {
+    line-height:1.85em;
+}
+.button-small .aesop-admin-button-icon {
+    line-height: 1.6em;
+    font-size:14px;
+}
+
+.aesop-admin-story-grid .aesop-admin-grid-create {
+	height: 300px;
+	display: table;
+	position: relative;
+	border:none;
+}
+
+.aesop-admin-grid-create a {
+	display: block;
+	text-decoration: none;
+	position: absolute;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+	border: 5px dashed rgba(0,0,0,.1);
+	box-sizing:border-box;
+}
+.aesop-admin-grid-create a:hover {
+	background: #0074a2;
+	border:5px solid #0074a2;
+	left:0;
+	top:0;
+}
+.aesop-admin-grid-create a:hover i{
+	color:#0074a2;
+	background: white;
+}
+.aesop-admin-grid-create a:hover h3{
+	color:white;
+}
+.aesop-admin-grid-create-inner i {
+	background: rgba(153,153,153,.1);
+	border-radius: 50%;
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: 400 74px/115px dashicons;
+	width: 100px;
+	height: 100px;
+	vertical-align: middle;
+	text-align: center;
+	color: #999;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	margin-left: -50px;
+	text-indent: -4px;
+	padding: 0;
+	text-shadow: none;
+	z-index: 4;
+}
+.aesop-admin-grid-create-inner h3{
+	position: absolute;
+	text-align: center;
+	bottom:20px;
+	width:100%;
+	font-size:15px;
+	font-weight:400;
 }

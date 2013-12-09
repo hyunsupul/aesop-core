@@ -63,7 +63,9 @@ class aiCoreDash {
 
 	  	$q = new WP_Query($args);
 
-	  	?><ul class="aesop-admin-post-list"><?php
+	  	?><ul class="aesop-admin-post-list">
+
+	  	<?php
 
 		  	if( $q->have_posts() ): while ($q->have_posts()) : $q->the_post();
 
@@ -71,8 +73,8 @@ class aiCoreDash {
 			      	<li>
 			      		<span class="aesop-admin-story-title"><?php the_title(); ?></span>
 			      		<div class="aesop-admin-edit-meta">
-			      			<a class="aesop-admin-edit-story-link button button-small" href="<?php echo admin_url();?>post.php?post=<?php echo the_ID();?>&action=edit"><i class="aesop-admin-button-icon dashicons dashicons-welcome-write-blog"></i> Edit</a>
-			      			<a class="aesop-admin-view-story-link button button-small" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" target="_new"><i class="aesop-admin-button-icon dashicons dashicons-share-alt2"></i> View</a>
+			      			<a class="aesop-admin-edit-story-link button button-small " href="<?php echo admin_url();?>post.php?post=<?php echo the_ID();?>&action=edit"><i class="aesop-admin-button-icon dashicons dashicons-welcome-write-blog"></i> Edit</a>
+			      			<a class="aesop-admin-view-story-link button button-small button-primary" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" target="_new"><i class="aesop-admin-button-icon dashicons dashicons-share-alt2"></i> View</a>
 			      		</div>
 			      		</p>
 			      	</li>
