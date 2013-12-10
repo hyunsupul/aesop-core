@@ -4,24 +4,10 @@ class aiCoreStrings {
 
 	public function __construct(){
 
-		add_action( 'admin_menu', 	array($this,'edit_admin_menus' ));
 		add_action( 'init', 		array($this,'change_post_labels' ));
 		add_filter(  'gettext',  array($this,'replace_strings'  ));
 		add_filter(  'ngettext',  array($this,'replace_strings'  ));
 
-	}
-
-	// REname Posts to Stories
-	function edit_admin_menus() {
-
-	    global $menu;
-	    global $submenu;
-
-	    $menu[5][0] = 'Stories'; // Change Posts to Recipes
-	    $submenu['edit.php'][5][0] = 'All Stories';
-	    $submenu['edit.php'][10][0] = 'Create a Story';
-	    $submenu['edit.php'][15][0] = 'Collections'; // Rename categories to meal types
-	    $submenu['edit.php'][16][0] = 'Collection Sets'; // Rename tags to ingredients
 	}
 
 
