@@ -16,8 +16,6 @@ class aiCoreMenuCleanup {
 	function remove_menus(){
 
 	  	remove_menu_page( 'edit.php?post_type=page' );    //Pages
-	  	remove_menu_page( 'plugins.php' );                //Plugins
-	  	remove_menu_page( 'users.php' );                  //Users
 	  	remove_menu_page( 'edit.php' );                  //Users
 
 	  	//remove_menu_page( 'tools.php' );                  //Tools

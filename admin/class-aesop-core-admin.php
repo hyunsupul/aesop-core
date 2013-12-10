@@ -117,25 +117,26 @@ class Aesop_Core_Admin {
 	public function load(){
 
 		// Register Scripts
-		wp_register_script( 'aesop-shortcodes-generator-script', AI_CORE_URL. '/admin/assets/js/generator.js', AI_CORE_VERSION, true);
+		wp_register_script( 'ai-core-script', AI_CORE_URL. '/admin/assets/js/generator.js', AI_CORE_VERSION, true);
 
 
         //Register Styles
-		wp_register_style( 'aesop-shortcodes-generator', AI_CORE_URL. '/admin/assets/css/style.css', AI_CORE_VERSION, true);
+		wp_register_style( 'ai-core-styles', AI_CORE_URL. '/admin/assets/css/style.css', AI_CORE_VERSION, true);
 
 		// Load styles and scripts for bad ass generator
 		if ( is_admin() ) {
+
 			global $pagenow;
+
+			// Enqueue styles
+				wp_enqueue_style( 'ai-core-styles' );
 
 			// Load styles and scripts for bad ass generator only on these pages
 			$aesop_generator_includes_pages = array( 'post.php', 'edit.php', 'post-new.php', 'index.php' );
 			if ( in_array( $pagenow, $aesop_generator_includes_pages ) ) {
 
-				// Enqueue styles
-				wp_enqueue_style( 'aesop-shortcodes-generator' );
-
 				// Enqueue scripts
-				wp_enqueue_script( 'aesop-shortcodes-generator-script' );
+				wp_enqueue_script( 'ai-core-script' );
 				wp_enqueue_script('aesop-shortcodes-selectbox');
 
 				wp_enqueue_style( 'wp-color-picker' );
