@@ -42,7 +42,6 @@ class aiCoreDash {
 		global $wp_meta_boxes;
 
 		wp_add_dashboard_widget('get_storiews', 'Your Stories', array($this,'get_stories'));
-		wp_add_dashboard_widget('collaborators', 'Collaborators', array($this,'collaborators_view'));
 		wp_add_dashboard_widget('collab_posts', 'Collaborated Stories', array($this,'collaborated_stories'));
 	}
 
@@ -142,43 +141,13 @@ class aiCoreDash {
 		    	endwhile;
 
 		   else:
-		   		_e('You havent been invited to collaborate on any stories yet.', 'aesop-core');
+		   		_e('You havent collaborated on any stories yet.', 'aesop-core');
 		   	endif;
 
 		  	wp_reset_query();
 
 	  	?></ul><?php
 	}
-	/**
-	 	* Return the users for the site
-	 	*
-	 	* @since     1.0.0
-	 	*
-	*/
-	function collaborators_view() {
-
-		?><ul><?php
-
-			$args = array(
-				'blog_id'      => $GLOBALS['blog_id'],
-				'orderby'		=> 'nicename',
-				'role'			=> 'editor'
-			);
-
-		    $authors = get_users($args);
-
-		    if($authors){
-			    foreach ($authors as $author) {
-			        echo '<li>' . $author->display_name . '</li>';
-			    }
-			} else {
-
-				_e('<a href="/wp-admin/user-new.php">Invite</a> someone to help you with your story.', 'aesop-core');
-			}
-
-		?></ul><?php
-	}
-
 
 }
 new aiCoreDash;
