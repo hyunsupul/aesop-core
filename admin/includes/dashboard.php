@@ -42,6 +42,7 @@ class aiCoreDash {
 		global $wp_meta_boxes;
 
 		wp_add_dashboard_widget('stories_view', 'Your Stories', array($this,'stories_view'));
+		wp_add_dashboard_widget('collaborators', 'Collaborators', array($this,'collaborators_view'));
 	}
 
 	/**
@@ -86,5 +87,50 @@ class aiCoreDash {
 
 	  	?></ul><?php
 	}
+
+	/**
+	 	* Return the users for the site
+	 	*
+	 	* @since     1.0.0
+	 	*
+	*/
+	function collaborators_view() {
+
+		?><ul><?php
+
+			$args = array(
+				'blog_id'      => $GLOBALS['blog_id'],
+				'orderby'		=> 'nicename',
+				'role'			=> 'subscriber'
+			);
+
+		    $authors = get_users($args);
+
+		    if($authors){
+			    foreach ($authors as $author) {
+			        echo '<li>' . $author->display_name . '</li>';
+			    }
+			} else {
+
+				_e('<a href="/wp-admin/user-new.php">Invite</a> someone to help you with your story.', 'aesop-core');
+			}
+
+		?></ul><?php
+	}
 }
 new aiCoreDash;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

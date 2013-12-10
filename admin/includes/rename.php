@@ -58,7 +58,11 @@ class aiCoreStrings {
             'category'	=> 'collection',
             'posts'	=> 'stories',
             'post' => 'story',
-            'Post' => 'Story'
+            'Post' => 'Story',
+            'Username'	=> 'Collaborator Name',
+            'Users'	=> 'Collaborators',
+            'User'	=> 'Collaborator',
+            'Add New User' => 'Add New Collaborator' // not working
 
         );
 
