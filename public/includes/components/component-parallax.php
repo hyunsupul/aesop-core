@@ -16,7 +16,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$hash = rand();
 
 		$style = sprintf('style="background-image:url(\'%s\');background-size:cover;height:%spx;"',$atts['img'],$atts['height']);
-		$lblink = 'on' == $atts['lightbox'] ? sprintf('<a class="aesop-lb-link swipebox" rel="lightbox" title="%s" href="%s"><i class="sorencon sorencon-search-plus"></i></a>',do_shortcode($content),$atts['img']) : false;
+		$lblink = 'on' == $atts['lightbox'] ? sprintf('<a class="aesop-lb-link swipebox" rel="lightbox" title="%s" href="%s"><i class="sorencon sorencon-search-plus">+</i></a>',do_shortcode($content),$atts['img']) : false;
 
 		$out = sprintf('<section class="aesop-parallax-sc aesop-parallax-sc-%s" %s data-0="background-position:0px 0px;" data-500="background-position:0px -250px;">', $hash, $style);
 
