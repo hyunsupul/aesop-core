@@ -75,7 +75,7 @@ class Aesop_Core {
 
 		add_action('init', array($this,'register_shortcodes'));
 		add_action('wp_enqueue_scripts', array($this,'scripts'));
-
+		add_action('wp_footer',array($this,'skrollr_init'), 99);
 	}
 
 	/**
@@ -261,7 +261,11 @@ class Aesop_Core {
 	 * @since    1.0.0
 	 */
 	public function scripts(){
+
 		wp_enqueue_script('jquery');
+
+		wp_enqueue_style('ai-core-style', AI_CORE_URL.'/public/assets/css/style.css', AI_CORE_VERSION, true);
+		wp_enqueue_script('ai-core', AI_CORE_URL.'/public/assets/js/ai-core.js', array('jquery'), AI_CORE_VERSION, true);
 	}
 
 	/**
@@ -275,6 +279,12 @@ class Aesop_Core {
 			add_shortcode ( 'aesop_'.$shortcode, 'aesop_'.$shortcode.'_shortcode' );
 		}
 
+	}
+
+	public function skrollr_init(){
+		?><script>
+			var s = skrollr.init();
+		</script><?php
 	}
 
 
