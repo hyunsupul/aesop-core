@@ -73,14 +73,8 @@ class Aesop_Core {
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
-		// Load public-facing style sheet and JavaScript.
-		//add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-		//add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-
-		add_action( '@TODO', array( $this, 'action_method_name' ) );
-		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
-
 		add_action('init', array($this,'register_shortcodes'));
+		add_action('wp_enqueue_scripts', array($this,'scripts'));
 
 	}
 
@@ -261,6 +255,20 @@ class Aesop_Core {
 
 	}
 
+	/**
+	 * Load component styles and scripts
+	 *
+	 * @since    1.0.0
+	 */
+	public function scripts(){
+		wp_enqueue_script('jquery');
+	}
+
+	/**
+	 * Register shortcode components
+	 *
+	 * @since    1.0.0
+	 */
 	public function register_shortcodes(){
 		// Register Shortcodes
 		foreach ( aesop_shortcodes() as $shortcode => $params ) {
