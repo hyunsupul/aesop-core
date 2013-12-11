@@ -41,6 +41,7 @@
 	// Single shortcode (not closed)
 	if ( $shortcode['type'] == 'single' ) {
 		$return .= '<input type="hidden" name="aesop-generator-content" id="aesop-generator-content" value="false" />';
+	
 	} else {
 
 		$return .= '<p><label>' . __( 'Content', 'aesop-shortcodes' ) . '</label><input type="text" name="aesop-generator-content" id="aesop-generator-content" value="' . $shortcode['content'] . '" /></p>';

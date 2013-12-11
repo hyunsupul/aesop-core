@@ -60,7 +60,12 @@ class Aesop_Core_Admin {
 		/* if( ! is_super_admin() ) {
 			return;
 		} */
-
+		require_once( AI_CORE_DIR.'admin/includes/rename.php' );
+		require_once( AI_CORE_DIR.'admin/includes/welcome.php' );
+		require_once( AI_CORE_DIR.'admin/includes/dashboard.php' );
+		require_once( AI_CORE_DIR.'admin/includes/menuclean.php' );
+		require_once( AI_CORE_DIR.'admin/includes/postclean.php' );
+		require_once( AI_CORE_DIR.'admin/includes/storytab.php' );
 		/*
 		 * Call $plugin_slug from public plugin class.
 		 *
@@ -81,8 +86,7 @@ class Aesop_Core_Admin {
 		 */
 		add_action( 'media_buttons', array($this,'generator_button' ),100);
 		add_action( 'admin_footer', array($this,'generator_popup' ));
-		add_action('init', array($this,'register_shortcodes'));
-		add_action('admin_init', array($this,'load'));
+		add_action( 'admin_init', array($this,'load'));
 
 
 	}
@@ -143,14 +147,6 @@ class Aesop_Core_Admin {
         		wp_enqueue_script('wp-color-picker');
 			}
 		}
-	}
-
-	public function register_shortcodes(){
-		// Register Shortcodes
-		foreach ( aesop_shortcodes() as $shortcode => $params ) {
-			add_shortcode ( 'aesop_'.$shortcode, 'aesop_'.$shortcode.'_shortcode' );
-		}
-
 	}
 
 	public function generator_button() {

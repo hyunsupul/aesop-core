@@ -65,6 +65,7 @@ class Aesop_Core {
 
 		//defines
 		require_once(AI_CORE_DIR.'admin/includes/available.php');
+		require_once( AI_CORE_DIR.'public/includes/components/component-parallax.php' );
 		
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
@@ -73,11 +74,13 @@ class Aesop_Core {
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
 		// Load public-facing style sheet and JavaScript.
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		//add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+		//add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
 		add_action( '@TODO', array( $this, 'action_method_name' ) );
 		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
+
+		add_action('init', array($this,'register_shortcodes'));
 
 	}
 
@@ -258,38 +261,13 @@ class Aesop_Core {
 
 	}
 
-	/**
-	 * Register and enqueue public-facing style sheet.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_styles() {
-		wp_enqueue_style( $this->plugin_slug . '-plugin-styles', plugins_url( 'assets/css/public.css', __FILE__ ), array(), self::VERSION );
+	public function register_shortcodes(){
+		// Register Shortcodes
+		foreach ( aesop_shortcodes() as $shortcode => $params ) {
+			add_shortcode ( 'aesop_'.$shortcode, 'aesop_'.$shortcode.'_shortcode' );
+		}
+
 	}
 
-	/**
-	 * Register and enqueues public-facing JavaScript files.
-	 *
-	 * @since    1.0.0
-	 */
-	public function enqueue_scripts() {
-		wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'assets/js/public.js', __FILE__ ), array( 'jquery' ), self::VERSION );
-	}
-
-	/**
-	 *
-	 * @since    1.0.0
-	 */
-	public function action_method_name() {
-		// @TODO: Define your action hook callback here
-	}
-
-	/**
-	 *
-	 * @since    1.0.0
-	 */
-	public function filter_method_name() {
-		// @TODO: Define your filter hook callback here
-	}
 
 }
