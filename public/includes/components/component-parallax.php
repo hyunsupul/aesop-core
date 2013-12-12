@@ -29,11 +29,14 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$lblink 	= 'on' == $atts['lightbox'] ? sprintf('<a class="aesop-lb-link swipebox" rel="lightbox" title="%s" href="%s"><i class="sorencon sorencon-search-plus">+</i></a>',do_shortcode($content),$atts['img']) : false;
 		$floater 	= 'on' == $atts['floater'] ? sprintf('<div class="aesop-parallax-sc-floater floater-%s" data-top-bottom="margin-top:20px;" data-bottom-top="margin-top:%spx;">%s</div>', $atts['floaterposition'], $floaterdestination, $atts['floatermedia']) : false;
 
+
+		$out = sprintf('<section class="aesop-component aesop-parallax-component">');
+
 		// Call Parallax Method if Set
 		if ('on' == $atts['parallaxbg']) {
-			$out .= sprintf('<script>
+			$out .= sprintf('
+				<script>
 			jQuery(document).ready(function(){
-
 		   		jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s .aesop-parallax-sc-img\').parallax({
 		    		speed: %s
 		    	});
@@ -41,14 +44,14 @@ if (!function_exists('aesop_parallax_shortcode')){
 			</script>',$hash,$atts['parallaxspeed']);
 		}
 
-		$out 	.= sprintf('<section class="aesop-parallax-sc aesop-parallax-sc-%s" style="height:%s;">
+		$out 	.= sprintf('<div class="aesop-parallax-sc aesop-parallax-sc-%s" style="height:%spx;">
 								%s
 								<div class="aesop-parallax-sc-caption-wrap %s">
 									<div class="aesop-parallax-sc-caption">%s</div>
 								</div>
 								%s
 								<div class="aesop-parallax-sc-img %s" %s></div>
-							</section>',$hash, $atts['height'], $floater, $atts['captionposition'], do_shortcode($content), $lblink, $laxclass, $style);
+							</div></section>',$hash, $atts['height'], $floater, $atts['captionposition'], do_shortcode($content), $lblink, $laxclass, $style);
 
 		return apply_filters('aesop_parallax_output',$out);
 	}

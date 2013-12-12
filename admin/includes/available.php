@@ -1,8 +1,8 @@
 <?php
 
-	/**
-	 * List of available shortcodes
-	 */
+/**
+ * List of available shortcodes
+ */
 if(!function_exists('aesop_shortcodes')){
 	function aesop_shortcodes( $shortcode = null ) {
 		$shortcodes = array(
