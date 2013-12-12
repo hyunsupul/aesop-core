@@ -4,7 +4,7 @@ class aiCoreMenuCleanup {
 
 	public function __construct(){
 		add_action('admin_init', array($this,'remove_theme_edit'));
-		add_action( 'admin_menu', array($this,'remove_menus'));
+		//add_action( 'admin_menu', array($this,'remove_menus'));
 	}
 
 	/*
@@ -15,7 +15,7 @@ class aiCoreMenuCleanup {
 	*/
 	function remove_menus(){
 
-	  	remove_menu_page( 'edit.php?post_type=page' );    //Pages
+	  	//remove_menu_page( 'edit.php?post_type=page' );    //Pages
 	  	remove_menu_page( 'edit.php' );                  //Users
 
 	  	//remove_menu_page( 'tools.php' );                  //Tools
