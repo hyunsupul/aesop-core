@@ -2,11 +2,17 @@
 // parallax item
 .aesop-parallax-sc {
     position: relative;
-    height: 450px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 100%; //iphone fix
-    background-size: cover; 
+    height:450px;
+    overflow: hidden;
+
+    .aesop-parallax-sc-img {
+        height: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100%; //iphone fix
+        background-size: cover; 
+        background-attachment: fixed;
+    }
 
     .aesop-parallax-sc-caption-wrap {
         position: absolute;
@@ -63,6 +69,17 @@
         .aesop-lb-link {
             .opacity(.5);
             .transition(opacity .5s ease-in-out);
+        }
+    }
+
+    .aesop-parallax-sc-floater {
+        position: absolute;
+
+        &.floater-right {
+            right:30px;
+        }
+        &.floater-left {
+            left:30px;
         }
     }
 }

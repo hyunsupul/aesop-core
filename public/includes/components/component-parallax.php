@@ -7,20 +7,34 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$defaults = array(
 			'img' => 'http://placekitten.com/1200/700',
 			'height' => 500,
+			'speed'	=> 0.2,
+			'floater' => false,
+			'floatermedia' => '',
+			'floaterposition' => 'right',
 			'cappos' => 'bottom-left',
-			'speed'	 => 0.15,
 			'lightbox' => false
 		);
 		$atts = shortcode_atts($defaults, $atts);
 
 		$hash = rand();
 
-		$style = sprintf('style="background-image:url(\'%s\');background-size:cover;height:%spx;"',$atts['img'],$atts['height']);
+		$style = sprintf('style="background-image:url(\'%s\');background-size:cover;"',$atts['img'],$atts['height']);
 		$lblink = 'on' == $atts['lightbox'] ? sprintf('<a class="aesop-lb-link swipebox" rel="lightbox" title="%s" href="%s"><i class="sorencon sorencon-search-plus">+</i></a>',do_shortcode($content),$atts['img']) : false;
 
-		$out = sprintf('<section class="aesop-parallax-sc aesop-parallax-sc-%s" %s data-0="background-position:center 0px;" data-500="background-position:center -250px;">', $hash, $style);
+		$floater = 'on' == $atts['floater'] ? sprintf('<div class="aesop-parallax-sc-floater floater-%s">%s</div>', $atts['floaterposition'], $atts['floatermedia']) : false;
 
-		$out .= sprintf('<div class="aesop-parallax-sc-caption-wrap %s"><div class="aesop-parallax-sc-caption">%s</div></div>%s</section>', $atts['cappos'], do_shortcode($content), $lblink);
+		$out = sprintf('<script>
+		jQuery(document).ready(function(){
+
+		   		jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s .aesop-parallax-sc-img\').parallax({
+		    		speed: %s
+		    	});
+		});
+		</script>',$hash,$atts['speed']);
+		$out .= sprintf('<section class="aesop-parallax-sc aesop-parallax-sc-%s" style="height:%s;">', $hash, $atts['height']);
+
+
+		$out .= sprintf('%s<div class="aesop-parallax-sc-caption-wrap %s"><div class="aesop-parallax-sc-caption">%s</div></div>%s<div class="aesop-parallax-sc-img" %s></div></section>', $floater, $atts['cappos'], do_shortcode($content), $lblink, $style);
 
 		return $out;
 	}

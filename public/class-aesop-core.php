@@ -75,7 +75,6 @@ class Aesop_Core {
 
 		add_action('init', array($this,'register_shortcodes'));
 		add_action('wp_enqueue_scripts', array($this,'scripts'));
-		add_action('wp_footer',array($this,'skrollr_init'), 99);
 	}
 
 	/**
@@ -279,12 +278,6 @@ class Aesop_Core {
 			add_shortcode ( 'aesop_'.$shortcode, 'aesop_'.$shortcode.'_shortcode' );
 		}
 
-	}
-
-	public function skrollr_init(){
-		?><script>
-			var s = skrollr.init();
-		</script><?php
 	}
 
 
