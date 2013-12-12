@@ -8,7 +8,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 			'img' 				=> 'http://placekitten.com/1200/700',
 			'height' 			=> 500,
 			'parallaxbg' 		=> 'on',
-			'parallaxspeed'		=> 0.3,
+			'parallaxspeed'		=> 0.15,
 			'floater' 			=> false,
 			'floatermedia' 		=> '',
 			'floaterposition' 	=> 'right',
@@ -30,7 +30,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$floater 	= 'on' == $atts['floater'] ? sprintf('<div class="aesop-parallax-sc-floater floater-%s" data-top-bottom="margin-top:20px;" data-bottom-top="margin-top:%spx;">%s</div>', $atts['floaterposition'], $floaterdestination, $atts['floatermedia']) : false;
 
 
-		$out = sprintf('<section class="aesop-component aesop-parallax-component">');
+		$out = sprintf('<section class="aesop-component aesop-parallax-component" style="height:%spx;">',$atts['height']);
 
 		// Call Parallax Method if Set
 		if ('on' == $atts['parallaxbg']) {
