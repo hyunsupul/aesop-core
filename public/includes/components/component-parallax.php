@@ -7,7 +7,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$defaults = array(
 			'img' => 'http://placekitten.com/1200/700',
 			'height' => 500,
-			'speed'	=> 0.2,
+			'speed'	=> 0.3,
 			'floater' => false,
 			'floatermedia' => '',
 			'floaterposition' => 'right',
