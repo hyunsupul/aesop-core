@@ -4,7 +4,7 @@ class aiCoreMenuCleanup {
 
 	public function __construct(){
 		add_action('admin_init', array($this,'remove_theme_edit'));
-		//add_action( 'admin_menu', array($this,'remove_menus'));
+		add_action( 'admin_menu', array($this,'remove_menus'));
 	}
 
 	/*

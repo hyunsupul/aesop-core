@@ -27,21 +27,25 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
 		$style 		= sprintf('style="background-image:url(\'%s\');background-size:cover;"',$atts['img'],$atts['height']);
 		$lblink 	= 'on' == $atts['lightbox'] ? sprintf('<a class="aesop-lb-link swipebox" rel="lightbox" title="%s" href="%s"><i class="sorencon sorencon-search-plus">+</i></a>',do_shortcode($content),$atts['img']) : false;
-		$floater 	= 'on' == $atts['floater'] ? sprintf('<div class="aesop-parallax-sc-floater floater-%s" data-top-bottom="margin-top:20px;" data-bottom-top="margin-top:%spx;">%s</div>', $atts['floaterposition'], $floaterdestination, $atts['floatermedia']) : false;
+		$floater 	= 'on' == $atts['floater'] ? sprintf('<div class="aesop-parallax-sc-floater floater-%s" data-top-bottom="transform: translate3d(0px, 0px, 0px);" data-bottom-top="transform: translate3d(0px, %spx, 0px);">%s</div>', $atts['floaterposition'], $atts['height'], $atts['floatermedia']) : false;
 
 
 		$out = sprintf('<section class="aesop-component aesop-parallax-component" style="height:%spx;">',$atts['height']);
 
 		// Call Parallax Method if Set
 		if ('on' == $atts['parallaxbg']) {
+
 			$out .= sprintf('
 				<script>
-			jQuery(document).ready(function(){
-		   		jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s .aesop-parallax-sc-img\').parallax({
-		    		speed: %s
-		    	});
-			});
-			</script>',$hash,$atts['parallaxspeed']);
+				jQuery(document).ready(function(){
+			   		jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s .aesop-parallax-sc-img\').parallax({
+			    		speed: %s
+			    	});
+			        var viewport = jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s\').outerHeight();
+
+        			jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s .aesop-parallax-sc-img.is-parallax\').css({\'height\': viewport * 1.65});
+				});
+			</script>',$hash,$atts['parallaxspeed'], $hash, $hash);
 		}
 
 		$out 	.= sprintf('<div class="aesop-parallax-sc aesop-parallax-sc-%s" style="height:%spx;">

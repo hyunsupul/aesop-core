@@ -32,7 +32,7 @@
             speed        : 0.15
         }, options);
 
-        // Iterate over each object in collection
+
         return this.each( function() {
 
         	// Save a reference to the element
@@ -56,6 +56,8 @@
 
         	});
         });
+
+
     }
 }(jQuery));
 
