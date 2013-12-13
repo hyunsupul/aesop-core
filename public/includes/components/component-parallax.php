@@ -18,7 +18,6 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 		$atts = apply_filters('aesop_parallax_defaults',shortcode_atts($defaults, $atts));
 
-		$out = '';
 		$hash = rand();
 
 		// final destination of the floater is half the height of the viewport that's set
@@ -42,7 +41,6 @@ if (!function_exists('aesop_parallax_shortcode')){
 			    		speed: %s
 			    	});
 			        var viewport = jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s\').outerHeight();
-
         			jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s .aesop-parallax-sc-img.is-parallax\').css({\'height\': viewport * 1.65});
 				});
 			</script>',$hash,$atts['parallaxspeed'], $hash, $hash);

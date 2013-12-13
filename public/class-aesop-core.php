@@ -66,6 +66,7 @@ class Aesop_Core {
 		//defines
 		require_once(AI_CORE_DIR.'admin/includes/available.php');
 		require_once( AI_CORE_DIR.'public/includes/components/component-parallax.php' );
+		require_once( AI_CORE_DIR.'public/includes/components/component-map.php' );
 		
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
