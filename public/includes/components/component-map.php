@@ -53,9 +53,7 @@ class AesopMapComponent {
 					attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 				}).addTo(map);
 
-				L.marker([51.48, -0.09]).addTo(map).bindPopup("Sup").openPopup();
-
-				<?php for($i=1;$i<=3;$i++){
+				<?php 
 
 					foreach($markers as $marker):
 
@@ -68,7 +66,6 @@ class AesopMapComponent {
 						?> L.marker([<?php echo $loc;?>]).addTo(map).bindPopup("<?php echo $text;?>").openPopup(); <?php
 
 					endforeach;
-				}
 				?>
 			</script>
 
@@ -87,7 +84,6 @@ class AesopMapComponent {
 				'id' 			=> 'aesop_map_component_locations',
 				'name' 			=> __('Map Locations', 'aesop-core'),
 				'type' 			=> 'group',
-				'cols' 			=> 8,
 				'repeatable'     => true,
 				'repeatable_max' => 20,
 				'sortable'		=> true,
@@ -95,17 +91,20 @@ class AesopMapComponent {
 					array(
 						'id' 	=> 'lat',
 						'name' 	=> 'Latitude',
-						'type' 	=> 'text'
+						'type' 	=> 'text',
+						'cols'	=> 4
 					),
 					array(
 						'id' 	=> 'long',
 						'name' 	=> 'Longitude',
-						'type' 	=> 'text'
+						'type' 	=> 'text',
+						'cols'	=> 4
 					),
 					array(
 						'id' 	=> 'content',
 						'name' 	=> 'Marker Text',
-						'type' 	=> 'text'
+						'type' 	=> 'text',
+						'cols'	=> 4
 					)
 				)
 			)
