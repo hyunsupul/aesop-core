@@ -70,7 +70,6 @@ class Aesop_Core_Admin {
         if( !class_exists( 'CMB_Meta_Box' ) ) {
     		require_once( AI_CORE_DIR.'/admin/includes/custom-meta-boxes/custom-meta-boxes.php' );
     	}
-		require_once( AI_CORE_DIR.'admin/includes/aesopmeta.php' );
 
 		/*
 		 * Call $plugin_slug from public plugin class.

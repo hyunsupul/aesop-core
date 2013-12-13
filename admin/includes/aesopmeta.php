@@ -19,7 +19,27 @@ function ba_aesop_metaboxes( array $meta_boxes ) {
 			'name'           => 'Insert Gallery Shortcode',
 			'type'           => 'text',
 		),
-
+		array(
+			'id' 			=> 'flacker_extended_meta_opts',
+			'name' 			=> __('Additional Meta', 'flacker'),
+			'type' 			=> 'group',
+			'cols' 			=> 8,
+			'repeatable'     => true,
+			'repeatable_max' => 20,
+			'sortable'		=> true,
+			'fields' 		=> array(
+				array(
+					'id' 	=> 'flacker_extended_meta_prop',
+					'name' 	=> 'Name',
+					'type' 	=> 'text'
+				),
+				array(
+					'id' 	=> 'flacker_extended_meta_value',
+					'name' 	=> 'Value',
+					'type' 	=> 'text'
+				)
+			)
+		)
 	);
 
 	$meta_boxes[] = array(

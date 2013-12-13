@@ -1,7 +1,6 @@
 <?php
 
-if (!function_exists('aesop_map_shortcode')){
-
+if (!function_exists('aesop_map_shortcode')) {
 	function aesop_map_shortcode($atts, $content = null) {
 
 		$defaults = array(
@@ -10,7 +9,7 @@ if (!function_exists('aesop_map_shortcode')){
 
 		wp_enqueue_script('aesop-map-script',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js');
 		wp_enqueue_style('aesop-map-style',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.css', AI_CORE_VERSION, true);
-		
+
 		$atts = apply_filters('aesop_map_defaults',shortcode_atts($defaults, $atts));
 
 		$hash = rand();
@@ -23,9 +22,14 @@ if (!function_exists('aesop_map_shortcode')){
 
 		<?php return ob_get_clean();
 	}
-}
 
-if (!function_exists('aesop_map_loader')){
+}
+class AesopMapComponent {
+
+	public function __construct(){
+		add_action('wp_footer', array($this,'aesop_map_loader'),99);
+		add_filter( 'cmb_meta_boxes', array($this,'aesop_map_meta') );
+	}
 
 	function aesop_map_loader(){
 
@@ -53,5 +57,42 @@ if (!function_exists('aesop_map_loader')){
 
 		<?php }
 	}
-	add_action('wp_footer', 'aesop_map_loader',99);
+
+	function aesop_map_meta( array $meta_boxes ) {
+
+		$opts = array(
+			array(
+				'id' 			=> 'aesop_map_component_locations',
+				'name' 			=> __('Map Locations', 'aesop-core'),
+				'type' 			=> 'group',
+				'cols' 			=> 8,
+				'repeatable'     => true,
+				'repeatable_max' => 20,
+				'sortable'		=> true,
+				'fields' 		=> array(
+					array(
+						'id' 	=> 'flacker_extended_meta_prop',
+						'name' 	=> 'Coordinates',
+						'type' 	=> 'text'
+					),
+					array(
+						'id' 	=> 'flacker_extended_meta_value',
+						'name' 	=> 'Value',
+						'type' 	=> 'text'
+					)
+				)
+			)
+		);
+
+		$meta_boxes[] = array(
+			'title' => __('Map Component Locations', 'aesop-core'),
+			'pages' => 'post',
+			'fields' => $opts
+		);
+
+		return $meta_boxes;
+
+	}
+
 }
+new AesopMapComponent;
