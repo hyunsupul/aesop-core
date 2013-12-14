@@ -12,6 +12,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 			'floater' 			=> false,
 			'floatermedia' 		=> '',
 			'floaterposition' 	=> 'right',
+			'floaterdirection'	=> 'up',
 			'captionposition' 	=> 'bottom-left',
 			'lightbox' 			=> false
 		);
@@ -25,8 +26,13 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
 		$style 		= sprintf('style="background-image:url(\'%s\');background-size:cover;"',$atts['img'],$atts['height']);
+
+		$animateup = sprintf('data-top-bottom="transform: translate3d(0px, 0px, 0px);" data-bottom-top="transform: translate3d(0px, %spx, 0px);"',$atts['height']);
+		$animatedown = sprintf('data-top-bottom="transform: translate3d(0px, %spx, 0px);" data-bottom-top="transform: translate3d(0px, 0px, 0px);"',$atts['height']);
+
+		$itemanimate = 'up' == $atts['floaterdirection'] ? $animateup : $animatedown;
 		$lblink 	= 'on' == $atts['lightbox'] ? sprintf('<a class="aesop-lb-link swipebox" rel="lightbox" title="%s" href="%s"><i class="sorencon sorencon-search-plus">+</i></a>',do_shortcode($content),$atts['img']) : false;
-		$floater 	= 'on' == $atts['floater'] ? sprintf('<div class="aesop-parallax-sc-floater floater-%s" data-top-bottom="transform: translate3d(0px, 0px, 0px);" data-bottom-top="transform: translate3d(0px, %spx, 0px);">%s</div>', $atts['floaterposition'], $atts['height'], $atts['floatermedia']) : false;
+		$floater 	= 'on' == $atts['floater'] ? sprintf('<div class="aesop-parallax-sc-floater floater-%s" %s>%s</div>', $atts['floaterposition'], $itemanimate , $atts['floatermedia']) : false;
 
 
 		$out = sprintf('<section class="aesop-component aesop-parallax-component" style="height:%spx;">',$atts['height']);
