@@ -49,10 +49,19 @@ if(!function_exists('aesop_shortcodes')){
 					'floaterposition' => array(
 						'values' 	=> array(
 							__('right', 'aesop-core'),
-							__('left', 'aesop-core')
+							__('left', 'aesop-core'),
+							__('center', 'aesop-core')
 						),
 						'default' 	=> 'right',
 						'desc' 		=> __('Position of Floater', 'aesop-core' )
+					),
+					'floaterdirection' => array(
+						'values' 	=> array(
+							__('up', 'aesop-core'),
+							__('down', 'aesop-core')
+						),
+						'default' 	=> 'up',
+						'desc' 		=> __('Parallax Direction of Floater', 'aesop-core' )
 					),
 					'captionposition' => array(
 						'values' 	=> array(
