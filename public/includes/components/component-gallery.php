@@ -4,12 +4,7 @@
  	* Class removes the core wordpess shortcode, and adds it back using our own custom attributes
  	*
  	* @since    1.0.0
- 	* @TODO   right now this is using a regex to get the ids to parse the shortcode to ge tthe atts. the problem is that user may have multiple
- 	*         galleries. next, need to use the include attribute with the id's .
- 	*         this means somehow swapping id attribute for includes
 */
-
-
 
 class AesopCoreGallery {
 
@@ -72,8 +67,7 @@ class AesopCoreGallery {
 		// do cusotm atts
 		$defaults = array(
 			'id'	=> '',
-			'a_type' => '',
-			'width' => '100%'
+			'a_type' => ''
 		);
 		$atts = shortcode_atts($defaults, $atts);
 
@@ -86,6 +80,7 @@ class AesopCoreGallery {
 		// set gallery shortcode image id's
 		$ids = $shortcode_args["ids"];
 		$type = $shortcode_args['a_type'];
+		$width = get_post_meta($atts['id'],'aesop_gallery_width', true);
 
 
 		// setup some args so we can pull only images from this content
@@ -107,7 +102,7 @@ class AesopCoreGallery {
 			?><section class="aesop-component aesop-gallery-component"><?php
 
 				if ('thumbnail' == $type) {
-					$this->aesop_thumb_gallery($atts, $images);
+					$this->aesop_thumb_gallery($atts, $images, $width);
 				} else {
 					$this->aesop_grid_gallery($atts,$images);
 				}
@@ -126,9 +121,9 @@ class AesopCoreGallery {
 	 	*
 	 	* @since    1.0.0
 	*/
-	function aesop_thumb_gallery($atts, $images){
+	function aesop_thumb_gallery($atts, $images, $width){
 
-		?><div id="aesop-thumb-gallery-<?php echo $atts['id'];?>" class="fotorama" data-width="<?php echo $atts['width'];?>" data-keyboard="true" data-nav="thumbs" data-allow-full-screen="native" data-click="true"><?php
+		?><div id="aesop-thumb-gallery-<?php echo $atts['id'];?>" class="fotorama" data-width="<?php echo $width;?>" data-keyboard="true" data-nav="thumbs" data-allow-full-screen="native" data-click="true"><?php
 
 			foreach ($images as $image):
 

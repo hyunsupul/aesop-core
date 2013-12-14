@@ -11,6 +11,7 @@ class AesopGalleryComponentAdmin {
        	add_action('init',array($this,'do_type'));
        	add_filter('manage_ai_galleries_posts_columns', array($this,'col_head'));
 		add_action('manage_ai_galleries_posts_custom_column', array($this,'col_content'), 10, 2);
+		add_filter( 'cmb_meta_boxes', array($this,'aesop_gallery_meta' ));
 	}
 
 	function do_type() {
@@ -46,6 +47,7 @@ class AesopGalleryComponentAdmin {
 		register_post_type( 'ai_galleries', $args );
 
 	}
+
 	function col_head($defaults) {
 	    $defaults['aesop_gallery'] = __('Gallery Shortcode','aesop-core');
 	    return $defaults;
@@ -56,5 +58,27 @@ class AesopGalleryComponentAdmin {
 	        printf('[aesop_gallery id="%s"]',$post_ID);
 	    }
 	}
+
+	function aesop_gallery_meta( array $meta_boxes ) {
+
+		$opts = array(
+			array(
+				'id'             => 'aesop_gallery_width',
+				'name'           => 'Gallery Width',
+				'type'           => 'text',
+			),
+		);
+
+		$meta_boxes[] = array(
+			'title' => __('Gallery Options', 'aesop-core'),
+			'pages' => array('ai_galleries'),
+			'fields' => $opts
+		);
+
+		return $meta_boxes;
+
+	}
+
+
 }
 new AesopGalleryComponentAdmin;
