@@ -1,16 +1,18 @@
 <?php
 /**
  	* Creates a multipurpose gallery that can be shown as thumbnail, grid, gridset, and with lightbox and captions
+ 	* FOTORAMA
  	*
  	* @since    1.0.0
 */
 class AesopCoreGallery {
 
-   	public function __construct(){
+   	function __construct(){
 
    		add_action('print_media_templates',  array($this,'aesop_gallery_opts'));
-       	remove_shortcode('gallery', array($this,'gallery_shortcode'));
-        add_shortcode('gallery',        array($this,'aesop_post_gallery'));
+
+       	remove_shortcode('gallery', 		array($this,'gallery_shortcode'));
+        add_shortcode('gallery',        	array($this,'aesop_post_gallery'));
 
     }
 
@@ -45,10 +47,9 @@ class AesopCoreGallery {
 
 		     	 // merge default gallery settings template with yours
 		      	wp.media.view.Settings.Gallery = wp.media.view.Settings.Gallery.extend({
-		        template: function(view){
-		          	return wp.media.template('gallery-settings')(view)
-		               	+ wp.media.template('aesop-gallery-extended-opts')(view);
-		        }
+			        template: function(view){
+			          	return wp.media.template('gallery-settings')(view) + wp.media.template('aesop-gallery-extended-opts')(view);
+			        }
 		      	});
 
 		    });
@@ -61,7 +62,7 @@ class AesopCoreGallery {
 	 	*
 	 	* @since    1.0.0
 	*/
-	public static function aesop_post_gallery($atts, $content = null){
+	function aesop_post_gallery($atts, $content = null){
 
 		// get the post via ID so we can access data and print it within an array to fetch
 		global $post;
@@ -76,7 +77,8 @@ class AesopCoreGallery {
 
 		// do cusotm atts
 		$defaults = array(
-			'type' => 'thumbnail'
+			'type' => 'thumbnail',
+			'width' => '100%'
 		);
 		$atts = shortcode_atts($defaults, $atts);
 
@@ -94,38 +96,37 @@ class AesopCoreGallery {
 		// fetch the image id's that the user has within the gallery shortcode
 		$images = get_posts($args);
 
+		ob_start();
 
-		// only run if theres imges
-		if ($images) { ?>
-			<!-- EDD Galleries SC Instantiation -->
-			<script>
-				jQuery(document).ready(function(){
-
-				});
-			</script><?php
+		if ('thumbnail' == $atts['type']) {
+			$this->aesop_thumb_gallery($images, $atts);
 		}
 
-		// draw deck
-		$out = sprintf('<div class="flacker-post-gallery-wrap row">');
-
-			$out .= sprintf('<div id="flacker-post-gallery-deck-%s" class="flacker-post-gallery-deck col-sm-9"><ul class="slides unstyled clearfix" itemscope itemtype="http://schema.org/ImageGallery">',$id);
-
-
-						foreach ($images as $image):
-
-                            $img  = wp_get_attachment_url($image->ID, 'full', false,'');
-                            $alt  = get_post_meta($image->ID, '_wp_attachment_image_alt', true);
-                            $out .= apply_filters('aesop_galleries_output', sprintf('<li><img src="%s" alt="%s" itemprop="image" ></li>',$img,$alt));
-
-						endforeach;
-
-			$out .= sprintf('</ul></div></div>');
-
-		return $out;
+		return ob_get_clean();
 
 	}
 
-	public static function gallery_match( $regex, $content ) {
+	function aesop_thumb_gallery($images, $atts){
+
+		?><div class="fotorama" data-width="<?php echo $atts['width'];?>" data-keyboard="true" data-nav="thumbs" data-allow-full-screen="native" data-click="true"><?php
+
+			foreach ($images as $image):
+
+                $full    =  wp_get_attachment_url($image->ID, 'full', false,'');
+                $alt     =  get_post_meta($image->ID, '_wp_attachment_image_alt', true);
+                $caption =  $image->post_excerpt;
+                $desc    =  $image->post_content;
+
+               ?><img src="<?php echo $full;?>" data-caption="<?php echo $caption;?>" alt="<?php echo $alt;?>"><?php
+
+
+			endforeach;
+
+		?></div><?php
+	}
+
+
+	function gallery_match( $regex, $content ) {
         preg_match($regex, $content, $matches);
         return $matches[1];
     }

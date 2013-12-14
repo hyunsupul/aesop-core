@@ -66,7 +66,7 @@ class Aesop_Core {
 		//include avail modules
 		require_once( AI_CORE_DIR.'admin/includes/available.php');
 		require_once( AI_CORE_DIR.'public/includes/components/component-parallax.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-map.php' );
+		//require_once( AI_CORE_DIR.'public/includes/components/component-map.php' );
 		require_once( AI_CORE_DIR.'public/includes/components/component-image.php' );
 		require_once( AI_CORE_DIR.'public/includes/components/component-video.php' );
 		require_once( AI_CORE_DIR.'public/includes/components/component-gallery.php' );

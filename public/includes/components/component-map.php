@@ -36,9 +36,9 @@ class AesopMapComponent {
 		global $post;
 
 		$markers = get_post_meta(get_the_ID(),'aesop_map_component_locations', false);
-		$start = get_post_meta($post->ID,'aesop_map_start', true);
+		$start = get_post_meta(get_the_ID(),'aesop_map_start', true);
 
-		if( has_shortcode( $post->post_content, 'aesop_map') )  { ?>
+		if( has_shortcode( get_the_content(), 'aesop_map') )  { ?>
 			<script>
 
 				var map = L.map('map',{
