@@ -14,6 +14,8 @@ if (!function_exists('aesop_image_shortcode')){
 
 		$hash = rand();
 
+		$out = '';
+
 		//$shcode = '[caption id="' . $id . '" align="align' . $align        . '" width="' . $width . '"]' . $html . ' ' . $caption . '[/caption]';
 
 		return apply_filters('aesop_image_output',$out);
