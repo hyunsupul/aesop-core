@@ -29,7 +29,6 @@ class AesopMapComponent {
 
 	public function __construct(){
 		add_action('wp_footer', array($this,'aesop_map_loader'),99);
-		add_filter( 'cmb_meta_boxes', array($this,'aesop_map_meta') );
 	}
 
 	function aesop_map_loader(){
@@ -70,54 +69,6 @@ class AesopMapComponent {
 			</script>
 
 		<?php }
-	}
-
-	function aesop_map_meta( array $meta_boxes ) {
-
-		$opts = array(
-			array(
-				'id'			=> 'aesop_map_start',
-				'name'			=> __('Starting Coordinates', 'aesop-core'),
-				'type'			=> 'text',
-			),
-			array(
-				'id' 			=> 'aesop_map_component_locations',
-				'name' 			=> __('Map Locations', 'aesop-core'),
-				'type' 			=> 'group',
-				'repeatable'     => true,
-				'repeatable_max' => 20,
-				'sortable'		=> true,
-				'fields' 		=> array(
-					array(
-						'id' 	=> 'lat',
-						'name' 	=> 'Latitude',
-						'type' 	=> 'text',
-						'cols'	=> 4
-					),
-					array(
-						'id' 	=> 'long',
-						'name' 	=> 'Longitude',
-						'type' 	=> 'text',
-						'cols'	=> 4
-					),
-					array(
-						'id' 	=> 'content',
-						'name' 	=> 'Marker Text',
-						'type' 	=> 'text',
-						'cols'	=> 4
-					)
-				)
-			)
-		);
-
-		$meta_boxes[] = array(
-			'title' => __('Map Component Locations', 'aesop-core'),
-			'pages' => 'post',
-			'fields' => $opts
-		);
-
-		return $meta_boxes;
-
 	}
 
 }

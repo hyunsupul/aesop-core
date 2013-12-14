@@ -1437,3 +1437,15 @@ class CMB_Group_Field extends CMB_Field {
 	}
 
 }
+
+class Email_Field extends CMB_Field {
+
+    public function html() {
+        ?>
+        <p>
+            <input type="email" name="<?php echo $this->name ?>" value="<?php echo esc_attr( $this->get_value() ) ?>" />
+        </p>
+        <?php
+    }
+
+}
