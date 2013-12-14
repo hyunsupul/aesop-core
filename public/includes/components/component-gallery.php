@@ -1,7 +1,7 @@
 <?php
 /**
  	* Creates a multipurpose gallery that can be shown as thumbnail, grid, gridset, and with lightbox and captions
- 	* FOTORAMA
+ 	* Class removes the core wordpess shortcode, and adds it back using our own custom attributes
  	*
  	* @since    1.0.0
 */
@@ -29,8 +29,8 @@ class AesopCoreGallery {
 		      	<span><?php _e('Type','aesop-core'); ?></span>
 		      	<select data-setting="a_type">
 		      		<option value="">- Select -</option>
-		        	<option value="grid">Grid</option>        
-		        	<option value="thumbnail">Thumbnail</option>        
+		        	<option value="grid">Grid</option>
+		        	<option value="thumbnail">Thumbnail</option>
 		      	</select>
 		    </label>
 	  	</script>
@@ -113,7 +113,11 @@ class AesopCoreGallery {
 
 	}
 
-	// draw thumbnail gallery
+    /**
+	 	* Draws a thumbnail gallery using fotorama
+	 	*
+	 	* @since    1.0.0
+	*/
 	function aesop_thumb_gallery($galleryid, $images, $atts){
 
 		?><div id="aesop-thumb-gallery-<?php echo $galleryid;?>" class="fotorama" data-width="<?php echo $atts['width'];?>" data-keyboard="true" data-nav="thumbs" data-allow-full-screen="native" data-click="true"><?php
@@ -132,7 +136,11 @@ class AesopCoreGallery {
 		?></div><?php
 	}
 
-	// draw grid gallery
+    /**
+	 	* Draws a grid style gallery using wookmark
+	 	*
+	 	* @since    1.0.0
+	*/
 	function aesop_grid_gallery($galleryid, $images, $atts, $id){
 
 		?>
@@ -150,8 +158,6 @@ class AesopCoreGallery {
 			    });
 			});
 		</script>
-
-
 		<div id="aesop-grid-gallery-<?php echo $galleryid;?>" class="aesop-grid-gallery aesop-grid-gallery-<?php echo $id;?>"><?php
 
 			foreach ($images as $image):
@@ -168,6 +174,14 @@ class AesopCoreGallery {
 		?></div><?php
 	}
 
+    /**
+	 	* Regex helper used in gallery shortcode to extra ids
+	 	*
+	 	* @since    1.0.0
+	 	* @return matches
+	 	* @param content - content being searched
+	 	* @param regex - regex being run
+	*/
 	function gallery_match( $regex, $content ) {
         preg_match($regex, $content, $matches);
         return $matches[1];
