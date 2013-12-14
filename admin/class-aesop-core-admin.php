@@ -60,6 +60,7 @@ class Aesop_Core_Admin {
 		/* if( ! is_super_admin() ) {
 			return;
 		} */
+		require_once( AI_CORE_DIR.'admin/includes/nextpagebtn.php' );
 		require_once( AI_CORE_DIR.'admin/includes/rename.php' );
 		require_once( AI_CORE_DIR.'admin/includes/welcome.php' );
 		require_once( AI_CORE_DIR.'admin/includes/dashboard.php' );
