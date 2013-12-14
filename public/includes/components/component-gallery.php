@@ -68,6 +68,7 @@ class AesopCoreGallery {
 		global $post;
 
         $id                 = $post->ID;
+        $galleryid			= rand();
 
 		// Get the gallery shortcode out of the post content, and parse the ID's in teh gallery shortcode
 		$shortcode_args = shortcode_parse_atts(self::gallery_match('/\[gallery\s(.*)\]/isU', $post->post_content));
@@ -101,9 +102,9 @@ class AesopCoreGallery {
 			?><section class="aesop-component aesop-gallery-component"><?php
 
 				if ('thumbnail' == $atts['a_type']) {
-					$this->aesop_thumb_gallery($images, $atts);
+					$this->aesop_thumb_gallery($galleryid, $images, $atts);
 				} else {
-					$this->aesop_grid_gallery($images,$atts, $id);
+					$this->aesop_grid_gallery($galleryid, $images,$atts, $id);
 				}
 
 			?></section><?php
@@ -113,9 +114,9 @@ class AesopCoreGallery {
 	}
 
 	// draw thumbnail gallery
-	function aesop_thumb_gallery($images, $atts){
+	function aesop_thumb_gallery($galleryid, $images, $atts){
 
-		?><div class="fotorama" data-width="<?php echo $atts['width'];?>" data-keyboard="true" data-nav="thumbs" data-allow-full-screen="native" data-click="true"><?php
+		?><div id="aesop-thumb-gallery-<?php echo $galleryid;?>" class="fotorama" data-width="<?php echo $atts['width'];?>" data-keyboard="true" data-nav="thumbs" data-allow-full-screen="native" data-click="true"><?php
 
 			foreach ($images as $image):
 
@@ -132,26 +133,26 @@ class AesopCoreGallery {
 	}
 
 	// draw grid gallery
-	function aesop_grid_gallery($images, $atts, $id){
+	function aesop_grid_gallery($galleryid, $images, $atts, $id){
 
 		?>
 		<script>
 			jQuery(document).ready(function(){
-			    jQuery('.aesop-grid-gallery.aesop-grid-gallery-<?php echo $id;?>').imagesLoaded(function() {
+			    jQuery('#aesop-grid-gallery-<?php echo $galleryid;?>').imagesLoaded(function() {
 			        var options = {
 			          	autoResize: true,
-			          	container: jQuery('.aesop-grid-gallery.aesop-grid-gallery-<?php echo $id;?>'),
+			          	container: jQuery('#aesop-grid-gallery-<?php echo $galleryid;?>'),
 			          	offset: 5,
-			          	flexibleWidth: 200
+			          	flexibleWidth: 400
 			        };
-			        var handler = jQuery('.aesop-grid-gallery.aesop-grid-gallery-<?php echo $id;?> img');
+			        var handler = jQuery('#aesop-grid-gallery-<?php echo $galleryid;?> img');
 			        jQuery(handler).wookmark(options);
 			    });
 			});
 		</script>
 
 
-		<div class="aesop-grid-gallery aesop-grid-gallery-<?php echo $id;?>"><?php
+		<div id="aesop-grid-gallery-<?php echo $galleryid;?>" class="aesop-grid-gallery aesop-grid-gallery-<?php echo $id;?>"><?php
 
 			foreach ($images as $image):
 
