@@ -1,6 +1,10 @@
 <?php
 
-// popup character modal thingee
+/**
+ 	* Creates a multipurpose gallery that can be shown as thumbnail, grid, gridset, and with lightbox and captions
+ 	*
+ 	* @since    1.0.0
+*/
 if (!function_exists('aesop_gallery_shortcode')){
 
 	function aesop_gallery_shortcode($atts, $content = null) {

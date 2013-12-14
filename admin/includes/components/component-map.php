@@ -1,5 +1,9 @@
 <?php
-
+/**
+ 	* Filters custom meta box class to add cusotm meta to map component
+ 	*
+ 	* @since    1.0.0
+*/
 class AesopMapComponentAdmin {
 
 	public function __construct(){

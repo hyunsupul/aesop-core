@@ -1,6 +1,10 @@
 <?php
 
-// popup character modal thingee
+/**
+ 	* Responsive video component with full width settings
+ 	*
+ 	* @since    1.0.0
+*/
 if (!function_exists('aesop_video_shortcode')){
 
 	function aesop_video_shortcode($atts, $content = null) {

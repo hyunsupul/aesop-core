@@ -1,5 +1,11 @@
 <?php
 
+/**
+ 	* Creates a parallax component with background image, caption, lightbox, and optional "floater" item which can also be parallax, with multiple position and directions.
+ 	*
+ 	* @since    1.0.0
+*/
+
 if (!function_exists('aesop_parallax_shortcode')){
 
 	function aesop_parallax_shortcode($atts, $content = null) {

@@ -1,6 +1,10 @@
 <?php
 
-// popup character modal thingee
+/**
+ 	* Creates a character element that when clicked will open character into in modal. Can link to other characters.
+ 	*
+ 	* @since    1.0.0
+*/
 if (!function_exists('aesop_character_shortcode')){
 
 	function aesop_character_shortcode($atts, $content = null) {

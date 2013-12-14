@@ -1,5 +1,9 @@
 <?php
-
+/**
+ 	* Essentially a clone of the image gallery shortcode in wordpress core.
+ 	*
+ 	* @since    1.0.0
+*/
 if (!function_exists('aesop_image_shortcode')){
 
 	function aesop_image_shortcode($atts, $content = null) {
