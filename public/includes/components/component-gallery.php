@@ -4,7 +4,13 @@
  	* Class removes the core wordpess shortcode, and adds it back using our own custom attributes
  	*
  	* @since    1.0.0
+ 	* @TODO   right now this is using a regex to get the ids to parse the shortcode to ge tthe atts. the problem is that user may have multiple
+ 	*         galleries. next, need to use the include attribute with the id's .
+ 	*         this means somehow swapping id attribute for includes
 */
+
+
+
 class AesopCoreGallery {
 
    	function __construct(){
@@ -97,6 +103,7 @@ class AesopCoreGallery {
 		// fetch the image id's that the user has within the gallery shortcode
 		$images = get_posts($args);
 
+
 		ob_start();
 
 			?><section class="aesop-component aesop-gallery-component"><?php
@@ -109,7 +116,10 @@ class AesopCoreGallery {
 
 			?></section><?php
 
+
+
 		return ob_get_clean();
+
 
 	}
 
