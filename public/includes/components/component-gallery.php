@@ -58,7 +58,7 @@ class AesopCoreGallery {
 	<?php }
 
     /**
-	 	* Overrides core wordpress gallery
+	 	* Overrides core wordpress gallery and provides grid / thumbnail type galleries
 	 	*
 	 	* @since    1.0.0
 	*/
@@ -77,7 +77,7 @@ class AesopCoreGallery {
 
 		// do cusotm atts
 		$defaults = array(
-			'type' => 'thumbnail',
+			'a_type' => '',
 			'width' => '100%'
 		);
 		$atts = shortcode_atts($defaults, $atts);
@@ -98,14 +98,21 @@ class AesopCoreGallery {
 
 		ob_start();
 
-		if ('thumbnail' == $atts['type']) {
-			$this->aesop_thumb_gallery($images, $atts);
-		}
+			?><section class="aesop-component aesop-gallery-component"><?php
+
+				if ('thumbnail' == $atts['a_type']) {
+					$this->aesop_thumb_gallery($images, $atts);
+				} else {
+					$this->aesop_grid_gallery($images,$atts, $id);
+				}
+
+			?></section><?php
 
 		return ob_get_clean();
 
 	}
 
+	// draw thumbnail gallery
 	function aesop_thumb_gallery($images, $atts){
 
 		?><div class="fotorama" data-width="<?php echo $atts['width'];?>" data-keyboard="true" data-nav="thumbs" data-allow-full-screen="native" data-click="true"><?php
@@ -119,12 +126,46 @@ class AesopCoreGallery {
 
                ?><img src="<?php echo $full;?>" data-caption="<?php echo $caption;?>" alt="<?php echo $alt;?>"><?php
 
-
 			endforeach;
 
 		?></div><?php
 	}
 
+	// draw grid gallery
+	function aesop_grid_gallery($images, $atts, $id){
+
+		?>
+		<script>
+			jQuery(document).ready(function(){
+			    jQuery('.aesop-grid-gallery.aesop-grid-gallery-<?php echo $id;?>').imagesLoaded(function() {
+			        var options = {
+			          	autoResize: true,
+			          	container: jQuery('.aesop-grid-gallery.aesop-grid-gallery-<?php echo $id;?>'),
+			          	offset: 5,
+			          	flexibleWidth: 200
+			        };
+			        var handler = jQuery('.aesop-grid-gallery.aesop-grid-gallery-<?php echo $id;?> img');
+			        jQuery(handler).wookmark(options);
+			    });
+			});
+		</script>
+
+
+		<div class="aesop-grid-gallery aesop-grid-gallery-<?php echo $id;?>"><?php
+
+			foreach ($images as $image):
+
+                $full    =  wp_get_attachment_url($image->ID, 'full', false,'');
+                $alt     =  get_post_meta($image->ID, '_wp_attachment_image_alt', true);
+                $caption =  $image->post_excerpt;
+                $desc    =  $image->post_content;
+
+               ?><img src="<?php echo $full;?>" alt="<?php echo $alt;?>"><?php
+
+			endforeach;
+
+		?></div><?php
+	}
 
 	function gallery_match( $regex, $content ) {
         preg_match($regex, $content, $matches);
