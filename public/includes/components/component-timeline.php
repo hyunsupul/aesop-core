@@ -48,15 +48,19 @@ class AesopTimelineComponent {
 
 		?>
 			<script>
+			jQuery(document).ready(function(){
+
 				jQuery('.aesop-entry-content').scrollNav({
 				    sections: '.aesop-timeline-stop',
 				    arrowKeys: true,
 				    insertTarget: '.aesop-timeline',
-				    insertLocation: 'prependTo',
+				    insertLocation: 'appendTo',
 				    showTopLink: false,
 				    showHeadline: false,
 				    scrollOffset: 80,
 				});
+
+			});
 
 			</script>
 
