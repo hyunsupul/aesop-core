@@ -15,9 +15,25 @@ if (!function_exists('aesop_timeline_stop_shortcode')){
 		$atts = shortcode_atts($defaults, $atts);
 
 		$out = sprintf('<h2 class="aesop-timeline-stop">%s</h2>',$atts['num']);
-		
+
 		return apply_filters('aesop_timeline_output',$out);
 	}
+}
+
+if (!function_exists('aesop_timeline_class_loader')){
+
+	add_action('wp','aesop_timeline_class_loader');
+	function aesop_timeline_class_loader() {
+
+		global $post;
+
+		if( has_shortcode( $post->post_content, 'aesop_timeline_stop') )  { 
+
+			new AesopTimelineComponent;
+
+		}
+	}
+
 }
 
 class AesopTimelineComponent {
@@ -25,18 +41,17 @@ class AesopTimelineComponent {
 	function __construct(){
 		add_action('wp_footer', array($this,'aesop_timeline_loader'),21);
 		add_action('aesop_inside_body_top', array($this,'draw_timeline'));
+		add_filter('body_class',		array($this,'body_class'));
 	}
 
 	function aesop_timeline_loader(){
 
-		global $post;
-
-		if( has_shortcode( $post->post_content, 'aesop_timeline_stop') )  { ?>
+		?>
 			<script>
 				jQuery('.aesop-entry-content').scrollNav({
 				    sections: '.aesop-timeline-stop',
 				    arrowKeys: true,
-				    insertTarget: 'body',
+				    insertTarget: '.aesop-timeline',
 				    insertLocation: 'prependTo',
 				    showTopLink: false,
 				    showHeadline: false,
@@ -45,19 +60,24 @@ class AesopTimelineComponent {
 
 			</script>
 
-		<?php }
+		<?php 
 	}
 
 	function draw_timeline(){
 
-		global $post;
+		?><section class="aesop-timeline"></section><?php
 
-		if( has_shortcode( $post->post_content, 'aesop_timeline_stop') )  {
-			echo 'test';
-		}
+	}
+
+	function body_class($classes) {
+
+	    $classes[] = 'has-timeline';
+
+	    return $classes;
+
 	}
 }
-new AesopTimelineComponent;
+
 
 
 
