@@ -20,7 +20,6 @@ if (!function_exists('aesop_character_shortcode')){
 
 		$atts = apply_filters('aesop_character_defaults',shortcode_atts($defaults, $atts));
 
-
 		$img 	= sprintf('<img class="aesop-character-avatar" src="%s" alt=""', $atts['img']);
 		$name 	= sprintf('<h5 class="aesop-character-title">%s</h5>',$atts['name']);
 		$txt 	= sprintf('<div class="aesop-character-text">%s</div>',do_shortcode($content));
