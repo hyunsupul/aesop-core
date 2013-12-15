@@ -17,3 +17,33 @@ if (!function_exists('aesop_chapter_shortcode')){
 		return $out;
 	}
 }
+
+
+class AesopHeadingComponent {
+
+	function __construct(){
+		add_action('wp_footer', array($this,'aesop_heading_loader'),22);
+	}
+
+	function aesop_heading_loader(){
+
+		global $post;
+
+		if( has_shortcode( $post->post_content, 'aesop_chapter_heading') )  { ?>
+			<script>
+				jQuery('.aesop-entry-content').scrollNav({
+				    sections: '.aesop-chapter-heading',
+				    arrowKeys: true,
+				    insertTarget: 'body',
+				    insertLocation: 'prependTo',
+				    showTopLink: false,
+				    showHeadline: false,
+				    scrollOffset: 80,
+				});
+
+			</script>
+
+		<?php }
+	}
+}
+new AesopHeadingComponent;

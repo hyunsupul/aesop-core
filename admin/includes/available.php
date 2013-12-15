@@ -146,7 +146,7 @@ if(!function_exists('aesop_shortcodes')){
 				'usage' 			=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Wraps your text in magazine style columns.','aesop-core' )
 			),
-			'chapter' 			=> array(
+			'chapter_heading' 			=> array(
 				'name' 				=> __('Chapter Heading', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
@@ -213,14 +213,14 @@ if(!function_exists('aesop_shortcodes')){
 				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Creates a character.','aesop-core' )
 			),
-			'timeline' 				=> array(
-				'name' 				=> __('Timeline', 'aesop-core'),
+			'timeline_stop' 				=> array(
+				'name' 				=> __('Timeline Stop', 'aesop-core'),
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
-					'img' 			=> array(
+					'num' 			=> array(
 						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Character Image', 'aesop-core' )
+						'desc' 		=> __( 'Year', 'aesop-core' )
 					)
 				),
 				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
