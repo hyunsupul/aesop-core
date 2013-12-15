@@ -198,6 +198,20 @@ if(!function_exists('aesop_shortcodes')){
 				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
 				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Creates a video section.','aesop-core' )
+			),
+			'character' 				=> array(
+				'name' 				=> __('Character', 'aesop-core'),
+				'type' 				=> 'wrap',
+				'atts' 				=> array(
+					'img' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Character Image', 'aesop-core' )
+					)
+				),
+				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
+				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
+				'desc' 				=> __( 'Creates a character.','aesop-core' )
 			)
 		);
 

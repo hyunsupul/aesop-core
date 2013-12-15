@@ -18,7 +18,7 @@ if (!function_exists('aesop_map_shortcode')) {
 
 		?>
 
-		<div id="map" style="height:<?php echo $atts['height'];?>px"></div>
+		<div id="aesop-map-component" class="aesop-component aesop-map-component" style="height:<?php echo $atts['height'];?>px"></div>
 
 		<?php return ob_get_clean();
 	}
@@ -41,7 +41,7 @@ class AesopMapComponent {
 		if( has_shortcode( $post->post_content, 'aesop_map') )  { ?>
 			<script>
 
-				var map = L.map('map',{
+				var map = L.map('aesop-map-component',{
 					scrollWheelZoom: false,
 					zoom:12,
 					center: [51.5, -0.09]

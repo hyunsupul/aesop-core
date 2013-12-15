@@ -104,6 +104,38 @@
     }
 }
 
+//character
+.aesop-character-wrap {
+    .clearfix();
+    width:200px;
+
+    &.aesop-character-right {
+        .aesop-character-avatar {
+            float: right;
+        }
+    }
+    &.aesop-character-center {
+        .aesop-character-name {
+            text-align: center;
+        }
+        .aesop-character-avatar {
+            margin:0 auto;
+            text-align: center;
+        }
+    }
+    &.aesop-character-left {
+
+        .aesop-character-name,
+        .aesop-character-avatar {
+            float: left;
+        }
+    }
+    .aesop-character-avatar {
+        border-radius:50%;
+        max-width: 80px;
+    }
+}
+
 /*!
  * Fotorama 4.4.8 | http://fotorama.io/license/
  */
