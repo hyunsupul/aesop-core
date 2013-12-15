@@ -103,7 +103,7 @@ class AesopCoreGallery {
 				if ('thumbnail' == $type) {
 					$this->aesop_thumb_gallery($atts, $images, $width);
 				} else {
-					$this->aesop_grid_gallery($atts,$images);
+					$this->aesop_grid_gallery($atts,$images,$width);
 				}
 
 			?></section><?php
@@ -140,7 +140,7 @@ class AesopCoreGallery {
 	 	*
 	 	* @since    1.0.0
 	*/
-	function aesop_grid_gallery($atts, $images){
+	function aesop_grid_gallery($atts, $images, $width){
 
 		?>
 		<script>
@@ -150,14 +150,14 @@ class AesopCoreGallery {
 			          	autoResize: true,
 			          	container: jQuery('#aesop-grid-gallery-<?php echo $atts["id"];?>'),
 			          	offset: 5,
-			          	flexibleWidth: 400
+			          	flexibleWidth: 300
 			        };
 			        var handler = jQuery('#aesop-grid-gallery-<?php echo $atts["id"];?> img');
 			        jQuery(handler).wookmark(options);
 			    });
 			});
 		</script>
-		<div id="aesop-grid-gallery-<?php echo $atts["id"];?>" class="aesop-grid-gallery aesop-grid-gallery"><?php
+		<div id="aesop-grid-gallery-<?php echo $atts["id"];?>" class="aesop-grid-gallery aesop-grid-gallery" style="width:100%;max-width:<?php echo $width;?>;margin:0 auto;"><?php
 
 			foreach ($images as $image):
 
