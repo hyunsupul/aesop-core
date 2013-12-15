@@ -117,7 +117,7 @@ jQuery(document).ready(function() {
 jQuery('.aesop-entry-content').scrollNav({
     sections: '.aesop-chapter-heading',
     arrowKeys: true,
-    insertTarget: '.aesop-article-nav',
+    insertTarget: 'body',
     insertLocation: 'prependTo',
     showTopLink: false,
     showHeadline: false,
