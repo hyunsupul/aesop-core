@@ -112,14 +112,3 @@ jQuery(document).ready(function() {
 	}
 
 });
-
-// activate scroll nav
-jQuery('.aesop-entry-content').scrollNav({
-    sections: '.aesop-chapter-heading',
-    arrowKeys: true,
-    insertTarget: 'body',
-    insertLocation: 'prependTo',
-    showTopLink: false,
-    showHeadline: false,
-    scrollOffset: 80,
-});
