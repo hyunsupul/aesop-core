@@ -112,10 +112,20 @@ if(!function_exists('aesop_shortcodes')){
 				'usage' 			=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Section quote area with background and color controls.','aesop-core' )
 			),
-			'image_back' 			=> array(
-				'name' 				=> __('Image Back', 'aesop-core'),
+			'content' 				=> array(
+				'name' 				=> __('Content', 'aesop-core'),
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
+					'width'			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '100%',
+						'desc' 		=> __( 'Width of Component', 'aesop-core' )
+					),
+					'columns' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Number of Columns', 'aesop-core' )
+					),
 					'img' 			=> array(
 						'values' 	=> array( ),
 						'default' 	=> '#',
@@ -126,20 +136,6 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'color',
 						'default' 	=> '#FFFFFF',
 						'desc' 		=> __('Color of Text', 'aesop-core' )
-					)
-				),
-				'content' 			=> __( 'Your normal content goes here.', 'ba-shortcodes' ),
-				'usage' 			=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
-				'desc' 				=> __( 'Creates a background image section, with text in the middle.','aesop-core' )
-			),
-			'columns' 				=> array(
-				'name' 				=> __('Magazine Columns', 'aesop-core'),
-				'type' 				=> 'wrap',
-				'atts' 				=> array(
-					'num' 			=> array(
-						'values' 	=> array( ),
-						'default' 	=> 2,
-						'desc' 		=> __( 'Number of Columns', 'aesop-core' )
 					)
 				),
 				'content' 			=> __( 'All your normal text goes here.', 'ba-shortcodes' ),
