@@ -27,18 +27,18 @@ if (!function_exists('aesop_map_shortcode')) {
 
 class AesopMapComponent {
 
-	public function __construct(){
-		add_action('wp_footer', array($this,'aesop_map_loader'),99);
+	function __construct(){
+		add_action('wp_footer', array($this,'aesop_map_loader'),20);
 	}
 
 	function aesop_map_loader(){
 
 		global $post;
 
-		$markers = get_post_meta(get_the_ID(),'aesop_map_component_locations', false);
-		$start = get_post_meta(get_the_ID(),'aesop_map_start', true);
+		$markers = get_post_meta($post->ID,'aesop_map_component_locations', false);
+		$start = get_post_meta($post->ID,'aesop_map_start', true);
 
-		if( has_shortcode( get_the_content(), 'aesop_map') )  { ?>
+		if( has_shortcode( $post->post_content, 'aesop_map') )  { ?>
 			<script>
 
 				var map = L.map('map',{
