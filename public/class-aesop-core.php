@@ -71,6 +71,8 @@ class Aesop_Core {
 		require_once( AI_CORE_DIR.'public/includes/components/component-video.php' );
 		require_once( AI_CORE_DIR.'public/includes/components/component-gallery.php' );
 		require_once( AI_CORE_DIR.'public/includes/components/component-character.php' );
+		require_once( AI_CORE_DIR.'public/includes/components/component-timeline.php' );
+		require_once( AI_CORE_DIR.'public/includes/components/component-heading.php' );
 
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );

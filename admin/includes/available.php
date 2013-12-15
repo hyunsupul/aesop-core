@@ -146,7 +146,7 @@ if(!function_exists('aesop_shortcodes')){
 				'usage' 			=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Wraps your text in magazine style columns.','aesop-core' )
 			),
-			'chapter_head' 			=> array(
+			'chapter' 			=> array(
 				'name' 				=> __('Chapter Heading', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
