@@ -96,7 +96,6 @@ class AesopCoreGallery {
 		// fetch the image id's that the user has within the gallery shortcode
 		$images = get_posts($args);
 
-
 		ob_start();
 
 			?><section class="aesop-component aesop-gallery-component"><?php
@@ -109,10 +108,7 @@ class AesopCoreGallery {
 
 			?></section><?php
 
-
-
 		return ob_get_clean();
-
 
 	}
 

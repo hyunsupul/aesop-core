@@ -1,6 +1,6 @@
 <?php
 /**
- 	* Filters custom meta box class to add cusotm meta to map component
+ 	* Filters custom meta box class to add cusotm meta to galelry component
  	*
  	* @since    1.0.0
 */
@@ -14,6 +14,11 @@ class AesopGalleryComponentAdmin {
 		add_filter( 'cmb_meta_boxes', array($this,'aesop_gallery_meta' ));
 	}
 
+	/**
+	 	* Creates an Aesop Galleries custom post type to manage all psot galleries
+	 	*
+	 	* @since    1.0.0
+	*/
 	function do_type() {
 
 		$labels = array(
@@ -34,7 +39,7 @@ class AesopGalleryComponentAdmin {
 		$args = array(
 			'label'               		=> __( 'Aesop Galleries', 'aesop-core' ),
 			'description'         		=> __( 'Create responsive boxes', 'aesop-core' ),
-			'menu_icon' 		  		=> AI_CORE_DIR.'/icon.png',  // Icon Path
+			'menu_icon' 		  		=> AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
 			'labels'              		=> $labels,
 			'supports'            		=> array( 'title', 'editor', ),
 			'hierarchical'        		=> false,
@@ -48,17 +53,61 @@ class AesopGalleryComponentAdmin {
 
 	}
 
+	/**
+	 	* Adds columns to the Aesop Galleries custom post type
+	 	* Adds the shortcode for easy copy and past
+	 	* Adds the posts that the shortcode is used in
+	 	*
+	 	* @since    1.0.0
+	*/
 	function col_head($defaults) {
 	    $defaults['aesop_gallery'] = __('Gallery Shortcode','aesop-core');
+	    $defaults['used_in'] = __('Used In','aesop-core');
 	    return $defaults;
 	}
 
+	/**
+	 	* Callback for col_head
+	 	*
+	 	* @since    1.0.0
+	*/
 	function col_content($column_name, $post_ID) {
-	    if ($column_name == 'aesop_gallery') {
+
+	    if ('aesop_gallery' == $column_name) {
 	        printf('[aesop_gallery id="%s"]',$post_ID);
+	    }
+
+	   	if ('used_in' == $column_name) {
+
+			$pages = get_posts(array ('s' => '[aesop_gallery','post_type' => array ( 'page', 'post' ) ));
+
+			foreach($pages as $page):
+
+				if(has_shortcode($page->post_content,'aesop_gallery')){
+					echo ucfirst($this->the_slug($page->ID));
+				}
+
+			endforeach;
+
 	    }
 	}
 
+	/**
+	 	* Return the post slug based on ID
+	 	*
+	 	* @since    1.0.0
+	*/
+	function the_slug($id) {
+		$post_data = get_post($id, ARRAY_A);
+		$slug = $post_data['post_name'];
+		return $slug; 
+	}
+
+	/**
+	 	* Adds custom gallery meta
+	 	*
+	 	* @since    1.0.0
+	*/
 	function aesop_gallery_meta( array $meta_boxes ) {
 
 		$opts = array(
@@ -78,7 +127,6 @@ class AesopGalleryComponentAdmin {
 		return $meta_boxes;
 
 	}
-
 
 }
 new AesopGalleryComponentAdmin;

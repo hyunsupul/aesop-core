@@ -7,7 +7,7 @@ class aiCoreStoryView {
  	}
 
 	function register_my_custom_menu_page(){
-	    $menu = add_menu_page( 'Stories', 'Stories', 'edit_posts', 'stories', array($this,'my_custom_menu_page'), 'dashicons-edit', 6 );
+	    $menu = add_menu_page( 'Stories', 'Stories', 'edit_posts', 'stories', array($this,'my_custom_menu_page'), AI_CORE_URL.'/admin/assets/img/icon.png', 6 );
 	}
 
 	function my_custom_menu_page(){
