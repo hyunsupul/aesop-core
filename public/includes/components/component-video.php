@@ -18,7 +18,7 @@ if (!function_exists('aesop_video_shortcode')){
 
 	    $caption = $content ? sprintf('<div class="aesop-video-component-caption">%s</div>',$content) : false;
 
-	    $out = sprintf('<section class="aesop-component aesop-video-component">%s<div class="aesop-video-container aesop-video-container-%s">',$caption,$hash);
+	    $out = sprintf('<section class="aesop-component aesop-video-component"><div class="aesop-video-container aesop-video-container-%s">',$hash);
 
 	        $out .= sprintf('<script>
 		    	jQuery(document).ready(function(){
@@ -54,7 +54,7 @@ if (!function_exists('aesop_video_shortcode')){
 
 	        endswitch;
 
-	    $out .= sprintf('</div></section>');
+	    $out .= sprintf('</div>%s</section>',$caption);
 
         return apply_filters('aesop_video_output',$out);
 	}
