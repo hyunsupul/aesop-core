@@ -23,7 +23,7 @@ class Aesop_Core_Admin {
 	 *
 	 * @var     string
 	 */
-	const version = '0.1';
+	const version = '1.0';
 
 	/**
 	 * Instance of this class.
@@ -60,13 +60,7 @@ class Aesop_Core_Admin {
 		/* if( ! is_super_admin() ) {
 			return;
 		} */
-		require_once( AI_CORE_DIR.'admin/includes/screenhelp.php' );
 		require_once( AI_CORE_DIR.'admin/includes/nextpagebtn.php' );
-		require_once( AI_CORE_DIR.'admin/includes/rename.php' );
-		require_once( AI_CORE_DIR.'admin/includes/welcome.php' );
-		require_once( AI_CORE_DIR.'admin/includes/dashboard.php' );
-		require_once( AI_CORE_DIR.'admin/includes/menuclean.php' );
-		require_once( AI_CORE_DIR.'admin/includes/postclean.php' );
 		require_once( AI_CORE_DIR.'admin/includes/storytab.php' );
 		require_once( AI_CORE_DIR.'admin/includes/components/component-map.php' );
         require_once( AI_CORE_DIR.'admin/includes/components/component-gallery.php' );
