@@ -126,6 +126,15 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> '',
 						'desc' 		=> __( 'Number of Columns', 'aesop-core' )
 					),
+					'position' 			=> array(
+						'values' 	=> array(
+							__('none','aesop-core'),
+							__('left','aesop-core'),
+							__('right','aesop-core')
+						),
+						'default' 	=> 'none',
+						'desc' 		=> __( 'Text Block Alignment', 'aesop-core' )
+					),
 					'img' 			=> array(
 						'values' 	=> array( ),
 						'default' 	=> '#',
