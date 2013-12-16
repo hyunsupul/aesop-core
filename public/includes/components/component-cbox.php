@@ -4,6 +4,7 @@
  	* Creates an content section that can do offset text, iamge backgrounds, and magazine style columns
  	*
  	* @since    1.0.0
+ 	* @TODO work in imgrepeat and imgposition attributes
 */
 if (!function_exists('aesop_content_shortcode')){
 
@@ -17,6 +18,8 @@ if (!function_exists('aesop_content_shortcode')){
 			'columns'			=>'',
 			'position'			=> 'center',
 			'img' 				=> 'http://placekitten.com/100/100',
+			'imgrepeat'			=> 'no-repeat',
+			'imgposition'		=> '',
 			'color' 				=> '#FFFFFF'
 		);
 
@@ -31,7 +34,9 @@ if (!function_exists('aesop_content_shortcode')){
 			$typeclass = $columns.' '.$image;
 
 		// image and width inline styles
-		$imgstyle = $atts['img'] ? sprintf('background:url(\'%s\');background-size:cover;',$atts['img']) : false;
+		$imgstyle = $atts['img'] ? sprintf('background:url(\'%s\');background-size:cover;background-position:center center;',$atts['img']) : false;
+		
+
 		$widthstyle = $atts['width'] ? sprintf('width:%s;',$atts['width']) : false;
 		$txtcolor 	= $atts['color'] ? sprintf('color:%s;', $atts['color']) : false;
 		$position	= ('left' == $atts['position'] || 'right' == $atts['position']) ? sprintf('float:%s',$atts['position']) : false;
