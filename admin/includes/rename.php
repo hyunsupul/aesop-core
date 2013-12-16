@@ -49,7 +49,7 @@ class aiCoreStrings {
             'Users'	=> 'Collaborators',
             'User'	=> 'Collaborator',
             'Add New User' => 'Add New Collaborator', // not working
-            'Featured'		=>'Cover',
+            'Featured Image'		=>'Story Cover',
             'featured'		=> 'cover'
 
         );
