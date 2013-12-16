@@ -15,8 +15,9 @@ if (!function_exists('aesop_content_shortcode')){
 		$defaults = array(
 			'width'				=> '100%',
 			'columns'			=>'',
+			'position'			=> 'center',
 			'img' 				=> 'http://placekitten.com/100/100',
-			'color' 				=> 'John Doe'
+			'color' 				=> '#FFFFFF'
 		);
 
 		$atts = apply_filters('aesop_content_defaults',shortcode_atts($defaults, $atts));
@@ -27,14 +28,16 @@ if (!function_exists('aesop_content_shortcode')){
 		// are we doing columns or image and do a clas based on it
 		$columns = $atts['columns'] ? sprintf('aesop-content-columns-%s',$atts['columns']) : false;
 		$image = $atts['img'] ? 'aesop-content-img' : false;
-		$typeclass = $columns.' '.$image;
+			$typeclass = $columns.' '.$image;
 
 		// image and width inline styles
 		$imgstyle = $atts['img'] ? sprintf('background:url(\'%s\');background-size:cover;',$atts['img']) : false;
 		$widthstyle = $atts['width'] ? sprintf('width:%s;',$atts['width']) : false;
+		$position	= ('left' == $atts['position'] || 'right' == $atts['position']) ? sprintf('float:%s',$atts['position']) : false;
+			$itemstyle = $imgstyle || $widthstyle || $position ? sprintf('style="%s%s%s"',$imgstyle,$widthstyle,$position) : false;
 
 		// all together
-		$scinner = sprintf('<div class="%s" style="%s%s">%s</div>',$typeclass, $imgstyle, $widthstyle, do_shortcode($content));
+		$scinner = sprintf('<div class="%s" %s>%s</div>',$typeclass, $itemstyle, do_shortcode($content));
 
 		$out = sprintf('<section class="aesop-component aesop-content-component %s">%s</section>',$contentwidth,$scinner);
 
