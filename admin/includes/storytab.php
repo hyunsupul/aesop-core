@@ -7,7 +7,7 @@ class aiCoreStoryView {
  	}
 
 	function register_my_custom_menu_page(){
-	    $menu = add_menu_page( 'Stories', 'Stories', 'edit_posts', 'stories', array($this,'my_custom_menu_page'), AI_CORE_URL.'/admin/assets/img/icon.png', 6 );
+	    $menu = add_menu_page( __('Stories','aesop-core'), __('Stories','aesop-core'), 'edit_posts', 'stories', array($this,'my_custom_menu_page'), AI_CORE_URL.'/admin/assets/img/icon.png', 6 );
 	}
 
 	function my_custom_menu_page(){
@@ -35,7 +35,7 @@ class aiCoreStoryView {
 	  			<a href="/wp-admin/post-new.php" class="aesop-clear">
 	  				<div class="aesop-admin-grid-create-inner">
 	      				<i class="dashicons dashicons-plus"></i>
-	      				<h3>Create a Story</h3>
+	      				<h3><?php _e('Create a Story','aesop-core');?></h3>
 	      			</div>
 	      		 </a>
 
@@ -53,8 +53,8 @@ class aiCoreStoryView {
 				      		<div class="aesop-admin-story-edit-meta">
 				      			<span class="aesop-admin-story-grid-title"><?php the_title(); ?></span>
 				      			<div class="aesop-admin-story-grid-actions">
-				      				<a class="aesop-admin-edit-story-link button button-small" href="<?php echo admin_url();?>post.php?post=<?php echo the_ID();?>&action=edit"><i class="aesop-admin-button-icon dashicons dashicons-welcome-write-blog"></i> Edit</a>
-				      				<a class="aesop-admin-view-story-link button button-small button-primary" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" target="_new"><i class="aesop-admin-button-icon dashicons dashicons-share-alt2"></i> View</a>
+				      				<a class="aesop-admin-edit-story-link button button-small" href="<?php echo admin_url();?>post.php?post=<?php echo the_ID();?>&action=edit"><i class="aesop-admin-button-icon dashicons dashicons-welcome-write-blog"></i> <?php _e('Edit','aesop-core');?></a>
+				      				<a class="aesop-admin-view-story-link button button-small button-primary" href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" target="_new"><i class="aesop-admin-button-icon dashicons dashicons-share-alt2"></i> <?php _e('View','aesop-core');?></a>
 				      			</div>
 				      		</div>
 				      	</div>
