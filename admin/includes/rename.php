@@ -48,7 +48,9 @@ class aiCoreStrings {
             'Username'	=> 'Collaborator Name',
             'Users'	=> 'Collaborators',
             'User'	=> 'Collaborator',
-            'Add New User' => 'Add New Collaborator' // not working
+            'Add New User' => 'Add New Collaborator', // not working
+            'Featured'		=>'Cover',
+            'featured'		=> 'cover'
 
         );
 

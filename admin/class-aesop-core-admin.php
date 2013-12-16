@@ -96,7 +96,6 @@ class Aesop_Core_Admin {
 		add_action( 'admin_footer', array($this,'generator_popup' ));
 		add_action( 'admin_init', array($this,'load'));
 
-
 	}
 
 	/**
@@ -124,7 +123,6 @@ class Aesop_Core_Admin {
 
 		return self::$instance;
 	}
-
 
 	public function load(){
 

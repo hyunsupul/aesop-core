@@ -45,8 +45,7 @@ class aiCoreStoryView {
 
 		  	if( $q->have_posts() ): while ($q->have_posts()) : $q->the_post();
 
-		  		$getimgid 		= get_post_meta(get_the_ID(),'aesop_article_cover', true);
-				$coverimg 		= $getimgid ? wp_get_attachment_url( $getimgid ) : false;
+				$coverimg = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
 
 		  	 	?>
 			      	<li <?php post_class();?>>
