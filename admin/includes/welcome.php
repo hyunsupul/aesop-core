@@ -1,7 +1,5 @@
 <?php
 
-
-
 /**
  * Hide default welcome dashboard message and and create a custom one
  *
@@ -9,12 +7,12 @@
  * @since       1.0 
  * @return      void
 */
-function rc_my_welcome_panel() {
+function aesop_welcome_panel() {
 
 	?>
 	<script type="text/javascript">
-	jQuery(document).ready( function($) {
-		$('div.welcome-panel-content').hide();
+	jQuery(document).ready(function(){
+		jQuery('div.welcome-panel-content').hide();
 	});
 	</script>
 
@@ -28,7 +26,7 @@ function rc_my_welcome_panel() {
 			<p class="hide-if-no-customize"><?php printf( __( 'or, <a href="%s">edit your site settings</a>','aesop-core' ), admin_url( 'options-general.php' ) ); ?></p>
 	</div>
 	<div class="welcome-panel-column">
-		<h4><?php _e( 'Next Steps' ); ?></h4>
+		<h4><?php _e( 'Next Steps','aesop-core' ); ?></h4>
 		<ul>
 		<?php if ( 'page' == get_option( 'show_on_front' ) && ! get_option( 'page_for_posts' ) ) : ?>
 			<li><?php printf( '<a href="%s" class="welcome-icon welcome-edit-page">' . __( 'Edit your front page','aesop-core' ) . '</a>', get_edit_post_link( get_option( 'page_on_front' ) ) ); ?></li>
@@ -57,4 +55,4 @@ function rc_my_welcome_panel() {
 <?php
 }
 
-add_action( 'welcome_panel', 'rc_my_welcome_panel' );
+add_action( 'welcome_panel', 'aesop_welcome_panel' );
