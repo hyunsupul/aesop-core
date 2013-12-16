@@ -45,9 +45,12 @@ class aiCoreStoryView {
 
 		  	if( $q->have_posts() ): while ($q->have_posts()) : $q->the_post();
 
+		  		$getimgid 		= get_post_meta(get_the_ID(),'aesop_article_cover', true);
+				$coverimg 		= $getimgid ? wp_get_attachment_url( $getimgid ) : false;
+
 		  	 	?>
 			      	<li <?php post_class();?>>
-			      		<div class="aesop-admin-story-grid-story" style="background:url('http://placekitten.com/300/300') no-repeat; background-size:cover;">
+			      		<div class="aesop-admin-story-grid-story" style="background:url('<?php echo $coverimg;?>') no-repeat; background-size:cover;">
 				      		<div class="aesop-admin-story-edit-meta">
 				      			<span class="aesop-admin-story-grid-title"><?php the_title(); ?></span>
 				      			<div class="aesop-admin-story-grid-actions">
