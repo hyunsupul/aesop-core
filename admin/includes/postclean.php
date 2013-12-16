@@ -26,6 +26,8 @@ class aiCorePostScreenClean {
 
 	    remove_meta_box( 'tagsdiv-post_tag', 'post', 'normal' );
 
+	    // remove our "featured image story cover" from pages
+	    remove_post_type_support( 'page', 'thumbnail' );
 	}
 
 	/**
