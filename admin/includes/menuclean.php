@@ -17,10 +17,10 @@ class aiCoreMenuCleanup {
 
 	  	//remove_menu_page( 'edit.php?post_type=page' );    //Pages
 	  	remove_menu_page( 'edit.php' );                  //Users
-
+	  	remove_menu_page('upload.php');
 	  	//remove_menu_page( 'tools.php' );                  //Tools
 	  	//remove_menu_page( 'options-general.php' );        //Settings
-	  	//remove_menu_page( 'edit-comments.php' );          //Comments
+	  	remove_menu_page( 'edit-comments.php' );          //Comments
 	  	//remove_menu_page( 'themes.php' );                 //Appearance
 
 	}

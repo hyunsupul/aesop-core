@@ -307,6 +307,7 @@
                     padding: 12px 10px 8px;
                     background: rgba(244,244,244,.7);
                     border-left: 1px solid rgba(0,0,0,.05);
+                    z-index: 9;
                 }
             }
 
@@ -385,27 +386,19 @@
         &.status-publish:after {
             content:'';
             position: absolute;
-            height:8px;
-            width:8px;
-            top:5px;
-            right:5px;
+            height:9px;
+            width:9px;
+            bottom:15px;
+            right:16px;
             border-radius:50%;
         }
 
-        // published indicator
-        &.status-draft:after {
-
-            background-color: rgb(226,0,0);  
-            box-shadow: inset 0px 1px 0px 0px rgba(250,250,250,0.5),  
-                0px 0px 1px 1px rgba(226,0,0,0.5);  
-        }
-
-        &.status-publish:after {
-            box-shadow: inset 0px 1px 0px 0px rgba(250,250,250,0.5),  
-                0px 0px 1px 1px rgba(135,187,83,0.5);  
-    background-color: rgb(135,187,83);  
-        }
         // draft indicator
+        &.status-draft:after { background-color: #d9534f;}
+
+        // published indicator
+        &.status-publish:after { background-color: #5cb85c;}
+
     }
 }
 .aesop-admin-button-icon {
@@ -414,44 +407,6 @@
 .button-small .aesop-admin-button-icon {
     line-height: 1.6em;
     font-size:14px;
-}
-
-//jquery notice
-.notice-wrap {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 250px;
-        z-index: 9999;
-}
-
-* html .notice-wrap {
-        position: absolute;                
-}
- 
-.notice-item {
-        height: 60px;
-        background: #333;
-        -moz-border-radius: 6px;
-        -webkit-border-radius: 6px;
-        color: #eee;
-        padding: 6px 6px 0 6px;
-        font-family: lucida Grande;
-        font-size: 11px;
-        border: 2px solid #999;
-        display: block;
-        position: relative;
-        margin: 0 0 12px 0;
-}
-
-.notice-item-close {
-        position: absolute;
-        font-family: Arial;
-        font-size: 12px;
-        font-weight: bold;
-        right: 6px;
-        top: 6px;
-        cursor: pointer;
 }
 
 .pw-google-map .map {

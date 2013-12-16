@@ -21,6 +21,7 @@ class aiCorePostScreenClean {
 
 	/**
 	 	*  Remove tags box from post screen
+	 	*  Remove featured image from pages
 	*/
 	function remove_tag_box() {
 

@@ -22,9 +22,9 @@ class AesopGalleryComponentAdmin {
 	function do_type() {
 
 		$labels = array(
-			'name'                		=> _x( 'Aesop Galleries', 'Post Type General Name', 'aesop-core' ),
-			'singular_name'       		=> _x( 'Gallery', 'Post Type Singular Name', 'aesop-core' ),
-			'menu_name'           		=> __( 'Aesop Galleries', 'aesop-core' ),
+			'name'                		=> _x( 'Galleries','aesop-core' ),
+			'singular_name'       		=> _x( 'Gallery','aesop-core' ),
+			'menu_name'           		=> __( 'Galleries', 'aesop-core' ),
 			'parent_item_colon'   		=> __( 'Parent Gallery:', 'aesop-core' ),
 			'all_items'           		=> __( 'All Galleries', 'aesop-core' ),
 			'view_item'           		=> __( 'View Gallery', 'aesop-core' ),
@@ -37,9 +37,10 @@ class AesopGalleryComponentAdmin {
 			'not_found_in_trash'  		=> __( 'No Galleries found in Trash', 'aesop-core' ),
 		);
 		$args = array(
-			'label'               		=> __( 'Aesop Galleries', 'aesop-core' ),
+			'label'               		=> __( 'Galleries', 'aesop-core' ),
 			'description'         		=> __( 'Create responsive boxes', 'aesop-core' ),
 			'menu_icon' 		  		=> AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
+			'menu_position'				=> 15,
 			'labels'              		=> $labels,
 			'supports'            		=> array( 'title', 'editor', ),
 			'hierarchical'        		=> false,
