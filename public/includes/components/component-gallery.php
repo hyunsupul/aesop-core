@@ -30,6 +30,7 @@ class AesopCoreGallery {
 		      		<option value="">- Select -</option>
 		        	<option value="grid">Grid</option>
 		        	<option value="thumbnail">Thumbnail</option>
+		        	<option value="stacked">Stacked Parallax</option>
 		      	</select>
 		    </label>
 	  	</script>
@@ -100,11 +101,20 @@ class AesopCoreGallery {
 
 			?><section class="aesop-component aesop-gallery-component"><?php
 
-				if ('thumbnail' == $type) {
-					$this->aesop_thumb_gallery($atts, $images, $width);
-				} else {
-					$this->aesop_grid_gallery($atts,$images,$width);
-				}
+				switch($type):
+					case 'thumbnail':
+						$this->aesop_thumb_gallery($atts, $images, $width);
+					break;
+					case 'grid':
+						$this->aesop_grid_gallery($atts,$images,$width);
+					break;
+					case 'stacked':
+						$this->aesop_stacked_gallery($atts,$images,$width);
+					break;
+					default:
+						$this->aesop_grid_gallery($atts,$images,$width);
+					break;
+				endswitch;
 
 			?></section><?php
 
@@ -167,6 +177,31 @@ class AesopCoreGallery {
                 $desc    =  $image->post_content;
 
                ?><img src="<?php echo $full;?>" alt="<?php echo $alt;?>"><?php
+
+			endforeach;
+
+		?></div><?php
+	}
+
+    /**
+	 	* Draws a stacked parallax style gallery
+	 	*
+	 	* @since    1.0.0
+	*/
+	function aesop_stacked_gallery($atts, $images, $width){
+
+		?><div id="aesop-stack-gallery-<?php echo $atts['id'];?>" class="aesop-stacked-gallery-component"><?php
+
+			foreach ($images as $image):
+
+                $full    =  wp_get_attachment_url($image->ID, 'full', false,'');
+                $alt     =  get_post_meta($image->ID, '_wp_attachment_image_alt', true);
+                $caption =  $image->post_excerpt;
+                $desc    =  $image->post_content;
+
+
+
+               ?><div class="aesop-stacked-div"><div class="aesop-stacked-img" style="background:url('<?php echo $full;?>') no-repeat center center;background-size:cover;"></div></div><?php
 
 			endforeach;
 
