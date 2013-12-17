@@ -84,6 +84,26 @@
     }
 }(jQuery));
 
+
+// Stacked Gallery
+gallery = jQuery('.aesop-stacked-gallery-wrap');
+height  = jQuery(window).height();
+jQuery('.aesop-stacked-div').css({'height': height});
+
+jQuery('.aesop-stacked-div').waypoint(function(direction) {
+   	jQuery(this).toggleClass('fixed');
+});
+jQuery('.aesop-stacked-gallery-wrap').waypoint(function(direction) {
+   	jQuery(this).css({'z-index':-1});
+});
+
+jQuery('.aesop-stacked-gallery-wrap').next().waypoint({
+	offset: '100%',
+	handler: function(direction){
+   		jQuery('.aesop-stacked-gallery-wrap').toggleClass('no-height');
+   		jQuery('.aesop-entry-content').toggleClass('bye-bye');
+   	}
+});
 ///////////////
 ///////////////
 /// CALL METHODS
@@ -94,9 +114,9 @@
 // actiave swipebox
 jQuery(".swipebox, .wp-caption a").swipebox();
 
-// page fader
 jQuery(document).ready(function() {
 
+	// page fader
 	jQuery('body').css('display', 'none');
 
 	jQuery('body').fadeIn(500);

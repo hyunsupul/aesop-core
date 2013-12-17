@@ -156,16 +156,34 @@
 .aesop-stacked-div {
     position: relative;
     height:1024px;
+    .box-shadow(0 -5px 5px -5px rgba(0,0,0,0.5));
+
+    &.no-height {
+        .transition(all .5s linear);
+    }
+
+    &.fixed {
+
+        .aesop-stacked-img{
+            position: fixed;
+            z-index:-1;
+        }
+    }
 
     .aesop-stacked-img {
-        position: absolute;
+        background-position: center center;
         height:100%;
         width:100%;
         left:0;
         top:0;
     }
 }
-
+.aesop-stacked-gallery-wrap{
+    .transition(all .5s linear);
+    &.no-height {
+        .transition(all .5s linear);
+    }
+}
 /*!
  * Fotorama 4.4.8 | http://fotorama.io/license/
  */

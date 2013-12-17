@@ -99,7 +99,7 @@ class AesopCoreGallery {
 
 		ob_start();
 
-			?><section class="aesop-component aesop-gallery-component"><?php
+			?><section class="aesop-component aesop-gallery-component aesop-<?php echo $type;?>-gallery-wrap"><?php
 
 				switch($type):
 					case 'thumbnail':
@@ -199,9 +199,7 @@ class AesopCoreGallery {
                 $caption =  $image->post_excerpt;
                 $desc    =  $image->post_content;
 
-
-
-               ?><div class="aesop-stacked-div"><div class="aesop-stacked-img" style="background:url('<?php echo $full;?>') no-repeat center center;background-size:cover;"></div></div><?php
+               ?><div class="aesop-stacked-div"><div class="aesop-stacked-img" style="background:url('<?php echo $full;?>') no-repeat;background-size:cover;"></div></div><?php
 
 			endforeach;
 
