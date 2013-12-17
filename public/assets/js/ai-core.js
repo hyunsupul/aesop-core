@@ -85,26 +85,6 @@
 }(jQuery));
 
 
-// Stacked Gallery
-gallery = jQuery('.aesop-stacked-gallery-wrap');
-height  = jQuery(window).height();
-jQuery('.aesop-stacked-div').css({'height': height});
-
-jQuery('.aesop-stacked-div').waypoint(function(direction) {
-   	jQuery(this).toggleClass('fixed');
-});
-jQuery('.aesop-stacked-gallery-wrap').waypoint(function(direction) {
-   	jQuery(this).css({'z-index':-1});
-});
-
-jQuery('.aesop-stacked-gallery-wrap').next().waypoint({
-	offset: '100%',
-	handler: function(direction){
-   		jQuery('.aesop-stacked-gallery-wrap').toggleClass('no-height');
-   		jQuery('.aesop-entry-content').toggleClass('bye-bye');
-   		jQuery(this).toggleClass('aesop-entry-suck-top');
-   	}
-});
 ///////////////
 ///////////////
 /// CALL METHODS
@@ -131,5 +111,26 @@ jQuery(document).ready(function() {
 	function newpage() {
 		window.location = newLocation;
 	}
+
+	// stacked gallery stuffs
+	gallery = jQuery('.aesop-stacked-gallery-wrap');
+	height  = jQuery(window).height();
+	jQuery('.aesop-stacked-div').css({'height': height});
+
+	jQuery('.aesop-stacked-div').waypoint(function(direction) {
+	   	jQuery(this).toggleClass('fixed');
+	});
+	jQuery('.aesop-stacked-gallery-wrap').waypoint(function(direction) {
+	   	jQuery(this).css({'z-index':-1});
+	});
+
+	jQuery('.aesop-stacked-gallery-wrap').next().waypoint({
+		offset: '100%',
+		handler: function(direction){
+	   		jQuery('.aesop-stacked-gallery-wrap').toggleClass('no-height');
+	   		jQuery('.aesop-entry-content').toggleClass('bye-bye');
+	   		jQuery(this).toggleClass('aesop-entry-suck-top');
+	   	}
+	});
 
 });
