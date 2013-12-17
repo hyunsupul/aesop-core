@@ -102,6 +102,7 @@ jQuery('.aesop-stacked-gallery-wrap').next().waypoint({
 	handler: function(direction){
    		jQuery('.aesop-stacked-gallery-wrap').toggleClass('no-height');
    		jQuery('.aesop-entry-content').toggleClass('bye-bye');
+   		jQuery(this).toggleClass('aesop-entry-suck-top');
    	}
 });
 ///////////////
