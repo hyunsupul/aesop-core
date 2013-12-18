@@ -35,11 +35,13 @@
 
 				$attr_field_type = isset($attr_info['type']) ? $attr_info['type'] : 'text';
 
+				// image upload
 				if('image_upload' == $attr_info['type']) {
 
 					$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="' . $attr_info['default'] . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
 					$return .= '<input id="aesop-upload-img" type="button" class="button button-primary button-large" value="Upload Image"/>';
 
+				// audio upload
 				} elseif('audio_upload' == $attr_info['type']) {
 
 					$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="' . $attr_info['default'] . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
@@ -54,14 +56,15 @@
 	}
 
 	// Single shortcode (not closed)
-	if ( $shortcode['type'] == 'single' ) {
+	if ('single' == $shortcode['type']) {
+
 		$return .= '<input type="hidden" name="aesop-generator-content" id="aesop-generator-content" value="false" />';
 
 	} else {
 
 		$return .= '<p><label>' . __( 'Content', 'aesop-shortcodes' ) . '</label><input type="text" name="aesop-generator-content" id="aesop-generator-content" value="' . $shortcode['content'] . '" /></p>';
 	}
-	
+
 	$return .= '<p class="aesop-component-description">Description:&nbsp; '.$shortcode['desc'].'</p>';
 	$return .= '<p class="aesop-buttoninsert-wrap"><a href="#" id="aesop-generator-insert">' . __( 'Insert Component', 'aesop-shortcodes' ) . '</a></p> ';
 

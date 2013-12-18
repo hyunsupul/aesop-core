@@ -1,65 +1,47 @@
 <?php
 /**
- * Plugin Name.
- *
- * @package   Aesop_Core_Admin
- * @author    Nick Haskins <email@nickhaskins.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2013 Nick Haskins
- */
-
+ 	* AI Core
+ 	*
+ 	* @package   Aesop_Core_Admin
+ 	* @author    Nick Haskins <email@nickhaskins.com>
+ 	* @license   GPL-2.0+
+ 	* @link      http://example.com
+ 	* @copyright 2013 Nick Haskins
+*/
 /**
- *
- * @package Aesop_Core_Admin
- * @author  Your Name <email@example.com>
- */
+ 	*
+ 	* @package Aesop_Core_Admin
+ 	* @author  Your Name <email@example.com>
+*/
 class Aesop_Core_Admin {
 
 	/**
-	 * Plugin version, used for cache-busting of style and script file references.
-	 *
-	 * @since   1.0.0
-	 *
-	 * @var     string
-	 */
-	const version = '1.0';
-
-	/**
-	 * Instance of this class.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @var      object
-	 */
+	 	* Instance of this class.
+	 	*
+	 	* @since    1.0.0
+	 	*
+	 	* @var      object
+	*/
 	protected static $instance = null;
 
 	/**
-	 * Slug of the plugin screen.
-	 *
-	 * @since    1.0.0
-	 *
-	 * @var      string
+		* Slug of the plugin screen.
+		*
+	 	* @since    1.0.0
+	 	*
+	 	* @var      string
 	 */
 	protected $plugin_screen_hook_suffix = null;
 
 
 	/**
-	 * Initialize the plugin by loading admin scripts & styles and adding a
-	 * settings page and menu.
-	 *
-	 * @since     1.0.0
-	 */
+	 	* Initialize the plugin by loading admin scripts & styles and adding a
+	 	* settings page and menu.
+	 	*
+	 	* @since     1.0.0
+	*/
 	private function __construct() {
 
-		/*
-		 * @TODO :
-		 *
-		 * - Uncomment following lines if the admin class should only be available for super admins
-		 */
-		/* if( ! is_super_admin() ) {
-			return;
-		} */
 		require_once( AI_CORE_DIR.'admin/includes/nextpagebtn.php' );
 		require_once( AI_CORE_DIR.'admin/includes/storytab.php' );
 		require_once( AI_CORE_DIR.'admin/includes/components/component-map.php' );
@@ -70,45 +52,30 @@ class Aesop_Core_Admin {
     	}
 
 		/*
-		 * Call $plugin_slug from public plugin class.
-		 *
-		 * @TODO:
-		 *
-		 * - Rename "Aesop_Core" to the name of your initial plugin class
-		 *
-		 */
+		 	* Call $plugin_slug from public plugin class.
+		 	*
+		*/
 		$plugin = Aesop_Core::get_instance();
 		$this->plugin_slug = $plugin->get_plugin_slug();
 
 
 		/*
-		 * Define custom functionality.
-		 *
-		 * Read more about actions and filters:
-		 * http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
-		 */
+		 	* Define custom functionality.
+		 	*
+		*/
 		add_action( 'media_buttons', array($this,'generator_button' ),100);
 		add_action( 'admin_footer', array($this,'generator_popup' ));
 		add_action('admin_enqueue_scripts', array($this,'admin_scripts'));
-	}	
+	}
 
 	/**
-	 * Return an instance of this class.
-	 *
-	 * @since     1.0.0
-	 *
-	 * @return    object    A single instance of this class.
-	 */
+	 	* Return an instance of this class.
+	 	*
+	 	* @since     1.0.0
+	 	*
+	 	* @return    object    A single instance of this class.
+	*/
 	public static function get_instance() {
-
-		/*
-		 * @TODO :
-		 *
-		 * - Uncomment following lines if the admin class should only be available for super admins
-		 */
-		/* if( ! is_super_admin() ) {
-			return;
-		} */
 
 		// If the single instance hasn't been set, set it now.
 		if ( null == self::$instance ) {
@@ -118,6 +85,11 @@ class Aesop_Core_Admin {
 		return self::$instance;
 	}
 
+	/**
+	 	* Load scripts and styles for component generator
+	 	*
+	 	* @since     1.0.0
+	*/
 	public function admin_scripts(){
 
 		// Register Scripts
@@ -126,7 +98,7 @@ class Aesop_Core_Admin {
         //Register Styles
 		wp_register_style( 'ai-core-styles', AI_CORE_URL. '/admin/assets/css/style.css', AI_CORE_VERSION, true);
 
-		// Load styles and scripts
+		// Load styles and scripts on areas that users will edit
 		if ( is_admin() ) {
 
 			global $pagenow;
@@ -142,6 +114,7 @@ class Aesop_Core_Admin {
 				wp_enqueue_script( 'ai-core-script' );
 				wp_enqueue_script('aesop-shortcodes-selectbox');
 
+				// color picker
 				wp_enqueue_style( 'wp-color-picker' );
         		wp_enqueue_script('wp-color-picker');
 
@@ -151,10 +124,20 @@ class Aesop_Core_Admin {
 		}
 	}
 
+	/**
+	 	* Add the generator button next to the media upload button
+	 	*
+	 	* @since     1.0.0
+	*/
 	public function generator_button() {
 		echo '<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" class="button thickbox" title="Add Story Component"><span class="aesop-admin-button-icon dashicons dashicons-plus"></span> Add Component</a>';
 	}
 
+	/**
+	 	* Draw the component generator
+	 	*
+	 	* @since     1.0.0
+	*/
 	public function generator_popup() {
 		?>
 		<div id="aesop-generator-wrap" style="display:none">

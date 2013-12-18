@@ -1,27 +1,27 @@
 <?php
 /**
- * Open source platform for storytellers.
- *
- *
- * @package   Aesop_Core
- * @author    Nick Haskins <email@nickhaskins.com>
- * @license   GPL-2.0+
- * @link      http://example.com
- * @copyright 2013 Nick Haskins
- *
- * @wordpress-plugin
- * Plugin Name:       Aesop Core
- * Plugin URI:        http://aesopinteractive.com
- * Description:       Open source platform for storytellers.
- * Version:           1.0.0
- * Author:            Nick Haskins
- * Author URI:        http://nickhaskins.com
- * Text Domain:       aesop-core
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Domain Path:       /languages
- * GitHub Plugin URI: https://github.com/<owner>/<repo>
- */
+ 	* Open-sourced suite of tools to build interactive, long-form storytelling themes for Wordpress.
+ 	*
+ 	*
+ 	* @package   Aesop_Core
+ 	* @author    Nick Haskins <email@nickhaskins.com>
+ 	* @license   GPL-2.0+
+ 	* @link      http://example.com
+ 	* @copyright 2013 Nick Haskins
+ 	*
+ 	* @wordpress-plugin
+ 	* Plugin Name:       Aesop Story Engine
+ 	* Plugin URI:        http://aesopstories.com/aesop-story-engine
+ 	* Description:       Aesop Story Engine is an open-sourced suite of tools that empowers developers to build feature-rich, interactive, long-form storytelling themes for Wordpress.
+ 	* Version:           0.9
+ 	* Author:            Nick "Bearded Avenger" Haskins
+ 	* Author URI:        http://nickhaskins.com
+ 	* Text Domain:       aesop-core
+ 	* License:           GPL-2.0+
+ 	* License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ 	* Domain Path:       /languages
+ 	* GitHub Plugin URI: https://github.com/bearded-avenger/aesop-core
+*/
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 // constnats
 // Set some constants
-define('AI_CORE_VERSION', '0.2');
+define('AI_CORE_VERSION', '0.9');
 
 define('AI_CORE_DIR', plugin_dir_path( __FILE__ ));
 define('AI_CORE_URL', plugins_url( '', __FILE__ ));
