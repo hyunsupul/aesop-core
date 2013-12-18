@@ -18,7 +18,7 @@ if (!function_exists('aesop_map_shortcode')) {
 
 		?>
 
-		<div id="aesop-map-component" class="aesop-component aesop-map-component" style="height:<?php echo $atts['height'];?>px"></div>
+		<section id="aesop-map-component" class="aesop-component aesop-map-component" style="height:<?php echo $atts['height'];?>px"></section>
 
 		<?php return ob_get_clean();
 	}

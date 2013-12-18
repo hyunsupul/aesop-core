@@ -9,20 +9,37 @@ if (!function_exists('aesop_image_shortcode')){
 	function aesop_image_shortcode($atts, $content = null) {
 
 		$defaults = array(
+			'width'				=> 'content',
 			'img' 				=> 'http://placekitten.com/1200/700',
+			'imgwidth'			=> '300px',
+			'offset'			=> '',
 			'alt'				=> '',
 			'align' 			=> 'left',
 			'captionposition'	=> 'bottom',
-			'width'				=> '300px',
 			'lightbox' 			=> false
 		);
 
 		$atts = apply_filters('aesop_image_defaults',shortcode_atts($defaults, $atts));
 
-		$hash = rand();
-		$caption = $content ? sprintf('<span class="aesop-image-component-caption">%s</div>', $content) : false;
-		$core = sprintf('<div class="aesop-image-component-image aesop-caption-%s"><img src="%s" alt="%s">%s</div>',$atts['captionposition'], $atts['img'], $atts['alt'], $caption);
-		$out = sprintf('<section class="aesop-component aesop-image-component aesop-component-align-%s">%s</section>',$atts['align'],$core);
+		// global component content width
+		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
+
+		// draw caption
+		$caption = $content ? sprintf('<div class="aesop-image-component-caption">%s</div>', $content) : false;
+
+		// offset styles
+		$offsetstyle = $atts['offset'] ? sprintf('style="margin-%s:%s;"',$atts['align'], $atts['offset']) : false;
+
+		// draw core
+		$core = sprintf('<div class="%s aesop-caption-%s">
+							<div class="aesop-image-component-image aesop-component-align-%s" %s>
+								<img style="width:%s;" src="%s" alt="%s">
+								%s
+								</div>
+								</div>',$contentwidth, $atts['captionposition'],$atts['align'], $offsetstyle, $atts['imgwidth'], $atts['img'], $atts['alt'], $caption);
+
+		// combine into component shell
+		$out = sprintf('<aside class="aesop-component aesop-image-component">%s</aside>',$core);
 
 		return apply_filters('aesop_image_output',$out);
 	}
