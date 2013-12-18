@@ -4,10 +4,20 @@ Aesop Story Engine is an open-sourced suite of tools that empowers developers to
 ---
 
 ### Installation 
-1. Upload edd-catalogs to wp-content/plugins
-2. Retrieve your Public Key, and Public Tokens from within your user profile on the site that has the shop installed.
-3. Active the plugin, then go to EDD Catalogs-->Settings, and enter the shop site, and creds
-4. Save settings then view catalog.
+##### Uploading in WordPress Dashboard    
+
+1. Navigate to the 'Add New' in the plugins dashboard  
+2. Navigate to the 'Upload' area  
+3. Select `aesop-core.zip` from your computer  
+4. Click 'Install Now'  
+5. Activate the plugin in the Plugin dashboard  
+
+##### Using FTP  
+
+1. Download `aesop-core.zip`  
+2. Extract the `aesop-core` directory to your computer  
+3. Upload the `aesop-core` directory to the `/wp-content/plugins/` directory  
+4. Activate the plugin in the Plugin dashboard    
 
 ---
 
