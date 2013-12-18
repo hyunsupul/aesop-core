@@ -97,6 +97,8 @@ jQuery(".swipebox, .wp-caption a").swipebox();
 
 jQuery(document).ready(function() {
 
+	var coverHeight = jQuery('.aesop-article-cover').height();
+	
 	// page fader
 	jQuery('body').css('display', 'none');
 
@@ -133,4 +135,34 @@ jQuery(document).ready(function() {
 	   	}
 	});
 
+	// article cover
+    jQuery('.aesop-article-cover').css({'height':(jQuery(window).height())+'px'});
+    jQuery('.aesop-article-cover-wrap').css({'z-index':9});
+
+    jQuery(window).resize(function(){
+        jQuery('.aesop-article-cover').css({'height':(jQuery(window).height())+'px', 'width':(jQuery(window).width())+'px'});
+    });
+    jQuery(window).scroll(function() {
+    	jQuery('.aesop-article-cover-wrap').css({'z-index':-1});
+	});
+
+	// push content as far down as the cover is high due to it being fixed position
+    jQuery('.aesop-entry-content').css({'margin-top':(jQuery(window).height())+'px'});
+
+	/////////////
+	// get height of cover title
+	var titleHeight = jQuery('.aesop-cover-title').outerHeight();
+	// set the margin top of the title, to half of the height of the window minus half the height of the title
+	var titleMarginTop = (coverHeight / 2) - (titleHeight / 2);
+	jQuery('.aesop-cover-title').css({'margin-top':titleMarginTop});
+	//////////////
+
+
+    // hide cover title on scroll
+	jQuery('.aesop-entry-content').waypoint(function(direction) {
+	   jQuery('.aesop-cover-title').fadeToggle();
+	}, { offset: '100%' });
+
 });
+
+
