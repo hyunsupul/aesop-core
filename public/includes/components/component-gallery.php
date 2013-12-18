@@ -199,7 +199,13 @@ class AesopCoreGallery {
                 $caption =  $image->post_excerpt;
                 $desc    =  $image->post_content;
 
-               ?><div class="aesop-stacked-div"><div class="aesop-stacked-img" style="background:url('<?php echo $full;?>') no-repeat;background-size:cover;"></div></div><?php
+               	?><div class="aesop-stacked-div">
+               		<?php if($caption){ ?>
+               			<div class="aesop-stacked-caption"><?php echo $caption;?></div>
+               		<?php } ?>
+               		<div class="aesop-stacked-img" style="background:url('<?php echo $full;?>') no-repeat;background-size:cover;"></div>
+               	</div>
+               	<?php
 
 			endforeach;
 
