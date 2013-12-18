@@ -206,7 +206,7 @@ if(!function_exists('aesop_shortcodes')){
 			),
 			'character' 				=> array(
 				'name' 				=> __('Character', 'aesop-core'),
-				'type' 				=> 'wrap',
+				'type' 				=> 'single',
 				'atts' 				=> array(
 					'img' 			=> array(
 						'values' 	=> array( ),
@@ -220,7 +220,7 @@ if(!function_exists('aesop_shortcodes')){
 			),
 			'timeline_stop' 				=> array(
 				'name' 				=> __('Timeline Stop', 'aesop-core'),
-				'type' 				=> 'wrap',
+				'type' 				=> 'single',
 				'atts' 				=> array(
 					'num' 			=> array(
 						'values' 	=> array( ),
@@ -261,7 +261,7 @@ if(!function_exists('aesop_shortcodes')){
 							__('top', 'aesop-core')
 						 ),
 						'default' 	=> 'bottom',
-						'desc' 		=> __( 'Year', 'aesop-core' )
+						'desc' 		=> __( 'Caption Position', 'aesop-core' )
 					),
 					'width' 			=> array(
 						'values' 	=> array( ),
@@ -277,6 +277,20 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Lightbox', 'aesop-core' )
 					)
 
+				),
+				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
+				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
+				'desc' 				=> __( 'Creates a character.','aesop-core' )
+			),
+			'audio' 				=> array(
+				'name' 				=> __('Audio', 'aesop-core'),
+				'type' 				=> 'single',
+				'atts' 				=> array(
+					'src' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Audio URL', 'aesop-core' )
+					)
 				),
 				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
 				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
