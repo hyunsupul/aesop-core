@@ -6,7 +6,7 @@
 if(!function_exists('aesop_shortcodes')){
 	function aesop_shortcodes( $shortcode = null ) {
 		$shortcodes = array(
-			'parallax' 				=> array(
+			'parallax' 			=> array(
 				'name' 				=> __('Aesop Parallax', 'aesop-core'),
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
@@ -86,7 +86,7 @@ if(!function_exists('aesop_shortcodes')){
 				'usage' 			=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Parallax styled image component with caption and optional lightbox.','aesop-core' )
 			),
-			'quote' 				=> array(
+			'quote' 			=> array(
 				'name' 				=> __('Aesop Quote Section', 'aesop-core'),
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
@@ -112,7 +112,7 @@ if(!function_exists('aesop_shortcodes')){
 				'usage' 			=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Section quote area with background and color controls.','aesop-core' )
 			),
-			'content' 				=> array(
+			'content' 			=> array(
 				'name' 				=> __('Content', 'aesop-core'),
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
@@ -151,7 +151,7 @@ if(!function_exists('aesop_shortcodes')){
 				'usage' 			=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Wraps your text in magazine style columns.','aesop-core' )
 			),
-			'chapter_heading' 			=> array(
+			'chapter_heading' 	=> array(
 				'name' 				=> __('Chapter Heading', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
@@ -165,7 +165,21 @@ if(!function_exists('aesop_shortcodes')){
 				'usage' 			=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Creates the scroll to point, as a chapter heading.','aesop-core' )
 			),
-			'video' 				=> array(
+			'audio' 			=> array(
+				'name' 				=> __('Audio', 'aesop-core'),
+				'type' 				=> 'single',
+				'atts' 				=> array(
+					'src' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Audio URL', 'aesop-core' )
+					)
+				),
+				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
+				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
+				'desc' 				=> __( 'Creates a character.','aesop-core' )
+			),
+			'video' 			=> array(
 				'name' 				=> __('Video Section', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
@@ -204,7 +218,7 @@ if(!function_exists('aesop_shortcodes')){
 				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Creates a video section.','aesop-core' )
 			),
-			'character' 				=> array(
+			'character' 		=> array(
 				'name' 				=> __('Character', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
@@ -218,7 +232,7 @@ if(!function_exists('aesop_shortcodes')){
 				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Creates a character.','aesop-core' )
 			),
-			'timeline_stop' 				=> array(
+			'timeline_stop' 	=> array(
 				'name' 				=> __('Timeline Stop', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
@@ -232,7 +246,7 @@ if(!function_exists('aesop_shortcodes')){
 				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Creates a character.','aesop-core' )
 			),
-			'image' 				=> array(
+			'image' 			=> array(
 				'name' 				=> __('Image', 'aesop-core'),
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
@@ -277,20 +291,6 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Lightbox', 'aesop-core' )
 					)
 
-				),
-				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
-				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
-				'desc' 				=> __( 'Creates a character.','aesop-core' )
-			),
-			'audio' 				=> array(
-				'name' 				=> __('Audio', 'aesop-core'),
-				'type' 				=> 'single',
-				'atts' 				=> array(
-					'src' 			=> array(
-						'values' 	=> array( ),
-						'default' 	=> '',
-						'desc' 		=> __( 'Audio URL', 'aesop-core' )
-					)
 				),
 				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
 				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',

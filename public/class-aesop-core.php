@@ -63,8 +63,10 @@ class Aesop_Core {
 	 */
 	private function __construct() {
 
-		//include avail modules
+		//load component array
 		require_once( AI_CORE_DIR.'admin/includes/available.php');
+
+		// load components
 		require_once( AI_CORE_DIR.'public/includes/components/component-parallax.php' );
 		require_once( AI_CORE_DIR.'public/includes/components/component-map.php' );
 		require_once( AI_CORE_DIR.'public/includes/components/component-image.php' );
@@ -75,7 +77,8 @@ class Aesop_Core {
 		require_once( AI_CORE_DIR.'public/includes/components/component-heading.php' );
 		require_once( AI_CORE_DIR.'public/includes/components/component-cbox.php' );
 		require_once( AI_CORE_DIR.'public/includes/components/component-audio.php' );
-
+		require_once( AI_CORE_DIR.'public/includes/components/component-quote.php' );
+		
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
