@@ -119,9 +119,9 @@ class Aesop_Core_Admin {
 	}
 
 	public function admin_scripts(){
+
 		// Register Scripts
 		wp_register_script( 'ai-core-script', AI_CORE_URL. '/admin/assets/js/generator.js', AI_CORE_VERSION, true);
-		wp_register_script('ai-media-uploader', AI_CORE_URL.'/admin/assets/js/ai-uploader.js', AI_CORE_VERSION, true);
 
         //Register Styles
 		wp_register_style( 'ai-core-styles', AI_CORE_URL. '/admin/assets/css/style.css', AI_CORE_VERSION, true);
@@ -132,7 +132,7 @@ class Aesop_Core_Admin {
 			global $pagenow;
 
 			// Enqueue styles
-				wp_enqueue_style( 'ai-core-styles' );
+			wp_enqueue_style( 'ai-core-styles' );
 
 			// Load styles and scripts for bad ass generator only on these pages
 			$aesop_generator_includes_pages = array( 'post.php', 'edit.php', 'post-new.php', 'index.php' );
@@ -147,8 +147,6 @@ class Aesop_Core_Admin {
 
         		// media uploader
 				wp_enqueue_media();
-       			
-       			wp_enqueue_script('ai-media-uploader');
 			}
 		}
 	}
