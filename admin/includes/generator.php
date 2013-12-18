@@ -37,10 +37,15 @@
 					
 					$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="' . $attr_info['default'] . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
 					$return .= '<input id="aesop-upload-img" type="button" class="button button-primary button-large" value="Upload Image"/>';
+				
+				} elseif('audio_upload' == $attr_info['type']) {
+					
+					$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="' . $attr_info['default'] . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
+					$return .= '<input id="aesop-upload-img" type="button" class="button button-primary button-large" value="Upload Audio"/>'; 
+
 				} else {
 					$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="' . $attr_info['default'] . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
 				}
-
 			}
 			$return .= '</p>';
 		}

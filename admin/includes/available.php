@@ -309,7 +309,7 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'single',
 				'atts' 				=> array(
 					'src' 			=> array(
-						'type'		=> 'image_upload',
+						'type'		=> 'audio_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Audio URL', 'aesop-core' )
