@@ -14,9 +14,11 @@
 	$shortcode = aesop_shortcodes( $_GET['shortcode'] );
 
 	$return = '';
+
 	// Shortcode has atts
 	if ( count( $shortcode['atts'] ) && $shortcode['atts'] ) {
 		foreach ( $shortcode['atts'] as $attr_name => $attr_info ) {
+
 			$return .= '<p>';
 			$return .= '<label for="aesop-generator-attr-' . $attr_name . '">' . $attr_info['desc'] . '</label>';
 			// Select
@@ -32,16 +34,16 @@
 			else {
 
 				$attr_field_type = isset($attr_info['type']) ? $attr_info['type'] : 'text';
-			
+
 				if('image_upload' == $attr_info['type']) {
-					
+
 					$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="' . $attr_info['default'] . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
 					$return .= '<input id="aesop-upload-img" type="button" class="button button-primary button-large" value="Upload Image"/>';
-				
+
 				} elseif('audio_upload' == $attr_info['type']) {
-					
+
 					$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="' . $attr_info['default'] . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
-					$return .= '<input id="aesop-upload-img" type="button" class="button button-primary button-large" value="Upload Audio"/>'; 
+					$return .= '<input id="aesop-upload-img" type="button" class="button button-primary button-large" value="Upload Audio"/>';
 
 				} else {
 					$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="' . $attr_info['default'] . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
@@ -54,12 +56,13 @@
 	// Single shortcode (not closed)
 	if ( $shortcode['type'] == 'single' ) {
 		$return .= '<input type="hidden" name="aesop-generator-content" id="aesop-generator-content" value="false" />';
-	
+
 	} else {
 
 		$return .= '<p><label>' . __( 'Content', 'aesop-shortcodes' ) . '</label><input type="text" name="aesop-generator-content" id="aesop-generator-content" value="' . $shortcode['content'] . '" /></p>';
 	}
-
+	
+	$return .= '<p class="aesop-component-description">Description:&nbsp; '.$shortcode['desc'].'</p>';
 	$return .= '<p class="aesop-buttoninsert-wrap"><a href="#" id="aesop-generator-insert">' . __( 'Insert Component', 'aesop-shortcodes' ) . '</a></p> ';
 
 	$return .= '<input type="hidden" name="aesop-generator-result" id="aesop-generator-result" value="" />';

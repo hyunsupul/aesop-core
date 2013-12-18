@@ -71,7 +71,7 @@ if(!function_exists('aesop_shortcodes')){
 
 				),
 				'content' 			=> __( 'Optional Caption', 'ba-shortcodes' ),
-				'desc' 				=> __( 'Creates an image.','aesop-core' )
+				'desc' 				=> __( 'Creates an image component with caption, alignment, and lightbox options.','aesop-core' )
 			),
 			'character' 			=> array(
 				'name' 				=> __('Character', 'aesop-core'),
@@ -103,7 +103,7 @@ if(!function_exists('aesop_shortcodes')){
 					)
 				),
 				'content' 			=> __( 'Character text.', 'ba-shortcodes' ),
-				'desc' 				=> __( 'Creates a character.','aesop-core' )
+				'desc' 				=> __( 'Creates a character that can be positioned to the left or right of your story.','aesop-core' )
 			),
 			'quote' 			=> array(
 				'name' 				=> __('Aesop Quote Section', 'aesop-core'),
@@ -200,7 +200,7 @@ if(!function_exists('aesop_shortcodes')){
 					)
 				),
 				'content' 			=> __( 'All your normal text goes here.', 'ba-shortcodes' ),
-				'desc' 				=> __( 'Wraps your text in magazine style columns.','aesop-core' )
+				'desc' 				=> __( 'Multiple use content area with options for background image, background color, and magazine style columns.','aesop-core' )
 			),
 			'chapter_heading' 	=> array(
 				'name' 				=> __('Chapter Heading', 'aesop-core'),
@@ -315,7 +315,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Audio URL', 'aesop-core' )
 					)
 				),
-				'desc' 				=> __( 'Creates a character.','aesop-core' )
+				'desc' 				=> __( 'Creates an audio player with your own audio.','aesop-core' )
 			),
 			'video' 			=> array(
 				'name' 				=> __('Video Section', 'aesop-core'),
@@ -353,7 +353,7 @@ if(!function_exists('aesop_shortcodes')){
 					)
 				),
 				'content' 			=> __( 'Optional caption', 'ba-shortcodes' ),
-				'desc' 				=> __( 'Creates a video section.','aesop-core' )
+				'desc' 				=> __( 'Responsive video component with alignment and optional caption.','aesop-core' )
 			),
 			'map' 				=> array(
 				'name' 				=> __('Map', 'aesop-core'),
@@ -366,7 +366,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Height', 'aesop-core' )
 					)
 				),
-				'desc' 				=> __( 'Creates a video section.','aesop-core' )
+				'desc' 				=> __( 'Creates the basic map component. Use the Map Locations edit boxes when writing your story to add locations.','aesop-core' )
 			),
 			'timeline_stop' 	=> array(
 				'name' 				=> __('Timeline Stop', 'aesop-core'),
@@ -379,7 +379,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Date', 'aesop-core' )
 					)
 				),
-				'desc' 				=> __( 'Creates a timline component.','aesop-core' )
+				'desc' 				=> __( 'Enter a number such as 2007, and a small timeline will be displayed with scroll to points. This works similar to the chapter heading.','aesop-core' )
 			)
 		);
 
