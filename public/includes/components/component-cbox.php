@@ -26,7 +26,7 @@ if (!function_exists('aesop_content_shortcode')){
 		$atts = apply_filters('aesop_content_defaults',shortcode_atts($defaults, $atts));
 
 		// set component to content width
-		$contentwidth = 'content' == $atts['width'] ? 'is-content-width' : false;
+		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 
 		// are we doing columns or image and do a clas based on it
 		$columns = $atts['columns'] ? sprintf('aesop-content-comp-columns-%s',$atts['columns']) : false;

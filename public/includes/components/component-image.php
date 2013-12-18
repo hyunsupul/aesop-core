@@ -10,7 +10,8 @@ if (!function_exists('aesop_image_shortcode')){
 
 		$defaults = array(
 			'img' 				=> 'http://placekitten.com/1200/700',
-			'position' 			=> 'left',
+			'align' 			=> 'left',
+			'width'				=> '300px',
 			'lightbox' 			=> false
 		);
 
