@@ -36,7 +36,7 @@ jQuery(document).ready(function($) {
 // media uploader
 var file_frame;
 
-jQuery('.aesop-generator-attr-image_upload').live('click', function( event ){
+jQuery('#aesop-upload-img').live('click', function( event ){
 
     event.preventDefault();
 
@@ -64,7 +64,6 @@ jQuery('.aesop-generator-attr-image_upload').live('click', function( event ){
     // Finally, open the modal
     file_frame.open();
 });
-
 /**
  * DropKick
  *

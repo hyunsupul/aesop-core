@@ -121,7 +121,7 @@ class Aesop_Core_Admin {
 	public function admin_scripts(){
 
 		// Register Scripts
-		wp_register_script( 'ai-core-script', AI_CORE_URL. '/admin/assets/js/generator.js', AI_CORE_VERSION, true);
+		wp_register_script( 'ai-core-script', AI_CORE_URL. '/admin/assets/js/generator.min.js', AI_CORE_VERSION, true);
 
         //Register Styles
 		wp_register_style( 'ai-core-styles', AI_CORE_URL. '/admin/assets/css/style.css', AI_CORE_VERSION, true);

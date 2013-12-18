@@ -73,11 +73,12 @@ if(!function_exists('aesop_shortcodes')){
 				'content' 			=> __( 'Optional Caption', 'ba-shortcodes' ),
 				'desc' 				=> __( 'Creates an image.','aesop-core' )
 			),
-			'character' 		=> array(
+			'character' 			=> array(
 				'name' 				=> __('Character', 'aesop-core'),
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
 					'width' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> 'content',
 						'desc' 		=> __( 'Component Width', 'aesop-core' )
@@ -89,11 +90,13 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Character Image', 'aesop-core' )
 					),
 					'name' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Character Name', 'aesop-core' )
 					),
 					'position' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Alignment', 'aesop-core' )
@@ -107,11 +110,13 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
 					'width' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '100%',
 						'desc' 		=> __( 'Component Width', 'aesop-core' )
 					),
 					'align' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Alignment', 'aesop-core' )
@@ -129,6 +134,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Hex Color of Text', 'aesop-core' )
 					),
 					'height' 		=> array(
+						'type'		=> 'text',
 						'values'	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' )
@@ -142,16 +148,19 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
 					'width'			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '100%',
 						'desc' 		=> __( 'Width of Component', 'aesop-core' )
 					),
 					'columns' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Number of Columns', 'aesop-core' )
 					),
 					'position' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array(
 							__('none','aesop-core'),
 							__('left','aesop-core'),
@@ -167,6 +176,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Image URL', 'aesop-core' )
 					),
 					'imgrepeat' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array(
 							__('no-repeat', 'aesop-core'),
 							__('repeat', 'aesop-core'),
@@ -177,6 +187,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Image Repeat', 'aesop-core' )
 					),
 					'imgposition' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image Position', 'aesop-core' )
@@ -196,6 +207,7 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'single',
 				'atts' 				=> array(
 					'num' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> 1,
 						'desc' 		=> __( 'What Chapter is This?', 'aesop-core' )
@@ -214,11 +226,13 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Image', 'aesop-core' ),
 					),
 					'height' 		=> array(
+						'type'		=> 'text',
 						'values' 	=> array(),
 						'default' 	=> '500',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' )
 					),
 					'parallaxbg' 	=> array(
+						'type'		=> 'text',
 						'values' 	=> array(
 							__('on', 'aesop-core'),
 							__('off', 'aesop-core')
@@ -227,11 +241,13 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Parallax Background Image', 'aesop-core' )
 					),
 					'parallaxspeed' => array(
+						'type'		=> 'text',
 						'values' 	=> array(),
 						'default' 	=> '0.3',
 						'desc' 		=> __('Parallax Background Speed', 'aesop-core' )
 					),
 					'floater' 		=> array(
+						'type'		=> 'text',
 						'values'	=> array(
 							__('true', 'aesop-core'),
 							__('false', 'aesop-core')
@@ -246,6 +262,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Floater Media', 'aesop-core' )
 					),
 					'floaterposition' => array(
+						'type'		=> 'text',
 						'values' 	=> array(
 							__('right', 'aesop-core'),
 							__('left', 'aesop-core'),
@@ -255,6 +272,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Position of Floater', 'aesop-core' )
 					),
 					'floaterdirection' => array(
+						'type'		=> 'text',
 						'values' 	=> array(
 							__('up', 'aesop-core'),
 							__('down', 'aesop-core')
@@ -263,6 +281,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Parallax Direction of Floater', 'aesop-core' )
 					),
 					'captionposition' => array(
+						'type'		=> 'text',
 						'values' 	=> array(
 							__('bottom-left', 'aesop-core'),
 							__('bottom-right', 'aesop-core'),
@@ -273,6 +292,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Caption Position', 'aesop-core' )
 					),
 					'lightbox' 		=> array(
+						'type'		=> 'text',
 						'values' 	=> array(
 							__('on', 'aesop-core'),
 							__('off', 'aesop-core')
@@ -289,6 +309,7 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'single',
 				'atts' 				=> array(
 					'src' 			=> array(
+						'type'		=> 'image_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Audio URL', 'aesop-core' )
@@ -301,16 +322,19 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'single',
 				'atts' 				=> array(
 					'width' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '100%',
 						'desc' 		=> __( 'Component Width', 'aesop-core' )
 					),
 					'align' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> 'center',
 						'desc' 		=> __( 'Alignment', 'aesop-core' )
 					),
 					'src' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array(
 							__('vimeo', 'aesop-core'),
 							__('youtube', 'aesop-core'),
@@ -322,6 +346,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Video Source', 'aesop-core' )
 					),
 					'id' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Video ID', 'aesop-core' )
@@ -335,6 +360,7 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'single',
 				'atts' 				=> array(
 					'height' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Height', 'aesop-core' )
@@ -347,6 +373,7 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'single',
 				'atts' 				=> array(
 					'num' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Date', 'aesop-core' )
