@@ -11,26 +11,31 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
 					'width' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> 'content',
 						'desc' 		=> __( 'Component Width', 'aesop-core' )
 					),
 					'imgwidth' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '300px',
 						'desc' 		=> __( 'Image Width', 'aesop-core' )
 					),
 					'img' 			=> array(
+						'type'		=> 'image_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image URL', 'aesop-core' )
 					),
 					'alt' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image ALT', 'aesop-core' )
 					),
 					'align' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array(
 							__('left', 'aesop-core'),
 							__('center', 'aesop-core'),
@@ -40,11 +45,13 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Image Alignment', 'aesop-core' )
 					),
 					'offset' 		=> array(
+						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image Offset', 'aesop-core' )
 					),
 					'captionposition' => array(
+						'type'		=> 'text',
 						'values' 	=> array(
 							__('bottom', 'aesop-core'),
 							__('top', 'aesop-core')
@@ -53,6 +60,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Caption Position', 'aesop-core' )
 					),
 					'lightbox' 			=> array(
+						'type'		=> 'text',
 						'values' 	=> array(
 							__('on', 'aesop-core'),
 							__('off', 'aesop-core')
@@ -75,6 +83,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Component Width', 'aesop-core' )
 					),
 					'img' 			=> array(
+						'type'		=> 'image_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Character Image', 'aesop-core' )
@@ -152,6 +161,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Text Block Alignment', 'aesop-core' )
 					),
 					'img' 			=> array(
+						'type'		=> 'image_upload',
 						'values' 	=> array( ),
 						'default' 	=> '#',
 						'desc' 		=> __( 'Image URL', 'aesop-core' )
@@ -198,6 +208,7 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
 					'img' 			=> array(
+						'type'		=> 'image_upload',
 						'values' 	=> array( ),
 						'default' 	=> '#',
 						'desc' 		=> __( 'Image', 'aesop-core' ),
@@ -229,6 +240,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Enable Floating Element', 'aesop-core' )
 					),
 					'floatermedia' 	=> array(
+						'type'		=> 'image_upload',
 						'values' 	=> array(),
 						'default' 	=> 'false',
 						'desc' 		=> __('Floater Media', 'aesop-core' )

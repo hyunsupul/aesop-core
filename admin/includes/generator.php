@@ -31,8 +31,10 @@
 			// Text input
 			else {
 
-				$attr_field_type = ( isset($attr_info['type']) == 'color' ) ? 'color' : 'text';
+				$attr_field_type = isset($attr_info['type']) ? $attr_info['type'] : 'text';
+			
 				$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="' . $attr_info['default'] . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
+
 			}
 			$return .= '</p>';
 		}
