@@ -6,8 +6,195 @@
 if(!function_exists('aesop_shortcodes')){
 	function aesop_shortcodes( $shortcode = null ) {
 		$shortcodes = array(
+			'image' 			=> array(
+				'name' 				=> __('Image', 'aesop-core'),
+				'type' 				=> 'wrap',
+				'atts' 				=> array(
+					'width' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> 'content',
+						'desc' 		=> __( 'Component Width', 'aesop-core' )
+					),
+					'imgwidth' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '300px',
+						'desc' 		=> __( 'Image Width', 'aesop-core' )
+					),
+					'img' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Image URL', 'aesop-core' )
+					),
+					'alt' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Image ALT', 'aesop-core' )
+					),
+					'align' 			=> array(
+						'values' 	=> array(
+							__('left', 'aesop-core'),
+							__('center', 'aesop-core'),
+							__('right', 'aesop-core')
+						),
+						'default' 	=> 'center',
+						'desc' 		=> __( 'Image Alignment', 'aesop-core' )
+					),
+					'offset' 		=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Image Offset', 'aesop-core' )
+					),
+					'captionposition' => array(
+						'values' 	=> array(
+							__('bottom', 'aesop-core'),
+							__('top', 'aesop-core')
+						 ),
+						'default' 	=> 'bottom',
+						'desc' 		=> __( 'Caption Position', 'aesop-core' )
+					),
+					'lightbox' 			=> array(
+						'values' 	=> array(
+							__('on', 'aesop-core'),
+							__('off', 'aesop-core')
+						),
+						'default' 	=> 'off',
+						'desc' 		=> __( 'Lightbox', 'aesop-core' )
+					),
+
+				),
+				'content' 			=> __( 'Optional Caption', 'ba-shortcodes' ),
+				'desc' 				=> __( 'Creates an image.','aesop-core' )
+			),
+			'character' 		=> array(
+				'name' 				=> __('Character', 'aesop-core'),
+				'type' 				=> 'wrap',
+				'atts' 				=> array(
+					'width' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> 'content',
+						'desc' 		=> __( 'Component Width', 'aesop-core' )
+					),
+					'img' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Character Image', 'aesop-core' )
+					),
+					'name' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Character Name', 'aesop-core' )
+					),
+					'position' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Alignment', 'aesop-core' )
+					)
+				),
+				'content' 			=> __( 'Character text.', 'ba-shortcodes' ),
+				'desc' 				=> __( 'Creates a character.','aesop-core' )
+			),
+			'quote' 			=> array(
+				'name' 				=> __('Aesop Quote Section', 'aesop-core'),
+				'type' 				=> 'wrap',
+				'atts' 				=> array(
+					'width' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '100%',
+						'desc' 		=> __( 'Component Width', 'aesop-core' )
+					),
+					'align' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Alignment', 'aesop-core' )
+					),
+					'background' 	=> array(
+						'values' 	=> array( ),
+						'type'		=> 'color',
+						'default' 	=> '#282828',
+						'desc' 		=> __( 'Hex Color of Background', 'aesop-core' )
+					),
+					'text'			 => array(
+						'values' 	=> array(),
+						'type'		=> 'color',
+						'default' 	=> '#FFFFFF',
+						'desc' 		=> __('Hex Color of Text', 'aesop-core' )
+					),
+					'height' 		=> array(
+						'values'	=> array(),
+						'default' 	=> '',
+						'desc' 		=> __('Height of Image Area', 'aesop-core' )
+					)
+				),
+				'content' 			=> __( 'Enter quote here.', 'ba-shortcodes' ),
+				'desc' 				=> __( 'Section quote area with background and color controls.','aesop-core' )
+			),
+			'content' 			=> array(
+				'name' 				=> __('Content', 'aesop-core'),
+				'type' 				=> 'wrap',
+				'atts' 				=> array(
+					'width'			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '100%',
+						'desc' 		=> __( 'Width of Component', 'aesop-core' )
+					),
+					'columns' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Number of Columns', 'aesop-core' )
+					),
+					'position' 			=> array(
+						'values' 	=> array(
+							__('none','aesop-core'),
+							__('left','aesop-core'),
+							__('right','aesop-core')
+						),
+						'default' 	=> 'none',
+						'desc' 		=> __( 'Text Block Alignment', 'aesop-core' )
+					),
+					'img' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '#',
+						'desc' 		=> __( 'Image URL', 'aesop-core' )
+					),
+					'imgrepeat' 			=> array(
+						'values' 	=> array(
+							__('no-repeat', 'aesop-core'),
+							__('repeat', 'aesop-core'),
+							__('repeat-vertical', 'aesop-core'),
+							__('repeat-horizontal', 'aesop-core')
+						),
+						'default' 	=> 'no-repeat',
+						'desc' 		=> __( 'Image Repeat', 'aesop-core' )
+					),
+					'imgposition' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Image Position', 'aesop-core' )
+					),
+					'color' 		=> array(
+						'values' 	=> array(),
+						'type'		=> 'color',
+						'default' 	=> '#FFFFFF',
+						'desc' 		=> __('Color of Text', 'aesop-core' )
+					)
+				),
+				'content' 			=> __( 'All your normal text goes here.', 'ba-shortcodes' ),
+				'desc' 				=> __( 'Wraps your text in magazine style columns.','aesop-core' )
+			),
+			'chapter_heading' 	=> array(
+				'name' 				=> __('Chapter Heading', 'aesop-core'),
+				'type' 				=> 'single',
+				'atts' 				=> array(
+					'num' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> 1,
+						'desc' 		=> __( 'What Chapter is This?', 'aesop-core' )
+					)
+				),
+				'desc' 				=> __( 'Creates the scroll to point, as a chapter heading.','aesop-core' )
+			),
 			'parallax' 			=> array(
-				'name' 				=> __('Aesop Parallax', 'aesop-core'),
+				'name' 				=> __('Parallax Image', 'aesop-core'),
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
 					'img' 			=> array(
@@ -82,88 +269,8 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Image Lightbox', 'aesop-core' )
 					)
 				),
-				'content' 			=> __( 'Caption', 'ba-shortcodes' ),
-				'usage' 			=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
+				'content' 			=> __( 'Optional Caption', 'ba-shortcodes' ),
 				'desc' 				=> __( 'Parallax styled image component with caption and optional lightbox.','aesop-core' )
-			),
-			'quote' 			=> array(
-				'name' 				=> __('Aesop Quote Section', 'aesop-core'),
-				'type' 				=> 'wrap',
-				'atts' 				=> array(
-					'background' 	=> array(
-						'values' 	=> array( ),
-						'type'		=> 'color',
-						'default' 	=> '#282828',
-						'desc' 		=> __( 'Hex Color of Background', 'aesop-core' )
-					),
-					'text'			 => array(
-						'values' 	=> array(),
-						'type'		=> 'color',
-						'default' 	=> '#FFFFFF',
-						'desc' 		=> __('Hex Color of Text', 'aesop-core' )
-					),
-					'height' 		=> array(
-						'values'	=> array(),
-						'default' 	=> '',
-						'desc' 		=> __('Height of Image Area', 'aesop-core' )
-					),
-				),
-				'content' 			=> __( 'Quote Here', 'ba-shortcodes' ),
-				'usage' 			=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
-				'desc' 				=> __( 'Section quote area with background and color controls.','aesop-core' )
-			),
-			'content' 			=> array(
-				'name' 				=> __('Content', 'aesop-core'),
-				'type' 				=> 'wrap',
-				'atts' 				=> array(
-					'width'			=> array(
-						'values' 	=> array( ),
-						'default' 	=> '100%',
-						'desc' 		=> __( 'Width of Component', 'aesop-core' )
-					),
-					'columns' 			=> array(
-						'values' 	=> array( ),
-						'default' 	=> '',
-						'desc' 		=> __( 'Number of Columns', 'aesop-core' )
-					),
-					'position' 			=> array(
-						'values' 	=> array(
-							__('none','aesop-core'),
-							__('left','aesop-core'),
-							__('right','aesop-core')
-						),
-						'default' 	=> 'none',
-						'desc' 		=> __( 'Text Block Alignment', 'aesop-core' )
-					),
-					'img' 			=> array(
-						'values' 	=> array( ),
-						'default' 	=> '#',
-						'desc' 		=> __( 'Image URL', 'aesop-core' )
-					),
-					'color' 		=> array(
-						'values' 	=> array(),
-						'type'		=> 'color',
-						'default' 	=> '#FFFFFF',
-						'desc' 		=> __('Color of Text', 'aesop-core' )
-					)
-				),
-				'content' 			=> __( 'All your normal text goes here.', 'ba-shortcodes' ),
-				'usage' 			=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
-				'desc' 				=> __( 'Wraps your text in magazine style columns.','aesop-core' )
-			),
-			'chapter_heading' 	=> array(
-				'name' 				=> __('Chapter Heading', 'aesop-core'),
-				'type' 				=> 'single',
-				'atts' 				=> array(
-					'num' 			=> array(
-						'values' 	=> array( ),
-						'default' 	=> 1,
-						'desc' 		=> __( 'What Chapter is This?', 'aesop-core' )
-					)
-				),
-				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
-				'usage' 			=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
-				'desc' 				=> __( 'Creates the scroll to point, as a chapter heading.','aesop-core' )
 			),
 			'audio' 			=> array(
 				'name' 				=> __('Audio', 'aesop-core'),
@@ -175,14 +282,22 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Audio URL', 'aesop-core' )
 					)
 				),
-				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
-				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Creates a character.','aesop-core' )
 			),
 			'video' 			=> array(
 				'name' 				=> __('Video Section', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
+					'width' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '100%',
+						'desc' 		=> __( 'Component Width', 'aesop-core' )
+					),
+					'align' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> 'center',
+						'desc' 		=> __( 'Alignment', 'aesop-core' )
+					),
 					'src' 			=> array(
 						'values' 	=> array(
 							__('vimeo', 'aesop-core'),
@@ -200,8 +315,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Video ID', 'aesop-core' )
 					)
 				),
-				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
-				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
+				'content' 			=> __( 'Optional caption', 'ba-shortcodes' ),
 				'desc' 				=> __( 'Creates a video section.','aesop-core' )
 			),
 			'map' 				=> array(
@@ -214,23 +328,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Height', 'aesop-core' )
 					)
 				),
-				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
-				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Creates a video section.','aesop-core' )
-			),
-			'character' 		=> array(
-				'name' 				=> __('Character', 'aesop-core'),
-				'type' 				=> 'single',
-				'atts' 				=> array(
-					'img' 			=> array(
-						'values' 	=> array( ),
-						'default' 	=> '',
-						'desc' 		=> __( 'Character Image', 'aesop-core' )
-					)
-				),
-				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
-				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
-				'desc' 				=> __( 'Creates a character.','aesop-core' )
 			),
 			'timeline_stop' 	=> array(
 				'name' 				=> __('Timeline Stop', 'aesop-core'),
@@ -239,62 +337,10 @@ if(!function_exists('aesop_shortcodes')){
 					'num' 			=> array(
 						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Year', 'aesop-core' )
+						'desc' 		=> __( 'Date', 'aesop-core' )
 					)
 				),
-				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
-				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
-				'desc' 				=> __( 'Creates a character.','aesop-core' )
-			),
-			'image' 			=> array(
-				'name' 				=> __('Image', 'aesop-core'),
-				'type' 				=> 'wrap',
-				'atts' 				=> array(
-					'img' 			=> array(
-						'values' 	=> array( ),
-						'default' 	=> '',
-						'desc' 		=> __( 'Image', 'aesop-core' )
-					),
-					'alt' 			=> array(
-						'values' 	=> array( ),
-						'default' 	=> '',
-						'desc' 		=> __( 'Image ALT', 'aesop-core' )
-					),
-					'align' 			=> array(
-						'values' 	=> array(
-							__('left', 'aesop-core'),
-							__('center', 'aesop-core'),
-							__('right', 'aesop-core')
-						),
-						'default' 	=> 'center',
-						'desc' 		=> __( 'Component Alignment', 'aesop-core' )
-					),
-					'captionposition' => array(
-						'values' 	=> array(
-							__('bottom', 'aesop-core'),
-							__('top', 'aesop-core')
-						 ),
-						'default' 	=> 'bottom',
-						'desc' 		=> __( 'Caption Position', 'aesop-core' )
-					),
-					'width' 			=> array(
-						'values' 	=> array( ),
-						'default' 	=> '300px',
-						'desc' 		=> __( 'Image Width', 'aesop-core' )
-					),
-					'lightbox' 			=> array(
-						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
-						),
-						'default' 	=> 'off',
-						'desc' 		=> __( 'Lightbox', 'aesop-core' )
-					)
-
-				),
-				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
-				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
-				'desc' 				=> __( 'Creates a character.','aesop-core' )
+				'desc' 				=> __( 'Creates a timline component.','aesop-core' )
 			)
 		);
 

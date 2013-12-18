@@ -8,10 +8,10 @@
 if (!function_exists('aesop_character_shortcode')){
 
 	function aesop_character_shortcode($atts, $content = null) {
-		
+
 		// let this be used multiple times
 		$hash = rand();
-		
+
 		$defaults = array(
 			'width'				=> 'content',
 			'img' 				=> 'http://placekitten.com/100/100',

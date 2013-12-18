@@ -1,6 +1,6 @@
 <?php
 /**
- 	* Essentially a clone of the image gallery shortcode in wordpress core.
+ 	* Provides an image and caption
  	*
  	* @since    1.0.0
 */
