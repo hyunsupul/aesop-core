@@ -58,54 +58,97 @@
         &.dk_option_current a {
             background-image: url(../img/ai-core-sprite-hover.png);
             background-repeat: repeat-x;
+            transition:none;
         }
 
-        &.parallax {
+        // image
+        &.image {
             background-position: 0 0;
         }
-        &.parallax.dk_option_current a,
-        &.parallax a:hover {
-            background-position: 0 0;
+        &.image.dk_option_current a,
+        &.image a:hover {
+            background-position: 0 -600px;
         }
 
-        &.quote {
+        // character
+        &.character {
             background-position: 0 -60px;
+        }
+        &.character.dk_option_current a,
+        &.character a:hover {
+            background-position: 0 -60px;
+        }
+
+        // qupte
+        &.quote {
+            background-position: 0 -120px;
         }
         &.quote.dk_option_current a,
         &.quote a:hover {
-             background-position: 0 -60px;
+             background-position: 0 -120px;
         }
 
-        &.image_back {
-            background-position: 0 -120px;
-        }
-        &.image_back.dk_option_current a,
-        &.image_back a:hover {
-            background-position: 0 -120px;
-        }
-
-        &.columns {
+        // content
+        &.content {
             background-position: 0 -180px;
         }
-        &.columns.dk_option_current a,
-        &.columns a:hover {
+        &.content.dk_option_current a,
+        &.content a:hover {
             background-position: 0 -180px;
         }
 
-        &.chapter_head {
+        // chapter head
+        &.chapter_heading {
             background-position: 0 -240px;
         }
-        &.chapter_head.dk_option_current a,
-        &.chapter_head a:hover {
+        &.chapter_heading.dk_option_current a,
+        &.chapter_heading a:hover {
             background-position: 0 -240px;
         }
 
-        &.video {
+        // parallax
+        &.parallax {
             background-position: 0 -300px;
+        }
+        &.parallax.dk_option_current a,
+        &.parallax a:hover {
+            background-position: 0 -300px;
+        }
+
+        // audio
+        &.audio {
+            background-position: 0 -360px;
+        }
+        &.audio.dk_option_current a,
+        &.audio a:hover {
+            background-position: 0 -360px;
+        }
+
+        // video
+        &.video {
+            background-position: 0 -420px;
         }
         &.video.dk_option_current a,
         &.video a:hover {
-            background-position: 0 -300px;
+            background-position: 0 -420px;
+        }
+
+        // map
+        &.map {
+            background-position: 0 -480px;
+        }
+        &.map.dk_option_current a,
+        &.map a:hover {
+            background-position: 0 -480px;
+        }
+
+        // video
+        &.timeline_stop {
+            background-position: 0 -540px;
+        }
+        &.timeline_stop.dk_option_current a,
+        &.timeline_stop a:hover {
+            background-position: 0 -540px;
         }
     }
 }
