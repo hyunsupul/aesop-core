@@ -231,6 +231,56 @@ if(!function_exists('aesop_shortcodes')){
 				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
 				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
 				'desc' 				=> __( 'Creates a character.','aesop-core' )
+			),
+			'image' 				=> array(
+				'name' 				=> __('Image', 'aesop-core'),
+				'type' 				=> 'wrap',
+				'atts' 				=> array(
+					'img' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Image', 'aesop-core' )
+					),
+					'alt' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Image ALT', 'aesop-core' )
+					),
+					'align' 			=> array(
+						'values' 	=> array(
+							__('left', 'aesop-core'),
+							__('center', 'aesop-core'),
+							__('right', 'aesop-core')
+						),
+						'default' 	=> 'center',
+						'desc' 		=> __( 'Component Alignment', 'aesop-core' )
+					),
+					'captionposition' => array(
+						'values' 	=> array(
+							__('bottom', 'aesop-core'),
+							__('top', 'aesop-core')
+						 ),
+						'default' 	=> 'bottom',
+						'desc' 		=> __( 'Year', 'aesop-core' )
+					),
+					'width' 			=> array(
+						'values' 	=> array( ),
+						'default' 	=> '300px',
+						'desc' 		=> __( 'Image Width', 'aesop-core' )
+					),
+					'lightbox' 			=> array(
+						'values' 	=> array(
+							__('on', 'aesop-core'),
+							__('off', 'aesop-core')
+						),
+						'default' 	=> 'off',
+						'desc' 		=> __( 'Lightbox', 'aesop-core' )
+					)
+
+				),
+				'content' 			=> __( 'Null here', 'ba-shortcodes' ),
+				'usage'				=> '[aesop-social-icon type="twitter-icon" link="http://link.com" target="_blank"]',
+				'desc' 				=> __( 'Creates a character.','aesop-core' )
 			)
 		);
 

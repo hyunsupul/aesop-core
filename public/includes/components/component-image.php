@@ -10,7 +10,9 @@ if (!function_exists('aesop_image_shortcode')){
 
 		$defaults = array(
 			'img' 				=> 'http://placekitten.com/1200/700',
+			'alt'				=> '',
 			'align' 			=> 'left',
+			'captionposition'	=> 'bottom',
 			'width'				=> '300px',
 			'lightbox' 			=> false
 		);
@@ -18,10 +20,9 @@ if (!function_exists('aesop_image_shortcode')){
 		$atts = apply_filters('aesop_image_defaults',shortcode_atts($defaults, $atts));
 
 		$hash = rand();
-
-		$out = '';
-
-		//$shcode = '[caption id="' . $id . '" align="align' . $align        . '" width="' . $width . '"]' . $html . ' ' . $caption . '[/caption]';
+		$caption = $content ? sprintf('<span class="aesop-image-component-caption">%s</div>', $content) : false;
+		$core = sprintf('<div class="aesop-image-component-image aesop-caption-%s"><img src="%s" alt="%s">%s</div>',$atts['captionposition'], $atts['img'], $atts['alt'], $caption);
+		$out = sprintf('<section class="aesop-component aesop-image-component aesop-component-align-%s">%s</section>',$atts['align'],$core);
 
 		return apply_filters('aesop_image_output',$out);
 	}
