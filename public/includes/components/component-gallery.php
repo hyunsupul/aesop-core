@@ -198,7 +198,15 @@ class AesopCoreGallery {
             $caption =  $image->post_excerpt;
             $desc    =  $image->post_content;
 
-           	?><div class="aesop-stacked-img" style="background-image:url('<?php echo $full;?>');background-size:cover;">
+           	?>
+           	<script>
+           	jQuery(document).ready(function(){
+           		if (window.matchMedia("(-webkit-device-pixel-ratio: 2)").matches) {
+				 	jQuery('.aesop-stacked-img').css({'background-attachment': 'scroll'});
+				}
+           	});
+           	</script>
+           	<div class="aesop-stacked-img" style="background-image:url('<?php echo $full;?>');background-size:cover;">
            		<?php if($caption){ ?>
            			<div class="aesop-stacked-caption"><?php echo $caption;?></div>
            		<?php } ?>
