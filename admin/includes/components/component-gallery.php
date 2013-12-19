@@ -9,6 +9,7 @@ class AesopGalleryComponentAdmin {
 	public function __construct(){
 
        	add_action('init',array($this,'do_type'));
+       	add_action('admin_init',array($this,'sc_helper'));
        	add_filter('manage_ai_galleries_posts_columns', array($this,'col_head'));
 		add_action('manage_ai_galleries_posts_custom_column', array($this,'col_content'), 10, 2);
 		add_filter( 'cmb_meta_boxes', array($this,'aesop_gallery_meta' ));
@@ -55,6 +56,19 @@ class AesopGalleryComponentAdmin {
 	}
 
 	/**
+	 	* Adds meta box to gallery post type in admin that displays the shortcode 
+	 	*
+	 	* @since    1.0.0
+	*/
+	function sc_helper(){
+		add_meta_box('ai_gallery_sc',__('Gallery Code','aesop-core'),array($this,'sc_helper_cb'),'ai_galleries','side', 'low');
+	}
+	function sc_helper_cb(){
+		_e('Copy the code below, and paste it into your story, in the spot where you\'d like the gallery to be displayed.<br />','aesop-core');
+		printf('<pre>[aesop_gallery id="%s"]</pre>',get_the_ID());
+	}
+
+	/**
 	 	* Adds columns to the Aesop Galleries custom post type
 	 	* Adds the shortcode for easy copy and past
 	 	* Adds the posts that the shortcode is used in
@@ -62,7 +76,7 @@ class AesopGalleryComponentAdmin {
 	 	* @since    1.0.0
 	*/
 	function col_head($defaults) {
-	    $defaults['aesop_gallery'] = __('Gallery Shortcode','aesop-core');
+	    $defaults['aesop_gallery'] = __('Gallery Code','aesop-core');
 	    $defaults['used_in'] = __('Used In','aesop-core');
 	    return $defaults;
 	}
@@ -122,6 +136,7 @@ class AesopGalleryComponentAdmin {
 		$meta_boxes[] = array(
 			'title' => __('Gallery Options', 'aesop-core'),
 			'pages' => array('ai_galleries'),
+			'context'	=> 'side',
 			'fields' => $opts
 		);
 
