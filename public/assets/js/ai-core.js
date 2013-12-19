@@ -83,3 +83,8 @@
 
     }
 }(jQuery));
+
+// FitVids
+jQuery(document).ready(function(){
+	jQuery('.aesop-video-container').fitVids();
+});

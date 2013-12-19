@@ -186,6 +186,24 @@ body .aesop-entry-suck-top {
     text-align: right;
 }
 
+// fullscreen video
+.aesop-video-component {
+    height: auto;
+
+    .wp-video-shortcode,
+    .wp-video {
+        width:100% !important;
+        max-width:100% !important;
+
+        .mejs-overlay,
+        .mejs-controls {
+            z-index: -1;
+        }
+    }
+}
+.aesop-component-align-center.self {
+    width:100% !important;
+}
 
 /*!
  * Fotorama 4.4.8 | http://fotorama.io/license/

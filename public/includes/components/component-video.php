@@ -14,6 +14,7 @@ if (!function_exists('aesop_video_shortcode')){
     		'width' => '100%',
     		'align' => 'center',
 	    	'src' =>'vimeo',
+	    	'hosted' => '',
 	    	'id'	=> ''
 	    );
 	    $atts = apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
@@ -22,14 +23,7 @@ if (!function_exists('aesop_video_shortcode')){
 
 	    $caption = $content ? sprintf('<div class="aesop-video-component-caption aesop-component-align-%s" %s>%s</div>',$atts['align'], $widthstyle, $content) : false;
 
-	    $out = sprintf('<section class="aesop-component aesop-video-component %s"><div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s" %s>',$contentwidth, $hash, $atts['align'], $widthstyle);
-
-	        $out .= sprintf('<script>
-		    	jQuery(document).ready(function(){
-		    		jQuery(\'.aesop-video-container.aesop-video-container-%s\').fitVids();
-		    	});
-		    	</script>
-		    		', $hash);
+	    $out = sprintf('<section class="aesop-component aesop-video-component %s"><div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$contentwidth, $hash, $atts['align'], $atts['src'], $widthstyle);
 
 	        switch( $atts['src'] ):
 
@@ -53,8 +47,8 @@ if (!function_exists('aesop_video_shortcode')){
 	                $out .= sprintf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" width="" height="" frameborder="0" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',$atts['id'], $atts['id'] );
 	                break;
 
-	            default:
-	                $out .= sprintf('<iframe src="http://www.youtube.com/embed/%s%s" width="%s" height="" frameborder="0" allowfullscreen wmode="transparent"></iframe>', $atts['id']) ;
+	            case 'self':
+	            	$out .= do_shortcode('[video src="'.$atts['hosted'].'" loop="on" autoplay="on"]');
 
 	        endswitch;
 
