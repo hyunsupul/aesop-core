@@ -190,7 +190,6 @@ class AesopCoreGallery {
 	*/
 	function aesop_stacked_gallery($atts, $images, $width){
 
-
 		foreach ($images as $image):
 
             $full    =  wp_get_attachment_url($image->ID, 'full', false,'');
@@ -199,13 +198,6 @@ class AesopCoreGallery {
             $desc    =  $image->post_content;
 
            	?>
-           	<script>
-           	jQuery(document).ready(function(){
-           		if (window.matchMedia("(-webkit-device-pixel-ratio: 2)").matches) {
-				 	jQuery('.aesop-stacked-img').css({'background-attachment': 'scroll'});
-				}
-           	});
-           	</script>
            	<div class="aesop-stacked-img" style="background-image:url('<?php echo $full;?>');background-size:cover;">
            		<?php if($caption){ ?>
            			<div class="aesop-stacked-caption"><?php echo $caption;?></div>
