@@ -191,21 +191,21 @@ class AesopCoreGallery {
 	function aesop_stacked_gallery($atts, $images, $width){
 
 
-			foreach ($images as $image):
+		foreach ($images as $image):
 
-                $full    =  wp_get_attachment_url($image->ID, 'full', false,'');
-                $alt     =  get_post_meta($image->ID, '_wp_attachment_image_alt', true);
-                $caption =  $image->post_excerpt;
-                $desc    =  $image->post_content;
+            $full    =  wp_get_attachment_url($image->ID, 'full', false,'');
+            $alt     =  get_post_meta($image->ID, '_wp_attachment_image_alt', true);
+            $caption =  $image->post_excerpt;
+            $desc    =  $image->post_content;
 
-               	?><div class="aesop-stacked-img" style="background-image:url('<?php echo $full;?>');">
-               		<?php if($caption){ ?>
-               			<div class="aesop-stacked-caption"><?php echo $caption;?></div>
-               		<?php } ?>
-               	</div>
-               	<?php
+           	?><div class="aesop-stacked-img" style="background-image:url('<?php echo $full;?>');background-size:cover;">
+           		<?php if($caption){ ?>
+           			<div class="aesop-stacked-caption"><?php echo $caption;?></div>
+           		<?php } ?>
+           	</div>
+           	<?php
 
-			endforeach;
+		endforeach;
 
 	}
 
