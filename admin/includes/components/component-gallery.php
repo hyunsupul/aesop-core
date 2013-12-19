@@ -43,13 +43,14 @@ class AesopGalleryComponentAdmin {
 			'menu_icon' 		  		=> AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
 			'menu_position'				=> 15,
 			'labels'              		=> $labels,
-			'supports'            		=> array( 'title', 'editor', ),
+			'supports'            		=> array( 'title', 'editor' ),
 			'hierarchical'        		=> false,
 			'public'              		=> false,
  			'show_ui' 					=> true,
-			'exclude_from_search'		=> false,
+			'exclude_from_search'		=> true,
 			'query_var' 				=> true,
 			'can_export' 				=> true,
+			'capability_type' 			=> 'post'
 		);
 		register_post_type( 'ai_galleries', $args );
 
@@ -97,9 +98,9 @@ class AesopGalleryComponentAdmin {
 			$pages = get_posts(array ('s' => '[aesop_gallery','post_type' => array ( 'page', 'post' ) ));
 
 			foreach($pages as $page):
-
+				$id = $page->ID;
 				if(has_shortcode($page->post_content,'aesop_gallery')){
-					echo ucfirst($this->the_slug($page->ID));
+					echo ucfirst($this->the_slug($id));
 				}
 
 			endforeach;
