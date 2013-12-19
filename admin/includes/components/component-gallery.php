@@ -61,10 +61,10 @@ class AesopGalleryComponentAdmin {
 	 	* @since    1.0.0
 	*/
 	function sc_helper(){
-		add_meta_box('ai_gallery_sc',__('Gallery Code','aesop-core'),array($this,'sc_helper_cb'),'ai_galleries','side', 'low');
+		add_meta_box('ai_gallery_sc',__('Gallery Instructions','aesop-core'),array($this,'sc_helper_cb'),'ai_galleries','side', 'low');
 	}
 	function sc_helper_cb(){
-		_e('Copy the code below, and paste it into your story, in the spot where you\'d like the gallery to be displayed.<br />','aesop-core');
+		_e('1. Click the Add Media button<br />2. Click Create Gallery to create a gallery<br />3. Insert gallery into editor, and publish.<br /><br /> Once you\'ve created the gallery, copy the code below, and paste it into your story where you want the gallery to be shown.<br />','aesop-core');
 		printf('<pre>[aesop_gallery id="%s"]</pre>',get_the_ID());
 	}
 
