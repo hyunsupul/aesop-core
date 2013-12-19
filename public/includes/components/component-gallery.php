@@ -190,7 +190,6 @@ class AesopCoreGallery {
 	*/
 	function aesop_stacked_gallery($atts, $images, $width){
 
-		?><div id="aesop-stack-gallery-<?php echo $atts['id'];?>" class="aesop-stacked-gallery-component"><?php
 
 			foreach ($images as $image):
 
@@ -199,17 +198,15 @@ class AesopCoreGallery {
                 $caption =  $image->post_excerpt;
                 $desc    =  $image->post_content;
 
-               	?><div class="aesop-stacked-div">
+               	?><div class="aesop-stacked-img" style="background-image:url('<?php echo $full;?>');">
                		<?php if($caption){ ?>
                			<div class="aesop-stacked-caption"><?php echo $caption;?></div>
                		<?php } ?>
-               		<div class="aesop-stacked-img" style="background:url('<?php echo $full;?>') no-repeat;background-size:cover;"></div>
                	</div>
                	<?php
 
 			endforeach;
 
-		?></div><?php
 	}
 
     /**
