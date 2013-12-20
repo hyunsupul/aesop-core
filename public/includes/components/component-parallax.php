@@ -14,7 +14,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 			'img' 				=> 'http://placekitten.com/1200/700',
 			'height' 			=> 500,
 			'parallaxbg' 		=> 'on',
-			'parallaxspeed'		=> 0.15,
+			'parallaxspeed'		=> 0.1,
 			'floater' 			=> false,
 			'floatermedia' 		=> '',
 			'floaterposition' 	=> 'right',
