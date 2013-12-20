@@ -65,6 +65,7 @@ if (!function_exists('aesop_chapter_heading_loader')){
 
 }
 
+// @TODO - this needs to be moved to theme level because not all will use the offset and setup here
 class AesopChapterHeadingComponent {
 
 	function __construct(){

@@ -386,6 +386,25 @@ if(!function_exists('aesop_shortcodes')){
 					)
 				),
 				'desc' 				=> __( 'Enter a number such as 2007, and a small timeline will be displayed with scroll to points. This works similar to the chapter heading.','aesop-core' )
+			),
+			'collection' 	=> array(
+				'name' 				=> __('Collections', 'aesop-core'),
+				'type' 				=> 'single',
+				'atts' 				=> array(
+					'type' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Date', 'aesop-core' )
+					),
+					'collection' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Collection', 'aesop-core' )
+					)
+				),
+				'desc' 				=> __( 'Show a collection of stories. Typically used on a page like the home page.','aesop-core' )
 			)
 		);
 
