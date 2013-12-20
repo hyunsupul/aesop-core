@@ -202,7 +202,7 @@ if(!function_exists('aesop_shortcodes')){
 				'content' 			=> __( 'All your normal text goes here.', 'ba-shortcodes' ),
 				'desc' 				=> __( 'Multiple use content area with options for background image, background color, and magazine style columns.','aesop-core' )
 			),
-			'chapter_heading' 	=> array(
+			'chapter' 	=> array(
 				'name' 				=> __('Chapter Heading', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
