@@ -64,7 +64,7 @@ class AesopChapterHeadingComponent {
 				    insertLocation: 'appendTo',
 				    showTopLink: true,
 				    showHeadline: false,
-				    scrollOffset: 116,
+				    scrollOffset: 96,
 				});
 
 			});
