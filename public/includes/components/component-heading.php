@@ -9,6 +9,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 	function aesop_chapter_shortcode($atts, $content = null) {
 		$defaults = array(
+			'label'	=> '',
 			'title' => '',
 			'img' => ''
 		);
@@ -60,7 +61,7 @@ class AesopChapterHeadingComponent {
 				    arrowKeys: true,
 				    insertTarget: '.aesop-story-header',
 				    insertLocation: 'appendTo',
-				    showTopLink: false,
+				    showTopLink: true,
 				    showHeadline: false,
 				    scrollOffset: 36,
 				});
