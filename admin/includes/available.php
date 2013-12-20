@@ -203,14 +203,20 @@ if(!function_exists('aesop_shortcodes')){
 				'desc' 				=> __( 'Multiple use content area with options for background image, background color, and magazine style columns.','aesop-core' )
 			),
 			'chapter' 	=> array(
-				'name' 				=> __('Chapter Heading', 'aesop-core'),
+				'name' 				=> __('Chapter Block', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
-					'num' 			=> array(
-						'type'		=> 'text',
+					'img' 			=> array(
+						'type'		=> 'image_upload',
 						'values' 	=> array( ),
-						'default' 	=> 1,
-						'desc' 		=> __( 'What Chapter is This?', 'aesop-core' )
+						'default' 	=> ' ',
+						'desc' 		=> __( 'Chapter Image', 'aesop-core' )
+					),
+					'title'			=> array(
+						'type'		=> 'text',
+						'values' 	=> array(),
+						'default'	=> '',
+						'desc'		=> __('Chapter Title','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Creates the scroll to point, as a chapter heading.','aesop-core' )
