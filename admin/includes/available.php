@@ -243,7 +243,7 @@ if(!function_exists('aesop_shortcodes')){
 					'parallaxspeed' => array(
 						'type'		=> 'text',
 						'values' 	=> array(),
-						'default' 	=> '0.3',
+						'default' 	=> '0.15',
 						'desc' 		=> __('Parallax Background Speed', 'aesop-core' )
 					),
 					'floater' 		=> array(

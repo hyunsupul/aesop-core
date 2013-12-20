@@ -25,7 +25,7 @@ if (!function_exists('aesop_quote_shortcode')){
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 
 		// set styles
-		$style = $atts['background'] || $atts['text'] || $atts['height'] ? sprintf('style="background:%s;color:%s;height:%s;"',$atts['background'], $atts['text'], $atts['height']) : false;
+		$style = $atts['background'] || $atts['text'] || $atts['height'] || $atts['width'] ? sprintf('style="background:%s;color:%s;height:%s;width:%s;"',$atts['background'], $atts['text'], $atts['height'], $atts['width']) : false;
 
 		// start wrapper
 		$out = sprintf('<section id="aesop-quote-component-%s" class="aesop-component aesop-quote-component %s" %s>',$hash,$contentwidth, $style);
