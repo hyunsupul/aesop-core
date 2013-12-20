@@ -1,7 +1,7 @@
 <?php
 
 /**
- 	* Creates an interactive character element
+ 	* Creates a fullscreen chapter heading
  	*
  	* @since    1.0.0
 */
@@ -16,9 +16,9 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 		ob_start();
 		?>
-		<section class="aesop-article-chapter-wrap">
+		<section class="aesop-article-chapter-wrap default-cover">
 			<div class="aesop-article-chapter clearfix" style="background:url('<?php echo $atts['img'];?>') center center;background-size:cover;">
-				<h1 class="aesop-chapter-title" itemprop="title"><?php echo $atts['title'];?></h1>
+				<h1 class="aesop-cover-title" itemprop="title"><?php echo $atts['title'];?></h1>
 			</div>
 		</section>
 		<?php
