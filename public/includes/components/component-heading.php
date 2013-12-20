@@ -20,7 +20,8 @@ if (!function_exists('aesop_chapter_shortcode')){
 		?>
 		<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover">
 			<div class="aesop-article-chapter clearfix" style="background:url('<?php echo $atts['img'];?>') center center;background-size:cover;">
-				<h1 class="aesop-cover-title aesop-chapter-title" itemprop="title"><?php echo $atts['title'];?></h1>
+				<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
+				<h2 class="aesop-cover-title" itemprop="title" ><?php echo $atts['title'];?></h2>
 			</div>
 		</section>
 		<?php
@@ -57,13 +58,13 @@ class AesopChapterHeadingComponent {
 			jQuery(document).ready(function(){
 
 				jQuery('.aesop-entry-content').scrollNav({
-				    sections: '.aesop-article-chapter-wrap',
+				    sections: '.aesop-chapter-title',
 				    arrowKeys: true,
 				    insertTarget: '.aesop-story-header',
 				    insertLocation: 'appendTo',
 				    showTopLink: true,
 				    showHeadline: false,
-				    scrollOffset: 36,
+				    scrollOffset: 116,
 				});
 
 			});
