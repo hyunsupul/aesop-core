@@ -29,7 +29,6 @@ class Aesop_Core {
 	 *
 	 * @var     string
 	 */
-	const VERSION = '0.2';
 
 	/**
 	 *
