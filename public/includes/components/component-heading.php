@@ -11,20 +11,33 @@ if (!function_exists('aesop_chapter_shortcode')){
 		$defaults = array(
 			'label'	=> '',
 			'title' => '',
+			'bgtype' => 'img',
 			'img' => ''
 		);
 		$atts = shortcode_atts($defaults, $atts);
 		$hash = rand();
 
 		ob_start();
-		?>
-		<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover">
-			<div class="aesop-article-chapter clearfix" style="background:url('<?php echo $atts['img'];?>') center center;background-size:cover;">
-				<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
-				<h2 class="aesop-cover-title" itemprop="title" ><?php echo $atts['title'];?></h2>
-			</div>
-		</section>
-		<?php
+
+			if ('video' == $atts['bgtype']) { ?>
+				<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover aesop-video-chapter">
+					<div class="aesop-article-chapter clearfix">
+						<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
+						<h2 class="aesop-cover-title" itemprop="title" ><?php echo $atts['title'];?></h2>
+						<div class="video-container">
+							<?php echo do_shortcode('[video src="'.$atts['img'].'" loop="on" autoplay="on"]'); ?>
+						</div>
+					</div>
+				</section>
+			<?php } else { ?>
+				<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover">
+					<div class="aesop-article-chapter clearfix" style="background:url('<?php echo $atts['img'];?>') center center;background-size:cover;">
+						<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
+						<h2 class="aesop-cover-title" itemprop="title" ><?php echo $atts['title'];?></h2>
+					</div>
+				</section>
+			<?php }
+
 		return ob_get_clean();
 	}
 }
