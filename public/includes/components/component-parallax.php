@@ -37,7 +37,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$animatedown = sprintf('data-top-bottom="transform: translate3d(0px, %spx, 0px);" data-bottom-top="transform: translate3d(0px, 0px, 0px);"',$atts['height']);
 
 		$itemanimate = 'up' == $atts['floaterdirection'] ? $animateup : $animatedown;
-		$lblink 	= 'on' == $atts['lightbox'] ? sprintf('<a class="aesop-lb-link swipebox" rel="lightbox" title="%s" href="%s"><i class="sorencon sorencon-search-plus">+</i></a>',do_shortcode($content),$atts['img']) : false;
+		$lblink 	= 'on' == $atts['lightbox'] ? sprintf('<a class="aesop-lb-link swipebox" rel="lightbox" title="%s" href="%s"><i class="aesopicon aesopicon-search-plus"></i></a>',do_shortcode($content),$atts['img']) : false;
 		$floater 	= 'on' == $atts['floater'] ? sprintf('<div class="aesop-parallax-sc-floater floater-%s" %s>%s</div>', $atts['floaterposition'], $itemanimate , $atts['floatermedia']) : false;
 
 
