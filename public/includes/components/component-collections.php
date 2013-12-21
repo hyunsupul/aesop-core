@@ -22,11 +22,10 @@ if (!function_exists('aesop_collection_shortcode')){
 				<!-- Collections -->
 				<script>
 					jQuery(document).ready(function(){
-						var p = jQuery('#aesop-collection-<?php echo $hash;?>').portfolio();
-            			p.init();
+
 					});
 				</script>
-				<div id="aesop-collection-<?php echo $hash;?>" class="aesop-collection-carousel">
+				<div id="aesop-collection-<?php echo $hash;?>" class="aesop-collection-grid clearfix">
 					<?php
 
 					$args1 = array(
@@ -39,7 +38,16 @@ if (!function_exists('aesop_collection_shortcode')){
 
 						$coverimg 		= wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID() ), 'large' );
 
-						?><img data-src="<?php echo $coverimg[0];?>"><?php
+						?><div class="aesop-collection-item">
+							<a class="aesop-collection-item-link" href="<?php echo the_permalink();?>">
+								<div class="aesop-collection-item-meta">
+								<p class="aesop-collection-item-author">Written by <?php the_author();?></p>
+								<h3 class="aesop-collection-item-title"><?php the_title();?><h3>
+								</div>
+								<div class="aesop-collection-item-img" style="background-image:url(<?php echo $coverimg[0];?>);background-repeat:no-repeat;background-size:cover;"></div>
+							</a>
+						</div>
+						<?php
 
 					endwhile;endif;
 
