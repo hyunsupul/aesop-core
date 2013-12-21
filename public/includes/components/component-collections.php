@@ -39,10 +39,11 @@ if (!function_exists('aesop_collection_shortcode')){
 						$coverimg 		= wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID() ), 'large' );
 
 						?><div class="aesop-collection-item">
-							<a class="aesop-collection-item-link" href="<?php echo the_permalink();?>">
-								<div class="aesop-collection-item-meta">
-								<p class="aesop-collection-item-author">Written by <?php the_author();?></p>
-								<h3 class="aesop-collection-item-title"><?php the_title();?><h3>
+							<a class="aesop-fader aesop-collection-item-link" href="<?php the_permalink();?>">
+								<div class="aesop-collection-item-inner">
+									<h2 class="aesop-collection-entry-title" itemprop="title"><?php the_title();?></h2>
+									<p class="aesop-collection-meta">Written by <?php echo get_the_author();?></p>
+									<div class="aesop-collection-item-excerpt"><?php echo wp_trim_words(get_the_excerpt(),18,'...');?></div>
 								</div>
 								<div class="aesop-collection-item-img" style="background-image:url(<?php echo $coverimg[0];?>);background-repeat:no-repeat;background-size:cover;"></div>
 							</a>
