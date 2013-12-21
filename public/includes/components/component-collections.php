@@ -18,14 +18,15 @@ if (!function_exists('aesop_collection_shortcode')){
 		$hash = rand();
 		ob_start();
 		?>
-			<script>
-				jQuery(document).ready(function(){
-					jQuery("#aesop-collection-<?php echo $hash;?>").owlCarousel();
-				});
-			</script>
 			<section class="aesop-story-collection">
-
-				<div id="aesop-collection-<?php echo $hash;?>" class="owl-carousel">
+				<!-- Collections -->
+				<script>
+					jQuery(document).ready(function(){
+						var p = jQuery('#aesop-collection-<?php echo $hash;?>').portfolio();
+            			p.init();
+					});
+				</script>
+				<div id="aesop-collection-<?php echo $hash;?>" class="aesop-collection-carousel">
 					<?php
 
 					$args1 = array(
@@ -36,15 +37,14 @@ if (!function_exists('aesop_collection_shortcode')){
 
 					if($q1->have_posts()) : while($q1->have_posts()) : $q1->the_post();
 
-						?><div><?php
-							echo the_title();
-						?></div><?php
+						$coverimg 		= wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID() ), 'large' );
+
+						?><img data-src="<?php echo $coverimg[0];?>"><?php
 
 					endwhile;endif;
 
 					?>
 				</div>
-
 			</section>
 		<?php
 		return ob_get_clean();
