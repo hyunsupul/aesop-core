@@ -11,20 +11,19 @@ if (!function_exists('aesop_collection_shortcode')){
 
 		$defaults = array(
 			'type'		=> 'carousel',
-			'collection' => 1
+			'collection' => 1,
+			'title' => ''
 		);
 		$atts = shortcode_atts($defaults, $atts);
 
 		$hash = rand();
 		ob_start();
 		?>
+			<!-- Collections -->
 			<section class="aesop-story-collection">
-				<!-- Collections -->
-				<script>
-					jQuery(document).ready(function(){
-
-					});
-				</script>
+				<?php if($atts['title']){?>
+					<h4 class="aesop-story-collection-title"><span><?php echo $atts['title'];?></span></h4>
+				<?php } ?>
 				<div id="aesop-collection-<?php echo $hash;?>" class="aesop-collection-grid clearfix">
 					<?php
 
@@ -43,7 +42,7 @@ if (!function_exists('aesop_collection_shortcode')){
 								<div class="aesop-collection-item-inner">
 									<h2 class="aesop-collection-entry-title" itemprop="title"><?php the_title();?></h2>
 									<p class="aesop-collection-meta">Written by <?php echo get_the_author();?></p>
-									<div class="aesop-collection-item-excerpt"><?php echo wp_trim_words(get_the_excerpt(),18,'...');?></div>
+									<div class="aesop-collection-item-excerpt"><?php echo wp_trim_words(get_the_excerpt(),22,'...');?></div>
 								</div>
 								<div class="aesop-collection-item-img" style="background-image:url(<?php echo $coverimg[0];?>);background-repeat:no-repeat;background-size:cover;"></div>
 							</a>
