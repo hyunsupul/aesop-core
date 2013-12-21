@@ -87,6 +87,7 @@ class Aesop_Core {
 
 		add_action('init', array($this,'register_shortcodes'));
 		add_action('wp_enqueue_scripts', array($this,'scripts'));
+		add_filter('body_class',		array($this,'browser_body_class'));
 	}
 
 	/**
@@ -292,5 +293,22 @@ class Aesop_Core {
 
 	}
 
+	function browser_body_class($classes) {
+
+	    global $is_gecko, $is_IE, $is_opera, $is_safari, $is_chrome;
+
+	    if($is_gecko)      $classes[] = 'gecko';
+	    elseif($is_opera)  $classes[] = 'opera';
+	    elseif($is_safari) $classes[] = 'safari';
+	    elseif($is_chrome) $classes[] = 'chrome';
+	    elseif($is_IE)     $classes[] = 'ie';
+	    elseif(wp_is_mobile()) $classes[] = 'aesop-mobile';
+	    else               $classes[] = 'ur-browsur-sucks';
+
+	    $classes[] = 'aesoptheme-responsive';
+
+	    return $classes;
+
+	}
 
 }
