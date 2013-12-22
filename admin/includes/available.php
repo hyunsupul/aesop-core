@@ -23,7 +23,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Image Width', 'aesop-core' )
 					),
 					'img' 			=> array(
-						'type'		=> 'image_upload',
+						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image URL', 'aesop-core' )
@@ -84,7 +84,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Component Width', 'aesop-core' )
 					),
 					'img' 			=> array(
-						'type'		=> 'image_upload',
+						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Character Image', 'aesop-core' )
@@ -170,7 +170,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Text Block Alignment', 'aesop-core' )
 					),
 					'img' 			=> array(
-						'type'		=> 'image_upload',
+						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> '#',
 						'desc' 		=> __( 'Image URL', 'aesop-core' )
@@ -207,7 +207,7 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'single',
 				'atts' 				=> array(
 					'img' 			=> array(
-						'type'		=> 'image_upload',
+						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> ' ',
 						'desc' 		=> __( 'Chapter Image', 'aesop-core' )
@@ -226,7 +226,7 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
 					'img' 			=> array(
-						'type'		=> 'image_upload',
+						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> '#',
 						'desc' 		=> __( 'Image', 'aesop-core' ),
@@ -262,7 +262,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Enable Floating Element', 'aesop-core' )
 					),
 					'floatermedia' 	=> array(
-						'type'		=> 'image_upload',
+						'type'		=> 'media_upload',
 						'values' 	=> array(),
 						'default' 	=> 'false',
 						'desc' 		=> __('Floater Media', 'aesop-core' )
@@ -315,7 +315,7 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'single',
 				'atts' 				=> array(
 					'src' 			=> array(
-						'type'		=> 'audio_upload',
+						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Audio URL', 'aesop-core' )
@@ -420,7 +420,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Document Type', 'aesop-core' )
 					),
 					'src' 			=> array(
-						'type'		=> 'image_upload',
+						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Document', 'aesop-core' )
