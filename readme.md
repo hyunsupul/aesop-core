@@ -34,6 +34,8 @@ At the heart of ASE are the storytelling components. They include:
 * Parallax  
 * Quote  
 * Timeline  
+* Collections  
+* Document Viewer  
 
 Interactive elements are created while crafting stories, with the Story Component Creator.    
 ![Image](https://dl.dropboxusercontent.com/u/5594632/ase-screenshot.png)
@@ -41,4 +43,4 @@ Interactive elements are created while crafting stories, with the Story Componen
 ---
 
 ### Changelog
-0.9 - Alpha release
+1.0 - Alpha release
