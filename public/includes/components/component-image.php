@@ -15,6 +15,8 @@ if (!function_exists('aesop_image_shortcode')){
 			'offset'			=> '',
 			'alt'				=> '',
 			'align' 			=> 'left',
+			'caption'			=> '',
+			'credit'			=> '',
 			'captionposition'	=> 'bottom',
 			'lightbox' 			=> 'off'
 		);
@@ -24,28 +26,51 @@ if (!function_exists('aesop_image_shortcode')){
 		// global component content width
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 
-		// draw caption
-		$caption = $content ? sprintf('<div class="aesop-image-component-caption">%s</div>', $content) : false;
-
 		// offset styles
 		$offsetstyle = $atts['offset'] ? sprintf('style="margin-%s:%s;"',$atts['align'], $atts['offset']) : false;
 
-		// get the image
-		$image = 'on' == $atts['lightbox'] ?
-										sprintf('<a class="swipebox" href="%s"><img style="width:%s;" src="%s" alt="%s"></a>', $atts['img'],$atts['imgwidth'], $atts['img'], $atts['alt']) : 
-										sprintf('<img style="width:%s;" src="%s" alt="%s">',$atts['imgwidth'], $atts['img'], $atts['alt']);
-
-		// draw core
-		$core = sprintf('<div class="%s aesop-caption-%s">
-							<div class="aesop-image-component-image aesop-component-align-%s" %s>
-								%s
-								%s
-								</div>
-								</div>',$contentwidth, $atts['captionposition'],$atts['align'], $offsetstyle, $image, $caption);
-
 		// combine into component shell
-		$out = sprintf('<aside class="aesop-component aesop-image-component">%s</aside>',$core);
+		ob_start();
 
-		return apply_filters('aesop_image_output',$out);
+		?>
+		<aside class="aesop-component aesop-image-component">
+			<div class="<?php echo $contentwidth;?> aesop-caption-<?php echo $atts['captionposition'];?>">
+				<div class="aesop-image-component-image aesop-component-align-<?php echo $atts['align'];?>" <?php echo $offsetstyle;?>>
+					<?php
+
+					if('on' == $atts['lightbox']) { ?>
+
+						<a class="swipebox" href="<?php echo $atts['img'];?>">
+							<p class="aesop-img-enlarge"><i class="aesopicon aesopicon-search-plus"></i> Enlarge</p>
+							<img style="width:<?php echo $atts['imgwidth'];?>;" src="<?php echo $atts['img'];?>" alt="<?php echo $atts['alt'];?>">
+						</a>
+
+					<?php } else { ?>
+
+						<img style="width:<?php echo $atts['imgwidth'];?>;" src="<?php echo $atts['img'];?>" alt="<?php echo $atts['alt'];?>">
+
+					<?php }
+
+					if ($atts['caption']) { ?>
+
+						<div class="aesop-image-component-caption">
+							<?php
+
+							echo $atts['caption'];
+
+							if($atts['credit']){ ?>
+								<p class="aesop-cap-cred"><?php echo $atts['credit'];?></p>
+							<?php } ?>
+
+						</div>
+
+					<?php } ?>
+
+				</div>
+			</div>
+		</aside>
+		<?php
+
+		return ob_get_clean();
 	}
 }

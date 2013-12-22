@@ -8,7 +8,7 @@ if(!function_exists('aesop_shortcodes')){
 		$shortcodes = array(
 			'image' 			=> array(
 				'name' 				=> __('Image', 'aesop-core'),
-				'type' 				=> 'wrap',
+				'type' 				=> 'single',
 				'atts' 				=> array(
 					'width' 			=> array(
 						'type'		=> 'text',
@@ -27,6 +27,18 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image URL', 'aesop-core' )
+					),
+					'caption' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Caption', 'aesop-core' )
+					),
+					'credit' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Image Credit', 'aesop-core' )
 					),
 					'alt' 			=> array(
 						'type'		=> 'text',
@@ -70,7 +82,6 @@ if(!function_exists('aesop_shortcodes')){
 					),
 
 				),
-				'content' 			=> __( 'Optional Caption', 'ba-shortcodes' ),
 				'desc' 				=> __( 'Creates an image component with caption, alignment, and lightbox options.','aesop-core' )
 			),
 			'character' 			=> array(
