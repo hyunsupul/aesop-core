@@ -405,7 +405,20 @@ if(!function_exists('aesop_shortcodes')){
 					)
 				),
 				'desc' 				=> __( 'Show a collection of stories. Typically used on a page like the home page.','aesop-core' )
-			)
+			),
+			'document' 	=> array(
+				'name' 				=> __('Document', 'aesop-core'),
+				'type' 				=> 'wrap',
+				'atts' 				=> array(
+					'src' 			=> array(
+						'type'		=> 'image_upload',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Document', 'aesop-core' )
+					),
+				),
+				'desc' 				=> __( 'Show a collection of stories. Typically used on a page like the home page.','aesop-core' )
+			),
 		);
 
 		if ( $shortcode )
