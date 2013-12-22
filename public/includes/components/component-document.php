@@ -10,11 +10,26 @@ if (!function_exists('aesop_document_shortcode')){
 	function aesop_document_shortcode($atts, $content = null) {
 
 		$defaults = array(
+			'type'		=> 'pdf',
 			'src'		=> '',
+			'caption'		=> ''
 		);
 		$atts = shortcode_atts($defaults, $atts);
 
 		$hash = rand();
+
+		
+		switch($atts['src']) {
+			case 'pdf':
+				$source = sprintf('<object class="aesop-pdf" data="%s" type="application/pdf" ></object>', $atts['src']);
+			break;
+			case 'image':
+				$source = sprintf('<img src="%s"', $atts['src']);
+			break;
+			default:
+				$source = sprintf('<object class="aesop-pdf" data="%s" type="application/pdf" ></object>', $atts['src']);
+			break;
+		}
 
 		$out = sprintf('
 			<script>
@@ -28,8 +43,10 @@ if (!function_exists('aesop_document_shortcode')){
 		</script>
 		',$hash, $hash);
 
-		$guts = sprintf('<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>',$hash, $atts['src']);
-		$link = sprintf('<a href="#" class="aesop-doc-reveal-%s"><span>document</span> %s</a>', $hash, do_shortcode($content));
+		$slide = $atts['caption'] ? $atts['caption'] : false;
+		$link = sprintf('<a href="#" class="aesop-doc-reveal-%s"><span>document</span><br /> %s</a>', $hash,$slide);
+		$guts = sprintf('<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>',$hash, $source);
+		
 		$out .= sprintf('<aside class="aesop-documument-component aesop-content">%s%s</aside>', $link, $guts);
 
 		return apply_filters('aesop_document_output', $out);

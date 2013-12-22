@@ -408,16 +408,31 @@ if(!function_exists('aesop_shortcodes')){
 			),
 			'document' 	=> array(
 				'name' 				=> __('Document', 'aesop-core'),
-				'type' 				=> 'wrap',
+				'type' 				=> 'single',
 				'atts' 				=> array(
+					'type' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('pdf'),
+							__('image')
+						),
+						'default' 	=> 'pdf',
+						'desc' 		=> __( 'Document Type', 'aesop-core' )
+					),
 					'src' 			=> array(
 						'type'		=> 'image_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Document', 'aesop-core' )
 					),
+					'caption' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Optional Caption', 'aesop-core' )
+					)
 				),
-				'desc' 				=> __( 'Show a collection of stories. Typically used on a page like the home page.','aesop-core' )
+				'desc' 				=> __( 'Show a document that is revealed with a click.','aesop-core' )
 			),
 		);
 
