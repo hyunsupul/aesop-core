@@ -21,7 +21,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 		ob_start();
 
 			if ('video' == $atts['bgtype']) { ?>
-				<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover aesop-video-chapter" >
+				<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover aesop-video-chapter aesop-component" >
 					<div class="aesop-article-chapter clearfix" style="height:auto;">
 						<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
 						<h2 class="aesop-cover-title" itemprop="title" >
@@ -37,7 +37,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 					</div>
 				</section>
 			<?php } else { ?>
-				<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover">
+				<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover aesop-component">
 					<div class="aesop-article-chapter clearfix" style="background:url('<?php echo $atts['img'];?>') center center;background-size:cover;">
 						<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
 						<h2 class="aesop-cover-title" itemprop="title" ><?php echo $atts['title'];?></h2>

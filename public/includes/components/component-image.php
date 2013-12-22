@@ -12,7 +12,7 @@ if (!function_exists('aesop_image_shortcode')){
 			'width'				=> 'content',
 			'img' 				=> 'http://placekitten.com/1200/700',
 			'imgwidth'			=> '300px',
-			'offset'			=> '',
+			'offset'			=> '-150px',
 			'alt'				=> '',
 			'align' 			=> 'left',
 			'caption'			=> '',
