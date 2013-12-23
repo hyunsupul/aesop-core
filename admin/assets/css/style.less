@@ -41,7 +41,7 @@
     text-shadow: #000 0 1px 0;
 
     li {
-        margin:0 -4px 0 0;
+        margin:0;
         width:33.333%;
         display: inline-block;
         vertical-align: top;
@@ -149,6 +149,22 @@
         &.timeline_stop.dk_option_current a,
         &.timeline_stop a:hover {
             background-position: 0 -540px;
+        }
+        // document
+        &.document {
+            background-position: 0 -600px;
+        }
+        &.document.dk_option_current a,
+        &.document a:hover {
+            background-position: 0 -600px;
+        }
+        // collection
+        &.collection {
+            background-position: 0 -660px;
+        }
+        &.collection.dk_option_current a,
+        &.collection a:hover {
+            background-position: 0 -660px;
         }
     }
 }
