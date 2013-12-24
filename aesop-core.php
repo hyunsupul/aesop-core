@@ -11,7 +11,7 @@
  	*
  	* @wordpress-plugin
  	* Plugin Name:       Aesop Story Engine
- 	* Plugin URI:        http://aesopstories.com/aesop-story-engine
+ 	* Plugin URI:        http://aesopstories.com/story-engine
  	* Description:       Aesop Story Engine is an open-sourced suite of tools that empowers developers to build feature-rich, interactive, long-form storytelling themes for Wordpress.
  	* Version:           0.9.2
  	* Author:            Nick "Bearded Avenger" Haskins
