@@ -50,6 +50,7 @@ Interactive elements are created while crafting stories, with the Story Componen
 ### TODO
 * Mobile Optimization - At the moment nothing has been done for mobile. ASE adds body classes for browser type, tablet, and OS so tweaking CSS is simple. Next up, conditional script loading for mobile, as well as retina and image optimization support.  
 * Parallax Floater - The floater attribute in the Parallax component isn't working right now. I was using Skrollr but did not like the way it affected scrolling on mobile. Since Skrollr was only being used for the floater, the script was removed. Seemed overkill. Next up, a custom and lightweight implementation.  
+* The story cover design needs to be finished, as well as the independant story design. ETA is first week of January.   
 
 ---
 
