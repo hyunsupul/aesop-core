@@ -44,3 +44,14 @@ Interactive elements are created while crafting stories, with the Story Componen
 
 ### Changelog
 1.0 - Alpha release
+
+---
+
+### TODO
+* Mobile Optimization - At the moment nothing has been done for mobile. ASE adds body classes for browser type, tablet, and OS so tweaking CSS is simple. Next up, conditional script loading for mobile, as well as retina and image optimization support.  
+* Parallax Floater - The floater attribute in the Parallax component isn't working right now. I was using Skrollr but did not like the way it affected scrolling on mobile. Since Skrollr was only being used for the floater, the script was removed. Seemed overkill. Next up, a custom and lightweight implementation.  
+
+---
+
+### Known Issues
+* Locations Component - The locations map can only be used once within a story.  
