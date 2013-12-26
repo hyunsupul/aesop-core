@@ -2,7 +2,6 @@
 
 .cmb_metabox .field { 
 	padding: 16px 0;
-	border-bottom: 1px solid #DFDFDF;
 }
 
 .cmb-row:last-child > [class*="cmb-cell-"]  > .field { 
