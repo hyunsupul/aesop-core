@@ -41,7 +41,12 @@ if (!function_exists('aesop_chapter_shortcode')){
 				<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover aesop-component">
 					<div class="aesop-article-chapter clearfix" style="background:url('<?php echo $atts['img'];?>') center center;background-size:cover;">
 						<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
-						<h2 class="aesop-cover-title" itemprop="title" ><?php echo $atts['title'];?></h2>
+						<h2 class="aesop-cover-title" itemprop="title" >
+							<?php echo $atts['title'];
+							if ($atts['subtitle']) { ?>
+								<small><?php echo $atts['subtitle'];?></small>
+							<?php } ?>
+						</h2>
 					</div>
 				</section>
 			<?php }
