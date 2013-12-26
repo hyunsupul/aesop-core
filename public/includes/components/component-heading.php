@@ -15,6 +15,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 			'bgtype' => 'img',
 			'img' => ''
 		);
+		
 		$atts = shortcode_atts($defaults, $atts);
 		$hash = rand();
 
