@@ -31,7 +31,7 @@ if (!function_exists('aesop_timeline_class_loader')){
 
 		global $post;
 
-		if( has_shortcode( $post->post_content, 'aesop_timeline_stop') )  { 
+		if( has_shortcode( $post->post_content, 'aesop_timeline_stop') && !is_front_page() )  { 
 
 			new AesopTimelineComponent;
 
