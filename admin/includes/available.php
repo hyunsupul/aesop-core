@@ -50,10 +50,9 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'text',
 						'values' 	=> array(
 							__('left', 'aesop-core'),
-							__('center', 'aesop-core'),
 							__('right', 'aesop-core')
 						),
-						'default' 	=> 'center',
+						'default' 	=> 'left',
 						'desc' 		=> __( 'Image Alignment', 'aesop-core' )
 					),
 					'offset' 		=> array(
