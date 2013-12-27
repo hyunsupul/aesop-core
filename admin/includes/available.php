@@ -183,7 +183,7 @@ if(!function_exists('aesop_shortcodes')){
 					'img' 			=> array(
 						'type'		=> 'media_upload',
 						'values' 	=> array( ),
-						'default' 	=> '#',
+						'default' 	=> '',
 						'desc' 		=> __( 'Background Image', 'aesop-core' )
 					),
 					'imgrepeat' 			=> array(
