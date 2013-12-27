@@ -184,7 +184,7 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> '#',
-						'desc' 		=> __( 'Image URL', 'aesop-core' )
+						'desc' 		=> __( 'Background Image', 'aesop-core' )
 					),
 					'imgrepeat' 			=> array(
 						'type'		=> 'text',
@@ -208,6 +208,12 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'color',
 						'default' 	=> '#FFFFFF',
 						'desc' 		=> __('Color of Text', 'aesop-core' )
+					),
+					'background' 		=> array(
+						'values' 	=> array(),
+						'type'		=> 'color',
+						'default' 	=> '#333333',
+						'desc' 		=> __('Background Color', 'aesop-core' )
 					)
 				),
 				'content' 			=> __( 'All your normal text goes here.', 'ba-shortcodes' ),

@@ -90,6 +90,7 @@ class Aesop_Core {
 
 		add_action('init', array($this,'register_shortcodes'));
 		add_action('wp_enqueue_scripts', array($this,'scripts'));
+		add_filter( 'the_content', array($this,'shortcode_empty_paragraph_fix'));
 
 	}
 
@@ -296,4 +297,20 @@ class Aesop_Core {
 
 	}
 
+	/**
+	 	* Prevent p and br tags from breaking shortcode layouts
+	 	*
+	 	* @since    1.0.0
+	*/
+    function shortcode_empty_paragraph_fix($content) {
+        $array = array (
+            '<p>[' => '[',
+            ']</p>' => ']',
+            ']<br />' => ']'
+        );
+
+        $content = strtr($content, $array);
+
+		return $content;
+    }
 }

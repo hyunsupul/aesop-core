@@ -20,7 +20,8 @@ if (!function_exists('aesop_content_shortcode')){
 			'img' 				=> 'http://placekitten.com/100/100',
 			'imgrepeat'			=> 'no-repeat',
 			'imgposition'		=> '',
-			'color' 				=> '#FFFFFF'
+			'color' 			=> '#FFFFFF',
+			'background'		=> '#333333'
 		);
 
 		$atts = apply_filters('aesop_content_defaults',shortcode_atts($defaults, $atts));
@@ -40,7 +41,7 @@ if (!function_exists('aesop_content_shortcode')){
 			$typeclass = $columns.' '.$image;
 
 		// image and width inline styles
-		$imgstyle = $atts['img'] ? sprintf('background:url(\'%s\');background-size:cover;background-position:center center;',$atts['img']) : false;
+		$imgstyle = $atts['img'] ? sprintf('background:%s url(\'%s\');background-size:cover;background-position:center center;',$atts['background'], $atts['img']) : false;
 		
 
 		$widthstyle = $atts['width'] ? sprintf('width:%s;',$atts['width']) : false;
