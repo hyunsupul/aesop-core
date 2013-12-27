@@ -99,7 +99,11 @@ class AesopCoreGallery {
 
 		ob_start();
 
+			do_action('aesop_gallery_component_before'); //action
+
 			?><section class="aesop-component aesop-gallery-component aesop-<?php echo $type;?>-gallery-wrap"><?php
+
+				do_action('aesop_gallery_component_inside_top'); //action
 
 				switch($type):
 					case 'thumbnail':
@@ -116,7 +120,11 @@ class AesopCoreGallery {
 					break;
 				endswitch;
 
+				do_action('aesop_gallery_component_inside_bottom'); //action
+
 			?></section><?php
+
+			do_action('aesop_gallery_component_after'); //action
 
 		return ob_get_clean();
 

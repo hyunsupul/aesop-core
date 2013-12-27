@@ -10,7 +10,6 @@ if (!function_exists('aesop_collection_shortcode')){
 	function aesop_collection_shortcode($atts, $content = null) {
 
 		$defaults = array(
-			'type'		=> 'carousel',
 			'collection' => 1,
 			'title' => ''
 		);
@@ -18,9 +17,15 @@ if (!function_exists('aesop_collection_shortcode')){
 
 		$hash = rand();
 		ob_start();
+
+		do_action('aesop_collection_component_before'); // action
+		
 		?>
 			<!-- Collections -->
 			<section class="aesop-story-collection">
+
+				<?php do_action('aesop_collection_component_inside_top'); // action ?>
+
 				<?php if($atts['title']){?>
 					<h4 class="aesop-story-collection-title"><span><?php echo $atts['title'];?></span></h4>
 				<?php } ?>
@@ -53,8 +58,14 @@ if (!function_exists('aesop_collection_shortcode')){
 
 					?>
 				</div>
+
+				<?php do_action('aesop_collection_component_inside_bottom'); // action ?>				
+
 			</section>
 		<?php
+
+		do_action('aesop_collection_component_after'); //action
+
 		return ob_get_clean();
 	}
 }
