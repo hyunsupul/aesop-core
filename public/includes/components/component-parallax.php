@@ -27,6 +27,13 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 		$hash = rand();
 
+
+		// actions
+		$actiontop = do_action('aesop_parallax_component_before');
+		$actionbottom = do_action('aesop_parallax_component_after');
+		$actioninsidetop = do_action('aesop_parallax_component_inside_top');
+		$actioninsidebottom = do_action('aesop_parallax_component_inside_bottom');
+
 		// final destination of the floater is half the height of the viewport that's set
 		$floaterdestination = $atts['height'] / 2;
 
@@ -41,7 +48,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$floater 	= 'on' == $atts['floater'] ? sprintf('<div class="aesop-parallax-sc-floater floater-%s" %s>%s</div>', $atts['floaterposition'], $itemanimate , $atts['floatermedia']) : false;
 
 
-		$out = sprintf('<section class="aesop-component aesop-parallax-component" style="height:%spx;">',$atts['height']);
+		$out = sprintf('%s<section class="aesop-component aesop-parallax-component" style="height:%spx;">%s',$actiontop,$atts['height'], $actioninsidetop);
 
 		// Call Parallax Method if Set
 		if ('on' == $atts['parallaxbg']) {
@@ -65,7 +72,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 								</div>
 								%s
 								<div class="aesop-parallax-sc-img %s" %s></div>
-							</div></section>',$hash, $atts['height'], $floater, $atts['captionposition'], do_shortcode($content), $lblink, $laxclass, $style);
+							</div>%s</section>%s',$hash, $atts['height'], $floater, $atts['captionposition'], do_shortcode($content), $lblink, $laxclass, $style, $actioninsidebottom, $actionbottom);
 
 		return apply_filters('aesop_parallax_output',$out);
 	}

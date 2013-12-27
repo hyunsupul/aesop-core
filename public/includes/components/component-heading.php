@@ -15,14 +15,20 @@ if (!function_exists('aesop_chapter_shortcode')){
 			'bgtype' => 'img',
 			'img' => ''
 		);
-		
+
 		$atts = shortcode_atts($defaults, $atts);
 		$hash = rand();
 
 		ob_start();
 
+		do_action('aesop_chapter_component_before'); //action
+
 			if ('video' == $atts['bgtype']) { ?>
+
 				<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover aesop-video-chapter aesop-component" >
+
+					<?php do_action('aesop_chapter_component_inside_top'); //action ?>
+
 					<div class="aesop-article-chapter clearfix" style="height:auto;">
 						<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
 						<h2 class="aesop-cover-title" itemprop="title" >
@@ -36,9 +42,17 @@ if (!function_exists('aesop_chapter_shortcode')){
 							<?php echo do_shortcode('[video src="'.$atts['img'].'" loop="on" autoplay="on"]'); ?>
 						</div>
 					</div>
+
+					<?php do_action('aesop_chapter_component_inside_bottom'); //action ?>
+
 				</section>
+
 			<?php } else { ?>
+
 				<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover aesop-component">
+
+					<?php do_action('aesop_chapter_component_inside_top'); //action ?>
+
 					<div class="aesop-article-chapter clearfix" style="background:url('<?php echo $atts['img'];?>') center center;background-size:cover;">
 						<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
 						<h2 class="aesop-cover-title" itemprop="title" >
@@ -48,8 +62,14 @@ if (!function_exists('aesop_chapter_shortcode')){
 							<?php } ?>
 						</h2>
 					</div>
+
+					<?php do_action('aesop_chapter_component_inside_bottom'); //action ?>
+
 				</section>
+
 			<?php }
+
+		do_action('aesop_chapter_component_after'); //action
 
 		return ob_get_clean();
 	}
@@ -62,7 +82,7 @@ if (!function_exists('aesop_chapter_heading_loader')){
 
 		global $post;
 
-		if( has_shortcode( $post->post_content, 'aesop_chapter') )  { 
+		if( has_shortcode( $post->post_content, 'aesop_chapter') )  {
 
 			new AesopChapterHeadingComponent;
 
@@ -98,7 +118,7 @@ class AesopChapterHeadingComponent {
 
 			</script>
 
-		<?php 
+		<?php
 	}
 }
 

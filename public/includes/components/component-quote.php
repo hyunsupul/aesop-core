@@ -11,7 +11,6 @@ if (!function_exists('aesop_quote_shortcode')){
 
 		$defaults = array(
 			'width'		=> '100%',
-			'align'		=> '',
 			'background' => '#222222',
 			'text' 		=> '#FFFFFF',
 			'height'	=> 'auto'
@@ -21,6 +20,12 @@ if (!function_exists('aesop_quote_shortcode')){
 		// use multiple times
 		$hash = rand();
 
+		// actions
+		$actiontop = do_action('aesop_quote_component_before');
+		$actionbottom = do_action('aesop_quote_component_after');
+		$actioninsidetop = do_action('aesop_quote_component_inside_top');
+		$actioninsidebottom = do_action('aesop_quote_component_inside_bottom');
+
 		// set component to content width
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 
@@ -28,7 +33,7 @@ if (!function_exists('aesop_quote_shortcode')){
 		$style = $atts['background'] || $atts['text'] || $atts['height'] || $atts['width'] ? sprintf('style="background:%s;color:%s;height:%s;width:%s;"',$atts['background'], $atts['text'], $atts['height'], $atts['width']) : false;
 
 		// start wrapper
-		$out = sprintf('<section id="aesop-quote-component-%s" class="aesop-component aesop-quote-component %s" %s>',$hash,$contentwidth, $style);
+		$out = sprintf('%s<section id="aesop-quote-component-%s" class="aesop-component aesop-quote-component %s" %s>%s',$actiontop, $hash,$contentwidth, $style, $actioninsidetop);
 
 		// call waypoints
 		$out .= sprintf('<script>
@@ -43,7 +48,7 @@ if (!function_exists('aesop_quote_shortcode')){
 		</script>', $hash);
 
 		// output
-		$out .= sprintf('<blockquote>%s</blockquote></section>',do_shortcode($content));
+		$out .= sprintf('<blockquote>%s</blockquote>%s</section>%s',do_shortcode($content),$actioninsidebottom, $actionbottom);
 
 		return apply_filters('aesop_quote_output',$out);
 	}

@@ -25,6 +25,12 @@ if (!function_exists('aesop_content_shortcode')){
 
 		$atts = apply_filters('aesop_content_defaults',shortcode_atts($defaults, $atts));
 
+		// actions
+		$actiontop = do_action('aesop_cbox_component_before');
+		$actionbottom = do_action('aesop_cbox_component_after');
+		$actioninsidetop = do_action('aesop_cbox_component_inside_top');
+		$actioninsidebottom = do_action('aesop_cbox_component_inside_bottom');
+
 		// set component to content width
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 
@@ -45,8 +51,8 @@ if (!function_exists('aesop_content_shortcode')){
 		// all together
 		$scinner = sprintf('<div id="aesop-content-component-%s" class="%s" %s><div class="aesop-content-comp-inner">%s</div></div>',$hash,$typeclass, $itemstyle, do_shortcode($content));
 
-		$out = sprintf('<section class="aesop-component aesop-content-component %s">%s</section>',$contentwidth,$scinner);
+		$out = sprintf('%s<section class="aesop-component aesop-content-component %s">%s%s%s</section>%s',$actiontop, $contentwidth, $actioninsidetop, $scinner, $actioninsidebottom, $actionbottom);
 
-		return apply_filters('aesop_content_output',$out);
+		return apply_filters('aesop_cbox_output',$out);
 	}
 }
