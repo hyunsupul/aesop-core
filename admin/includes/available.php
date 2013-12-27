@@ -245,7 +245,7 @@ if(!function_exists('aesop_shortcodes')){
 					'img' 			=> array(
 						'type'		=> 'media_upload',
 						'values' 	=> array( ),
-						'default' 	=> '#',
+						'default' 	=> '',
 						'desc' 		=> __( 'Image', 'aesop-core' ),
 					),
 					'height' 		=> array(
@@ -266,7 +266,7 @@ if(!function_exists('aesop_shortcodes')){
 					'parallaxspeed' => array(
 						'type'		=> 'text',
 						'values' 	=> array(),
-						'default' 	=> '0.15',
+						'default' 	=> '0.1',
 						'desc' 		=> __('Parallax Background Speed', 'aesop-core' )
 					),
 					'floater' 		=> array(

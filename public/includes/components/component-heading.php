@@ -82,7 +82,7 @@ if (!function_exists('aesop_chapter_heading_loader')){
 
 		global $post;
 
-		if( has_shortcode( $post->post_content, 'aesop_chapter') )  {
+		if( isset($post) && is_single() && has_shortcode( $post->post_content, 'aesop_chapter') )  {
 
 			new AesopChapterHeadingComponent;
 
