@@ -14,13 +14,14 @@ if (!function_exists('aesop_map_shortcode')) {
 
 		$hash = rand();
 
-		ob_start();
+		// actions
+		$actiontop = do_action('aesop_parallax_component_before');
+		$actionbottom = do_action('aesop_parallax_component_after');
 
-		?>
 
-		<section id="aesop-map-component" class="aesop-component aesop-map-component" style="height:<?php echo $atts['height'];?>px"></section>
+		$out = sprintf('%s<section id="aesop-map-component" class="aesop-component aesop-map-component" style="height:%spx"></section>%s',$actiontop, $atts['height'], $actionbottom);
 
-		<?php return ob_get_clean();
+		return apply_filters('aesop_map_output',$out);
 	}
 
 }

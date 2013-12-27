@@ -14,11 +14,19 @@ if (!function_exists('aesop_audio_shortcode')){
 
 	    ob_start();
 
-	   		?><aside class="aesop-component aesop-audio-component"><?php
+	    do_action('aesop_audio_component_before');
 
-	   			echo wp_audio_shortcode( $defaults );
+	   		?><aside class="aesop-component aesop-audio-component"><?php 
+
+	   			do_action('aesop_audio_component_inside_top');
+
+	   				echo wp_audio_shortcode( $defaults );
+
+	   			do_action('aesop_audio_component_inside_bottom');
 
 	   		?></aside><?php
+
+	   	do_action('aesop_audio_component_after');
 
         return ob_get_clean();
 	}

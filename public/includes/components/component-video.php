@@ -21,9 +21,15 @@ if (!function_exists('aesop_video_shortcode')){
 	    $contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 	    $widthstyle = $atts['width'] ? sprintf('style="width:%s;"',$atts['width']) : false;
 
+	    // actions
+		$actiontop = do_action('aesop_video_component_before');
+		$actionbottom = do_action('aesop_video_component_after');
+		$actioninsidetop = do_action('aesop_videox_component_inside_top');
+		$actioninsidebottom = do_action('aesop_video_component_inside_bottom');
+
 	    $caption = $content ? sprintf('<div class="aesop-video-component-caption aesop-component-align-%s" %s>%s</div>',$atts['align'], $widthstyle, $content) : false;
 
-	    $out = sprintf('<section class="aesop-component aesop-video-component %s"><div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$contentwidth, $hash, $atts['align'], $atts['src'], $widthstyle);
+	    $out = sprintf('%s<section class="aesop-component aesop-video-component %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $contentwidth, $actioninsidetop, $hash, $atts['align'], $atts['src'], $widthstyle);
 
 	        switch( $atts['src'] ):
 
@@ -40,7 +46,7 @@ if (!function_exists('aesop_video_shortcode')){
 	                break;
 
 	            case 'kickstarter':
-	                $out .= sprintf( '<<iframe width="" height="" src="%s" frameborder="0" scrolling="no"> </iframe>',$atts['id'] );
+	                $out .= sprintf( '<iframe width="" height="" src="%s" frameborder="0" scrolling="no"> </iframe>',$atts['id'] );
 	                break;
 
 	            case 'viddler':
@@ -52,7 +58,7 @@ if (!function_exists('aesop_video_shortcode')){
 
 	        endswitch;
 
-	    $out .= sprintf('</div>%s</section>',$caption);
+	    $out .= sprintf('</div>%s%s</section>%s',$caption, $actioninsidebottom, $actionbottom);
 
         return apply_filters('aesop_video_output',$out);
 	}
