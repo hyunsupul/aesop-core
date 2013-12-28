@@ -45,6 +45,117 @@ var PDFObject=function(y){if(!y||!y.url){return false;}var w="1.2",b=y.id||false
 (function($){$.fn.slabText=function(options){var settings={fontRatio:0.78,forceNewCharCount:true,wrapAmpersand:true,headerBreakpoint:null,viewportBreakpoint:null,noResizeEvent:false,resizeThrottleTime:300,maxFontSize:999,postTweak:true,precision:3,minCharsPerLine:0};$("body").addClass("slabtexted");return this.each(function(){if(options){$.extend(settings,options);}var $this=$(this),keepSpans=$("span.slabtext",$this).length,words=keepSpans?[]:String($.trim($this.text())).replace(/\s{2,}/g," ").split(" "),origFontSize=null,idealCharPerLine=null,fontRatio=settings.fontRatio,forceNewCharCount=settings.forceNewCharCount,headerBreakpoint=settings.headerBreakpoint,viewportBreakpoint=settings.viewportBreakpoint,postTweak=settings.postTweak,precision=settings.precision,resizeThrottleTime=settings.resizeThrottleTime,minCharsPerLine=settings.minCharsPerLine,resizeThrottle=null,viewportWidth=$(window).width(),headLink=$this.find("a:first").attr("href")||$this.attr("href"),linkTitle=headLink?$this.find("a:first").attr("title"):"";if(!keepSpans&&minCharsPerLine&&words.join(" ").length<minCharsPerLine){return;}var grabPixelFontSize=function(){var dummy=jQuery('<div style="display:none;font-size:1em;margin:0;padding:0;height:auto;line-height:1;border:0;">&nbsp;</div>').appendTo($this),emH=dummy.height();dummy.remove();return emH;};var resizeSlabs=function resizeSlabs(){var parentWidth=$this.width(),fs;if(parentWidth===0){return;}$this.removeClass("slabtextdone slabtextinactive");if(viewportBreakpoint&&viewportBreakpoint>viewportWidth||headerBreakpoint&&headerBreakpoint>parentWidth){$this.addClass("slabtextinactive");return;}fs=grabPixelFontSize();if(!keepSpans&&(forceNewCharCount||fs!=origFontSize)){origFontSize=fs;var newCharPerLine=Math.min(60,Math.floor(parentWidth/(origFontSize*fontRatio))),wordIndex=0,lineText=[],counter=0,preText="",postText="",finalText="",slice,preDiff,postDiff;if(newCharPerLine!=idealCharPerLine){idealCharPerLine=newCharPerLine;while(wordIndex<words.length){postText="";while(postText.length<idealCharPerLine){preText=postText;postText+=words[wordIndex]+" ";if(++wordIndex>=words.length){break;}}if(minCharsPerLine){slice=words.slice(wordIndex).join(" ");if(slice.length<minCharsPerLine){postText+=slice;preText=postText;wordIndex=words.length+2;}}preDiff=idealCharPerLine-preText.length;postDiff=postText.length-idealCharPerLine;if((preDiff<postDiff)&&(preText.length>=(minCharsPerLine||2))){finalText=preText;wordIndex--;}else{finalText=postText;}finalText=$("<div/>").text(finalText).html();if(settings.wrapAmpersand){finalText=finalText.replace(/&amp;/g,'<span class="amp">&amp;</span>');}finalText=$.trim(finalText);lineText.push('<span class="slabtext">'+finalText+"</span>");}$this.html(lineText.join(" "));if(headLink){$this.wrapInner('<a href="'+headLink+'" '+(linkTitle?'title="'+linkTitle+'" ':"")+"/>");}}}else{origFontSize=fs;}$("span.slabtext",$this).each(function(){var $span=$(this),innerText=$span.text(),wordSpacing=innerText.split(" ").length>1,diff,ratio,fontSize;if(postTweak){$span.css({"word-spacing":0,"letter-spacing":0});}ratio=parentWidth/$span.width();fontSize=parseFloat(this.style.fontSize)||origFontSize;$span.css("font-size",Math.min((fontSize*ratio).toFixed(precision),settings.maxFontSize)+"px");diff=!!postTweak?parentWidth-$span.width():false;if(diff){$span.css((wordSpacing?"word":"letter")+"-spacing",(diff/(wordSpacing?innerText.split(" ").length-1:innerText.length)).toFixed(precision)+"px");}});$this.addClass("slabtextdone");};resizeSlabs();if(!settings.noResizeEvent){$(window).resize(function(){if($(window).width()==viewportWidth){return;}viewportWidth=$(window).width();clearTimeout(resizeThrottle);resizeThrottle=setTimeout(resizeSlabs,resizeThrottleTime);});}});};})(jQuery);
 
 /*!
+ * jQuery Cookie Plugin v1.4.0
+ */
+(function (factory) {
+        if (typeof define === 'function' && define.amd) {
+                // AMD. Register as anonymous module.
+                define(['jquery'], factory);
+        } else {
+                // Browser globals.
+                factory(jQuery);
+        }
+}(function ($) {
+
+        var pluses = /\+/g;
+
+        function encode(s) {
+                return config.raw ? s : encodeURIComponent(s);
+        }
+
+        function decode(s) {
+                return config.raw ? s : decodeURIComponent(s);
+        }
+
+        function stringifyCookieValue(value) {
+                return encode(config.json ? JSON.stringify(value) : String(value));
+        }
+
+        function parseCookieValue(s) {
+                if (s.indexOf('"') === 0) {
+                        // This is a quoted cookie as according to RFC2068, unescape...
+                        s = s.slice(1, -1).replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+                }
+
+                try {
+                        // Replace server-side written pluses with spaces.
+                        // If we can't decode the cookie, ignore it, it's unusable.
+                        // If we can't parse the cookie, ignore it, it's unusable.
+                        s = decodeURIComponent(s.replace(pluses, ' '));
+                        return config.json ? JSON.parse(s) : s;
+                } catch(e) {}
+        }
+
+        function read(s, converter) {
+                var value = config.raw ? s : parseCookieValue(s);
+                return $.isFunction(converter) ? converter(value) : value;
+        }
+
+        var config = $.cookie = function (key, value, options) {
+
+                // Write
+
+                if (value !== undefined && !$.isFunction(value)) {
+                        options = $.extend({}, config.defaults, options);
+
+                        if (typeof options.expires === 'number') {
+                                var days = options.expires, t = options.expires = new Date();
+                                t.setTime(+t + days * 864e+5);
+                        }
+
+                        return (document.cookie = [
+                                encode(key), '=', stringifyCookieValue(value),
+                                options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+                                options.path    ? '; path=' + options.path : '',
+                                options.domain  ? '; domain=' + options.domain : '',
+                                options.secure  ? '; secure' : ''
+                        ].join(''));
+                }
+
+                // Read
+
+                var result = key ? undefined : {};
+
+                // To prevent the for loop in the first place assign an empty array
+                // in case there are no cookies at all. Also prevents odd result when
+                // calling $.cookie().
+                var cookies = document.cookie ? document.cookie.split('; ') : [];
+
+                for (var i = 0, l = cookies.length; i < l; i++) {
+                        var parts = cookies[i].split('=');
+                        var name = decode(parts.shift());
+                        var cookie = parts.join('=');
+
+                        if (key && key === name) {
+                                // If second argument (value) is a function it's a converter...
+                                result = read(cookie, value);
+                                break;
+                        }
+
+                        // Prevent storing a cookie that we couldn't decode.
+                        if (!key && (cookie = read(cookie)) !== undefined) {
+                                result[name] = cookie;
+                        }
+                }
+
+                return result;
+        };
+
+        config.defaults = {};
+
+        $.removeCookie = function (key, options) {
+                if ($.cookie(key) === undefined) {
+                        return false;
+                }
+
+                // Must not alter options, thus extending a fresh object...
+                $.cookie(key, '', $.extend({}, options, { expires: -1 }));
+                return !$.cookie(key);
+        };
+
+}));
+
+/*!
 * Parallax
 */
 (function($) {
@@ -90,9 +201,20 @@ var PDFObject=function(y){if(!y||!y.url){return false;}var w="1.2",b=y.id||false
 // FitVids
 jQuery(document).ready(function(){
 	jQuery('.aesop-video-container').fitVids();
+
+	// If cookie is set, scroll to the position saved in the cookie.
+    if ( jQuery.cookie("scroll") !== null ) {
+        jQuery(document).scrollTop( jQuery.cookie("scroll") );
+    }
+
+    // When scrolling happens....
+    jQuery(window).on("scroll", function() {
+
+        // Set a cookie that holds the scroll position.
+        jQuery.cookie("scroll", jQuery(document).scrollTop() );
+
+    });
 });
-
-
 
 
 
