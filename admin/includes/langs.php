@@ -24,11 +24,6 @@
 
 $shortcodes = array(
 	array(
-		'shortcode' => 'blackbirdpie',
-		'image' => 'http://placekitten.com/300/300', AI_CORE_DIR.'admin/includes/visualsc.php',
-		'command' => 'mceblackbirdpie',
-	),
-	array(
 		'shortcode' => 'aesop_gallery',
 		'image' => 'http://placekitten.com/300/300', AI_CORE_DIR.'admin/includes/visualsc.php',
 		'command' => 'mceaesop_gallery',

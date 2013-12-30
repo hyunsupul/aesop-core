@@ -305,7 +305,7 @@
 
 			// Add the 'delete' button (to go with the 'edit' button)
             delbutton = DOM.add( 'jpb_vscbuttons', 'img', {
-                src: t.url + '/../img/delete.png',
+                src: t.url + '/img/delete.png',
                 id: 'jpb_delshortcode',
                 width: '24',
                 height: '24',
@@ -314,7 +314,7 @@
 
 			// Add the 'delete' button (to go by itself)
             delbutton2 = DOM.add( 'jpb_vscbutton', 'img', {
-                src: t.url + '/../img/delete.png',
+                src: t.url + '/img/delete.png',
                 id: 'jpb_delshortcode2',
                 width: '24',
                 height: '24',
