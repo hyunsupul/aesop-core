@@ -13,7 +13,7 @@
  	* Plugin Name:       Aesop Story Engine
  	* Plugin URI:        http://aesopstories.com/story-engine
  	* Description:       Aesop Story Engine is an open-sourced suite of tools that empowers developers to build feature-rich, interactive, long-form storytelling themes for Wordpress.
- 	* Version:           0.9.4
+ 	* Version:           0.9.5
  	* Author:            Nick "Bearded Avenger" Haskins
  	* Author URI:        http://nickhaskins.com
  	* Text Domain:       aesop-core
@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 // constnats
 // Set some constants
-define('AI_CORE_VERSION', '0.9.4');
+define('AI_CORE_VERSION', '0.9.5');
 
 define('AI_CORE_DIR', plugin_dir_path( __FILE__ ));
 define('AI_CORE_URL', plugins_url( '', __FILE__ ));
