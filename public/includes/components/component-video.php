@@ -35,23 +35,23 @@ if (!function_exists('aesop_video_shortcode')){
 	        switch( $atts['src'] ):
 
 	            case 'vimeo':
-	                $out .= sprintf( '<iframe src="http://player.vimeo.com/video/%s" width="" height=""  frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
+	                $out .= sprintf( '<iframe src="http://player.vimeo.com/video/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
 	                break;
 
 	            case 'dailymotion':
-	                $out .= sprintf( '<iframe src="http://www.dailymotion.com/embed/video/%s" width="" height=""  frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
+	                $out .= sprintf( '<iframe src="http://www.dailymotion.com/embed/video/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
 	                break;
 
 	            case 'youtube':
-	                $out .= sprintf( '<iframe src="http://player.vimeo.com/video/%s" width="" height=""  frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
+	                $out .= sprintf( '<iframe src="http://www.youtube.com/embed/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
 	                break;
 
 	            case 'kickstarter':
-	                $out .= sprintf( '<iframe width="" height="" src="%s" frameborder="0" scrolling="no"> </iframe>',$atts['id'] );
+	                $out .= sprintf( '<iframe width="" height="" src="%s" scrolling="no"> </iframe>',$atts['id'] );
 	                break;
 
 	            case 'viddler':
-	                $out .= sprintf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" width="" height="" frameborder="0" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',$atts['id'], $atts['id'] );
+	                $out .= sprintf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" width="" height="" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',$atts['id'], $atts['id'] );
 	                break;
 
 	            case 'self':
