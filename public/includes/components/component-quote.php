@@ -13,7 +13,8 @@ if (!function_exists('aesop_quote_shortcode')){
 			'width'		=> '100%',
 			'background' => '#222222',
 			'text' 		=> '#FFFFFF',
-			'height'	=> 'auto'
+			'height'	=> 'auto',
+			'quote'		=> ''
 		);
 		$atts = apply_filters('aesop_quote_defaults',shortcode_atts($defaults, $atts));
 		
@@ -48,7 +49,7 @@ if (!function_exists('aesop_quote_shortcode')){
 		</script>', $hash);
 
 		// output
-		$out .= sprintf('<blockquote>%s</blockquote>%s</section>%s',do_shortcode($content),$actioninsidebottom, $actionbottom);
+		$out .= sprintf('<blockquote>%s</blockquote>%s</section>%s',$atts['quote'],$actioninsidebottom, $actionbottom);
 
 		return apply_filters('aesop_quote_output',$out);
 	}

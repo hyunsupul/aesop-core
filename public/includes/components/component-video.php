@@ -15,7 +15,8 @@ if (!function_exists('aesop_video_shortcode')){
     		'align' => 'center',
 	    	'src' =>'vimeo',
 	    	'hosted' => '',
-	    	'id'	=> ''
+	    	'id'	=> '',
+	    	'caption' => ''
 	    );
 	    $atts = apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
 	    $contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
@@ -27,7 +28,7 @@ if (!function_exists('aesop_video_shortcode')){
 		$actioninsidetop = do_action('aesop_videox_component_inside_top');
 		$actioninsidebottom = do_action('aesop_video_component_inside_bottom');
 
-	    $caption = $content ? sprintf('<div class="aesop-video-component-caption aesop-component-align-%s" %s>%s</div>',$atts['align'], $widthstyle, $content) : false;
+	    $caption = $atts['caption'] ? sprintf('<div class="aesop-video-component-caption aesop-component-align-%s" %s>%s</div>',$atts['align'], $widthstyle, $atts['caption']) : false;
 
 	    $out = sprintf('%s<section class="aesop-component aesop-video-component %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $contentwidth, $actioninsidetop, $hash, $atts['align'], $atts['src'], $widthstyle);
 
