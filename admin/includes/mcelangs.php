@@ -25,47 +25,47 @@
 $shortcodes = array(
 	array(
 		'shortcode' => 'aesop_gallery',
-		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+		'image' => AI_CORE_URL.'/admin/assets/img/image-component-placeholder.jpg',
 	),
 	array(
 		'shortcode' => 'aesop_document',
-		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+		'image' => AI_CORE_URL.'/admin/assets/img/document-component-placeholder.jpg',
 	),
 	array(
 		'shortcode' => 'aesop_image',
-		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+		'image' => AI_CORE_URL.'/admin/assets/img/image-component-placeholder.jpg',
 	),
 	array(
 		'shortcode' => 'aesop_parallax',
-		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+		'image' => AI_CORE_URL.'/admin/assets/img/parallax-component-placeholder.jpg',
 	),
 	array(
 		'shortcode' => 'aesop_character',
-		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+		'image' => AI_CORE_URL.'/admin/assets/img/character-component-placeholder.jpg',
 	),
 	array(
 		'shortcode' => 'aesop_chapter',
-		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+		'image' => AI_CORE_URL.'/admin/assets/img/chapter-component-placeholder.jpg',
 	),
 	array(
 		'shortcode' => 'aesop_quote',
-		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+		'image' => AI_CORE_URL.'/admin/assets/img/quote-component-placeholder.jpg',
 	),
 	array(
 		'shortcode' => 'aesop_audio',
-		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+		'image' => AI_CORE_URL.'/admin/assets/img/audio-component-placeholder.jpg',
 	),
 	array(
 		'shortcode' => 'aesop_video',
-		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+		'image' => AI_CORE_URL.'/admin/assets/img/video-component-placeholder.jpg',
 	),
 	array(
 		'shortcode' => 'aesop_map',
-		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+		'image' => AI_CORE_URL.'/admin/assets/img/map-component-placeholder.jpg',
 	),
 	array(
 		'shortcode' => 'aesop_timeline',
-		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+		'image' => AI_CORE_URL.'/admin/assets/img/timeline-component-placeholder.jpg',
 	),
 );
 
