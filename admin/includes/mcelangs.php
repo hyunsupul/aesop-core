@@ -25,14 +25,48 @@
 $shortcodes = array(
 	array(
 		'shortcode' => 'aesop_gallery',
-		'image' => 'http://placekitten.com/300/300', AI_CORE_DIR.'admin/includes/visualsc.php',
-		'command' => 'mceaesop_gallery',
+		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
 	),
 	array(
 		'shortcode' => 'aesop_document',
-		'image' => 'http://placekitten.com/30/30', AI_CORE_DIR.'admin/includes/visualsc.php',
+		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
 	),
-
+	array(
+		'shortcode' => 'aesop_image',
+		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+	),
+	array(
+		'shortcode' => 'aesop_parallax',
+		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+	),
+	array(
+		'shortcode' => 'aesop_character',
+		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+	),
+	array(
+		'shortcode' => 'aesop_chapter',
+		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+	),
+	array(
+		'shortcode' => 'aesop_quote',
+		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+	),
+	array(
+		'shortcode' => 'aesop_audio',
+		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+	),
+	array(
+		'shortcode' => 'aesop_video',
+		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+	),
+	array(
+		'shortcode' => 'aesop_map',
+		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+	),
+	array(
+		'shortcode' => 'aesop_timeline',
+		'image' => AI_CORE_URL.'/admin/assets/img/component-placeholder.jpg',
+	),
 );
 
 // JSON-encode our shortcodes.

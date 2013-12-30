@@ -1,4 +1,6 @@
 <?php
+
+// major props to Visual Shortcodes as thats where msot of this code came from
 class JPB_Visual_Shortcodes {
 
 	/**
@@ -10,19 +12,15 @@ class JPB_Visual_Shortcodes {
 	 * @since 0.1
 	 */
 	function __construct() {
-		add_filter('mce_external_plugins', array($this, 'plugins'));
-		add_filter('mce_external_languages', array($this, 'lang'));
+
+		if ( get_user_option('rich_editing') == 'true') {
+			add_filter('mce_external_plugins', array($this, 'plugins'));
+			add_filter('mce_external_languages', array($this, 'lang'));
+		}
 	}
 
-	/**
-	 * Registers the shortcode images script as a tinyMCE plugin.
-	 * 
-	 * @since 0.1
-	 * @param array $plugins An associative array of plugins
-	 * @return array 
-	 */
 	function plugins($plugins) {
-		$plugins['visualshortcodes'] = AI_CORE_URL.'/admin/assets/js/example.js';
+		$plugins['visualshortcodes'] = AI_CORE_URL.'/admin/assets/js/aesopmce.min.js';
 		return $plugins;
 	}
 
@@ -39,12 +37,11 @@ class JPB_Visual_Shortcodes {
 	 * More information is in the documentation in visualshortcodes/langs.php
 	 *
 	 * @since 0.1
-	 * @see ./visualshortcodes/langs.php
 	 * @param array $langs An associative array of language files
 	 * @return array
 	 */
 	function lang($langs) {
-		$langs['visualshortcodes'] = AI_CORE_DIR.'admin/includes/langs.php';
+		$langs['visualshortcodes'] = AI_CORE_DIR.'admin/includes/mcelangs.php';
 		return $langs;
 	}
 
