@@ -276,7 +276,7 @@
                 style: 'display:none;'
             });
 
-            /*
+
 			// Add the 'edit' button
             edbutton = DOM.add( 'jpb_vscbuttons', 'img', {
                 src: t.url + '/img/edit.png',
@@ -285,7 +285,7 @@
                 height: '24',
                 style: 'margin:2px;'
             });
-			*/
+
 			// Add the event handler for clicking the 'edit' button
             tinymce.dom.Event.add( edbutton, 'mousedown', function(e){
 				// Initialize some variables

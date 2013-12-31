@@ -26,6 +26,7 @@ $shortcodes = array(
 	array(
 		'shortcode' => 'aesop_gallery',
 		'image' => AI_CORE_URL.'/admin/assets/img/image-component-placeholder.jpg',
+		'command' => ''
 	),
 	array(
 		'shortcode' => 'aesop_document',
