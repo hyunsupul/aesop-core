@@ -101,21 +101,21 @@ class AesopChapterHeadingComponent {
 	function aesop_chapter_loader(){
 
 		?>
+			<!-- Chapter Loader -->
 			<script>
-			jQuery(document).ready(function(){
+				jQuery(document).ready(function(){
 
-				jQuery('.aesop-entry-content').scrollNav({
-				    sections: '.aesop-chapter-title',
-				    arrowKeys: true,
-				    insertTarget: '.aesop-story-header',
-				    insertLocation: 'appendTo',
-				    showTopLink: true,
-				    showHeadline: false,
-				    scrollOffset: 36,
+					jQuery('.aesop-entry-content').scrollNav({
+					    sections: '.aesop-chapter-title',
+					    arrowKeys: true,
+					    insertTarget: '.aesop-story-header',
+					    insertLocation: 'appendTo',
+					    showTopLink: true,
+					    showHeadline: false,
+					    scrollOffset: 36,
+					});
+
 				});
-
-			});
-
 			</script>
 
 		<?php
