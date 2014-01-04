@@ -43,7 +43,7 @@ if (!function_exists('aesop_video_shortcode')){
 	                break;
 
 	            case 'youtube':
-	                $out .= sprintf( '<iframe src="http://www.youtube.com/embed/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
+	                $out .= sprintf( '<iframe src="//www.youtube.com/embed/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
 	                break;
 
 	            case 'kickstarter':
