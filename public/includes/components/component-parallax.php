@@ -41,8 +41,8 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
 		$style 		= sprintf('style="background-image:url(\'%s\');background-size:cover;"',$atts['img'],$atts['height']);
 
-		$animateup = sprintf('data-top-bottom="transform: translate3d(0px, 0px, 0px);" data-bottom-top="transform: translate3d(0px, %spx, 0px);"',$atts['height']);
-		$animatedown = sprintf('data-top-bottom="transform: translate3d(0px, %spx, 0px);" data-bottom-top="transform: translate3d(0px, 0px, 0px);"',$atts['height']);
+		$animateup = sprintf('data-speed="8"');
+		$animatedown = sprintf('data-speed="8"');
 
 		$itemanimate = 'up' == $atts['floaterdirection'] ? $animateup : $animatedown;
 		$lblink 	= 'on' == $atts['lightbox'] ? sprintf('<a class="aesop-lb-link swipebox" rel="lightbox" title="%s" href="%s"><i class="aesopicon aesopicon-search-plus"></i></a>',$atts['caption'],$atts['img']) : false;
@@ -64,8 +64,16 @@ if (!function_exists('aesop_parallax_shortcode')){
 			    	});
 			        var viewport = jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s\').outerHeight();
         			jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s .aesop-parallax-sc-img.is-parallax\').css({\'height\': viewport * 1.65});
+
+					var obj = jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s .aesop-parallax-sc-floater\');
+			        jQuery(window).scroll(function() {
+			            var floater = (jQuery(window).scrollTop() / jQuery(obj).data(\'speed\') - viewport);
+			            var pos = floater + \'px\';
+			            jQuery(obj).css({ \'margin-top\': pos });
+			        });
+
 				});
-			</script>',$hash,$atts['parallaxspeed'], $hash, $hash);
+			</script>',$hash,$atts['parallaxspeed'], $hash, $hash, $hash);
 		}
 
 		$out 	.= sprintf('<div class="aesop-parallax-sc aesop-parallax-sc-%s" style="height:%spx;">%s%s%s<div class="aesop-parallax-sc-img %s" %s></div></div>%s</section>%s',
