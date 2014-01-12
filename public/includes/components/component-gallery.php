@@ -179,12 +179,13 @@ class AesopCoreGallery {
 
 			foreach ($images as $image):
 
-                $full    =  wp_get_attachment_image_src($image->ID,'medium');
-                $alt     =  get_post_meta($image->ID, '_wp_attachment_image_alt', true);
+                $getimage 		= wp_get_attachment_image($image->ID, 'medium', false, array('class' => 'aesop-grid-image'));
+				$getimgsrc 		= wp_get_attachment_image_src($image->ID,'large');
                 $caption =  $image->post_excerpt;
                 $desc    =  $image->post_content;
+                $img_title 	  	= $image->post_title;
 
-               ?><img src="<?php echo $full[0];?>" alt="<?php echo $alt;?>"><?php
+               	printf('<a class="swipebox" href="%s" title="%s">%s</a>',$getimgsrc[0],$img_title,$getimage);
 
 			endforeach;
 
