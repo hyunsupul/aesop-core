@@ -48,6 +48,8 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$lblink 	= 'on' == $atts['lightbox'] ? sprintf('<a class="aesop-lb-link swipebox" rel="lightbox" title="%s" href="%s"><i class="aesopicon aesopicon-search-plus"></i></a>',$atts['caption'],$atts['img']) : false;
 		$floater 	= 'on' == $atts['floater'] ? sprintf('<div class="aesop-parallax-sc-floater floater-%s" %s>%s</div>', $atts['floaterposition'], $itemanimate , $atts['floatermedia']) : false;
 
+		// caption
+		$caption = $atts['caption'] ? sprintf('<div class="aesop-parallax-sc-caption-wrap %s"><div class="aesop-parallax-sc-caption">%s</div></div>',$atts['captionposition'], $atts['caption']) : false;
 
 		$out = sprintf('%s<section class="aesop-component aesop-parallax-component" style="height:%spx;">%s',$actiontop,$atts['height'], $actioninsidetop);
 
@@ -66,14 +68,17 @@ if (!function_exists('aesop_parallax_shortcode')){
 			</script>',$hash,$atts['parallaxspeed'], $hash, $hash);
 		}
 
-		$out 	.= sprintf('<div class="aesop-parallax-sc aesop-parallax-sc-%s" style="height:%spx;">
-								%s
-								<div class="aesop-parallax-sc-caption-wrap %s">
-									<div class="aesop-parallax-sc-caption">%s</div>
-								</div>
-								%s
-								<div class="aesop-parallax-sc-img %s" %s></div>
-							</div>%s</section>%s',$hash, $atts['height'], $floater, $atts['captionposition'], $atts['caption'], $lblink, $laxclass, $style, $actioninsidebottom, $actionbottom);
+		$out 	.= sprintf('<div class="aesop-parallax-sc aesop-parallax-sc-%s" style="height:%spx;">%s%s%s<div class="aesop-parallax-sc-img %s" %s></div></div>%s</section>%s',
+							$hash,
+							$atts['height'],
+							$floater,
+							$caption,
+							$lblink,
+							$laxclass,
+							$style,
+							$actioninsidebottom,
+							$actionbottom
+							);
 
 		return apply_filters('aesop_parallax_output',$out);
 	}
