@@ -66,6 +66,7 @@ class Aesop_Core {
 		require_once( AI_CORE_DIR.'admin/includes/available.php');
 
 		require_once( AI_CORE_DIR.'public/includes/browserclasses.php');
+		require_once( AI_CORE_DIR.'public/includes/imgsizes.php');
 
 		// load components
 		require_once( AI_CORE_DIR.'public/includes/components/component-parallax.php' );
