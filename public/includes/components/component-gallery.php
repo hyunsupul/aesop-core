@@ -179,12 +179,12 @@ class AesopCoreGallery {
 
 			foreach ($images as $image):
 
-                $full    =  wp_get_attachment_url($image->ID, 'full', false,'');
+                $full    =  wp_get_attachment_image_src($image->ID,'medium');
                 $alt     =  get_post_meta($image->ID, '_wp_attachment_image_alt', true);
                 $caption =  $image->post_excerpt;
                 $desc    =  $image->post_content;
 
-               ?><img src="<?php echo $full;?>" alt="<?php echo $alt;?>"><?php
+               ?><img src="<?php echo $full[0];?>" alt="<?php echo $alt;?>"><?php
 
 			endforeach;
 
