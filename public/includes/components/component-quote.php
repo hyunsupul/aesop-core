@@ -14,6 +14,7 @@ if (!function_exists('aesop_quote_shortcode')){
 			'background' => '#222222',
 			'text' 		=> '#FFFFFF',
 			'height'	=> 'auto',
+			'align'		=> 'left',
 			'quote'		=> ''
 		);
 		$atts = apply_filters('aesop_quote_defaults',shortcode_atts($defaults, $atts));
@@ -49,7 +50,7 @@ if (!function_exists('aesop_quote_shortcode')){
 		</script>', $hash);
 
 		// output
-		$out .= sprintf('<blockquote>%s</blockquote>%s</section>%s',$atts['quote'],$actioninsidebottom, $actionbottom);
+		$out .= sprintf('<blockquote class="aesop-component-align-%s">%s</blockquote>%s</section>%s',$atts['align'],$atts['quote'],$actioninsidebottom, $actionbottom);
 
 		return apply_filters('aesop_quote_output',$out);
 	}

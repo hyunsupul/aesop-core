@@ -145,6 +145,16 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> '',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' )
 					),
+					'align' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('left', 'aesop-core'),
+							__('center', 'aesop-core'),
+							__('right', 'aesop-core')
+						),
+						'default' 	=> 'center',
+						'desc' 		=> __( 'Alignment', 'aesop-core' )
+					),
 					'quote' 		=> array(
 						'type'		=> 'text',
 						'values'	=> array(),
@@ -379,7 +389,11 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'align' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
+						'values' 	=> array(
+							__('left', 'aesop-core'),
+							__('center', 'aesop-core'),
+							__('right', 'aesop-core')
+						),
 						'default' 	=> 'center',
 						'desc' 		=> __( 'Alignment', 'aesop-core' )
 					),
