@@ -10,6 +10,7 @@ class AesopComponentImageSizes {
 	function img_sizes(){
 
 		add_image_size( 'aesop-cover-img',  1250, 9999 );      // Cover & Chapter Components
+		add_image_size( 'aesop-tiny-cover',  400, 9999 );      // Index Covers
 		add_image_size( 'aesop-component',  1250, 9999 );      // Parallax & Image Components
 		add_image_size( 'aesop-character', 	200,  200, true ); // Character Component
 		add_image_size( 'aesop-collection', 300,  300, true ); // Collection Component
