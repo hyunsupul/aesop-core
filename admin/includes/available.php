@@ -85,7 +85,7 @@ if(!function_exists('aesop_shortcodes')){
 			),
 			'character' 			=> array(
 				'name' 				=> __('Character', 'aesop-core'),
-				'type' 				=> 'wrap',
+				'type' 				=> 'single',
 				'atts' 				=> array(
 					'img' 			=> array(
 						'type'		=> 'media_upload',
