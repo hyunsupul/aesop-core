@@ -49,7 +49,6 @@ Interactive elements are created while crafting stories, with the Story Componen
 
 ### Changelog
 
-
 ---
 
 ### TODO
