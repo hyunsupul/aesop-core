@@ -69,7 +69,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 			        jQuery(window).scroll(function() {
 			            var floater = (jQuery(window).scrollTop() / jQuery(obj).data(\'speed\') - viewport);
 			            var pos = floater + \'px\';
-			            jQuery(obj).css({ \'margin-top\': pos });
+			            jQuery(obj).css({\'transform\':\'translate3d(0px,\' + pos + \', 0px)\'});
 			        });
 
 				});
