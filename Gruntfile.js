@@ -1,14 +1,14 @@
 'use strict';
 module.exports = function(grunt) {
- 
+
     require('load-grunt-tasks')(grunt);
- 
+
     grunt.initConfig({
- 
+
         // watch our project for changes
         watch: {
             less: {
-				files: ['public/assets/less/*'],
+				files: ['public/assets/less/*','admin/assets/css/*'],
                 tasks: ['less']
             },
             js: {
@@ -24,23 +24,24 @@ module.exports = function(grunt) {
         },
         // style (Sass) compilation via Compass
 		less: {
-		  development: {
-		    options: {
-		      paths: ["public/assets/less"]
-		    },
-		    files: {
-		      "public/assets/css/style.css": "public/assets/less/style.less"
-		    }
-		  },
-		  production: {
-		    options: {
-		      paths: ["public/assets/less"],
-		      cleancss:true
-		    },
-		    files: {
-		      "public/assets/css/style.css": "public/assets/less/style.less"
-		    }
-		  }
+		  	adminLess: {
+		    	options: {
+		      		paths: ["admin/assets/css/*"],
+		      		cleancss:true
+		    	},
+		    	files: {
+		     	 	"admin/assets/css/style.css": "admin/assets/css/style.less"
+		    	}
+		  	},
+		  	publicLess: {
+		    	options: {
+		      		paths: ["public/assets/less"],
+		      		cleancss:true
+		    	},
+		    	files: {
+		      		"public/assets/css/style.css": "public/assets/less/style.less"
+		    	}
+		  	}
 		},
         // make sure js is clean
         jshint: {
@@ -68,12 +69,25 @@ module.exports = function(grunt) {
             },
             all: [
                 'Gruntfile.js',
-                'public/assets/js/*.js'
+                'public/assets/js/*.js',
+                'admin/assets/js/*.js'
             ]
         },
         // concatenation and minification all in one
    		uglify: {
-            plugins: {
+   			adminscripts: {
+                options: {
+                    sourceMap: 'admin/assets/js/generator.js.map',
+                    sourceMappingURL: 'generator.js.map',
+                    sourceMapPrefix: 2
+                },
+               	files: {
+                    'admin/assets/js/generator.min.js': [
+                     	'admin/assets/js/generator.js',
+                    ]
+                }
+            },
+            publicscripts: {
                 options: {
                     sourceMap: 'public/assets/js/ai-core.js.map',
                     sourceMappingURL: 'ai-core.js.map',
@@ -87,8 +101,8 @@ module.exports = function(grunt) {
             }
         }
     });
- 
+
     // register task
     grunt.registerTask('default', ['watch']);
- 
+
 };
