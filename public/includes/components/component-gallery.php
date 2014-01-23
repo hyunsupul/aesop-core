@@ -58,6 +58,19 @@ class AesopCoreGallery {
 	<?php }
 
     /**
+	 	* Function checks the post content to make sure gallery shortcode exists before running
+	 	*
+	 	* @since    0.9.7
+	*/
+	function aesop_check_gallery($post){
+		global $post;
+		$content = $post->content;
+		if( has_shortcode( $content, 'aesop_gallery' ) ) {
+			return true;
+		}
+	}
+
+    /**
 	 	* Overrides core wordpress gallery and provides grid / thumbnail type galleries
 	 	*
 	 	* @since    1.0.0
@@ -76,7 +89,7 @@ class AesopCoreGallery {
 		$post = get_post($atts['id'], ARRAY_A);
 
 		// Get the gallery shortcode out of the post content, and parse the ID's in teh gallery shortcode
-		$shortcode_args = shortcode_parse_atts($this->gallery_match('/\[gallery\s(.*)\]/isU', $post['post_content']));
+		$shortcode_args = $this->aesop_check_gallery($post) ? shortcode_parse_atts($this->gallery_match('/\[gallery\s(.*)\]/isU', $post['post_content'])) : false;
 
 		// set gallery shortcode image id's
 		$ids = $shortcode_args["ids"];
