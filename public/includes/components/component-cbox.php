@@ -45,13 +45,13 @@ if (!function_exists('aesop_content_shortcode')){
 		$imgstyle = $atts['img'] ? sprintf('%sbackground-image:url(\'%s\');background-size:cover;background-position:center center;',$bgcolor, $atts['img']) : false;
 		
 
-		$widthstyle = $atts['width'] ? sprintf('width:%s;',$atts['width']) : false;
+		$widthstyle = $atts['width'] ? sprintf('style="width:%s;margin-left:auto;margin-right:auto;"',$atts['width']) : false;
 		$txtcolor 	= $atts['color'] ? sprintf('color:%s;', $atts['color']) : false;
 		$position	= ('left' == $atts['position'] || 'right' == $atts['position']) ? sprintf('float:%s',$atts['position']) : false;
-			$itemstyle = $imgstyle || $widthstyle || $position || $txtcolor ? sprintf('style="%s%s%s%s%s"',$imgstyle,$widthstyle,$position, $txtcolor, $bgcolor) : false;
+			$itemstyle = $imgstyle || $position || $txtcolor ? sprintf('style="%s%s%s%s"',$imgstyle,$position, $txtcolor, $bgcolor) : false;
 
 		// all together
-		$scinner = sprintf('<div id="aesop-content-component-%s" class="aesop-content-comp-wrap %s" %s><div class="aesop-content-comp-inner">%s</div></div>',$hash,$typeclass, $itemstyle, do_shortcode($content));
+		$scinner = sprintf('<div id="aesop-content-component-%s" class="aesop-content-comp-wrap %s" %s><div class="aesop-content-comp-inner" %s>%s</div></div>',$hash,$typeclass, $itemstyle, $widthstyle, do_shortcode($content));
 
 		$out = sprintf('%s<section class="aesop-component aesop-content-component %s">%s%s%s</section>%s',$actiontop, $contentwidth, $actioninsidetop, $scinner, $actioninsidebottom, $actionbottom);
 
