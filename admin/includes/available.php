@@ -294,12 +294,6 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 'on',
 						'desc' 		=> __('Parallax Background Image', 'aesop-core' )
 					),
-					'parallaxspeed' => array(
-						'type'		=> 'text',
-						'values' 	=> array(),
-						'default' 	=> '0.1',
-						'desc' 		=> __('Parallax Background Speed', 'aesop-core' )
-					),
 					'floater' 		=> array(
 						'type'		=> 'text',
 						'values'	=> array(

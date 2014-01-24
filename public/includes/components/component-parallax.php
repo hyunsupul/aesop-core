@@ -14,11 +14,11 @@ if (!function_exists('aesop_parallax_shortcode')){
 			'img' 				=> 'http://placekitten.com/1200/700',
 			'height' 			=> 500,
 			'parallaxbg' 		=> 'on',
-			'parallaxspeed'		=> 0.1,
 			'floater' 			=> false,
 			'floatermedia' 		=> '',
 			'floaterposition' 	=> 'right',
 			'floaterdirection'	=> 'up',
+			'floateroffset'		=> 40,
 			'caption'			=> '',
 			'captionposition' 	=> 'bottom-left',
 			'lightbox' 			=> false
@@ -27,67 +27,79 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$atts = apply_filters('aesop_parallax_defaults',shortcode_atts($defaults, $atts));
 
 		$hash = rand();
-
-
-		// actions
-		$actiontop = do_action('aesop_parallax_component_before');
-		$actionbottom = do_action('aesop_parallax_component_after');
-		$actioninsidetop = do_action('aesop_parallax_component_inside_top');
-		$actioninsidebottom = do_action('aesop_parallax_component_inside_bottom');
-
-		// final destination of the floater is half the height of the viewport that's set
-		$floaterdestination = $atts['height'] / 2;
-
 		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
 		$style 		= sprintf('style="background-image:url(\'%s\');background-size:cover;"',$atts['img'],$atts['height']);
 
-		$animateup = sprintf('data-speed="8"');
-		$animatedown = sprintf('data-speed="8"');
+		ob_start();
 
-		$itemanimate = 'up' == $atts['floaterdirection'] ? $animateup : $animatedown;
-		$lblink 	= 'on' == $atts['lightbox'] ? sprintf('<a class="aesop-lb-link swipebox" rel="lightbox" title="%s" href="%s"><i class="aesopicon aesopicon-search-plus"></i></a>',$atts['caption'],$atts['img']) : false;
-		$floater 	= 'on' == $atts['floater'] ? sprintf('<div class="aesop-parallax-sc-floater floater-%s" %s>%s</div>', $atts['floaterposition'], $itemanimate , $atts['floatermedia']) : false;
+		do_action('aesop_parallax_component_before');
 
-		// caption
-		$caption = $atts['caption'] ? sprintf('<div class="aesop-parallax-sc-caption-wrap %s"><div class="aesop-parallax-sc-caption">%s</div></div>',$atts['captionposition'], $atts['caption']) : false;
+			?><section class="aesop-component aesop-parallax-component" style="height:<?php echo $atts['height']?>px;"><?php
 
-		$out = sprintf('%s<section class="aesop-component aesop-parallax-component" style="height:%spx;">%s',$actiontop,$atts['height'], $actioninsidetop);
+				do_action('aesop_parallax_component_before'); // action
 
-		// Call Parallax Method if Set
-		if ('on' == $atts['parallaxbg']) {
+				// Call Parallax Method if Set
+				if ('on' == $atts['parallaxbg']) { ?>
+					<script>
+						jQuery(document).ready(function(){
+					   		jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $hash;?> .aesop-parallax-sc-img').parallax({speed: 0.1});
+					        var viewport = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $hash;?>').outerHeight();
+		        			jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $hash;?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1.65});
 
-			$out .= sprintf('
-				<script>
-				jQuery(document).ready(function(){
-			   		jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s .aesop-parallax-sc-img\').parallax({
-			    		speed: %s
-			    	});
-			        var viewport = jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s\').outerHeight();
-        			jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s .aesop-parallax-sc-img.is-parallax\').css({\'height\': viewport * 1.65});
+		        			<?php if ($atts['floatermedia']) {?>
+								var obj = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $hash;?> .aesop-parallax-sc-floater');
+						       	function scrollParallax(){
+						       	    var floater = (jQuery(window).scrollTop() / jQuery(obj).data('speed')) - <?php echo $atts['floateroffset'];?>;
 
-					var obj = jQuery(\'.aesop-parallax-sc.aesop-parallax-sc-%s .aesop-parallax-sc-floater\');
-			        jQuery(window).scroll(function() {
-			            var floater = (jQuery(window).scrollTop() / jQuery(obj).data(\'speed\') - viewport);
-			            var pos = floater + \'px\';
-			            jQuery(obj).css({\'transform\':\'translate3d(0px,\' + pos + \', 0px)\'});
-			        });
+						       	    <?php if ('left' == $atts['floaterdirection'] || 'right' == $atts['floaterdirection']){
 
-				});
-			</script>',$hash,$atts['parallaxspeed'], $hash, $hash, $hash);
-		}
+										if ('left' == $atts['floaterdirection']){ ?>
+						            		jQuery(obj).css({'transform':'translate3d(' + floater + 'px, 0px, 0px)'});
+						            	<?php } else { ?>
+											jQuery(obj).css({'transform':'translate3d(-' + floater + 'px, 0px, 0px)'});
+						            	<?php }
 
-		$out 	.= sprintf('<div class="aesop-parallax-sc aesop-parallax-sc-%s" style="height:%spx;">%s%s%s<div class="aesop-parallax-sc-img %s" %s></div></div>%s</section>%s',
-							$hash,
-							$atts['height'],
-							$floater,
-							$caption,
-							$lblink,
-							$laxclass,
-							$style,
-							$actioninsidebottom,
-							$actionbottom
-							);
+						       	    } else {
 
-		return apply_filters('aesop_parallax_output',$out);
+						       	    	if ('up' == $atts['floaterdirection']){ ?>
+						            		jQuery(obj).css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
+										<?php } else { ?>
+											jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
+										<?php }
+						            } ?>
+						       	}
+						      	scrollParallax();
+						        jQuery(window).scroll(function() {scrollParallax();});
+						    <?php } ?>
+						});
+					</script>
+				<?php } ?>
+					<div class="aesop-parallax-sc aesop-parallax-sc-<?php echo $hash;?>" style="height:<?php echo $atts['height'];?>px">
+
+						<?php if ($atts['floatermedia']){?>
+							<div class="aesop-parallax-sc-floater floater-<?php echo $atts['floaterposition'];?>" data-speed="10">
+								<?php echo $atts['floatermedia'];?>
+							</div>
+						<?php } ?>
+
+						<?php if ($atts['caption']){?>
+							<div class="aesop-parallax-sc-caption-wrap <?php echo $atts['captionposition'];?>">
+								<div class="aesop-parallax-sc-caption"><?php echo $atts['caption'];?></div>
+							</div>
+						<?php } ?>
+
+						<?php if ($atts['lightbox']){?>
+							<a class="aesop-lb-link swipebox" rel="lightbox" title="<?php echo $atts['caption'];?>" href="<?php echo $atts['img'];?>"><i class="aesopicon aesopicon-search-plus"></i></a>
+						<?php } ?>
+						<div class="aesop-parallax-sc-img <?php echo $laxclass;?>" <?php echo $style;?>></div>
+					</div>
+
+					<?php do_action('aesop_parallax_component_inside_bottom'); //action ?>
+
+			</section>
+
+		<?php do_action('aesop_parallax_component_after'); // action
+
+		return ob_get_clean();
 	}
 }
