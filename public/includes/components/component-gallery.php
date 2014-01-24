@@ -162,6 +162,9 @@ class AesopCoreGallery {
 	*/
 	function aesop_grid_gallery($atts, $images, $width){
 
+		$getgridwidth = get_post_meta($atts["id"],'aesop_grid_gallery_width', true);
+		$gridwidth = $getgridwidth ? self::sanitize_int($getgridwidth) : 300;
+
 		?>
 		<script>
 			jQuery(document).ready(function(){
@@ -170,7 +173,7 @@ class AesopCoreGallery {
 			          	autoResize: true,
 			          	container: jQuery('#aesop-grid-gallery-<?php echo $atts["id"];?>'),
 			          	offset: 5,
-			          	flexibleWidth: 300
+			          	flexibleWidth: <?php echo $gridwidth;?>
 			        };
 			        var handler = jQuery('#aesop-grid-gallery-<?php echo $atts["id"];?> img');
 			        jQuery(handler).wookmark(options);
@@ -183,8 +186,8 @@ class AesopCoreGallery {
 
                 $getimage 		= wp_get_attachment_image($image->ID, 'medium', false, array('class' => 'aesop-grid-image'));
 				$getimgsrc 		= wp_get_attachment_image_src($image->ID,'large');
-                $caption =  $image->post_excerpt;
-                $desc    =  $image->post_content;
+                $caption 		=  $image->post_excerpt;
+                $desc    		=  $image->post_content;
                 $img_title 	  	= $image->post_title;
 
                	printf('<a class="swipebox" href="%s" title="%s"><span class="clearfix">%s</span></a>',$getimgsrc[0],$img_title,$getimage);
@@ -194,6 +197,15 @@ class AesopCoreGallery {
 		?></div><?php
 	}
 
+    /**
+	 	* Ensure users only enter whole number
+	 	*
+	 	* @since    1.0.0
+	*/
+	function sanitize_int( $input = ''  ) {
+		return wp_filter_nohtml_kses( round( $input ) );
+
+	}
     /**
 	 	* Draws a stacked parallax style gallery
 	 	*
