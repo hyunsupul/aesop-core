@@ -319,11 +319,18 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 'right',
 						'desc' 		=> __('Position of Floater', 'aesop-core' )
 					),
+					'floateroffset' => array(
+						'type'		=> 'text',
+						'values' 	=> array(),
+						'desc' 		=> __('Offset Amount of Floater (px or %)', 'aesop-core' )
+					),
 					'floaterdirection' => array(
 						'type'		=> 'text',
 						'values' 	=> array(
 							__('up', 'aesop-core'),
-							__('down', 'aesop-core')
+							__('down', 'aesop-core'),
+							__('left', 'aesop-core'),
+							__('right', 'aesop-core')
 						),
 						'default' 	=> 'up',
 						'desc' 		=> __('Parallax Direction of Floater', 'aesop-core' )
