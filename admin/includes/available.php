@@ -155,6 +155,19 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 'center',
 						'desc' 		=> __( 'Alignment', 'aesop-core' )
 					),
+					'size' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('-2', 'aesop-core'),
+							__('-1', 'aesop-core'),
+							__('0', 'aesop-core'),
+							__('1', 'aesop-core'),
+							__('2', 'aesop-core'),
+							__('3', 'aesop-core')
+						),
+						'default' 	=> 'center',
+						'desc' 		=> __( 'Quote Size', 'aesop-core' )
+					),
 					'quote' 		=> array(
 						'type'		=> 'text',
 						'values'	=> array(),

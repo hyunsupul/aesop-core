@@ -15,6 +15,7 @@ if (!function_exists('aesop_quote_shortcode')){
 			'text' 		=> '#FFFFFF',
 			'height'	=> 'auto',
 			'align'		=> 'left',
+			'size'		=> '4',
 			'quote'		=> ''
 		);
 		$atts = apply_filters('aesop_quote_defaults',shortcode_atts($defaults, $atts));
@@ -30,6 +31,9 @@ if (!function_exists('aesop_quote_shortcode')){
 
 		// set component to content width
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
+
+		// set size
+		$size = $atts['size'] ? sprintf('%srem', $atts['size']) : false;
 
 		// set styles
 		$style = $atts['background'] || $atts['text'] || $atts['height'] || $atts['width'] ? sprintf('style="background:%s;color:%s;height:%s;width:%s;"',$atts['background'], $atts['text'], $atts['height'], $atts['width']) : false;
@@ -50,7 +54,7 @@ if (!function_exists('aesop_quote_shortcode')){
 		</script>', $hash);
 
 		// output
-		$out .= sprintf('<blockquote class="aesop-component-align-%s">%s</blockquote>%s</section>%s',$atts['align'],$atts['quote'],$actioninsidebottom, $actionbottom);
+		$out .= sprintf('<blockquote class="aesop-component-align-%s" style="font-size:%s;">%s</blockquote>%s</section>%s',$atts['align'],$size,$atts['quote'],$actioninsidebottom, $actionbottom);
 
 		return apply_filters('aesop_quote_output',$out);
 	}

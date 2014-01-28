@@ -129,8 +129,14 @@ class AesopGalleryComponentAdmin {
 		$opts = array(
 			array(
 				'id'             => 'aesop_gallery_width',
-				'name'           => 'Gallery Width',
+				'name'           => __('Main Gallery Width', 'aesop-core'),
 				'type'           => 'text',
+			),
+			array(
+				'id'             => 'aesop_grid_gallery_width',
+				'name'           => 'Gallery Grid Item Width',
+				'type'           => 'text',
+				'desc'			=> __('Adjust the width of the individual grid items, only if using Grid gallery style. ','aesop-core')
 			),
 		);
 
