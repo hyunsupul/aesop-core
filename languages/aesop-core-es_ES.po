@@ -1,0 +1,573 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Aesop Core - 0.9.7\n"
+"POT-Creation-Date: 2014-01-27 18:10-0600\n"
+"PO-Revision-Date: 2014-01-27 19:36-0600\n"
+"Last-Translator: Enrique Chavez <noone@tmeister.net>\n"
+"Language-Team: Enrique Chavez <noone@tmeister.net>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../admin/includes/available.php:10 ../admin/includes/available.php:280
+msgid "Image"
+msgstr "Imagen"
+
+#: ../admin/includes/available.php:17 ../admin/includes/available.php:128
+#: ../admin/includes/available.php:389
+msgid "Component Width"
+msgstr "Ancho del componente"
+
+#: ../admin/includes/available.php:23
+msgid "Image URL"
+msgstr "URL de la imagen"
+
+#: ../admin/includes/available.php:29
+msgid "Image Width"
+msgstr "Ancho de la imagen"
+
+#: ../admin/includes/available.php:35 ../admin/includes/available.php:106
+msgid "Caption"
+msgstr "Subtítulo"
+
+#: ../admin/includes/available.php:41
+msgid "Image Credit"
+msgstr "Crédito de la imagen"
+
+#: ../admin/includes/available.php:47
+msgid "Image ALT"
+msgstr "Texto alternativo"
+
+#: ../admin/includes/available.php:52 ../admin/includes/available.php:111
+#: ../admin/includes/available.php:151 ../admin/includes/available.php:187
+#: ../admin/includes/available.php:316 ../admin/includes/available.php:332
+#: ../admin/includes/available.php:394
+msgid "left"
+msgstr "Izquierda"
+
+#: ../admin/includes/available.php:53 ../admin/includes/available.php:112
+#: ../admin/includes/available.php:153 ../admin/includes/available.php:188
+#: ../admin/includes/available.php:315 ../admin/includes/available.php:333
+#: ../admin/includes/available.php:396
+msgid "right"
+msgstr "Derecha"
+
+#: ../admin/includes/available.php:56
+msgid "Image Alignment"
+msgstr "Alineación de la imagen"
+
+#: ../admin/includes/available.php:62
+msgid "Image Offset"
+msgstr "Offset de la imagen"
+
+#: ../admin/includes/available.php:67
+msgid "bottom"
+msgstr "Abajo"
+
+#: ../admin/includes/available.php:68
+msgid "top"
+msgstr "arriba"
+
+#: ../admin/includes/available.php:71 ../admin/includes/available.php:353
+msgid "Caption Position"
+msgstr "Posición del subtítulo"
+
+#: ../admin/includes/available.php:76 ../admin/includes/available.php:291
+#: ../admin/includes/available.php:358
+msgid "on"
+msgstr "Activo"
+
+#: ../admin/includes/available.php:77 ../admin/includes/available.php:292
+#: ../admin/includes/available.php:359
+msgid "off"
+msgstr "Inactivo"
+
+#: ../admin/includes/available.php:80
+msgid "Lightbox"
+msgstr "Lightbox"
+
+#: ../admin/includes/available.php:84
+msgid ""
+"Creates an image component with caption, alignment, and lightbox options."
+msgstr "Crea un componente de imagen con subtítulo, alineación y lightbox"
+
+#: ../admin/includes/available.php:87
+msgid "Character"
+msgstr "Personaje"
+
+#: ../admin/includes/available.php:94
+msgid "Character Image"
+msgstr "Imagen del personaje"
+
+#: ../admin/includes/available.php:100
+msgid "Character Name"
+msgstr "Nombre del personaje"
+
+#: ../admin/includes/available.php:115 ../admin/includes/available.php:156
+#: ../admin/includes/available.php:399
+msgid "Alignment"
+msgstr "Alineación"
+
+#: ../admin/includes/available.php:118
+msgid ""
+"Creates a character that can be positioned to the left or right of your "
+"story."
+msgstr ""
+"Crea un personaje que puede ser posicionado a la izquierda o derecha de tu "
+"historia."
+
+#: ../admin/includes/available.php:121
+msgid "Aesop Quote Section"
+msgstr "Aesop Sección Cita"
+
+#: ../admin/includes/available.php:134
+msgid "Hex Color of Background"
+msgstr "Color Hexadecimal para el fondo"
+
+#: ../admin/includes/available.php:140
+msgid "Hex Color of Text"
+msgstr "Color Hexadecimal para el texto"
+
+#: ../admin/includes/available.php:146 ../admin/includes/available.php:286
+msgid "Height of Image Area"
+msgstr "Altura del área de la imagen"
+
+#: ../admin/includes/available.php:152 ../admin/includes/available.php:317
+#: ../admin/includes/available.php:395
+msgid "center"
+msgstr "Centrado"
+
+#: ../admin/includes/available.php:162
+msgid "The quote"
+msgstr "La cita"
+
+#: ../admin/includes/available.php:165
+msgid "Section quote area with background and color controls."
+msgstr "Aréa del área de la cita con fondo y controles de color"
+
+#: ../admin/includes/available.php:168 ../admin/includes/generator.php:59
+msgid "Content"
+msgstr "Contenido"
+
+#: ../admin/includes/available.php:175
+msgid "Width of Component"
+msgstr "Ancho del componente\t\t"
+
+#: ../admin/includes/available.php:181
+msgid "Number of Columns"
+msgstr "Número de columnas"
+
+#: ../admin/includes/available.php:186
+msgid "none"
+msgstr "ninguno"
+
+#: ../admin/includes/available.php:191
+msgid "Text Block Alignment"
+msgstr "Alineación del bloque de texto"
+
+#: ../admin/includes/available.php:197
+msgid "Background Image"
+msgstr "Imagen de fondo"
+
+#: ../admin/includes/available.php:202
+msgid "no-repeat"
+msgstr "no-repeat"
+
+#: ../admin/includes/available.php:203
+msgid "repeat"
+msgstr "repeat"
+
+#: ../admin/includes/available.php:204
+msgid "repeat-vertical"
+msgstr "repeat-vertical"
+
+#: ../admin/includes/available.php:205
+msgid "repeat-horizontal"
+msgstr "repeat-horizontal"
+
+#: ../admin/includes/available.php:208
+msgid "Image Repeat"
+msgstr "Repetir imagen"
+
+#: ../admin/includes/available.php:214
+msgid "Image Position"
+msgstr "Posición de la imagen"
+
+#: ../admin/includes/available.php:220
+msgid "Color of Text"
+msgstr "Color del texto"
+
+#: ../admin/includes/available.php:226
+msgid "Background Color"
+msgstr "Color del fondo"
+
+#: ../admin/includes/available.php:229
+msgid "All your normal text goes here."
+msgstr "Todo el texto normal va aquí."
+
+#: ../admin/includes/available.php:230
+msgid ""
+"Multiple use content area with options for background image, background "
+"color, and magazine style columns."
+msgstr ""
+"Área de uso multiple con opciones de imagen de fondo, color de fondo y "
+"columnas estilo revista (magazine)"
+
+#: ../admin/includes/available.php:233
+msgid "Chapter Block"
+msgstr "Bloque de capitulo"
+
+#: ../admin/includes/available.php:240
+msgid "Label (not shown)"
+msgstr "Etiqueta (no se muestra)"
+
+#: ../admin/includes/available.php:246
+msgid "Chapter Title"
+msgstr "Título del capítulo"
+
+#: ../admin/includes/available.php:252
+msgid "Chapter Subtitle (optional)"
+msgstr "Subtítulo del capítulo (opcional)"
+
+#: ../admin/includes/available.php:257
+msgid "img"
+msgstr "img"
+
+#: ../admin/includes/available.php:258
+msgid "video"
+msgstr "video"
+
+#: ../admin/includes/available.php:261
+msgid "Background Type"
+msgstr "Tipo de fondo"
+
+#: ../admin/includes/available.php:267
+msgid "Chapter Image/Video"
+msgstr "Capítulo Imagen/Video"
+
+#: ../admin/includes/available.php:270
+msgid "Creates the scroll to point, as a chapter heading."
+msgstr ""
+
+#: ../admin/includes/available.php:273
+msgid "Parallax Image"
+msgstr "Imagen tipo Parallax"
+
+#: ../admin/includes/available.php:295
+msgid "Parallax Background Image"
+msgstr "Imagen de fondo Parallax"
+
+#: ../admin/includes/available.php:300
+msgid "true"
+msgstr "true"
+
+#: ../admin/includes/available.php:301
+msgid "false"
+msgstr "false"
+
+#: ../admin/includes/available.php:304
+msgid "Enable Floating Element"
+msgstr "Activar elemento flotante"
+
+#: ../admin/includes/available.php:310
+msgid "Floater Media"
+msgstr "Media flotante"
+
+#: ../admin/includes/available.php:320
+msgid "Position of Floater"
+msgstr "Posición del flotante"
+
+#: ../admin/includes/available.php:325
+msgid "Offset Amount of Floater (px or %)"
+msgstr "Cantidad de Offset para el flotante (px o %)"
+
+#: ../admin/includes/available.php:330
+msgid "up"
+msgstr "up"
+
+#: ../admin/includes/available.php:331
+msgid "down"
+msgstr "down"
+
+#: ../admin/includes/available.php:336
+msgid "Parallax Direction of Floater"
+msgstr "Dirección para el Parallax del flotante"
+
+#: ../admin/includes/available.php:342 ../admin/includes/available.php:430
+msgid "Caption (optional)"
+msgstr "Subtítulo (opcional)"
+
+#: ../admin/includes/available.php:347
+msgid "bottom-left"
+msgstr "bottom-left"
+
+#: ../admin/includes/available.php:348
+msgid "bottom-right"
+msgstr "bottom-right"
+
+#: ../admin/includes/available.php:349
+msgid "top-left"
+msgstr "top-left"
+
+#: ../admin/includes/available.php:350
+msgid "top-right"
+msgstr "top-right"
+
+#: ../admin/includes/available.php:362
+msgid "Image Lightbox"
+msgstr "Imagen Lightbox"
+
+#: ../admin/includes/available.php:365 ../admin/includes/available.php:484
+msgid "Optional Caption"
+msgstr "Subtítulo opcional"
+
+#: ../admin/includes/available.php:366
+msgid "Parallax styled image component with caption and optional lightbox."
+msgstr ""
+
+#: ../admin/includes/available.php:369
+msgid "Audio"
+msgstr "Audio"
+
+#: ../admin/includes/available.php:376
+msgid "Audio URL"
+msgstr "URL del Audio"
+
+#: ../admin/includes/available.php:379
+msgid "Creates an audio player with your own audio."
+msgstr "Crea un reproductor de audio con tu propio audio."
+
+#: ../admin/includes/available.php:382
+msgid "Video Section"
+msgstr "Sección de Video"
+
+#: ../admin/includes/available.php:404
+msgid "vimeo"
+msgstr "vimeo\t"
+
+#: ../admin/includes/available.php:405
+msgid "youtube"
+msgstr "youtube"
+
+#: ../admin/includes/available.php:406
+msgid "kickstarter"
+msgstr "kickstarter"
+
+#: ../admin/includes/available.php:407
+msgid "viddler"
+msgstr "viddler"
+
+#: ../admin/includes/available.php:408
+msgid "dailymotion"
+msgstr "dailymotion"
+
+#: ../admin/includes/available.php:409
+msgid "self"
+msgstr "self"
+
+#: ../admin/includes/available.php:412
+msgid "Video Source"
+msgstr "Origen del video"
+
+#: ../admin/includes/available.php:418
+msgid "Video ID"
+msgstr "Video ID"
+
+#: ../admin/includes/available.php:424
+msgid "Video (if self as source)"
+msgstr "Video"
+
+#: ../admin/includes/available.php:433
+msgid "Responsive video component with alignment and optional caption."
+msgstr "Componente de video responsivo con alineación y subtítulo opcional."
+
+#: ../admin/includes/available.php:436
+msgid "Map"
+msgstr "Mapa"
+
+#: ../admin/includes/available.php:443
+msgid "Height"
+msgstr "Altura"
+
+#: ../admin/includes/available.php:446
+msgid ""
+"Creates the basic map component. Use the Map Locations edit boxes when "
+"writing your story to add locations."
+msgstr ""
+"Crea un componente de mapa básico. Usa la caja de edición de ubicaciones de "
+"mapas cuando estés escribiendo la historia."
+
+#: ../admin/includes/available.php:449
+msgid "Timeline Stop"
+msgstr "Parar linea de tiempo"
+
+#: ../admin/includes/available.php:456
+msgid "Date"
+msgstr "Fecha"
+
+#: ../admin/includes/available.php:459
+msgid ""
+"Enter a number such as 2007, and a small timeline will be displayed with "
+"scroll to points. This works similar to the chapter heading."
+msgstr ""
+"Ingresa un numero por ejemplo 2007 y una pequeña linea de tiempo se mostrara "
+"con puntos de scroll. Esto funciona de una forma similar al título de un "
+"capitulo."
+
+#: ../admin/includes/available.php:462 ../admin/includes/available.php:478
+msgid "Document"
+msgstr "Documento"
+
+#: ../admin/includes/available.php:468
+msgid "pdf"
+msgstr "pdf"
+
+#: ../admin/includes/available.php:469
+msgid "image"
+msgstr "image"
+
+#: ../admin/includes/available.php:472
+msgid "Document Type"
+msgstr "Tipo de documento"
+
+#: ../admin/includes/available.php:487
+msgid "Show a document that is revealed with a click."
+msgstr "Muestra un documento y es revelado con un clic."
+
+#: ../admin/includes/available.php:490
+msgid "Collections"
+msgstr "Colecciones"
+
+#: ../admin/includes/available.php:497
+msgid "Optional Title"
+msgstr "Título opcional"
+
+#: ../admin/includes/available.php:503
+msgid "Collection ID"
+msgstr "ID de la colección"
+
+#: ../admin/includes/available.php:506
+msgid ""
+"Show a collection of stories. Typically used on a page like the home page."
+msgstr ""
+"Muestra una colección de historias. Típicamente es usado un una página como "
+"la página hogar. "
+
+#: ../admin/includes/generator.php:63
+msgid "Insert Component"
+msgstr "Insertar componente"
+
+#: ../admin/includes/components/component-gallery.php:28
+#: ../admin/includes/components/component-gallery.php:41
+msgid "Galleries"
+msgstr "Galerías"
+
+#: ../admin/includes/components/component-gallery.php:29
+msgid "Parent Gallery:"
+msgstr "Galería padre:"
+
+#: ../admin/includes/components/component-gallery.php:30
+msgid "All Galleries"
+msgstr "Todas las galerías"
+
+#: ../admin/includes/components/component-gallery.php:31
+msgid "View Gallery"
+msgstr "Ver galería"
+
+#: ../admin/includes/components/component-gallery.php:32
+msgid "Add New Gallery"
+msgstr "Agrega nueva galería"
+
+#: ../admin/includes/components/component-gallery.php:33
+msgid "New Gallery"
+msgstr "Nueva galería"
+
+#: ../admin/includes/components/component-gallery.php:34
+msgid "Edit Gallery"
+msgstr "Edita galería"
+
+#: ../admin/includes/components/component-gallery.php:35
+msgid "Update Gallery"
+msgstr "Actualiza galería"
+
+#: ../admin/includes/components/component-gallery.php:36
+msgid "Search Galleries"
+msgstr "Buscar galerías"
+
+#: ../admin/includes/components/component-gallery.php:37
+msgid "No Galleries found"
+msgstr "No se encontraron galerías"
+
+#: ../admin/includes/components/component-gallery.php:38
+msgid "No Galleries found in Trash"
+msgstr "No se encontraron galerías en la basura"
+
+#: ../admin/includes/components/component-gallery.php:42
+msgid "Create responsive boxes"
+msgstr "Crea cajas responsivas"
+
+#: ../admin/includes/components/component-gallery.php:65
+msgid "Gallery Instructions"
+msgstr "Instrucciones para galerías"
+
+#: ../admin/includes/components/component-gallery.php:68
+msgid ""
+"1. Click the Add Media button<br />2. Click Create Gallery to create a "
+"gallery<br />3. Insert gallery into editor, and publish.<br /><br /> Once "
+"you've created the gallery, copy the code below, and paste it into your "
+"story where you want the gallery to be shown.<br />"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:80
+msgid "Gallery Code"
+msgstr "Código de la galería"
+
+#: ../admin/includes/components/component-gallery.php:81
+msgid "Used In"
+msgstr "Usado en"
+
+#: ../admin/includes/components/component-gallery.php:138
+msgid "Gallery Options"
+msgstr "Opciones de galeria"
+
+#: ../admin/includes/components/component-map.php:18
+msgid "Starting Coordinates"
+msgstr "Coordenadas de inicio"
+
+#: ../admin/includes/components/component-map.php:23
+msgid "Map Markers"
+msgstr "Indicadores en mapa"
+
+#: ../admin/includes/components/component-map.php:27
+msgid "help"
+msgstr "ayuda"
+
+#: ../admin/includes/components/component-map.php:31
+msgid "Latitude"
+msgstr "Latitud"
+
+#: ../admin/includes/components/component-map.php:37
+msgid "Longitude"
+msgstr "Longitud"
+
+#: ../admin/includes/components/component-map.php:43
+msgid "Marker Text"
+msgstr "Texto del indicador"
+
+#: ../admin/includes/components/component-map.php:52
+msgid "Map Component Locations"
+msgstr "Componente mapa con ubicaciones"
+
+#: ../admin/includes/custom-meta-boxes/classes.fields.php:1007
+msgid "Type to search"
+msgstr "Escribe para buscar"
+
+#: ../public/includes/components/component-gallery.php:28
+msgid "Type"
+msgstr "Escribe"
