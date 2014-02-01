@@ -67,6 +67,10 @@ abstract class CMB_Field {
 	 * @uses wp_enqueue_script()
 	 */
 	public function enqueue_scripts() {
+
+		if ( isset( $this->args['sortable'] ) && $this->args['sortable'] )
+			wp_enqueue_script( 'jquery-ui-sortable' );
+
 	}
 
 	/**
@@ -539,7 +543,7 @@ class CMB_Image_Field extends CMB_File_Field {
 
 		// Handle default WP size format. 
 		if ( is_array( $size ) && isset( $size[0] ) && isset( $size[1] ) )
-			$size = array( 'width' => $size[0], 'height' => $size[0] );
+			$size = array( 'width' => $size[0], 'height' => $size[1] );
 
 		return wp_parse_args( $size, array(
 			'width'  => get_option( 'thumbnail_size_w' ),
@@ -641,7 +645,7 @@ class CMB_Date_Timestamp_Field extends CMB_Field {
 
 		parent::enqueue_scripts();
 
-		wp_enqueue_style( 'cmb-jquery-ui', trailingslashit( CMB_URL ) . 'css/jquery-ui.css', '1.10.3' );
+		wp_enqueue_style( 'cmb-jquery-ui', trailingslashit( CMB_URL ) . 'css/vendor/jquery-ui/jquery-ui.css', '1.10.3' );
 
 		wp_enqueue_script( 'cmb-timepicker', trailingslashit( CMB_URL ) . 'js/jquery.timePicker.min.js', array( 'jquery', 'cmb-scripts' ) );		
 		wp_enqueue_script( 'cmb-datetime', trailingslashit( CMB_URL ) . 'js/field.datetime.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-datepicker', 'cmb-scripts' ) );
@@ -1323,8 +1327,14 @@ class CMB_Group_Field extends CMB_Field {
 		$this->title();
 		$this->description();
 
+		// if there are no values and it's not repeateble, we want to do one with empty string
+		if ( ! $this->get_values() && ! $this->args['repeatable'] )
+			$values = array( '' );
+		else
+			$values = $this->get_values();
+
 		$i = 0;
-		foreach ( $this->get_values() as $value ) {
+		foreach ( $values as $value ) {
 
 			$this->field_index = $i;
 			$this->value = $value; 	
@@ -1352,7 +1362,7 @@ class CMB_Group_Field extends CMB_Field {
 
 				</div>
 
-				<button class="button repeat-field"><?php esc_html_e( 'Add New', 'cmb' ); ?></button>
+				<button class="button repeat-field"><?php esc_html_e( 'Add New Group', 'cmb' ); ?></button>
 
 		<?php }
 
@@ -1435,17 +1445,5 @@ class CMB_Group_Field extends CMB_Field {
 		}
 
 	}
-
-}
-
-class Email_Field extends CMB_Field {
-
-    public function html() {
-        ?>
-        <p>
-            <input type="email" name="<?php echo $this->name ?>" value="<?php echo esc_attr( $this->get_value() ) ?>" />
-        </p>
-        <?php
-    }
 
 }

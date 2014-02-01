@@ -119,7 +119,7 @@ class CMB_Meta_Box {
 
 		$suffix = CMB_DEV ? '' : '.min';
 
-		if ( version_compare( get_bloginfo( 'version' ), '3.7', '>' ) )
+		if ( version_compare( get_bloginfo( 'version' ), '3.8', '>=' ) )
 			wp_enqueue_style( 'cmb-styles', trailingslashit( CMB_URL ) . "css/dist/cmb$suffix.css" );
 		else
 			wp_enqueue_style( 'cmb-styles', trailingslashit( CMB_URL ) . 'css/legacy.css' );
@@ -240,27 +240,28 @@ class CMB_Meta_Box {
 
 				$current_colspan += $field->args['cols'];
 
-				$classes = array('field');
+				$classes = array( 'field', get_class($field) );
 
 				if ( ! empty( $field->args['repeatable'] ) )
 					$classes[] = 'repeatable';
 
-				$classes[] = get_class($field);
+				if ( ! empty( $field->args['sortable'] ) )
+					$classes[] = 'cmb-sortable';
 
-				$classes = 'class="' . esc_attr( implode(' ', array_map( 'sanitize_html_class', $classes ) ) ) . '"';
+				$attrs = array(
+					sprintf( 'id="%s"', sanitize_html_class( $field->id ) ),
+					sprintf( 'class="%s"', esc_attr( implode(' ', array_map( 'sanitize_html_class', $classes ) ) ) )
+				);
 
-				$attrs = array();
-
+				// Field Repeatable Max.
 				if ( isset( $field->args['repeatable_max']  ) )
-					$attrs[] = 'data-rep-max="' . intval( $field->args['repeatable_max'] ) . '"';
-
-				$attrs = implode( ' ', $attrs );
+					$attrs[] = sprintf( 'data-rep-max="%s"', intval( $field->args['repeatable_max'] ) );
 
 				?>
 
 				<div class="cmb-cell-<?php echo intval( $field->args['cols'] ); ?>">
 					
-						<div <?php echo $classes; ?> <?php echo $attrs; ?>>
+						<div <?php echo implode( ' ', $attrs ); ?>>
 							<?php $field->display(); ?>
 						</div>
 
