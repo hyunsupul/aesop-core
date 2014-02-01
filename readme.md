@@ -51,8 +51,9 @@ Interactive elements are created while crafting stories, with the Story Componen
 
 ---
 
-### Known Issues
-* Locations Component - The locations map can only be used once within a story.  
+### Translations
+* Spanish - via [@tmeister](https://twitter.com/tmeister)  
+* German - via [@kuenstlerich](https://twitter.com/kuenstlerich)  
 
 ---
 
