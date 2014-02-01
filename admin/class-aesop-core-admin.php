@@ -45,7 +45,6 @@ class Aesop_Core_Admin {
 		require_once( AI_CORE_DIR.'admin/includes/nextpagebtn.php' );
 		require_once( AI_CORE_DIR.'admin/includes/components/component-map.php' );
         require_once( AI_CORE_DIR.'admin/includes/components/component-gallery.php' );
-		require_once( AI_CORE_DIR.'admin/includes/visualsc.php' );
 
         if( !class_exists( 'CMB_Meta_Box' ) ) {
     		require_once( AI_CORE_DIR.'/admin/includes/custom-meta-boxes/custom-meta-boxes.php' );
