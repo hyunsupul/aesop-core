@@ -138,12 +138,13 @@ class AesopGalleryComponentAdmin {
 				'id'             => 'aesop_gallery_width',
 				'name'           => __('Main Gallery Width', 'aesop-core'),
 				'type'           => 'text',
+				'desc'			=> __('Adjust the overall width of the grid/thumbnail gallery. Acceptable values include <code>500px</code> or <code>50%</code>.','aesop-core')
 			),
 			array(
 				'id'             => 'aesop_grid_gallery_width',
 				'name'           => __('Gallery Grid Item Width', 'aesop-core'),
 				'type'           => 'text',
-				'desc'			=> __('Adjust the width of the individual grid items, only if using Grid gallery style. ','aesop-core')
+				'desc'			=> __('Adjust the width of the individual grid items, only if using Grid gallery style.  Default is <code>400</code>.','aesop-core')
 			),
 			array(
 				'id'             => 'aesop_gallery_caption',
@@ -155,10 +156,10 @@ class AesopGalleryComponentAdmin {
 		);
 
 		$meta_boxes[] = array(
-			'title' => __('Gallery Options', 'aesop-core'),
-			'pages' => array('ai_galleries'),
+			'title' 	=> __('Gallery Options', 'aesop-core'),
+			'pages' 	=> array('ai_galleries'),
 			'context'	=> 'side',
-			'fields' => $opts
+			'fields' 	=> $opts
 		);
 
 		return $meta_boxes;
