@@ -85,6 +85,7 @@ class AesopGalleryComponentAdmin {
 
 	/**
 	 	* Callback for col_head
+	 	* Lists the posts that contain the specific gallery
 	 	*
 	 	* @since    1.0.0
 	*/
@@ -98,12 +99,17 @@ class AesopGalleryComponentAdmin {
 
 			$pages = get_posts(array ('s' => '[aesop_gallery','post_type' => array ( 'page', 'post' ) ));
 
+			$count = 0;
 			foreach($pages as $page):
+				$count ++;
 				$id = $page->ID;
 				if(has_shortcode($page->post_content,'aesop_gallery')){
 					echo ucfirst($this->the_slug($id));
-				}
 
+					if( $count != count($pages) ){
+						echo  ', ';
+					}
+				}
 			endforeach;
 
 	    }
