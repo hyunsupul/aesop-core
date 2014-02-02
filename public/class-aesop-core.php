@@ -3,36 +3,23 @@
  * Aesop Core
  *
  * @package   Aesop_Core
- * @author    Nick Haskins <email@nickhaskins.com>
+ * @author    Nick Haskins <nick@aesopinteractive.com>
  * @license   GPL-2.0+
- * @link      http://example.com
+ * @link      http://aesopinteractive.com
  * @copyright 2013 Nick Haskins
  */
 
 /**
- * Plugin class. This class should ideally be used to work with the
- * public-facing side of the WordPress site.
- *
- * If you're interested in introducing administrative or dashboard
- * functionality, then refer to `class-plugin-name-admin.php`
- *
+ * Plugin class
  *
  * @package Aesop_Core
- * @author  Nick Haskins <email@nickhaskins,com>
+ * @author  Nick Haskins <nick@aesopinteractive.com>
  */
 class Aesop_Core {
 
 	/**
-	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   1.0.0
-	 *
-	 * @var     string
-	 */
-
-	/**
-	 *
-	 * Unique identifier for your plugin.
+	 * Unique identifier
 	 *
 	 *
 	 * The variable name is used as the text domain when internationalizing strings

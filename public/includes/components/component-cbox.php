@@ -1,10 +1,9 @@
 <?php
 
 /**
- 	* Creates an content section that can do offset text, iamge backgrounds, and magazine style columns
+ 	* Creates an content section that can do offset text, image backgrounds, and magazine style columns
  	*
  	* @since    1.0.0
- 	* @TODO work in imgrepeat and imgposition attributes
 */
 if (!function_exists('aesop_content_shortcode')){
 
