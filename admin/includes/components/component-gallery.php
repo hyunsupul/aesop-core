@@ -52,7 +52,8 @@ class AesopGalleryComponentAdmin {
 			'can_export' 				=> true,
 			'capability_type' 			=> 'post'
 		);
-		register_post_type( 'ai_galleries', $args );
+
+		register_post_type( 'ai_galleries', apply_filters('ai_gallery_args',$args ) );
 
 	}
 
