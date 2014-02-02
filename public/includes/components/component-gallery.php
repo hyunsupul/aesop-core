@@ -85,6 +85,9 @@ class AesopCoreGallery {
 		$type = $shortcode_args['a_type'];
 		$width = get_post_meta($atts['id'],'aesop_gallery_width', true);
 
+		//gallery caption 
+		$gallery_caption = get_post_meta($atts['id'], 'aesop_gallery_caption', true);
+
 
 		// setup some args so we can pull only images from this content
 		$args = array(
@@ -121,6 +124,10 @@ class AesopCoreGallery {
 						$this->aesop_grid_gallery($atts,$images,$width);
 					break;
 				endswitch;
+
+				if ($gallery_caption) {
+					printf('<p class="aesop-component-caption">%s</p>', $gallery_caption);
+				}
 
 				do_action('aesop_gallery_component_inside_bottom'); //action
 

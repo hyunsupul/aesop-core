@@ -141,10 +141,17 @@ class AesopGalleryComponentAdmin {
 			),
 			array(
 				'id'             => 'aesop_grid_gallery_width',
-				'name'           => 'Gallery Grid Item Width',
+				'name'           => __('Gallery Grid Item Width', 'aesop-core'),
 				'type'           => 'text',
 				'desc'			=> __('Adjust the width of the individual grid items, only if using Grid gallery style. ','aesop-core')
 			),
+			array(
+				'id'             => 'aesop_gallery_caption',
+				'name'           => __('Gallery Caption (optional)', 'aesop-core'),
+				'type'           => 'textarea',
+				'desc'			=> __('Add an optional caption for the gallery. ','aesop-core')
+			)
+
 		);
 
 		$meta_boxes[] = array(
