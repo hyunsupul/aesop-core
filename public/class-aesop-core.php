@@ -281,7 +281,10 @@ class Aesop_Core {
 
 		wp_enqueue_script('jquery');
 
-		wp_enqueue_style('ai-core-style', AI_CORE_URL.'/public/assets/css/style.css', AI_CORE_VERSION, true);
+		if (! defined('AI_CORE_UNSTYLED')) {
+			wp_enqueue_style('ai-core-style', AI_CORE_URL.'/public/assets/css/style.css', AI_CORE_VERSION, true);
+		}
+
 		wp_enqueue_script('ai-core', AI_CORE_URL.'/public/assets/js/ai-core.min.js', array('jquery'), AI_CORE_VERSION, true);
 	}
 
