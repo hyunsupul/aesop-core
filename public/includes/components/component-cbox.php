@@ -44,7 +44,7 @@ if (!function_exists('aesop_content_shortcode')){
 		$imgstyle = $atts['img'] ? sprintf('%sbackground-image:url(\'%s\');background-size:cover;background-position:center center;',$bgcolor, $atts['img']) : false;
 		
 
-		$widthstyle = $atts['width'] ? sprintf('style="width:%s;margin-left:auto;margin-right:auto;"',$atts['width']) : false;
+		$widthstyle = $atts['width'] ? sprintf('style="max-width:%s;margin-left:auto;margin-right:auto;"',$atts['width']) : false;
 		$txtcolor 	= $atts['color'] ? sprintf('color:%s;', $atts['color']) : false;
 		$position	= ('left' == $atts['position'] || 'right' == $atts['position']) ? sprintf('float:%s',$atts['position']) : false;
 			$itemstyle = $imgstyle || $position || $txtcolor ? sprintf('style="%s%s%s%s"',$imgstyle,$position, $txtcolor, $bgcolor) : false;
