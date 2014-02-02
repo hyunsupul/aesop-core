@@ -191,7 +191,7 @@ class AesopCoreGallery {
 
 			foreach ($images as $image):
 
-                $getimage 		= wp_get_attachment_image($image->ID, 'medium', false, array('class' => 'aesop-grid-image'));
+                $getimage 		= wp_get_attachment_image($image->ID, 'aesop-grid-image', false, array('class' => 'aesop-grid-image'));
 				$getimgsrc 		= wp_get_attachment_image_src($image->ID,'large');
                 $caption 		=  $image->post_excerpt;
                 $desc    		=  $image->post_content;
