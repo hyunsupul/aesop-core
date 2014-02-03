@@ -30,19 +30,5 @@ class AesopNotifyonActivation {
 
 	}
 
-	function plugin_deactivation() {
-
-		if( false == delete_option( 'ai_core_version' ) ) {
-
-			$out = '<div class="error"><p>';
-			$out .= __( 'Doh! There was an issue deactivating Aesop. Try again perhaps?.', 'aesop-core' );
-			$out .= '</p></div>';
-
-			echo apply_filters('ai_deactivation_error_message',$out);
-
-		}
-
-	}
-
 }
 new AesopNotifyonActivation;

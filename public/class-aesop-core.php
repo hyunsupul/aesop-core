@@ -242,7 +242,17 @@ class Aesop_Core {
 	 * @since    1.0.0
 	 */
 	private static function single_deactivate() {
-		// @TODO: Define deactivation functionality here
+
+		// delete option used to check version for notification
+		if( false == delete_option( 'ai_core_version' ) ) {
+
+			$out = '<div class="error"><p>';
+			$out .= __( 'Doh! There was an issue deactivating Aesop. Try again perhaps?.', 'aesop-core' );
+			$out .= '</p></div>';
+
+			echo apply_filters('ai_deactivation_error_message',$out);
+
+		}
 	}
 
 	/**
