@@ -3,15 +3,15 @@
  	* AI Core
  	*
  	* @package   Aesop_Core_Admin
- 	* @author    Nick Haskins <email@nickhaskins.com>
+ 	* @author    Nick Haskins <nick@aesopinteractive.com>
  	* @license   GPL-2.0+
- 	* @link      http://example.com
+ 	* @link      http://aesopinteractive.com
  	* @copyright 2013 Nick Haskins
 */
 /**
  	*
  	* @package Aesop_Core_Admin
- 	* @author  Your Name <email@example.com>
+ 	* @author  Nick Haskins <nick@aesopinteractive.com>
 */
 class Aesop_Core_Admin {
 
@@ -42,6 +42,7 @@ class Aesop_Core_Admin {
 	*/
 	private function __construct() {
 
+		require_once( AI_CORE_DIR.'admin/includes/notify.php' );
 		require_once( AI_CORE_DIR.'admin/includes/nextpagebtn.php' );
 		require_once( AI_CORE_DIR.'admin/includes/components/component-map.php' );
         require_once( AI_CORE_DIR.'admin/includes/components/component-gallery.php' );

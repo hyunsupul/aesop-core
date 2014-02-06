@@ -85,6 +85,9 @@ class AesopCoreGallery {
 		$type = $shortcode_args['a_type'];
 		$width = get_post_meta($atts['id'],'aesop_gallery_width', true);
 
+		//gallery caption 
+		$gallery_caption = get_post_meta($atts['id'], 'aesop_gallery_caption', true);
+
 
 		// setup some args so we can pull only images from this content
 		$args = array(
@@ -121,6 +124,10 @@ class AesopCoreGallery {
 						$this->aesop_grid_gallery($atts,$images,$width);
 					break;
 				endswitch;
+
+				if ($gallery_caption) {
+					printf('<p class="aesop-component-caption">%s</p>', $gallery_caption);
+				}
 
 				do_action('aesop_gallery_component_inside_bottom'); //action
 
@@ -163,7 +170,7 @@ class AesopCoreGallery {
 	function aesop_grid_gallery($atts, $images, $width){
 
 		$getgridwidth = get_post_meta($atts["id"],'aesop_grid_gallery_width', true);
-		$gridwidth = $getgridwidth ? self::sanitize_int($getgridwidth) : 300;
+		$gridwidth = $getgridwidth ? self::sanitize_int($getgridwidth) : 400;
 
 		?>
 		<script>
@@ -184,7 +191,7 @@ class AesopCoreGallery {
 
 			foreach ($images as $image):
 
-                $getimage 		= wp_get_attachment_image($image->ID, 'medium', false, array('class' => 'aesop-grid-image'));
+                $getimage 		= wp_get_attachment_image($image->ID, 'aesop-grid-image', false, array('class' => 'aesop-grid-image'));
 				$getimgsrc 		= wp_get_attachment_image_src($image->ID,'large');
                 $caption 		=  $image->post_excerpt;
                 $desc    		=  $image->post_content;

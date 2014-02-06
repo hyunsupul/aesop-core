@@ -36,8 +36,8 @@ class AesopMapComponent {
 
 		global $post;
 
-		$markers = get_post_meta($post->ID,'aesop_map_component_locations', false);
-		$start = get_post_meta($post->ID,'aesop_map_start', true);
+		$markers = isset( $post ) ? get_post_meta($post->ID,'aesop_map_component_locations', false) : false;
+		$start = isset( $post ) ? get_post_meta($post->ID,'aesop_map_start', true) : false;
 
 		if( isset($post) && is_single() && has_shortcode( $post->post_content, 'aesop_map') )  { ?>
 			<script>

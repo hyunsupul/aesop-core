@@ -133,6 +133,12 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> '#282828',
 						'desc' 		=> __( 'Hex Color of Background', 'aesop-core' )
 					),
+					'img' 	=> array(
+						'values' 	=> array( ),
+						'type'		=> 'media_upload',
+						'default' 	=> '',
+						'desc' 		=> __( 'Optional Background Image', 'aesop-core' )
+					),
 					'text'			 => array(
 						'values' 	=> array(),
 						'type'		=> 'color',
@@ -167,6 +173,21 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'center',
 						'desc' 		=> __( 'Quote Size', 'aesop-core' )
+					),
+					'parallax' 		=> array(
+						'type'		=> 'text',
+						'values'	=> array(
+							__('on', 'aesop-core'),
+							__('off', 'aesop-core')
+						),
+						'default' 	=> 'off',
+						'desc' 		=> __('Enable Quote Parallax', 'aesop-core' )
+					),
+					'offset' 		=> array(
+						'type'		=> 'text',
+						'values'	=> array(),
+						'default' 	=> 500,
+						'desc' 		=> __('If using parallax, starting offset.', 'aesop-core' )
 					),
 					'quote' 		=> array(
 						'type'		=> 'text',

@@ -6,9 +6,9 @@
  * frontend of the theme when the plugin is activated.
  *
  * @package   Aesop_Core
- * @author    Nick Haskins <email@nickhaskins.com>
+ * @author    Nick Haskins <nick@aesopinteractive.com>
  * @license   GPL-2.0+
- * @link      http://example.com
+ * @link      http://aesopinteractive.com
  * @copyright 2013 Nick Haskins
  */
 ?>

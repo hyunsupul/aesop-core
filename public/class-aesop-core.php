@@ -3,36 +3,23 @@
  * Aesop Core
  *
  * @package   Aesop_Core
- * @author    Nick Haskins <email@nickhaskins.com>
+ * @author    Nick Haskins <nick@aesopinteractive.com>
  * @license   GPL-2.0+
- * @link      http://example.com
+ * @link      http://aesopinteractive.com
  * @copyright 2013 Nick Haskins
  */
 
 /**
- * Plugin class. This class should ideally be used to work with the
- * public-facing side of the WordPress site.
- *
- * If you're interested in introducing administrative or dashboard
- * functionality, then refer to `class-plugin-name-admin.php`
- *
+ * Plugin class
  *
  * @package Aesop_Core
- * @author  Nick Haskins <email@nickhaskins,com>
+ * @author  Nick Haskins <nick@aesopinteractive.com>
  */
 class Aesop_Core {
 
 	/**
-	 * Plugin version, used for cache-busting of style and script file references.
 	 *
-	 * @since   1.0.0
-	 *
-	 * @var     string
-	 */
-
-	/**
-	 *
-	 * Unique identifier for your plugin.
+	 * Unique identifier
 	 *
 	 *
 	 * The variable name is used as the text domain when internationalizing strings
@@ -255,7 +242,17 @@ class Aesop_Core {
 	 * @since    1.0.0
 	 */
 	private static function single_deactivate() {
-		// @TODO: Define deactivation functionality here
+
+		// delete option used to check version for notification
+		if( false == delete_option( 'ai_core_version' ) ) {
+
+			$out = '<div class="error"><p>';
+			$out .= __( 'Doh! There was an issue deactivating Aesop. Try again perhaps?.', 'aesop-core' );
+			$out .= '</p></div>';
+
+			echo apply_filters('ai_deactivation_error_message',$out);
+
+		}
 	}
 
 	/**
@@ -280,7 +277,10 @@ class Aesop_Core {
 
 		wp_enqueue_script('jquery');
 
-		wp_enqueue_style('ai-core-style', AI_CORE_URL.'/public/assets/css/style.css', AI_CORE_VERSION, true);
+		if (! defined('AI_CORE_UNSTYLED')) {
+			wp_enqueue_style('ai-core-style', AI_CORE_URL.'/public/assets/css/style.css', AI_CORE_VERSION, true);
+		}
+
 		wp_enqueue_script('ai-core', AI_CORE_URL.'/public/assets/js/ai-core.min.js', array('jquery'), AI_CORE_VERSION, true);
 	}
 

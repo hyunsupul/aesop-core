@@ -52,7 +52,8 @@ class AesopGalleryComponentAdmin {
 			'can_export' 				=> true,
 			'capability_type' 			=> 'post'
 		);
-		register_post_type( 'ai_galleries', $args );
+
+		register_post_type( 'ai_galleries', apply_filters('ai_gallery_args',$args ) );
 
 	}
 
@@ -84,6 +85,7 @@ class AesopGalleryComponentAdmin {
 
 	/**
 	 	* Callback for col_head
+	 	* Lists the posts that contain the specific gallery
 	 	*
 	 	* @since    1.0.0
 	*/
@@ -97,12 +99,17 @@ class AesopGalleryComponentAdmin {
 
 			$pages = get_posts(array ('s' => '[aesop_gallery','post_type' => array ( 'page', 'post' ) ));
 
+			$count = 0;
 			foreach($pages as $page):
+				$count ++;
 				$id = $page->ID;
 				if(has_shortcode($page->post_content,'aesop_gallery')){
 					echo ucfirst($this->the_slug($id));
-				}
 
+					if( $count != count($pages) ){
+						echo  ', ';
+					}
+				}
 			endforeach;
 
 	    }
@@ -131,20 +138,28 @@ class AesopGalleryComponentAdmin {
 				'id'             => 'aesop_gallery_width',
 				'name'           => __('Main Gallery Width', 'aesop-core'),
 				'type'           => 'text',
+				'desc'			=> __('Adjust the overall width of the grid/thumbnail gallery. Acceptable values include <code>500px</code> or <code>50%</code>.','aesop-core')
 			),
 			array(
 				'id'             => 'aesop_grid_gallery_width',
-				'name'           => 'Gallery Grid Item Width',
+				'name'           => __('Gallery Grid Item Width', 'aesop-core'),
 				'type'           => 'text',
-				'desc'			=> __('Adjust the width of the individual grid items, only if using Grid gallery style. ','aesop-core')
+				'desc'			=> __('Adjust the width of the individual grid items, only if using Grid gallery style.  Default is <code>400</code>.','aesop-core')
 			),
+			array(
+				'id'             => 'aesop_gallery_caption',
+				'name'           => __('Gallery Caption (optional)', 'aesop-core'),
+				'type'           => 'textarea',
+				'desc'			=> __('Add an optional caption for the gallery. ','aesop-core')
+			)
+
 		);
 
 		$meta_boxes[] = array(
-			'title' => __('Gallery Options', 'aesop-core'),
-			'pages' => array('ai_galleries'),
+			'title' 	=> __('Gallery Options', 'aesop-core'),
+			'pages' 	=> array('ai_galleries'),
 			'context'	=> 'side',
-			'fields' => $opts
+			'fields' 	=> $opts
 		);
 
 		return $meta_boxes;
