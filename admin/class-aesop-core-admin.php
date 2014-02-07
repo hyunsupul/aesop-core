@@ -109,6 +109,10 @@ class Aesop_Core_Admin {
 
 				// Enqueue scripts
 				wp_enqueue_script( 'ai-core-script' );
+
+				include( AI_CORE_DIR . '/admin/includes/generator_blob.php' );
+
+				wp_localize_script( 'ai-core-script', 'aesopshortcodes', aesop_shortcodes_blob() );
 				wp_enqueue_script('aesop-shortcodes-selectbox');
 
 				// color picker
