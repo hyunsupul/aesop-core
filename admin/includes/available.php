@@ -10,12 +10,6 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Image', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
-					'width' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
-						'default' 	=> 'content',
-						'desc' 		=> __( 'Component Width', 'aesop-core' )
-					),
 					'img' 			=> array(
 						'type'		=> 'media_upload',
 						'values' 	=> array( ),
