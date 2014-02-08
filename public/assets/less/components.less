@@ -115,14 +115,23 @@ body .aesop-entry-suck-top {
 }
 
 // image component
-.aesop-image-component-image {
-    margin-top:0.65rem;
+.aesop-image-component {
+
+    .aesop-image-component-image {
+        margin-top:0.65rem;
+
+        &.aesop-image-component-caption-right {
+            text-align: right;
+        }
+
+    }
+
+    .aesop-image-component-caption {
+        display: block;
+        margin-bottom:1rem;
+    }
 }
 
-.aesop-image-component-caption {
-    display: block;
-    margin-bottom:1rem;
-}
 .aesop-component-align-left {
     margin-right:2rem;
 }

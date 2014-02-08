@@ -16,7 +16,7 @@ if (!function_exists('aesop_image_shortcode')){
 			'align' 			=> 'left',
 			'caption'			=> '',
 			'credit'			=> '',
-			'captionposition'	=> 'bottom',
+			'captionposition'	=> 'left',
 			'lightbox' 			=> 'off'
 		);
 
@@ -34,8 +34,8 @@ if (!function_exists('aesop_image_shortcode')){
 
 			<?php do_action('aesop_image_component_inside_top'); //action ?>
 
-			<figure class="aesop-content aesop-caption-<?php echo $atts['captionposition'];?>">
-				<div class="aesop-image-component-image aesop-component-align-<?php echo $atts['align'];?>" <?php echo $offsetstyle;?>>
+			<figure class="aesop-content">
+				<div class="aesop-image-component-image aesop-component-align-<?php echo $atts['align'];?> aesop-image-component-caption-<?php echo $atts['captionposition'];?>" <?php echo $offsetstyle;?>>
 					<?php
 
 					if('on' == $atts['lightbox']) { ?>

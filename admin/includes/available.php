@@ -58,10 +58,10 @@ if(!function_exists('aesop_shortcodes')){
 					'captionposition' => array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('bottom', 'aesop-core'),
-							__('top', 'aesop-core')
+							__('left', 'aesop-core'),
+							__('right', 'aesop-core')
 						 ),
-						'default' 	=> 'bottom',
+						'default' 	=> 'left',
 						'desc' 		=> __( 'Caption Position', 'aesop-core' )
 					),
 					'lightbox' 			=> array(
