@@ -74,7 +74,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 						});
 					</script>
 				<?php } ?>
-					<div class="aesop-parallax-sc aesop-parallax-sc-<?php echo $hash;?>" style="height:<?php echo $atts['height'];?>px">
+					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo $hash;?>" style="height:<?php echo $atts['height'];?>px">
 
 						<?php if ($atts['floatermedia']){?>
 							<div class="aesop-parallax-sc-floater floater-<?php echo $atts['floaterposition'];?>" data-speed="10">
@@ -83,16 +83,16 @@ if (!function_exists('aesop_parallax_shortcode')){
 						<?php } ?>
 
 						<?php if ($atts['caption']){?>
-							<div class="aesop-parallax-sc-caption-wrap <?php echo $atts['captionposition'];?>">
+							<figcaption class="aesop-parallax-sc-caption-wrap <?php echo $atts['captionposition'];?>">
 								<div class="aesop-parallax-sc-caption"><?php echo $atts['caption'];?></div>
-							</div>
+							</figcaption>
 						<?php } ?>
 
 						<?php if ($atts['lightbox']){?>
 							<a class="aesop-lb-link swipebox" rel="lightbox" title="<?php echo $atts['caption'];?>" href="<?php echo $atts['img'];?>"><i class="aesopicon aesopicon-search-plus"></i></a>
 						<?php } ?>
 						<div class="aesop-parallax-sc-img <?php echo $laxclass;?>" <?php echo $style;?>></div>
-					</div>
+					</figure>
 
 					<?php do_action('aesop_parallax_component_inside_bottom'); //action ?>
 
