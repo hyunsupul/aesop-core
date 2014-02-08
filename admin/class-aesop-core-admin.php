@@ -134,7 +134,7 @@ class Aesop_Core_Admin {
 	 	* @since     1.0.0
 	*/
 	public function generator_button() {
-		echo '<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" class="button thickbox aesop-add-story-component" title="Add Story Component"><span class="aesop-admin-button-icon dashicons dashicons-plus"></span> Add Component</a>';
+		echo '<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" class="button thickbox aesop-add-story-component" title="Add Story Component"><span class="aesop-admin-button-icon dashicons dashicons-plus"></span> ', _e('Add Component', 'aesop-core') ,'</a>';
 	}
 
 	/**
