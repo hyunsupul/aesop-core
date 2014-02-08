@@ -84,7 +84,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 						<?php if ($atts['caption']){?>
 							<figcaption class="aesop-parallax-sc-caption-wrap <?php echo $atts['captionposition'];?>">
-								<div class="aesop-parallax-sc-caption"><?php echo $atts['caption'];?></div>
+								<?php echo $atts['caption'];?>
 							</figcaption>
 						<?php } ?>
 
