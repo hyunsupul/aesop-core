@@ -13,8 +13,8 @@ if (!function_exists('aesop_character_shortcode')){
 		$hash = rand();
 
 		$defaults = array(
-			'img' 				=> 'http://placekitten.com/100/100',
-			'name' 				=> 'John Doe',
+			'img' 				=> '',
+			'name' 				=> '',
 			'caption'			=> '',
 			'align' 			=> 'left',
 		);

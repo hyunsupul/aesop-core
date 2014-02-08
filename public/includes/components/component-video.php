@@ -11,12 +11,12 @@ if (!function_exists('aesop_video_shortcode')){
 
     	$hash = rand();
     	$defaults = array(
-    		'width' => '100%',
-    		'align' => 'center',
-	    	'src' =>'vimeo',
-	    	'hosted' => '',
-	    	'id'	=> '',
-	    	'caption' => ''
+    		'width' 	=> '100%',
+    		'align' 	=> 'center',
+	    	'src' 		=> 'vimeo',
+	    	'hosted' 	=> '',
+	    	'id'		=> '',
+	    	'caption' 	=> ''
 	    );
 	    $atts = apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
 	    $contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
@@ -35,11 +35,11 @@ if (!function_exists('aesop_video_shortcode')){
 	        switch( $atts['src'] ):
 
 	            case 'vimeo':
-	                $out .= sprintf( '<iframe src="http://player.vimeo.com/video/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
+	                $out .= sprintf( '<iframe src="//player.vimeo.com/video/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
 	                break;
 
 	            case 'dailymotion':
-	                $out .= sprintf( '<iframe src="http://www.dailymotion.com/embed/video/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
+	                $out .= sprintf( '<iframe src="//www.dailymotion.com/embed/video/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
 	                break;
 
 	            case 'youtube':

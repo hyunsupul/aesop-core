@@ -12,7 +12,7 @@ if (!function_exists('aesop_document_shortcode')){
 		$defaults = array(
 			'type'		=> 'pdf',
 			'src'		=> '',
-			'caption'		=> ''
+			'caption'	=> ''
 		);
 		$atts = shortcode_atts($defaults, $atts);
 

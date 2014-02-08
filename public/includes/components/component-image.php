@@ -9,7 +9,7 @@ if (!function_exists('aesop_image_shortcode')){
 	function aesop_image_shortcode($atts, $content = null) {
 
 		$defaults = array(
-			'img' 				=> 'http://placekitten.com/1200/700',
+			'img' 				=> '',
 			'imgwidth'			=> '300px',
 			'offset'			=> '-150px',
 			'alt'				=> '',
