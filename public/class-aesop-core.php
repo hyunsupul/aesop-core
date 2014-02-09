@@ -49,26 +49,17 @@ class Aesop_Core {
 	 */
 	private function __construct() {
 
-		//load component array
+		// load component array
 		require_once( AI_CORE_DIR.'admin/includes/available.php');
 
+		// load component helpers
 		require_once( AI_CORE_DIR.'public/includes/browserclasses.php');
 		require_once( AI_CORE_DIR.'public/includes/imgsizes.php');
 
 		// load components
-		require_once( AI_CORE_DIR.'public/includes/components/component-parallax.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-map.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-image.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-video.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-gallery.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-character.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-timeline.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-heading.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-cbox.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-audio.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-quote.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-document.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-collections.php' );
+		foreach (glob(AI_CORE_DIR.'public/includes/components/*.php') as $component) { 
+    		require_once $component;
+		}
 
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
