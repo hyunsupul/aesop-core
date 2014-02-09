@@ -11,7 +11,7 @@ if (!function_exists('aesop_image_shortcode')){
 		$defaults = array(
 			'img' 				=> '',
 			'imgwidth'			=> '300px',
-			'offset'			=> '-150px',
+			'offset'			=> '',
 			'alt'				=> '',
 			'align' 			=> 'left',
 			'caption'			=> '',
