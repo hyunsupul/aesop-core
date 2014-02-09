@@ -251,7 +251,7 @@ class AesopCoreGallery {
 	}
 
     /**
-	 	* Draws a gallery with images in sequencal order with optional numbered captions
+	 	* Draws a gallery with images in sequencal order
 	 	*
 	 	* @since    1.0.0
 	*/
