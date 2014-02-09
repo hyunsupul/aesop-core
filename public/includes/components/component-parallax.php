@@ -90,7 +90,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 							</figcaption>
 						<?php } ?>
 
-						<?php if ($atts['lightbox']){?>
+						<?php if ( 'on' == $atts['lightbox']){?>
 							<a class="aesop-lb-link aesop-lightbox" rel="lightbox" title="<?php echo $atts['caption'];?>" href="<?php echo $atts['img'];?>"><i class="aesopicon aesopicon-search-plus"></i></a>
 						<?php } ?>
 
