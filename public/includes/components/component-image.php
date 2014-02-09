@@ -42,7 +42,7 @@ if (!function_exists('aesop_image_shortcode')){
 
 					if('on' == $atts['lightbox']) { ?>
 
-						<a class="swipebox" href="<?php echo $atts['img'];?>">
+						<a class="aesop-lightbox" href="<?php echo $atts['img'];?>">
 							<p class="aesop-img-enlarge"><i class="aesopicon aesopicon-search-plus"></i> <?php _e('Enlarge','aesop-core');?></p>
 							<img style="width:<?php echo $atts['imgwidth'];?>;" src="<?php echo $atts['img'];?>" alt="<?php echo $atts['alt'];?>">
 						</a>

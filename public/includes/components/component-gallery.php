@@ -197,7 +197,7 @@ class AesopCoreGallery {
                 $desc    		=  $image->post_content;
                 $img_title 	  	= $image->post_title;
 
-               	printf('<a class="swipebox" href="%s" title="%s"><span class="clearfix">%s</span></a>',$getimgsrc[0],$img_title,$getimage);
+               	printf('<a class="aesop-lightbox" href="%s" title="%s"><span class="clearfix">%s</span></a>',$getimgsrc[0],$img_title,$getimage);
 
 			endforeach;
 

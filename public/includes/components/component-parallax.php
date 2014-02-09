@@ -91,7 +91,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 						<?php } ?>
 
 						<?php if ($atts['lightbox']){?>
-							<a class="aesop-lb-link swipebox" rel="lightbox" title="<?php echo $atts['caption'];?>" href="<?php echo $atts['img'];?>"><i class="aesopicon aesopicon-search-plus"></i></a>
+							<a class="aesop-lb-link aesop-lightbox" rel="lightbox" title="<?php echo $atts['caption'];?>" href="<?php echo $atts['img'];?>"><i class="aesopicon aesopicon-search-plus"></i></a>
 						<?php } ?>
 
 						<?php do_action('aesop_parallax_inner_inside_bottom'); //action ?>

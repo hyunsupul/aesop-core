@@ -166,7 +166,7 @@ var PDFObject=function(y){if(!y||!y.url){return false;}var w="1.2",b=y.id||false
 
         // Establish default settings
         var settings = $.extend({
-            speed        : 0.15
+            speed        : 0.1
         }, options);
 
 
@@ -198,8 +198,10 @@ var PDFObject=function(y){if(!y||!y.url){return false;}var w="1.2",b=y.id||false
     }
 }(jQuery));
 
-// FitVids
+// General
 jQuery(document).ready(function(){
+
+	//Fitvids
 	jQuery('.aesop-video-container').fitVids();
 
 	// If cookie is set, scroll to the position saved in the cookie.
@@ -214,6 +216,9 @@ jQuery(document).ready(function(){
         jQuery.cookie("scroll", jQuery(document).scrollTop() );
 
     });
+
+    //instantiate swipebox
+    jQuery('.aesop-lightbox').swipebox();
 });
 
 
