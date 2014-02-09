@@ -16,7 +16,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 			'img' 		=> ''
 		);
 
-		$atts = shortcode_atts($defaults, $atts);
+		$atts = apply_filters('aesop_chapter_defaults',shortcode_atts($defaults, $atts));
 		$hash = rand();
 
 		ob_start();

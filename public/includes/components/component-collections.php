@@ -13,7 +13,7 @@ if (!function_exists('aesop_collection_shortcode')){
 			'collection' => 1,
 			'title' => ''
 		);
-		$atts = shortcode_atts($defaults, $atts);
+		$atts = apply_filters('aesop_collection_defaults',shortcode_atts($defaults, $atts));
 
 		$hash = rand();
 		ob_start();
