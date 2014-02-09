@@ -89,19 +89,26 @@ class AesopCoreGallery {
 		//gallery caption 
 		$gallery_caption = get_post_meta($atts['id'], 'aesop_gallery_caption', true);
 
+		$images = wp_cache_get( 'aesop_gallery_wp_query_'.$atts['id'] );
 
-		// setup some args so we can pull only images from this content
-		$args = array(
-            'include'        => $ids,
-            'post_status'    => 'inherit',
-            'post_type'      => 'attachment',
-            'post_mime_type' => 'image',
-            'order'          => 'menu_order ID',
-            'orderby'        => 'post__in', //required to order results based on order specified the "include" param
-        );
+		if ( false == $images) {
 
-		// fetch the image id's that the user has within the gallery shortcode
-		$images = get_posts( apply_filters('aesop_gallery_query',$args) );
+			// setup some args so we can pull only images from this content
+			$args = array(
+	            'include'        => $ids,
+	            'post_status'    => 'inherit',
+	            'post_type'      => 'attachment',
+	            'post_mime_type' => 'image',
+	            'order'          => 'menu_order ID',
+	            'orderby'        => 'post__in', //required to order results based on order specified the "include" param
+	        );
+
+			// fetch the image id's that the user has within the gallery shortcode
+			$images = get_posts( apply_filters('aesop_gallery_query',$args) );
+
+			wp_cache_set( 'aesop_gallery_wp_query_'.$atts['id'], $images, '', 300 );
+
+		}
 
 		ob_start();
 
