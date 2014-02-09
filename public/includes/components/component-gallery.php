@@ -30,6 +30,7 @@ class AesopCoreGallery {
 		      		<option value="">- Select -</option>
 		        	<option value="grid">Grid</option>
 		        	<option value="thumbnail">Thumbnail</option>
+		        	<option value="sequence">Sequence</option>
 		        	<option value="stacked">Stacked Parallax</option>
 		      	</select>
 		    </label>
@@ -100,7 +101,7 @@ class AesopCoreGallery {
         );
 
 		// fetch the image id's that the user has within the gallery shortcode
-		$images = get_posts($args);
+		$images = get_posts( apply_filters('aesop_gallery_query',$args) );
 
 		ob_start();
 
@@ -110,23 +111,32 @@ class AesopCoreGallery {
 
 				do_action('aesop_gallery_inside_top', $atts['a_type'], $atts['id']); //action
 
-				switch($type):
-					case 'thumbnail':
-						$this->aesop_thumb_gallery($atts, $images, $width);
-					break;
-					case 'grid':
-						$this->aesop_grid_gallery($atts,$images,$width);
-					break;
-					case 'stacked':
-						$this->aesop_stacked_gallery($atts,$images,$width);
-					break;
-					default:
-						$this->aesop_grid_gallery($atts,$images,$width);
-					break;
-				endswitch;
+				if ($images) {
 
-				if ($gallery_caption) {
-					printf('<p class="aesop-component-caption">%s</p>', $gallery_caption);
+					switch($type):
+						case 'thumbnail':
+							$this->aesop_thumb_gallery($atts, $images, $width);
+						break;
+						case 'grid':
+							$this->aesop_grid_gallery($atts,$images,$width);
+						break;
+						case 'stacked':
+							$this->aesop_stacked_gallery($atts,$images,$width);
+						break;
+						case 'sequence':
+							$this->aesop_sequence_gallery($atts,$images,$width);
+						break;
+						default:
+							$this->aesop_grid_gallery($atts,$images,$width);
+						break;
+					endswitch;
+
+					if ($gallery_caption) {
+						printf('<p class="aesop-component-caption">%s</p>', $gallery_caption);
+					}
+
+				} else {
+					_e('No images found', 'aesop-core');
 				}
 
 				do_action('aesop_gallery_inside_bottom', $atts['a_type'], $atts['id']); //action
@@ -201,6 +211,7 @@ class AesopCoreGallery {
 
 			endforeach;
 
+
 		?></div><?php
 	}
 
@@ -239,6 +250,32 @@ class AesopCoreGallery {
 
 	}
 
+    /**
+	 	* Draws a gallery with images in sequencal order with optional numbered captions
+	 	*
+	 	* @since    1.0.0
+	*/
+	function aesop_sequence_gallery($atts, $images, $width){
+
+		foreach ($images as $image):
+
+            $img    =  wp_get_attachment_url($image->ID, 'large', false,'');
+            $alt     =  get_post_meta($image->ID, '_wp_attachment_image_alt', true);
+            $caption =  $image->post_excerpt;
+            $desc    =  $image->post_content;
+
+           	?>
+           	<div class="aesop-sequence-img">
+           		<img src="<?php echo $img;?>" alt="<?php echo $alt;?>">
+           		<?php if($caption){ ?>
+           			<div class="aesop-sequence-caption"><?php echo $caption;?></div>
+           		<?php } ?>
+           	</div>
+           	<?php
+
+		endforeach;
+
+	}
     /**
 	 	* Regex helper used in gallery shortcode to extra ids
 	 	*
