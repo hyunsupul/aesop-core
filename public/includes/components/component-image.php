@@ -28,11 +28,11 @@ if (!function_exists('aesop_image_shortcode')){
 		// combine into component shell
 		ob_start();
 
-		do_action('aesop_image_component_before'); //action
+		do_action('aesop_image_before'); //action
 		?>
 		<section class="aesop-component aesop-image-component">
 
-			<?php do_action('aesop_image_component_inside_top'); //action ?>
+			<?php do_action('aesop_image_inside_top'); //action ?>
 
 			<figure class="aesop-content">
 				<div class="aesop-image-component-image aesop-component-align-<?php echo $atts['align'];?> aesop-image-component-caption-<?php echo $atts['captionposition'];?>" <?php echo $offsetstyle;?>>
@@ -69,11 +69,11 @@ if (!function_exists('aesop_image_shortcode')){
 				</div>
 			</figure>
 
-			<?php do_action('aesop_image_component_inside_bottom'); //action ?>
+			<?php do_action('aesop_image_inside_bottom'); //action ?>
 
 		</section>
 		<?php
-		do_action('aesop_image_component_after'); //action
+		do_action('aesop_image_after'); //action
 
 		return ob_get_clean();
 	}

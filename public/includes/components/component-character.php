@@ -25,10 +25,10 @@ if (!function_exists('aesop_character_shortcode')){
 		$name 	= sprintf('<span class="aesop-character-title">%s</span>',$atts['name']);
 		$txt 	= sprintf('<div class="aesop-character-text">%s</div>',do_shortcode($content));
 
-		$actiontop = do_action('aesop_character_component_before');
-		$actionbottom = do_action('aesop_character_component_after');
-		$actioninsidetop = do_action('aesop_character_component_inside_top');
-		$actioninsidebottom = do_action('aesop_character_component_inside_bottom');
+		$actiontop = do_action('aesop_character_before');
+		$actionbottom = do_action('aesop_character_after');
+		$actioninsidetop = do_action('aesop_character_inside_top');
+		$actioninsidebottom = do_action('aesop_character_inside_bottom');
 
 		$caption = $atts['caption'] ? sprintf('<p class="aesop-character-cap">%s</p>',$atts['caption']) : false;
 		

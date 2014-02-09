@@ -32,11 +32,11 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 		ob_start();
 
-		do_action('aesop_parallax_component_before');
+		do_action('aesop_parallax_before');
 
 			?><section class="aesop-component aesop-parallax-component" style="height:<?php echo $atts['height']?>px;"><?php
 
-				do_action('aesop_parallax_component_before'); // action
+				do_action('aesop_parallax_inside_top'); // action
 
 				// Call Parallax Method if Set
 				if ('on' == $atts['parallaxbg']) { ?>
@@ -94,11 +94,11 @@ if (!function_exists('aesop_parallax_shortcode')){
 						<div class="aesop-parallax-sc-img <?php echo $laxclass;?>" <?php echo $style;?>></div>
 					</figure>
 
-					<?php do_action('aesop_parallax_component_inside_bottom'); //action ?>
+					<?php do_action('aesop_parallax_inside_bottom'); //action ?>
 
 			</section>
 
-		<?php do_action('aesop_parallax_component_after'); // action
+		<?php do_action('aesop_parallax_after'); // action
 
 		return ob_get_clean();
 	}

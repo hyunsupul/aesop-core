@@ -21,13 +21,13 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 		ob_start();
 
-		do_action('aesop_chapter_component_before'); //action
+		do_action('aesop_chapter_before'); //action
 
 			if ('video' == $atts['bgtype']) { ?>
 
 				<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover aesop-video-chapter aesop-component" >
 
-					<?php do_action('aesop_chapter_component_inside_top'); //action ?>
+					<?php do_action('aesop_chapter_inside_top'); //action ?>
 
 					<div class="aesop-article-chapter clearfix" style="height:auto;">
 						<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
@@ -43,7 +43,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 						</div>
 					</div>
 
-					<?php do_action('aesop_chapter_component_inside_bottom'); //action ?>
+					<?php do_action('aesop_chapter_inside_bottom'); //action ?>
 
 				</section>
 
@@ -63,13 +63,13 @@ if (!function_exists('aesop_chapter_shortcode')){
 						</h2>
 					</div>
 
-					<?php do_action('aesop_chapter_component_inside_bottom'); //action ?>
+					<?php do_action('aesop_chapter_inside_bottom'); //action ?>
 
 				</section>
 
 			<?php }
 
-		do_action('aesop_chapter_component_after'); //action
+		do_action('aesop_chapter_after'); //action
 
 		return ob_get_clean();
 	}
