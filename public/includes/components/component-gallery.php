@@ -106,7 +106,7 @@ class AesopCoreGallery {
 			// fetch the image id's that the user has within the gallery shortcode
 			$images = get_posts( apply_filters('aesop_gallery_query',$args) );
 
-			wp_cache_set( 'aesop_gallery_wp_query_'.$atts['id'], $images, '', 300 );
+			wp_cache_set( 'aesop_gallery_wp_query_'.$atts['id'], $images, '', 60*60*12 );
 
 		}
 
