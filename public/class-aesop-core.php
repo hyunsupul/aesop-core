@@ -67,8 +67,13 @@ class Aesop_Core {
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
+		//register shortcodes
 		add_action('init', array($this,'register_shortcodes'));
+
+		// enqueue scripts
 		add_action('wp_enqueue_scripts', array($this,'scripts'));
+
+		// remove strap br and p tags beore and after shortcodes
 		add_filter( 'the_content', array($this,'shortcode_empty_paragraph_fix'));
 
 	}
