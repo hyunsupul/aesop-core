@@ -104,11 +104,11 @@ class AesopCoreGallery {
 
 		ob_start();
 
-			do_action('aesop_gallery_component_before'); //action
+			do_action('aesop_gallery_before', $atts['a_type']); //action
 
 			?><section class="aesop-component aesop-gallery-component aesop-<?php echo $type;?>-gallery-wrap"><?php
 
-				do_action('aesop_gallery_component_inside_top'); //action
+				do_action('aesop_gallery_inside_top', $atts['a_type']); //action
 
 				switch($type):
 					case 'thumbnail':
@@ -129,11 +129,11 @@ class AesopCoreGallery {
 					printf('<p class="aesop-component-caption">%s</p>', $gallery_caption);
 				}
 
-				do_action('aesop_gallery_component_inside_bottom'); //action
+				do_action('aesop_gallery_inside_bottom', $atts['a_type']); //action
 
 			?></section><?php
 
-			do_action('aesop_gallery_component_after'); //action
+			do_action('aesop_gallery_after', $atts['a_type']); //action
 
 		return ob_get_clean();
 

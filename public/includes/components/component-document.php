@@ -19,10 +19,10 @@ if (!function_exists('aesop_document_shortcode')){
 		$hash = rand();
 
 		// actions
-		$actiontop = do_action('aesop_document_before');
-		$actionbottom = do_action('aesop_document_cafter');
-		$actioninsidetop = do_action('aesop_document_inside_top');
-		$actioninsidebottom = do_action('aesop_document_inside_bottom');
+		$actiontop = do_action('aesop_document_before'); //action
+		$actionbottom = do_action('aesop_document_cafter'); //action
+		$actioninsidetop = do_action('aesop_document_inside_top'); //action
+		$actioninsidebottom = do_action('aesop_document_inside_bottom'); //action
 
 		switch($atts['src']) {
 			case 'pdf':
