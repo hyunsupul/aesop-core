@@ -12,7 +12,7 @@ if (!function_exists('aesop_timeline_stop_shortcode')){
 		$defaults = array(
 			'num' => '2007',
 		);
-		$atts = shortcode_atts($defaults, $atts);
+		$atts = apply_filters('aesop_timeline_defaults',shortcode_atts($defaults, $atts));
 
 		// actions
 		$actiontop = do_action('aesop_timeline_before');
@@ -51,10 +51,11 @@ class AesopTimelineComponent {
 	function aesop_timeline_loader(){
 
 		?>
+			<!-- Aesop Timeline -->
 			<script>
 			jQuery(document).ready(function(){
 
-				jQuery('.aesop-entry-content').scrollNav({
+				jQuery('.aesop-entry-content,.entry-content').scrollNav({
 				    sections: '.aesop-timeline-stop',
 				    arrowKeys: true,
 				    insertTarget: '.aesop-timeline',
