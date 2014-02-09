@@ -56,19 +56,14 @@ class Aesop_Core {
 		require_once( AI_CORE_DIR.'public/includes/browserclasses.php');
 		require_once( AI_CORE_DIR.'public/includes/imgsizes.php');
 
-		// load components
-		foreach (glob(AI_CORE_DIR.'public/includes/components/*.php') as $component) { 
-    		require_once $component;
-		}
-
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
-		//register shortcodes
-		add_action('init', array($this,'register_shortcodes'));
+		// we are loading this super late so that themes can override shortcode fucntions
+		add_action('wp', array($this,'register_shortcodes'),10);
 
 		// enqueue scripts
 		add_action('wp_enqueue_scripts', array($this,'scripts'));
@@ -281,12 +276,16 @@ class Aesop_Core {
 	}
 
 	/**
-	 * Register shortcode components
+	 * Register and load components
 	 *
 	 * @since    1.0.0
 	 */
 	public function register_shortcodes(){
-		// Register Shortcodes
+
+		foreach (glob(AI_CORE_DIR.'public/includes/components/*.php') as $component) { 
+    		require_once $component;
+		}
+
 		foreach ( aesop_shortcodes() as $shortcode => $params ) {
 			add_shortcode ( 'aesop_'.$shortcode, 'aesop_'.$shortcode.'_shortcode' );
 		}
