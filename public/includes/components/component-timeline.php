@@ -15,8 +15,8 @@ if (!function_exists('aesop_timeline_stop_shortcode')){
 		$atts = apply_filters('aesop_timeline_defaults',shortcode_atts($defaults, $atts));
 
 		// actions
-		$actiontop = do_action('aesop_timeline_before');
-		$actionbottom = do_action('aesop_timeline_after');
+		$actiontop = do_action('aesop_timeline_before'); //action
+		$actionbottom = do_action('aesop_timeline_after'); //action
 
 		$out = sprintf('%s<h2 class="aesop-timeline-stop">%s</h2>',$actiontop, $atts['num']);
 

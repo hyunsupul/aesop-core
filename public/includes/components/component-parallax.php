@@ -32,7 +32,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 		ob_start();
 
-		do_action('aesop_parallax_before');
+		do_action('aesop_parallax_before'); //action
 
 			?><section class="aesop-component aesop-parallax-component" style="height:<?php echo $atts['height']?>px;"><?php
 

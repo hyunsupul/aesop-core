@@ -15,8 +15,8 @@ if (!function_exists('aesop_map_shortcode')) {
 		$hash = rand();
 
 		// actions
-		$actiontop = do_action('aesop_map_before');
-		$actionbottom = do_action('aesop_map_after');
+		$actiontop = do_action('aesop_map_before'); //action
+		$actionbottom = do_action('aesop_map_after'); //action
 
 
 		$out = sprintf('%s<section id="aesop-map-component" class="aesop-component aesop-map-component" style="height:%spx"></section>%s',$actiontop, $atts['height'], $actionbottom);
