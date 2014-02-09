@@ -265,12 +265,12 @@ class AesopCoreGallery {
             $desc    =  $image->post_content;
 
            	?>
-           	<div class="aesop-sequence-img">
-           		<img src="<?php echo $img;?>" alt="<?php echo $alt;?>">
+           	<figure class="aesop-sequence-img-wrap">
+           		<img class="aesop-sequence-img" src="<?php echo $img;?>" alt="<?php echo $alt;?>">
            		<?php if($caption){ ?>
-           			<div class="aesop-sequence-caption"><?php echo $caption;?></div>
+           			<figcaption class="aesop-content aesop-component-caption aesop-sequence-caption"><?php echo $caption;?></figcaption>
            		<?php } ?>
-           	</div>
+           	</figure>
            	<?php
 
 		endforeach;
