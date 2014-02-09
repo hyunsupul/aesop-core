@@ -76,6 +76,8 @@ if (!function_exists('aesop_parallax_shortcode')){
 				<?php } ?>
 					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo $hash;?>" style="height:<?php echo $atts['height'];?>px">
 
+						<?php do_action('aesop_parallax_inner_inside_top'); //action ?>
+
 						<?php if ($atts['floatermedia']){?>
 							<div class="aesop-parallax-sc-floater floater-<?php echo $atts['floaterposition'];?>" data-speed="10">
 								<?php echo $atts['floatermedia'];?>
@@ -91,6 +93,9 @@ if (!function_exists('aesop_parallax_shortcode')){
 						<?php if ($atts['lightbox']){?>
 							<a class="aesop-lb-link swipebox" rel="lightbox" title="<?php echo $atts['caption'];?>" href="<?php echo $atts['img'];?>"><i class="aesopicon aesopicon-search-plus"></i></a>
 						<?php } ?>
+
+						<?php do_action('aesop_parallax_inner_inside_bottom'); //action ?>
+
 						<div class="aesop-parallax-sc-img <?php echo $laxclass;?>" <?php echo $style;?>></div>
 					</figure>
 

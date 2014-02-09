@@ -38,6 +38,8 @@ if (!function_exists('aesop_image_shortcode')){
 				<div class="aesop-image-component-image aesop-component-align-<?php echo $atts['align'];?> aesop-image-component-caption-<?php echo $atts['captionposition'];?>" <?php echo $offsetstyle;?>>
 					<?php
 
+					do_action('aesop_image_inner_inside_top'); //action 
+
 					if('on' == $atts['lightbox']) { ?>
 
 						<a class="swipebox" href="<?php echo $atts['img'];?>">
@@ -65,6 +67,8 @@ if (!function_exists('aesop_image_shortcode')){
 						</figcaption>
 
 					<?php } ?>
+
+					<?php do_action('aesop_image_inner_inside_bottom'); //action ?>
 
 				</div>
 			</figure>

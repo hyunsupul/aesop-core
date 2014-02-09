@@ -51,9 +51,12 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 				<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover aesop-component">
 
-					<?php do_action('aesop_chapter_component_inside_top'); //action ?>
+					<?php do_action('aesop_chapter_inside_top'); //action ?>
 
 					<div class="aesop-article-chapter clearfix" style="background:url('<?php echo $atts['img'];?>') center center;background-size:cover;">
+
+						<?php do_action('aesop_chapter_inner_inside_top'); //action ?>
+
 						<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
 						<h2 class="aesop-cover-title" itemprop="title" >
 							<?php echo $atts['title'];
@@ -61,6 +64,9 @@ if (!function_exists('aesop_chapter_shortcode')){
 								<small><?php echo $atts['subtitle'];?></small>
 							<?php } ?>
 						</h2>
+
+						<?php do_action('aesop_chapter_inner_inside_bottom'); //action ?>
+
 					</div>
 
 					<?php do_action('aesop_chapter_inside_bottom'); //action ?>
