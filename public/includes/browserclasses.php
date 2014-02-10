@@ -94,7 +94,7 @@ class AesopBrowserClasses {
 	        elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'BlackBerry') !== false) $classes[] = 'os-blackberry';
 		return $classes;
 
-	    $classes[] = 'aesoptheme-responsive';
+	    $classes[] = 'aesop-core';
 
 	    return $classes;
 

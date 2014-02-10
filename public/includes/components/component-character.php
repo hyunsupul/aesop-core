@@ -9,34 +9,57 @@ if (!function_exists('aesop_character_shortcode')){
 
 	function aesop_character_shortcode($atts, $content = null) {
 
-		// let this be used multiple times
-		$hash = rand();
-
 		$defaults = array(
-			'img' 				=> 'http://placekitten.com/100/100',
-			'name' 				=> 'John Doe',
+			'img' 				=> '',
+			'name' 				=> '',
 			'caption'			=> '',
 			'align' 			=> 'left',
 		);
 
 		$atts = apply_filters('aesop_character_defaults',shortcode_atts($defaults, $atts));
 
-		$img 	= sprintf('<img class="aesop-character-avatar" src="%s" alt="">', $atts['img']);
-		$name 	= sprintf('<span class="aesop-character-title">%s</span>',$atts['name']);
-		$txt 	= sprintf('<div class="aesop-character-text">%s</div>',do_shortcode($content));
-
-		$actiontop = do_action('aesop_character_component_before');
-		$actionbottom = do_action('aesop_character_component_after');
-		$actioninsidetop = do_action('aesop_character_component_inside_top');
-		$actioninsidebottom = do_action('aesop_character_component_inside_bottom');
-
-		$caption = $atts['caption'] ? sprintf('<p class="aesop-character-cap">%s</p>',$atts['caption']) : false;
-		
-		$whole 	= sprintf('<div class="aesop-character-inner aesop-content "><div class="aesop-character-float aesop-character-%s">%s%s%s%s</div></div>', $atts['align'], $name, $img, $txt, $caption);
-
 		// character wrap
-		$out 	= sprintf('%s<aside class="aesop-character-component ">%s%s%s</aside>%s',  $actiontop, $actioninsidetop, $whole, $actioninsidebottom, $actionbottom);
+		ob_start();
 
-		return apply_filters('aesop_character_output',$out);
+			do_action('aesop_character_before'); //action
+			?>
+				<aside class="aesop-character-component ">
+
+					<?php do_action('aesop_character_inside_top'); //action ?>
+
+					<div class="aesop-character-inner aesop-content">
+						<div class="aesop-character-float aesop-character-<?php echo $atts['align'];?>">
+
+							<?php do_action('aesop_character_before'); //action ?>
+
+							<?php if ($atts['name']) {?>
+								<span class="aesop-character-title"><?php echo $atts['name'];?></span>
+							<?php } ?>
+
+							<?php if ($atts['img']) {?>
+								<img class="aesop-character-avatar" src="<?php echo $atts['img'];?>" alt="">
+							<?php } ?>
+
+							<?php if ($content) {?>
+								<div class="aesop-character-text"><?php echo do_shortcode($content);?></div>
+							<?php } ?>
+
+							<?php if ($atts['caption']) { ?>
+								<p class="aesop-character-cap"><?php echo $atts['caption'];?></p>
+							<?php } ?>
+
+							<?php do_action('aesop_character_before'); //action  ?>
+
+						</div>
+					</div>
+
+					<?php do_action('aesop_character_inside_bottom'); //action ?>
+
+				</aside>
+			<?php
+
+			do_action('aesop_character_after'); //action
+
+		return ob_get_clean();
 	}
 }

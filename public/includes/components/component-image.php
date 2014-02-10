@@ -9,22 +9,18 @@ if (!function_exists('aesop_image_shortcode')){
 	function aesop_image_shortcode($atts, $content = null) {
 
 		$defaults = array(
-			'width'				=> 'content',
-			'img' 				=> 'http://placekitten.com/1200/700',
+			'img' 				=> '',
 			'imgwidth'			=> '300px',
-			'offset'			=> '-150px',
+			'offset'			=> '',
 			'alt'				=> '',
 			'align' 			=> 'left',
 			'caption'			=> '',
 			'credit'			=> '',
-			'captionposition'	=> 'bottom',
+			'captionposition'	=> 'left',
 			'lightbox' 			=> 'off'
 		);
 
 		$atts = apply_filters('aesop_image_defaults',shortcode_atts($defaults, $atts));
-
-		// global component content width
-		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 
 		// offset styles
 		$offsetstyle = $atts['offset'] ? sprintf('style="margin-%s:%s;"',$atts['align'], $atts['offset']) : false;
@@ -32,20 +28,22 @@ if (!function_exists('aesop_image_shortcode')){
 		// combine into component shell
 		ob_start();
 
-		do_action('aesop_image_component_before'); //action
+		do_action('aesop_image_before'); //action
 		?>
-		<aside class="aesop-component aesop-image-component">
+		<section class="aesop-component aesop-image-component">
 
-			<?php do_action('aesop_image_component_inside_top'); //action ?>
+			<?php do_action('aesop_image_inside_top'); //action ?>
 
-			<div class="<?php echo $contentwidth;?> aesop-caption-<?php echo $atts['captionposition'];?>">
-				<div class="aesop-image-component-image aesop-component-align-<?php echo $atts['align'];?>" <?php echo $offsetstyle;?>>
+			<figure class="aesop-content">
+				<div class="aesop-image-component-image aesop-component-align-<?php echo $atts['align'];?> aesop-image-component-caption-<?php echo $atts['captionposition'];?>" <?php echo $offsetstyle;?>>
 					<?php
+
+					do_action('aesop_image_inner_inside_top'); //action 
 
 					if('on' == $atts['lightbox']) { ?>
 
-						<a class="swipebox" href="<?php echo $atts['img'];?>">
-							<p class="aesop-img-enlarge"><i class="aesopicon aesopicon-search-plus"></i> Enlarge</p>
+						<a class="aesop-lightbox" href="<?php echo $atts['img'];?>">
+							<p class="aesop-img-enlarge"><i class="aesopicon aesopicon-search-plus"></i> <?php _e('Enlarge','aesop-core');?></p>
 							<img style="width:<?php echo $atts['imgwidth'];?>;" src="<?php echo $atts['img'];?>" alt="<?php echo $atts['alt'];?>">
 						</a>
 
@@ -57,7 +55,7 @@ if (!function_exists('aesop_image_shortcode')){
 
 					if ($atts['caption']) { ?>
 
-						<div class="aesop-image-component-caption">
+						<figcaption class="aesop-image-component-caption">
 							<?php
 
 							echo $atts['caption'];
@@ -66,18 +64,20 @@ if (!function_exists('aesop_image_shortcode')){
 								<p class="aesop-cap-cred"><?php echo $atts['credit'];?></p>
 							<?php } ?>
 
-						</div>
+						</figcaption>
 
 					<?php } ?>
 
+					<?php do_action('aesop_image_inner_inside_bottom'); //action ?>
+
 				</div>
-			</div>
+			</figure>
 
-			<?php do_action('aesop_image_component_inside_bottom'); //action ?>
+			<?php do_action('aesop_image_inside_bottom'); //action ?>
 
-		</aside>
+		</section>
 		<?php
-		do_action('aesop_image_component_after'); //action
+		do_action('aesop_image_after'); //action
 
 		return ob_get_clean();
 	}

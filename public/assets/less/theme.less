@@ -153,3 +153,36 @@
         height:900px;
     }
 }
+
+//sequence gallery
+.aesop-sequence-gallery-wrap {
+    counter-reset: sequence-counter;
+}
+.aesop-sequence-img-wrap {
+    margin-bottom:6rem;
+
+    &:last-of-type {
+        margin-bottom:0;
+    }
+
+    .aesop-sequence-img {
+
+        &:first-of-type{
+            margin-top:0;
+        }
+    }
+    .aesop-sequence-caption {
+        margin:2rem auto;
+        position: relative;
+        padding-left:2rem;
+
+        &:before {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            font-weight:bold;
+            content: counter(sequence-counter);
+            counter-increment: sequence-counter;
+        }
+    }
+}

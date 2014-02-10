@@ -13,22 +13,23 @@ if (!function_exists('aesop_collection_shortcode')){
 			'collection' => 1,
 			'title' => ''
 		);
-		$atts = shortcode_atts($defaults, $atts);
+		$atts = apply_filters('aesop_collection_defaults',shortcode_atts($defaults, $atts));
 
 		$hash = rand();
 		ob_start();
 
-		do_action('aesop_collection_component_before'); // action
-		
+		do_action('aesop_collection_before'); // action
+
 		?>
 			<!-- Collections -->
 			<section class="aesop-story-collection">
 
-				<?php do_action('aesop_collection_component_inside_top'); // action ?>
+				<?php do_action('aesop_collection_inside_top'); // action ?>
 
 				<?php if($atts['title']){?>
 					<h4 class="aesop-story-collection-title"><span><?php echo $atts['title'];?></span></h4>
 				<?php } ?>
+				
 				<div id="aesop-collection-<?php echo $hash;?>" class="aesop-collection-grid clearfix">
 					<?php
 
@@ -36,7 +37,7 @@ if (!function_exists('aesop_collection_shortcode')){
 						'posts_per_page' => -1,
 						'cat' => $atts['collection']
 					);
-					$q1 = new wp_query($args1);
+					$q1 = new wp_query( apply_filters( 'aesop_collection_query', $args1 ) );
 
 					if($q1->have_posts()) : while($q1->have_posts()) : $q1->the_post();
 
@@ -59,12 +60,12 @@ if (!function_exists('aesop_collection_shortcode')){
 					?>
 				</div>
 
-				<?php do_action('aesop_collection_component_inside_bottom'); // action ?>				
+				<?php do_action('aesop_collection_inside_bottom'); // action ?>				
 
 			</section>
 		<?php
 
-		do_action('aesop_collection_component_after'); //action
+		do_action('aesop_collection_after'); //action
 
 		return ob_get_clean();
 	}

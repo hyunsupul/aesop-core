@@ -114,15 +114,32 @@ body .aesop-entry-suck-top {
     .transition(all .75s ease-in-out);
 }
 
-// image component
-.aesop-image-component-image {
-    margin-top:0.65rem;
+// sequence gallery
+.aesop-sequence-gallery-wrap {
+    .aesop-sequence-img{
+        margin-left:auto;
+        margin-right:auto;
+    }
 }
 
-.aesop-image-component-caption {
-    display: block;
-    margin-bottom:1rem;
+// image component
+.aesop-image-component {
+
+    .aesop-image-component-image {
+        margin-top:0.65rem;
+
+        &.aesop-image-component-caption-right {
+            text-align: right;
+        }
+
+    }
+
+    .aesop-image-component-caption {
+        display: block;
+        margin-bottom:1rem;
+    }
 }
+
 .aesop-component-align-left {
     margin-right:2rem;
 }

@@ -49,26 +49,12 @@ class Aesop_Core {
 	 */
 	private function __construct() {
 
-		//load component array
+		// load component array
 		require_once( AI_CORE_DIR.'admin/includes/available.php');
 
+		// load component helpers
 		require_once( AI_CORE_DIR.'public/includes/browserclasses.php');
 		require_once( AI_CORE_DIR.'public/includes/imgsizes.php');
-
-		// load components
-		require_once( AI_CORE_DIR.'public/includes/components/component-parallax.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-map.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-image.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-video.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-gallery.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-character.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-timeline.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-heading.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-cbox.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-audio.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-quote.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-document.php' );
-		require_once( AI_CORE_DIR.'public/includes/components/component-collections.php' );
 
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
@@ -76,8 +62,13 @@ class Aesop_Core {
 		// Activate plugin when new blog is added
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
-		add_action('init', array($this,'register_shortcodes'));
+		// we are loading this super late so that themes can override shortcode fucntions
+		add_action('wp', array($this,'register_shortcodes'),10);
+
+		// enqueue scripts
 		add_action('wp_enqueue_scripts', array($this,'scripts'));
+
+		// remove strap br and p tags beore and after shortcodes
 		add_filter( 'the_content', array($this,'shortcode_empty_paragraph_fix'));
 
 	}
@@ -285,12 +276,16 @@ class Aesop_Core {
 	}
 
 	/**
-	 * Register shortcode components
+	 * Register and load components
 	 *
 	 * @since    1.0.0
 	 */
 	public function register_shortcodes(){
-		// Register Shortcodes
+
+		foreach (glob(AI_CORE_DIR.'public/includes/components/*.php') as $component) { 
+    		require_once $component;
+		}
+
 		foreach ( aesop_shortcodes() as $shortcode => $params ) {
 			add_shortcode ( 'aesop_'.$shortcode, 'aesop_'.$shortcode.'_shortcode' );
 		}

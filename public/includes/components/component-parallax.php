@@ -11,7 +11,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 	function aesop_parallax_shortcode($atts, $content = null) {
 
 		$defaults = array(
-			'img' 				=> 'http://placekitten.com/1200/700',
+			'img' 				=> '',
 			'height' 			=> 500,
 			'parallaxbg' 		=> 'on',
 			'floater' 			=> false,
@@ -32,11 +32,11 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 		ob_start();
 
-		do_action('aesop_parallax_component_before');
+		do_action('aesop_parallax_before'); //action
 
 			?><section class="aesop-component aesop-parallax-component" style="height:<?php echo $atts['height']?>px;"><?php
 
-				do_action('aesop_parallax_component_before'); // action
+				do_action('aesop_parallax_inside_top'); // action
 
 				// Call Parallax Method if Set
 				if ('on' == $atts['parallaxbg']) { ?>
@@ -74,7 +74,9 @@ if (!function_exists('aesop_parallax_shortcode')){
 						});
 					</script>
 				<?php } ?>
-					<div class="aesop-parallax-sc aesop-parallax-sc-<?php echo $hash;?>" style="height:<?php echo $atts['height'];?>px">
+					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo $hash;?>" style="height:<?php echo $atts['height'];?>px">
+
+						<?php do_action('aesop_parallax_inner_inside_top'); //action ?>
 
 						<?php if ($atts['floatermedia']){?>
 							<div class="aesop-parallax-sc-floater floater-<?php echo $atts['floaterposition'];?>" data-speed="10">
@@ -83,22 +85,25 @@ if (!function_exists('aesop_parallax_shortcode')){
 						<?php } ?>
 
 						<?php if ($atts['caption']){?>
-							<div class="aesop-parallax-sc-caption-wrap <?php echo $atts['captionposition'];?>">
-								<div class="aesop-parallax-sc-caption"><?php echo $atts['caption'];?></div>
-							</div>
+							<figcaption class="aesop-parallax-sc-caption-wrap <?php echo $atts['captionposition'];?>">
+								<?php echo $atts['caption'];?>
+							</figcaption>
 						<?php } ?>
 
-						<?php if ($atts['lightbox']){?>
-							<a class="aesop-lb-link swipebox" rel="lightbox" title="<?php echo $atts['caption'];?>" href="<?php echo $atts['img'];?>"><i class="aesopicon aesopicon-search-plus"></i></a>
+						<?php if ( 'on' == $atts['lightbox']){?>
+							<a class="aesop-lb-link aesop-lightbox" rel="lightbox" title="<?php echo $atts['caption'];?>" href="<?php echo $atts['img'];?>"><i class="aesopicon aesopicon-search-plus"></i></a>
 						<?php } ?>
+
+						<?php do_action('aesop_parallax_inner_inside_bottom'); //action ?>
+
 						<div class="aesop-parallax-sc-img <?php echo $laxclass;?>" <?php echo $style;?>></div>
-					</div>
+					</figure>
 
-					<?php do_action('aesop_parallax_component_inside_bottom'); //action ?>
+					<?php do_action('aesop_parallax_inside_bottom'); //action ?>
 
 			</section>
 
-		<?php do_action('aesop_parallax_component_after'); // action
+		<?php do_action('aesop_parallax_after'); // action
 
 		return ob_get_clean();
 	}

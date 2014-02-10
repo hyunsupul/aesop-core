@@ -9,25 +9,25 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 	function aesop_chapter_shortcode($atts, $content = null) {
 		$defaults = array(
-			'label'	=> '',
-			'title' => '',
-			'subtitle' => '',
-			'bgtype' => 'img',
-			'img' => ''
+			'label'		=> '',
+			'title' 	=> '',
+			'subtitle' 	=> '',
+			'bgtype' 	=> 'img',
+			'img' 		=> ''
 		);
 
-		$atts = shortcode_atts($defaults, $atts);
+		$atts = apply_filters('aesop_chapter_defaults',shortcode_atts($defaults, $atts));
 		$hash = rand();
 
 		ob_start();
 
-		do_action('aesop_chapter_component_before'); //action
+		do_action('aesop_chapter_before'); //action
 
 			if ('video' == $atts['bgtype']) { ?>
 
 				<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover aesop-video-chapter aesop-component" >
 
-					<?php do_action('aesop_chapter_component_inside_top'); //action ?>
+					<?php do_action('aesop_chapter_inside_top'); //action ?>
 
 					<div class="aesop-article-chapter clearfix" style="height:auto;">
 						<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
@@ -43,7 +43,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 						</div>
 					</div>
 
-					<?php do_action('aesop_chapter_component_inside_bottom'); //action ?>
+					<?php do_action('aesop_chapter_inside_bottom'); //action ?>
 
 				</section>
 
@@ -51,9 +51,12 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 				<section id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover aesop-component">
 
-					<?php do_action('aesop_chapter_component_inside_top'); //action ?>
+					<?php do_action('aesop_chapter_inside_top'); //action ?>
 
 					<div class="aesop-article-chapter clearfix" style="background:url('<?php echo $atts['img'];?>') center center;background-size:cover;">
+
+						<?php do_action('aesop_chapter_inner_inside_top'); //action ?>
+
 						<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
 						<h2 class="aesop-cover-title" itemprop="title" >
 							<?php echo $atts['title'];
@@ -61,15 +64,18 @@ if (!function_exists('aesop_chapter_shortcode')){
 								<small><?php echo $atts['subtitle'];?></small>
 							<?php } ?>
 						</h2>
+
+						<?php do_action('aesop_chapter_inner_inside_bottom'); //action ?>
+
 					</div>
 
-					<?php do_action('aesop_chapter_component_inside_bottom'); //action ?>
+					<?php do_action('aesop_chapter_inside_bottom'); //action ?>
 
 				</section>
 
 			<?php }
 
-		do_action('aesop_chapter_component_after'); //action
+		do_action('aesop_chapter_after'); //action
 
 		return ob_get_clean();
 	}

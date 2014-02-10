@@ -28,10 +28,10 @@ if (!function_exists('aesop_quote_shortcode')){
 		$hash = rand();
 
 		// actions
-		$actiontop = do_action('aesop_quote_component_before');
-		$actionbottom = do_action('aesop_quote_component_after');
-		$actioninsidetop = do_action('aesop_quote_component_inside_top');
-		$actioninsidebottom = do_action('aesop_quote_component_inside_bottom');
+		$actiontop = do_action('aesop_quote_before'); //action
+		$actionbottom = do_action('aesop_quote_after'); //action
+		$actioninsidetop = do_action('aesop_quote_inside_top'); //action
+		$actioninsidebottom = do_action('aesop_quote_inside_bottom'); //action
 
 		// set component to content width
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;

@@ -12,17 +12,17 @@ if (!function_exists('aesop_document_shortcode')){
 		$defaults = array(
 			'type'		=> 'pdf',
 			'src'		=> '',
-			'caption'		=> ''
+			'caption'	=> ''
 		);
-		$atts = shortcode_atts($defaults, $atts);
+		$atts = apply_filters('aesop_document_defaults',shortcode_atts($defaults, $atts));
 
 		$hash = rand();
 
 		// actions
-		$actiontop = do_action('aesop_document_component_before');
-		$actionbottom = do_action('aesop_document_component_after');
-		$actioninsidetop = do_action('aesop_document_component_inside_top');
-		$actioninsidebottom = do_action('aesop_document_component_inside_bottom');
+		$actiontop = do_action('aesop_document_before'); //action
+		$actionbottom = do_action('aesop_document_cafter'); //action
+		$actioninsidetop = do_action('aesop_document_inside_top'); //action
+		$actioninsidebottom = do_action('aesop_document_inside_bottom'); //action
 
 		switch($atts['src']) {
 			case 'pdf':
