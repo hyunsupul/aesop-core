@@ -30,7 +30,7 @@ if (!function_exists('aesop_character_shortcode')){
 					<div class="aesop-character-inner aesop-content">
 						<div class="aesop-character-float aesop-character-<?php echo $atts['align'];?>">
 
-							<?php do_action('aesop_character_before'); //action ?>
+							<?php do_action('aesop_character_inner_inside_top'); //action ?>
 
 							<?php if ($atts['name']) {?>
 								<span class="aesop-character-title"><?php echo $atts['name'];?></span>
@@ -48,7 +48,7 @@ if (!function_exists('aesop_character_shortcode')){
 								<p class="aesop-character-cap"><?php echo $atts['caption'];?></p>
 							<?php } ?>
 
-							<?php do_action('aesop_character_before'); //action  ?>
+							<?php do_action('aesop_character_inner_inside_bottom'); //action  ?>
 
 						</div>
 					</div>
