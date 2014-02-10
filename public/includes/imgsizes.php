@@ -1,5 +1,9 @@
 <?php
-
+/**
+ 	* 	Add image sizes for various components
+ 	*
+ 	* 	@since    1.0.0
+ */
 class AesopComponentImageSizes {
 
 	function __construct() {

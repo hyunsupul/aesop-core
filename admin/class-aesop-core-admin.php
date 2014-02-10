@@ -43,7 +43,6 @@ class Aesop_Core_Admin {
 	private function __construct() {
 
 		require_once( AI_CORE_DIR.'admin/includes/notify.php' );
-		require_once( AI_CORE_DIR.'admin/includes/nextpagebtn.php' );
 		require_once( AI_CORE_DIR.'admin/includes/components/component-map.php' );
         require_once( AI_CORE_DIR.'admin/includes/components/component-gallery.php' );
 

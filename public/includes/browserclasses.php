@@ -1,5 +1,10 @@
 <?php
-
+/**
+ 	* 	Apply body classes based on device
+ 	*
+ 	* 	@since    1.0.0
+ 	*	@return    $classes
+ */
 class AesopBrowserClasses {
 
 	function __construct() {
