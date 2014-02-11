@@ -7,7 +7,8 @@
 class AesopGalleryComponentAdmin {
 
 	public function __construct(){
-		   		add_action('print_media_templates',  array($this,'aesop_gallery_opts'));
+
+		add_action('print_media_templates',  array($this,'aesop_gallery_opts'));
        	add_action('init',array($this,'do_type'));
        	add_action('admin_init',array($this,'sc_helper'));
        	add_filter('manage_ai_galleries_posts_columns', array($this,'col_head'));

@@ -45,7 +45,6 @@ class AesopCoreGallery {
 		//gallery caption 
 		$gallery_caption = get_post_meta($atts['id'], 'aesop_gallery_caption', true);
 
-		/*
 		$images = wp_cache_get( 'aesop_gallery_wp_query_'.$atts['id'] );
 
 		if ( false == $images) {
@@ -66,7 +65,6 @@ class AesopCoreGallery {
 			wp_cache_set( 'aesop_gallery_wp_query_'.$atts['id'], $images, '', 60*60*12 );
 
 		}
-		*/
 
 		$images = get_posts( apply_filters('aesop_gallery_query',$args) );
 
