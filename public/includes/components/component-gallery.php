@@ -273,10 +273,21 @@ class AesopCoreGallery {
 
            	?>
            	<figure class="aesop-sequence-img-wrap">
-           		<img class="aesop-sequence-img" src="<?php echo $img;?>" alt="<?php echo $alt;?>">
+
+           		<?php
+
+
+           		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+           		if (is_plugin_active('aesop-essentials/aesop-essentials.php') &&  get_option('aesop_essentials_lazyload') ) {?>
+					<img class="aesop-sequence-img" data-original="<?php echo $img;?>" alt="<?php echo $alt;?>">
+           		<?php } else {?>
+           			<img class="aesop-sequence-img" src="<?php echo $img;?>" alt="<?php echo $alt;?>">
+           		<?php } ?>
+
            		<?php if($caption){ ?>
            			<figcaption class="aesop-content aesop-component-caption aesop-sequence-caption"><?php echo $caption;?></figcaption>
            		<?php } ?>
+
            	</figure>
            	<?php
 

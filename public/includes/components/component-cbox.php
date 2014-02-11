@@ -23,7 +23,7 @@ if (!function_exists('aesop_content_shortcode')){
 			'background'		=> '#333333'
 		);
 
-		$atts = apply_filters('aesop_content_defaults',shortcode_atts($defaults, $atts));
+		$atts = apply_filters('aesop_cbox_defaults',shortcode_atts($defaults, $atts));
 
 		// set component to content width
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;

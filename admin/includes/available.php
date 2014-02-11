@@ -1,8 +1,11 @@
 <?php
 
 /**
- * List of available shortcodes
+ 	* 	Master list of all available shortcodes and attributes
+ 	*
+ 	* 	@since    1.0.0
  */
+
 if(!function_exists('aesop_shortcodes')){
 	function aesop_shortcodes( $shortcode = null ) {
 		$shortcodes = array(
