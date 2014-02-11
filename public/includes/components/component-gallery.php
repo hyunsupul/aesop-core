@@ -10,54 +10,10 @@ class AesopCoreGallery {
 
    	function __construct(){
 
-   		add_action('print_media_templates',  array($this,'aesop_gallery_opts'));
+
         add_shortcode('aesop_gallery',  array($this,'aesop_post_gallery'));
 
     }
-
-	/**
-	 	* Merges custom shortcode attributes into native wordpress gallery
-	 	*
-	 	* @since    1.0.0
-	*/
-	function aesop_gallery_opts (){
-
-	  	?>
-	  	<script type="text/html" id="tmpl-aesop-gallery-extended-opts">
-		    <label class="setting">
-		      	<span><?php _e('Type','aesop-core'); ?></span>
-		      	<select data-setting="a_type">
-		      		<option value="">- Select -</option>
-		        	<option value="grid">Grid</option>
-		        	<option value="thumbnail">Thumbnail</option>
-		        	<option value="sequence">Sequence</option>
-		        	<option value="stacked">Stacked Parallax</option>
-		      	</select>
-		    </label>
-	  	</script>
-
-	  	<script>
-
-		    jQuery(document).ready(function(){
-
-		     	 // add your shortcode attribute and its default value to the
-		      	// gallery settings list; $.extend should work as well...
-		      	_.extend(wp.media.gallery.defaults, {
-		        	a_type: 'a_type'
-		      	});
-
-		     	 // merge default gallery settings template with yours
-		      	wp.media.view.Settings.Gallery = wp.media.view.Settings.Gallery.extend({
-			        template: function(view){
-			          	return wp.media.template('gallery-settings')(view) + wp.media.template('aesop-gallery-extended-opts')(view);
-			        }
-		      	});
-
-		    });
-
-	  	</script>
-	<?php }
-
 
     /**
 	 	* Overrides core wordpress gallery and provides grid / thumbnail type galleries
@@ -89,6 +45,7 @@ class AesopCoreGallery {
 		//gallery caption 
 		$gallery_caption = get_post_meta($atts['id'], 'aesop_gallery_caption', true);
 
+		/*
 		$images = wp_cache_get( 'aesop_gallery_wp_query_'.$atts['id'] );
 
 		if ( false == $images) {
@@ -109,6 +66,9 @@ class AesopCoreGallery {
 			wp_cache_set( 'aesop_gallery_wp_query_'.$atts['id'], $images, '', 60*60*12 );
 
 		}
+		*/
+
+		$images = get_posts( apply_filters('aesop_gallery_query',$args) );
 
 		ob_start();
 
