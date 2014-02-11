@@ -276,8 +276,9 @@ class AesopCoreGallery {
 
            		<?php
 
+
            		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-           		if (is_plugin_active('aesop-essentials/aesop-essentials.php')) {?>
+           		if (is_plugin_active('aesop-essentials/aesop-essentials.php') &&  get_option('aesop_essentials_lazyload') ) {?>
 					<img class="aesop-sequence-img" data-original="<?php echo $img;?>" alt="<?php echo $alt;?>">
            		<?php } else {?>
            			<img class="aesop-sequence-img" src="<?php echo $img;?>" alt="<?php echo $alt;?>">
