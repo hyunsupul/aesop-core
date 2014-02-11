@@ -8,12 +8,56 @@ class AesopGalleryComponentAdmin {
 
 	public function __construct(){
 
+		add_action('print_media_templates',  array($this,'aesop_gallery_opts'));
        	add_action('init',array($this,'do_type'));
        	add_action('admin_init',array($this,'sc_helper'));
        	add_filter('manage_ai_galleries_posts_columns', array($this,'col_head'));
 		add_action('manage_ai_galleries_posts_custom_column', array($this,'col_content'), 10, 2);
 		add_filter( 'cmb_meta_boxes', array($this,'aesop_gallery_meta' ));
 	}
+
+	/**
+	 	* Merges custom shortcode attributes into native wordpress gallery
+	 	*
+	 	* @since    1.0.0
+	*/
+	function aesop_gallery_opts (){
+
+	  	?>
+	  	<script type="text/html" id="tmpl-aesop-gallery-extended-opts">
+		    <label class="setting">
+		      	<span><?php _e('Type','aesop-core'); ?></span>
+		      	<select data-setting="a_type">
+		      		<option value="">- Select -</option>
+		        	<option value="grid">Grid</option>
+		        	<option value="thumbnail">Thumbnail</option>
+		        	<option value="sequence">Sequence</option>
+		        	<option value="stacked">Stacked Parallax</option>
+		      	</select>
+		    </label>
+	  	</script>
+	  	<!-- Aesop Gallery Opts -->
+	  	<script>
+
+		    jQuery(document).ready(function(){
+
+		     	 // add your shortcode attribute and its default value to the
+		      	// gallery settings list; $.extend should work as well...
+		      	_.extend(wp.media.gallery.defaults, {
+		        	a_type: 'a_type'
+		      	});
+
+		     	 // merge default gallery settings template with yours
+		      	wp.media.view.Settings.Gallery = wp.media.view.Settings.Gallery.extend({
+			        template: function(view){
+			          	return wp.media.template('gallery-settings')(view) + wp.media.template('aesop-gallery-extended-opts')(view);
+			        }
+		      	});
+
+		    });
+
+	  	</script>
+	<?php }
 
 	/**
 	 	* Creates an Aesop Galleries custom post type to manage all psot galleries
