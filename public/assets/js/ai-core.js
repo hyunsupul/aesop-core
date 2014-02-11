@@ -217,8 +217,10 @@ jQuery(document).ready(function(){
 
     });
 
-    //instantiate swipebox
-    jQuery('.aesop-lightbox').swipebox();
+    if ( jQuery('.aesop-lightbox').length > 0) {
+	    //instantiate swipebox
+	    jQuery('.aesop-lightbox').swipebox();
+	}
 });
 
 
