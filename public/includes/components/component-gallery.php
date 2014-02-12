@@ -1,7 +1,6 @@
 <?php
 /**
  	* Creates a multipurpose gallery that can be shown as thumbnail, grid, gridset, and with lightbox and captions
- 	* Class removes the core wordpess shortcode, and adds it back using our own custom attributes
  	*
  	* @since    1.0.0
 */
@@ -9,7 +8,6 @@
 class AesopCoreGallery {
 
    	function __construct(){
-
 
         add_shortcode('aesop_gallery',  array($this,'aesop_post_gallery'));
 
@@ -65,8 +63,6 @@ class AesopCoreGallery {
 			wp_cache_set( 'aesop_gallery_wp_query_'.$atts['id'], $images, '', 60*60*12 );
 
 		}
-
-		$images = get_posts( apply_filters('aesop_gallery_query',$args) );
 
 		ob_start();
 
