@@ -114,7 +114,7 @@ class AesopChapterHeadingComponent {
 					jQuery('.aesop-entry-content').scrollNav({
 					    sections: '.aesop-chapter-title',
 					    arrowKeys: true,
-					    insertTarget: '.aesop-story-header',
+					    insertTarget: '.aesop-entry-header',
 					    insertLocation: 'appendTo',
 					    showTopLink: true,
 					    showHeadline: false,
