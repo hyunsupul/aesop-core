@@ -66,6 +66,7 @@ class Aesop_Core_Admin {
 		add_action( 'media_buttons', array($this,'generator_button' ),100);
 		add_action( 'admin_footer', array($this,'generator_popup' ));
 		add_action('admin_enqueue_scripts', array($this,'admin_scripts'));
+		add_filter( 'wp_fullscreen_buttons', array($this,'fs_generator_button' ));
 	}
 
 	/**
@@ -137,6 +138,15 @@ class Aesop_Core_Admin {
 		echo '<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" class="button thickbox aesop-add-story-component" title="Add Story Component"><span class="aesop-admin-button-icon dashicons dashicons-plus"></span> ', _e('Add Component', 'aesop-core') ,'</a>';
 	}
 
+	/**
+	 	* Add the generator button in distraction free writing mode
+	 	*
+	 	* @since     0.9.96
+	*/
+	public function fs_generator_button($buttons){
+		$buttons[] = self::generator_button();
+		return $buttons;
+	}
 	/**
 	 	* Draw the component generator
 	 	*
