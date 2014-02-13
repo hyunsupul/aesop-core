@@ -21,11 +21,6 @@ class Aesop_Core {
 	 *
 	 * Unique identifier
 	 *
-	 *
-	 * The variable name is used as the text domain when internationalizing strings
-	 * of text. Its value should match the Text Domain file header in the main
-	 * plugin file.
-	 *
 	 * @since    1.0.0
 	 *
 	 * @var      string
