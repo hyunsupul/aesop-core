@@ -23,15 +23,9 @@ if (!function_exists('aesop_quote_shortcode')){
 
 		);
 		$atts = apply_filters('aesop_quote_defaults',shortcode_atts($defaults, $atts));
-		
+
 		// use multiple times
 		$hash = rand();
-
-		// actions
-		$actiontop = do_action('aesop_quote_before'); //action
-		$actionbottom = do_action('aesop_quote_after'); //action
-		$actioninsidetop = do_action('aesop_quote_inside_top'); //action
-		$actioninsidebottom = do_action('aesop_quote_inside_bottom'); //action
 
 		// set component to content width
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
@@ -46,37 +40,47 @@ if (!function_exists('aesop_quote_shortcode')){
 		$style = $atts['background'] || $atts['text'] || $atts['height'] || $atts['width'] ? sprintf('style="background-color:%s;%s;color:%s;height:%s;width:%s;"',$atts['background'], $bgimg, $atts['text'], $atts['height'], $atts['width']) : false;
 
 		$isparallax = 'on' == $atts['parallax'] ? 'quote-is-parallax' : false;
-		//parallax
-		$parallax = 'on' == $atts['parallax'] ? sprintf('
-				var obj = jQuery(\'#aesop-quote-component-%s blockquote\');
-		       	function scrollParallax(){
-		       	    var floater = (jQuery(window).scrollTop() / 6) - %s;
-		            jQuery(obj).css({\'transform\':\'translate3d(0px,-\' + floater + \'px, 0px)\'});
 
-		       	}
-		       	scrollParallax();
-				jQuery(window).scroll(function() {scrollParallax();});
-			',$hash, $atts['offset']) : false;
 
-		// start wrapper
-		$out = sprintf('%s<section id="aesop-quote-component-%s" class="aesop-component aesop-quote-component %s %s" %s>%s',$actiontop, $hash,$contentwidth, $isparallax, $style, $actioninsidetop);
+		ob_start();
 
-		// call waypoints
-		$out .= sprintf('<script>
-		jQuery(document).ready(function(){
-			jQuery(\'#aesop-quote-component-%s blockquote\').waypoint({
-				offset: \'bottom-in-view\',
-				handler: function(direction){
-			   		jQuery(this).toggleClass(\'aesop-quote-faded\');
-			   	}
-			});
-		%s
-		});
-		</script>', $hash,$parallax);
+		do_action('aesop_quote_before'); //action
+		?>
+			<section id="aesop-quote-component-<?php echo $hash;?>" class="aesop-component aesop-quote-component <?php echo $contentwidth.' '.$isparallax;?>" <?php echo $style;?>>
 
-		// output
-		$out .= sprintf('<blockquote class="aesop-component-align-%s" style="font-size:%s;">%s</blockquote>%s</section>%s',$atts['align'],$size,$atts['quote'],$actioninsidebottom, $actionbottom);
+				<!-- Aesop Core | Quote -->
+				<script>
+					jQuery(document).ready(function(){
+						jQuery('#aesop-quote-component-<?php echo $hash;?> blockquote').waypoint({
+							offset: 'bottom-in-view',
+							handler: function(direction){
+						   		jQuery(this).toggleClass('aesop-quote-faded');
+						   	}
+						});
+						<?php if ( 'on' == $atts['parallax'] ) { ?>
+							var obj = jQuery('#aesop-quote-component-<?php echo $hash;?> blockquote');
+					       	function scrollParallax(){
+					       	    var floater = (jQuery(window).scrollTop() / 6) - <?php echo $atts['offset'];?>;
+					            jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
+					       	}
+					       	scrollParallax();
+							jQuery(window).scroll(function() {scrollParallax();});
+						<?php } ?>
+					});
+				</script>
 
-		return apply_filters('aesop_quote_output',$out);
+				<?php do_action('aesop_quote_inside_top'); //action ?>
+
+				<blockquote class="aesop-component-align-<?php echo $atts['align'];?>" style="font-size:<?php echo $size;?>;">
+					<?php echo $atts['quote'];?>
+				</blockquote>
+
+				<?php do_action('aesop_quote_inside_bottom'); //action ?>
+
+			</section>
+		<?php
+		do_action('aesop_quote_after'); //action
+
+		return ob_get_clean();
 	}
 }

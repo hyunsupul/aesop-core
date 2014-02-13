@@ -26,7 +26,7 @@ if (!function_exists('aesop_timeline_stop_shortcode')){
 
 if (!function_exists('aesop_timeline_class_loader')){
 
-	add_action('wp','aesop_timeline_class_loader');
+	add_action('wp','aesop_timeline_class_loader',11); // has to run after components are loaded
 	function aesop_timeline_class_loader() {
 
 		global $post;
@@ -64,7 +64,7 @@ class AesopTimelineComponent {
 				    showHeadline: false,
 				    scrollOffset: 80,
 				});
-
+	
 			});
 
 			</script>
