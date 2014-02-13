@@ -271,7 +271,7 @@ class Aesop_Core {
 	}
 
 	/**
-	 * Register and load components
+	 * Load and register components
 	 *
 	 * @since    1.0.0
 	 */

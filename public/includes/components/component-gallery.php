@@ -14,7 +14,7 @@ class AesopCoreGallery {
     }
 
     /**
-	 	* Overrides core wordpress gallery and provides grid / thumbnail type galleries
+	 	* Main gallery component
 	 	*
 	 	* @since    1.0.0
 	*/
@@ -126,7 +126,7 @@ class AesopCoreGallery {
                 $caption =  $image->post_excerpt;
                 $desc    =  $image->post_content;
 
-               ?><img src="<?php echo $full;?>" data-caption="<?php echo $caption;?>" alt="<?php echo $alt;?>"><?php
+               ?><img src="<?php echo $full;?>" data-caption="<?php echo $caption;?>" alt="<?php echo esc_attr($alt);?>"><?php
 
 			endforeach;
 
@@ -144,6 +144,7 @@ class AesopCoreGallery {
 		$gridwidth = $getgridwidth ? self::sanitize_int($getgridwidth) : 400;
 
 		?>
+		<!-- Aesop Grid Gallery -->
 		<script>
 			jQuery(document).ready(function(){
 			    jQuery('#aesop-grid-gallery-<?php echo $atts["id"];?>').imagesLoaded(function() {
@@ -168,7 +169,7 @@ class AesopCoreGallery {
                 $desc    		=  $image->post_content;
                 $img_title 	  	= $image->post_title;
 
-               	printf('<a class="aesop-lightbox" href="%s" title="%s"><span class="clearfix">%s</span></a>',$getimgsrc[0],$img_title,$getimage);
+               	printf('<a class="aesop-lightbox" href="%s" title="%s"><span class="clearfix">%s</span></a>',$getimgsrc[0], esc_attr($img_title), $getimage);
 
 			endforeach;
 
@@ -176,15 +177,6 @@ class AesopCoreGallery {
 		?></div><?php
 	}
 
-    /**
-	 	* Ensure users only enter whole number
-	 	*
-	 	* @since    1.0.0
-	*/
-	function sanitize_int( $input = ''  ) {
-		return wp_filter_nohtml_kses( round( $input ) );
-
-	}
     /**
 	 	* Draws a stacked parallax style gallery
 	 	*
@@ -230,12 +222,11 @@ class AesopCoreGallery {
 
            		<?php
 
-
            		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
            		if (is_plugin_active('aesop-essentials/aesop-essentials.php') &&  get_option('aesop_essentials_lazyload') ) {?>
-					<img class="aesop-sequence-img" data-original="<?php echo $img;?>" alt="<?php echo $alt;?>">
+					<img class="aesop-sequence-img" data-original="<?php echo $img;?>" alt="<?php echo esc_attr($alt);?>">
            		<?php } else {?>
-           			<img class="aesop-sequence-img" src="<?php echo $img;?>" alt="<?php echo $alt;?>">
+           			<img class="aesop-sequence-img" src="<?php echo $img;?>" alt="<?php echo esc_attr($alt);?>">
            		<?php } ?>
 
            		<?php if($caption){ ?>
@@ -260,5 +251,15 @@ class AesopCoreGallery {
         preg_match($regex, $content, $matches);
         return $matches[1];
     }
+
+    /**
+	 	* Ensure users only enter whole number
+	 	*
+	 	* @since    1.0.0
+	*/
+	function sanitize_int( $input = ''  ) {
+		return wp_filter_nohtml_kses( round( $input ) );
+
+	}
 }
 new AesopCoreGallery;
