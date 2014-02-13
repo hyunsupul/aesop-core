@@ -328,16 +328,16 @@ if(!function_exists('aesop_shortcodes')){
 					'floater' 		=> array(
 						'type'		=> 'text',
 						'values'	=> array(
-							__('true', 'aesop-core'),
-							__('false', 'aesop-core')
+							__('off', 'aesop-core'),
+							__('on', 'aesop-core')
 						),
-						'default' 	=> 'false',
+						'default' 	=> 'off',
 						'desc' 		=> __('Enable Floating Element', 'aesop-core' )
 					),
 					'floatermedia' 	=> array(
 						'type'		=> 'media_upload',
 						'values' 	=> array(),
-						'default' 	=> 'false',
+						'default' 	=> '',
 						'desc' 		=> __('Floater Media', 'aesop-core' )
 					),
 					'floaterposition' => array(

@@ -14,7 +14,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 			'img' 				=> '',
 			'height' 			=> 500,
 			'parallaxbg' 		=> 'on',
-			'floater' 			=> false,
+			'floater' 			=> '',
 			'floatermedia' 		=> '',
 			'floaterposition' 	=> 'right',
 			'floaterdirection'	=> 'up',
@@ -87,7 +87,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 						<?php do_action('aesop_parallax_inner_inside_top'); //action ?>
 
-						<?php if ($atts['floatermedia']){?>
+						<?php if ('on' == $atts['floater']){?>
 							<div class="aesop-parallax-sc-floater floater-<?php echo $atts['floaterposition'];?>" data-speed="10">
 								<?php echo $atts['floatermedia'];?>
 							</div>
