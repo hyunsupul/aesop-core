@@ -55,7 +55,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 					        var viewport = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $hash;?>').outerHeight();
 		        			jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $hash;?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1.65});
 
-		        			<?php if ($atts['floatermedia']) {?>
+		        			<?php if ('on' == $atts['floater']) {?>
 								var obj = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $hash;?> .aesop-parallax-sc-floater');
 						       	function scrollParallax(){
 						       	    var floater = (jQuery(window).scrollTop() / jQuery(obj).data('speed')) - <?php echo absint(sanitize_text_field($atts['floateroffset']));?>;
