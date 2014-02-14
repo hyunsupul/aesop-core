@@ -18,7 +18,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 			'floatermedia' 		=> '',
 			'floaterposition' 	=> 'right',
 			'floaterdirection'	=> 'up',
-			'floateroffset'		=> 40,
+			'floateroffset'		=> '',
 			'caption'			=> '',
 			'captionposition' 	=> 'bottom-left',
 			'lightbox' 			=> false
@@ -28,7 +28,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 		$hash = rand();
 		$placeholder = sprintf('%s', AI_CORE_URL.'/public/assets/img/grey.gif');
-        
+
         include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
         if (is_plugin_active('aesop-essentials/aesop-essentials.php') &&  get_option('aesop_essentials_lazyload') ) {
        		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax aesop-lazy-img' : false;
@@ -43,7 +43,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 		do_action('aesop_parallax_before'); //action
 
-			?><div class="aesop-component aesop-parallax-component" style="height:<?php echo $atts['height']?>px;"><?php
+			?><div class="aesop-component aesop-parallax-component"><?php
 
 				do_action('aesop_parallax_inside_top'); // action
 
@@ -58,7 +58,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 		        			<?php if ($atts['floatermedia']) {?>
 								var obj = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $hash;?> .aesop-parallax-sc-floater');
 						       	function scrollParallax(){
-						       	    var floater = (jQuery(window).scrollTop() / jQuery(obj).data('speed')) - <?php echo $atts['floateroffset'];?>;
+						       	    var floater = (jQuery(window).scrollTop() / jQuery(obj).data('speed')) - <?php echo absint(sanitize_text_field($atts['floateroffset']));?>;
 
 						       	    <?php if ('left' == $atts['floaterdirection'] || 'right' == $atts['floaterdirection']){
 
@@ -83,7 +83,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 						});
 					</script>
 				<?php } ?>
-					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo $hash;?>" style="height:<?php echo $atts['height'];?>px">
+					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo $hash;?>" style="height:<?php echo sanitize_text_field($atts['height']);?>px;">
 
 						<?php do_action('aesop_parallax_inner_inside_top'); //action ?>
 

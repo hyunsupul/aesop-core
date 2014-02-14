@@ -60,7 +60,7 @@ if (!function_exists('aesop_quote_shortcode')){
 						<?php if ( 'on' == $atts['parallax'] ) { ?>
 							var obj = jQuery('#aesop-quote-component-<?php echo $hash;?> blockquote');
 					       	function scrollParallax(){
-					       	    var floater = (jQuery(window).scrollTop() / 6) - <?php echo $atts['offset'];?>;
+					       	    var floater = (jQuery(window).scrollTop() / 6) - <?php echo sanitize_text_field($atts['offset']);?>;
 					            jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
 					       	}
 					       	scrollParallax();
