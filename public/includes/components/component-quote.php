@@ -18,7 +18,8 @@ if (!function_exists('aesop_quote_shortcode')){
 			'align'		=> 'left',
 			'size'		=> '4',
 			'parallax'  => '',
-			'offset'	=> 500,
+			'direction' => '',
+			'offset'	=> 300,
 			'quote'		=> '',
 
 		);
@@ -61,7 +62,25 @@ if (!function_exists('aesop_quote_shortcode')){
 							var obj = jQuery('#aesop-quote-component-<?php echo $hash;?> blockquote');
 					       	function scrollParallax(){
 					       	    var floater = (jQuery(window).scrollTop() / 6) - <?php echo sanitize_text_field($atts['offset']);?>;
+
 					            jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
+
+					       	    <?php if ('left' == $atts['direction'] || 'right' == $atts['direction']){
+
+									if ('left' == $atts['direction']){ ?>
+					            		jQuery(obj).css({'transform':'translate3d(' + floater + 'px, 0px, 0px)'});
+					            	<?php } else { ?>
+										jQuery(obj).css({'transform':'translate3d(-' + floater + 'px, 0px, 0px)'});
+					            	<?php }
+
+					       	    } else {
+
+					       	    	if ('up' == $atts['direction']){ ?>
+					            		jQuery(obj).css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
+									<?php } else { ?>
+										jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
+									<?php }
+					            } ?>
 					       	}
 					       	scrollParallax();
 							jQuery(window).scroll(function() {scrollParallax();});

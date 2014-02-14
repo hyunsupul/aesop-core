@@ -183,8 +183,19 @@ if(!function_exists('aesop_shortcodes')){
 					'offset' 		=> array(
 						'type'		=> 'text',
 						'values'	=> array(),
-						'default' 	=> 500,
+						'default' 	=> 300,
 						'desc' 		=> __('If using parallax, starting offset.', 'aesop-core' )
+					),
+					'direction' => array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('up', 'aesop-core'),
+							__('down', 'aesop-core'),
+							__('left', 'aesop-core'),
+							__('right', 'aesop-core')
+						),
+						'default' 	=> 'up',
+						'desc' 		=> __('Parallax Direction of Quote', 'aesop-core' )
 					),
 					'quote' 		=> array(
 						'type'		=> 'text',
