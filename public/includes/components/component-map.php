@@ -19,7 +19,7 @@ if (!function_exists('aesop_map_shortcode')) {
 		$actionbottom = do_action('aesop_map_after'); //action
 
 
-		$out = sprintf('%s<section id="aesop-map-component" class="aesop-component aesop-map-component" style="height:%spx"></section>%s',$actiontop, $atts['height'], $actionbottom);
+		$out = sprintf('%s<div id="aesop-map-component" class="aesop-component aesop-map-component" style="height:%spx"></div>%s',$actiontop, sanitize_text_field($atts['height']), $actionbottom);
 
 		return apply_filters('aesop_map_output',$out);
 	}
