@@ -46,7 +46,7 @@ if (!function_exists('aesop_quote_shortcode')){
 
 		do_action('aesop_quote_before'); //action
 		?>
-			<section id="aesop-quote-component-<?php echo $hash;?>" class="aesop-component aesop-quote-component <?php echo $contentwidth.' '.$isparallax;?>" <?php echo $style;?>>
+			<div id="aesop-quote-component-<?php echo $hash;?>" class="aesop-component aesop-quote-component <?php echo $contentwidth.' '.$isparallax;?>" <?php echo $style;?>>
 
 				<!-- Aesop Core | Quote -->
 				<script>
@@ -77,7 +77,7 @@ if (!function_exists('aesop_quote_shortcode')){
 
 				<?php do_action('aesop_quote_inside_bottom'); //action ?>
 
-			</section>
+			</div>
 		<?php
 		do_action('aesop_quote_after'); //action
 

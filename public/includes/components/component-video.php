@@ -30,7 +30,7 @@ if (!function_exists('aesop_video_shortcode')){
 
 	    $caption = $atts['caption'] ? sprintf('<div class="aesop-video-component-caption aesop-component-align-%s" %s>%s</div>',$atts['align'], $widthstyle, $atts['caption']) : false;
 
-	    $out = sprintf('%s<section class="aesop-component aesop-video-component %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $contentwidth, $actioninsidetop, $hash, $atts['align'], $atts['src'], $widthstyle);
+	    $out = sprintf('%s<div class="aesop-component aesop-video-component %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $contentwidth, $actioninsidetop, $hash, $atts['align'], $atts['src'], $widthstyle);
 
 	        switch( $atts['src'] ):
 
@@ -59,7 +59,7 @@ if (!function_exists('aesop_video_shortcode')){
 
 	        endswitch;
 
-	    $out .= sprintf('</div>%s%s</section>%s',$caption, $actioninsidebottom, $actionbottom);
+	    $out .= sprintf('</div>%s%s</div>%s',$caption, $actioninsidebottom, $actionbottom);
 
         return apply_filters('aesop_video_output',$out);
 	}

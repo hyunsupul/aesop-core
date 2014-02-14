@@ -30,7 +30,7 @@ if (!function_exists('aesop_image_shortcode')){
 
 		do_action('aesop_image_before'); //action
 		?>
-		<section class="aesop-component aesop-image-component">
+		<div class="aesop-component aesop-image-component">
 
 			<?php do_action('aesop_image_inside_top'); //action ?>
 
@@ -75,7 +75,7 @@ if (!function_exists('aesop_image_shortcode')){
 
 			<?php do_action('aesop_image_inside_bottom'); //action ?>
 
-		</section>
+		</div>
 		<?php
 		do_action('aesop_image_after'); //action
 

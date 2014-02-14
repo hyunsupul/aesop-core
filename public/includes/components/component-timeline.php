@@ -74,7 +74,7 @@ class AesopTimelineComponent {
 
 	function draw_timeline(){
 
-		?><section class="aesop-timeline"></section><?php
+		?><div class="aesop-timeline"></div><?php
 
 	}
 

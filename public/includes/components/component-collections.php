@@ -22,7 +22,7 @@ if (!function_exists('aesop_collection_shortcode')){
 
 		?>
 			<!-- Collections -->
-			<section class="aesop-story-collection">
+			<div class="aesop-story-collection">
 
 				<?php do_action('aesop_collection_inside_top'); // action ?>
 
@@ -62,7 +62,7 @@ if (!function_exists('aesop_collection_shortcode')){
 
 				<?php do_action('aesop_collection_inside_bottom'); // action ?>				
 
-			</section>
+			</div>
 		<?php
 
 		do_action('aesop_collection_after'); //action
