@@ -1,5 +1,5 @@
 {
-  "name": "cgcookie-4.0",
+  "name": "aesop-core",
   "version": "0.1.0",
   "dependencies": {
     "load-grunt-tasks": "~0.2.1"
