@@ -186,6 +186,13 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 300,
 						'desc' 		=> __('If using parallax, starting offset.', 'aesop-core' )
 					),
+					'speed' 		=> array(
+						'type'		=> 'text',
+						'values'	=> array(),
+						'default' 	=> 8,
+						'desc' 		=> __('Speed of parallax movement. Lower is faster.', 'aesop-core' )
+
+					),
 					'direction' => array(
 						'type'		=> 'text',
 						'values' 	=> array(
