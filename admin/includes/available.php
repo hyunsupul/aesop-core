@@ -346,7 +346,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Enable Floating Element', 'aesop-core' )
 					),
 					'floatermedia' 	=> array(
-						'type'		=> 'media_upload',
+						'type'		=> 'text',
 						'values' 	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __('Floater Media', 'aesop-core' )
