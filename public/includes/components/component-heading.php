@@ -83,7 +83,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 if (!function_exists('aesop_chapter_heading_loader')){
 
-	add_action('wp','aesop_chapter_heading_loader');
+	add_action('wp','aesop_chapter_heading_loader',11);
 	function aesop_chapter_heading_loader() {
 
 		global $post;
