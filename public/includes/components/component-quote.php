@@ -18,6 +18,7 @@ if (!function_exists('aesop_quote_shortcode')){
 			'align'		=> 'left',
 			'size'		=> '4',
 			'parallax'  => '',
+			'speed' 	=> 8,
 			'direction' => '',
 			'offset'	=> 300,
 			'quote'		=> '',
@@ -41,27 +42,25 @@ if (!function_exists('aesop_quote_shortcode')){
 		$style = $atts['background'] || $atts['text'] || $atts['height'] || $atts['width'] ? sprintf('style="background-color:%s;%s;color:%s;height:%s;width:%s;"',$atts['background'], $bgimg, $atts['text'], $atts['height'], $atts['width']) : false;
 
 		$isparallax = 'on' == $atts['parallax'] ? 'quote-is-parallax' : false;
+		$lrclass	= 'left' == $atts['direction'] || 'right' == $atts['direction'] ? 'quote-left-right' : false;
 
 
 		ob_start();
 
 		do_action('aesop_quote_before'); //action
 		?>
-			<div id="aesop-quote-component-<?php echo $hash;?>" class="aesop-component aesop-quote-component <?php echo $contentwidth.' '.$isparallax;?>" <?php echo $style;?>>
+			<div id="aesop-quote-component-<?php echo $hash;?>" class="aesop-component aesop-quote-component <?php echo $contentwidth.' '.$isparallax.' '.$lrclass.' ';?>" <?php echo $style;?>>
 
 				<!-- Aesop Core | Quote -->
 				<script>
 					jQuery(document).ready(function(){
-						jQuery('#aesop-quote-component-<?php echo $hash;?> blockquote').waypoint({
-							offset: 'bottom-in-view',
-							handler: function(direction){
-						   		jQuery(this).toggleClass('aesop-quote-faded');
-						   	}
-						});
+
+						var obj = jQuery('#aesop-quote-component-<?php echo $hash;?> blockquote');
+
 						<?php if ( 'on' == $atts['parallax'] ) { ?>
-							var obj = jQuery('#aesop-quote-component-<?php echo $hash;?> blockquote');
+
 					       	function scrollParallax(){
-					       	    var floater = (jQuery(window).scrollTop() / 6) - <?php echo sanitize_text_field($atts['offset']);?>;
+					       	    var floater = (jQuery(window).scrollTop() / <?php echo sanitize_text_field($atts['speed']);?>) - <?php echo sanitize_text_field($atts['offset']);?>;
 
 					            jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
 
@@ -82,15 +81,34 @@ if (!function_exists('aesop_quote_shortcode')){
 									<?php }
 					            } ?>
 					       	}
-					       	scrollParallax();
-							jQuery(window).scroll(function() {scrollParallax();});
+					       	jQuery(obj).waypoint({
+								offset: 'bottom-in-view',
+								handler: function(direction){
+						   			jQuery(this).toggleClass('aesop-quote-faded');
+
+						   			// fire parallax
+						   			scrollParallax();
+									jQuery(window).scroll(function() {scrollParallax();});
+							   	}
+							});
+
+						<?php } else { ?>
+
+							jQuery(obj).waypoint({
+								offset: 'bottom-in-view',
+								handler: function(direction){
+							   		jQuery(this).toggleClass('aesop-quote-faded');
+
+							   	}
+							});
 						<?php } ?>
+
 					});
 				</script>
 
 				<?php do_action('aesop_quote_inside_top'); //action ?>
 
-				<blockquote class="aesop-component-align-<?php echo $atts['align'];?>" style="font-size:<?php echo $size;?>;">
+				<blockquote class="aesop-component-align-<?php echo $atts['align'];?>" style="font-size:<?php echo sanitize_text_field($atts['size']);?>;">
 					<?php echo $atts['quote'];?>
 				</blockquote>
 

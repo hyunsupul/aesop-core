@@ -186,6 +186,13 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 300,
 						'desc' 		=> __('If using parallax, starting offset.', 'aesop-core' )
 					),
+					'speed' 		=> array(
+						'type'		=> 'text',
+						'values'	=> array(),
+						'default' 	=> 8,
+						'desc' 		=> __('Speed of parallax movement. Lower is faster.', 'aesop-core' )
+
+					),
 					'direction' => array(
 						'type'		=> 'text',
 						'values' 	=> array(
@@ -346,7 +353,7 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Enable Floating Element', 'aesop-core' )
 					),
 					'floatermedia' 	=> array(
-						'type'		=> 'media_upload',
+						'type'		=> 'text',
 						'values' 	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __('Floater Media', 'aesop-core' )
