@@ -6,7 +6,7 @@ Donate link: https://github.com/bearded-avenger/aesop-core
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery, 
 Requires at least: 3.8
 Tested up to: 3.9
-Stable tag: trunk
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -101,17 +101,25 @@ If you think something is missing, we want to hear from you. Post your request a
 
 == Frequently Asked Questions ==
 
-= What types of things can I use this for? =
+= Does this work with all themes? =
+Most of the components will work with most themes without any issues. It’s very important to know that this plugin only applies basic styles, and to take full advantage, a theme built for Aesop is probably a good idea.
 
-Answer
+= Where can I find themes for Aesop? =
+That’s something we are actively working on, now that the plugin has finally been released.
+
+= Where can I find more information on making my theme fully compatible? =
+Full documentation can be found below.
+[http://developers.aesopstories.com](http://developers.aesopstories.com)
 
 == Screenshots ==
 
-1. 
+1. The component generator triggered within the edit post screen.
+2. Story Engine components and their descriptions
 
 == Upgrade Notice ==
 
-* 
+= 1.0 =
+* Initial Release
 
 
 == Changelog ==
