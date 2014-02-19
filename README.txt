@@ -6,7 +6,7 @@ Donate link: https://github.com/bearded-avenger/aesop-core
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery, 
 Requires at least: 3.8
 Tested up to: 3.9
-Stable tag: trunk
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,7 @@ The Aesop Story Engine is a suite of open-sourced tools and components that empo
 [youtube http://www.youtube.com/watch?v=BndId0gvMlA]
 
 Utilizing these components, writers can can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. Here’s a demo theme incorporating these story components.
-[http://playground.aesopstories.com](http://playground.aesopstories.come)
+[http://playground.aesopstories.com](http://playground.aesopstories.com)
 
 **Audio**   
 Display an audio player with support for MP3. This is great for showcasing audio interviews.
@@ -64,7 +64,7 @@ The 13th component is meant to be used on a page of your site, and allows you to
 This component allows you to upload a PDF or image, that is shown to the user once they click the component.
 
 Here’s a demo theme incorporating these story components.
-[http://playground.aesopstories.com](http://playground.aesopstories.come)
+[http://playground.aesopstories.com](http://playground.aesopstories.com)
 
 
 = Theme Implementation =
@@ -115,6 +115,9 @@ Answer
 
 
 == Changelog ==
+
+= 1.0.1 =
+* BUG - Fixed map component not centering
 
 = 1.0 =
 * Initial Release

@@ -40,12 +40,13 @@ class AesopMapComponent {
 		$start = isset( $post ) ? get_post_meta($post->ID,'aesop_map_start', true) : false;
 
 		if( isset($post) && is_single() && has_shortcode( $post->post_content, 'aesop_map') )  { ?>
+			<!-- Aesop Locations -->
 			<script>
 
 				var map = L.map('aesop-map-component',{
 					scrollWheelZoom: false,
 					zoom:12,
-					center: [51.5, -0.09]
+					center: [<?php echo $start;?>]
 				});
 
 				L.tileLayer('//{s}.tile.cloudmade.com/4595fbb0139f4a8b9ccbd1b150016109/997/256/{z}/{x}/{y}.png', {
@@ -57,11 +58,11 @@ class AesopMapComponent {
 
 					foreach($markers as $marker):
 
-						$lat = $marker['lat'];
-						$long = $marker['long'];
-						$text = sanitize_text_field($marker['content']);
+						$lat 	= sanitize_text_field($marker['lat']);
+						$long 	= sanitize_text_field($marker['long']);
+						$text 	= $marker['content'] ? sanitize_text_field($marker['content']) : false;
 
-						$loc = $lat.','.$long;
+						$loc 	= sprintf('%s,%s',$lat,$long);
 
 						?> L.marker([<?php echo $loc;?>]).addTo(map).bindPopup("<?php echo $text;?>").openPopup(); <?php
 
