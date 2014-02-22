@@ -118,6 +118,9 @@ Answer
 
 = 1.0.1 =
 * BUG - Fixed map component not centering
+* BUG - Fixed incorrect quote size values
+* BUG - Removed ability to set negative Quote size values
+* ADDED - Sizes “3” and “4” to the Quote component font size
 
 = 1.0 =
 * Initial Release
