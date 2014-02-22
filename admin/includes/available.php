@@ -161,8 +161,6 @@ if(!function_exists('aesop_shortcodes')){
 					'size' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('-2', 'aesop-core'),
-							__('-1', 'aesop-core'),
 							__('0', 'aesop-core'),
 							__('1', 'aesop-core'),
 							__('2', 'aesop-core'),

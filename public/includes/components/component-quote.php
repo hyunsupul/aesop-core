@@ -108,7 +108,7 @@ if (!function_exists('aesop_quote_shortcode')){
 
 				<?php do_action('aesop_quote_inside_top'); //action ?>
 
-				<blockquote class="aesop-component-align-<?php echo $atts['align'];?>" style="font-size:<?php echo sanitize_text_field($atts['size']);?>;">
+				<blockquote class="aesop-component-align-<?php echo $atts['align'];?>" style="font-size:<?php echo $size;?>;">
 					<?php echo $atts['quote'];?>
 				</blockquote>
 
