@@ -161,12 +161,11 @@ if(!function_exists('aesop_shortcodes')){
 					'size' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('0', 'aesop-core'),
-							__('1', 'aesop-core'),
 							__('2', 'aesop-core'),
-							__('3', 'aesop-core')
+							__('3', 'aesop-core'),
+							__('4', 'aesop-core')
 						),
-						'default' 	=> 'center',
+						'default' 	=> '2',
 						'desc' 		=> __( 'Quote Size', 'aesop-core' )
 					),
 					'parallax' 		=> array(
