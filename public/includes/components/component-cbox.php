@@ -46,7 +46,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 		do_action('aesop_cbox_before'); //action
 			?>
-				<div class="aesop-component aesop-content-component <?php echo $contentwidth;?>">
+				<div class="aesop-component aesop-content-component">
 
 					<?php echo do_action('aesop_cbox_inside_top'); //action ?>
 
@@ -54,7 +54,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 						<?php echo do_action('aesop_cbox_content_inside_top'); //action ?>
 
-						<div class="aesop-content-comp-inner" <?php echo $widthstyle;?>>
+						<div class="aesop-content-comp-inner <?php echo $contentwidth;?>" <?php echo $widthstyle;?>>
 
 							<?php echo do_action('aesop_cbox_content_inner_inside_top'); //action ?>
 
