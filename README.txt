@@ -121,6 +121,7 @@ Answer
 * BUG - Fixed incorrect quote size values
 * BUG - Removed ability to set negative Quote size values
 * ADDED - Sizes “3” and “4” to the Quote component font size
+* REMOVED - We removed the “automatic remembering of page position.” It’s quite possible nobody has even noticed this feature, as it wasn’t marketed. We’ve moved it to an upcoming “essentials” plugin. The main reason; this is an unexpected behavior to happen on pages without story components.
 
 = 1.0 =
 * Initial Release
