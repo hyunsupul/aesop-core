@@ -204,19 +204,6 @@ jQuery(document).ready(function(){
 	//Fitvids
 	jQuery('.aesop-video-container').fitVids();
 
-	// If cookie is set, scroll to the position saved in the cookie.
-    if ( jQuery.cookie("scroll") !== null ) {
-        jQuery(document).scrollTop( jQuery.cookie("scroll") );
-    }
-
-    // When scrolling happens....
-    jQuery(window).on("scroll", function() {
-
-        // Set a cookie that holds the scroll position.
-        jQuery.cookie("scroll", jQuery(document).scrollTop() );
-
-    });
-
     if ( jQuery('.aesop-lightbox').length > 0) {
 	    //instantiate swipebox
 	    jQuery('.aesop-lightbox').swipebox();
