@@ -39,7 +39,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 		$widthstyle = $atts['width'] ? sprintf('style="max-width:%s;margin-left:auto;margin-right:auto;"',$atts['width']) : false;
 		$txtcolor 	= $atts['color'] ? sprintf('color:%s;', $atts['color']) : false;
-		$position	= ('left' == $atts['position'] || 'right' == $atts['position']) ? sprintf('float:%s',$atts['position']) : false;
+		$position	= ('left' == $atts['position'] || 'right' == $atts['position']) ? sprintf('float:%s;',$atts['position']) : false;
 			$itemstyle = $imgstyle || $position || $txtcolor ? sprintf('style="%s%s%s%s"',$imgstyle,$position, $txtcolor, $bgcolor) : false;
 
 		ob_start();

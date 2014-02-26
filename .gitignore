@@ -1,2 +1,7 @@
+<<<<<<< HEAD
+.DS_Store
+node_modules
+=======
 node_modules/
 .DS_Store
+>>>>>>> refs/heads/dev

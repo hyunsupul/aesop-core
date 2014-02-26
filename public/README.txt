@@ -6,7 +6,7 @@ Donate link: https://github.com/bearded-avenger/aesop-core
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery, 
 Requires at least: 3.8
 Tested up to: 3.9
-Stable tag: 1.0
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,7 @@ The Aesop Story Engine is a suite of open-sourced tools and components that empo
 [youtube http://www.youtube.com/watch?v=BndId0gvMlA]
 
 Utilizing these components, writers can can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. Here’s a demo theme incorporating these story components.
-[http://playground.aesopstories.com](http://playground.aesopstories.com)
+[http://playground.aesopstories.com](http://playground.aesopstories.come)
 
 **Audio**   
 Display an audio player with support for MP3. This is great for showcasing audio interviews.
@@ -64,7 +64,7 @@ The 13th component is meant to be used on a page of your site, and allows you to
 This component allows you to upload a PDF or image, that is shown to the user once they click the component.
 
 Here’s a demo theme incorporating these story components.
-[http://playground.aesopstories.com](http://playground.aesopstories.com)
+[http://playground.aesopstories.com](http://playground.aesopstories.come)
 
 
 = Theme Implementation =
@@ -101,36 +101,20 @@ If you think something is missing, we want to hear from you. Post your request a
 
 == Frequently Asked Questions ==
 
-= Does this work with all themes? =
-Most of the components will work with most themes without any issues. It’s very important to know that this plugin only applies basic styles, and to take full advantage, a theme built for Aesop is probably a good idea.
+= What types of things can I use this for? =
 
-= Where can I find themes for Aesop? =
-That’s something we are actively working on, now that the plugin has finally been released.
-
-= Where can I find more information on making my theme fully compatible? =
-Full documentation can be found below.
-[http://developers.aesopstories.com](http://developers.aesopstories.com)
+Answer
 
 == Screenshots ==
 
-1. The component generator triggered within the edit post screen.
-2. Story Engine components and their descriptions
+1. 
 
 == Upgrade Notice ==
 
-= 1.0 =
-* Initial Release
+* 
 
 
 == Changelog ==
-
-= 1.0.1 =
-* BUG - Fixed map component not centering
-* BUG - Fixed incorrect quote size values
-* BUG - Removed ability to set negative Quote size values
-* ADDED - Sizes “3” and “4” to the Quote component font size
-* REMOVED - We removed the “automatic remembering of page position.” It’s quite possible nobody has even noticed this feature, as it wasn’t marketed. We’ve moved it to an upcoming “essentials” plugin. The main reason; this is an unexpected behavior to happen on pages without story components.
-* FIXED - The “content” width class that’s applied to the Content component, was moved from the parent div (.aesop-content-component), to the child div (.aesop-content-comp-inner), so if background images are used in Content the component still stretches 100%.
 
 = 1.0 =
 * Initial Release
