@@ -19,6 +19,13 @@ class AesopBrowserClasses {
 			return true;
 		else return false;
 	}
+
+	function is_silk_kindle(){
+		$user_agent = trim(strtolower($_SERVER['HTTP_USER_AGENT']));
+		if( strrpos( $user_agent,'silk/' ) != false && strrpos(  $user_agent,'silk-accelerated=' ) != false )
+			return true;
+		else return false;
+	}
 	function is_iphone() {
 		$cn_is_iphone = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPhone');
 		if ($cn_is_iphone)
@@ -60,7 +67,7 @@ class AesopBrowserClasses {
 		else return false;
 	}
 	function is_tablet() { // detect ALL tablets
-		if ((is_android() && !is_android_mobile()) || is_ipad())
+		if ((is_android() && !is_android_mobile()) || is_ipad() || is_silk_kindle())
 			return true;
 		else return false;
 	}
