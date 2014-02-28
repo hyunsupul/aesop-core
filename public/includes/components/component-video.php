@@ -54,6 +54,10 @@ if (!function_exists('aesop_video_shortcode')){
 	                $out .= sprintf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" width="" height="" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',$atts['id'], $atts['id'] );
 	                break;
 
+	           	case 'vine':
+	                $out .= sprintf( '<iframe class="vine-embed" src="%s/simple" width="" height="" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',$atts['id'] );
+	                break;
+
 	            case 'self':
 	            	$out .= do_shortcode('[video src="'.$atts['hosted'].'" loop="on" autoplay="on"]');
 
