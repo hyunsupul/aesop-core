@@ -10,6 +10,8 @@ jQuery(document).ready(function($) {
 
 	// Insert shortcode
 	$('#aesop-generator-insert,.aesop-generator').live('click', function() {
+
+		$('.aesop-generator-empty').hide();
 		var queried_shortcode = $('.aesop-generator').find(':selected').val();
 		var aesop_compatibility_mode_prefix = $('#aesop-compatibility-mode-prefix').val();
 		$('#aesop-generator-result').val('[' + aesop_compatibility_mode_prefix + queried_shortcode);

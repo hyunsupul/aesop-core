@@ -172,7 +172,15 @@ class Aesop_Core_Admin {
 						</select>
 					</div>
 
-					<div id="aesop-generator-settings-outer"><div id="aesop-generator-settings"></div></div>
+					<div id="aesop-generator-settings-outer">
+						<div id="aesop-generator-settings">
+
+							<div class="aesop-generator-empty">
+								<h2><?php _e('Select a story component.','aesop-core');?></h2>
+							</div>
+
+						</div>
+					</div>
 
 					<input type="hidden" name="aesop-generator-url" id="aesop-generator-url" value="<?php echo AI_CORE_URL; ?>" />
 					<input type="hidden" name="aesop-compatibility-mode-prefix" id="aesop-compatibility-mode-prefix" value="aesop_" />
