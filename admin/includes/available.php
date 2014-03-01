@@ -453,6 +453,7 @@ if(!function_exists('aesop_shortcodes')){
 							__('kickstarter', 'aesop-core'),
 							__('viddler', 'aesop-core'),
 							__('vine', 'aesop-core'),
+							__('instagram','aesop-core'),
 							__('dailymotion', 'aesop-core'),
 							__('self', 'aesop-core')
 						),
@@ -463,7 +464,7 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Video ID (enter URL for Vine and Viddler)', 'aesop-core' )
+						'desc' 		=> __( 'Video ID (enter URL for Viddler)', 'aesop-core' )
 					),
 					'hosted' 			=> array(
 						'type'		=> 'media_upload',

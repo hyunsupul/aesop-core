@@ -30,7 +30,18 @@ if (!function_exists('aesop_video_shortcode')){
 
 	    $caption = $atts['caption'] ? sprintf('<div class="aesop-video-component-caption aesop-component-align-%s" %s>%s</div>',$atts['align'], $widthstyle, $atts['caption']) : false;
 
-	    $out = sprintf('%s<div class="aesop-component aesop-video-component %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $contentwidth, $actioninsidetop, $hash, $atts['align'], $atts['src'], $widthstyle);
+	    if ( 'vine' == $atts['src'] || 'instagram' == $atts['src'] ) {
+
+	    	$vineStagramClass = 'aesop-vine-stagram-container';
+			$vineStagramAlign = $atts['align'] ? sprintf('aesop-vine-stagram-container-%s',$atts['align']) : false;
+
+	    } else {
+
+	    	$vineStagramAlign = null;
+	    	$vineStagramClass = null;
+	    }
+
+	    $out = sprintf('%s<div class="aesop-component aesop-video-component %s %s %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $contentwidth, $vineStagramClass, $vineStagramAlign, $actioninsidetop, $hash, $atts['align'], $atts['src'], $widthstyle);
 
 	        switch( $atts['src'] ):
 
@@ -55,7 +66,11 @@ if (!function_exists('aesop_video_shortcode')){
 	                break;
 
 	           	case 'vine':
-	                $out .= sprintf( '<iframe class="vine-embed" src="%s/simple" width="" height="" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',$atts['id'] );
+	                $out .= sprintf( '<iframe class="vine-embed" src="//vine.co/v/%s/embed/simple" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',$atts['id'] );
+	                break;
+
+	           	case 'instagram':
+	                $out .= sprintf( '<iframe class="instagram-embed" src="//instagram.com/p/%s/embed" width="612" height="710" frameborder="0"></iframe>',$atts['id'] );
 	                break;
 
 	            case 'self':
