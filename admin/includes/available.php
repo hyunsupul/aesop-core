@@ -129,7 +129,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'type'		=> 'color',
 						'default' 	=> '#282828',
-						'desc' 		=> __( 'Hex Color of Background', 'aesop-core' )
+						'desc' 		=> __( 'Background Color', 'aesop-core' )
 					),
 					'img' 	=> array(
 						'values' 	=> array( ),
@@ -141,7 +141,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(),
 						'type'		=> 'color',
 						'default' 	=> '#FFFFFF',
-						'desc' 		=> __('Hex Color of Text', 'aesop-core' )
+						'desc' 		=> __('Text Color', 'aesop-core' )
 					),
 					'height' 		=> array(
 						'type'		=> 'text',
