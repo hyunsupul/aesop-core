@@ -3,7 +3,6 @@ jQuery(document).ready(function($) {
 	$('.aesop-generator').dropkick({
 		change: function () {
     		var queried_shortcode = $('#aesop-generator-select').find(':selected').val();
-			jQuery('#aesop-generator-settings').html('')
 			$('#aesop-generator-settings').html(aesopshortcodes[queried_shortcode])
         }
 	});
