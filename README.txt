@@ -131,6 +131,7 @@ Full documentation can be found below.
 * FIXED - Fixed map component not centering
 * FIXED - Fixed incorrect quote size values
 * FIXED - Removed ability to set negative Quote size values
+* FIXED - Default color picker values passing to generator
 * NEW - Sizes “3” and “4” to the Quote component font size
 * NEW - Message to empty generator settings
 * NEW - Support for Instagram and Vine within Video Component
