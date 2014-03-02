@@ -549,7 +549,7 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Collection ID', 'aesop-core' )
+						'desc' 		=> __( 'Category ID', 'aesop-core' )
 					)
 				),
 				'desc' 				=> __( 'Show a collection of stories. Typically used on a page like the home page.','aesop-core' )
