@@ -133,6 +133,7 @@ Full documentation can be found below.
 * FIXED - Removed ability to set negative Quote size values
 * FIXED - Default color picker values passing to generator
 * FIXED - Bug with images not working in Document viewer
+* FIXED - Audio player from not recognizing audio
 * NEW - Sizes “3” and “4” to the Quote component font size
 * NEW - Message to empty generator settings
 * NEW - Support for Instagram and Vine within Video Component

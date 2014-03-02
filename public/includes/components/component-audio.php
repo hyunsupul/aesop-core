@@ -20,7 +20,7 @@ if (!function_exists('aesop_audio_shortcode')){
 
 	   			do_action('aesop_audio_inside_top'); //action
 
-	   				echo wp_audio_shortcode( $defaults );
+	   				echo wp_audio_shortcode(  array( 'src' => $atts['src']) );
 
 	   			do_action('aesop_audio_inside_bottom'); //action
 
