@@ -24,7 +24,7 @@ if (!function_exists('aesop_document_shortcode')){
 		$actioninsidetop = do_action('aesop_document_inside_top'); //action
 		$actioninsidebottom = do_action('aesop_document_inside_bottom'); //action
 
-		switch($atts['src']) {
+		switch($atts['type']) {
 			case 'pdf':
 				$source = sprintf('<object class="aesop-pdf" data="%s" type="application/pdf" ></object>', $atts['src']);
 			break;
