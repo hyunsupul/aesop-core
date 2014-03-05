@@ -125,9 +125,10 @@ Full documentation can be found below.
 == Changelog ==
 
 = 1.0.1 =
-* REMOVED - We removed the “automatic remembering of page position.” It’s quite possible nobody has even noticed this feature, as it wasn’t marketed, documented, nor mentioned. We’ve moved it to an upcoming “essentials” plugin. The main reason; this is an unexpected behavior to happen on pages without story components.
+* MOVED - We removed the “automatic remembering of page position.” It’s quite possible nobody has even noticed this feature, as it wasn’t marketed, documented, nor mentioned. We’ve moved it to an upcoming “essentials” plugin. The main reason; this is an unexpected behavior to happen on pages without story components.
 * UPDATED - FitVids script with the latest fix for the “white text on Chromium 32” issue
 * MOVED - The “content” width class that’s applied to the Content component, was moved from the parent div (.aesop-content-component), to the child div (.aesop-content-comp-inner), so if background images are used in Content the component still stretches 100%.
+* FIXED - Fixed the width passing to content box if “content” is passed as attribute
 * FIXED - Fixed map component not centering
 * FIXED - Fixed incorrect quote size values
 * FIXED - Removed ability to set negative Quote size values
