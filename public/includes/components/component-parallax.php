@@ -30,7 +30,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$placeholder = sprintf('%s', AI_CORE_URL.'/public/assets/img/grey.gif');
 
         include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-        if (is_plugin_active('aesop-essentials/aesop-essentials.php') &&  get_option('aesop_essentials_lazyload') ) {
+        if (is_plugin_active('aesop-lazy-loader/aesop-lazy-loader.php')) {
        		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax aesop-lazy-img' : false;
 			$style 		= sprintf('data-original="%s" style="background-image:url(\'%s\');background-size:cover;"',$atts['img'],$placeholder);
 		} else {
