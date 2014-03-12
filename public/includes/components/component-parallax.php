@@ -28,6 +28,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 		$hash = rand();
 		$placeholder = sprintf('%s', AI_CORE_URL.'/public/assets/img/grey.gif');
+		$height = preg_replace('/[^0-9]/','',$atts['height']);
 
         include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
         if (is_plugin_active('aesop-lazy-loader/aesop-lazy-loader.php')) {
@@ -83,7 +84,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 						});
 					</script>
 				<?php } ?>
-					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo $hash;?>" style="height:<?php echo sanitize_text_field($atts['height']);?>px;">
+					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo $hash;?>" style="height:<?php echo $height;?>px;">
 
 						<?php do_action('aesop_parallax_inner_inside_top'); //action ?>
 

@@ -18,8 +18,10 @@ if (!function_exists('aesop_map_shortcode')) {
 		$actiontop = do_action('aesop_map_before'); //action
 		$actionbottom = do_action('aesop_map_after'); //action
 
+		//clean height
+		$height = preg_replace('/[^0-9]/','',$atts['height']);
 
-		$out = sprintf('%s<div id="aesop-map-component" class="aesop-component aesop-map-component" style="height:%spx"></div>%s',$actiontop, sanitize_text_field($atts['height']), $actionbottom);
+		$out = sprintf('%s<div id="aesop-map-component" class="aesop-component aesop-map-component" style="height:%spx"></div>%s',$actiontop, $height, $actionbottom);
 
 		return apply_filters('aesop_map_output',$out);
 	}
@@ -54,7 +56,7 @@ class AesopMapComponent {
 					attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
 				}).addTo(map);
 
-				<?php 
+				<?php
 
 					foreach($markers as $marker):
 
