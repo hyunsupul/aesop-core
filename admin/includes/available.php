@@ -421,6 +421,15 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Audio URL', 'aesop-core' )
+					),
+					'viewstart'		=> array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('on', 'aesop-core'),
+							__('off', 'aesop-core')
+						),
+						'default' 	=> 'off',
+						'desc' 		=> __( 'Start Audio When in View', 'aesop-core' )
 					)
 				),
 				'desc' 				=> __( 'Creates an audio player with your own audio.','aesop-core' )
