@@ -57,7 +57,8 @@ if (!function_exists('aesop_quote_shortcode')){
 
 						var obj = jQuery('#aesop-quote-component-<?php echo $hash;?> blockquote');
 
-						<?php if ( 'on' == $atts['parallax'] ) { ?>
+						// if parallax is on and we're not on mobile
+						<?php if ( 'on' == $atts['parallax'] && !wp_is_mobile() ) { ?>
 
 					       	function scrollParallax(){
 					       	    var floater = (jQuery(window).scrollTop() / <?php echo sanitize_text_field($atts['speed']);?>) - <?php echo sanitize_text_field($atts['offset']);?>;

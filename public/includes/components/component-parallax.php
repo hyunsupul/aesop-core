@@ -48,8 +48,8 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 				do_action('aesop_parallax_inside_top'); // action
 
-				// Call Parallax Method if Set
-				if ('on' == $atts['parallaxbg']) { ?>
+				// if parallax is on and we're not on mobile
+				if ( 'on' == $atts['parallaxbg'] && !wp_is_mobile() ) { ?>
 					<script>
 						jQuery(document).ready(function(){
 					   		jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $hash;?> .aesop-parallax-sc-img').parallax({speed: 0.1});
