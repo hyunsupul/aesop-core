@@ -126,15 +126,22 @@
 .aesop-video-component {
     height: auto;
 
+    &.controls-hidden {
+
+        .wp-video-shortcode,
+        .wp-video {
+
+            .mejs-overlay,
+            .mejs-controls {
+                z-index: -1;
+            }
+        }
+    }
+
     .wp-video-shortcode,
     .wp-video {
         width:100% !important;
         max-width:100% !important;
-
-        .mejs-overlay,
-        .mejs-controls {
-            z-index: -1;
-        }
     }
 
 

@@ -16,6 +16,9 @@ if (!function_exists('aesop_video_shortcode')){
 	    	'src' 		=> 'vimeo',
 	    	'hosted' 	=> '',
 	    	'id'		=> '',
+	    	'loop'		=> 'on',
+	    	'autoplay'	=> 'on',
+	    	'controls'	=> 'off',
 	    	'caption' 	=> ''
 	    );
 	    $atts = apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
@@ -41,7 +44,11 @@ if (!function_exists('aesop_video_shortcode')){
 	    	$vineStagramClass = null;
 	    }
 
-	    $out = sprintf('%s<div class="aesop-component aesop-video-component %s %s %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $contentwidth, $vineStagramClass, $vineStagramAlign, $actioninsidetop, $hash, $atts['align'], $atts['src'], $widthstyle);
+	    $loopstatus 	= 'on' == $atts['loop'] ? true : false;
+	    $autoplaystatus = 'on' == $atts['autoplay'] ? true : false;
+	    $controlstatus = 'on' == $atts['controls'] ? 'controls-visible' : 'controls-hidden';
+
+	    $out = sprintf('%s<div class="aesop-component aesop-video-component %s %s %s %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $controlstatus, $contentwidth, $vineStagramClass, $vineStagramAlign, $actioninsidetop, $hash, $atts['align'], $atts['src'], $widthstyle);
 
 	        switch( $atts['src'] ):
 
@@ -74,7 +81,7 @@ if (!function_exists('aesop_video_shortcode')){
 	                break;
 
 	            case 'self':
-	            	$out .= do_shortcode('[video src="'.$atts['hosted'].'" loop="on" autoplay="on"]');
+	            	$out .= do_shortcode('[video src="'.$atts['hosted'].'" loop="'.$loopstatus.'" autoplay="'.$autoplaystatus.'"]');
 
 	        endswitch;
 

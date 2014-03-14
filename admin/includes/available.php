@@ -470,7 +470,34 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Video (if self as source)', 'aesop-core' )
+						'desc' 		=> __( 'Video ( if <em>self</em> as Source )', 'aesop-core' )
+					),
+					'loop' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('on', 'aesop-core'),
+							__('off', 'aesop-core')
+						),
+						'default' 	=> 'on',
+						'desc' 		=> __('Video Loop ( if <em>self</em> as Source )', 'aesop-core' )
+					),
+					'autoplay' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('on', 'aesop-core'),
+							__('off', 'aesop-core')
+						),
+						'default' 	=> 'on',
+						'desc' 		=> __('Autoplay ( if <em>self</em> as Source )', 'aesop-core' )
+					),
+					'controls' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('on', 'aesop-core'),
+							__('off', 'aesop-core')
+						),
+						'default' 	=> 'off',
+						'desc' 		=> __('Video Controls ( if <em>self</em> as Source )', 'aesop-core' )
 					),
 					'caption' 			=> array(
 						'type'		=> 'text',
