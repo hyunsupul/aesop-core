@@ -44,6 +44,8 @@ if (!function_exists('aesop_quote_shortcode')){
 		$isparallax = 'on' == $atts['parallax'] ? 'quote-is-parallax' : false;
 		$lrclass	= 'left' == $atts['direction'] || 'right' == $atts['direction'] ? 'quote-left-right' : false;
 
+		// clean offset
+		$offset = preg_replace('/[^0-9]/','',$atts['offset']);
 
 		ob_start();
 
@@ -61,7 +63,7 @@ if (!function_exists('aesop_quote_shortcode')){
 						<?php if ( 'on' == $atts['parallax'] && !wp_is_mobile() ) { ?>
 
 					       	function scrollParallax(){
-					       	    var floater = (jQuery(window).scrollTop() / <?php echo sanitize_text_field($atts['speed']);?>) - <?php echo sanitize_text_field($atts['offset']);?>;
+					       	    var floater = (jQuery(window).scrollTop() / <?php echo sanitize_text_field($atts['speed']);?>) - <?php echo $offset;?>;
 
 					            jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
 
