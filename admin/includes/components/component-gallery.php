@@ -177,34 +177,69 @@ class AesopGalleryComponentAdmin {
 	*/
 	function aesop_gallery_meta( array $meta_boxes ) {
 
-		$opts = array(
-			array(
-				'id'             => 'aesop_gallery_width',
-				'name'           => __('Main Gallery Width', 'aesop-core'),
-				'type'           => 'text',
-				'desc'			=> __('Adjust the overall width of the grid/thumbnail gallery. Acceptable values include <code>500px</code> or <code>50%</code>.','aesop-core')
-			),
-			array(
-				'id'             => 'aesop_grid_gallery_width',
-				'name'           => __('Gallery Grid Item Width', 'aesop-core'),
-				'type'           => 'text',
-				'desc'			=> __('Adjust the width of the individual grid items, only if using Grid gallery style.  Default is <code>400</code>.','aesop-core')
-			),
-			array(
-				'id'             => 'aesop_gallery_caption',
-				'name'           => __('Gallery Caption (optional)', 'aesop-core'),
-				'type'           => 'textarea',
-				'desc'			=> __('Add an optional caption for the gallery. ','aesop-core')
+		$meta_boxes[] = array(
+			'title' 	=> __('Gallery Options', 'aesop-core'),
+			'pages' 	=> array('ai_galleries'),
+			'fields' 	=> array(
+				array(
+					'id'             => 'aesop_gallery_width',
+					'name'           => __('Main Gallery Width', 'aesop-core'),
+					'type'           => 'text',
+					'desc'			=> __('Adjust the overall width of the grid/thumbnail gallery. Acceptable values include <code>500px</code> or <code>50%</code>.','aesop-core'),
+					'cols'			=> 6
+				),
+				array(
+					'id'             => 'aesop_grid_gallery_width',
+					'name'           => __('Gallery Grid Item Width', 'aesop-core'),
+					'type'           => 'text',
+					'desc'			=> __('Adjust the width of the individual grid items, only if using Grid gallery style.  Default is <code>400</code>.','aesop-core'),
+					'cols'			=> 6
+				),
+				array(
+					'id'             => 'aesop_gallery_caption',
+					'name'           => __('Gallery Caption (optional)', 'aesop-core'),
+					'type'           => 'textarea',
+					'desc'			=> __('Add an optional caption for the gallery. ','aesop-core')
+				)
+
+			)
+		);
+
+		// thumbanil gallery options
+		$meta_boxes[] = array(
+			'title' 	=> __('Thumbnail Gallery Options', 'aesop-core'),
+			'pages' 	=> array('ai_galleries'),
+			'fields' 	=> array(
+				array(
+					'id'             => 'aesop_thumb_gallery_transition',
+					'name'           => __('Transition Effect', 'aesop-core'),
+					'type'           => 'select',
+					'default'		=> 'slide',
+					'options'		=> array(
+						'slide'			=> __('Slide', 'aesop-core'),
+						'crossfade'		=> __('Fade', 'aesop-core'),
+						'dissolve'		=> __('Dissolve' , 'aesop-core')
+					),
+					'desc'			=> __('Adjust the transition effect for the Thumbnail gallery. Default is slide.','aesop-core'),
+					'cols'			=> 6
+				),
+				array(
+					'id'             => 'aesop_thumb_gallery_transition_speed',
+					'name'           => __('Gallery Transition Speed', 'aesop-core'),
+					'type'           => 'text',
+					'desc'			=> __('Activate slideshow by setting a speed for the transition.<code>5000</code> = 5 seconds. ','aesop-core'),
+					'cols'			=> 6
+				),
+				array(
+					'id'             => 'aesop_thumb_gallery_hide_thumbs',
+					'name'           => __('Hide Gallery Thumbnails', 'aesop-core'),
+					'type'           => 'checkbox'
+				)
+
 			)
 
 		);
 
-		$meta_boxes[] = array(
-			'title' 	=> __('Gallery Options', 'aesop-core'),
-			'pages' 	=> array('ai_galleries'),
-			'context'	=> 'side',
-			'fields' 	=> $opts
-		);
 
 		return $meta_boxes;
 
