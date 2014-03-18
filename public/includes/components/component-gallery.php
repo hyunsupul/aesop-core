@@ -125,7 +125,7 @@ class AesopCoreGallery {
 		$transition = get_post_meta( $atts['id'], 'aesop_thumb_gallery_transition', true) ? get_post_meta( $atts['id'], 'aesop_thumb_gallery_transition', true) : 'slide';
 
 
-		?><div id="aesop-thumb-gallery-<?php echo $id;?>" class="fotorama" 	data-transition="crossfade"
+		?><div id="aesop-thumb-gallery-<?php echo $atts['id'];?>" class="fotorama" 	data-transition="crossfade"
 																			data-width="<?php echo $width;?>"
 																			<?php echo $autoplay;?>
 																			data-keyboard="true"
