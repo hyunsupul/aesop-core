@@ -11,14 +11,16 @@ if (!function_exists('aesop_timeline_stop_shortcode')){
 
 		$defaults = array(
 			'num' => '2007',
+			'title'	=> ''
 		);
 		$atts = apply_filters('aesop_timeline_defaults',shortcode_atts($defaults, $atts));
 
+		$datatitle = $atts['title'] ? sprintf('data-title="%s"', $atts['title']) : null;
 		// actions
 		$actiontop = do_action('aesop_timeline_before'); //action
 		$actionbottom = do_action('aesop_timeline_after'); //action
 
-		$out = sprintf('%s<h2 class="aesop-timeline-stop">%s</h2>',$actiontop, $atts['num']);
+		$out = sprintf('%s<h2 class="aesop-timeline-stop" %s>%s</h2>',$actiontop, $datatitle, $atts['num']);
 
 		return apply_filters('aesop_timeline_output',$out);
 	}
@@ -64,7 +66,12 @@ class AesopTimelineComponent {
 				    showHeadline: false,
 				    scrollOffset: 80,
 				});
-	
+
+				jQuery('.aesop-timeline-stop').each(function(){
+					var label = jQuery(this).attr('data-title');
+					jQuery(this).text(label);
+				});
+
 			});
 
 			</script>
