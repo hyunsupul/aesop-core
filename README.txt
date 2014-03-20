@@ -124,6 +124,17 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.0.2 =
+* FIXED - Better value saving
+* FIXED - Hosted video not obeying width set
+* FIXED - Stopped parallax from running on mobile
+* NEW - Added autoplay option to self hosted video component
+* NEW - Added loop option to self hosted video component
+* NEW - Added controls option to show/hide controls on self hosted video component
+* NEW - Options panel for thumbnail galleries type that includes options to control transition, thumbnails, and autostart
+* NEW - Added ability for timeline componenet to have a different title than what the scroll-to navigation holds
+* NEW - Added ability to center align caption on image component
+
 = 1.0.1 =
 * MOVED - We removed the “automatic remembering of page position.” It’s quite possible nobody has even noticed this feature, as it wasn’t marketed, documented, nor mentioned. We’ve moved it to an upcoming “essentials” plugin. The main reason; this is an unexpected behavior to happen on pages without story components.
 * UPDATED - FitVids script with the latest fix for the “white text on Chromium 32” issue
