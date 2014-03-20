@@ -128,6 +128,7 @@ Full documentation can be found below.
 * FIXED - Better value saving
 * FIXED - Hosted video not obeying width set
 * FIXED - Stopped parallax from running on mobile
+* NEW - Added option for audio player to automatically start once in view
 * NEW - Added autoplay option to self hosted video component
 * NEW - Added loop option to self hosted video component
 * NEW - Added controls option to show/hide controls on self hosted video component
