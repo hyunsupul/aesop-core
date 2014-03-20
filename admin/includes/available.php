@@ -63,7 +63,8 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'text',
 						'values' 	=> array(
 							__('left', 'aesop-core'),
-							__('right', 'aesop-core')
+							__('right', 'aesop-core'),
+							__('center', 'aesop-core')
 						 ),
 						'default' 	=> 'left',
 						'desc' 		=> __( 'Caption Position', 'aesop-core' )
