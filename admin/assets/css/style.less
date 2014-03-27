@@ -1,6 +1,7 @@
 @main:      #333333;
 @accent:    #222222;
 @link:      #0074a2;
+@gray:      #d6d6d6;
 
 ////////////////
 ///////////////
@@ -41,13 +42,13 @@
 // inner options
 .dk_container {
     background: @main;
-    margin: 13px auto 25px;
+    margin: 0 auto 25px;
     width:100%;
     position: relative;
 
     .dk_options a {
         display: block;
-        padding: 8px 10px;
+        padding: 11px 10px 17px;
         cursor: pointer;
         text-decoration: none;
 
@@ -75,127 +76,59 @@
         width:33.333%;
         display: inline-block;
         vertical-align: top;
-        min-height:60px;
-        background-image: url(../img/ai-core-sprite.png);
-        background-repeat: repeat-x;
-        text-indent: -100000px;
 
         a {
-            min-height: 44px;
+            display:block;
+            position: relative;
+            color:@gray;
+            text-align: center;
+            padding:5px 0;
+            letter-spacing: 1px;
+
+            &:before {
+                content:'';
+                font-family: Dashicons;
+                font-size:24px;
+                position: relative;
+                top:6px;
+                right:10px;
+            }
         }
 
         a:hover,
         &.dk_option_current a {
-            background-image: url(../img/ai-core-sprite-hover.png);
-            background-repeat: repeat-x;
-            transition:none;
+            background: @link;
+            color:@gray;
+            transition:background .15s ease-in-out;
+            &:before {
+                color:@gray;
+            }
         }
 
         // image
-        &.image {
-            background-position: 0 0;
-        }
-        &.image.dk_option_current a,
-        &.image a:hover {
-            background-position: 0 0;
-        }
-
+        &.image     { a:before { content: "\f128"; } }
         // character
-        &.character {
-            background-position: 0 -60px;
-        }
-        &.character.dk_option_current a,
-        &.character a:hover {
-            background-position: 0 -60px;
-        }
-
+        &.character { a:before { content: "\f338"; } }
         // qupte
-        &.quote {
-            background-position: 0 -120px;
-        }
-        &.quote.dk_option_current a,
-        &.quote a:hover {
-             background-position: 0 -120px;
-        }
-
+        &.quote     { a:before { content: "\f122"; } }
         // content
-        &.content {
-            background-position: 0 -180px;
-        }
-        &.content.dk_option_current a,
-        &.content a:hover {
-            background-position: 0 -180px;
-        }
-
+        &.content   { a:before { content: "\f207"; } }
         // chapter head
-        &.chapter{
-            background-position: 0 -240px;
-        }
-        &.chapter.dk_option_current a,
-        &.chapter a:hover {
-            background-position: 0 -240px;
-        }
-
+        &.chapter   { a:before { content: "\f330"; } }
         // parallax
-        &.parallax {
-            background-position: 0 -300px;
-        }
-        &.parallax.dk_option_current a,
-        &.parallax a:hover {
-            background-position: 0 -300px;
-        }
-
+        &.parallax  { a:before { content: "\f168"; } }
         // audio
-        &.audio {
-            background-position: 0 -360px;
-        }
-        &.audio.dk_option_current a,
-        &.audio a:hover {
-            background-position: 0 -360px;
-        }
-
+        &.audio     { a:before { content: "\f128"; } }
         // video
-        &.video {
-            background-position: 0 -420px;
-        }
-        &.video.dk_option_current a,
-        &.video a:hover {
-            background-position: 0 -420px;
-        }
-
+        &.video     { a:before { content: "\f128"; } }
         // map
-        &.map {
-            background-position: 0 -480px;
-        }
-        &.map.dk_option_current a,
-        &.map a:hover {
-            background-position: 0 -480px;
-        }
-
+        &.map       { a:before { content: "\f319"; } }
         // video
-        &.timeline_stop {
-            background-position: 0 -540px;
-        }
-        &.timeline_stop.dk_option_current a,
-        &.timeline_stop a:hover {
-            background-position: 0 -540px;
-        }
+        &.timeline_stop  { a:before { content: "\f469"; } }
         // document
-        &.document {
-            background-position: 0 -600px;
-        }
-        &.document.dk_option_current a,
-        &.document a:hover {
-            background-position: 0 -600px;
-        }
+        &.document  { a:before { content: "\f123"; } }
         // collection
-        &.collection {
-            background-position: 0 -660px;
-        }
-        &.collection.dk_option_current a,
-        &.collection a:hover {
-            background-position: 0 -660px;
-        }
+        &.collection  { a:before { content: "\f175"; } }
     }
 }
 
