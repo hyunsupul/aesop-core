@@ -540,6 +540,12 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Date', 'aesop-core' )
+					),
+					'title' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Title', 'aesop-core' )
 					)
 				),
 				'desc' 				=> __( 'Enter a number such as 2007, and a small timeline will be displayed with scroll to points. This works similar to the chapter heading.','aesop-core' )
