@@ -138,6 +138,7 @@ Full documentation can be found below.
 * NEW - Options panel for thumbnail galleries type that includes options to control transition, thumbnails, and autostart
 * NEW - Added ability for timeline component to have a different title than what the scroll-to navigation holds
 * NEW - Added ability to center align caption on image component
+* NEW - Refreshed user interface with icons instead of images
 
 = 1.0.1 =
 * MOVED - We removed the “automatic remembering of page position.” It’s quite possible nobody has even noticed this feature, as it wasn’t marketed, documented, nor mentioned. We’ve moved it to an upcoming “essentials” plugin. The main reason; this is an unexpected behavior to happen on pages without story components.
