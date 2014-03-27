@@ -6,7 +6,7 @@ Donate link: https://github.com/bearded-avenger/aesop-core
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery, 
 Requires at least: 3.8
 Tested up to: 3.9
-Stable tag: 1.0
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,7 +17,7 @@ Suite of components that enables the creation of interactive storytelling themes
 
 The Aesop Story Engine is a suite of open-sourced tools and components that empower developers and writers to build feature-rich, interactive, long-form storytelling themes for WordPress. At the heart of ASE are the suite of storytelling components, which are created on the fly while crafting posts within WordPress.
 
-[http://aesopstories.com/story-engine](http://aesopstories.com/story-engine)
+[http://aesopstoryengine.com](http://aesopstoryengine.com)
 
 [youtube http://www.youtube.com/watch?v=BndId0gvMlA]
 
@@ -37,7 +37,7 @@ The content component is a multi-purpose component that can display a background
 Display a character avatar, title, and small bio to help readers be reminded of key story characters.
 
 **Galleries**  
-The ASE Gallery component allows you to create and manage unlimited story galleries. Each gallery can be displayed as a grid, a thumbnail gallery, stacked, or sequencial type gallery, all with caption support.
+The ASE Gallery component allows you to create and manage unlimited story galleries. Each gallery can be displayed as a grid, a thumbnail gallery, stacked, or sequential type gallery, all with caption support.
 
 **Chapter Headings**  
 Creates scroll-to points with headings.
@@ -66,6 +66,9 @@ This component allows you to upload a PDF or image, that is shown to the user on
 Here’s a demo theme incorporating these story components.
 [http://playground.aesopstories.com](http://playground.aesopstories.com)
 
+Here’s documentation on the Story Engine.
+[http://aesopstoryengine.com/documentation](http://aesopstoryengine.com/documentation)
+
 
 = Theme Implementation =
 
@@ -73,12 +76,12 @@ It’s important to know that the plugin only produces very basic CSS for the co
 
 Theme authors and developers will find documentation covering everything from the markup that is generated, to actions, filters, and instructions for full Aesop integration.
 
-[http://developers.aesopstories.com](http://developers.aesopstories.com)
+[http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers)
 
 = Developers =
 This story engine was in beta for over 4 months, and every attempt has been made to ensure that 1.0 is as stable as can be. No breaking changes will be made until the next major version, which at the moment isn’t even a speckle in my daddies eye. All components are pluggable, and there are ample filters and actions to manipulate just about everything you can imagine. Refer to the documentation below for more.
 
-[http://developers.aesopstories.com](http://developers.aesopstories.com)
+[http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers)
 
 If you think something is missing, we want to hear from you. Post your request and bugs on [Github](https://github.com/bearded-avenger/aesop-core).
 
@@ -109,7 +112,7 @@ That’s something we are actively working on, now that the plugin has finally b
 
 = Where can I find more information on making my theme fully compatible? =
 Full documentation can be found below.
-[http://developers.aesopstories.com](http://developers.aesopstories.com)
+[http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers)
 
 == Screenshots ==
 
@@ -133,7 +136,7 @@ Full documentation can be found below.
 * NEW - Added loop option to self hosted video component
 * NEW - Added controls option to show/hide controls on self hosted video component
 * NEW - Options panel for thumbnail galleries type that includes options to control transition, thumbnails, and autostart
-* NEW - Added ability for timeline componenet to have a different title than what the scroll-to navigation holds
+* NEW - Added ability for timeline component to have a different title than what the scroll-to navigation holds
 * NEW - Added ability to center align caption on image component
 
 = 1.0.1 =
