@@ -165,7 +165,7 @@ class Aesop_Core_Admin {
 							<?php
 							foreach ( aesop_shortcodes() as $name => $shortcode ) {
 							?>
-							<option value="<?php echo $name; ?>"><?php echo strtoupper( $name ); ?></option>
+							<option value="<?php echo $name; ?>"><?php echo str_replace('_', ' ', strtoupper( $name )); ?></option>
 							<?php
 							}
 							?>
