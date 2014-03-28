@@ -40,6 +40,7 @@ class AesopMapComponent {
 
 		$markers = isset( $post ) ? get_post_meta($post->ID,'aesop_map_component_locations', false) : false;
 		$start = isset( $post ) ? get_post_meta($post->ID,'aesop_map_start', true) : false;
+		$mapboxid = get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
 
 		if( isset($post) && is_single() && has_shortcode( $post->post_content, 'aesop_map') )  { ?>
 			<!-- Aesop Locations -->
@@ -51,7 +52,7 @@ class AesopMapComponent {
 					center: [<?php echo $start;?>]
 				});
 
-				L.tileLayer('//{s}.tiles.mapbox.com/v3/aesopinteractive.hkoag9o3/{z}/{x}/{y}.png', {
+				L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo $mapboxid;?>/{z}/{x}/{y}.png', {
 					maxZoom: 18,
 					attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
 				}).addTo(map);

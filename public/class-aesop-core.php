@@ -51,6 +51,9 @@ class Aesop_Core {
 		require_once( AI_CORE_DIR.'public/includes/browserclasses.php');
 		require_once( AI_CORE_DIR.'public/includes/imgsizes.php');
 
+		// load optoins
+		require_once( AI_CORE_DIR.'public/includes/options.php');
+
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
