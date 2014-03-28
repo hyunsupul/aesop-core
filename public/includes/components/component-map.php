@@ -51,12 +51,14 @@ class AesopMapComponent {
 					center: [<?php echo $start;?>]
 				});
 
-				L.tileLayer('//{s}.tile.cloudmade.com/4595fbb0139f4a8b9ccbd1b150016109/997/256/{z}/{x}/{y}.png', {
+				L.tileLayer('//{s}.tiles.mapbox.com/v3/aesopinteractive.hkoag9o3/{z}/{x}/{y}.png', {
 					maxZoom: 18,
-					attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+					attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
 				}).addTo(map);
 
 				<?php
+
+				if($markers):
 
 					foreach($markers as $marker):
 
@@ -69,6 +71,8 @@ class AesopMapComponent {
 						?> L.marker([<?php echo $loc;?>]).addTo(map).bindPopup("<?php echo $text;?>").openPopup(); <?php
 
 					endforeach;
+
+				endif;
 				?>
 			</script>
 
