@@ -53,8 +53,7 @@ class AesopMapComponent {
 				});
 
 				L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo $mapboxid;?>/{z}/{x}/{y}.png', {
-					maxZoom: 18,
-					attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
+					maxZoom: 18
 				}).addTo(map);
 
 				<?php
