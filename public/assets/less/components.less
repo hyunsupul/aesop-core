@@ -40,7 +40,6 @@
         position: absolute;
         width:100%;
         left:0;
-        z-index: -1;
 
         &.is-parallax {
             top:-150px; // CHEATING
@@ -50,11 +49,13 @@
 
     .aesop-parallax-sc-caption-wrap {
         position: absolute;
+        z-index: 1;
     }
     .aesop-lb-link {
         position: absolute;
         top:50%;
         left:50%;
+        z-index: 1;
 
         .opacity(.1);
 
@@ -72,6 +73,7 @@
 
     .aesop-parallax-sc-floater {
         position: absolute;
+        z-index: 1;
 
         &.floater-right {
             right:30px;
