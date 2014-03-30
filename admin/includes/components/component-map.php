@@ -19,12 +19,18 @@ class AesopMapComponentAdmin {
 				'type'			=> 'text',
 			),
 			array(
+				'id'			=> 'aesop_map_component_zoom',
+				'name'			=> __('Default Zoom Level', 'aesop-core'),
+				'type'			=> 'text',
+				'desc'			=> __('The larger the number, the more zoomed in the default will be. Limit is 20. Default is 12.','aesop-core')
+			),
+			array(
 				'id' 			=> 'aesop_map_component_locations',
 				'name' 			=> __('Map Markers', 'aesop-core'),
 				'type' 			=> 'group',
 				'repeatable'     => true,
 				'repeatable_max' => 20,
-				'desc'			=> __('help', 'aesop-core'),
+				'desc'			=> __('Assign latitude and longitude for each marker.', 'aesop-core'),
 				'fields' 		=> array(
 					array(
 						'id' 	=> 'lat',

@@ -41,6 +41,7 @@ class AesopMapComponent {
 		$markers = isset( $post ) ? get_post_meta($post->ID,'aesop_map_component_locations', false) : false;
 		$start = isset( $post ) ? get_post_meta($post->ID,'aesop_map_start', true) : false;
 		$mapboxid = get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
+		$zoom = isset( $post ) ? get_post_meta($post->ID,'aesop_map_component_zoom', true) : 12;
 
 		if( isset($post) && is_single() && has_shortcode( $post->post_content, 'aesop_map') )  { ?>
 			<!-- Aesop Locations -->
@@ -48,12 +49,12 @@ class AesopMapComponent {
 
 				var map = L.map('aesop-map-component',{
 					scrollWheelZoom: false,
-					zoom:12,
+					zoom: <?php echo wp_filter_nohtml_kses( round( $zoom ) );?>,
 					center: [<?php echo $start;?>]
 				});
 
 				L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo $mapboxid;?>/{z}/{x}/{y}.png', {
-					maxZoom: 18
+					maxZoom: 20
 				}).addTo(map);
 
 				<?php
