@@ -21,6 +21,7 @@
 * 	License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
 * 	Domain Path:       /languages
 * 	GitHub Plugin URI: https://github.com/bearded-avenger/aesop-core
+*   Github Branch:     dev
 */
 
 // If this file is called directly, abort.
