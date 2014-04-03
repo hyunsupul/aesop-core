@@ -1,7 +1,7 @@
 <?php
 /**
- * Fired when the plugin is uninstalled.
- *
+ 	* Fired when the plugin is uninstalled.
+ 	*
  * @package   Aesop_Core
  * @author    Nick Haskins <nick@aesopinteractive.com>
  * @license   GPL-2.0+
