@@ -127,6 +127,14 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.0.3 =
+* FIXED - parallax image bug in Firefox
+* FIXED - added the missing “title” option for Timeline component
+* FIXED - image now aligns to center if center alignment and width are set on image component
+* NEW - Added option area to Theme Customizer to allow custom map tiles from Mapbox
+* NEW - Added option to set the default zoom level in the Map component
+* misc bug fixes
+
 = 1.0.2 =
 * FIXED - Better value saving
 * FIXED - Hosted video not obeying width set
