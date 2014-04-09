@@ -509,6 +509,15 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 'off',
 						'desc' 		=> __('Video Controls ( if <em>self</em> as Source )', 'aesop-core' )
 					),
+					'viewstart'		=> array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('on', 'aesop-core'),
+							__('off', 'aesop-core')
+						),
+						'default' 	=> 'off',
+						'desc' 		=> __( 'Start Video When in View  ( if <em>self</em> as Source )', 'aesop-core' )
+					),
 					'caption' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),

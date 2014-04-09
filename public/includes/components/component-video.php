@@ -19,6 +19,7 @@ if (!function_exists('aesop_video_shortcode')){
 	    	'loop'		=> 'on',
 	    	'autoplay'	=> 'on',
 	    	'controls'	=> 'off',
+	    	'viewstart' => 'off',
 	    	'caption' 	=> ''
 	    );
 	    $atts = apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
@@ -48,45 +49,63 @@ if (!function_exists('aesop_video_shortcode')){
 	    $autoplaystatus = 'on' == $atts['autoplay'] ? true : false;
 	    $controlstatus = 'on' == $atts['controls'] ? 'controls-visible' : 'controls-hidden';
 
-	    $out = sprintf('%s<div class="aesop-component aesop-video-component %s %s %s %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $controlstatus, $contentwidth, $vineStagramClass, $vineStagramAlign, $actioninsidetop, $hash, $atts['align'], $atts['src'], $widthstyle);
+	    $hash = rand();
+
+	    ob_start();
+
+	    if ('on' == $atts['viewstart']) { ?>
+	    	<script>
+		    	jQuery(document).ready(function(){
+					jQuery('#aesop-video-<?php echo $hash;?>').waypoint({
+						offset: 'bottom-in-view',
+						handler: function(direction){
+					   		jQuery('#aesop-video-<?php echo $hash;?> .mejs-playpause-button button').trigger('click');
+					   	}
+					});
+		    	});
+	    	</script>
+    	<?php }
+
+	    printf('%s<div id="aesop-video-%s" class="aesop-component aesop-video-component %s %s %s %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $hash, $controlstatus, $contentwidth, $vineStagramClass, $vineStagramAlign, $actioninsidetop, $hash, $atts['align'], $atts['src'], $widthstyle);
+
 
 	        switch( $atts['src'] ):
 
 	            case 'vimeo':
-	                $out .= sprintf( '<iframe src="//player.vimeo.com/video/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
+	                printf( '<iframe src="//player.vimeo.com/video/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',$atts['id'] );
 	                break;
 
 	            case 'dailymotion':
-	                $out .= sprintf( '<iframe src="//www.dailymotion.com/embed/video/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
+	                printf( '<iframe src="//www.dailymotion.com/embed/video/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',$atts['id'] );
 	                break;
 
 	            case 'youtube':
-	                $out .= sprintf( '<iframe src="//www.youtube.com/embed/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent"></iframe>',$atts['id'] );
+	                printf( '<iframe src="//www.youtube.com/embed/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',$atts['id'] );
 	                break;
 
 	            case 'kickstarter':
-	                $out .= sprintf( '<iframe width="" height="" src="%s" scrolling="no"> </iframe>',$atts['id'] );
+	                printf( '<iframe width="" height="" src="%s" scrolling="no"> </iframe>',$atts['id'] );
 	                break;
 
 	            case 'viddler':
-	                $out .= sprintf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" width="" height="" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',$atts['id'], $atts['id'] );
+	                printf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" width="" height="" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',$atts['id'], $atts['id'] );
 	                break;
 
 	           	case 'vine':
-	                $out .= sprintf( '<iframe class="vine-embed" src="//vine.co/v/%s/embed/simple" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',$atts['id'] );
+	                printf( '<iframe class="vine-embed" src="//vine.co/v/%s/embed/simple" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',$atts['id'] );
 	                break;
 
 	           	case 'instagram':
-	                $out .= sprintf( '<iframe class="instagram-embed" src="//instagram.com/p/%s/embed" width="612" height="710" frameborder="0"></iframe>',$atts['id'] );
+	                printf( '<iframe class="instagram-embed" src="//instagram.com/p/%s/embed" width="612" height="710" frameborder="0"></iframe>',$atts['id'] );
 	                break;
 
 	            case 'self':
-	            	$out .= do_shortcode('[video src="'.$atts['hosted'].'" loop="'.$loopstatus.'" autoplay="'.$autoplaystatus.'"]');
+	            	echo do_shortcode('[video src="'.$atts['hosted'].'" loop="'.$loopstatus.'" autoplay="'.$autoplaystatus.'"]');
 
 	        endswitch;
 
-	    $out .= sprintf('</div>%s%s</div>%s',$caption, $actioninsidebottom, $actionbottom);
+	    printf('</div>%s%s</div>%s',$caption, $actioninsidebottom, $actionbottom);
 
-        return apply_filters('aesop_video_output',$out);
+        return ob_get_clean();
 	}
 }
