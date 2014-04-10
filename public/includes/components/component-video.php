@@ -20,7 +20,9 @@ if (!function_exists('aesop_video_shortcode')){
 	    	'autoplay'	=> 'on',
 	    	'controls'	=> 'off',
 	    	'viewstart' => 'off',
-	    	'caption' 	=> ''
+	    	'caption' 	=> '',
+	    	'vidwidth'  => '',
+	    	'vidheight' => ''
 	    );
 	    $atts = apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
 	    $contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
@@ -49,6 +51,11 @@ if (!function_exists('aesop_video_shortcode')){
 	    $autoplaystatus = 'on' == $atts['autoplay'] ? true : false;
 	    $controlstatus = 'on' == $atts['controls'] ? 'controls-visible' : 'controls-hidden';
 
+	    $iframe_height = $atts['vidheight'] ? sprintf('height="%s"', preg_replace('/[^0-9]/', '', $atts['vidheight']) ) : sprintf('height=""');
+	    $iframe_width = $atts['vidwidth'] ? sprintf('width="%s"', preg_replace('/[^0-9]/', '', $atts['vidwidth']) ) : sprintf('width=""');
+
+	    $iframe_size = sprintf('%s %s' ,$iframe_height, $iframe_width);
+
 	    $hash = rand();
 
 	    ob_start();
@@ -72,23 +79,23 @@ if (!function_exists('aesop_video_shortcode')){
 	        switch( $atts['src'] ):
 
 	            case 'vimeo':
-	                printf( '<iframe src="//player.vimeo.com/video/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',$atts['id'] );
+	                printf( '<iframe src="//player.vimeo.com/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',$atts['id'], $iframe_size );
 	                break;
 
 	            case 'dailymotion':
-	                printf( '<iframe src="//www.dailymotion.com/embed/video/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',$atts['id'] );
+	                printf( '<iframe src="//www.dailymotion.com/embed/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',$atts['id'], $iframe_size );
 	                break;
 
 	            case 'youtube':
-	                printf( '<iframe src="//www.youtube.com/embed/%s" width="" height=""  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',$atts['id'] );
+	                printf( '<iframe src="//www.youtube.com/embed/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',$atts['id'], $iframe_size );
 	                break;
 
 	            case 'kickstarter':
-	                printf( '<iframe width="" height="" src="%s" scrolling="no"> </iframe>',$atts['id'] );
+	                printf( '<iframe src="%s" %s scrolling="no"> </iframe>',$atts['id'], $iframe_size );
 	                break;
 
 	            case 'viddler':
-	                printf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" width="" height="" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',$atts['id'], $atts['id'] );
+	                printf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" %s mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',$atts['id'], $atts['id'], $iframe_size );
 	                break;
 
 	           	case 'vine':
