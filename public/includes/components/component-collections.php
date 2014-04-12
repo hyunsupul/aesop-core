@@ -14,7 +14,7 @@ if (!function_exists('aesop_collection_shortcode')){
 			'title' 		=> '',
 			'columns' 		=> 2,
 			'limit'			=> -1,
-			'splash'		=> 'on'
+			'splash'		=> ''
 		);
 		$atts = apply_filters('aesop_collection_defaults',shortcode_atts($defaults, $atts));
 
