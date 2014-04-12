@@ -50,8 +50,7 @@ if (!function_exists('aesop_collection_shortcode')){
 								// cat query args
 								$cat_args = array(
 								  	'orderby' 	=> 'name',
-								  	'order' 	=> 'ASC',
-								  	'columns'	=> 2
+								  	'order' 	=> 'ASC'
 								);
 
 								// get cached query
