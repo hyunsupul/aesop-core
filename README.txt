@@ -127,6 +127,14 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.0.4 =
+* FIXED - insecure assets if SSL enabled in wp-admin
+* NEW - Added option for video player to start automatically once in view
+* NEW - Added framewidth and frameheight options to video player to preserve aspect ratio. 
+* NEW - Added option to set columns in Collections Component
+* NEW - Added option to set stories shown in Collections Component
+* NEW - Added new “splash mode” option for Collections Component that displays collection parents
+
 = 1.0.3 =
 * FIXED - parallax image bug in Firefox
 * FIXED - added the missing “title” option for Timeline component
