@@ -23,6 +23,8 @@ if (!function_exists('aesop_collection_shortcode')){
 
 		$col = $atts['columns'] ? preg_replace('/[^0-9]/','',$atts['columns']) : null;
 
+		$splash_class = 'on' == $atts['splash'] ? 'aesop-collection-splash' : null;
+
 		do_action('aesop_collection_before'); // action
 
 		?>
@@ -35,7 +37,7 @@ if (!function_exists('aesop_collection_shortcode')){
 					<h4 class="aesop-story-collection-title"><span><?php echo $atts['title'];?></span></h4>
 				<?php } ?>
 
-					<div id="aesop-collection-<?php echo $hash;?>" class="aesop-collection-grid clearfix aesop-collection-grid-<?php echo $col;?>col">
+					<div id="aesop-collection-<?php echo $hash;?>" class="aesop-collection-grid clearfix aesop-collection-grid-<?php echo $col;?>col <?php echo $splash_class;?>">
 
 						<?php
 
@@ -48,7 +50,8 @@ if (!function_exists('aesop_collection_shortcode')){
 								// cat query args
 								$cat_args = array(
 								  	'orderby' 	=> 'name',
-								  	'order' 	=> 'ASC'
+								  	'order' 	=> 'ASC',
+								  	'columns'	=> 2
 								);
 
 								// get cached query
@@ -63,7 +66,17 @@ if (!function_exists('aesop_collection_shortcode')){
 								if ($cats):
 
 									foreach($cats as $cat) {
-										echo $cat->name;
+
+										?><div class="aesop-collection-item aesop-collection-category-<?php echo $cat->slug;?>">
+											<a class="aesop-collection-item-link" href="<?php echo get_category_link($cat->term_id);?>">
+												<div class="aesop-collection-item-inner">
+													<h2 class="aesop-collection-entry-title" itemprop="title"><?php echo $cat->name;?></h2>
+													<div class="aesop-collection-item-excerpt"><?php echo $cat->category_description;?></div>
+												</div>
+												<div class="aesop-collection-item-img"></div>
+											</a>
+										</div>
+										<?php
 									}
 
 								endif;
@@ -74,7 +87,7 @@ if (!function_exists('aesop_collection_shortcode')){
 								// query args
 								$args = array(
 									'posts_per_page' => $atts['limit'],
-									'cat' => $atts['collection'],
+									'cat' 			=> $atts['collection'],
 									'ignore_sticky' => true
 								);
 
