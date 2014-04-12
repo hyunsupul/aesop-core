@@ -602,6 +602,32 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Category ID', 'aesop-core' )
+					),
+					'limit' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array(),
+						'default' 	=> '',
+						'desc' 		=> __( 'Posts to Show', 'aesop-core' )
+					),
+					'columns' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('2'),
+							__('3'),
+							__('4'),
+							__('5')
+						),
+						'default' 	=> '2',
+						'desc' 		=> __( 'Columns', 'aesop-core' )
+					),
+					'splash' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('on'),
+							__('off')
+						),
+						'default' 	=> 'off',
+						'desc' 		=> __( 'Splash Mode', 'aesop-core' )
 					)
 				),
 				'desc' 				=> __( 'Show a collection of stories. Typically used on a page like the home page.','aesop-core' )
