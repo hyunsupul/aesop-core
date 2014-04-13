@@ -129,6 +129,7 @@ Full documentation can be found below.
 
 = 1.0.4 =
 * FIXED - insecure assets if SSL enabled in wp-admin
+* FIXED - wrong audio icon
 * NEW - Added option for video player to start automatically once in view
 * NEW - Added framewidth and frameheight options to video player to preserve aspect ratio. 
 * NEW - Added option to set columns in Collections Component
