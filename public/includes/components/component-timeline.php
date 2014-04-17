@@ -52,6 +52,12 @@ class AesopTimelineComponent {
 
 	function aesop_timeline_loader(){
 
+		// maintain backwards compatibility
+		$offset = 0;
+
+		// allow theme developers to determine the offset amount
+		$timelineOffset = apply_filters('aesop_timeline_scroll_offset', $offset );
+
 		?>
 			<!-- Aesop Timeline -->
 			<script>
@@ -64,7 +70,7 @@ class AesopTimelineComponent {
 				    insertLocation: 'appendTo',
 				    showTopLink: false,
 				    showHeadline: false,
-				    scrollOffset: 80,
+				    scrollOffset: <?php echo $timelineOffset;?>,
 				});
 
 				jQuery('.aesop-timeline-stop').each(function(){

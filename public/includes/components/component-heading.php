@@ -106,6 +106,12 @@ class AesopChapterHeadingComponent {
 
 	function aesop_chapter_loader(){
 
+		// maintain backwards compatibility
+		$offset = 0;
+
+		// allow theme developers to determine the offset amount
+		$chapterOffset = apply_filters('aesop_chapter_scroll_offset', $offset );
+
 		?>
 			<!-- Chapter Loader -->
 			<script>
@@ -118,7 +124,7 @@ class AesopChapterHeadingComponent {
 					    insertLocation: 'appendTo',
 					    showTopLink: true,
 					    showHeadline: false,
-					    scrollOffset: 36,
+					    scrollOffset: <?php echo $chapterOffset;?>,
 					});
 
 				});
