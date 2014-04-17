@@ -50,6 +50,7 @@ class Aesop_Core {
 		// load component helpers
 		require_once( AI_CORE_DIR.'public/includes/browserclasses.php');
 		require_once( AI_CORE_DIR.'public/includes/imgsizes.php');
+		require_once( AI_CORE_DIR.'public/includes/theme-helpers.php');
 
 		// load optoins
 		require_once( AI_CORE_DIR.'public/includes/options.php');
@@ -280,7 +281,7 @@ class Aesop_Core {
 	 */
 	public function register_shortcodes(){
 
-		foreach (glob(AI_CORE_DIR.'public/includes/components/*.php') as $component) { 
+		foreach (glob(AI_CORE_DIR.'public/includes/components/*.php') as $component) {
     		require_once $component;
 		}
 

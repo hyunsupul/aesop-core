@@ -1,9 +1,9 @@
 === Aesop Story Engine ===
-Contributors: nphaskins
+Contributors: nphaskins, mauryaratan
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com
-Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery, 
+Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 3.9
 Stable tag: trunk
@@ -24,43 +24,43 @@ The Aesop Story Engine is a suite of open-sourced tools and components that empo
 Utilizing these components, writers can can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. Here’s a demo theme incorporating these story components.
 [http://playground.aesopstories.com](http://playground.aesopstories.com)
 
-**Audio**   
+**Audio**
 Display an audio player with support for MP3. This is great for showcasing audio interviews.
-  
-**Video**   
+
+**Video**
 Showcase a fullscreen video with support for Kickstarter, Viddler, YouTube, Vimeo, Daily Motion, and Blip.TV.
 
-**Content**   
+**Content**
 The content component is a multi-purpose component that can display a background image, background color, or can split the content into multiple magazine type columns.
 
-**Character**  
+**Character**
 Display a character avatar, title, and small bio to help readers be reminded of key story characters.
 
-**Galleries**  
+**Galleries**
 The ASE Gallery component allows you to create and manage unlimited story galleries. Each gallery can be displayed as a grid, a thumbnail gallery, stacked, or sequential type gallery, all with caption support.
 
-**Chapter Headings**  
+**Chapter Headings**
 Creates scroll-to points with headings.
 
-**Image**   
+**Image**
 The image component displays an image and caption, with optional lightbox. Also allows you to align the image, as well as offset the image so it hangs outside of the content column.
 
-**Locations**   
+**Locations**
 This component allows you to create a map for your story. You can add markers to the map with custom messages. This is a great component for showcasing a characters travels.
 
-**Parallax**   
+**Parallax**
 A fullwidth image component with caption and lightbox. As you scroll, the image moves slightly to provide a parallax effect. Includes optional floater parallax item to use for multiple levels of parallax engagement.
- 
-**Quote**  
+
+**Quote**
 Show a fullwidth quote with large text. Control the color and background of the quote component.
 
-**Timeline**   
+**Timeline**
 Create a story with a timeline that sticks to the bottom. The timeline works a bit like chapters.
 
-**Collections**    
+**Collections**
 The 13th component is meant to be used on a page of your site, and allows you to display stories from a specific collection (category).
 
-**Document Viewer**   
+**Document Viewer**
 This component allows you to upload a PDF or image, that is shown to the user once they click the component.
 
 Here’s a demo theme incorporating these story components.
@@ -131,7 +131,7 @@ Full documentation can be found below.
 * FIXED - insecure assets if SSL enabled in wp-admin
 * FIXED - wrong audio icon
 * NEW - Added option for video player to start automatically once in view
-* NEW - Added framewidth and frameheight options to video player to preserve aspect ratio. 
+* NEW - Added framewidth and frameheight options to video player to preserve aspect ratio.
 * NEW - Added option to set columns in Collections Component
 * NEW - Added option to set stories shown in Collections Component
 * NEW - Added new “splash mode” option for Collections Component that displays collection parents
