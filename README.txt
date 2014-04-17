@@ -136,7 +136,9 @@ Full documentation can be found below.
 * NEW - Added option to set stories shown in Collections Component
 * NEW - Added new “splash mode” option for Collections Component that displays collection parents
 * NEW - Theme helper shortcode [aesop_center] to be used in aesop themes where items fall outside the “content” width - props @mauryaratan
-* NEW - Two new filters to control the offset scroll distance for both Timeline and Chapter components
+* NEW - Two new filters to control the offset scroll distance for both Timeline and Chapter components (aesop_timeline_scroll_offset) and (aesop_chapter_scroll_offset)
+* NEW - Filter to control component generator button (aesop_generator_button)
+* NEW - Filter to control gallery grid spacing (aesop_grid_gallery_spacing)
 * CHANGED - The scroll offset integers for Timeline and Chapter components were completely arbitrary. These have been set to 0, from 80, and 36.
 
 = 1.0.3 =
