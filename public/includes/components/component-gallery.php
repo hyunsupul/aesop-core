@@ -157,6 +157,10 @@ class AesopCoreGallery {
 		$getgridwidth = get_post_meta($atts["id"],'aesop_grid_gallery_width', true);
 		$gridwidth = $getgridwidth ? self::sanitize_int($getgridwidth) : 400;
 
+		$gridspace = 5;
+		// allow theme developers to determine the spacing between grid items
+		$space = apply_filters('aesop_grid_gallery_spacing', $gridspace );
+
 		?>
 		<!-- Aesop Grid Gallery -->
 		<script>
@@ -165,7 +169,7 @@ class AesopCoreGallery {
 			        var options = {
 			          	autoResize: true,
 			          	container: jQuery('#aesop-grid-gallery-<?php echo $atts["id"];?>'),
-			          	offset: 5,
+			          	offset: <?php echo $space;?>,
 			          	flexibleWidth: <?php echo $gridwidth;?>
 			        };
 			        var handler = jQuery('#aesop-grid-gallery-<?php echo $atts["id"];?> img');
