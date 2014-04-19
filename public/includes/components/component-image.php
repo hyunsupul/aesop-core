@@ -25,12 +25,15 @@ if (!function_exists('aesop_image_shortcode')){
 		// offset styles
 		$offsetstyle = $atts['offset'] ? sprintf('style="margin-%s:%s;"',$atts['align'], $atts['offset']) : false;
 
+		// custom classes
+		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'image', '' ) : null;
+
 		// combine into component shell
 		ob_start();
 
 		do_action('aesop_image_before'); //action
 		?>
-		<div class="aesop-component aesop-image-component">
+		<div class="aesop-component aesop-image-component <?php echo $classes;?>">
 
 			<?php do_action('aesop_image_inside_top'); //action ?>
 

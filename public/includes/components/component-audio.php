@@ -16,11 +16,14 @@ if (!function_exists('aesop_audio_shortcode')){
 	    $atts 		= apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
 	    $hash 		= rand();
 
+		// custom classes
+		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'audio', '' ) : null;
+
 	    ob_start();
 
 	    do_action('aesop_audio_before'); //action
 
-	   		?><aside id="aesop-audio-<?php echo $hash;?>" class="aesop-component aesop-audio-component">
+	   		?><aside id="aesop-audio-<?php echo $hash;?>" class="aesop-component aesop-audio-component <?php echo $classes;?>">
 
 	   			<?php if ('on' == $atts['viewstart']) { ?>
 			    	<script>

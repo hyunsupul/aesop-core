@@ -39,12 +39,14 @@ if (!function_exists('aesop_parallax_shortcode')){
 			$style 		= sprintf('style="background-image:url(\'%s\');background-size:cover;"',$atts['img']);
 		}
 
+		// custom classes
+		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'parallax', '' ) : null;
 
 		ob_start();
 
 		do_action('aesop_parallax_before'); //action
 
-			?><div class="aesop-component aesop-parallax-component"><?php
+			?><div class="aesop-component aesop-parallax-component <?php echo $classes;?>"><?php
 
 				do_action('aesop_parallax_inside_top'); // action
 

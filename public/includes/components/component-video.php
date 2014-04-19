@@ -56,6 +56,9 @@ if (!function_exists('aesop_video_shortcode')){
 
 	    $iframe_size = sprintf('%s %s' ,$iframe_height, $iframe_width);
 
+		// custom classes
+		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'video', '' ) : null;
+
 	    $hash = rand();
 
 	    ob_start();
@@ -73,7 +76,7 @@ if (!function_exists('aesop_video_shortcode')){
 	    	</script>
     	<?php }
 
-	    printf('%s<div id="aesop-video-%s" class="aesop-component aesop-video-component %s %s %s %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $hash, $controlstatus, $contentwidth, $vineStagramClass, $vineStagramAlign, $actioninsidetop, $hash, $atts['align'], $atts['src'], $widthstyle);
+	    printf('%s<div id="aesop-video-%s" class="aesop-component aesop-video-component %s %s %s %s %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $hash, $classes, $controlstatus, $contentwidth, $vineStagramClass, $vineStagramAlign, $actioninsidetop, $hash, $atts['align'], $atts['src'], $widthstyle);
 
 
 	        switch( $atts['src'] ):

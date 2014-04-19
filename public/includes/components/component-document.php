@@ -24,6 +24,9 @@ if (!function_exists('aesop_document_shortcode')){
 		$actioninsidetop = do_action('aesop_document_inside_top'); //action
 		$actioninsidebottom = do_action('aesop_document_inside_bottom'); //action
 
+		// custom classes
+		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'document', '' ) : null;
+
 		switch($atts['type']) {
 			case 'pdf':
 				$source = sprintf('<object class="aesop-pdf" data="%s" type="application/pdf" ></object>', $atts['src']);
@@ -52,7 +55,7 @@ if (!function_exists('aesop_document_shortcode')){
 		$link = sprintf('<a href="#" class="aesop-doc-reveal-%s"><span>document</span><br /> %s</a>', $hash,$slide);
 		$guts = sprintf('<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>',$hash, $source);
 		
-		$out .= sprintf('%s<aside class="aesop-documument-component aesop-content">%s%s%s%s</aside>%s',$actiontop, $actioninsidetop, $link, $guts, $actioninsidebottom, $actionbottom);
+		$out .= sprintf('%s<aside class="aesop-documument-component aesop-content %s">%s%s%s%s</aside>%s',$actiontop, $classes, $actioninsidetop, $link, $guts, $actioninsidebottom, $actionbottom);
 
 		return apply_filters('aesop_document_output', $out);
 	}

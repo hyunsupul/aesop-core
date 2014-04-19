@@ -43,11 +43,14 @@ if (!function_exists('aesop_content_shortcode')){
 		$position	= ('left' == $atts['position'] || 'right' == $atts['position']) ? sprintf('float:%s;',$atts['position']) : false;
 			$itemstyle = $imgstyle || $position || $txtcolor ? sprintf('style="%s%s%s%s"',$imgstyle,$position, $txtcolor, $bgcolor) : false;
 
+		// custom classes
+		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'content', '' ) : null;
+
 		ob_start();
 
 		do_action('aesop_cbox_before'); //action
 			?>
-				<div class="aesop-component aesop-content-component">
+				<div class="aesop-component aesop-content-component <?php echo $classes;?>">
 
 					<?php echo do_action('aesop_cbox_inside_top'); //action ?>
 

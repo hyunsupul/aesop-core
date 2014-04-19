@@ -47,11 +47,14 @@ if (!function_exists('aesop_quote_shortcode')){
 		// clean offset
 		$offset = preg_replace('/[^0-9]/','',$atts['offset']);
 
+		// custom classes
+		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'quote', '' ) : null;
+
 		ob_start();
 
 		do_action('aesop_quote_before'); //action
 		?>
-			<div id="aesop-quote-component-<?php echo $hash;?>" class="aesop-component aesop-quote-component <?php echo $contentwidth.' '.$isparallax.' '.$lrclass.' ';?>" <?php echo $style;?>>
+			<div id="aesop-quote-component-<?php echo $hash;?>" class="aesop-component aesop-quote-component <?php echo $classes.' '.$contentwidth.' '.$isparallax.' '.$lrclass.' ';?>" <?php echo $style;?>>
 
 				<!-- Aesop Core | Quote -->
 				<script>

@@ -18,12 +18,15 @@ if (!function_exists('aesop_character_shortcode')){
 
 		$atts = apply_filters('aesop_character_defaults',shortcode_atts($defaults, $atts));
 
+		// custom classes
+		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'character', '' ) : null;
+
 		// character wrap
 		ob_start();
 
 			do_action('aesop_character_before'); //action
 			?>
-				<aside class="aesop-character-component ">
+				<aside class="aesop-character-component <?php echo $classes;?>">
 
 					<?php do_action('aesop_character_inside_top'); //action ?>
 

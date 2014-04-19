@@ -21,7 +21,10 @@ if (!function_exists('aesop_map_shortcode')) {
 		//clean height
 		$height = preg_replace('/[^0-9]/','',$atts['height']);
 
-		$out = sprintf('%s<div id="aesop-map-component" class="aesop-component aesop-map-component" style="height:%spx"></div>%s',$actiontop, $height, $actionbottom);
+		// custom classes
+		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'map', '' ) : null;
+
+		$out = sprintf('%s<div id="aesop-map-component" class="aesop-component aesop-map-component %s" style="height:%spx"></div>%s',$actiontop, $classes, $height, $actionbottom);
 
 		return apply_filters('aesop_map_output',$out);
 	}

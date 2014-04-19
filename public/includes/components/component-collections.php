@@ -25,11 +25,14 @@ if (!function_exists('aesop_collection_shortcode')){
 
 		$splash_class = 'on' == $atts['splash'] ? 'aesop-collection-splash' : null;
 
+		// custom classes
+		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'collections', '' ) : null;
+
 		do_action('aesop_collection_before'); // action
 
 		?>
 			<!-- Collections -->
-			<div class="aesop-story-collection">
+			<div class="aesop-story-collection <?php echo $classes;?>">
 
 				<?php do_action('aesop_collection_inside_top'); // action ?>
 
