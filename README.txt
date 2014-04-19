@@ -118,7 +118,7 @@ Full documentation can be found below.
 
 1. The component generator triggered within the edit post screen.
 2. Story Engine components and their descriptions
-
+/Users/Nick/Sites/wp-aesop/wp-content/plugins/aesop-core/README.txt
 == Upgrade Notice ==
 
 = 1.0 =
@@ -131,14 +131,15 @@ Full documentation can be found below.
 * FIXED - insecure assets if SSL enabled in wp-admin
 * FIXED - wrong audio icon
 * NEW - Added option for video player to start automatically once in view
-* NEW - Added framewidth and frameheight options to video player to preserve aspect ratio.
+* NEW - Added framewidth and frameheight options to video player to preserve aspect ratio
 * NEW - Added option to set columns in Collections Component
 * NEW - Added option to set stories shown in Collections Component
 * NEW - Added new “splash mode” option for Collections Component that displays collection parents
-* NEW - Theme helper shortcode [aesop_center] to be used in aesop themes where items fall outside the “content” width - props @mauryaratan
+* NEW - Added theme helper shortcode [aesop_center] to be used in aesop themes where items fall outside the “content” width - props @mauryaratan
 * NEW - Two new filters to control the offset scroll distance for both Timeline and Chapter components (aesop_timeline_scroll_offset) and (aesop_chapter_scroll_offset)
-* NEW - Filter to control component generator button (aesop_generator_button)
-* NEW - Filter to control gallery grid spacing (aesop_grid_gallery_spacing)
+* NEW - Added filter to control component generator button (aesop_generator_button)
+* NEW - Added filter to control gallery grid spacing (aesop_grid_gallery_spacing)
+* NEW - Added filter to add custom css classes to the parent container of all components (aesop_COMPONENTNAME_component_classes)
 * CHANGED - The scroll offset integers for Timeline and Chapter components were completely arbitrary. These have been set to 0, from 80, and 36.
 
 = 1.0.3 =
