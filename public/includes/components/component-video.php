@@ -72,6 +72,11 @@ if (!function_exists('aesop_video_shortcode')){
 					   		jQuery('#aesop-video-<?php echo $hash;?> .mejs-playpause-button button').trigger('click');
 					   	}
 					});
+					jQuery('#aesop-video-<?php echo $hash;?>').waypoint({
+						handler: function(direction){
+					   		jQuery('#aesop-video-<?php echo $hash;?> .mejs-playpause-button button').trigger('click');
+					   	}
+					});
 		    	});
 	    	</script>
     	<?php }

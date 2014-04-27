@@ -35,6 +35,11 @@ if (!function_exists('aesop_audio_shortcode')){
 
 						   	}
 						});
+						jQuery('#aesop-audio-<?php echo $hash;?>').waypoint({
+							handler: function(direction){
+						   		jQuery('#aesop-audio-<?php echo $hash;?> .mejs-playpause-button button').trigger('click');
+						   	}
+						});
 			    	});
 			    	</script>
 	   			<?php } ?>
