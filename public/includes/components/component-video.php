@@ -20,6 +20,7 @@ if (!function_exists('aesop_video_shortcode')){
 	    	'autoplay'	=> 'on',
 	    	'controls'	=> 'off',
 	    	'viewstart' => 'off',
+	    	'viewend'   => 'off',
 	    	'caption' 	=> '',
 	    	'vidwidth'  => '',
 	    	'vidheight' => ''
@@ -72,11 +73,13 @@ if (!function_exists('aesop_video_shortcode')){
 					   		jQuery('#aesop-video-<?php echo $hash;?> .mejs-playpause-button button').trigger('click');
 					   	}
 					});
+					<?php if ('on' == $atts['viewend']) { ?>
 					jQuery('#aesop-video-<?php echo $hash;?>').waypoint({
 						handler: function(direction){
 					   		jQuery('#aesop-video-<?php echo $hash;?> .mejs-playpause-button button').trigger('click');
 					   	}
 					});
+					<?php } ?>
 		    	});
 	    	</script>
     	<?php }
