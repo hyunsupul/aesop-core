@@ -112,15 +112,23 @@ class AesopChapterHeadingComponent {
 		// allow theme developers to determine the offset amount
 		$chapterOffset = apply_filters('aesop_chapter_scroll_offset', $offset );
 
+		// filterable content class
+		$getContentClass = apply_filters('aesop_chapter_scroll_container', 'aesop-entry-content');
+		$contentClass = sprintf('.%s',$getContentClass);
+
+		// filterabl content header class
+		$getContentHeaderClass = apply_filters('aesop_chapter_scroll_nav', 'aesop-entry-header');
+		$contentHeaderClass = sprintf('.%s',$getContentHeaderClass);
+
 		?>
 			<!-- Chapter Loader -->
 			<script>
 				jQuery(document).ready(function(){
 
-					jQuery('.aesop-entry-content').scrollNav({
+					jQuery('<?php echo $contentClass;?>').scrollNav({
 					    sections: '.aesop-chapter-title',
 					    arrowKeys: true,
-					    insertTarget: '.aesop-entry-header',
+					    insertTarget: '<?php echo $contentHeaderClass;?>',
 					    insertLocation: 'appendTo',
 					    showTopLink: true,
 					    showHeadline: false,

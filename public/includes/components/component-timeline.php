@@ -46,7 +46,8 @@ class AesopTimelineComponent {
 
 	function __construct(){
 		add_action('wp_footer', array($this,'aesop_timeline_loader'),21);
-		add_action('aesop_inside_body_top', array($this,'draw_timeline'));
+		add_action('aesop_inside_body_top', array($this,'draw_timeline')); // pre 1.0.5
+		add_action('ase_theme_body_inside_top', array($this,'draw_timeline')); // post 1.0.5
 		add_filter('body_class',		array($this,'body_class'));
 	}
 
@@ -58,12 +59,16 @@ class AesopTimelineComponent {
 		// allow theme developers to determine the offset amount
 		$timelineOffset = apply_filters('aesop_timeline_scroll_offset', $offset );
 
+		// filterable content class
+		$getContentClass = apply_filters('aesop_timeline_scroll_container', 'aesop-entry-content');
+		$contentClass = sprintf('.%s',$getContentClass);
+
 		?>
 			<!-- Aesop Timeline -->
 			<script>
 			jQuery(document).ready(function(){
 
-				jQuery('.aesop-entry-content,.entry-content').scrollNav({
+				jQuery('<?php echo $contentClass;?>').scrollNav({
 				    sections: '.aesop-timeline-stop',
 				    arrowKeys: true,
 				    insertTarget: '.aesop-timeline',
