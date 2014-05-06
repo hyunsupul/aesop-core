@@ -113,13 +113,10 @@ class AesopChapterHeadingComponent {
 		$chapterOffset = apply_filters('aesop_chapter_scroll_offset', $offset );
 
 		// filterable content class
-		$getContentClass = apply_filters('aesop_chapter_scroll_container', 'aesop-entry-content');
-		$contentClass = sprintf('.%s',$getContentClass);
+		$contentClass = apply_filters('aesop_chapter_scroll_container', '.aesop-entry-content');
 
 		// filterabl content header class
-		$getContentHeaderClass = apply_filters('aesop_chapter_scroll_nav', 'aesop-entry-header');
-		$contentHeaderClass = sprintf('.%s',$getContentHeaderClass);
-
+		$contentHeaderClass = apply_filters('aesop_chapter_scroll_nav', '.aesop-entry-header');
 		?>
 			<!-- Chapter Loader -->
 			<script>

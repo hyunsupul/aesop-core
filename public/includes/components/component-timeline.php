@@ -60,8 +60,7 @@ class AesopTimelineComponent {
 		$timelineOffset = apply_filters('aesop_timeline_scroll_offset', $offset );
 
 		// filterable content class
-		$getContentClass = apply_filters('aesop_timeline_scroll_container', 'aesop-entry-content');
-		$contentClass = sprintf('.%s',$getContentClass);
+		$contentClass = apply_filters('aesop_timeline_scroll_container', '.aesop-entry-content');
 
 		?>
 			<!-- Aesop Timeline -->
