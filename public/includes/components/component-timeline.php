@@ -45,10 +45,20 @@ if (!function_exists('aesop_timeline_class_loader')){
 class AesopTimelineComponent {
 
 	function __construct(){
+
+		// call our method in the footer
 		add_action('wp_footer', array($this,'aesop_timeline_loader'),21);
-		add_action('aesop_inside_body_top', array($this,'draw_timeline')); // pre 1.0.5
-		add_action('ase_theme_body_inside_top', array($this,'draw_timeline')); // post 1.0.5
+
+		// add a body class if timeline is active
 		add_filter('body_class',		array($this,'body_class'));
+
+		// draw the timeline div, conditionally depending on version
+		if (AI_CORE_VERSION < '1.0.5') {
+			add_action('aesop_inside_body_top', array($this,'draw_timeline')); // pre 1.0.5
+		} else {
+			add_action('ase_theme_body_inside_top', array($this,'draw_timeline')); // post 1.0.5
+		}
+
 	}
 
 	function aesop_timeline_loader(){
