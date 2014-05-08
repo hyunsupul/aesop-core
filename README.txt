@@ -127,6 +127,14 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.0.5 =
+* NEW - Added new filter to adjust map meta locations in admin aesop_map_meta_location
+* NEW - Added new option to audio and video components viewend="on" which stops from playing once out of view
+* NEW - Added new filter to change the scroll container class for Chapter Component aesop_chapter_scroll_container
+* NEW - Added new filter to change the scroll nav class for Chapter Component aesop_chapter_nav_container
+* NEW - Added new filter to change the scroll container class for Timeline Component aesop_timeline_scroll_container
+* FIXED - Bug with failing function on Android
+
 = 1.0.4 =
 * FIXED - insecure assets if SSL enabled in wp-admin
 * FIXED - wrong audio icon
