@@ -47,7 +47,7 @@ class AesopMapComponentAdmin {
 					array(
 						'id' 	=> 'content',
 						'name' 	=> __('Marker Text', 'aesop-core'),
-						'type' 	=> 'text',
+						'type' 	=> 'textarea',
 						'cols'	=> 12
 					)
 				)

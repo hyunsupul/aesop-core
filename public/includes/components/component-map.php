@@ -68,7 +68,7 @@ class AesopMapComponent {
 
 						$lat 	= sanitize_text_field($marker['lat']);
 						$long 	= sanitize_text_field($marker['long']);
-						$text 	= $marker['content'] ? sanitize_text_field($marker['content']) : false;
+						$text 	= $marker['content'] ? $marker['content'] : false;
 
 						$loc 	= sprintf('%s,%s',$lat,$long);
 
