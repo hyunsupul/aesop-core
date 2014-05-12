@@ -133,7 +133,9 @@ Full documentation can be found below.
 * NEW - Added new filter to change the scroll container class for Chapter Component aesop_chapter_scroll_container
 * NEW - Added new filter to change the scroll nav class for Chapter Component aesop_chapter_nav_container
 * NEW - Added new filter to change the scroll container class for Timeline Component aesop_timeline_scroll_container
+* NEW - Mark markers can now do some HTML
 * FIXED - Bug with failing function on Android
+* CHANGED - The action name for inserting the Timeline component has changed from aesop_inside_body_top to ase_theme_body_inside_top. We’ve included a deprecation notice.
 
 = 1.0.4 =
 * FIXED - insecure assets if SSL enabled in wp-admin
