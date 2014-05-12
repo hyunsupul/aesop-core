@@ -54,7 +54,7 @@ class AesopTimelineComponent {
 
 		// draw the timeline div, conditionally depending on version
 		if (AI_CORE_VERSION < '1.0.5') {
-			add_action('aesop_inside_body_top', array($this,'draw_timeline')); // pre 1.0.5
+			_deprecated_function( 'aesop_inside_body_top', '1.0.5', 'ase_theme_body_inside_top' );
 		} else {
 			add_action('ase_theme_body_inside_top', array($this,'draw_timeline')); // post 1.0.5
 		}
