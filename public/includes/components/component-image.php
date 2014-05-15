@@ -33,7 +33,7 @@ if (!function_exists('aesop_image_shortcode')){
 
 		do_action('aesop_image_before'); //action
 		?>
-		<div class="aesop-component aesop-image-component <?php echo $classes;?>" style="width:<?php echo $atts['imgwidth'];?>;" >
+		<div class="aesop-component aesop-image-component aesop-component-align-<?php echo $atts['align'];?> <?php echo $classes;?>" style="width:<?php echo $atts['imgwidth'];?>;" >
 
 			<?php do_action('aesop_image_inside_top'); //action ?>
 
