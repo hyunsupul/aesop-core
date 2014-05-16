@@ -423,6 +423,12 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Audio', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
+					'title' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Title (optional)', 'aesop-core' )
+					),
 					'src' 			=> array(
 						'type'		=> 'media_upload',
 						'values' 	=> array( ),

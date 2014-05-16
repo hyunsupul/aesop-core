@@ -10,6 +10,7 @@ if (!function_exists('aesop_audio_shortcode')){
 	function aesop_audio_shortcode($atts, $content = null) {
 
     	$defaults 	= array(
+    		'title'		=> '',
     		'src' 		=>	'',
     		'viewstart' => 'off',
     		'viewend'	=>  'off'
@@ -19,6 +20,9 @@ if (!function_exists('aesop_audio_shortcode')){
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'audio', '' ) : null;
+
+		// optional title
+		$title = $atts['title'] ? apply_filters('aesop_audio_component_title', sprintf('<h5>%s</h5>', $atts['title'])) : null;
 
 	    ob_start();
 
@@ -49,6 +53,10 @@ if (!function_exists('aesop_audio_shortcode')){
 
 	   			<?php
 	   			do_action('aesop_audio_inside_top'); //action
+
+	   				if ($title) {
+	   					echo $title;
+	   				}
 
 	   				echo wp_audio_shortcode(  array( 'src' => $atts['src']) );
 
