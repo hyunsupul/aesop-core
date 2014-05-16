@@ -112,6 +112,12 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'left',
 						'desc' 		=> __( 'Alignment', 'aesop-core' )
+					),
+					'width' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Width (px or %)', 'aesop-core' )
 					)
 				),
 				'desc' 				=> __( 'Creates a character that can be positioned to the left or right of your story.','aesop-core' )

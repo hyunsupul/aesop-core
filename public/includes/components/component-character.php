@@ -14,12 +14,16 @@ if (!function_exists('aesop_character_shortcode')){
 			'name' 				=> '',
 			'caption'			=> '',
 			'align' 			=> 'left',
+			'width'				=> ''
 		);
 
 		$atts = apply_filters('aesop_character_defaults',shortcode_atts($defaults, $atts));
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'character', '' ) : null;
+
+		// width styles
+		$styles = $atts['width'] ? sprintf('style="width:%s;"',$atts['width']) : null;
 
 		// character wrap
 		ob_start();
@@ -31,7 +35,7 @@ if (!function_exists('aesop_character_shortcode')){
 					<?php do_action('aesop_character_inside_top'); //action ?>
 
 					<div class="aesop-character-inner aesop-content">
-						<div class="aesop-character-float aesop-character-<?php echo $atts['align'];?>">
+						<div class="aesop-character-float aesop-character-<?php echo $atts['align'];?>" <?php echo $styles;?>>
 
 							<?php do_action('aesop_character_inner_inside_top'); //action ?>
 
