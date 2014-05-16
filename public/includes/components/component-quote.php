@@ -22,6 +22,7 @@ if (!function_exists('aesop_quote_shortcode')){
 			'direction' => '',
 			'offset'	=> 300,
 			'quote'		=> '',
+			'cite'		=> '',
 
 		);
 		$atts = apply_filters('aesop_quote_defaults',shortcode_atts($defaults, $atts));
@@ -49,6 +50,9 @@ if (!function_exists('aesop_quote_shortcode')){
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'quote', '' ) : null;
+
+		// cite
+		$cite = $atts['cite'] ? apply_filters('aesop_quote_component_cite',sprintf('<cite class="aesop-quote-component-cite">%s</cite>',$atts['cite'])) : null;
 
 		ob_start();
 
@@ -116,6 +120,8 @@ if (!function_exists('aesop_quote_shortcode')){
 
 				<blockquote class="aesop-component-align-<?php echo $atts['align'];?>" style="font-size:<?php echo $size;?>;">
 					<?php echo $atts['quote'];?>
+
+					<?php echo $cite;?>
 				</blockquote>
 
 				<?php do_action('aesop_quote_inside_bottom'); //action ?>

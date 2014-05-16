@@ -208,6 +208,12 @@ if(!function_exists('aesop_shortcodes')){
 						'values'	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __('The quote', 'aesop-core' )
+					),
+					'cite' 		=> array(
+						'type'		=> 'text',
+						'values'	=> array(),
+						'default' 	=> '',
+						'desc' 		=> __('Cite (optional)', 'aesop-core' )
 					)
 				),
 				'desc' 				=> __( 'Section quote area with background and color controls.','aesop-core' )
