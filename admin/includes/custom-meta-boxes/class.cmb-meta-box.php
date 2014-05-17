@@ -78,8 +78,9 @@ class CMB_Meta_Box {
 			elseif ( $post_id )
 				$values = (array) get_post_meta( $post_id, $field['id'], false );
 
-
-			$this->fields[] = new $class( $field['id'], $field['name'], (array) $values, $field );
+			if ( class_exists( $class ) ) {
+				$this->fields[] = new $class( $field['id'], $field['name'], (array) $values, $field );
+			}
 
 		}
 
@@ -108,7 +109,7 @@ class CMB_Meta_Box {
 
 	function enqueue_scripts() {
 
-		wp_enqueue_script( 'cmb-scripts', AI_CORE_URL.'/admin/includes/custom-meta-boxes/js/cmb.js', array( 'jquery' ) );
+		wp_enqueue_script( 'cmb-scripts', trailingslashit( CMB_URL ) . 'js/cmb.js', array( 'jquery' ) );
 
 		foreach ( $this->fields as $field )
 			$field->enqueue_scripts();
@@ -120,9 +121,9 @@ class CMB_Meta_Box {
 		$suffix = CMB_DEV ? '' : '.min';
 
 		if ( version_compare( get_bloginfo( 'version' ), '3.8', '>=' ) )
-			wp_enqueue_style( 'cmb-styles', AI_CORE_URL."/admin/includes/custom-meta-boxes/css/dist/cmb$suffix.css" );
+			wp_enqueue_style( 'cmb-styles', trailingslashit( CMB_URL ) . "css/dist/cmb$suffix.css" );
 		else
-			wp_enqueue_style( 'cmb-styles', AI_CORE_URL.'/admin/includes/custom-meta-boxes/css/legacy.css' );
+			wp_enqueue_style( 'cmb-styles', trailingslashit( CMB_URL ) . 'css/legacy.css' );
 
 		foreach ( $this->fields as $field )
 			$field->enqueue_styles();
