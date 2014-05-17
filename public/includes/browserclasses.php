@@ -11,15 +11,6 @@ class AesopBrowserClasses {
 
 		add_filter('body_class',		array($this,'browser_body_class'));
 	}
-
-	// add conditional statements for mobile devices
-	function is_ipad() {
-		$is_ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
-		if ($is_ipad)
-			return true;
-		else return false;
-	}
-
 	function is_silk_kindle(){
 		$user_agent = trim(strtolower($_SERVER['HTTP_USER_AGENT']));
 		if( strrpos( $user_agent,'silk/' ) != false && strrpos(  $user_agent,'silk-accelerated=' ) != false )
@@ -43,7 +34,7 @@ class AesopBrowserClasses {
 			return true;
 		else return false;
 	}
-	/*
+	
 	function is_android() { // detect ALL android devices
 		$is_android = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'Android');
 		if ($is_android)
@@ -58,18 +49,26 @@ class AesopBrowserClasses {
 		else return false;
 	}
 	function is_android_tablet() { // detect android tablets
-		if (is_android() && !is_android_mobile())
+		if (self::is_android() && !self::is_android_mobile())
 			return true;
 		else return false;
 	}
-	*/
+	
 	function is_mobile_device() { // detect ALL mobile devices
-		if ( is_iphone() || is_ipod() )
+		if ( self::is_iphone() || self::is_ipod() )
 			return true;
 		else return false;
 	}
+		// add conditional statements for mobile devices
+	function is_ipad() {
+		$is_ipad = (bool) strpos($_SERVER['HTTP_USER_AGENT'],'iPad');
+		if ($is_ipad)
+			return true;
+		else return false;
+	}
+
 	function is_tablet() { // detect ALL tablets
-		if ( is_ipad() || is_silk_kindle() )
+		if ( self::is_ipad() || self::is_silk_kindle() )
 			return true;
 		else return false;
 	}
@@ -91,7 +90,7 @@ class AesopBrowserClasses {
 	    	if($this->is_iphone()) $classes[] = 'browser-iphone';
 	        elseif($this->is_ipad()) $classes[] = 'browser-ipad';
 	        elseif($this->is_ipod()) $classes[] = 'browser-ipod';
-	        //elseif($this->is_android()) $classes[] = 'browser-android';
+	        elseif($this->is_android()) $classes[] = 'browser-android';
 	        elseif($this->is_tablet()) $classes[] = 'device-tablet';
 	        elseif($this->is_mobile_device()) $classes[] = 'device-mobile';
 	        elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Kindle') !== false) $classes[] = 'browser-kindle';
@@ -100,7 +99,7 @@ class AesopBrowserClasses {
 	        elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mobi') !== false) $classes[] = 'browser-opera-mobi';
 		}
 		if(strpos($_SERVER['HTTP_USER_AGENT'], 'Windows') !== false) $classes[] = 'os-windows';
-	        //elseif($this->is_android()) $classes[] = 'os-android';
+	        elseif($this->is_android()) $classes[] = 'os-android';
 	        elseif($this->is_ios()) $classes[] = 'os-ios';
 	        elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Macintosh') !== false) $classes[] = 'os-mac';
 	        elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Linux') !== false) $classes[] = 'os-linux';
