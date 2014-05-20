@@ -7,7 +7,7 @@
  * @license   GPL-2.0+
  * @link      http://aesopinteractive.com
  * @copyright 2013 Nick Haskins
- */
+*/
 
 // If uninstall not called from WordPress, then exit
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
