@@ -46,7 +46,7 @@ class AesopMapComponent {
 		$mapboxid = get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
 		$zoom = isset( $post ) ? get_post_meta($post->ID,'aesop_map_component_zoom', true) : 12;
 
-		if( isset($post->post_content) && is_single() && has_shortcode( $post->post_content, 'aesop_map') )  { ?>
+		if ( function_exists('aesop_component_exists') && aesop_component_exists('map') && is_single() )  { ?>
 			<!-- Aesop Locations -->
 			<script>
 

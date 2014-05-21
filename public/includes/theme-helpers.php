@@ -36,3 +36,32 @@ function aesop_component_classes( $component = '', $classes = '' ) {
 
 	return apply_filters('aesop_'.$component.'_component_classes', $classes );
 }
+
+/**
+* Checks to see if an aesop component is present in the post
+*
+* @since 1.0.6
+*
+* @param string $component name of component being passed
+* @return bool
+*
+**/
+function aesop_component_exists( $component = '' ) {
+
+	global $post;
+
+	// bail if has_shortcode isn't present (pre wp 3.6)
+	if ( !function_exists('has_shortcode') ) {
+		return;
+	}
+
+	// check the post content for the passed shortcode
+	if ( isset( $post->post_content ) && has_shortcode( $post->post_content, 'aesop_'.$component ) ) {
+
+		return true;
+
+	} else {
+
+		return false;
+	}
+}

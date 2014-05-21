@@ -33,7 +33,7 @@ if (!function_exists('aesop_timeline_class_loader')){
 
 		global $post;
 
-		if( isset($post->post_content) && is_single() && has_shortcode( $post->post_content, 'aesop_timeline_stop') )  {
+		if ( function_exists('aesop_component_exists') && aesop_component_exists('timeline_stop') && is_single() )  {
 
 			new AesopTimelineComponent;
 
