@@ -23,17 +23,20 @@ if (!function_exists('aesop_image_shortcode')){
 		$atts = apply_filters('aesop_image_defaults',shortcode_atts($defaults, $atts));
 
 		// offset styles
-		$offsetstyle = $atts['offset'] ? sprintf('style="margin-%s:%s;"',$atts['align'], $atts['offset']) : false;
+		$offsetstyle = $atts['offset'] ? sprintf('style="margin-%s:%s;width:%s;"',$atts['align'], $atts['offset'], $atts['imgwidth']) : sprintf('style="width:%s;"', $atts['imgwidth']);
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'image', '' ) : null;
+
+		// image width
+		$width = $atts['imgwidth'] ? sprintf('style="width:%s;"',$atts['imgwidth']) : null;
 
 		// combine into component shell
 		ob_start();
 
 		do_action('aesop_image_before'); //action
 		?>
-		<div class="aesop-component aesop-image-component aesop-component-align-<?php echo $atts['align'];?> <?php echo $classes;?>" style="width:<?php echo $atts['imgwidth'];?>;" >
+		<div class="aesop-component aesop-image-component <?php echo $classes;?>" >
 
 			<?php do_action('aesop_image_inside_top'); //action ?>
 
@@ -52,7 +55,7 @@ if (!function_exists('aesop_image_shortcode')){
 
 					<?php } else { ?>
 
-						<img style="width:<?php echo $atts['imgwidth'];?>;" src="<?php echo $atts['img'];?>" alt="<?php echo esc_attr($atts['alt']);?>">
+						<img src="<?php echo $atts['img'];?>" alt="<?php echo esc_attr($atts['alt']);?>">
 
 					<?php }
 
