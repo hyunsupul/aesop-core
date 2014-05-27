@@ -127,6 +127,17 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.0.6 =
+* NEW - New function aesop_component_exists
+* NEW - Added ability for Character Component to set a width
+* NEW - Added ability for Audio Component to have an optional title
+* NEW - Added ability for Quote Component to have a cite
+* FIXED - is_ipad notice on Android and select Windows devices
+* FIXED - Better checks for galleries and maps in posts
+* FIXED - If Image Component is floated keep it from breaking out of .aesop-content
+* FIXED - Missing viewstart and viewend options in Component Editor
+* UPDATED - Metabox library
+
 = 1.0.5 =
 * NEW - Added new filter to adjust map meta locations in admin aesop_map_meta_location
 * NEW - Added new option to audio and video components viewend="on" which stops from playing once out of view
