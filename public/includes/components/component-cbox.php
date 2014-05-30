@@ -37,11 +37,11 @@ if (!function_exists('aesop_content_shortcode')){
 		$bgcolor = $atts['background'] ? sprintf('background-color:%s;',$atts['background']) : false;
 		$imgstyle = $atts['img'] ? sprintf('%sbackground-image:url(\'%s\');background-size:cover;background-position:center center;',$bgcolor, $atts['img']) : false;
 
-		$widthContentStyle = 'content' == $atts['width'] ? false : sprintf('max-width:%s;',$atts['width']);
-		$widthstyle = $atts['width'] ? sprintf('style="%smargin-left:auto;margin-right:auto;"',$widthContentStyle) : false;
-		$txtcolor 	= $atts['color'] ? sprintf('color:%s;', $atts['color']) : false;
 		$position	= ('left' == $atts['position'] || 'right' == $atts['position']) ? sprintf('float:%s;',$atts['position']) : false;
-			$itemstyle = $imgstyle || $position || $txtcolor ? sprintf('style="%s%s%s%s"',$imgstyle,$position, $txtcolor, $bgcolor) : false;
+		$widthContentStyle = 'content' == $atts['width'] ? false : sprintf('max-width:%s;',$atts['width']);
+		$innerstyle = $atts['width'] || $position ? sprintf('style="%smargin-left:auto;margin-right:auto;%s"',$widthContentStyle,$position) : false;
+		$txtcolor 	= $atts['color'] ? sprintf('color:%s;', $atts['color']) : false;
+			$itemstyle = $imgstyle || $txtcolor ? sprintf('style="%s%s%s"',$imgstyle, $txtcolor, $bgcolor) : false;
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'content', '' ) : null;
@@ -58,7 +58,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 						<?php echo do_action('aesop_cbox_content_inside_top'); //action ?>
 
-						<div class="aesop-content-comp-inner <?php echo $contentwidth;?>" <?php echo $widthstyle;?>>
+						<div class="aesop-content-comp-inner <?php echo $contentwidth;?>" <?php echo $innerstyle;?>>
 
 							<?php echo do_action('aesop_cbox_content_inner_inside_top'); //action ?>
 
