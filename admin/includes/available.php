@@ -453,6 +453,15 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> '',
 						'desc' 		=> __( 'Audio URL', 'aesop-core' )
 					),
+					'hidden'		=> array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('off', 'aesop-core'),
+							__('on', 'aesop-core')
+						),
+						'default' 	=> '',
+						'desc' 		=> __( 'Hide Audio Player', 'aesop-core' )
+					),
 					'viewstart'		=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
