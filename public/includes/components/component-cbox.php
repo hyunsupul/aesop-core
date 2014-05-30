@@ -13,9 +13,11 @@ if (!function_exists('aesop_content_shortcode')){
 		$hash = rand();
 
 		$defaults = array(
+			'height'			=> '',
 			'width'				=> '100%',
 			'columns'			=>'',
 			'position'			=> 'center',
+			'innerposition'		=> '',
 			'img' 				=> '',
 			'imgrepeat'			=> 'no-repeat',
 			'imgposition'		=> '',
@@ -28,6 +30,21 @@ if (!function_exists('aesop_content_shortcode')){
 		// set component to content width
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 
+		// height
+		$height = $atts['height'] ? sprintf('min-height:%s";',$atts['height']) : false;
+
+		// inner positioning
+		$getinnerposition = $atts['innerposition'] ? preg_split("/[\s,]+/", $atts['innerposition']) : false;
+
+		$positionArray = array(
+			'top' 		=> $getinnerposition[0],
+			'right' 	=> $getinnerposition[1],
+			'bottom' 	=> $getinnerposition[2],
+			'left' 		=> $getinnerposition[3]
+		);
+
+		$innerposition =  is_array($positionArray) && $atts['innerposition'] ? sprintf('position:absolute;top:%s;right:%s;bottom:%s;left:%s;',$positionArray['top'], $positionArray['right'], $positionArray['bottom'], $positionArray['left']) : false;
+
 		// are we doing columns or image and do a clas based on it
 		$columns = $atts['columns'] ? sprintf('aesop-content-comp-columns-%s',$atts['columns']) : false;
 		$image = $atts['img'] ? 'aesop-content-img' : false;
@@ -37,11 +54,11 @@ if (!function_exists('aesop_content_shortcode')){
 		$bgcolor = $atts['background'] ? sprintf('background-color:%s;',$atts['background']) : false;
 		$imgstyle = $atts['img'] ? sprintf('%sbackground-image:url(\'%s\');background-size:cover;background-position:center center;',$bgcolor, $atts['img']) : false;
 
-		$position	= ('left' == $atts['position'] || 'right' == $atts['position']) ? sprintf('float:%s;',$atts['position']) : false;
+		$position	= ('left' == $atts['position'] || 'right' == $atts['position']) ? sprintf('float:%s;',$atts['position']) : 'margin-left:auto;margin-right:auto;';
 		$widthContentStyle = 'content' == $atts['width'] ? false : sprintf('max-width:%s;',$atts['width']);
-		$innerstyle = $atts['width'] || $position ? sprintf('style="%smargin-left:auto;margin-right:auto;%s"',$widthContentStyle,$position) : false;
+		$innerstyle = $atts['width'] || $position || $atts['innerposition'] ? sprintf('style="%s%s%s"',$widthContentStyle,$position,$innerposition) : false;
 		$txtcolor 	= $atts['color'] ? sprintf('color:%s;', $atts['color']) : false;
-			$itemstyle = $imgstyle || $txtcolor ? sprintf('style="%s%s%s"',$imgstyle, $txtcolor, $bgcolor) : false;
+			$itemstyle = $imgstyle || $txtcolor || $height ? sprintf('style="%s%s%s%s"',$imgstyle, $txtcolor, $bgcolor, $height) : false;
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'content', '' ) : null;
@@ -50,7 +67,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 		do_action('aesop_cbox_before'); //action
 			?>
-				<div class="aesop-component aesop-content-component <?php echo $classes;?>">
+				<div class="aesop-component aesop-content-component <?php echo $classes;?>" style="<?php echo $height;?>" >
 
 					<?php echo do_action('aesop_cbox_inside_top'); //action ?>
 

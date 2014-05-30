@@ -228,11 +228,29 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Content', 'aesop-core'),
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
+					'color' 		=> array(
+						'values' 	=> array(),
+						'type'		=> 'color',
+						'default' 	=> '#FFFFFF',
+						'desc' 		=> __('Color of Text', 'aesop-core' )
+					),
+					'background' 		=> array(
+						'values' 	=> array(),
+						'type'		=> 'color',
+						'default' 	=> '#333333',
+						'desc' 		=> __('Background Color', 'aesop-core' )
+					),
 					'width'			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '100%',
 						'desc' 		=> __( 'Width of Component', 'aesop-core' )
+					),
+					'height'			=> array(
+						'type'		=> 'text',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Height of Component (optional)', 'aesop-core' )
 					),
 					'columns' 			=> array(
 						'type'		=> 'text',
@@ -249,6 +267,12 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'none',
 						'desc' 		=> __( 'Text Block Alignment', 'aesop-core' )
+					),
+					'innerposition' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Floating Text Position <br />(ex: 10px, 20px, 5px, 5px)', 'aesop-core' )
 					),
 					'img' 			=> array(
 						'type'		=> 'media_upload',
@@ -272,18 +296,6 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image Position', 'aesop-core' )
-					),
-					'color' 		=> array(
-						'values' 	=> array(),
-						'type'		=> 'color',
-						'default' 	=> '#FFFFFF',
-						'desc' 		=> __('Color of Text', 'aesop-core' )
-					),
-					'background' 		=> array(
-						'values' 	=> array(),
-						'type'		=> 'color',
-						'default' 	=> '#333333',
-						'desc' 		=> __('Background Color', 'aesop-core' )
 					)
 				),
 				'content' 			=> __( 'All your normal text goes here.', 'ba-shortcodes' ),
