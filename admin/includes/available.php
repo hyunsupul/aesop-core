@@ -502,6 +502,7 @@ if(!function_exists('aesop_shortcodes')){
 							__('kickstarter', 'aesop-core'),
 							__('viddler', 'aesop-core'),
 							__('vine', 'aesop-core'),
+							__('wistia', 'aesop-core'),
 							__('instagram','aesop-core'),
 							__('dailymotion', 'aesop-core'),
 							__('self', 'aesop-core')

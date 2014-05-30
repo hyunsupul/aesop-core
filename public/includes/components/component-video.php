@@ -64,7 +64,7 @@ if (!function_exists('aesop_video_shortcode')){
 
 	    ob_start();
 
-	    if ('on' == $atts['viewstart']) { ?>
+	    if ( 'on' == $atts['viewstart'] && 'self' == $atts['src'] ) { ?>
 	    	<script>
 		    	jQuery(document).ready(function(){
 					jQuery('#aesop-video-<?php echo $hash;?>').waypoint({
@@ -111,6 +111,14 @@ if (!function_exists('aesop_video_shortcode')){
 
 	           	case 'vine':
 	                printf( '<iframe class="vine-embed" src="//vine.co/v/%s/embed/simple" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',$atts['id'] );
+	                break;
+
+	           	case 'wistia':
+	                printf( '
+						<div id="wistia_%s" class="wistia_embed" style="width:640px;height:360px;">&nbsp;</div>
+						<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
+						<script> wistiaEmbed = Wistia.embed("%s",{videoFoam: true }); </script>
+	                	',$atts['id'], $atts['id'] );
 	                break;
 
 	           	case 'instagram':
