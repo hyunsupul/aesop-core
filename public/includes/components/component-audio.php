@@ -13,13 +13,17 @@ if (!function_exists('aesop_audio_shortcode')){
     		'title'		=> '',
     		'src' 		=>	'',
     		'viewstart' => 'off',
-    		'viewend'	=>  'off'
+    		'viewend'	=>  'off',
+    		'hidden'	=> ''
     	);
 	    $atts 		= apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
 	    $hash 		= rand();
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'audio', '' ) : null;
+
+		// hidden
+		$hidden = 'on' == $atts['hidden'] ? 'style="height:0;z-index:-1;position:absolute;opacity:0;"' : null;
 
 		// optional title
 		$title = $atts['title'] ? apply_filters('aesop_audio_component_title', sprintf('<h5>%s</h5>', $atts['title'])) : null;
@@ -28,7 +32,7 @@ if (!function_exists('aesop_audio_shortcode')){
 
 	    do_action('aesop_audio_before'); //action
 
-	   		?><aside id="aesop-audio-<?php echo $hash;?>" class="aesop-component aesop-audio-component <?php echo $classes;?>">
+	   		?><aside id="aesop-audio-<?php echo $hash;?>" class="aesop-component aesop-audio-component <?php echo $classes;?>" <?php echo $hidden;?>>
 
 	   			<?php if ('on' == $atts['viewstart']) { ?>
 			    	<script>
