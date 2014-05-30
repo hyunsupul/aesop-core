@@ -21,6 +21,9 @@ if (!function_exists('aesop_content_shortcode')){
 			'img' 				=> '',
 			'imgrepeat'			=> 'no-repeat',
 			'imgposition'		=> '',
+			'floatermedia' 		=> '',
+			'floaterdirection'	=> 'up',
+			'floateroffset'		=> '',
 			'color' 			=> '#FFFFFF',
 			'background'		=> '#333333'
 		);
@@ -69,11 +72,42 @@ if (!function_exists('aesop_content_shortcode')){
 			?>
 				<div class="aesop-component aesop-content-component <?php echo $classes;?>" style="<?php echo $height;?>" >
 
-					<?php echo do_action('aesop_cbox_inside_top'); //action ?>
+					<?php if ( $atts['floatermedia'] && !wp_is_mobile() ) { ?>
+						<!-- Aesop Content Component -->
+						<script>
+							jQuery(document).ready(function(){
+
+								var obj = jQuery('#aesop-content-component-<?php echo $hash;?> .aesop-content-component-floater');
+
+						       	function scrollParallax(){
+
+						       	    var floater = (jQuery(window).scrollTop() / jQuery(obj).data('speed')) - <?php echo absint(sanitize_text_field($atts['floateroffset']));?>;
+
+						       	    <?php if ('up' == $atts['floaterdirection']){ ?>
+						            	jQuery(obj).css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
+									<?php } else { ?>
+										jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
+									<?php } ?>
+						       	}
+						      	scrollParallax();
+
+						        jQuery(window).scroll(function() {scrollParallax();});
+						});
+						</script>
+
+					<?php }
+
+					echo do_action('aesop_cbox_inside_top'); //action ?>
 
 					<div id="aesop-content-component-<?php echo $hash;?>" class="aesop-content-comp-wrap <?php echo $typeclass;?>" <?php echo $itemstyle;?>>
 
-						<?php echo do_action('aesop_cbox_content_inside_top'); //action ?>
+						<?php echo do_action('aesop_cbox_content_inside_top'); //action
+
+						if ( $atts['floatermedia'] && !wp_is_mobile() ) { ?>
+
+							<div class="aesop-content-component-floater" data-speed="10"><?php echo $atts['floatermedia'];?></div>
+
+						<?php } ?>
 
 						<div class="aesop-content-comp-inner <?php echo $contentwidth;?>" <?php echo $innerstyle;?>>
 
