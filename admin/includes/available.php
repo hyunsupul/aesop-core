@@ -453,14 +453,14 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> '',
 						'desc' 		=> __( 'Audio URL', 'aesop-core' )
 					),
-					'hidden'		=> array(
+					'loop'		=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
 							__('off', 'aesop-core'),
 							__('on', 'aesop-core')
 						),
 						'default' 	=> '',
-						'desc' 		=> __( 'Hide Audio Player', 'aesop-core' )
+						'desc' 		=> __( 'Loop Audio Player', 'aesop-core' )
 					),
 					'viewstart'		=> array(
 						'type'		=> 'text',
@@ -479,6 +479,15 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Start Audio When out of View', 'aesop-core' )
+					),
+					'hidden'		=> array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('off', 'aesop-core'),
+							__('on', 'aesop-core')
+						),
+						'default' 	=> '',
+						'desc' 		=> __( 'Hide Audio Player', 'aesop-core' )
 					)
 				),
 				'desc' 				=> __( 'Creates an audio player with your own audio.','aesop-core' )
