@@ -136,7 +136,6 @@ Full documentation can be found below.
 * NEW - Serbian Translation
 * FIXED - Bug with Image Component centering classes (props @mauryaratan)
 
-
 = 1.0.6 =
 * NEW - New function aesop_component_exists
 * NEW - Added ability for Character Component to set a width
