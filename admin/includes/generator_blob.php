@@ -12,7 +12,7 @@ foreach( $codes as $slug => $shortcode ) {
 		foreach ( $shortcode['atts'] as $attr_name => $attr_info ) {
 
 			$return .= '<p>';
-			$return .= '<label for="aesop-generator-attr-' . $attr_name . '">' . $attr_info['desc'] . '</label>';
+			$return .= '<label for="aesop-generator-attr-' . $attr_name . '" data-description="'.$attr_info['tip'].'">' . $attr_info['desc'] . '</label>';
 			// Select
 			if ( count( $attr_info['values'] ) && $attr_info['values'] ) {
 				$return .= '<select name="' . $attr_name . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr">';
