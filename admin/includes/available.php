@@ -18,7 +18,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image URL', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('The path to the image. Click <em>Select Media</em> to open the WordPress Media Libary','aesop-core')
 					),
 					'imgwidth' 			=> array(
 						'type'		=> 'text',

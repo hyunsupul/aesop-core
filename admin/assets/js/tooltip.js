@@ -35,7 +35,7 @@
     trigger: 'hover focus',
     title: '',
     delay: 0,
-    html: false,
+    html: true,
     container: false,
     viewport: {
       selector: 'body',
@@ -461,7 +461,7 @@ jQuery(document).on({
     'mouseenter': function (e) {
         jQuery(this).tooltip('show');
     },
-        'mouseeleave': function (e) {
+    'mouseeleave': function (e) {
         jQuery(this).tooltip('hide');
     }
 }, '*[rel=tooltip]');
