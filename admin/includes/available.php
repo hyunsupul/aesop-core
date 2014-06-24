@@ -145,7 +145,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '100%',
 						'desc' 		=> __( 'Component Width', 'aesop-core' ),
-						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. By default the width is set to <code>100%</code>.','aesop-core')
+						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.','aesop-core')
 					),
 					'background' 	=> array(
 						'values' 	=> array( ),
@@ -260,35 +260,35 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'color',
 						'default' 	=> '#FFFFFF',
 						'desc' 		=> __('Color of Text', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Set a color to be used for the main text.','aesop-core')
 					),
 					'background' 		=> array(
 						'values' 	=> array(),
 						'type'		=> 'color',
 						'default' 	=> '#333333',
 						'desc' 		=> __('Background Color', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Choose an optional background color for the content component.','aesop-core')
 					),
 					'width'			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '100%',
 						'desc' 		=> __( 'Width of Component', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.','aesop-core')
 					),
 					'height'			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Height of Component (optional)', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Enter an optional height for the component. By default it\'s set to <code>auto</code>. Use a large height like <code>1200px</code> to have a large blank area with small text.','aesop-core')
 					),
 					'columns' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Number of Columns', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Here you can optionally set the number of columns that the text should be split into. Example <code>2</code> will make 2 columns of text.','aesop-core')
 					),
 					'position' 			=> array(
 						'type'		=> 'text',
@@ -299,14 +299,14 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'none',
 						'desc' 		=> __( 'Text Block Alignment', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('This is optional, and allows you to float the text block to the left or right. This is useful when using a width like <code>300px</code>.','aesop-core')
 					),
 					'innerposition' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Floating Text Position <br />(ex: 10px, 20px, 5px, 5px)', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'desc' 		=> __( 'Floating Text Position <br />(ex: 10px, 20px, auto, auto)', 'aesop-core' ),
+						'tip'		=> __('By setting this optional position, the text will be <em>floated</em> on the content component. In the example, it reads as 10px from the top, 20px from the right, and automatically positioned from bottom and left.','aesop-core')
 					),
 					'img' 			=> array(
 						'type'		=> 'media_upload',
@@ -325,14 +325,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'no-repeat',
 						'desc' 		=> __( 'Image Repeat', 'aesop-core' ),
-						'tip'		=> 'sup'
-					),
-					'imgposition' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
-						'default' 	=> '',
-						'desc' 		=> __( 'Image Position', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('If using a background image, should the background image repeat? Useful for using tiled images.','aesop-core')
 					)
 				),
 				'content' 			=> __( 'All your normal text goes here.', 'ba-shortcodes' ),
@@ -560,7 +553,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '100%',
 						'desc' 		=> __( 'Component Width', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.','aesop-core')
 					),
 					'align' 			=> array(
 						'type'		=> 'text',
