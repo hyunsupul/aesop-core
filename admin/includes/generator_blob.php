@@ -12,7 +12,7 @@ foreach( $codes as $slug => $shortcode ) {
 		foreach ( $shortcode['atts'] as $attr_name => $attr_info ) {
 
 			$return .= '<p>';
-			$return .= '<a rel="tooltip" class="aesop-option-tip" href="#" data-toggle="tooltip" data-placement="left" title="'.$attr_info['tip'].'" ><i class="dashicons dashicons-editor-help"></i></a>';
+			$return .= '<a rel="tooltip" class="aesop-option-tip" href="#" data-toggle="tooltip" data-placement="right" title="'.$attr_info['tip'].'" ><i class="dashicons dashicons-editor-help"></i></a>';
 			$return .= '<label for="aesop-generator-attr-' . $attr_name . '">' . $attr_info['desc'] . '</label>';
 			// Select
 			if ( count( $attr_info['values'] ) && $attr_info['values'] ) {
