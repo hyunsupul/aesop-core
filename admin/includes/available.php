@@ -340,21 +340,21 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(),
 						'default'	=> '',
 						'desc'		=> __('Label (not shown)','aesop-core'),
-						'tip'		=> 'sup'
+						'tip'		=> __('The label is what shows as the chapter navigation, and can be different from the title below.','aesop-core')
 					),
 					'title'			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(),
 						'default'	=> '',
 						'desc'		=> __('Chapter Title','aesop-core'),
-						'tip'		=> 'sup'
+						'tip'		=> __('The title of the chapter.','aesop-core')
 					),
 					'subtitle'			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(),
 						'default'	=> '',
 						'desc'		=> __('Chapter Subtitle (optional)','aesop-core'),
-						'tip'		=> 'sup'
+						'tip'		=> __('If filled out, will display a <em>sub-title<em> after the chapter title text.','aesop-core')
 					),
 					'bgtype'			=> array(
 						'type'		=> 'text',
@@ -364,14 +364,14 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default'	=> 'img',
 						'desc'		=> __('Background Type','aesop-core'),
-						'tip'		=> 'sup'
+						'tip'		=> __('Optionally set a looping video background.','aesop-core')
 					),
 					'img' 			=> array(
 						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> ' ',
 						'desc' 		=> __( 'Chapter Image/Video', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
+						'tip'		=> __('URL for the image background if img set above. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Creates the scroll to point, as a chapter heading.','aesop-core' )
@@ -392,7 +392,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(),
 						'default' 	=> '500',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('The height of the viewable image area. Enter a value such as <em>500</em>. Avoid using percentages as heights here.','aesop-core')
 					),
 					'parallaxbg' 	=> array(
 						'type'		=> 'text',
@@ -402,7 +402,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'on',
 						'desc' 		=> __('Parallax Background Image', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('If set to <em>on</em>, the image will move slightly as you scroll down the page.','aesop-core')
 					),
 					'floater' 		=> array(
 						'type'		=> 'text',
@@ -412,14 +412,14 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __('Enable Floating Element', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('This option will enable a second parallax media layer that will float on top of the background image.','aesop-core')
 					),
 					'floatermedia' 	=> array(
 						'type'		=> 'text',
 						'values' 	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __('Floater Media', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('You can use text and images here. To use an image, use the full HTML tag without quotes around the image path.','aesop-core')
 					),
 					'floaterposition' => array(
 						'type'		=> 'text',
@@ -430,13 +430,13 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'right',
 						'desc' 		=> __('Position of Floater', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('If you are using the Floater option, where should the floater be positioned?','aesop-core')
 					),
 					'floateroffset' => array(
 						'type'		=> 'text',
 						'values' 	=> array(),
 						'desc' 		=> __('Offset Amount of Floater (px or %)', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('This value will vary depending on your floater media. Enter a value like <code>-200px</code> and tweak as you see fit.','aesop-core')
 					),
 					'floaterdirection' => array(
 						'type'		=> 'text',
@@ -448,14 +448,14 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'up',
 						'desc' 		=> __('Parallax Direction of Floater', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('What direction should the floater media travel in?','aesop-core')
 					),
 					'caption' 	=> array(
 						'type'		=> 'text',
 						'values' 	=> array(),
 						'default' 	=> 'false',
 						'desc' 		=> __('Caption (optional)', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Provide an optional caption that will be displayed using the position below.','aesop-core')
 					),
 					'captionposition' => array(
 						'type'		=> 'text',
@@ -467,7 +467,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'bottom-left',
 						'desc' 		=> __('Caption Position', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('If using a caption, where should it be positioned within the parallax component?','aesop-core')
 					),
 					'lightbox' 		=> array(
 						'type'		=> 'text',
@@ -477,7 +477,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __('Image Lightbox', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Enable an optional lightbox, that when clicked, will show the full size version of the parallax image.','aesop-core')
 					)
 				),
 				'content' 			=> __( 'Optional Caption', 'ba-shortcodes' ),
@@ -492,14 +492,14 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Title (optional)', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Provide an optional heading for the audio player.','aesop-core')
 					),
 					'src' 			=> array(
 						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Audio URL', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('URL to the mp3 file.','aesop-core')
 					),
 					'loop'		=> array(
 						'type'		=> 'text',
@@ -509,7 +509,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> '',
 						'desc' 		=> __( 'Loop Audio Player', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Enable looping within the audio player.','aesop-core')
 					),
 					'viewstart'		=> array(
 						'type'		=> 'text',
@@ -519,7 +519,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Start Audio When in View', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('When set to <em>on</em> the audio will start playing automatically once scrolled into view.','aesop-core')
 					),
 					'viewend'		=> array(
 						'type'		=> 'text',
@@ -529,7 +529,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Start Audio When out of View', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Used together with the option above, this option when set to <em>on</em> will stop the audio player from playing once scrolled out of view.','aesop-core')
 					),
 					'hidden'		=> array(
 						'type'		=> 'text',
@@ -539,7 +539,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> '',
 						'desc' 		=> __( 'Hide Audio Player', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Hide the audio player by setting this to <em>on</em>. This is useful for looping audio effects that do not need user controls.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Creates an audio player with your own audio.','aesop-core' )
@@ -564,7 +564,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'center',
 						'desc' 		=> __( 'Alignment', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Should the video be floated to the left, right, or centered?','aesop-core')
 					),
 					'src' 			=> array(
 						'type'		=> 'text',
@@ -581,21 +581,21 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'vimeo',
 						'desc' 		=> __('Video Source', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Choose an available source for the video.','aesop-core')
 					),
 					'id' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Video ID (enter URL for Viddler)', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('The video id can be found within any video URL, and typically looks something like <code>s8J2Ge4</code>.','aesop-core')
 					),
 					'hosted' 			=> array(
 						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Video ( if <em>self</em> as Source )', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('This is only used if you are hosting the video yourself. Note, set the Video Source to <em>self</em> above to utilize this option.','aesop-core')
 					),
 					'loop' 			=> array(
 						'type'		=> 'text',
@@ -605,7 +605,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'on',
 						'desc' 		=> __('Video Loop ( if <em>self</em> as Source )', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Enable the video to loop.','aesop-core')
 					),
 					'autoplay' 			=> array(
 						'type'		=> 'text',
@@ -615,7 +615,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'on',
 						'desc' 		=> __('Autoplay ( if <em>self</em> as Source )', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Label','aesop-core')
 					),
 					'controls' 			=> array(
 						'type'		=> 'text',
@@ -635,7 +635,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Start Video When in View  ( if <em>self</em> as Source )', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('When set to <em>on</em> the video will start playing automatically once scrolled into view.','aesop-core')
 					),
 					'viewend'		=> array(
 						'type'		=> 'text',
@@ -645,18 +645,17 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Start Video When Out of View  ( if <em>self</em> as Source )', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Used together with the option above, this option when set to <em>on</em> will stop the video player from playing once scrolled out of view.','aesop-core')
 					),
 					'caption' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Caption (optional)', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Optional caption for the video that is displayed under the video.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Responsive video component with alignment and optional caption.','aesop-core' ),
-				'tip'		=> 'sup'
 			),
 			'map' 				=> array(
 				'name' 				=> __('Map', 'aesop-core'),
@@ -667,7 +666,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Height', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('The height of the map component. By default this is set to <code>500</code>. Avoid using percentages here.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Creates the basic map component. Use the Map Locations edit boxes when writing your story to add locations.','aesop-core' )
@@ -681,14 +680,14 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Date', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('This is what is displayed as the timeline navigation label, and doesn\'t have to be a date specficially. Any text will work.','aesop-core')
 					),
 					'title' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Title', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('The title that shoudl be displayed within the story.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Enter a number such as 2007, and a small timeline will be displayed with scroll to points. This works similar to the chapter heading.','aesop-core' )
@@ -705,21 +704,21 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'pdf',
 						'desc' 		=> __( 'Document Type', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('The type of document. Choose image or PDF.','aesop-core')
 					),
 					'src' 			=> array(
 						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Document', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('URL to the document.','aesop-core')
 					),
 					'caption' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Optional Caption', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Provide an optional caption for the document component.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Show a document that is revealed with a click.','aesop-core' )
@@ -733,21 +732,21 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Optional Title', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Display an optional heading to be used within the Collection component.','aesop-core')
 					),
 					'collection' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Category ID', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Provide the ID of the category that you want stories to be displayed from.','aesop-core')
 					),
 					'limit' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __( 'Posts to Show', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('How many stories should be displayed.','aesop-core')
 					),
 					'columns' 			=> array(
 						'type'		=> 'text',
@@ -759,7 +758,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> '2',
 						'desc' 		=> __( 'Columns', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Stories are displayed in a grid. How many columns should the grid be?','aesop-core')
 					),
 					'splash' 			=> array(
 						'type'		=> 'text',
@@ -769,7 +768,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Splash Mode', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Setting this to <em>on</em>, will then only display the actual categories on your site with the category title.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Show a collection of stories. Typically used on a page like the home page.','aesop-core' )
