@@ -100,21 +100,21 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Character Image', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
 					),
 					'name' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Character Name', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Enter a name for the character. If you do not enter a name, it will not show.','aesop-core')
 					),
 					'caption' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Caption', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Optional caption for the character. If you do not enter a caption, it will not show.','aesop-core')
 					),
 					'align' 			=> array(
 						'type'		=> 'text',
@@ -124,14 +124,14 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'left',
 						'desc' 		=> __( 'Alignment', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Alignment of the character component. To the left of the main text, or right of the main text.','aesop-core')
 					),
 					'width' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Width (px or %)', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Width of the character component. You can enter the size as <code>40%</code> or <code>500px</code>.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Creates a character that can be positioned to the left or right of your story.','aesop-core' )
