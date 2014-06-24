@@ -145,35 +145,35 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '100%',
 						'desc' 		=> __( 'Component Width', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. By default the width is set to <code>100%</code>.','aesop-core')
 					),
 					'background' 	=> array(
 						'values' 	=> array( ),
 						'type'		=> 'color',
 						'default' 	=> '#282828',
 						'desc' 		=> __( 'Background Color', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Select a background color to be used as the background.','aesop-core')
 					),
 					'img' 	=> array(
 						'values' 	=> array( ),
 						'type'		=> 'media_upload',
 						'default' 	=> '',
 						'desc' 		=> __( 'Optional Background Image', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
 					),
 					'text'			 => array(
 						'values' 	=> array(),
 						'type'		=> 'color',
 						'default' 	=> '#FFFFFF',
 						'desc' 		=> __('Text Color', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Select a color for the quote text.','aesop-core')
 					),
 					'height' 		=> array(
 						'type'		=> 'text',
 						'values'	=> array(),
-						'default' 	=> '',
+						'default' 	=> 'auto',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Choose a height for the component. The quote will automatically center itself vertically. By default this is set to <code>auto</code>.','aesop-core')
 					),
 					'align' 			=> array(
 						'type'		=> 'text',
@@ -184,7 +184,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'center',
 						'desc' 		=> __( 'Alignment', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('By default the quote is centered, but you can choose to have it left, or right aligned as well.','aesop-core')
 					),
 					'size' 			=> array(
 						'type'		=> 'text',
@@ -195,7 +195,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> '2',
 						'desc' 		=> __( 'Quote Size', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Font size of the quote.','aesop-core')
 					),
 					'parallax' 		=> array(
 						'type'		=> 'text',
@@ -205,21 +205,21 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __('Enable Quote Parallax', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Set to <em>on</em> to enable the quote text to animate across the component.','aesop-core')
 					),
 					'offset' 		=> array(
 						'type'		=> 'text',
 						'values'	=> array(),
 						'default' 	=> 300,
 						'desc' 		=> __('If using parallax, starting offset.', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Start with a value like <code>-100px</code>, and tweak until desired. This moves starting position of the quote if using parallax.','aesop-core')
 					),
 					'speed' 		=> array(
 						'type'		=> 'text',
 						'values'	=> array(),
 						'default' 	=> 8,
 						'desc' 		=> __('Speed of parallax movement. Lower is faster.', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('How fast the quote should travel across the screen, if using parallax.','aesop-core')
 
 					),
 					'direction' => array(
@@ -232,21 +232,21 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'up',
 						'desc' 		=> __('Parallax Direction of Quote', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('The direction that the quote should travel in, if using parallax.','aesop-core')
 					),
 					'quote' 		=> array(
 						'type'		=> 'text',
 						'values'	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __('The quote', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('The actual quote that will be displayed.','aesop-core')
 					),
 					'cite' 		=> array(
 						'type'		=> 'text',
 						'values'	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __('Cite (optional)', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Provide an optional cite or source for the quote.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Section quote area with background and color controls.','aesop-core' )
@@ -313,7 +313,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Background Image', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
 					),
 					'imgrepeat' 			=> array(
 						'type'		=> 'text',
@@ -378,7 +378,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> ' ',
 						'desc' 		=> __( 'Chapter Image/Video', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Creates the scroll to point, as a chapter heading.','aesop-core' )
@@ -392,7 +392,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
 					),
 					'height' 		=> array(
 						'type'		=> 'text',
