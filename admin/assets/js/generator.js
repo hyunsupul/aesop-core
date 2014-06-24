@@ -28,9 +28,7 @@ jQuery(document).ready(function($) {
 		window.send_to_editor(jQuery('#aesop-generator-result').val());
 		return false;
 	});
-
 });
-
 
 // media uploader
 var file_frame;
