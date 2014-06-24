@@ -341,7 +341,6 @@
   line-height: 1.25;
   text-shadow:0 0 1px rgba(0,0,0,0.2);
   .opacity(0);
-
   &.in     { .opacity(@tooltip-opacity); }
   &.top    { margin-top:  -3px; padding: @tooltip-arrow-width 0; }
   &.right  { margin-left:  3px; padding: 0 @tooltip-arrow-width; }
@@ -358,6 +357,8 @@
   text-decoration: none;
   background-color: @tooltip-bg;
   border-radius: @border-radius-base;
+    box-shadow:0 0 6px -2px rgba(0,0,0,0.8);
+
 }
 
 // Arrows
