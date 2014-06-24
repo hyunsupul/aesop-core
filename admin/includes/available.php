@@ -18,35 +18,35 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image URL', 'aesop-core' ),
-						'tip'		=> __('The path to the image. Click <em>Select Media</em> to open the WordPress Media Libary','aesop-core')
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary','aesop-core')
 					),
 					'imgwidth' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '300px',
 						'desc' 		=> __( 'Image Width', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Width of the image. You can enter the size as <code>40%</code> or <code>500px</code>.','aesop-core')
 					),
 					'caption' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Caption', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Optional caption for the image. If you do not enter a caption, it will not show.','aesop-core')
 					),
 					'credit' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image Credit', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('This is typically used for the credit for the photographer. Enter a name, and it will show as <em>Photo by: Name</em>.','aesop-core')
 					),
 					'alt' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image ALT', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('ALT tag used for the image. Primarly used for SEO purposes.','aesop-core')
 					),
 					'align' 			=> array(
 						'type'		=> 'text',
@@ -57,14 +57,14 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'left',
 						'desc' 		=> __( 'Image Alignment', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('How should the image be aligned? If using a caption, the caption will automatically align with this option.','aesop-core')
 					),
 					'offset' 		=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image Offset', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Using this option you can <em>float<em> an image outside of the text. Enter a size like <code>-200px</code>.','aesop-core')
 					),
 					'captionposition' => array(
 						'type'		=> 'text',
@@ -75,7 +75,7 @@ if(!function_exists('aesop_shortcodes')){
 						 ),
 						'default' 	=> 'left',
 						'desc' 		=> __( 'Caption Position', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Use this to override the alignment as inherited from the image.','aesop-core')
 					),
 					'lightbox' 			=> array(
 						'type'		=> 'text',
@@ -85,7 +85,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Lightbox', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Choose <em>on</em> and the image will open up the full-size version in a lightbox.','aesop-core')
 					),
 
 				),
