@@ -84,6 +84,8 @@ module.exports = function(grunt) {
                	files: {
                     'admin/assets/js/generator.min.js': [
                      	'admin/assets/js/generator.js',
+                     	'admin/assets/js/transition.js',
+                     	'admin/assets/js/tooltip.js'
                     ]
                 }
             },
