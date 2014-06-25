@@ -1,503 +1,1021 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Core - 0.9.7\n"
-"POT-Creation-Date: 2013-12-30 11:15-0600\n"
-"PO-Revision-Date: 2014-02-12 17:09-0600\n"
+"POT-Creation-Date: 2014-06-25 14:52-0600\n"
+"PO-Revision-Date: 2014-06-25 14:52-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../admin/includes/available.php:10 ../admin/includes/available.php:270
+#: ../admin/class-aesop-core-admin.php:139
+msgid "Add Component"
+msgstr ""
+
+#: ../admin/class-aesop-core-admin.php:185
+msgid "Select a story component."
+msgstr ""
+
+#: ../admin/includes/available.php:13 ../admin/includes/available.php:387
 msgid "Image"
 msgstr ""
 
-#: ../admin/includes/available.php:17 ../admin/includes/available.php:128
-#: ../admin/includes/available.php:378
-msgid "Component Width"
-msgstr ""
-
-#: ../admin/includes/available.php:23
+#: ../admin/includes/available.php:20
 msgid "Image URL"
 msgstr ""
 
-#: ../admin/includes/available.php:29
+#: ../admin/includes/available.php:21
+msgid ""
+"URL for the image. Click <em>Select Media</em> to open the WordPress Media "
+"Libary"
+msgstr ""
+
+#: ../admin/includes/available.php:27
 msgid "Image Width"
 msgstr ""
 
-#: ../admin/includes/available.php:35 ../admin/includes/available.php:106
+#: ../admin/includes/available.php:28
+msgid ""
+"Width of the image. You can enter the size as <code>40%</code> or "
+"<code>500px</code>."
+msgstr ""
+
+#: ../admin/includes/available.php:34 ../admin/includes/available.php:116
 msgid "Caption"
+msgstr ""
+
+#: ../admin/includes/available.php:35
+msgid ""
+"Optional caption for the image. If you do not enter a caption, it will not "
+"show."
 msgstr ""
 
 #: ../admin/includes/available.php:41
 msgid "Image Credit"
 msgstr ""
 
-#: ../admin/includes/available.php:47
+#: ../admin/includes/available.php:42
+msgid ""
+"This is typically used for the credit for the photographer. Enter a name, "
+"and it will show as <em>Photo by: Name</em>."
+msgstr ""
+
+#: ../admin/includes/available.php:48
 msgid "Image ALT"
 msgstr ""
 
-#: ../admin/includes/available.php:52 ../admin/includes/available.php:111
-#: ../admin/includes/available.php:177 ../admin/includes/available.php:312
+#: ../admin/includes/available.php:49
+msgid "ALT tag used for the image. Primarily used for SEO purposes."
+msgstr ""
+
+#: ../admin/includes/available.php:54 ../admin/includes/available.php:72
+#: ../admin/includes/available.php:122 ../admin/includes/available.php:181
+#: ../admin/includes/available.php:230 ../admin/includes/available.php:297
+#: ../admin/includes/available.php:428 ../admin/includes/available.php:446
+#: ../admin/includes/available.php:561
 msgid "left"
 msgstr ""
 
-#: ../admin/includes/available.php:53 ../admin/includes/available.php:112
-#: ../admin/includes/available.php:178 ../admin/includes/available.php:311
+#: ../admin/includes/available.php:55 ../admin/includes/available.php:73
+#: ../admin/includes/available.php:123 ../admin/includes/available.php:183
+#: ../admin/includes/available.php:231 ../admin/includes/available.php:298
+#: ../admin/includes/available.php:427 ../admin/includes/available.php:447
+#: ../admin/includes/available.php:563
 msgid "right"
 msgstr ""
 
-#: ../admin/includes/available.php:56
+#: ../admin/includes/available.php:56 ../admin/includes/available.php:74
+#: ../admin/includes/available.php:182 ../admin/includes/available.php:429
+#: ../admin/includes/available.php:562
+msgid "center"
+msgstr ""
+
+#: ../admin/includes/available.php:59
 msgid "Image Alignment"
 msgstr ""
 
-#: ../admin/includes/available.php:62
+#: ../admin/includes/available.php:60
+msgid ""
+"How should the image be aligned? If using a caption, the caption will "
+"automatically align with this option."
+msgstr ""
+
+#: ../admin/includes/available.php:66
 msgid "Image Offset"
 msgstr ""
 
 #: ../admin/includes/available.php:67
-msgid "bottom"
+msgid ""
+"Using this option you can <em>float</em> an image outside of the text. Enter "
+"a size like <code>-200px</code>."
 msgstr ""
 
-#: ../admin/includes/available.php:68
-msgid "top"
-msgstr ""
-
-#: ../admin/includes/available.php:71 ../admin/includes/available.php:342
+#: ../admin/includes/available.php:77 ../admin/includes/available.php:469
 msgid "Caption Position"
 msgstr ""
 
-#: ../admin/includes/available.php:76 ../admin/includes/available.php:281
-#: ../admin/includes/available.php:347
+#: ../admin/includes/available.php:78
+msgid "Use this to override the alignment as inherited from the image."
+msgstr ""
+
+#: ../admin/includes/available.php:83 ../admin/includes/available.php:203
+#: ../admin/includes/available.php:400 ../admin/includes/available.php:411
+#: ../admin/includes/available.php:475 ../admin/includes/available.php:508
+#: ../admin/includes/available.php:517 ../admin/includes/available.php:527
+#: ../admin/includes/available.php:538 ../admin/includes/available.php:603
+#: ../admin/includes/available.php:613 ../admin/includes/available.php:623
+#: ../admin/includes/available.php:633 ../admin/includes/available.php:643
+#: ../admin/includes/available.php:766
 msgid "on"
 msgstr ""
 
-#: ../admin/includes/available.php:77 ../admin/includes/available.php:282
-#: ../admin/includes/available.php:348
+#: ../admin/includes/available.php:84 ../admin/includes/available.php:204
+#: ../admin/includes/available.php:401 ../admin/includes/available.php:410
+#: ../admin/includes/available.php:476 ../admin/includes/available.php:507
+#: ../admin/includes/available.php:518 ../admin/includes/available.php:528
+#: ../admin/includes/available.php:537 ../admin/includes/available.php:604
+#: ../admin/includes/available.php:614 ../admin/includes/available.php:624
+#: ../admin/includes/available.php:634 ../admin/includes/available.php:644
+#: ../admin/includes/available.php:767
 msgid "off"
 msgstr ""
 
-#: ../admin/includes/available.php:80
+#: ../admin/includes/available.php:87
 msgid "Lightbox"
 msgstr ""
 
-#: ../admin/includes/available.php:84
+#: ../admin/includes/available.php:88
+msgid ""
+"Choose <em>on</em> and the image will open up the full-size version in a "
+"lightbox."
+msgstr ""
+
+#: ../admin/includes/available.php:92
 msgid ""
 "Creates an image component with caption, alignment, and lightbox options."
 msgstr ""
 
-#: ../admin/includes/available.php:87
+#: ../admin/includes/available.php:95
 msgid "Character"
 msgstr ""
 
-#: ../admin/includes/available.php:94
+#: ../admin/includes/available.php:102
 msgid "Character Image"
 msgstr ""
 
-#: ../admin/includes/available.php:100
+#: ../admin/includes/available.php:103 ../admin/includes/available.php:162
+#: ../admin/includes/available.php:316 ../admin/includes/available.php:388
+msgid ""
+"URL for the image. Click <em>Select Media</em> to open the WordPress Media "
+"Libary."
+msgstr ""
+
+#: ../admin/includes/available.php:109
 msgid "Character Name"
 msgstr ""
 
-#: ../admin/includes/available.php:115 ../admin/includes/available.php:384
+#: ../admin/includes/available.php:110
+msgid ""
+"Enter a name for the character. If you do not enter a name, it will not show."
+msgstr ""
+
+#: ../admin/includes/available.php:117
+msgid ""
+"Optional caption for the character. If you do not enter a caption, it will "
+"not show."
+msgstr ""
+
+#: ../admin/includes/available.php:126 ../admin/includes/available.php:186
+#: ../admin/includes/available.php:566
 msgid "Alignment"
 msgstr ""
 
-#: ../admin/includes/available.php:118
+#: ../admin/includes/available.php:127
+msgid ""
+"Alignment of the character component. To the left of the main text, or right "
+"of the main text."
+msgstr ""
+
+#: ../admin/includes/available.php:133
+msgid "Width (px or %)"
+msgstr ""
+
+#: ../admin/includes/available.php:134
+msgid ""
+"Width of the character component. You can enter the size as <code>40%</code> "
+"or <code>500px</code>."
+msgstr ""
+
+#: ../admin/includes/available.php:137
 msgid ""
 "Creates a character that can be positioned to the left or right of your "
 "story."
 msgstr ""
 
-#: ../admin/includes/available.php:121
+#: ../admin/includes/available.php:140
 msgid "Aesop Quote Section"
 msgstr ""
 
-#: ../admin/includes/available.php:134
-msgid "Hex Color of Background"
+#: ../admin/includes/available.php:147 ../admin/includes/available.php:555
+msgid "Component Width"
 msgstr ""
 
-#: ../admin/includes/available.php:140
-msgid "Hex Color of Text"
+#: ../admin/includes/available.php:148 ../admin/includes/available.php:277
+#: ../admin/includes/available.php:556
+msgid ""
+"You can enter the size as <code>40%</code> or <code>500px</code>. Enter the "
+"word <code>content</code> to restrict the width to that of the main text."
 msgstr ""
 
-#: ../admin/includes/available.php:146 ../admin/includes/available.php:276
-msgid "Height of Image Area"
-msgstr ""
-
-#: ../admin/includes/available.php:152
-msgid "The quote"
-msgstr ""
-
-#: ../admin/includes/available.php:155
-msgid "Section quote area with background and color controls."
-msgstr ""
-
-#: ../admin/includes/available.php:158 ../admin/includes/generator.php:59
-msgid "Content"
-msgstr ""
-
-#: ../admin/includes/available.php:165
-msgid "Width of Component"
-msgstr ""
-
-#: ../admin/includes/available.php:171
-msgid "Number of Columns"
-msgstr ""
-
-#: ../admin/includes/available.php:176
-msgid "none"
-msgstr ""
-
-#: ../admin/includes/available.php:181
-msgid "Text Block Alignment"
-msgstr ""
-
-#: ../admin/includes/available.php:187
-msgid "Background Image"
-msgstr ""
-
-#: ../admin/includes/available.php:192
-msgid "no-repeat"
-msgstr ""
-
-#: ../admin/includes/available.php:193
-msgid "repeat"
-msgstr ""
-
-#: ../admin/includes/available.php:194
-msgid "repeat-vertical"
-msgstr ""
-
-#: ../admin/includes/available.php:195
-msgid "repeat-horizontal"
-msgstr ""
-
-#: ../admin/includes/available.php:198
-msgid "Image Repeat"
-msgstr ""
-
-#: ../admin/includes/available.php:204
-msgid "Image Position"
-msgstr ""
-
-#: ../admin/includes/available.php:210
-msgid "Color of Text"
-msgstr ""
-
-#: ../admin/includes/available.php:216
+#: ../admin/includes/available.php:154 ../admin/includes/available.php:269
 msgid "Background Color"
 msgstr ""
 
-#: ../admin/includes/available.php:219
+#: ../admin/includes/available.php:155
+msgid "Select a background color to be used as the background."
+msgstr ""
+
+#: ../admin/includes/available.php:161
+msgid "Optional Background Image"
+msgstr ""
+
+#: ../admin/includes/available.php:168
+msgid "Text Color"
+msgstr ""
+
+#: ../admin/includes/available.php:169
+msgid "Select a color for the quote text."
+msgstr ""
+
+#: ../admin/includes/available.php:175 ../admin/includes/available.php:394
+msgid "Height of Image Area"
+msgstr ""
+
+#: ../admin/includes/available.php:176
+msgid ""
+"Choose a height for the component. The quote will automatically center "
+"itself vertically. By default this is set to <code>auto</code>."
+msgstr ""
+
+#: ../admin/includes/available.php:187
+msgid ""
+"By default the quote is centered, but you can choose to have it left, or "
+"right aligned as well."
+msgstr ""
+
+#: ../admin/includes/available.php:192 ../admin/includes/available.php:754
+msgid "2"
+msgstr ""
+
+#: ../admin/includes/available.php:193 ../admin/includes/available.php:755
+msgid "3"
+msgstr ""
+
+#: ../admin/includes/available.php:194 ../admin/includes/available.php:756
+msgid "4"
+msgstr ""
+
+#: ../admin/includes/available.php:197
+msgid "Quote Size"
+msgstr ""
+
+#: ../admin/includes/available.php:198
+msgid "Font size of the quote."
+msgstr ""
+
+#: ../admin/includes/available.php:207
+msgid "Enable Quote Parallax"
+msgstr ""
+
+#: ../admin/includes/available.php:208
+msgid ""
+"Set to <em>on</em> to enable the quote text to animate across the component."
+msgstr ""
+
+#: ../admin/includes/available.php:214
+msgid "If using parallax, starting offset."
+msgstr ""
+
+#: ../admin/includes/available.php:215
+msgid ""
+"Start with a value like <code>-100px</code>, and tweak until desired. This "
+"moves starting position of the quote if using parallax."
+msgstr ""
+
+#: ../admin/includes/available.php:221
+msgid "Speed of parallax movement. Lower is faster."
+msgstr ""
+
+#: ../admin/includes/available.php:222
+msgid "How fast the quote should travel across the screen, if using parallax."
+msgstr ""
+
+#: ../admin/includes/available.php:228 ../admin/includes/available.php:444
+msgid "up"
+msgstr ""
+
+#: ../admin/includes/available.php:229 ../admin/includes/available.php:445
+msgid "down"
+msgstr ""
+
+#: ../admin/includes/available.php:234
+msgid "Parallax Direction of Quote"
+msgstr ""
+
+#: ../admin/includes/available.php:235
+msgid "The direction that the quote should travel in, if using parallax."
+msgstr ""
+
+#: ../admin/includes/available.php:241
+msgid "The quote"
+msgstr ""
+
+#: ../admin/includes/available.php:242
+msgid "The actual quote that will be displayed."
+msgstr ""
+
+#: ../admin/includes/available.php:248
+msgid "Cite (optional)"
+msgstr ""
+
+#: ../admin/includes/available.php:249
+msgid "Provide an optional cite or source for the quote."
+msgstr ""
+
+#: ../admin/includes/available.php:252
+msgid "Section quote area with background and color controls."
+msgstr ""
+
+#: ../admin/includes/available.php:255 ../admin/includes/generator_blob.php:56
+msgid "Content"
+msgstr ""
+
+#: ../admin/includes/available.php:262
+msgid "Color of Text"
+msgstr ""
+
+#: ../admin/includes/available.php:263
+msgid "Set a color to be used for the main text."
+msgstr ""
+
+#: ../admin/includes/available.php:270
+msgid "Choose an optional background color for the content component."
+msgstr ""
+
+#: ../admin/includes/available.php:276
+msgid "Width of Component"
+msgstr ""
+
+#: ../admin/includes/available.php:283
+msgid "Height of Component (optional)"
+msgstr ""
+
+#: ../admin/includes/available.php:284
+msgid ""
+"Enter an optional height for the component. By default it's set to "
+"<code>auto</code>. Use a large height like <code>1200px</code> to have a "
+"large blank area with small text."
+msgstr ""
+
+#: ../admin/includes/available.php:290
+msgid "Number of Columns"
+msgstr ""
+
+#: ../admin/includes/available.php:291
+msgid ""
+"Here you can optionally set the number of columns that the text should be "
+"split into. Example <code>2</code> will make 2 columns of text."
+msgstr ""
+
+#: ../admin/includes/available.php:296
+msgid "none"
+msgstr ""
+
+#: ../admin/includes/available.php:301
+msgid "Text Block Alignment"
+msgstr ""
+
+#: ../admin/includes/available.php:302
+msgid ""
+"This is optional, and allows you to float the text block to the left or "
+"right. This is useful when using a width like <code>300px</code>."
+msgstr ""
+
+#: ../admin/includes/available.php:308
+msgid "Floating Text Position <br />(ex: 10px, 20px, auto, auto)"
+msgstr ""
+
+#: ../admin/includes/available.php:309
+msgid ""
+"By setting this optional position, the text will be <em>floated</em> on the "
+"content component. In the example, it reads as 10px from the top, 20px from "
+"the right, and automatically positioned from bottom and left."
+msgstr ""
+
+#: ../admin/includes/available.php:315
+msgid "Background Image"
+msgstr ""
+
+#: ../admin/includes/available.php:321
+msgid "no-repeat"
+msgstr ""
+
+#: ../admin/includes/available.php:322
+msgid "repeat"
+msgstr ""
+
+#: ../admin/includes/available.php:323
+msgid "repeat-vertical"
+msgstr ""
+
+#: ../admin/includes/available.php:324
+msgid "repeat-horizontal"
+msgstr ""
+
+#: ../admin/includes/available.php:327
+msgid "Image Repeat"
+msgstr ""
+
+#: ../admin/includes/available.php:328
+msgid ""
+"If using a background image, should the background image repeat? Useful for "
+"using tiled images."
+msgstr ""
+
+#: ../admin/includes/available.php:331
 msgid "All your normal text goes here."
 msgstr ""
 
-#: ../admin/includes/available.php:220
+#: ../admin/includes/available.php:332
 msgid ""
 "Multiple use content area with options for background image, background "
 "color, and magazine style columns."
 msgstr ""
 
-#: ../admin/includes/available.php:223
+#: ../admin/includes/available.php:335
 msgid "Chapter Block"
 msgstr ""
 
-#: ../admin/includes/available.php:230
+#: ../admin/includes/available.php:342
 msgid "Label (not shown)"
 msgstr ""
 
-#: ../admin/includes/available.php:236
+#: ../admin/includes/available.php:343
+msgid ""
+"The label is what shows as the chapter navigation, and can be different from "
+"the title below."
+msgstr ""
+
+#: ../admin/includes/available.php:349
 msgid "Chapter Title"
 msgstr ""
 
-#: ../admin/includes/available.php:242
+#: ../admin/includes/available.php:350
+msgid "The title of the chapter."
+msgstr ""
+
+#: ../admin/includes/available.php:356
 msgid "Chapter Subtitle (optional)"
 msgstr ""
 
-#: ../admin/includes/available.php:247
+#: ../admin/includes/available.php:357
+msgid ""
+"If filled out, will display a <em>sub-title</em> after the chapter title "
+"text."
+msgstr ""
+
+#: ../admin/includes/available.php:362
 msgid "img"
 msgstr ""
 
-#: ../admin/includes/available.php:248
+#: ../admin/includes/available.php:363
 msgid "video"
 msgstr ""
 
-#: ../admin/includes/available.php:251
+#: ../admin/includes/available.php:366
 msgid "Background Type"
 msgstr ""
 
-#: ../admin/includes/available.php:257
-msgid "Chapter Image/Video"
+#: ../admin/includes/available.php:367
+msgid "Optionally set a looping video background."
 msgstr ""
 
-#: ../admin/includes/available.php:260
+#: ../admin/includes/available.php:373
+msgid "Chapter Image or Video URL"
+msgstr ""
+
+#: ../admin/includes/available.php:374
+msgid ""
+"URL for the image background if img set above. Click <em>Select Media</em> "
+"to open the WordPress Media Library."
+msgstr ""
+
+#: ../admin/includes/available.php:377
 msgid "Creates the scroll to point, as a chapter heading."
 msgstr ""
 
-#: ../admin/includes/available.php:263
+#: ../admin/includes/available.php:380
 msgid "Parallax Image"
 msgstr ""
 
-#: ../admin/includes/available.php:285
+#: ../admin/includes/available.php:395
+msgid ""
+"The height of the viewable image area. Enter a value such as <em>500</em>. "
+"Avoid using percentages as heights here."
+msgstr ""
+
+#: ../admin/includes/available.php:404
 msgid "Parallax Background Image"
 msgstr ""
 
-#: ../admin/includes/available.php:291
-msgid "Parallax Background Speed"
+#: ../admin/includes/available.php:405
+msgid ""
+"If set to <em>on</em>, the image will move slightly as you scroll down the "
+"page."
 msgstr ""
 
-#: ../admin/includes/available.php:296
-msgid "true"
-msgstr ""
-
-#: ../admin/includes/available.php:297
-msgid "false"
-msgstr ""
-
-#: ../admin/includes/available.php:300
+#: ../admin/includes/available.php:414
 msgid "Enable Floating Element"
 msgstr ""
 
-#: ../admin/includes/available.php:306
-msgid "Floater Media"
-msgstr ""
-
-#: ../admin/includes/available.php:313
-msgid "center"
-msgstr ""
-
-#: ../admin/includes/available.php:316
-msgid "Position of Floater"
-msgstr ""
-
-#: ../admin/includes/available.php:321
-msgid "up"
-msgstr ""
-
-#: ../admin/includes/available.php:322
-msgid "down"
-msgstr ""
-
-#: ../admin/includes/available.php:325
-msgid "Parallax Direction of Floater"
-msgstr ""
-
-#: ../admin/includes/available.php:331 ../admin/includes/available.php:415
-msgid "Caption (optional)"
-msgstr ""
-
-#: ../admin/includes/available.php:336
-msgid "bottom-left"
-msgstr ""
-
-#: ../admin/includes/available.php:337
-msgid "bottom-right"
-msgstr ""
-
-#: ../admin/includes/available.php:338
-msgid "top-left"
-msgstr ""
-
-#: ../admin/includes/available.php:339
-msgid "top-right"
-msgstr ""
-
-#: ../admin/includes/available.php:351
-msgid "Image Lightbox"
-msgstr ""
-
-#: ../admin/includes/available.php:354 ../admin/includes/available.php:469
-msgid "Optional Caption"
-msgstr ""
-
-#: ../admin/includes/available.php:355
-msgid "Parallax styled image component with caption and optional lightbox."
-msgstr ""
-
-#: ../admin/includes/available.php:358
-msgid "Audio"
-msgstr ""
-
-#: ../admin/includes/available.php:365
-msgid "Audio URL"
-msgstr ""
-
-#: ../admin/includes/available.php:368
-msgid "Creates an audio player with your own audio."
-msgstr ""
-
-#: ../admin/includes/available.php:371
-msgid "Video Section"
-msgstr ""
-
-#: ../admin/includes/available.php:389
-msgid "vimeo"
-msgstr ""
-
-#: ../admin/includes/available.php:390
-msgid "youtube"
-msgstr ""
-
-#: ../admin/includes/available.php:391
-msgid "kickstarter"
-msgstr ""
-
-#: ../admin/includes/available.php:392
-msgid "viddler"
-msgstr ""
-
-#: ../admin/includes/available.php:393
-msgid "dailymotion"
-msgstr ""
-
-#: ../admin/includes/available.php:394
-msgid "self"
-msgstr ""
-
-#: ../admin/includes/available.php:397
-msgid "Video Source"
-msgstr ""
-
-#: ../admin/includes/available.php:403
-msgid "Video ID"
-msgstr ""
-
-#: ../admin/includes/available.php:409
-msgid "Video (if self as source)"
-msgstr ""
-
-#: ../admin/includes/available.php:418
-msgid "Responsive video component with alignment and optional caption."
+#: ../admin/includes/available.php:415
+msgid ""
+"This option will enable a second parallax media layer that will float on top "
+"of the background image."
 msgstr ""
 
 #: ../admin/includes/available.php:421
+msgid "Floater Media"
+msgstr ""
+
+#: ../admin/includes/available.php:422
+msgid ""
+"You can use text and images here. To use an image, use the full HTML tag "
+"without quotes around the image path."
+msgstr ""
+
+#: ../admin/includes/available.php:432
+msgid "Position of Floater"
+msgstr ""
+
+#: ../admin/includes/available.php:433
+msgid ""
+"If you are using the Floater option, where should the floater be positioned?"
+msgstr ""
+
+#: ../admin/includes/available.php:438
+msgid "Offset Amount of Floater (px or %)"
+msgstr ""
+
+#: ../admin/includes/available.php:439
+msgid ""
+"This value will vary depending on your floater media. Enter a value like "
+"<code>-200px</code> and tweak as you see fit."
+msgstr ""
+
+#: ../admin/includes/available.php:450
+msgid "Parallax Direction of Floater"
+msgstr ""
+
+#: ../admin/includes/available.php:451
+msgid "What direction should the floater media travel in?"
+msgstr ""
+
+#: ../admin/includes/available.php:457 ../admin/includes/available.php:654
+msgid "Caption (optional)"
+msgstr ""
+
+#: ../admin/includes/available.php:458
+msgid ""
+"Provide an optional caption that will be displayed using the position below."
+msgstr ""
+
+#: ../admin/includes/available.php:463
+msgid "bottom-left"
+msgstr ""
+
+#: ../admin/includes/available.php:464
+msgid "bottom-right"
+msgstr ""
+
+#: ../admin/includes/available.php:465
+msgid "top-left"
+msgstr ""
+
+#: ../admin/includes/available.php:466
+msgid "top-right"
+msgstr ""
+
+#: ../admin/includes/available.php:470
+msgid ""
+"If using a caption, where should it be positioned within the parallax "
+"component?"
+msgstr ""
+
+#: ../admin/includes/available.php:479
+msgid "Image Lightbox"
+msgstr ""
+
+#: ../admin/includes/available.php:480
+msgid ""
+"Enable an optional lightbox, that when clicked, will show the full size "
+"version of the parallax image."
+msgstr ""
+
+#: ../admin/includes/available.php:483 ../admin/includes/available.php:720
+msgid "Optional Caption"
+msgstr ""
+
+#: ../admin/includes/available.php:484
+msgid "Parallax styled image component with caption and optional lightbox."
+msgstr ""
+
+#: ../admin/includes/available.php:487
+msgid "Audio"
+msgstr ""
+
+#: ../admin/includes/available.php:494
+msgid "Title (optional)"
+msgstr ""
+
+#: ../admin/includes/available.php:495
+msgid "Provide an optional heading for the audio player."
+msgstr ""
+
+#: ../admin/includes/available.php:501
+msgid "Audio URL"
+msgstr ""
+
+#: ../admin/includes/available.php:502
+msgid "URL to the mp3 file."
+msgstr ""
+
+#: ../admin/includes/available.php:511
+msgid "Loop Audio Player"
+msgstr ""
+
+#: ../admin/includes/available.php:512
+msgid "Enable looping within the audio player."
+msgstr ""
+
+#: ../admin/includes/available.php:521
+msgid "Start Audio When in View"
+msgstr ""
+
+#: ../admin/includes/available.php:522
+msgid ""
+"When set to <em>on</em> the audio will start playing automatically once "
+"scrolled into view."
+msgstr ""
+
+#: ../admin/includes/available.php:531
+msgid "Stop Audio When out of View"
+msgstr ""
+
+#: ../admin/includes/available.php:532
+msgid ""
+"Used together with the option above, this option when set to <em>on</em> "
+"will stop the audio player from playing once scrolled out of view."
+msgstr ""
+
+#: ../admin/includes/available.php:541
+msgid "Hide Audio Player"
+msgstr ""
+
+#: ../admin/includes/available.php:542
+msgid ""
+"Hide the audio player by setting this to <em>on</em>. This is useful for "
+"looping audio effects that do not need user controls."
+msgstr ""
+
+#: ../admin/includes/available.php:545
+msgid "Creates an audio player with your own audio."
+msgstr ""
+
+#: ../admin/includes/available.php:548
+msgid "Video Section"
+msgstr ""
+
+#: ../admin/includes/available.php:567
+msgid "Should the video be floated to the left, right, or centered?"
+msgstr ""
+
+#: ../admin/includes/available.php:572
+msgid "vimeo"
+msgstr ""
+
+#: ../admin/includes/available.php:573
+msgid "youtube"
+msgstr ""
+
+#: ../admin/includes/available.php:574
+msgid "kickstarter"
+msgstr ""
+
+#: ../admin/includes/available.php:575
+msgid "viddler"
+msgstr ""
+
+#: ../admin/includes/available.php:576
+msgid "vine"
+msgstr ""
+
+#: ../admin/includes/available.php:577
+msgid "wistia"
+msgstr ""
+
+#: ../admin/includes/available.php:578
+msgid "instagram"
+msgstr ""
+
+#: ../admin/includes/available.php:579
+msgid "dailymotion"
+msgstr ""
+
+#: ../admin/includes/available.php:580
+msgid "self"
+msgstr ""
+
+#: ../admin/includes/available.php:583
+msgid "Video Source"
+msgstr ""
+
+#: ../admin/includes/available.php:584
+msgid "Choose an available source for the video."
+msgstr ""
+
+#: ../admin/includes/available.php:590
+msgid "Video ID (enter URL for Viddler)"
+msgstr ""
+
+#: ../admin/includes/available.php:591
+msgid ""
+"The video id can be found within any video URL, and typically looks "
+"something like <code>s8J2Ge4</code>."
+msgstr ""
+
+#: ../admin/includes/available.php:597
+msgid "Video ( if <em>self</em> as Source )"
+msgstr ""
+
+#: ../admin/includes/available.php:598
+msgid ""
+"This is only used if you are hosting the video yourself. Note, set the Video "
+"Source to <em>self</em> above to utilize this option."
+msgstr ""
+
+#: ../admin/includes/available.php:607
+msgid "Video Loop ( if <em>self</em> as Source )"
+msgstr ""
+
+#: ../admin/includes/available.php:608
+msgid "Enable the video to loop."
+msgstr ""
+
+#: ../admin/includes/available.php:617
+msgid "Autoplay ( if <em>self</em> as Source )"
+msgstr ""
+
+#: ../admin/includes/available.php:618
+msgid "Should the video automatically start playing."
+msgstr ""
+
+#: ../admin/includes/available.php:627
+msgid "Video Controls ( if <em>self</em> as Source )"
+msgstr ""
+
+#: ../admin/includes/available.php:628
+msgid "Hide or show the controls for the self-hosted video player."
+msgstr ""
+
+#: ../admin/includes/available.php:637
+msgid "Start Video When in View  ( if <em>self</em> as Source )"
+msgstr ""
+
+#: ../admin/includes/available.php:638
+msgid ""
+"When set to <em>on</em> the video will start playing automatically once "
+"scrolled into view."
+msgstr ""
+
+#: ../admin/includes/available.php:647
+msgid "Stop Video When Out of View  ( if <em>self</em> as Source )"
+msgstr ""
+
+#: ../admin/includes/available.php:648
+msgid ""
+"Used together with the option above, this option when set to <em>on</em> "
+"will stop the video player from playing once scrolled out of view."
+msgstr ""
+
+#: ../admin/includes/available.php:655
+msgid "Optional caption for the video that is displayed under the video."
+msgstr ""
+
+#: ../admin/includes/available.php:658
+msgid "Responsive video component with alignment and optional caption."
+msgstr ""
+
+#: ../admin/includes/available.php:661
 msgid "Map"
 msgstr ""
 
-#: ../admin/includes/available.php:428
+#: ../admin/includes/available.php:668
 msgid "Height"
 msgstr ""
 
-#: ../admin/includes/available.php:431
+#: ../admin/includes/available.php:669
+msgid ""
+"The height of the map component. By default this is set to <code>500</code>. "
+"Avoid using percentages here."
+msgstr ""
+
+#: ../admin/includes/available.php:672
 msgid ""
 "Creates the basic map component. Use the Map Locations edit boxes when "
 "writing your story to add locations."
 msgstr ""
 
-#: ../admin/includes/available.php:434
+#: ../admin/includes/available.php:675
 msgid "Timeline Stop"
 msgstr ""
 
-#: ../admin/includes/available.php:441
+#: ../admin/includes/available.php:682
 msgid "Date"
 msgstr ""
 
-#: ../admin/includes/available.php:444
+#: ../admin/includes/available.php:683
+msgid ""
+"This is what is displayed as the timeline navigation label, and doesn't have "
+"to be a date specifically. Any text will work."
+msgstr ""
+
+#: ../admin/includes/available.php:689
+msgid "Title"
+msgstr ""
+
+#: ../admin/includes/available.php:690
+msgid "The title that should be displayed within the story."
+msgstr ""
+
+#: ../admin/includes/available.php:693
 msgid ""
 "Enter a number such as 2007, and a small timeline will be displayed with "
 "scroll to points. This works similar to the chapter heading."
 msgstr ""
 
-#: ../admin/includes/available.php:447 ../admin/includes/available.php:463
+#: ../admin/includes/available.php:696 ../admin/includes/available.php:713
 msgid "Document"
 msgstr ""
 
-#: ../admin/includes/available.php:453
+#: ../admin/includes/available.php:702
 msgid "pdf"
 msgstr ""
 
-#: ../admin/includes/available.php:454
+#: ../admin/includes/available.php:703
 msgid "image"
 msgstr ""
 
-#: ../admin/includes/available.php:457
+#: ../admin/includes/available.php:706
 msgid "Document Type"
 msgstr ""
 
-#: ../admin/includes/available.php:472
+#: ../admin/includes/available.php:707
+msgid "The type of document. Choose image or PDF."
+msgstr ""
+
+#: ../admin/includes/available.php:714
+msgid "URL to the document."
+msgstr ""
+
+#: ../admin/includes/available.php:721
+msgid "Provide an optional caption for the document component."
+msgstr ""
+
+#: ../admin/includes/available.php:724
 msgid "Show a document that is revealed with a click."
 msgstr ""
 
-#: ../admin/includes/available.php:475
+#: ../admin/includes/available.php:727
 msgid "Collections"
 msgstr ""
 
-#: ../admin/includes/available.php:482
+#: ../admin/includes/available.php:734
 msgid "Optional Title"
 msgstr ""
 
-#: ../admin/includes/available.php:488
-msgid "Collection ID"
+#: ../admin/includes/available.php:735
+msgid "Display an optional heading to be used within the Collection component."
 msgstr ""
 
-#: ../admin/includes/available.php:491
+#: ../admin/includes/available.php:741
+msgid "Category ID"
+msgstr ""
+
+#: ../admin/includes/available.php:742
+msgid ""
+"Provide the ID of the category that you want stories to be displayed from."
+msgstr ""
+
+#: ../admin/includes/available.php:748
+msgid "Posts to Show"
+msgstr ""
+
+#: ../admin/includes/available.php:749
+msgid "How many stories should be displayed."
+msgstr ""
+
+#: ../admin/includes/available.php:757
+msgid "5"
+msgstr ""
+
+#: ../admin/includes/available.php:760
+msgid "Columns"
+msgstr ""
+
+#: ../admin/includes/available.php:761
+msgid "Stories are displayed in a grid. How many columns should the grid be?"
+msgstr ""
+
+#: ../admin/includes/available.php:770
+msgid "Splash Mode"
+msgstr ""
+
+#: ../admin/includes/available.php:771
+msgid ""
+"Setting this to <em>on</em>, will then only display the actual categories on "
+"your site with the category title."
+msgstr ""
+
+#: ../admin/includes/available.php:774
 msgid ""
 "Show a collection of stories. Typically used on a page like the home page."
 msgstr ""
 
-#: ../admin/includes/generator.php:63
-msgid "Insert Component"
+#: ../admin/includes/components/component-gallery.php:29
+msgid "Type"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:28
-#: ../admin/includes/components/component-gallery.php:41
+#: ../admin/includes/components/component-gallery.php:72
+#: ../admin/includes/components/component-gallery.php:85
 msgid "Galleries"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:29
+#: ../admin/includes/components/component-gallery.php:73
 msgid "Parent Gallery:"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:30
+#: ../admin/includes/components/component-gallery.php:74
 msgid "All Galleries"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:31
+#: ../admin/includes/components/component-gallery.php:75
 msgid "View Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:32
+#: ../admin/includes/components/component-gallery.php:76
 msgid "Add New Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:33
+#: ../admin/includes/components/component-gallery.php:77
 msgid "New Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:34
+#: ../admin/includes/components/component-gallery.php:78
 msgid "Edit Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:35
+#: ../admin/includes/components/component-gallery.php:79
 msgid "Update Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:36
+#: ../admin/includes/components/component-gallery.php:80
 msgid "Search Galleries"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:37
+#: ../admin/includes/components/component-gallery.php:81
 msgid "No Galleries found"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:38
+#: ../admin/includes/components/component-gallery.php:82
 msgid "No Galleries found in Trash"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:42
+#: ../admin/includes/components/component-gallery.php:86
 msgid "Create responsive boxes"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:65
+#: ../admin/includes/components/component-gallery.php:110
 msgid "Gallery Instructions"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:68
+#: ../admin/includes/components/component-gallery.php:113
 msgid ""
 "1. Click the Add Media button<br />2. Click Create Gallery to create a "
 "gallery<br />3. Insert gallery into editor, and publish.<br /><br /> Once "
@@ -505,16 +1023,83 @@ msgid ""
 "story where you want the gallery to be shown.<br />"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:80
+#: ../admin/includes/components/component-gallery.php:125
 msgid "Gallery Code"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:81
+#: ../admin/includes/components/component-gallery.php:126
 msgid "Used In"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:138
+#: ../admin/includes/components/component-gallery.php:181
 msgid "Gallery Options"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:186
+msgid "Main Gallery Width"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:188
+msgid ""
+"Adjust the overall width of the grid/thumbnail gallery. Acceptable values "
+"include <code>500px</code> or <code>50%</code>."
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:193
+msgid "Gallery Grid Item Width"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:195
+msgid ""
+"Adjust the width of the individual grid items, only if using Grid gallery "
+"style.  Default is <code>400</code>."
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:200
+msgid "Gallery Caption (optional)"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:202
+msgid "Add an optional caption for the gallery. "
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:210
+msgid "Thumbnail Gallery Options"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:215
+msgid "Transition Effect"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:219
+msgid "Slide"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:220
+msgid "Fade"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:221
+msgid "Dissolve"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:223
+msgid ""
+"Adjust the transition effect for the Thumbnail gallery. Default is slide."
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:228
+msgid "Gallery Transition Speed"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:230
+msgid ""
+"Activate slideshow by setting a speed for the transition.<code>5000</code> = "
+"5 seconds. "
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:235
+msgid "Hide Gallery Thumbnails"
 msgstr ""
 
 #: ../admin/includes/components/component-map.php:18
@@ -522,33 +1107,136 @@ msgid "Starting Coordinates"
 msgstr ""
 
 #: ../admin/includes/components/component-map.php:23
+msgid "Default Zoom Level"
+msgstr ""
+
+#: ../admin/includes/components/component-map.php:25
+msgid ""
+"The larger the number, the more zoomed in the default will be. Limit is 20. "
+"Default is 12."
+msgstr ""
+
+#: ../admin/includes/components/component-map.php:29
 msgid "Map Markers"
 msgstr ""
 
-#: ../admin/includes/components/component-map.php:27
-msgid "help"
-msgstr ""
-
-#: ../admin/includes/components/component-map.php:31
-msgid "Latitude"
+#: ../admin/includes/components/component-map.php:33
+msgid "Assign latitude and longitude for each marker."
 msgstr ""
 
 #: ../admin/includes/components/component-map.php:37
-msgid "Longitude"
+msgid "Latitude"
 msgstr ""
 
 #: ../admin/includes/components/component-map.php:43
+msgid "Longitude"
+msgstr ""
+
+#: ../admin/includes/components/component-map.php:49
 msgid "Marker Text"
 msgstr ""
 
-#: ../admin/includes/components/component-map.php:52
+#: ../admin/includes/components/component-map.php:58
 msgid "Map Component Locations"
 msgstr ""
 
-#: ../admin/includes/custom-meta-boxes/classes.fields.php:1007
+#: ../admin/includes/custom-meta-boxes/classes.fields.php:1011
 msgid "Type to search"
 msgstr ""
 
-#: ../public/includes/components/component-gallery.php:28
-msgid "Type"
+#: ../admin/includes/generator_blob.php:60
+msgid "Insert Component"
+msgstr ""
+
+#: ../admin/includes/help.php:23
+msgid "Aesop Core"
+msgstr ""
+
+#: ../admin/includes/help.php:24
+msgid ""
+"\n"
+"\t      \t\t<h3>Welcome to Aesop</h3>\n"
+"\t\t\t\t<p>Add story components by clicking the \"Add Component\" button "
+"below. This opens the Story Engine and allows you to select the component "
+"that you'd like to insert, after setting up a few options.</p>\n"
+"\n"
+"\t\t\t\t<h4>Theme Compatibility</h4>\n"
+"\t\t\t\t<p>While most of the components will work with any theme, the "
+"<em>Timeline</em> and <em>Chapter</em> components will not function as "
+"designed without a theme that implements the necessary action hooks. Refer "
+"to the documentation link below.</p>\n"
+"\n"
+"\t\t\t\t<h4>Documentation</h4>\n"
+"\t\t\t\t<p>All components, options, and hooks are full documented at <a href="
+"\"http://developers.aesopstories.com\">http://developers.aesopstories.com</"
+"a></p>\n"
+"\t      \t\t"
+msgstr ""
+
+#: ../admin/includes/help.php:42
+msgid "Aesop Galleries"
+msgstr ""
+
+#: ../admin/includes/help.php:43
+msgid ""
+"\n"
+"\t      \t\t<h3>Aesop Gallery Component</h3>\n"
+"\t\t\t\t<p>Gallery components for Aesop are created and managed here with "
+"the Galleries post type. Each post is a different gallery, and each gallery "
+"has it's own shortcode that you'll use to display the gallery with.</p>\n"
+"\n"
+"\t\t\t\t<h4>Directions</h4>\n"
+"\t\t\t\t<ol>\n"
+"\t\t\t\t\t<li>Click the Add Media button</li>\n"
+"\t\t\t\t\t<li>Click Create Gallery to create a gallery</li>\n"
+"\t\t\t\t\t<li>Create a gallery, then choose a gallery type while creating "
+"the gallery within the gallery modal. </li>\n"
+"\t\t\t\t\t<li>Insert the gallery into the post, and publish the page.</li>\n"
+"\t\t\t\t\t<li>Take note of the code produced that you'll copy and paste into "
+"the post where you want the gallery to show up.</li>\n"
+"\t\t\t\t\t</ol>\n"
+"\n"
+"\n"
+"\t\t\t\t<h4>Documentation</h4>\n"
+"\t\t\t\t<p>All components, options, and hooks are full documented at <a href="
+"\"http://developers.aesopstories.com\">http://developers.aesopstories.com</"
+"a></p>\n"
+"\t      \t\t"
+msgstr ""
+
+#: ../admin/includes/notify.php:22
+msgid ""
+"Thanks for checking out Aesop! Get started by going to any post, and "
+"clicking the \"Add Component\" button. Refer to the Help Tab while editing a "
+"single post for more."
+msgstr ""
+
+#: ../public/class-aesop-core.php:240
+msgid "Doh! There was an issue deactivating Aesop. Try again perhaps?."
+msgstr ""
+
+#: ../public/includes/components/component-collections.php:130
+msgid "Specify a category ID to display stories from."
+msgstr ""
+
+#: ../public/includes/components/component-gallery.php:103
+msgid "No images found"
+msgstr ""
+
+#: ../public/includes/components/component-image.php:52
+msgid "Enlarge"
+msgstr ""
+
+#: ../public/includes/options.php:13
+msgid "Aesop Story Engine"
+msgstr ""
+
+#: ../public/includes/options.php:14
+msgid ""
+"Refer to the documentation located <a href=\"http://aesopstoryengine.com/"
+"documentation\" target=\"_blank\">here</a> for full option descriptions."
+msgstr ""
+
+#: ../public/includes/options.php:24
+msgid "Mapbox Map ID"
 msgstr ""
