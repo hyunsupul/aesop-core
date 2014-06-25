@@ -354,7 +354,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(),
 						'default'	=> '',
 						'desc'		=> __('Chapter Subtitle (optional)','aesop-core'),
-						'tip'		=> __('If filled out, will display a <em>sub-title<em> after the chapter title text.','aesop-core')
+						'tip'		=> __('If filled out, will display a <em>sub-title</em> after the chapter title text.','aesop-core')
 					),
 					'bgtype'			=> array(
 						'type'		=> 'text',
@@ -370,8 +370,8 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> ' ',
-						'desc' 		=> __( 'Chapter Image/Video', 'aesop-core' ),
-						'tip'		=> __('URL for the image background if img set above. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
+						'desc' 		=> __( 'Chapter Image or Video URL', 'aesop-core' ),
+						'tip'		=> __('URL for the image background if img set above. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Creates the scroll to point, as a chapter heading.','aesop-core' )
@@ -528,7 +528,7 @@ if(!function_exists('aesop_shortcodes')){
 							__('off', 'aesop-core')
 						),
 						'default' 	=> 'off',
-						'desc' 		=> __( 'Start Audio When out of View', 'aesop-core' ),
+						'desc' 		=> __( 'Stop Audio When out of View', 'aesop-core' ),
 						'tip'		=> __('Used together with the option above, this option when set to <em>on</em> will stop the audio player from playing once scrolled out of view.','aesop-core')
 					),
 					'hidden'		=> array(
