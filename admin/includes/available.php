@@ -615,7 +615,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'on',
 						'desc' 		=> __('Autoplay ( if <em>self</em> as Source )', 'aesop-core' ),
-						'tip'		=> __('Label','aesop-core')
+						'tip'		=> __('Should the video automatically start playing.','aesop-core')
 					),
 					'controls' 			=> array(
 						'type'		=> 'text',
@@ -625,7 +625,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __('Video Controls ( if <em>self</em> as Source )', 'aesop-core' ),
-						'tip'		=> 'sup'
+						'tip'		=> __('Hide or show the controls for the self-hosted video player.','aesop-core')
 					),
 					'viewstart'		=> array(
 						'type'		=> 'text',
@@ -644,7 +644,7 @@ if(!function_exists('aesop_shortcodes')){
 							__('off', 'aesop-core')
 						),
 						'default' 	=> 'off',
-						'desc' 		=> __( 'Start Video When Out of View  ( if <em>self</em> as Source )', 'aesop-core' ),
+						'desc' 		=> __( 'Stop Video When Out of View  ( if <em>self</em> as Source )', 'aesop-core' ),
 						'tip'		=> __('Used together with the option above, this option when set to <em>on</em> will stop the video player from playing once scrolled out of view.','aesop-core')
 					),
 					'caption' 			=> array(
