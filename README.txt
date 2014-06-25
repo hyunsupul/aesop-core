@@ -127,6 +127,16 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.0.8 =
+* NEW - option description tip bubbles
+* NEW - Misc style refinements to the generator user interface
+* NEW - Updated icon for Galleries tab
+* NEW - Image caption is now displayed in the lightbox if set
+* NEW - changed lightbox to close if background is clicked
+* UPDATED - translation file with new strings
+* UPDATED - Lightbox script
+* CHANGED - Changed the “Upload” label to “Select Media”
+
 = 1.0.7 =
 * NEW - Parallax floater options added to Content Component
 * NEW - Ability to have text positioned anywhere in Content Component
