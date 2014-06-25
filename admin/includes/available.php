@@ -46,7 +46,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image ALT', 'aesop-core' ),
-						'tip'		=> __('ALT tag used for the image. Primarly used for SEO purposes.','aesop-core')
+						'tip'		=> __('ALT tag used for the image. Primarily used for SEO purposes.','aesop-core')
 					),
 					'align' 			=> array(
 						'type'		=> 'text',
@@ -64,7 +64,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image Offset', 'aesop-core' ),
-						'tip'		=> __('Using this option you can <em>float<em> an image outside of the text. Enter a size like <code>-200px</code>.','aesop-core')
+						'tip'		=> __('Using this option you can <em>float</em> an image outside of the text. Enter a size like <code>-200px</code>.','aesop-core')
 					),
 					'captionposition' => array(
 						'type'		=> 'text',
@@ -680,14 +680,14 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Date', 'aesop-core' ),
-						'tip'		=> __('This is what is displayed as the timeline navigation label, and doesn\'t have to be a date specficially. Any text will work.','aesop-core')
+						'tip'		=> __('This is what is displayed as the timeline navigation label, and doesn\'t have to be a date specifically. Any text will work.','aesop-core')
 					),
 					'title' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Title', 'aesop-core' ),
-						'tip'		=> __('The title that shoudl be displayed within the story.','aesop-core')
+						'tip'		=> __('The title that should be displayed within the story.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Enter a number such as 2007, and a small timeline will be displayed with scroll to points. This works similar to the chapter heading.','aesop-core' )
