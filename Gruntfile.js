@@ -93,11 +93,22 @@ module.exports = function(grunt) {
                 options: {
                     sourceMap: 'public/assets/js/ai-core.js.map',
                     sourceMappingURL: 'ai-core.js.map',
-                    sourceMapPrefix: 2
+                    sourceMapPrefix: 10
                 },
                	files: {
                     'public/assets/js/ai-core.min.js': [
-                     	'public/assets/js/ai-core.js',
+                     	'public/assets/js/fit-vids.js',
+                     	'public/assets/js/swipebox.js',
+                     	'public/assets/js/waypoints.js',
+                     	'public/assets/js/fotorama.js',
+                     	'public/assets/js/scroll-nav.js',
+                     	'public/assets/js/wookmark.js',
+                     	'public/assets/js/images-loaded.js',
+                     	'public/assets/js/pdf-object.js',
+                     	'public/assets/js/slabtext.js',
+                     	'public/assets/js/cookie.js',
+                     	'public/assets/js/parallax.js',
+                     	'public/assets/js/methods.js'
                     ]
                 }
             }
