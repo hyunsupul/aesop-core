@@ -50,15 +50,18 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 				do_action('aesop_parallax_inside_top'); // action
 
-				// if parallax is on and we're not on mobile
-				if ( 'on' == $atts['parallaxbg'] && !wp_is_mobile() ) { ?>
+				// only run parallax if not on mobile and parallax is on
+				if ( !wp_is_mobile() && ( 'on' == $atts['parallaxbg'] || 'on' == $atts['floater'] ) ) { ?>
 					<script>
 						jQuery(document).ready(function(){
+
+							<?php if ( 'on' == $atts['parallaxbg'] ) { ?>
 					   		jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $hash;?> .aesop-parallax-sc-img').parallax({speed: 0.1});
 					        var viewport = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $hash;?>').outerHeight();
 		        			jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $hash;?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1.65});
+		        			<?php } ?>
 
-		        			<?php if ('on' == $atts['floater']) {?>
+		        			<?php if ( 'on' == $atts['floater'] ) {?>
 								var obj = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $hash;?> .aesop-parallax-sc-floater');
 						       	function scrollParallax(){
 						       	    var floater = (jQuery(window).scrollTop() / jQuery(obj).data('speed')) - <?php echo absint(sanitize_text_field($atts['floateroffset']));?>;
