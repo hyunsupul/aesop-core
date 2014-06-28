@@ -29,7 +29,7 @@ if (!function_exists('aesop_image_shortcode')){
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'image', '' ) : null;
 
 		// image width
-		$width = $atts['imgwidth'] ? sprintf('style="width:%s;"',$atts['imgwidth']) : null;
+		$width = $atts['imgwidth'] ? sprintf('style="width:%s;max-width:100%;"',$atts['imgwidth']) : null;
 
 		// combine into component shell
 		ob_start();
