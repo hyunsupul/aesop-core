@@ -133,9 +133,13 @@ Full documentation can be found below.
 * NEW - Updated icon for Galleries tab
 * NEW - Image caption is now displayed in the lightbox if set
 * NEW - changed lightbox to close if background is clicked
+* FIXED - Bug with responsive images when px width is set
+* FIXED - Audio player from looping when set to off
 * UPDATED - translation file with new strings
 * UPDATED - Lightbox script
+* CHANGED - Floater can now be parallax even with parallax bg set to off in parallax component
 * CHANGED - Changed the “Upload” label to “Select Media”
+
 
 = 1.0.7 =
 * NEW - Parallax floater options added to Content Component
