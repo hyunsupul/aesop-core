@@ -133,6 +133,7 @@ Full documentation can be found below.
 * NEW - Updated icon for Galleries tab
 * NEW - Image caption is now displayed in the lightbox if set
 * NEW - changed lightbox to close if background is clicked
+* NEW - parallax floater option added to Content Component
 * FIXED - Bug with responsive images when px width is set
 * FIXED - Audio player from looping when set to off
 * UPDATED - translation file with new strings
