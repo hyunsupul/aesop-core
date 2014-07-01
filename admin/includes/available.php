@@ -18,7 +18,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image URL', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary','aesop-core')
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
 					),
 					'imgwidth' 			=> array(
 						'type'		=> 'text',
@@ -212,14 +212,14 @@ if(!function_exists('aesop_shortcodes')){
 						'values'	=> array(),
 						'default' 	=> 300,
 						'desc' 		=> __('If using parallax, starting offset.', 'aesop-core' ),
-						'tip'		=> __('Start with a value like <code>-100px</code>, and tweak until desired. This moves starting position of the quote if using parallax.','aesop-core')
+						'tip'		=> __('Start with a value like <code>100px</code>, and tweak until desired. This moves starting position of the quote back 100px if using parallax.','aesop-core')
 					),
 					'speed' 		=> array(
 						'type'		=> 'text',
 						'values'	=> array(),
-						'default' 	=> 8,
+						'default' 	=> '8',
 						'desc' 		=> __('Speed of parallax movement. Lower is faster.', 'aesop-core' ),
-						'tip'		=> __('How fast the quote should travel across the screen, if using parallax.','aesop-core')
+						'tip'		=> __('How fast the quote should travel across the screen, if using parallax. Default is 8.','aesop-core')
 
 					),
 					'direction' => array(
@@ -407,7 +407,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> ' ',
 						'desc' 		=> __( 'Chapter Image or Video URL', 'aesop-core' ),
-						'tip'		=> __('URL for the image background if img set above. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
+						'tip'		=> __('URL for the image or video background as set above. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Creates the scroll to point, as a chapter heading.','aesop-core' )
@@ -535,7 +535,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Audio URL', 'aesop-core' ),
-						'tip'		=> __('URL to the mp3 file.','aesop-core')
+						'tip'		=> __('URL to the mp3 file. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
 					),
 					'loop'		=> array(
 						'type'		=> 'text',
@@ -630,7 +630,7 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Video ( if <em>self</em> as Source )', 'aesop-core' ),
+						'desc' 		=> __( 'Video URL( if <em>self</em> as Source ). Click <em>Select Media</em> to open the WordPress Media Libary. ', 'aesop-core' ),
 						'tip'		=> __('This is only used if you are hosting the video yourself. Note, set the Video Source to <em>self</em> above to utilize this option.','aesop-core')
 					),
 					'loop' 			=> array(
@@ -688,7 +688,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Caption (optional)', 'aesop-core' ),
-						'tip'		=> __('Optional caption for the video that is displayed under the video.','aesop-core')
+						'tip'		=> __('Optionally display a caption below the video.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Responsive video component with alignment and optional caption.','aesop-core' ),
@@ -747,7 +747,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Document', 'aesop-core' ),
-						'tip'		=> __('URL to the document.','aesop-core')
+						'tip'		=> __('URL to the document. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
 					),
 					'caption' 			=> array(
 						'type'		=> 'text',
