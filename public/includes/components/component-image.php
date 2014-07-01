@@ -23,13 +23,10 @@ if (!function_exists('aesop_image_shortcode')){
 		$atts = apply_filters('aesop_image_defaults',shortcode_atts($defaults, $atts));
 
 		// offset styles
-		$offsetstyle = $atts['offset'] && ('left' == $atts['align'] || 'right' == $atts['align'] ) ? sprintf('style="margin-%s:%s;width:%s;"',$atts['align'], $atts['offset'], $atts['imgwidth']) : sprintf('style="width:%s;"', $atts['imgwidth']);
+		$offsetstyle = $atts['offset'] && ('left' == $atts['align'] || 'right' == $atts['align'] ) ? sprintf('style="margin-%s:%s;width:%s;"',$atts['align'], $atts['offset'], $atts['imgwidth']) : 'style="width:'.$atts['imgwidth'].';max-width:100%;"';
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'image', '' ) : null;
-
-		// image width
-		$width = $atts['imgwidth'] ? sprintf('style="width:%s;max-width:100%;"',$atts['imgwidth']) : null;
 
 		// combine into component shell
 		ob_start();
