@@ -326,6 +326,42 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 'no-repeat',
 						'desc' 		=> __( 'Image Repeat', 'aesop-core' ),
 						'tip'		=> __('If using a background image, should the background image repeat? Useful for using tiled images.','aesop-core')
+					),
+					'floatermedia' 	=> array(
+						'type'		=> 'text',
+						'values' 	=> array(),
+						'default' 	=> '',
+						'desc' 		=> __('Floater Media', 'aesop-core' ),
+						'tip'		=> __('You can use text and images here. To use an image, use the full HTML tag without quotes around the image path.','aesop-core')
+					),
+					'floaterposition' => array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('right', 'aesop-core'),
+							__('left', 'aesop-core'),
+							__('center', 'aesop-core')
+						),
+						'default' 	=> 'right',
+						'desc' 		=> __('Position of Floater', 'aesop-core' ),
+						'tip'		=> __('If you are using the Floater option, where should the floater be positioned?','aesop-core')
+					),
+					'floateroffset' => array(
+						'type'		=> 'text',
+						'values' 	=> array(),
+						'desc' 		=> __('Offset Amount of Floater (px or %)', 'aesop-core' ),
+						'tip'		=> __('This value will vary depending on your floater media. Enter a value like <code>-200px</code> and tweak as you see fit.','aesop-core')
+					),
+					'floaterdirection' => array(
+						'type'		=> 'text',
+						'values' 	=> array(
+							__('up', 'aesop-core'),
+							__('down', 'aesop-core'),
+							__('left', 'aesop-core'),
+							__('right', 'aesop-core')
+						),
+						'default' 	=> 'up',
+						'desc' 		=> __('Parallax Direction of Floater', 'aesop-core' ),
+						'tip'		=> __('What direction should the floater media travel in?','aesop-core')
 					)
 				),
 				'content' 			=> __( 'All your normal text goes here.', 'ba-shortcodes' ),
