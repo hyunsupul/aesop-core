@@ -96,12 +96,12 @@ if (!function_exists('aesop_collection_shortcode')){
 								);
 
 								// get cached query
-								$query = wp_cache_get('aesop_collection_query');
+								$query = wp_cache_get('aesop_collection_query_' . $atts['collection'] );
 
 								// if no cached query then cache the query
 								if (false == $query ) {
 									$query = new wp_query( apply_filters( 'aesop_collection_query', $args ) );
-									wp_cache_set('aesop_collection_query', $query);
+									wp_cache_set('aesop_collection_query_' . $atts['collection'] , $query);
 								}
 
 								// loop through the stories
