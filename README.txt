@@ -1,5 +1,5 @@
 === Aesop Story Engine ===
-Contributors: nphaskins, mauryaratan
+Contributors: nphaskins, mauryaratan, Tmeister
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com
@@ -108,7 +108,7 @@ If you think something is missing, we want to hear from you. Post your request a
 Most of the components will work with most themes without any issues. It’s very important to know that this plugin only applies basic styles, and to take full advantage, a theme built for Aesop is probably a good idea.
 
 = Where can I find themes for Aesop? =
-That’s something we are actively working on, now that the plugin has finally been released.
+Various theme shops in the industry are actively creating Aesop Themes, in addition to the official Aesop themes located at http [http://aesopstoryengine.com/library](http://aesopstoryengine.com/library)
 
 = Where can I find more information on making my theme fully compatible? =
 Full documentation can be found below.
@@ -134,6 +134,8 @@ Full documentation can be found below.
 * NEW - Image caption is now displayed in the lightbox if set
 * NEW - changed lightbox to close if background is clicked
 * NEW - parallax floater option added to Content Component
+* NEW - polish translation - props trzyem
+* NEW - four additional hooks added to collections component - props @tmeister
 * FIXED - Bug with responsive images when px width is set
 * FIXED - Audio player from looping when set to off
 * UPDATED - translation file with new strings
