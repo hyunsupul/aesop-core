@@ -55,9 +55,6 @@ class Aesop_Core {
 		// load optoins
 		require_once( AI_CORE_DIR.'public/includes/options.php');
 
-		// additinoal css support
-		require_once( AI_CORE_DIR.'public/includes/css.php');
-
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
@@ -271,7 +268,13 @@ class Aesop_Core {
 		wp_enqueue_script('jquery');
 
 		if (! defined('AI_CORE_UNSTYLED')) {
+
 			wp_enqueue_style('ai-core-style', AI_CORE_URL.'/public/assets/css/ai-core.min.css', AI_CORE_VERSION, true);
+
+			// extended css styles support
+			if ( current_theme_supports( 'aesop-component-styles') ) {
+				wp_enqueue_style('ai-core-style-extended', AI_CORE_URL.'/public/assets/css/ai-core-extended.min.css', AI_CORE_VERSION, true);
+			}
 		}
 
 		wp_enqueue_script('ai-core', AI_CORE_URL.'/public/assets/js/ai-core.min.js', array('jquery'), AI_CORE_VERSION, true);
