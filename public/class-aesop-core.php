@@ -259,25 +259,35 @@ class Aesop_Core {
 	}
 
 	/**
-	 * Load component styles and scripts
-	 *
-	 * @since    1.0.0
-	 */
+	*
+	*	enqueue plugin files
+	* 	@since 1.0
+	*
+	*	add_theme_support('aesop-component-styles');
+	*	added to a themes functions.php will enqueue an additional css file with extended css support for all aesop components
+	*
+	*   @since 1.0.9
+	*
+	*/
 	public function scripts(){
 
 		wp_enqueue_script('jquery');
 
+		// if the define for unstyled all of aesop isn't set, continue
 		if (! defined('AI_CORE_UNSTYLED')) {
 
+			// core css file
 			wp_enqueue_style('ai-core-style', AI_CORE_URL.'/public/assets/css/ai-core.min.css', AI_CORE_VERSION, true);
 
-			// extended css styles support
-			if ( current_theme_supports( 'aesop-component-styles') ) {
+			// extended css theme styles
+			if ( current_theme_supports( 'aesop-component-styles' ) ) {
 				wp_enqueue_style('ai-core-style-extended', AI_CORE_URL.'/public/assets/css/ai-core-extended.min.css', AI_CORE_VERSION, true);
 			}
 		}
 
+		// core script
 		wp_enqueue_script('ai-core', AI_CORE_URL.'/public/assets/js/ai-core.min.js', array('jquery'), AI_CORE_VERSION, true);
+
 	}
 
 	/**
