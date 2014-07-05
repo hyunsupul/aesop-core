@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 		      		cleancss:true
 		    	},
 		    	files: {
-		      		"public/assets/css/style.css": "public/assets/less/style.less"
+		      		"public/assets/css/ai-core.min.css": "public/assets/less/style.less"
 		    	}
 		  	}
 		},
