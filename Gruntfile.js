@@ -108,6 +108,7 @@ module.exports = function(grunt) {
                      	'public/assets/js/slabtext.js',
                      	'public/assets/js/cookie.js',
                      	'public/assets/js/parallax.js',
+                     	'public/assets/js/photoset.js',
                      	'public/assets/js/methods.js'
                     ]
                 }

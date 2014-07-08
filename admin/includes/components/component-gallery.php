@@ -32,6 +32,7 @@ class AesopGalleryComponentAdmin {
 		        	<option value="grid">Grid</option>
 		        	<option value="thumbnail">Thumbnail</option>
 		        	<option value="sequence">Sequence</option>
+		        	<option value="photoset">Photoset</option>
 		        	<option value="stacked">Stacked Parallax</option>
 		      	</select>
 		    </label>
@@ -240,7 +241,28 @@ class AesopGalleryComponentAdmin {
 
 		);
 
+		// photoset gallery options
+		$meta_boxes[] = array(
+			'title' 	=> __('Photoset Gallery Options', 'aesop-core'),
+			'pages' 	=> array('ai_galleries'),
+			'fields' 	=> array(
+				array(
+					'id'             => 'aesop_photoset_gallery_layout',
+					'name'           => __('Gallery Layout', 'aesop-core'),
+					'type'           => 'text',
+					'default'		=> '',
+					'desc'			=> __('Provide a layout for the photoset.','aesop-core'),
+					'cols'			=> 12
+				),
+				array(
+					'id'             => 'aesop_photoset_gallery_lightbox',
+					'name'           => __('Enable Lightbox', 'aesop-core'),
+					'type'           => 'checkbox'
+				)
 
+			)
+
+		);
 		return $meta_boxes;
 
 	}
