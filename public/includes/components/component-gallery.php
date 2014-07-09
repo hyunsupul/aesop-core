@@ -275,17 +275,30 @@ class AesopCoreGallery {
 		// layout
 		$layout = get_post_meta( $atts['id'], 'aesop_photoset_gallery_layout', true) ? get_post_meta( $atts['id'], 'aesop_photoset_gallery_layout', true) : '';
 
+		$style = $width ? sprintf('style="max-width:%s;margin-left:auto;margin-right:auto;"',$width) : null;
+
+		// lightbox
+		$lightbox = get_post_meta( $atts['id'], 'aesop_photoset_gallery_lightbox', true );
+
 		?>
 		<!-- Aesop Photoset Gallery -->
 		<script>
 		jQuery(window).load(function(){
 			jQuery('.aesop-gallery-photoset').photosetGrid({
 			  	gutter: "<?php echo $gridspace.'px';?>",
-			  	rel: 'aesop-photoset',
+			  	rel: '',
+			  	<?php if ( $lightbox ) { ?>
 			  	highresLinks:true,
+			  	<?php } ?>
 			  	onComplete: function(){
+
+			  		<?php if ( $lightbox ) { ?>
+			  			jQuery('.aesop-gallery-photoset a').addClass('aesop-lightbox');
+			  		<?php } ?>
+
 				    jQuery('.aesop-gallery-photoset').attr('style', '');
 				    jQuery(".aesop-gallery-photoset img").each(function(){
+
 						caption = jQuery(this).attr('alt');
 						title = jQuery(this).attr('data-title');
 						jQuery(this).after('<span class="aesop-photoset-caption"><span class="aesop-photoset-caption-title">' + title + '</span><span class="aesop-photoset-caption-caption">' + caption +'</span></span>');
@@ -295,22 +308,32 @@ class AesopCoreGallery {
 			});
 		});
 		</script>
-		<div class="aesop-gallery-photoset" data-layout="<?php echo $layout;?>">
-		<?php
 
-		foreach ($images as $image):
+		<?php if ( $style ) {
+			echo '<div class="aesop-gallery-photoset-width" '.$style.' >';
+		}
 
-            $full    	=  wp_get_attachment_url($image->ID, 'large', false,'');
-            $alt     	=  get_post_meta($image->ID, '_wp_attachment_image_alt', true);
-            $caption 	=  $image->post_excerpt;
-            $desc    	=  $image->post_content;
-            $title 	  	= $image->post_title;
+			?><div class="aesop-gallery-photoset" data-layout="<?php echo $layout;?>" ><?php
 
-           	?><img src="<?php echo $full;?>" data-highres="<?php echo $full;?>" data-title="<?php echo $title;?>" alt="<?php echo $alt;?>"><?php
+				foreach ($images as $image):
 
-		endforeach;
+		            $full    	=  wp_get_attachment_url($image->ID, 'large', false,'');
+		            $alt     	=  get_post_meta($image->ID, '_wp_attachment_image_alt', true);
+		            $caption 	=  $image->post_excerpt;
+		            $desc    	=  $image->post_content;
+		            $title 	  	= $image->post_title;
 
-		?></div><?php
+		            $lb_link    = $lightbox ? sprintf('data-highres="%s"', $full) : null;
+
+		           	?><img src="<?php echo $full;?>" <?php echo $lb_link;?> data-title="<?php echo $title;?>" alt="<?php echo $alt;?>"><?php
+
+				endforeach;
+
+			?></div><?php
+
+		if ( $style ) {
+			echo '</div>';
+		}
 
 	}
     /**
