@@ -285,8 +285,7 @@ class AesopCoreGallery {
 		<script>
 		jQuery(window).load(function(){
 			jQuery('.aesop-gallery-photoset').photosetGrid({
-			  	gutter: "<?php echo $gridspace.'px';?>",
-			  	rel: '',
+			  	gutter: "<?php echo $space.'px';?>",
 			  	<?php if ( $lightbox ) { ?>
 			  	highresLinks:true,
 			  	<?php } ?>
