@@ -18,7 +18,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image URL', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'imgwidth' 			=> array(
 						'type'		=> 'text',
@@ -100,7 +100,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Character Image', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'name' 			=> array(
 						'type'		=> 'text',
@@ -159,7 +159,7 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'media_upload',
 						'default' 	=> '',
 						'desc' 		=> __( 'Optional Background Image', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'text'			 => array(
 						'values' 	=> array(),
@@ -313,7 +313,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Background Image', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'imgrepeat' 			=> array(
 						'type'		=> 'text',
@@ -421,7 +421,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'height' 		=> array(
 						'type'		=> 'text',
@@ -535,7 +535,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Audio URL', 'aesop-core' ),
-						'tip'		=> __('URL to the mp3 file. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
+						'tip'		=> __('URL to the mp3 file. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'loop'		=> array(
 						'type'		=> 'text',
@@ -630,7 +630,7 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'media_upload',
 						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Video URL( if <em>self</em> as Source ). Click <em>Select Media</em> to open the WordPress Media Libary. ', 'aesop-core' ),
+						'desc' 		=> __( 'Video URL( if <em>self</em> as Source ). Click <em>Select Media</em> to open the WordPress Media Library. ', 'aesop-core' ),
 						'tip'		=> __('This is only used if you are hosting the video yourself. Note, set the Video Source to <em>self</em> above to utilize this option.','aesop-core')
 					),
 					'loop' 			=> array(
@@ -747,7 +747,7 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Document', 'aesop-core' ),
-						'tip'		=> __('URL to the document. Click <em>Select Media</em> to open the WordPress Media Libary.','aesop-core')
+						'tip'		=> __('URL to the document. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'caption' 			=> array(
 						'type'		=> 'text',
