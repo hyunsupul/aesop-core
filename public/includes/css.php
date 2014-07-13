@@ -25,7 +25,7 @@ class aiCoreCSSMerger {
 
 		$css = '';
 
-		$support = get_theme_support( 'aesop-component-styles');
+		$theme_supports = get_theme_support( 'aesop-component-styles');
 
 		//var_dump($support[0][0]);
 		/*
@@ -35,14 +35,14 @@ class aiCoreCSSMerger {
 		*/
 
 		// test support
-		if ( false !== strpos($support[0][0],'test') ) {
+		if ( false !== strpos( $theme_supports[0][0], 'test' ) ) {
 
 			$css .= file_get_contents(AI_CORE_DIR.'/public/assets/css/components/test.css');
 
 		}
 
 		// test more support
-		if ( false !== strpos($support[0][0],'quote') ) {
+		if ( false !== strpos( $theme_supports[0][0], 'quote' ) ) {
 
 			$css .= file_get_contents(AI_CORE_DIR.'/public/assets/css/components/quote.css');
 		}
