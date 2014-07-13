@@ -18,6 +18,7 @@ class aiCoreCSSMerger {
 	/**
 	*
 	*	conditionally load css depending on the component being called in add_theme_support
+	*   wp_add_inline_styles used to load css in head
 	*
 	*/
 	function merger(){
@@ -51,7 +52,7 @@ class aiCoreCSSMerger {
 		$supports = get_theme_support( 'aesop-component-styles');
 
 		// bail if no support
-		if ( empty( $supports ) || !is_array($supports) )
+		if ( empty( $supports ) || !is_array( $supports ) )
 			return;
 
 		if ( false !== strpos( $supports[0][0], $component ) )
