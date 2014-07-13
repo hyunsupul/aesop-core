@@ -55,6 +55,9 @@ class Aesop_Core {
 		// load optoins
 		require_once( AI_CORE_DIR.'public/includes/options.php');
 
+		// additinoal css support
+		require_once( AI_CORE_DIR.'public/includes/css.php');
+
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
