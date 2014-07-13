@@ -17,37 +17,48 @@ class aiCoreCSSMerger {
 
 	/**
 	*
-	*	merges styles inline into head
-	*	@todo - this logic could stand to be shortened
+	*	conditionally load css depending on the component being called in add_theme_support
 	*
 	*/
 	function merger(){
 
 		$css = '';
 
-		$theme_supports = get_theme_support( 'aesop-component-styles');
-
-		//var_dump($support[0][0]);
-		/*
-		if (strpos($support[0][0],'test') !== false) {
-			$css .= 'success';
-		}
-		*/
-
 		// test support
-		if ( false !== strpos( $theme_supports[0][0], 'test' ) ) {
+		if ( self::aesop_theme_supports('test') ) {
 
 			$css .= file_get_contents(AI_CORE_DIR.'/public/assets/css/components/test.css');
 
 		}
 
-		// test more support
-		if ( false !== strpos( $theme_supports[0][0], 'quote' ) ) {
+		// test quote support
+		if ( self::aesop_theme_supports('quote') ) {
 
 			$css .= file_get_contents(AI_CORE_DIR.'/public/assets/css/components/quote.css');
 		}
 
 		wp_add_inline_style('ai-core-style', $css);
+	}
+
+	/**
+	*
+	*	Helper function used in seeing if a particular theme has added extended styles support
+	* 	@param $component - string - name of component
+	*/
+
+	static function aesop_theme_supports( $component = '' ) {
+
+		$supports = get_theme_support( 'aesop-component-styles');
+
+		// bail if no support
+		if ( empty( $supports ) || !is_array($supports) )
+			return;
+
+		if ( false !== strpos( $supports[0][0], $component ) )
+			return true;
+		else
+			return false;
+
 	}
 
 }
