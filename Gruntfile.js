@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         // watch our project for changes
         watch: {
             less: {
-				files: ['public/assets/less/*','admin/assets/css/*'],
+				files: ['public/assets/less/*/**','admin/assets/css/*/**'],
                 tasks: ['less']
             },
             js: {
@@ -35,12 +35,13 @@ module.exports = function(grunt) {
 		  	},
 		  	publicLess: {
 		    	options: {
-		      		paths: ["public/assets/less"],
+		      		paths: ["public/assets/less/*/**"],
 		      		cleancss:true
 		    	},
 		    	files: {
 		      		"public/assets/css/ai-core.min.css": "public/assets/less/style.less",
-		      		"public/assets/css/ai-core-extended.min.css": "public/assets/less/extended.less"
+		      		"public/assets/css/components/test.css": "public/assets/less/components/test.less",
+		      		"public/assets/css/components/quote.css": "public/assets/less/components/quote.less"
 		    	}
 		  	}
 		},
