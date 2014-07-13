@@ -25,15 +25,24 @@ class aiCoreCSSMerger {
 
 		$css = '';
 
-		// test support
-		if ( current_theme_supports( 'aesop-component-styles', 'test' ) ) {
+		$support = get_theme_support( 'aesop-component-styles');
 
-			$css = file_get_contents(AI_CORE_DIR.'/public/assets/css/components/test.css');
+		//var_dump($support[0][0]);
+		/*
+		if (strpos($support[0][0],'test') !== false) {
+			$css .= 'success';
+		}
+		*/
+
+		// test support
+		if (strpos($support[0][0],'test') !== false) {
+
+			$css .= file_get_contents(AI_CORE_DIR.'/public/assets/css/components/test.css');
 
 		}
 
 		// test more support
-		if ( current_theme_supports( 'aesop-component-styles', 'quote' ) ) {
+		if (strpos($support[0][0],'quote') !== false) {
 
 			$css .= file_get_contents(AI_CORE_DIR.'/public/assets/css/components/quote.css');
 		}
