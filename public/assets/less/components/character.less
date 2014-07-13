@@ -1,0 +1,54 @@
+@import "base.less";
+
+.aesop-character-component {
+
+    .aesop-character-float {
+        margin: .65rem 0;
+        width:150px;
+        text-align: center;
+
+        .aesop-character-title {
+            vertical-align: top;
+            font-size:@font-size-xsmall;
+            font-family:@font-family-sans-serif;
+            color:@aesop-flip-text;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: block;
+            text-align: center;
+            margin:0 0 0.5rem;
+        }
+        // character right
+        &.aesop-character-right {
+            float: right;
+            margin-left:1.75rem;
+        }
+
+        //character center
+        &.aesop-character-center {
+            .aesop-character-name {
+                text-align: center;
+            }
+        }
+
+        //character left
+        &.aesop-character-left {
+            float:left;
+            margin-right:1.75rem;
+        }
+    }
+    .aesop-character-avatar {
+        width: 90%;
+        border-radius:50%;
+    }
+    .aesop-character-cap {
+        font-size:@font-size-xsmall;
+        line-height: @font-size-small;
+        font-family:@font-family-sans-serif;
+        color:@aesop-flip-text;
+        font-style: italic;
+        margin-top:0.8rem;
+        border-top:1px dotted @link-color;
+        padding-top:0.3rem;
+    }
+}

@@ -39,9 +39,20 @@ module.exports = function(grunt) {
 		      		cleancss:true
 		    	},
 		    	files: {
-		      		"public/assets/css/ai-core.min.css": "public/assets/less/style.less",
-		      		"public/assets/css/components/test.css": "public/assets/less/components/test.less",
-		      		"public/assets/css/components/quote.css": "public/assets/less/components/quote.less"
+		      		"public/assets/css/ai-core.min.css": 			"public/assets/less/style.less",
+		      		"public/assets/css/components/gallery.css": 	"public/assets/less/components/gallery.less",
+		      		"public/assets/css/components/parallax.css": 	"public/assets/less/components/parallax.less",
+		      		"public/assets/css/components/content.css": 	"public/assets/less/components/content.less",
+		      		"public/assets/css/components/image.css": 		"public/assets/less/components/image.less",
+		      		"public/assets/css/components/video.css": 		"public/assets/less/components/video.less",
+		      		"public/assets/css/components/audio.css": 		"public/assets/less/components/audio.less",
+		      		"public/assets/css/components/quote.css": 		"public/assets/less/components/quote.less",
+		      		"public/assets/css/components/collection.css": 	"public/assets/less/components/collection.less",
+		      		"public/assets/css/components/chapter.css": 	"public/assets/less/components/chapter.less",
+		      		"public/assets/css/components/character.css": 	"public/assets/less/components/character.less",
+		      		"public/assets/css/components/document.css": 	"public/assets/less/components/document.less",
+		      		"public/assets/css/components/map.css": 		"public/assets/less/components/map.less",
+		      		"public/assets/css/components/timeline.css": 	"public/assets/less/components/timeline.less"
 		    	}
 		  	}
 		},

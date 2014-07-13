@@ -1,0 +1,35 @@
+@import "base.less";
+.aesop-image-component {
+    img{
+        .box-shadow(0 0 6px -1px rgba(0,0,0,0.5));
+    }
+    .aesop-img-enlarge {
+        margin:0 0 0.5rem;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .aesop-img-enlarge,
+    .aesop-image-component-caption {
+        color:lighten(@text-color,15);
+        font-size:@font-size-xsmall;
+        font-family:@font-family-sans-serif;
+    }
+    .aesop-cap-cred,
+    .aesop-img-enlarge {
+        color:@aesop-flip-text;
+    }
+    .aesop-cap-cred {
+        border-top:1px dotted @link-color;
+        font-size:@font-size-xsmall - 3;
+    }
+
+    &:hover {
+        .opacity(0.85);
+        .transition(opacity .25s ease-in-out);
+    }
+    &:active img{
+        box-shadow: none;
+    }
+}

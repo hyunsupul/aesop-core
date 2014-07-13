@@ -1,0 +1,67 @@
+// extended vars
+@link-color:                #428bca;
+@body-bg:                   #fff;
+@baseContrast:              darken(@body-bg,5);
+@text-color:                #333;
+@width:                     800px;
+@font-size-small:           14px;
+@font-size-xsmall:          12px;
+@font-family-sans-serif:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+@aesop-flip-text:           contrast(@text-color, lighten(@text-color, 50), darken(@text-color,10), 50%);
+
+// mixins
+.transition(@transition) {
+  -webkit-transition: @transition;
+          transition: @transition;
+}
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+          box-shadow: @shadow;
+}
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+
+// aesop image lightbox
+.aesop-img-enlarge i,
+.aesop-lb-link i {
+
+    position: relative;
+
+    &:after {
+          display: inline-block;
+          font-family: FontAwesome;
+          font-style: normal;
+          font-weight: normal;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+            content: '\f00e';
+    }
+}
+
+
+.jorgen-article-cover-wrap {
+    position: fixed;
+}
+.aesop-article-chapter-wrap {
+    position: relative;
+
+    .aesop-cover-title {
+        max-width: 100%;
+    }
+}
+
+.aesop-chapter-title {
+    position: absolute;
+    left:-10000px
+}
+
+
+
+
+

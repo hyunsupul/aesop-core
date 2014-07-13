@@ -1,0 +1,22 @@
+@import "base.less";
+.aesop-documument-component {
+    a {
+        font-size: @font-size-xsmall;
+        font-family: @font-family-sans-serif;
+        color:lighten(@text-color,15);
+        line-height: @font-size-xsmall;
+
+        span {
+            border-bottom:1px solid @baseContrast;
+            font-size: @font-size-xsmall - 2;
+            color:lighten(@text-color,30);
+
+            &:before {
+                content:'\f0f6';
+                font-family: FontAwesome;
+                position: absolute;
+                left:0;
+            }
+        }
+    }
+}
