@@ -1,0 +1,115 @@
+@import "base.less";
+
+.aesop-story-collection {
+
+    .aesop-story-collection-title {
+        text-align: center;
+        background:@body-bg;
+        color:white;
+        text-transform: uppercase;
+        font-size:1.75rem;
+        line-height: 1.75rem;
+        letter-spacing: 0.05rem;
+        padding:0.8rem 0 0.6rem;
+        margin:0;
+        z-index: 2;
+        position: relative;
+        .box-shadow(0 7px 7px -7px rgba(0,0,0,1.0));
+    }
+
+    .aesop-collection-item {
+        float: left;
+        position: relative;
+        height: 400px;
+
+        .aesop-collection-item-link {
+            display: table;
+            height:100%;
+            width:100%;
+            color:white;
+            .transition(all .25s ease-in-out);
+
+            &:before {
+                position: absolute;
+                content:'';
+                width:100%;
+                height:100%;
+                background: black;
+                .opacity(.65);
+                z-index: 1;
+            }
+
+            &:hover {
+                text-decoration: none;
+                .transition(all .25s ease-in-out);
+                &:before {
+                    .transition(opacity .25s linear);
+                    .opacity(0);
+                }
+                .aesop-collection-item-inner {
+                    background:rgba(0,0,0,0.5);
+                }
+            }
+
+        }
+
+        .aesop-collection-item-inner {
+            display: table-cell;
+            vertical-align: middle;
+            width:100%;
+            height: 100%;
+            padding:0 2.5rem;
+            position: relative;
+            text-align: center;
+            z-index: 1;
+            overflow: hidden;
+            text-shadow:0 0 3px rgba(0,0,0,0.6);
+
+            .aesop-collection-entry-title {
+                font-weight: 800;
+                margin:0 0 0.75rem;
+                text-transform: uppercase;
+                color:white;
+            }
+            .aesop-collection-item-excerpt {
+                font-size:@font-size-xsmall;
+            }
+            .aesop-collection-meta {
+                font-family:@font-family-sans-serif;
+                font-size:@font-size-xsmall;
+                margin-bottom:3rem;
+                font-style: italic;
+            }
+        }
+
+        .aesop-collection-item-img {
+            position: absolute;
+            width:100%;
+            height:100%;
+            left:0;
+            z-index: 0;
+            background-position: center center;
+        }
+    }
+
+    //splash mode
+    .aesop-collection-splash {
+        .aesop-collection-item-link {
+            &:before {
+                content:none;
+            }
+            &:hover {
+                .aesop-collection-item-inner {
+                    background:transparent;
+                }
+            }
+        }
+        .aesop-collection-item-inner {
+            .aesop-collection-entry-title {
+                color:@text-color;
+                text-shadow:none;
+            }
+        }
+    }
+
+}
