@@ -35,14 +35,14 @@ class aiCoreCSSMerger {
 		*/
 
 		// test support
-		if (strpos($support[0][0],'test') !== false) {
+		if ( false !== strpos($support[0][0],'test') ) {
 
 			$css .= file_get_contents(AI_CORE_DIR.'/public/assets/css/components/test.css');
 
 		}
 
 		// test more support
-		if (strpos($support[0][0],'quote') !== false) {
+		if ( false !== strpos($support[0][0],'quote') ) {
 
 			$css .= file_get_contents(AI_CORE_DIR.'/public/assets/css/components/quote.css');
 		}
