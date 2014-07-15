@@ -105,6 +105,11 @@ class AesopCoreGallery {
 						printf('<p class="aesop-component-caption">%s</p>', $gallery_caption);
 					}
 
+					if ( is_user_logged_in() ) {
+						$url = admin_url( 'post.php?post='.$id.'&action=edit' );
+						printf('<a class="aesop-gallery-edit" href="%s">(edit gallery)</a>',$url );
+					}
+
 				} else {
 					_e('No images found', 'aesop-core');
 				}
@@ -303,8 +308,11 @@ class AesopCoreGallery {
 
 						caption = jQuery(this).attr('alt');
 						title = jQuery(this).attr('data-title');
-						jQuery(this).after('<span class="aesop-photoset-caption"><span class="aesop-photoset-caption-title">' + title + '</span><span class="aesop-photoset-caption-caption">' + caption +'</span></span>');
-						jQuery('.aesop-photoset-caption').hide().fadeIn();
+
+						if ( caption ) {
+							jQuery(this).after('<span class="aesop-photoset-caption"><span class="aesop-photoset-caption-title">' + title + '</span><span class="aesop-photoset-caption-caption">' + caption +'</span></span>');
+							jQuery('.aesop-photoset-caption').hide().fadeIn();
+						}
 					});
 				}
 			});
