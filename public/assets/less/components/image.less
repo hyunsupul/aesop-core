@@ -1,13 +1,26 @@
 @import "base.less";
 .aesop-image-component {
+
     img{
         .box-shadow(0 0 6px -1px rgba(0,0,0,0.5));
     }
+
+    // anchor
+    .aesop-lightbox {
+        text-decoration: none;
+    }
+
+    // icon p
     .aesop-img-enlarge {
         margin:0 0 0.5rem;
 
         &:hover {
             text-decoration: none;
+        }
+
+        i {
+            position: relative;
+            top:1px;
         }
     }
     .aesop-img-enlarge,
