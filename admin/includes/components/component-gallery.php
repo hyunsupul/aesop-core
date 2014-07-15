@@ -32,6 +32,7 @@ class AesopGalleryComponentAdmin {
 		        	<option value="grid">Grid</option>
 		        	<option value="thumbnail">Thumbnail</option>
 		        	<option value="sequence">Sequence</option>
+		        	<option value="photoset">Photoset</option>
 		        	<option value="stacked">Stacked Parallax</option>
 		      	</select>
 		    </label>
@@ -83,7 +84,7 @@ class AesopGalleryComponentAdmin {
 		);
 		$args = array(
 			'label'               		=> __( 'Galleries', 'aesop-core' ),
-			'description'         		=> __( 'Create responsive boxes', 'aesop-core' ),
+			'description'         		=> __( 'Create responsive galleries.', 'aesop-core' ),
 			'menu_icon' 		  		=> AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
 			'menu_position'				=> 15,
 			'labels'              		=> $labels,
@@ -144,17 +145,20 @@ class AesopGalleryComponentAdmin {
 			$pages = get_posts(array ('s' => '[aesop_gallery','post_type' => array ( 'page', 'post' ) ));
 
 			$count = 0;
-			foreach($pages as $page):
-				$count ++;
-				$id = $page->ID;
-				if(has_shortcode($page->post_content,'aesop_gallery')){
-					echo ucfirst($this->the_slug($id));
 
-					if( $count != count($pages) ){
-						echo  ', ';
+			if ( $pages ) :
+				foreach($pages as $page) {
+					$count ++;
+					$id = $page->ID;
+					if(has_shortcode($page->post_content,'aesop_gallery')){
+						echo ucfirst($this->the_slug($id));
+
+						if( $count != count($pages) ){
+							echo  ', ';
+						}
 					}
 				}
-			endforeach;
+			endif;
 
 	    }
 	}
@@ -240,7 +244,27 @@ class AesopGalleryComponentAdmin {
 
 		);
 
+		// photoset gallery options
+		$meta_boxes[] = array(
+			'title' 	=> __('Photoset Gallery Options', 'aesop-core'),
+			'pages' 	=> array('ai_galleries'),
+			'fields' 	=> array(
+				array(
+					'id'             => 'aesop_photoset_gallery_layout',
+					'name'           => __('Gallery Layout', 'aesop-core'),
+					'type'           => 'text_small',
+					'default'		=> '',
+					'desc'			=> __('Let\'s say you have 4 images in this gallery. If you enter <code>121</code> you will have one image on the top row, two images on the second row, and one image on the third row.','aesop-core')
+				),
+				array(
+					'id'             => 'aesop_photoset_gallery_lightbox',
+					'name'           => __('Enable Lightbox', 'aesop-core'),
+					'type'           => 'checkbox'
+				)
 
+			)
+
+		);
 		return $meta_boxes;
 
 	}

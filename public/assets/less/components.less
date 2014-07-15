@@ -286,6 +286,30 @@
     }
 }
 
+// photoset gallery
+.aesop-photoset-gallery-wrap {
+    .photoset-cell {
+        position: relative;
+    }
+
+    .aesop-photoset-caption {
+        position: absolute;
+        z-index: 9;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        .box-sizing(border-box);
+
+        .aesop-photoset-caption-title,
+        .aesop-photoset-caption-caption {
+            display: table;
+
+        }
+    }
+}
+
 //galleries
 .aesop-gallery-component {z-index: 0;}
 .aesop-grid-gallery {position: relative;}
