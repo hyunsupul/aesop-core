@@ -282,10 +282,11 @@ class Aesop_Core {
 			// core css file
 			wp_enqueue_style('ai-core-style', AI_CORE_URL.'/public/assets/css/ai-core.min.css', AI_CORE_VERSION, true);
 
-			// extended css theme styles
+			// load dashicons if extended support
 			if ( current_theme_supports( 'aesop-component-styles' ) ) {
-				wp_enqueue_style('ai-core-style-extended', AI_CORE_URL.'/public/assets/css/ai-core-extended.min.css', AI_CORE_VERSION, true);
+				wp_enqueue_style('dashicons');
 			}
+
 		}
 
 		// core script
