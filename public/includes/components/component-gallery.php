@@ -65,6 +65,9 @@ class AesopCoreGallery {
 
 			wp_cache_set( 'aesop_gallery_wp_query_'.$id, $images, '', 60*60*12 );
 
+			// set the type of gallery into post meta
+			update_post_meta( $id, 'aesop_gallery_type', $type );
+
 		}
 
 		ob_start();

@@ -249,10 +249,9 @@ class AesopGalleryComponentAdmin {
 				array(
 					'id'             => 'aesop_photoset_gallery_layout',
 					'name'           => __('Gallery Layout', 'aesop-core'),
-					'type'           => 'text',
+					'type'           => 'text_small',
 					'default'		=> '',
-					'desc'			=> __('Provide a layout for the photoset.','aesop-core'),
-					'cols'			=> 12
+					'desc'			=> __('Let\'s say you have 4 images in this gallery. If you enter <code>121</code> you will have one image on the top row, two images on the second row, and one image on the third row.','aesop-core')
 				),
 				array(
 					'id'             => 'aesop_photoset_gallery_lightbox',
