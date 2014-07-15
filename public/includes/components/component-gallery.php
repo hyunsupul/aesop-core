@@ -107,7 +107,7 @@ class AesopCoreGallery {
 
 					if ( is_user_logged_in() ) {
 						$url = admin_url( 'post.php?post='.$id.'&action=edit' );
-						printf('<a class="aesop-gallery-edit" href="%s">(edit gallery)</a>',$url );
+						printf('<a class="aesop-gallery-edit" href="%s" target="_blank" title="Edit this gallery">(edit gallery)</a>',$url );
 					}
 
 				} else {
