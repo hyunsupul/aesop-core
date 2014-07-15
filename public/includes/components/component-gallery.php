@@ -301,7 +301,7 @@ class AesopCoreGallery {
 			  	onComplete: function(){
 
 			  		<?php if ( $lightbox ) { ?>
-			  			jQuery('.aesop-gallery-photoset a').addClass('aesop-lightbox');
+			  			jQuery('.aesop-gallery-photoset a').addClass('aesop-lightbox').prepend('<i class="dashicons dashicons-search"></i>');
 			  		<?php } ?>
 
 				    jQuery('.aesop-gallery-photoset').attr('style', '');
