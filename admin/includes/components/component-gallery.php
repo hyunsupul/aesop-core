@@ -84,7 +84,7 @@ class AesopGalleryComponentAdmin {
 		);
 		$args = array(
 			'label'               		=> __( 'Galleries', 'aesop-core' ),
-			'description'         		=> __( 'Create responsive boxes', 'aesop-core' ),
+			'description'         		=> __( 'Create responsive galleries.', 'aesop-core' ),
 			'menu_icon' 		  		=> AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
 			'menu_position'				=> 15,
 			'labels'              		=> $labels,
@@ -145,17 +145,20 @@ class AesopGalleryComponentAdmin {
 			$pages = get_posts(array ('s' => '[aesop_gallery','post_type' => array ( 'page', 'post' ) ));
 
 			$count = 0;
-			foreach($pages as $page):
-				$count ++;
-				$id = $page->ID;
-				if(has_shortcode($page->post_content,'aesop_gallery')){
-					echo ucfirst($this->the_slug($id));
 
-					if( $count != count($pages) ){
-						echo  ', ';
+			if ( $pages ) :
+				foreach($pages as $page) {
+					$count ++;
+					$id = $page->ID;
+					if(has_shortcode($page->post_content,'aesop_gallery')){
+						echo ucfirst($this->the_slug($id));
+
+						if( $count != count($pages) ){
+							echo  ', ';
+						}
 					}
 				}
-			endforeach;
+			endif;
 
 	    }
 	}
