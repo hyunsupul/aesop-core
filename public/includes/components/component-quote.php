@@ -54,11 +54,14 @@ if (!function_exists('aesop_quote_shortcode')){
 		// cite
 		$cite = $atts['cite'] ? apply_filters('aesop_quote_component_cite',sprintf('<cite class="aesop-quote-component-cite">%s</cite>',$atts['cite'])) : null;
 
+		//align
+		$align = $atts['align'] ? sprintf('aesop-component-align-%s', $atts['align']) : null;
+
 		ob_start();
 
 		do_action('aesop_quote_before'); //action
 		?>
-			<div id="aesop-quote-component-<?php echo $hash;?>" class="aesop-component aesop-quote-component <?php echo $classes.' '.$contentwidth.' '.$isparallax.' '.$lrclass.' ';?>" <?php echo $style;?>>
+			<div id="aesop-quote-component-<?php echo $hash;?>" class="aesop-component aesop-quote-component <?php echo $classes.' '.$align.' '.$contentwidth.' '.$isparallax.' '.$lrclass.' ';?>" <?php echo $style;?>>
 
 				<!-- Aesop Core | Quote -->
 				<script>
@@ -118,7 +121,7 @@ if (!function_exists('aesop_quote_shortcode')){
 
 				<?php do_action('aesop_quote_inside_top'); //action ?>
 
-				<blockquote class="aesop-component-align-<?php echo $atts['align'];?>" style="font-size:<?php echo $size;?>;">
+				<blockquote class="<?php echo $align;?>" style="font-size:<?php echo $size;?>;">
 					<?php echo $atts['quote'];?>
 
 					<?php echo $cite;?>
