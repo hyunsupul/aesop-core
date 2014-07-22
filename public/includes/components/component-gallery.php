@@ -214,6 +214,23 @@ class AesopCoreGallery {
 	*/
 	function aesop_stacked_gallery($atts, $images, $width){
 
+		?>
+		<!-- Aesop Stacked Gallery -->
+		<script>
+		jQuery(document).ready(function(){
+
+			var stackedResizer = function(){
+				jQuery('.aesop-stacked-img').css({'height':(jQuery(window).height())+'px', 'width':(jQuery(window).width())+'px'});
+			}
+			stackedResizer();
+
+			jQuery(window).resize(function(){
+				stackedResizer();
+			});
+		});
+		</script>
+		<?php
+
 		foreach ($images as $image):
 
             $full    =  wp_get_attachment_url($image->ID, 'full', false,'');
