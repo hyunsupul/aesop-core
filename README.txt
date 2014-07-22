@@ -127,6 +127,20 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.0.9 =
+* FIXED - Various generator fixes for WordPress 4.0
+* FIXED - Fixed not being able to use multiple collections due to invalid cache (props @tmeister)
+* FIXED - Fixed the default map zoom so its not so far zoomed out
+* FIXED - Video option display error within generator
+* FIXED - Spelling of the word Library in generator option descriptions
+* NEW - New extended css option that loads additional CSS in an effort to be compatible with more themes out of the box (see docs for more)
+* NEW - Updated Polish translation
+* NEW - New Photoset gallery type
+* NEW - Full compatibility for stacked gallery type. This was previously left up to themes.
+* TWEAK - Don't set a chapter image if one isn't set and add a class for this
+* TWEAK - Float class added to character and quote components if component is aligned left or right. This *may* have a different effect on your design so please be aware of this.
+* TWEAK - Content component now has wpautop filter applied which will make the text within the content component into proper paragraph elements. this *may* result in additional space in your design so please be aware of this tweak. We've also added a class to the parent component if an image is being used.
+
 = 1.0.8 =
 * NEW - option description tip bubbles
 * NEW - Misc style refinements to the generator user interface
