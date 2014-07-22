@@ -25,12 +25,15 @@ if (!function_exists('aesop_character_shortcode')){
 		// width styles
 		$styles = $atts['width'] ? sprintf('style="width:%s;"',$atts['width']) : null;
 
+		// wrapper float class
+		$float = $atts['align'] ? sprintf('aesop-component-align-%s', $atts['align']) : null;
+
 		// character wrap
 		ob_start();
 
 			do_action('aesop_character_before'); //action
 			?>
-				<aside class="aesop-character-component <?php echo $classes;?>">
+				<aside class="aesop-character-component <?php echo $classes.''.$float;?> ">
 
 					<?php do_action('aesop_character_inside_top'); //action ?>
 
