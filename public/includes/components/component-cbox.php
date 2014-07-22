@@ -53,6 +53,7 @@ if (!function_exists('aesop_content_shortcode')){
 		$image = $atts['img'] ? 'aesop-content-img' : false;
 			$typeclass = $columns.' '.$image;
 
+
 		// image and width inline styles
 		$bgcolor = $atts['background'] ? sprintf('background-color:%s;',$atts['background']) : false;
 		$imgstyle = $atts['img'] ? sprintf('%sbackground-image:url(\'%s\');background-size:cover;background-position:center center;',$bgcolor, $atts['img']) : false;
@@ -66,11 +67,14 @@ if (!function_exists('aesop_content_shortcode')){
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'content', '' ) : null;
 
+		// has image class
+		$has_img = $atts['img'] ? 'aesop-content-has-img' : false;
+
 		ob_start();
 
 		do_action('aesop_cbox_before'); //action
 			?>
-				<div class="aesop-component aesop-content-component <?php echo $classes;?>" style="<?php echo $height;?>" >
+				<div class="aesop-component aesop-content-component <?php echo $classes.' '.$has_img;?>" style="<?php echo $height;?>" >
 
 					<?php if ( $atts['floatermedia'] && !wp_is_mobile() ) { ?>
 						<!-- Aesop Content Component -->
