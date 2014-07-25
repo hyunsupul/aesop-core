@@ -126,7 +126,14 @@ module.exports = function(grunt) {
                     ]
                 }
             }
-        }
+        },
+
+		phplint: {
+		    options: {
+		        swapPath: '/tmp'
+		    },
+		    all: ['*.php', '**/*.php', '!node_modules/**/*.php']
+		}
     });
 
     // register task
