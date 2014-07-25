@@ -128,11 +128,11 @@ class aiCoreCSSMerger {
 	*
 	*   aesop_theme_supports( $component ) is used to see if the particular arg within an array exists
 	*
-	* 	@param $component - string - name of component
+	* 	@param $component - array of components
 	* 	@since 1.0.9
 	*/
 
-	static function aesop_theme_supports( $component = '' ) {
+	public function aesop_theme_supports( $component = '' ) {
 
 		$supports = get_theme_support( 'aesop-component-styles');
 
