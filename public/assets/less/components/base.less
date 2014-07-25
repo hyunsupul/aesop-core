@@ -1,8 +1,9 @@
 // extended vars
 @link-color:                #428bca;
 @body-bg:                   #fff;
-@baseContrast:              darken(@body-bg,5);
+@baseContrast:              darken(@body-bg,10);
 @text-color:                #333;
+@accent:                    lighten(@text-color,33);
 @width:                     800px;
 @font-size-small:           14px;
 @font-size-xsmall:          12px;
@@ -23,4 +24,8 @@
   // IE8 filter
   @opacity-ie: (@opacity * 100);
   filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+.aesop-component-caption {
+    color:@aesop-flip-text;
 }
