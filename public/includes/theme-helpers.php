@@ -81,12 +81,7 @@ function aesop_check_theme($classes){
 	$get_name  	=  strtolower( $theme->get( 'Name' ) );
 	$name 		= str_replace(' ', '-', $get_name );
 
-	switch ($theme) {
-		case $theme->get( 'Name' ):
-			$classes[] = 'aesop-on-'.$name;
-			break;
-
-	}
+	$classes[] = 'aesop-on-'.$name;
 
 	return $classes;
 
