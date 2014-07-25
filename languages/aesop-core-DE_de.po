@@ -45,13 +45,13 @@ msgstr "Bild Alternative"
 
 #: ../admin/includes/available.php:52 ../admin/includes/available.php:111
 #: ../admin/includes/available.php:177 ../admin/includes/available.php:312
-msgid "left"
-msgstr "Links"
+msgid ""
+msgstr ""
 
 #: ../admin/includes/available.php:53 ../admin/includes/available.php:112
 #: ../admin/includes/available.php:178 ../admin/includes/available.php:311
-msgid "right"
-msgstr "Rechts"
+msgid ""
+msgstr ""
 
 #: ../admin/includes/available.php:56
 msgid "Image Alignment"
@@ -62,12 +62,12 @@ msgid "Image Offset"
 msgstr "Bild Absatz"
 
 #: ../admin/includes/available.php:67
-msgid "bottom"
-msgstr "unten"
+msgid ""
+msgstr ""
 
 #: ../admin/includes/available.php:68
-msgid "top"
-msgstr "oben"
+msgid ""
+msgstr ""
 
 #: ../admin/includes/available.php:71 ../admin/includes/available.php:342
 msgid "Caption Position"
@@ -76,12 +76,12 @@ msgstr "Bildbeschriftung Position"
 #: ../admin/includes/available.php:76 ../admin/includes/available.php:281
 #: ../admin/includes/available.php:347
 msgid "on"
-msgstr "An"
+msgstr ""
 
 #: ../admin/includes/available.php:77 ../admin/includes/available.php:282
 #: ../admin/includes/available.php:348
 msgid "off"
-msgstr "Aus"
+msgstr ""
 
 #: ../admin/includes/available.php:80
 msgid "Lightbox"
@@ -155,7 +155,7 @@ msgstr "Anzahl der Spalten"
 
 #: ../admin/includes/available.php:176
 msgid "none"
-msgstr "keine"
+msgstr ""
 
 #: ../admin/includes/available.php:181
 msgid "Text Block Alignment"
@@ -167,19 +167,19 @@ msgstr "Hintergrundbild"
 
 #: ../admin/includes/available.php:192
 msgid "no-repeat"
-msgstr "keine Wiederholung"
+msgstr ""
 
 #: ../admin/includes/available.php:193
 msgid "repeat"
-msgstr "Wiederholung"
+msgstr ""
 
 #: ../admin/includes/available.php:194
-msgid "repeat-vertical"
-msgstr "Vertikal wiederholen"
+msgid ""
+msgstr ""
 
 #: ../admin/includes/available.php:195
-msgid "repeat-horizontal"
-msgstr "Horizontal wiederholen"
+msgid ""
+msgstr ""
 
 #: ../admin/includes/available.php:198
 msgid "Image Repeat"
@@ -273,10 +273,6 @@ msgstr "Schalte ein schwebendes Element frei"
 msgid "Floater Media"
 msgstr "Schwebendes Medium"
 
-#: ../admin/includes/available.php:313
-msgid "center"
-msgstr "Mitte"
-
 #: ../admin/includes/available.php:316
 msgid "Position of Floater"
 msgstr "Position des Schwebenden Objekts"
@@ -298,20 +294,20 @@ msgid "Caption (optional)"
 msgstr "Beschriftung (optional)"
 
 #: ../admin/includes/available.php:336
-msgid "bottom-left"
-msgstr "unten links"
+msgid ""
+msgstr ""
 
 #: ../admin/includes/available.php:337
-msgid "bottom-right"
-msgstr "unten rechts"
+msgid ""
+msgstr ""
 
 #: ../admin/includes/available.php:338
-msgid "top-left"
-msgstr "oben links"
+msgid ""
+msgstr ""
 
 #: ../admin/includes/available.php:339
-msgid "top-right"
-msgstr "oben rechts"
+msgid ""
+msgstr ""
 
 #: ../admin/includes/available.php:351
 msgid "Image Lightbox"

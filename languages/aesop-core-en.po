@@ -1,18 +1,15 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Aesop Core - 0.9.7\n"
-"POT-Creation-Date: 2014-07-01 15:15-0600\n"
-"PO-Revision-Date: 2014-07-01 15:15-0600\n"
-"Last-Translator: \n"
+"Project-Id-Version: Aesop\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Team Aesop <support@aesopinteractive.com>\n"
 "Language-Team: \n"
-"Language: en\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
 "X-Generator: Poedit 1.6.4\n"
-"X-Poedit-KeywordsList: _e;__\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: ..\n"
 
 #: ../admin/class-aesop-core-admin.php:139
 msgid "Add Component"
@@ -74,30 +71,6 @@ msgstr ""
 
 #: ../admin/includes/available.php:49
 msgid "ALT tag used for the image. Primarily used for SEO purposes."
-msgstr ""
-
-#: ../admin/includes/available.php:54 ../admin/includes/available.php:72
-#: ../admin/includes/available.php:122 ../admin/includes/available.php:181
-#: ../admin/includes/available.php:230 ../admin/includes/available.php:297
-#: ../admin/includes/available.php:341 ../admin/includes/available.php:359
-#: ../admin/includes/available.php:464 ../admin/includes/available.php:482
-#: ../admin/includes/available.php:597
-msgid "left"
-msgstr ""
-
-#: ../admin/includes/available.php:55 ../admin/includes/available.php:73
-#: ../admin/includes/available.php:123 ../admin/includes/available.php:183
-#: ../admin/includes/available.php:231 ../admin/includes/available.php:298
-#: ../admin/includes/available.php:340 ../admin/includes/available.php:360
-#: ../admin/includes/available.php:463 ../admin/includes/available.php:483
-#: ../admin/includes/available.php:599
-msgid "right"
-msgstr ""
-
-#: ../admin/includes/available.php:56 ../admin/includes/available.php:74
-#: ../admin/includes/available.php:182 ../admin/includes/available.php:342
-#: ../admin/includes/available.php:465 ../admin/includes/available.php:598
-msgid "center"
 msgstr ""
 
 #: ../admin/includes/available.php:59
@@ -595,22 +568,6 @@ msgstr ""
 #: ../admin/includes/available.php:494
 msgid ""
 "Provide an optional caption that will be displayed using the position below."
-msgstr ""
-
-#: ../admin/includes/available.php:499
-msgid "bottom-left"
-msgstr ""
-
-#: ../admin/includes/available.php:500
-msgid "bottom-right"
-msgstr ""
-
-#: ../admin/includes/available.php:501
-msgid "top-left"
-msgstr ""
-
-#: ../admin/includes/available.php:502
-msgid "top-right"
 msgstr ""
 
 #: ../admin/includes/available.php:506

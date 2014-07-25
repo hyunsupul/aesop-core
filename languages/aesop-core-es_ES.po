@@ -44,19 +44,6 @@ msgstr "Crédito de la imagen"
 msgid "Image ALT"
 msgstr "Texto alternativo"
 
-#: ../admin/includes/available.php:52 ../admin/includes/available.php:111
-#: ../admin/includes/available.php:151 ../admin/includes/available.php:187
-#: ../admin/includes/available.php:316 ../admin/includes/available.php:332
-#: ../admin/includes/available.php:394
-msgid "left"
-msgstr "Izquierda"
-
-#: ../admin/includes/available.php:53 ../admin/includes/available.php:112
-#: ../admin/includes/available.php:153 ../admin/includes/available.php:188
-#: ../admin/includes/available.php:315 ../admin/includes/available.php:333
-#: ../admin/includes/available.php:396
-msgid "right"
-msgstr "Derecha"
 
 #: ../admin/includes/available.php:56
 msgid "Image Alignment"
@@ -138,10 +125,6 @@ msgstr "Color Hexadecimal para el texto"
 msgid "Height of Image Area"
 msgstr "Altura del área de la imagen"
 
-#: ../admin/includes/available.php:152 ../admin/includes/available.php:317
-#: ../admin/includes/available.php:395
-msgid "center"
-msgstr "Centrado"
 
 #: ../admin/includes/available.php:162
 msgid "The quote"
@@ -302,22 +285,6 @@ msgstr "Dirección para el Parallax del flotante"
 #: ../admin/includes/available.php:342 ../admin/includes/available.php:430
 msgid "Caption (optional)"
 msgstr "Subtítulo (opcional)"
-
-#: ../admin/includes/available.php:347
-msgid "bottom-left"
-msgstr "bottom-left"
-
-#: ../admin/includes/available.php:348
-msgid "bottom-right"
-msgstr "bottom-right"
-
-#: ../admin/includes/available.php:349
-msgid "top-left"
-msgstr "top-left"
-
-#: ../admin/includes/available.php:350
-msgid "top-right"
-msgstr "top-right"
 
 #: ../admin/includes/available.php:362
 msgid "Image Lightbox"

@@ -51,9 +51,9 @@ if(!function_exists('aesop_shortcodes')){
 					'align' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('left', 'aesop-core'),
-							__('right', 'aesop-core'),
-							__('center', 'aesop-core')
+							'left',
+							'right',
+							'center'
 						),
 						'default' 	=> 'left',
 						'desc' 		=> __( 'Image Alignment', 'aesop-core' ),
@@ -69,9 +69,9 @@ if(!function_exists('aesop_shortcodes')){
 					'captionposition' => array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('left', 'aesop-core'),
-							__('right', 'aesop-core'),
-							__('center', 'aesop-core')
+							'left',
+							'right',
+							'center'
 						 ),
 						'default' 	=> 'left',
 						'desc' 		=> __( 'Caption Position', 'aesop-core' ),
@@ -119,8 +119,8 @@ if(!function_exists('aesop_shortcodes')){
 					'align' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('left', 'aesop-core'),
-							__('right', 'aesop-core')
+							'left',
+							'right'
 						),
 						'default' 	=> 'left',
 						'desc' 		=> __( 'Alignment', 'aesop-core' ),
@@ -178,9 +178,9 @@ if(!function_exists('aesop_shortcodes')){
 					'align' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('left', 'aesop-core'),
-							__('center', 'aesop-core'),
-							__('right', 'aesop-core')
+							'left',
+							'center',
+							'right'
 						),
 						'default' 	=> 'center',
 						'desc' 		=> __( 'Alignment', 'aesop-core' ),
@@ -225,10 +225,10 @@ if(!function_exists('aesop_shortcodes')){
 					'direction' => array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('up', 'aesop-core'),
-							__('down', 'aesop-core'),
-							__('left', 'aesop-core'),
-							__('right', 'aesop-core')
+							'up',
+							'down',
+							'left',
+							'right'
 						),
 						'default' 	=> 'up',
 						'desc' 		=> __('Parallax Direction of Quote', 'aesop-core' ),
@@ -293,9 +293,9 @@ if(!function_exists('aesop_shortcodes')){
 					'position' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('none','aesop-core'),
-							__('left','aesop-core'),
-							__('right','aesop-core')
+							'none',
+							'left',
+							'right'
 						),
 						'default' 	=> 'none',
 						'desc' 		=> __( 'Text Block Alignment', 'aesop-core' ),
@@ -318,10 +318,10 @@ if(!function_exists('aesop_shortcodes')){
 					'imgrepeat' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('no-repeat', 'aesop-core'),
-							__('repeat', 'aesop-core'),
-							__('repeat-vertical', 'aesop-core'),
-							__('repeat-horizontal', 'aesop-core')
+							'no-repeat',
+							'repeat',
+							'repeat-vertical',
+							'repeat-horizontal'
 						),
 						'default' 	=> 'no-repeat',
 						'desc' 		=> __( 'Image Repeat', 'aesop-core' ),
@@ -337,9 +337,9 @@ if(!function_exists('aesop_shortcodes')){
 					'floaterposition' => array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('right', 'aesop-core'),
-							__('left', 'aesop-core'),
-							__('center', 'aesop-core')
+							'right',
+							'left',
+							'center'
 						),
 						'default' 	=> 'right',
 						'desc' 		=> __('Position of Floater', 'aesop-core' ),
@@ -354,10 +354,10 @@ if(!function_exists('aesop_shortcodes')){
 					'floaterdirection' => array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('up', 'aesop-core'),
-							__('down', 'aesop-core'),
-							__('left', 'aesop-core'),
-							__('right', 'aesop-core')
+							'up',
+							'down',
+							'left',
+							'right'
 						),
 						'default' 	=> 'up',
 						'desc' 		=> __('Parallax Direction of Floater', 'aesop-core' ),
@@ -460,9 +460,9 @@ if(!function_exists('aesop_shortcodes')){
 					'floaterposition' => array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('right', 'aesop-core'),
-							__('left', 'aesop-core'),
-							__('center', 'aesop-core')
+							'right',
+							'left',
+							'center'
 						),
 						'default' 	=> 'right',
 						'desc' 		=> __('Position of Floater', 'aesop-core' ),
@@ -477,10 +477,10 @@ if(!function_exists('aesop_shortcodes')){
 					'floaterdirection' => array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('up', 'aesop-core'),
-							__('down', 'aesop-core'),
-							__('left', 'aesop-core'),
-							__('right', 'aesop-core')
+							'up',
+							'down',
+							'left',
+							'right'
 						),
 						'default' 	=> 'up',
 						'desc' 		=> __('Parallax Direction of Floater', 'aesop-core' ),
@@ -496,10 +496,10 @@ if(!function_exists('aesop_shortcodes')){
 					'captionposition' => array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('bottom-left', 'aesop-core'),
-							__('bottom-right', 'aesop-core'),
-							__('top-left', 'aesop-core'),
-							__('top-right', 'aesop-core')
+							'bottom-left',
+							'bottom-right',
+							'top-left',
+							'top-right'
 						),
 						'default' 	=> 'bottom-left',
 						'desc' 		=> __('Caption Position', 'aesop-core' ),
@@ -594,9 +594,9 @@ if(!function_exists('aesop_shortcodes')){
 					'align' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('left', 'aesop-core'),
-							__('center', 'aesop-core'),
-							__('right', 'aesop-core')
+							'left',
+							'center',
+							'right'
 						),
 						'default' 	=> 'center',
 						'desc' 		=> __( 'Alignment', 'aesop-core' ),

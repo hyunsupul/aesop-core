@@ -83,30 +83,6 @@ msgstr "Tekst alternatywny"
 msgid "ALT tag used for the image. Primarily used for SEO purposes."
 msgstr "Znacznik ALT dla obrazka. Używany dla celów SEO."
 
-#: ../admin/includes/available.php:54 ../admin/includes/available.php:72
-#: ../admin/includes/available.php:122 ../admin/includes/available.php:181
-#: ../admin/includes/available.php:230 ../admin/includes/available.php:297
-#: ../admin/includes/available.php:341 ../admin/includes/available.php:359
-#: ../admin/includes/available.php:464 ../admin/includes/available.php:482
-#: ../admin/includes/available.php:597
-msgid "left"
-msgstr "left"
-
-#: ../admin/includes/available.php:55 ../admin/includes/available.php:73
-#: ../admin/includes/available.php:123 ../admin/includes/available.php:183
-#: ../admin/includes/available.php:231 ../admin/includes/available.php:298
-#: ../admin/includes/available.php:340 ../admin/includes/available.php:360
-#: ../admin/includes/available.php:463 ../admin/includes/available.php:483
-#: ../admin/includes/available.php:599
-msgid "right"
-msgstr "right"
-
-#: ../admin/includes/available.php:56 ../admin/includes/available.php:74
-#: ../admin/includes/available.php:182 ../admin/includes/available.php:342
-#: ../admin/includes/available.php:465 ../admin/includes/available.php:598
-msgid "center"
-msgstr "center"
-
 #: ../admin/includes/available.php:59
 msgid "Image Alignment"
 msgstr "Wyrównanie obrazka"
@@ -659,22 +635,6 @@ msgstr "Podpis  (opcjonalny)"
 msgid ""
 "Provide an optional caption that will be displayed using the position below."
 msgstr "Opcjonalny podpis, który zostanie wyświetlony pod obiektem."
-
-#: ../admin/includes/available.php:499
-msgid "bottom-left"
-msgstr "bottom-left"
-
-#: ../admin/includes/available.php:500
-msgid "bottom-right"
-msgstr "bottom-right"
-
-#: ../admin/includes/available.php:501
-msgid "top-left"
-msgstr "top-left"
-
-#: ../admin/includes/available.php:502
-msgid "top-right"
-msgstr "top-right"
 
 #: ../admin/includes/available.php:506
 msgid ""

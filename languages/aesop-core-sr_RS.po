@@ -43,16 +43,6 @@ msgstr "Zahvalnice slike"
 msgid "Image ALT"
 msgstr "ALT slike"
 
-#: ../admin/includes/available.php:52 ../admin/includes/available.php:111
-#: ../admin/includes/available.php:177 ../admin/includes/available.php:312
-msgid "left"
-msgstr "levo"
-
-#: ../admin/includes/available.php:53 ../admin/includes/available.php:112
-#: ../admin/includes/available.php:178 ../admin/includes/available.php:311
-msgid "right"
-msgstr "desno"
-
 #: ../admin/includes/available.php:56
 msgid "Image Alignment"
 msgstr "Poravnavanje slike"
@@ -270,10 +260,6 @@ msgstr "Enable Floating Element"
 msgid "Floater Media"
 msgstr "Floater Media"
 
-#: ../admin/includes/available.php:313
-msgid "center"
-msgstr "centar"
-
 #: ../admin/includes/available.php:316
 msgid "Position of Floater"
 msgstr "Pozicija Floater-a"
@@ -293,22 +279,6 @@ msgstr "Parallax pravac od Floater"
 #: ../admin/includes/available.php:331 ../admin/includes/available.php:415
 msgid "Caption (optional)"
 msgstr "Kada (opcionalno)"
-
-#: ../admin/includes/available.php:336
-msgid "bottom-left"
-msgstr "dole-levo"
-
-#: ../admin/includes/available.php:337
-msgid "bottom-right"
-msgstr "dole-desno"
-
-#: ../admin/includes/available.php:338
-msgid "top-left"
-msgstr "gore-levo"
-
-#: ../admin/includes/available.php:339
-msgid "top-right"
-msgstr "gore-desno"
 
 #: ../admin/includes/available.php:351
 msgid "Image Lightbox"
