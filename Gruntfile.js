@@ -24,6 +24,7 @@ module.exports = function(grunt) {
         },
         // style (Sass) compilation via Compass
 		less: {
+
 		  	adminLess: {
 		    	options: {
 		      		paths: ["admin/assets/css/*"],
@@ -33,13 +34,21 @@ module.exports = function(grunt) {
 		     	 	"admin/assets/css/style.css": "admin/assets/css/style.less"
 		    	}
 		  	},
+		  	coreLess: {
+		  		options: {
+		      		paths: ["public/assets/less/*"],
+		      		cleancss:true
+		    	},
+		    	files: {
+		      		"public/assets/css/ai-core.min.css": "public/assets/less/style.less"
+		    	}
+		  	},
 		  	publicLess: {
 		    	options: {
 		      		paths: ["public/assets/less/*/**"],
 		      		cleancss:true
 		    	},
 		    	files: {
-		      		"public/assets/css/ai-core.min.css": 			"public/assets/less/style.less",
 		      		"public/assets/css/components/gallery.css": 	"public/assets/less/components/gallery.less",
 		      		"public/assets/css/components/parallax.css": 	"public/assets/less/components/parallax.less",
 		      		"public/assets/css/components/content.css": 	"public/assets/less/components/content.less",
