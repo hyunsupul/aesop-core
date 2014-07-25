@@ -65,3 +65,29 @@ function aesop_component_exists( $component = '' ) {
 		return false;
 	}
 }
+
+/**
+*
+*	Detect current theme and add a body class for it
+* 	@since 1.0.9
+* 	@return merged array of classes
+* 	uses body_class
+*
+*/
+add_filter('body_class', 'aesop_check_theme');
+function aesop_check_theme($classes){
+
+	$theme 		= wp_get_theme();
+	$get_name  	=  strtolower( $theme->get( 'Name' ) );
+	$name 		= str_replace(' ', '-', $get_name );
+
+	switch ($theme) {
+		case $theme->get( 'Name' ):
+			$classes[] = 'aesop-on-'.$name;
+			break;
+
+	}
+
+	return $classes;
+
+}
