@@ -231,7 +231,7 @@ class AesopCoreGallery {
 		</script>
 		<?php
 
-		foreach ($images as $image):
+		foreach ( $images as $image ):
 
             $full    =  wp_get_attachment_url($image->ID, 'full', false,'');
             $alt     =  get_post_meta($image->ID, '_wp_attachment_image_alt', true);
@@ -240,7 +240,7 @@ class AesopCoreGallery {
 
            	?>
            	<div class="aesop-stacked-img" style="background-image:url('<?php echo $full;?>');background-size:cover;">
-           		<?php if($caption){ ?>
+           		<?php if ( $caption ){ ?>
            			<div class="aesop-stacked-caption"><?php echo $caption;?></div>
            		<?php } ?>
            	</div>
