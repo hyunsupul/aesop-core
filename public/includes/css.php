@@ -2,7 +2,7 @@
 
 /**
 * Allows theme developers to conditionally load component styles with
-* add_theme_support('aesop-component-styles', array('component-name'));
+* add_theme_support('aesop-component-styles', array('parallax', 'image', 'quote', 'gallery', 'content', 'video', 'audio', 'collection', 'chapter', 'document', 'character', 'map', 'timeline' ) );
 *
 * @since 1.0.9
 *
@@ -140,7 +140,7 @@ class aiCoreCSSMerger {
 		if ( empty( $supports ) || !is_array( $supports ) )
 			return;
 
-		if ( false !== strpos( $supports[0][0], $component ) )
+		if ( in_array( $component, $supports[0] ) )
 			return true;
 		else
 			return false;
