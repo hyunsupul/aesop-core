@@ -23,6 +23,7 @@ if (!function_exists('aesop_content_shortcode')){
 			'img' 				=> '',
 			'imgrepeat'			=> 'no-repeat',
 			'imgposition'		=> 'center center',
+			'imgsize'			=> 'cover',
 			'floatermedia' 		=> '',
 			'floaterdirection'	=> 'up',
 			'floateroffset'		=> '',
@@ -37,6 +38,8 @@ if (!function_exists('aesop_content_shortcode')){
 
 		// height
 		$height = $atts['height'] ? sprintf('min-height:%s";',$atts['height']) : false;
+
+		// bg size
 
 		// inner positioning
 		$getinnerposition = $atts['innerposition'] ? preg_split("/[\s,]+/", $atts['innerposition']) : false;
@@ -58,7 +61,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 		// image and width inline styles
 		$bgcolor = $atts['background'] ? sprintf('background-color:%s;',$atts['background']) : false;
-		$imgstyle = $atts['img'] ? sprintf('%sbackground-image:url(\'%s\');background-size:cover;background-position:%s;',$bgcolor, $atts['img'], $atts['imgposition']) : false;
+		$imgstyle = $atts['img'] ? sprintf('%sbackground-image:url(\'%s\');background-size:%s;background-position:%s;background-repeat:%s;',$bgcolor, $atts['img'], $atts['imgsize'], $atts['imgposition'], $atts['imgrepeat']) : false;
 
 		$position	= ('left' == $atts['position'] || 'right' == $atts['position']) ? sprintf('float:%s;',$atts['position']) : 'margin-left:auto;margin-right:auto;';
 		$widthContentStyle = 'content' == $atts['width'] ? false : sprintf('max-width:%s;',$atts['width']);

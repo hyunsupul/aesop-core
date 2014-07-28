@@ -327,6 +327,20 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Image Repeat', 'aesop-core' ),
 						'tip'		=> __('If using a background image, should the background image repeat? Useful for using tiled images.','aesop-core')
 					),
+					'imgposition' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Background Image Position', 'aesop-core' ),
+						'tip'		=> __('If using a background image, the position of the background. Default is center center.','aesop-core')
+					),
+					'imgsize' 			=> array(
+						'type'		=> 'text',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'Background Image Size', 'aesop-core' ),
+						'tip'		=> __('If using a background image, the size of the image. By default it will be full width.','aesop-core')
+					),
 					'floatermedia' 	=> array(
 						'type'		=> 'text',
 						'values' 	=> array(),
