@@ -17,6 +17,11 @@ if (!function_exists('aesop_character_shortcode')){
 			'width'				=> ''
 		);
 
+		// let this be used multiple times
+		static $instance = 0;
+		$instance++;
+		$unique = sprintf('%s-%s',get_the_ID(), $instance);
+
 		$atts = apply_filters('aesop_character_defaults',shortcode_atts($defaults, $atts));
 
 		// custom classes
@@ -33,7 +38,7 @@ if (!function_exists('aesop_character_shortcode')){
 
 			do_action('aesop_character_before'); //action
 			?>
-				<aside class="aesop-character-component <?php echo $classes.''.$float;?> ">
+				<aside id="aesop-character-component-<?php echo $unique;?>" class="aesop-character-component <?php echo $classes.''.$float;?> ">
 
 					<?php do_action('aesop_character_inside_top'); //action ?>
 

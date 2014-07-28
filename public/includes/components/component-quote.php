@@ -27,8 +27,10 @@ if (!function_exists('aesop_quote_shortcode')){
 		);
 		$atts = apply_filters('aesop_quote_defaults',shortcode_atts($defaults, $atts));
 
-		// use multiple times
-		$hash = rand();
+		// let this be used multiple times
+		static $instance = 0;
+		$instance++;
+		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
 		// set component to content width
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
@@ -61,13 +63,13 @@ if (!function_exists('aesop_quote_shortcode')){
 
 		do_action('aesop_quote_before'); //action
 		?>
-			<div id="aesop-quote-component-<?php echo $hash;?>" class="aesop-component aesop-quote-component <?php echo $classes.' '.$align.' '.$contentwidth.' '.$isparallax.' '.$lrclass.' ';?>" <?php echo $style;?>>
+			<div id="aesop-quote-component-<?php echo $unique;?>" class="aesop-component aesop-quote-component <?php echo $classes.' '.$align.' '.$contentwidth.' '.$isparallax.' '.$lrclass.' ';?>" <?php echo $style;?>>
 
 				<!-- Aesop Core | Quote -->
 				<script>
 					jQuery(document).ready(function(){
 
-						var obj = jQuery('#aesop-quote-component-<?php echo $hash;?> blockquote');
+						var obj = jQuery('#aesop-quote-component-<?php echo $unique;?> blockquote');
 
 						// if parallax is on and we're not on mobile
 						<?php if ( 'on' == $atts['parallax'] && !wp_is_mobile() ) { ?>

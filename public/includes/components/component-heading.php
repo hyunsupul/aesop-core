@@ -17,7 +17,11 @@ if (!function_exists('aesop_chapter_shortcode')){
 		);
 
 		$atts = apply_filters('aesop_chapter_defaults',shortcode_atts($defaults, $atts));
-		$hash = rand();
+
+		// let this be used multiple times
+		static $instance = 0;
+		$instance++;
+		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
 		ob_start();
 
@@ -28,7 +32,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 			if ('video' == $atts['bgtype']) { ?>
 
-				<div id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover aesop-video-chapter aesop-component" >
+				<div id="chapter-unique-<?php echo $unique;?>" class="aesop-article-chapter-wrap default-cover aesop-video-chapter aesop-component" >
 
 					<?php do_action('aesop_chapter_inside_top'); //action ?>
 
@@ -52,7 +56,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 			<?php } else { ?>
 
-				<div id="chapter-hash-<?php echo $hash;?>" class="aesop-article-chapter-wrap default-cover aesop-component <?php echo $img_style_class;?> ">
+				<div id="chapter-unique-<?php echo $unique;?>" class="aesop-article-chapter-wrap default-cover aesop-component <?php echo $img_style_class;?> ">
 
 					<?php do_action('aesop_chapter_inside_top'); //action ?>
 

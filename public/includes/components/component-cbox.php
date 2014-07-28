@@ -10,7 +10,9 @@ if (!function_exists('aesop_content_shortcode')){
 	function aesop_content_shortcode($atts, $content = null) {
 
 		// let this be used multiple times
-		$hash = rand();
+		static $instance = 0;
+		$instance++;
+		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
 		$defaults = array(
 			'height'			=> '',
@@ -20,7 +22,7 @@ if (!function_exists('aesop_content_shortcode')){
 			'innerposition'		=> '',
 			'img' 				=> '',
 			'imgrepeat'			=> 'no-repeat',
-			'imgposition'		=> '',
+			'imgposition'		=> 'center center',
 			'floatermedia' 		=> '',
 			'floaterdirection'	=> 'up',
 			'floateroffset'		=> '',
@@ -56,7 +58,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 		// image and width inline styles
 		$bgcolor = $atts['background'] ? sprintf('background-color:%s;',$atts['background']) : false;
-		$imgstyle = $atts['img'] ? sprintf('%sbackground-image:url(\'%s\');background-size:cover;background-position:center center;',$bgcolor, $atts['img']) : false;
+		$imgstyle = $atts['img'] ? sprintf('%sbackground-image:url(\'%s\');background-size:cover;background-position:%s;',$bgcolor, $atts['img'], $atts['imgposition']) : false;
 
 		$position	= ('left' == $atts['position'] || 'right' == $atts['position']) ? sprintf('float:%s;',$atts['position']) : 'margin-left:auto;margin-right:auto;';
 		$widthContentStyle = 'content' == $atts['width'] ? false : sprintf('max-width:%s;',$atts['width']);
@@ -81,7 +83,7 @@ if (!function_exists('aesop_content_shortcode')){
 						<script>
 							jQuery(document).ready(function(){
 
-								var obj = jQuery('#aesop-content-component-<?php echo $hash;?> .aesop-content-component-floater');
+								var obj = jQuery('#aesop-content-component-<?php echo $unique;?> .aesop-content-component-floater');
 
 						       	function scrollParallax(){
 
@@ -103,7 +105,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 					echo do_action('aesop_cbox_inside_top'); //action ?>
 
-					<div id="aesop-content-component-<?php echo $hash;?>" class="aesop-content-comp-wrap <?php echo $typeclass;?>" <?php echo $itemstyle;?>>
+					<div id="aesop-content-component-<?php echo $unique;?>" class="aesop-content-comp-wrap <?php echo $typeclass;?>" <?php echo $itemstyle;?>>
 
 						<?php echo do_action('aesop_cbox_content_inside_top'); //action
 

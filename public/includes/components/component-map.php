@@ -12,8 +12,6 @@ if (!function_exists('aesop_map_shortcode')) {
 
 		$atts = apply_filters('aesop_map_defaults',shortcode_atts($defaults, $atts));
 
-		$hash = rand();
-
 		// actions
 		$actiontop = do_action('aesop_map_before'); //action
 		$actionbottom = do_action('aesop_map_after'); //action

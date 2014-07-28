@@ -16,7 +16,10 @@ if (!function_exists('aesop_document_shortcode')){
 		);
 		$atts = apply_filters('aesop_document_defaults',shortcode_atts($defaults, $atts));
 
-		$hash = rand();
+		// let this be used multiple times
+		static $instance = 0;
+		$instance++;
+		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
 		// actions
 		$actiontop = do_action('aesop_document_before'); //action
@@ -49,11 +52,11 @@ if (!function_exists('aesop_document_shortcode')){
 				});
 			});
 		</script>
-		',$hash, $hash);
+		',$unique, $unique);
 
 		$slide = $atts['caption'] ? $atts['caption'] : false;
-		$link = sprintf('<a href="#" class="aesop-doc-reveal-%s"><span>document</span><br /> %s</a>', $hash,$slide);
-		$guts = sprintf('<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>',$hash, $source);
+		$link = sprintf('<a href="#" class="aesop-doc-reveal-%s"><span>document</span><br /> %s</a>', $unique,$slide);
+		$guts = sprintf('<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>',$unique, $source);
 		
 		$out .= sprintf('%s<aside class="aesop-documument-component aesop-content %s">%s%s%s%s</aside>%s',$actiontop, $classes, $actioninsidetop, $link, $guts, $actioninsidebottom, $actionbottom);
 

@@ -18,7 +18,11 @@ if (!function_exists('aesop_collection_shortcode')){
 		);
 		$atts = apply_filters('aesop_collection_defaults',shortcode_atts($defaults, $atts));
 
-		$hash = rand();
+		// let this be used multiple times
+		static $instance = 0;
+		$instance++;
+		$unique = sprintf('%s-%s',get_the_ID(), $instance);
+
 		ob_start();
 
 		$col = $atts['columns'] ? preg_replace('/[^0-9]/','',$atts['columns']) : null;
@@ -40,7 +44,7 @@ if (!function_exists('aesop_collection_shortcode')){
 					<h4 class="aesop-story-collection-title"><span><?php echo $atts['title'];?></span></h4>
 				<?php } ?>
 
-					<div id="aesop-collection-<?php echo $hash;?>" class="aesop-collection-grid clearfix aesop-collection-grid-<?php echo $col;?>col <?php echo $splash_class;?>">
+					<div id="aesop-collection-<?php echo $unique;?>" class="aesop-collection-grid clearfix aesop-collection-grid-<?php echo $col;?>col <?php echo $splash_class;?>">
 
 						<?php
 

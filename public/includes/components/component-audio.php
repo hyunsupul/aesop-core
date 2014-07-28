@@ -18,7 +18,11 @@ if (!function_exists('aesop_audio_shortcode')){
     		'hidden'	=> ''
     	);
 	    $atts 		= apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
-	    $hash 		= rand();
+		
+		// let this be used multiple times
+		static $instance = 0;
+		$instance++;
+		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'audio', '' ) : null;
@@ -36,22 +40,22 @@ if (!function_exists('aesop_audio_shortcode')){
 
 	    do_action('aesop_audio_before'); //action
 
-	   		?><aside id="aesop-audio-<?php echo $hash;?>" class="aesop-component aesop-audio-component <?php echo $classes;?>" <?php echo $hidden;?>>
+	   		?><aside id="aesop-audio-<?php echo $unique;?>" class="aesop-component aesop-audio-component <?php echo $classes;?>" <?php echo $hidden;?>>
 
 	   			<?php if ('on' == $atts['viewstart']) { ?>
 			    	<script>
 			    	jQuery(document).ready(function(){
-						jQuery('#aesop-audio-<?php echo $hash;?>').waypoint({
+						jQuery('#aesop-audio-<?php echo $unique;?>').waypoint({
 							offset: 'bottom-in-view',
 							handler: function(direction){
-						   		jQuery('#aesop-audio-<?php echo $hash;?> .mejs-playpause-button button').trigger('click');
+						   		jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').trigger('click');
 
 						   	}
 						});
 						<?php if ('on' == $atts['viewend']) { ?>
-						jQuery('#aesop-audio-<?php echo $hash;?>').waypoint({
+						jQuery('#aesop-audio-<?php echo $unique;?>').waypoint({
 							handler: function(direction){
-						   		jQuery('#aesop-audio-<?php echo $hash;?> .mejs-playpause-button button').trigger('click');
+						   		jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').trigger('click');
 						   	}
 						});
 						<?php } ?>

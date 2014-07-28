@@ -28,12 +28,17 @@ if (!function_exists('aesop_image_shortcode')){
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'image', '' ) : null;
 
+		// let this be used multiple times
+		static $instance = 0;
+		$instance++;
+		$unique = sprintf('%s-%s',get_the_ID(), $instance);
+
 		// combine into component shell
 		ob_start();
 
 		do_action('aesop_image_before'); //action
 		?>
-		<div class="aesop-component aesop-image-component <?php echo $classes;?>" >
+		<div id="aesop-image-component-<?php echo $unique;?>" class="aesop-component aesop-image-component <?php echo $classes;?>" >
 
 			<?php do_action('aesop_image_inside_top'); //action ?>
 

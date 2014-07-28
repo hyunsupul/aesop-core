@@ -9,7 +9,11 @@ if (!function_exists('aesop_video_shortcode')){
 
 	function aesop_video_shortcode($atts, $content = null) {
 
-    	$hash = rand();
+		// let this be used multiple times
+		static $instance = 0;
+		$instance++;
+		$unique = sprintf('%s-%s',get_the_ID(), $instance);
+
     	$defaults = array(
     		'width' 	=> '100%',
     		'align' 	=> 'center',
@@ -60,23 +64,23 @@ if (!function_exists('aesop_video_shortcode')){
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'video', '' ) : null;
 
-	    $hash = rand();
+	    $unique = rand();
 
 	    ob_start();
 
 	    if ( 'on' == $atts['viewstart'] && 'self' == $atts['src'] ) { ?>
 	    	<script>
 		    	jQuery(document).ready(function(){
-					jQuery('#aesop-video-<?php echo $hash;?>').waypoint({
+					jQuery('#aesop-video-<?php echo $unique;?>').waypoint({
 						offset: 'bottom-in-view',
 						handler: function(direction){
-					   		jQuery('#aesop-video-<?php echo $hash;?> .mejs-playpause-button button').trigger('click');
+					   		jQuery('#aesop-video-<?php echo $unique;?> .mejs-playpause-button button').trigger('click');
 					   	}
 					});
 					<?php if ('on' == $atts['viewend']) { ?>
-					jQuery('#aesop-video-<?php echo $hash;?>').waypoint({
+					jQuery('#aesop-video-<?php echo $unique;?>').waypoint({
 						handler: function(direction){
-					   		jQuery('#aesop-video-<?php echo $hash;?> .mejs-playpause-button button').trigger('click');
+					   		jQuery('#aesop-video-<?php echo $unique;?> .mejs-playpause-button button').trigger('click');
 					   	}
 					});
 					<?php } ?>
@@ -84,7 +88,7 @@ if (!function_exists('aesop_video_shortcode')){
 	    	</script>
     	<?php }
 
-	    printf('%s<div id="aesop-video-%s" class="aesop-component aesop-video-component %s %s %s %s %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $hash, $classes, $controlstatus, $contentwidth, $vineStagramClass, $vineStagramAlign, $actioninsidetop, $hash, $atts['align'], $atts['src'], $widthstyle);
+	    printf('%s<div id="aesop-video-%s" class="aesop-component aesop-video-component %s %s %s %s %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, $unique, $classes, $controlstatus, $contentwidth, $vineStagramClass, $vineStagramAlign, $actioninsidetop, $unique, $atts['align'], $atts['src'], $widthstyle);
 
 
 	        switch( $atts['src'] ):
