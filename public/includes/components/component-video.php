@@ -64,8 +64,6 @@ if (!function_exists('aesop_video_shortcode')){
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'video', '' ) : null;
 
-	    $unique = rand();
-
 	    ob_start();
 
 	    if ( 'on' == $atts['viewstart'] && 'self' == $atts['src'] ) { ?>
