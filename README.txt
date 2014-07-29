@@ -137,6 +137,8 @@ Full documentation can be found below.
 * NEW - Updated Polish translation
 * NEW - New Photoset gallery type
 * NEW - Full compatibility for stacked gallery type. This was previously left up to themes.
+* NEW - Content component enhancements for background image
+* TWEAK - Fixed the way unique ID's are applied to each component to aid in customizing with css
 * TWEAK - Don't set a chapter image if one isn't set and add a class for this
 * TWEAK - Float class added to character and quote components if component is aligned left or right. This *may* have a different effect on your design so please be aware of this.
 * TWEAK - Content component now has wpautop filter applied which will make the text within the content component into proper paragraph elements. this *may* result in additional space in your design so please be aware of this tweak. We've also added a class to the parent component if an image is being used.
