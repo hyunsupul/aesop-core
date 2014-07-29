@@ -37,7 +37,7 @@ if (!function_exists('aesop_content_shortcode')){
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 
 		// height
-		$height = $atts['height'] ? sprintf('min-height:%s";',$atts['height']) : false;
+		$height = $atts['height'] ? sprintf('min-height:%s;',$atts['height']) : false;
 
 		// bg size
 
