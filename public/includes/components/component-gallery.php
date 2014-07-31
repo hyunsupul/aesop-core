@@ -93,7 +93,7 @@ class AesopCoreGallery {
 							$this->aesop_grid_gallery($atts,$images,$width);
 						break;
 						case 'stacked':
-							$this->aesop_stacked_gallery($atts,$images,$width);
+							$this->aesop_stacked_gallery($atts, $images, $width, $unique);
 						break;
 						case 'sequence':
 							$this->aesop_sequence_gallery($atts,$images,$width);
@@ -217,7 +217,7 @@ class AesopCoreGallery {
 	 	*
 	 	* @since    1.0.0
 	*/
-	function aesop_stacked_gallery($atts, $images, $width){
+	function aesop_stacked_gallery($atts, $images, $width, $unique){
 
 		?>
 		<!-- Aesop Stacked Gallery -->
@@ -237,7 +237,7 @@ class AesopCoreGallery {
 		<?php
 
 		$stacked_styles = 'background-size:cover;';
-		$styles = apply_filters( 'aesop_stacked_gallery_styles', $stacked_styles );
+		$styles = apply_filters( 'aesop_stacked_gallery_styles_'.$unique, $stacked_styles );
 
 		foreach ( $images as $image ):
 
