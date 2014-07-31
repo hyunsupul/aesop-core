@@ -2,7 +2,7 @@
 Contributors: nphaskins, mauryaratan, Tmeister
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
-Donate link: http://aesopstoryengine.com
+Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 3.9
@@ -78,6 +78,13 @@ Theme authors and developers will find documentation covering everything from th
 
 [http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers)
 
+** Update 7.31.14 **
+Aesop Story Engine 1.0.9 now features full theme compatibility with a simple code snippet that will load styles based on the components that you decide. While a dedicated theme is required to run components full-width, this will at least load all of the additional styles to give a basic design. Simply remove the component that you do not want to load additional styles for.
+
+`add_theme_support("aesop-component-styles", array("parallax", "image", "quote", "gallery", "content", "video", "audio", "collection", "chapter", "document", "character", "map", "timeline") );`
+
+We reccommend placing this in a WordPress themes functions.php, or use a plugin like [Code Snippets](https://wordpress.org/plugins/code-snippets/) and put it there.
+
 = Developers =
 This story engine was in beta for over 4 months, and every attempt has been made to ensure that 1.0 is as stable as can be. No breaking changes will be made until the next major version, which at the moment isn’t even a speckle in my daddies eye. All components are pluggable, and there are ample filters and actions to manipulate just about everything you can imagine. Refer to the documentation below for more.
 
@@ -138,6 +145,9 @@ Full documentation can be found below.
 * NEW - New Photoset gallery type
 * NEW - Full compatibility for stacked gallery type. This was previously left up to themes.
 * NEW - Content component enhancements for background image
+* NEW - Galleries now have ID's that correspond to the gallery id and instance of gallery in the post
+* NEW - Filter - stacked gallery styles (aesop_stacked_gallery_styles_ID-INSTANCE) see docs
+* NEW - Filter - chapter component inline styles for the background image (aesop_chapter_img_styles_ID-INSTANCE) see docs
 * TWEAK - Fixed the way unique ID's are applied to each component to aid in customizing with css
 * TWEAK - Don't set a chapter image if one isn't set and add a class for this
 * TWEAK - Float class added to character and quote components if component is aligned left or right. This *may* have a different effect on your design so please be aware of this.
