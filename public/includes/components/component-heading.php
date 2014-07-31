@@ -25,7 +25,10 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 		ob_start();
 
-		$img_style = $atts['img'] ? sprintf('style="background:url(\'%s\') center center;background-size:cover;"', $atts['img']) : null;
+		$inline_styles = 'background-size:cover;background-position:center center;';
+		$styles = apply_filters( 'aesop_chapter_img_styles_'.$unique, $inline_styles );
+
+		$img_style = $atts['img'] ? sprintf('style="background:url(\'%s\');%s"', $atts['img'], $inline_styles) : null;
 		$img_style_class = $atts['img'] ? 'has-chapter-image' : 'no-chapter-image';
 
 		do_action('aesop_chapter_before'); //action
