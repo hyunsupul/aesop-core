@@ -46,6 +46,11 @@ class AesopCoreGallery {
 		//gallery caption
 		$gallery_caption = get_post_meta($id, 'aesop_gallery_caption', true);
 
+		// let this be used multiple times
+		static $instance = 0;
+		$instance++;
+		$unique = sprintf('%s-%s', $id, $instance);
+
 		$images = wp_cache_get( 'aesop_gallery_wp_query_'.$id );
 
 		if ( false == $images) {
@@ -74,7 +79,7 @@ class AesopCoreGallery {
 
 			do_action('aesop_gallery_before', $atts['a_type'], $id); //action
 
-			?><div class="aesop-component aesop-gallery-component aesop-<?php echo $type;?>-gallery-wrap"><?php
+			?><div id="aesop-gallery-<?php echo $unique;?>" class="aesop-component aesop-gallery-component aesop-<?php echo $type;?>-gallery-wrap"><?php
 
 				do_action('aesop_gallery_inside_top', $atts['a_type'], $id); //action
 
@@ -231,6 +236,9 @@ class AesopCoreGallery {
 		</script>
 		<?php
 
+		$stacked_styles = 'background-size:cover;';
+		$styles = apply_filters( 'aesop_stacked_gallery_styles', $stacked_styles );
+
 		foreach ( $images as $image ):
 
             $full    =  wp_get_attachment_url($image->ID, 'full', false,'');
@@ -239,7 +247,7 @@ class AesopCoreGallery {
             $desc    =  $image->post_content;
 
            	?>
-           	<div class="aesop-stacked-img" style="background-image:url('<?php echo $full;?>');background-size:cover;">
+           	<div class="aesop-stacked-img" style="background-image:url('<?php echo $full;?>');<?php echo $styles;?>">
            		<?php if ( $caption ){ ?>
            			<div class="aesop-stacked-caption"><?php echo $caption;?></div>
            		<?php } ?>
