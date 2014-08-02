@@ -33,6 +33,9 @@ if (!function_exists('aesop_image_shortcode')){
 		$instance++;
 		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
+		// lazy loader class
+        $lazy   = class_exists('AesopLazyLoader') ? 'class="aesop-lazy-img"' : false;
+
 		// combine into component shell
 		ob_start();
 
@@ -52,12 +55,12 @@ if (!function_exists('aesop_image_shortcode')){
 
 						<a class="aesop-lightbox" href="<?php echo $atts['img'];?>" title="<?php echo $atts['caption'];?>">
 							<p class="aesop-img-enlarge"><i class="aesopicon aesopicon-search-plus"></i> <?php _e('Enlarge','aesop-core');?></p>
-							<img src="<?php echo $atts['img'];?>" alt="<?php echo esc_attr($atts['alt']);?>">
+							<img <?php echo $lazy;?> src="<?php echo $atts['img'];?>" alt="<?php echo esc_attr($atts['alt']);?>">
 						</a>
 
 					<?php } else { ?>
 
-						<img src="<?php echo $atts['img'];?>" alt="<?php echo esc_attr($atts['alt']);?>">
+						<img <?php echo $lazy;?> src="<?php echo $atts['img'];?>" alt="<?php echo esc_attr($atts['alt']);?>">
 
 					<?php }
 
