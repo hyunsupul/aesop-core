@@ -28,7 +28,14 @@ if (!function_exists('aesop_chapter_shortcode')){
 		$inline_styles = 'background-size:cover;background-position:center center;';
 		$styles = apply_filters( 'aesop_chapter_img_styles_'.$unique, $inline_styles );
 
-		$img_style = $atts['img'] ? sprintf('style="background:url(\'%s\');%s"', $atts['img'], $styles) : null;
+		if ( class_exists('AesopLazyLoader') ) {
+			$img_style = $atts['img'] ? sprintf('data-original="%s" style="background:url(\'%s\');%s"', $atts['img'], $atts['img'], $styles) : null;
+			$lazy      = 'aesop-lazy-img';
+		} else {
+			$img_style = $atts['img'] ? sprintf('style="background:url(\'%s\');%s"',$atts['img'], $styles) : null;
+			$lazy      = null;
+		}
+
 		$img_style_class = $atts['img'] ? 'has-chapter-image' : 'no-chapter-image';
 
 		do_action('aesop_chapter_before'); //action
@@ -63,7 +70,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 					<?php do_action('aesop_chapter_inside_top'); //action ?>
 
-					<div class="aesop-article-chapter clearfix " <?php echo $img_style;?> >
+					<div class="aesop-article-chapter clearfix <?php echo $lazy;?>" <?php echo $img_style;?> >
 
 						<?php do_action('aesop_chapter_inner_inside_top'); //action ?>
 
