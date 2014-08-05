@@ -105,7 +105,10 @@ if (!function_exists('aesop_chapter_heading_loader')){
 
 		global $post;
 
-		if( isset($post->post_content) && is_single() && has_shortcode( $post->post_content, 'aesop_chapter') )  {
+		$default_location 	= is_single();
+		$location 			= apply_filters( 'aesop_chapter_component_appears', $default_location );
+
+		if( isset($post->post_content) && ( $location ) && has_shortcode( $post->post_content, 'aesop_chapter') )  {
 
 			new AesopChapterHeadingComponent;
 
