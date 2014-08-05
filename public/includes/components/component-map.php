@@ -44,7 +44,10 @@ class AesopMapComponent {
 		$mapboxid = get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
 		$zoom = isset( $post ) && get_post_meta($post->ID,'aesop_map_component_zoom', true) ? get_post_meta($post->ID,'aesop_map_component_zoom', true) : 12;
 
-		if ( function_exists('aesop_component_exists') && aesop_component_exists('map') && is_single() )  { ?>
+		$default_location 	= is_single();
+		$location 			= apply_filters( 'aesop_map_component_appears', $default_location );
+
+		if ( function_exists('aesop_component_exists') && aesop_component_exists('map') && ( $location ) )  { ?>
 			<!-- Aesop Locations -->
 			<script>
 
