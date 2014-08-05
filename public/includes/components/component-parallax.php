@@ -30,17 +30,12 @@ if (!function_exists('aesop_parallax_shortcode')){
 		static $instance = 0;
 		$instance++;
 		$unique = sprintf('%s-%s',get_the_ID(), $instance);
-		
+
 		$placeholder = sprintf('%s', AI_CORE_URL.'/public/assets/img/grey.gif');
 		$height = preg_replace('/[^0-9]/','',$atts['height']);
 
-        if ( class_exists('AesopLazyLoader') ) {
-       		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax aesop-lazy-img' : false;
-			$style 		= sprintf('data-original="%s" style="background-image:url(\'%s\');background-size:cover;"',$atts['img'],$placeholder);
-		} else {
-			$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
-			$style 		= sprintf('style="background-image:url(\'%s\');background-size:cover;"',$atts['img']);
-		}
+		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
+		$style 		= sprintf('style="background-image:url(\'%s\');background-size:cover;"',$atts['img']);
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'parallax', '' ) : null;

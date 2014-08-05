@@ -29,11 +29,11 @@ if (!function_exists('aesop_chapter_shortcode')){
 		$styles = apply_filters( 'aesop_chapter_img_styles_'.$unique, $inline_styles );
 
 		if ( class_exists('AesopLazyLoader') ) {
-			$img_style = $atts['img'] ? sprintf('data-original="%s" style="background:url(\'%s\');%s"', $atts['img'], $atts['img'], $styles) : null;
-			$lazy      = 'aesop-lazy-img';
+			$img_style = $atts['img'] ? sprintf('data-original="%s" style="%s"', $atts['img'], $styles) : null;
+			$lazy_class = 'aesop-lazy-img';
 		} else {
 			$img_style = $atts['img'] ? sprintf('style="background:url(\'%s\');%s"',$atts['img'], $styles) : null;
-			$lazy      = null;
+			$lazy_class = null;
 		}
 
 		$img_style_class = $atts['img'] ? 'has-chapter-image' : 'no-chapter-image';
@@ -46,7 +46,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 					<?php do_action('aesop_chapter_inside_top'); //action ?>
 
-					<div class="aesop-article-chapter clearfix" style="height:auto;">
+					<div class="aesop-article-chapter clearfix <?php echo $lazy_class;?>" style="height:auto;">
 						<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
 						<h2 class="aesop-cover-title" itemprop="title" >
 							<?php echo $atts['title'];
@@ -70,7 +70,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 					<?php do_action('aesop_chapter_inside_top'); //action ?>
 
-					<div class="aesop-article-chapter clearfix <?php echo $lazy;?>" <?php echo $img_style;?> >
+					<div class="aesop-article-chapter clearfix <?php echo $lazy_class;?>" <?php echo $img_style;?> >
 
 						<?php do_action('aesop_chapter_inner_inside_top'); //action ?>
 
