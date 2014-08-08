@@ -80,8 +80,8 @@ if(!function_exists('aesop_shortcodes')){
 					'lightbox' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							'on',
+							'off'
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Lightbox', 'aesop-core' ),
@@ -189,9 +189,9 @@ if(!function_exists('aesop_shortcodes')){
 					'size' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('2', 'aesop-core'),
-							__('3', 'aesop-core'),
-							__('4', 'aesop-core')
+							'2',
+							'3',
+							'4'
 						),
 						'default' 	=> '2',
 						'desc' 		=> __( 'Quote Size', 'aesop-core' ),
@@ -200,8 +200,8 @@ if(!function_exists('aesop_shortcodes')){
 					'parallax' 		=> array(
 						'type'		=> 'text',
 						'values'	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							'on',
+							'off'
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __('Enable Quote Parallax', 'aesop-core' ),
@@ -409,8 +409,8 @@ if(!function_exists('aesop_shortcodes')){
 					'bgtype'			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('img', 'aesop-core'),
-							__('video', 'aesop-core')
+							'img',
+							'video'
 						),
 						'default'	=> 'img',
 						'desc'		=> __('Background Type','aesop-core'),
@@ -447,8 +447,8 @@ if(!function_exists('aesop_shortcodes')){
 					'parallaxbg' 	=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							'on',
+							'off'
 						),
 						'default' 	=> 'on',
 						'desc' 		=> __('Parallax Background Image', 'aesop-core' ),
@@ -457,8 +457,8 @@ if(!function_exists('aesop_shortcodes')){
 					'floater' 		=> array(
 						'type'		=> 'text',
 						'values'	=> array(
-							__('off', 'aesop-core'),
-							__('on', 'aesop-core')
+							'off',
+							'on'
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __('Enable Floating Element', 'aesop-core' ),
@@ -522,8 +522,8 @@ if(!function_exists('aesop_shortcodes')){
 					'lightbox' 		=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							'on',
+							'off'
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __('Image Lightbox', 'aesop-core' ),
@@ -554,8 +554,8 @@ if(!function_exists('aesop_shortcodes')){
 					'loop'		=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('off', 'aesop-core'),
-							__('on', 'aesop-core')
+							'off',
+							'on'
 						),
 						'default' 	=> '',
 						'desc' 		=> __( 'Loop Audio Player', 'aesop-core' ),
@@ -564,8 +564,8 @@ if(!function_exists('aesop_shortcodes')){
 					'viewstart'		=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							'on',
+							'off'
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Start Audio When in View', 'aesop-core' ),
@@ -574,8 +574,8 @@ if(!function_exists('aesop_shortcodes')){
 					'viewend'		=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							'on',
+							'off'
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Stop Audio When out of View', 'aesop-core' ),
@@ -584,8 +584,8 @@ if(!function_exists('aesop_shortcodes')){
 					'hidden'		=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('off', 'aesop-core'),
-							__('on', 'aesop-core')
+							'off',
+							'on'
 						),
 						'default' 	=> '',
 						'desc' 		=> __( 'Hide Audio Player', 'aesop-core' ),
@@ -619,15 +619,15 @@ if(!function_exists('aesop_shortcodes')){
 					'src' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('vimeo', 'aesop-core'),
-							__('youtube', 'aesop-core'),
-							__('kickstarter', 'aesop-core'),
-							__('viddler', 'aesop-core'),
-							__('vine', 'aesop-core'),
-							__('wistia', 'aesop-core'),
-							__('instagram','aesop-core'),
-							__('dailymotion', 'aesop-core'),
-							__('self', 'aesop-core')
+							'vimeo',
+							'youtube',
+							'kickstarter',
+							'viddler',
+							'vine',
+							'wistia',
+							'instagram',
+							'dailymotion',
+							'self'
 						),
 						'default' 	=> 'vimeo',
 						'desc' 		=> __('Video Source', 'aesop-core' ),
@@ -650,8 +650,8 @@ if(!function_exists('aesop_shortcodes')){
 					'loop' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							'on',
+							'off'
 						),
 						'default' 	=> 'on',
 						'desc' 		=> __('Video Loop ( if <em>self</em> as Source )', 'aesop-core' ),
@@ -660,8 +660,8 @@ if(!function_exists('aesop_shortcodes')){
 					'autoplay' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							'on',
+							'off'
 						),
 						'default' 	=> 'on',
 						'desc' 		=> __('Autoplay ( if <em>self</em> as Source )', 'aesop-core' ),
@@ -670,8 +670,8 @@ if(!function_exists('aesop_shortcodes')){
 					'controls' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							'on',
+							'off'
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __('Video Controls ( if <em>self</em> as Source )', 'aesop-core' ),
@@ -680,8 +680,8 @@ if(!function_exists('aesop_shortcodes')){
 					'viewstart'		=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							'on',
+							'off'
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Start Video When in View  ( if <em>self</em> as Source )', 'aesop-core' ),
@@ -690,8 +690,8 @@ if(!function_exists('aesop_shortcodes')){
 					'viewend'		=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							'on',
+							'off'
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Stop Video When Out of View  ( if <em>self</em> as Source )', 'aesop-core' ),
@@ -749,8 +749,8 @@ if(!function_exists('aesop_shortcodes')){
 					'type' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('pdf'),
-							__('image')
+							'pdf',
+							'image'
 						),
 						'default' 	=> 'pdf',
 						'desc' 		=> __( 'Document Type', 'aesop-core' ),
@@ -801,10 +801,10 @@ if(!function_exists('aesop_shortcodes')){
 					'columns' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('2'),
-							__('3'),
-							__('4'),
-							__('5')
+							'2',
+							'3',
+							'4',
+							'5'
 						),
 						'default' 	=> '2',
 						'desc' 		=> __( 'Columns', 'aesop-core' ),
@@ -813,8 +813,8 @@ if(!function_exists('aesop_shortcodes')){
 					'splash' 			=> array(
 						'type'		=> 'text',
 						'values' 	=> array(
-							__('on'),
-							__('off')
+							'on',
+							'off'
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Splash Mode', 'aesop-core' ),
