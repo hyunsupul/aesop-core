@@ -1,0 +1,9 @@
+{
+   "name": "aesop/aesop-core",
+   "type": "wordpress-plugin",
+   "description": "Aesop",
+   "keywords": ["plugin","wordpress","aesop","core"],
+   "require": {
+     "composer/installers": "~1.0.6"
+   }
+}
