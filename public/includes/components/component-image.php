@@ -38,7 +38,7 @@ if (!function_exists('aesop_image_shortcode')){
 
         // get height and width for image so it plays nicely with lazy loader
         $getlazysize = class_exists('AesopLazyLoader') ? getimagesize($atts['img']) : null;
-        $lazysize = $getlazysize ? sprintf('height="%s" width="%s"', $getlazysize[0], $getlazysize[1]) : null;
+        $lazysize = $getlazysize ? sprintf('height="%s" width="%s"', $getlazysize[1], $getlazysize[0]) : null;
 
 		// combine into component shell
 		ob_start();
