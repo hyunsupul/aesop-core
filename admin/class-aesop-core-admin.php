@@ -65,8 +65,9 @@ class Aesop_Core_Admin {
 		*/
 		add_action( 'media_buttons', array($this,'generator_button' ),100);
 		add_action( 'admin_footer', array($this,'generator_popup' ));
-		add_action('admin_enqueue_scripts', array($this,'admin_scripts'));
+		add_action( 'admin_enqueue_scripts', array($this,'admin_scripts'));
 		add_filter( 'wp_fullscreen_buttons', array($this,'fs_generator_button' ));
+		add_filter( 'mce_external_plugins', array($this, 'tinymce_plugin'));
 	}
 
 	/**
@@ -153,6 +154,22 @@ class Aesop_Core_Admin {
 		$buttons[] = self::generator_button();
 		return $buttons;
 	}
+
+	/**
+	 	* Add the tinymce plugin recognize specific shortcodes
+	 	*
+	 	* @since     1.1.0
+	*/
+	public function tinymce_plugin(){
+		$plugins = array('aiview');
+		$plugins_array = array();
+
+		foreach ($plugins as $plugin) {
+			$plugins_array[ $plugin ] = plugins_url('assets/js/tinymce/', __FILE__) . $plugin . '/plugin.js';
+		}
+		return $plugins_array;
+	}
+
 	/**
 	 	* Draw the component generator
 	 	*
