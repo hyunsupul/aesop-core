@@ -63,11 +63,11 @@ class Aesop_Core_Admin {
 		 	* Define custom functionality.
 		 	*
 		*/
-		add_action( 'media_buttons', array($this,'generator_button' ),100);
-		add_action( 'admin_footer', array($this,'generator_popup' ));
-		add_action( 'admin_enqueue_scripts', array($this,'admin_scripts'));
-		add_filter( 'wp_fullscreen_buttons', array($this,'fs_generator_button' ));
-		add_filter( 'mce_external_plugins', array($this, 'tinymce_plugin'));
+		add_action( 'media_buttons', [$this,'generator_button'], 100 );
+		add_action( 'admin_footer', [$this,'generator_popup'] );
+		add_action( 'admin_enqueue_scripts', [$this,'admin_scripts'] );
+		add_filter( 'wp_fullscreen_buttons', [$this,'fs_generator_button'] );
+		add_filter( 'mce_external_plugins', [$this, 'tinymce_plugin'] );
 	}
 
 	/**
