@@ -162,6 +162,7 @@ class Aesop_Core_Admin {
 		?>
 		<div id="aesop-generator-wrap">
 			<div id="aesop-generator" class="aesop-generator-inner-wrap">
+				<a class="media-modal-close aesop-close-modal" href="#"><span class="media-modal-icon"><span class="screen-reader-text">Close media panel</span></span></a>
 				<div id="aesop-generator-shell">
 
 

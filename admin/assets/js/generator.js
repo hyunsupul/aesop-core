@@ -1,10 +1,12 @@
 jQuery(document).ready(function($) {
 
+	var modal = $('#aesop-generator-wrap');
+
 	// start new
 	$('.aesop-add-story-component').click(function(e){
 		e.preventDefault();
 		jQuery('body').toggleClass('modal-open');
-		jQuery('#aesop-generator-wrap').toggleClass('aesop-generator-open');
+		jQuery(modal).toggleClass('aesop-generator-open');
 	});
 
 	var settingsHeight = function(){
@@ -12,7 +14,7 @@ jQuery(document).ready(function($) {
 	}
 
 	var destroyModal = function(){
-		$('#aesop-generator-wrap').removeClass('aesop-generator-open');
+		$(modal).removeClass('aesop-generator-open');
 		$('body').removeClass('modal-open');
 	}
 	settingsHeight();
@@ -26,6 +28,11 @@ jQuery(document).ready(function($) {
 		if (e.keyCode == 27) {
 			destroyModal();
 		}
+	});
+
+	$('.aesop-close-modal').click(function(e){
+		e.preventDefault();
+		destroyModal();
 	});
 
 	// end new
