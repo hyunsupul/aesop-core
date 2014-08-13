@@ -159,7 +159,12 @@ class Aesop_Core_Admin {
 	 	* @since     1.0.0
 	*/
 	public function generator_popup() {
-		?>
+
+		global $pagenow;
+
+			// Load styles and scripts for bad ass generator only on these pages
+		$aesop_generator_includes_pages = array( 'post.php', 'edit.php', 'post-new.php', 'index.php' );
+		if ( in_array( $pagenow, $aesop_generator_includes_pages ) ) { ?>
 		<div id="aesop-generator-wrap">
 			<div id="aesop-generator" class="aesop-generator-inner-wrap">
 				<a class="media-modal-close aesop-close-modal" href="#"><span class="media-modal-icon"><span class="screen-reader-text">Close media panel</span></span></a>
@@ -195,6 +200,6 @@ class Aesop_Core_Admin {
 				</div>
 			</div>
 		</div>
-		<?php
+		<?php }
 	}
 }
