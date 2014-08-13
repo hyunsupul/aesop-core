@@ -1,5 +1,23 @@
 jQuery(document).ready(function($) {
 
+	// start new
+	$('.aesop-add-story-component').click(function(e){
+		e.preventDefault();
+		jQuery('body').toggleClass('modal-open');
+		jQuery('#aesop-generator-wrap').toggleClass('aesop-generator-open')
+	});
+
+	var settingsHeight = function(){
+		$('#aesop-generator-settings-outer').css({'height':$(window).height() - 60});
+	}
+	settingsHeight();
+
+	$(window).resize(function(){
+		settingsHeight();
+	});
+
+	// end new
+
 	$('.aesop-generator').dropkick({
 		change: function () {
     		var queried_shortcode = $('#aesop-generator-select').find(':selected').val();
@@ -26,7 +44,14 @@ jQuery(document).ready(function($) {
 			$('#aesop-generator-result').val($('#aesop-generator-result').val() + $('#aesop-generator-content').val() + '[/' + aesop_compatibility_mode_prefix + queried_shortcode + ']');
 		}
 		window.send_to_editor(jQuery('#aesop-generator-result').val());
+
+		// start new
+		$('#aesop-generator-wrap').removeClass('aesop-generator-open').
+		$('body').removeClass('modal-open');
+		// end new
+
 		return false;
+
 	});
 });
 
