@@ -1,8 +1,21 @@
+ @import url(//fonts.googleapis.com/css?family=Open+Sans);
+
 .aesop-component
 {
-	background-color: #ddd;
+	background-color: #222222;
 	border: 2px solid black;
-	padding: 15px;
+	padding: 0 15px 15px 15px;
 	margin: 15px;
 	display: block;
+	color: rgb(214, 214, 214);
+
+	font-family: "Open Sans", sans-serif;
+}
+
+.aesop-component-bar
+{
+	font-size: .8em;
+	text-transform: capitalize;
+	display: block;
+	padding: 5px;
 }

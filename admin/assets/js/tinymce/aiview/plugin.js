@@ -16,7 +16,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		data = window.encodeURIComponent( data );
 
 		// output the div as a placeholder
-		var st = '<div data-mce-resize="false" data-mce-placeholder="1" class="mceItem ' + cls + '"><div class="aesop-' + parse[1] + '" data-aesop-sc="' + data + '">' + parse[3] + '</div></div>';
+		var st = '<div data-mce-resize="false" data-mce-placeholder="1" class="mceItem ' + cls + '"><div class="aesop-component-bar">Stuff goes here</div><div class="aesop-' + parse[1] + '" data-aesop-sc="' + data + '">' + parse[3] + '</div></div>';
 		return st;
 	}
 
