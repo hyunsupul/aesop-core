@@ -24,8 +24,14 @@
 	padding: 15px;
 }
 
-.aesop-content-title{
-	font-family: Dashicons;
+.aesop-component-controls
+{
+	float: right;
 }
 
-.aesop-content-title:before { content: "\f207"; padding-right: 5px; vertical-align: middle;}
+.aesop-component-title:before { padding-right: 5px; vertical-align: middle; font-family: Dashicons; }
+.aesop-content-title:before { content: "\f207"; }
+.aesop-button:before { vertical-align: middle; font-family: Dashicons; display: inline-block; }
+.aesop-button { float: right; }
+.aesop-button-edit:before { content: "\f464"; }
+.aesop-button-delete:before { content: "\f182"; }
