@@ -8,7 +8,7 @@ jQuery(document).ready(function($) {
 	});
 
 	var settingsHeight = function(){
-		$('#aesop-generator-settings-outer').css({'height':$(window).height() - 60});
+		$('#aesop-generator-settings-outer').css({'height':$(window).height() - 90});
 	}
 
 	var destroyModal = function(){
