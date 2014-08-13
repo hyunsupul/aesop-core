@@ -2,16 +2,22 @@
 tinymce.PluginManager.add('aiview', function( editor ) {
 
 	function replaceAesopShortcodes( content ) {
-		return content.replace( /\[aesop_content([^\[\]]*)]([^\[\]]+)\[\/aesop_content]/g, function( match ) {
-			return html( 'aesop-content', match );
+		return content.replace( /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]/g, function( match ) {
+			return html( 'aesop-component', match );
 		});
 	}
 
 	function html( cls, data ) {
+		// let's pull out the shortcode type, options and content
+		var re = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]/g;
+		var parse = re.exec(data);
+
+		// encode so we can embed it as a data element
 		data = window.encodeURIComponent( data );
-		return ':placeholder:';
-		//return '<img src="' + tinymce.Env.transparentSrc + '" class="wp-media mceItem ' + cls + '" ' +
-		//	'data-wp-media="' + data + '" data-mce-resize="false" data-mce-placeholder="1" />';
+
+		// output the div as a placeholder
+		var st = '<div data-mce-resize="false" data-mce-placeholder="1" class="mceItem ' + cls + '"><div class="aesop-' + parse[1] + '" data-aesop-sc="' + data + '">' + parse[3] + '</div></div>';
+		return st;
 	}
 
 	function restoreAesopShortcodes( content ) {

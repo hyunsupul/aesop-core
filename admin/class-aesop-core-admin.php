@@ -66,6 +66,7 @@ class Aesop_Core_Admin {
 		add_action( 'media_buttons', [$this,'generator_button'], 100 );
 		add_action( 'admin_footer', [$this,'generator_popup'] );
 		add_action( 'admin_enqueue_scripts', [$this,'admin_scripts'] );
+		add_filter( 'mce_css', [$this, 'aesop_editor_styles'] );
 		add_filter( 'wp_fullscreen_buttons', [$this,'fs_generator_button'] );
 		add_filter( 'mce_external_plugins', [$this, 'tinymce_plugin'] );
 	}
@@ -168,6 +169,11 @@ class Aesop_Core_Admin {
 			$plugins_array[ $plugin ] = plugins_url('assets/js/tinymce/', __FILE__) . $plugin . '/plugin.js';
 		}
 		return $plugins_array;
+	}
+
+	public function aesop_editor_styles( $mce_css ) {
+		$mce_css .= ', ' . plugins_url( 'assets/css/tinymce/custom-editor-style.css', __FILE__ );
+    return $mce_css;
 	}
 
 	/**
