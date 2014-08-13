@@ -3,8 +3,6 @@
 .aesop-component
 {
 	background-color: #222222;
-	border: 2px solid black;
-	padding: 0 15px 15px 15px;
 	margin: 15px;
 	display: block;
 	color: rgb(214, 214, 214);
@@ -15,7 +13,19 @@
 .aesop-component-bar
 {
 	font-size: .8em;
-	text-transform: capitalize;
+	text-transform: uppercase;
 	display: block;
-	padding: 5px;
+	padding: 5px 15px;
+	background-color: #555555;
 }
+
+.aesop-component-content
+{
+	padding: 15px;
+}
+
+.aesop-content-title{
+	font-family: Dashicons;
+}
+
+.aesop-content-title:before { content: "\f207"; padding-right: 5px; vertical-align: middle;}
