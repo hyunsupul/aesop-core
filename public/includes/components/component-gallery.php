@@ -22,12 +22,9 @@ class AesopCoreGallery {
 
 		global $post;
 
-		// do cusotm atts
-		$defaults = array(
-			'id'	=> '',
-			'a_type' => ''
-		);
-		$atts = shortcode_atts($defaults, $atts);
+		// attributes
+		$defaults 	= array('id'	=> '','a_type' => '');
+		$atts 		= shortcode_atts($defaults, $atts);
 
 		// gallery ID
 		$gallery_id = $atts['id'];
@@ -50,7 +47,6 @@ class AesopCoreGallery {
 
 		// set the type of gallery into post meta
 		update_post_meta( $gallery_id, 'aesop_gallery_type', $type );
-
 
 		ob_start();
 
@@ -90,7 +86,7 @@ class AesopCoreGallery {
 					if ( is_user_logged_in() ) {
 						$url = admin_url( 'post.php?post='.$gallery_id.'&action=edit' );
 						$edit_gallery = __('edit gallery', 'aesop-core');
-						printf('<a class="aesop-gallery-edit" href="%s" target="_blank" title="Edit this gallery">(%s)</a>',$url, $edit_gallery );
+						printf('<a class="aesop-gallery-edit aesop-content" href="%s" target="_blank" title="%s">(%s)</a>',$url, $edit_gallery, $edit_gallery );
 					}
 
 				} else {
@@ -220,7 +216,7 @@ class AesopCoreGallery {
 
 		foreach ( $image_ids as $image_id ):
 
-            $full    =  wp_get_attachment_url($image-_id, 'full', false,'');
+            $full    =  wp_get_attachment_url($image_id, 'full', false,'');
             $alt     =  get_post_meta($image_id, '_wp_attachment_image_alt', true);
             $caption =  $image_id->post_excerpt;
             $desc    =  $image_id->post_content;
@@ -334,7 +330,7 @@ class AesopCoreGallery {
 
 				foreach ($image_ids as $image_id):
 
-		            $full    	=  wp_get_attachment_url($image_id);
+		            $full    	=  wp_get_attachment_url($image_id, 'large', false, '');
 		            $alt     	=  get_post_meta($image_id, '_wp_attachment_image_alt', true);
 		            $caption 	=  $image_id->post_excerpt;
 		            $desc    	=  $image_id->post_content;
