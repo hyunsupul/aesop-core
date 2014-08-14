@@ -16,28 +16,25 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 		if ( !parse ){
 			parse = re_short.exec(data);
-			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceNonEditable mceItem ' + cls + '"><div class="aesop-component-bar mceNonEditable"><div class="aesop-component-controls mceNonEditable"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit">&nbsp;</div></div><span class="mceNonEditable aesop-component-title aesop-' + parse[1] + '-title">' + parse[1] + '</span></div></div>';
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceNonEditable mceItem ' + cls + '"><div class="aesop-component-bar mceNonEditable"><div class="aesop-component-controls mceNonEditable"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit">&nbsp;</div></div><span class="mceNonEditable aesop-component-title aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-end">ai-end</div></div>';
 		} else {
-			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem ' + cls + '"><div class="aesop-component-bar mceNonEditable"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit">&nbsp;</div></div><span class="mceNonEditable aesop-component-title aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '">' + parse[3] + '</div></div>';
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem ' + cls + '"><div class="aesop-component-bar mceNonEditable"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit">&nbsp;</div></div><span class="mceNonEditable aesop-component-title aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '">' + parse[3] + '</div><div class="aesop-end">ai-end</div></div>';
 		}
 
 		return st;
 	}
 
 	function restoreAesopShortcodes( content ) {
-		function getAttr( str, name ) {
-			name = new RegExp( name + '=\"([^\"]+)\"' ).exec( str );
-			return name ? window.decodeURIComponent( name[1] ) : '';
-		}
 
-		return content.replace( /(?:<p(?: [^>]+)?>)*(<img [^>]+>)(?:<\/p>)*/g, function( match, image ) {
-			var data = getAttr( image, 'data-wp-media' );
+		return content.replace( /<div class="[^"]+aesop-component.*aesop-sc="([^"]+)"[\s\S]*ai-end[^>]*>[^>]*>/g, function( component, sc ) {
+			//var data = getAttr( component, 'data-aesop-sc' );
+			sc = window.decodeURIComponent(sc);
 
-			if ( data ) {
-				return '<p>' + data + '</p>';
+			if ( sc ) {
+				return sc;
 			}
 
-			return match;
+			return component;
 		});
 	}
 
@@ -70,42 +67,6 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 	editor.addCommand( 'Aesop', function() {
 		editMedia( editor.selection.getNode() );
-	});
-
-	editor.on( 'mouseup', function( event ) {
-		var dom = editor.dom,
-			node = event.target;
-
-		function unselect() {
-			dom.removeClass( dom.select( 'div.aesop-selected' ), 'aesop-selected' );
-		}
-
-	// Have to replace this handler to recognize all of the different components
-/*		if ( node.nodeName === 'DIV' && dom.getAttrib( node, 'data-wp-media' ) ) {
-			// Don't trigger on right-click
-			if ( event.button !== 2 ) {
-				if ( dom.hasClass( node, 'wp-media-selected' ) ) {
-					editMedia( node );
-				} else {
-					unselect();
-					dom.addClass( node, 'wp-media-selected' );
-				}
-			}
-		} else {
-			unselect();
-		}*/
-	});
-
-	// Display gallery, audio or video instead of img in the element path
-	editor.on( 'ResolveName', function( event ) {
-		var dom = editor.dom,
-			node = event.target;
-
-		/*if ( node.nodeName === 'DIV' && dom.getAttrib( node, 'data-wp-media' ) ) {
-			if ( dom.hasClass( node, 'wp-gallery' ) ) {
-				event.name = 'gallery';
-			}
-		}*/
 	});
 
 	editor.on( 'BeforeSetContent', function( event ) {

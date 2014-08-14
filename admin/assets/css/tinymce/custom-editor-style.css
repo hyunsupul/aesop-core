@@ -29,6 +29,10 @@
 	float: right;
 }
 
+.aesop-end {
+	display: none;
+}
+
 .aesop-component-title:before { padding-right: 5px; vertical-align: middle; font-family: Dashicons; }
 .aesop-content-title:before { content: "\f207"; }
 .aesop-chapter-title:before { content: "\f330"; }
