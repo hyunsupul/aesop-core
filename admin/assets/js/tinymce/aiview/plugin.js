@@ -9,14 +9,14 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 	function html( cls, data ) {
 		// let's pull out the shortcode type, options and content
-		var re_full = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]/;
-		var re_short = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]/;
+		var re_full = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]/g;
+		var re_short = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]/g;
 
 		var parse = re_full.exec(data);
 
 		if ( !parse ){
 			parse = re_short.exec(data);
-			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceNonEditable mceItem ' + cls + '"><div class="aesop-component-bar mceNonEditable"><div class="aesop-component-controls mceNonEditable"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit">&nbsp;</div></div><span class="mceNonEditable aesop-component-title aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-end">ai-end</div></div>';
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceNonEditable mceItem ' + cls + '"><div class="aesop-component-bar mceNonEditable"><div class="aesop-component-controls mceNonEditable"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit">&nbsp;</div></div><span class="mceNonEditable aesop-component-title aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-end">WcMgcq</div></div>';
 		} else {
 			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem ' + cls + '"><div class="aesop-component-bar mceNonEditable"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit">&nbsp;</div></div><span class="mceNonEditable aesop-component-title aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '">' + parse[3] + '</div></div>';
 		}
@@ -25,26 +25,39 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	}
 
 	function delAesopComponent( component ) {
-		
+
 	}
 
 	function restoreAesopShortcodes( content ) {
+		return content.replace((/<div class="[^"]+aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*>(.*?)<\/div><\/div>|<div class="[^"]+aesop-component.*aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g), function( match ){
+			return shortcode( match );
+		});
+	}
 
-		return content.replace( /<div class="[^"]+aesop-component.*aesop-sc="([^"]+)"[\s\S]*aesop-content[^>]*>(.*)<\/div>[\s\S]?<\/div>/g, function( component, sc, content ) {
-			//var data = getAttr( component, 'data-aesop-sc' );
-			sc = window.decodeURIComponent(sc);
+	function shortcode( match ){
+		var re_full = /<div class="[^"]+aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*>(.*?)<\/div><\/div>/g;
+		var re_short = /<div class="[^"]+aesop-component.*aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g;
 
+		var parse = re_full.exec(match);
+
+		// what if it's short?
+		if ( !parse ){
+			parse = re_short.exec(match);
+			// what if it's not nothin'
+			if ( !parse ){
+				return match;
+			}
+			sc = window.decodeURIComponent(parse[1]);
+			return sc;
+		} else {
+			sc = window.decodeURIComponent(parse[1]);
+
+			// let's replace the shortcode content with any edits
 			var sc_filter = /\[[^\]]*\]([^\[]*)[^\]]*\]/;
 			var sc_filtered = sc_filter.exec(sc);
-			
-			sc = sc.replace(sc_filtered[1], content);
-
-			if ( sc ) {
-				return sc;
-			}
-
-			return component;
-		});
+			sc = sc.replace(sc_filtered[1], parse[2]);
+			return sc;
+		}
 	}
 
 	function editComponent( node ) {
