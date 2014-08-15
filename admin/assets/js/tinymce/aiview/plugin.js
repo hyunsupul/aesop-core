@@ -87,16 +87,18 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		}*/
 	}
 
-	function attachListeners() {
-		var delbtns = tinymce.activeEditor.dom.select('.aesop-button-delete');
+	editor.onClick.add(function(editor, e) {
+		if ( e.target.className.indexOf('aesop-button-delete') > -1 ) {
+			var c = confirm('Are you sure you want to delete this Aesop Component?');
+			if (c == true) {
+				e.target.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode);
+			}
+		}
 
-		delbtns.forEach(function(btn){
-			console.log(btn.className);
-		});
-	}
-
-	editor.on('LoadContent', function(e) {
-  	attachListeners();
+		if ( e.target.className.indexOf('aesop-button-edit') > -1 ) {
+			//need to open up the dropkick window
+			window.tb_show('Component','#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap',null);
+		}
   });
 
 	editor.addCommand( 'Aesop', function() {
@@ -105,7 +107,6 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 	editor.on( 'BeforeSetContent', function( event ) {
 		event.content = replaceAesopShortcodes( event.content );
-		attachListeners();
 	});
 
 	editor.on( 'PostProcess', function( event ) {
