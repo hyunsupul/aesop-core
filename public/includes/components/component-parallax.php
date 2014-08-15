@@ -18,7 +18,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 			'floatermedia' 		=> '',
 			'floaterposition' 	=> 'right',
 			'floaterdirection'	=> 'up',
-			'floateroffset'		=> '',
+			'floateroffset'		=> 100,
 			'caption'			=> '',
 			'captionposition' 	=> 'bottom-left',
 			'lightbox' 			=> false
@@ -30,7 +30,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 		static $instance = 0;
 		$instance++;
 		$unique = sprintf('%s-%s',get_the_ID(), $instance);
-		
+
 		$placeholder = sprintf('%s', AI_CORE_URL.'/public/assets/img/grey.gif');
 		$height = preg_replace('/[^0-9]/','',$atts['height']);
 
@@ -68,11 +68,11 @@ if (!function_exists('aesop_parallax_shortcode')){
 		        			<?php if ( 'on' == $atts['floater'] ) {?>
 								var obj = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?> .aesop-parallax-sc-floater');
 						       	function scrollParallax(){
-						       	    var floater 		= Math.round((jQuery(window).scrollTop() / jQuery(obj).data('speed')) - <?php echo absint(sanitize_text_field($atts['floateroffset']));?>),
-						       	   		height 			= <?php echo $height;?>,
+						       	    var height 			= <?php echo $height;?>,
         	        					offset 			= jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?>').offset().top,
 						       	    	scrollTop 		= jQuery(window).scrollTop(),
-						       	    	windowHeight 	= jQuery(window).height();
+						       	    	windowHeight 	= jQuery(window).height(),
+						       	    	floater 		= Math.round( (offset - scrollTop - <?php echo absint(sanitize_text_field($atts['floateroffset']));?>) * 0.1);
 
 						       	    // only run parallax if image in view
 						       	    if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
