@@ -87,12 +87,25 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		}*/
 	}
 
+	function attachListeners() {
+		var delbtns = tinymce.activeEditor.dom.select('.aesop-button-delete');
+
+		delbtns.forEach(function(btn){
+			console.log(btn.className);
+		});
+	}
+
+	editor.on('LoadContent', function(e) {
+  	attachListeners();
+  });
+
 	editor.addCommand( 'Aesop', function() {
 		editMedia( editor.selection.getNode() );
 	});
 
 	editor.on( 'BeforeSetContent', function( event ) {
 		event.content = replaceAesopShortcodes( event.content );
+		attachListeners();
 	});
 
 	editor.on( 'PostProcess', function( event ) {
