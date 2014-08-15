@@ -50,7 +50,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 		do_action('aesop_parallax_before'); //action
 
-			?><div id="" class="aesop-component aesop-parallax-component <?php echo $classes;?>"><?php
+			?><div class="aesop-component aesop-parallax-component <?php echo $classes;?>"><?php
 
 				do_action('aesop_parallax_inside_top'); // action
 
