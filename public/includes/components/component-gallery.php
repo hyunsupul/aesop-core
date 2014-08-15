@@ -35,7 +35,15 @@ class AesopCoreGallery {
 		$unique 	= sprintf('%s-%s', $gallery_id, $instance);
 
 		// get the gallery
-		$gallery 	= get_post_gallery( $gallery_id , false);
+		$gallery 	= wp_cache_get('aesop_gallery_retrieval_'.$unique);
+
+		// cache teh gallery retrieval
+		if ( false == $gallery ) {
+
+			$gallery 	= get_post_gallery( $gallery_id , false);
+			wp_cache_set('aesop_gallery_retrieval_'.$unique, $gallery);
+
+		}
 
 		// get gallery images and custom attrs
 		$image_ids 	= explode( ',', $gallery['ids'] );
@@ -46,6 +54,7 @@ class AesopCoreGallery {
 		$gallery_caption = get_post_meta( $gallery_id, 'aesop_gallery_caption', true);
 
 		// set the type of gallery into post meta
+		// @todo - move this to  save_post action so it doesn't run every time the sc loads
 		update_post_meta( $gallery_id, 'aesop_gallery_type', $type );
 
 		ob_start();
