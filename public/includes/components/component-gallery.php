@@ -274,9 +274,9 @@ class AesopCoreGallery {
 	}
 
 	/**
-	 	* Draws a mosaic style galery
+	 	* Draws a photoset style gallery
 	 	*
-	 	* @since    1.0.0
+	 	* @since    1.0.9
 	*/
 	function aesop_photoset_gallery($gallery_id, $image_ids, $width){
 
