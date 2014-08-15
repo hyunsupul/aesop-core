@@ -24,9 +24,13 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		return st;
 	}
 
+	function delAesopComponent( component ) {
+		
+	}
+
 	function restoreAesopShortcodes( content ) {
 
-		return content.replace( /<div class="[^"]+aesop-component.*aesop-sc="([^"]+)"[\s\S]*aesop-content[^>]*>([^<]*)<\/div><\/div>/g, function( component, sc, content ) {
+		return content.replace( /<div class="[^"]+aesop-component.*aesop-sc="([^"]+)"[\s\S]*aesop-content[^>]*>(.*)<\/div>[\s\S]?<\/div>/g, function( component, sc, content ) {
 			//var data = getAttr( component, 'data-aesop-sc' );
 			sc = window.decodeURIComponent(sc);
 
