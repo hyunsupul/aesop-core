@@ -28,46 +28,10 @@ if (!function_exists('aesop_chapter_shortcode')){
 		$inline_styles 		= 'background-size:cover;background-position:center center;';
 		$styles 			= apply_filters( 'aesop_chapter_img_styles_'.$unique, $inline_styles );
 
-<<<<<<< HEAD
-		if ( class_exists('AesopLazyLoader') ) {
-			$img_style = $atts['img'] ? sprintf('data-original="%s" style="%s"', $atts['img'], $styles) : null;
-			$lazy_class = 'aesop-lazy-img';
-		} else {
-			$img_style = $atts['img'] ? sprintf('style="background:url(\'%s\');%s"',$atts['img'], $styles) : null;
-			$lazy_class = null;
-		}
-
-		$img_style_class = $atts['img'] ? 'has-chapter-image' : 'no-chapter-image';
-
-		do_action('aesop_chapter_before'); //action
-
-			if ('video' == $atts['bgtype']) { ?>
-
-				<div id="chapter-unique-<?php echo $unique;?>" class="aesop-article-chapter-wrap default-cover aesop-video-chapter aesop-component" >
-
-					<?php do_action('aesop_chapter_inside_top'); //action ?>
-
-					<div class="aesop-article-chapter clearfix <?php echo $lazy_class;?>" style="height:auto;">
-						<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
-						<h2 class="aesop-cover-title" itemprop="title" >
-							<?php echo $atts['title'];
-
-							if ($atts['subtitle']) { ?>
-								<small><?php echo $atts['subtitle'];?></small>
-							<?php } ?>
-						</h2>
-						<div class="video-container">
-							<?php echo do_shortcode('[video src="'.$atts['img'].'" loop="on" autoplay="on"]'); ?>
-						</div>
-					</div>
-
-					<?php do_action('aesop_chapter_inside_bottom'); //action ?>
-=======
 		$img_style 		 	= 'img' == $atts['bgtype'] && $atts['img'] ? sprintf('style="background:url(\'%s\');%s"', $atts['img'], $styles) : 'style="height:auto;" ';
 		$img_style_class 	= 'img' == $atts['bgtype'] && $atts['img'] ? 'has-chapter-image' : 'no-chapter-image';
 
 		$video_chapter_class = 'video' == $atts['bgtype'] ? 'aesop-video-chapter' : null;
->>>>>>> release/1.1
 
 		do_action('aesop_chapter_before'); //action
 		?>
@@ -76,11 +40,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 				<?php do_action('aesop_chapter_inside_top'); //action ?>
 
-<<<<<<< HEAD
-					<div class="aesop-article-chapter clearfix <?php echo $lazy_class;?>" <?php echo $img_style;?> >
-=======
 				<div class="aesop-article-chapter clearfix" <?php echo $img_style;?> >
->>>>>>> release/1.1
 
 					<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
 
