@@ -35,6 +35,8 @@ jQuery(document).ready(function($) {
 		destroyModal();
 	});
 
+	$('.post-type-ai_galleries .insert-media').html('<span class="dashicons dashicons-images-alt2"></span> Add Gallery');
+
 	// end new
 
 	$('.aesop-generator').dropkick({
