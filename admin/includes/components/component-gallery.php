@@ -8,12 +8,12 @@ class AesopGalleryComponentAdmin {
 
 	public function __construct(){
 
-		add_action('print_media_templates',  array($this,'aesop_gallery_opts'));
-       	add_action('init',array($this,'do_type'));
-       	add_action('admin_init',array($this,'sc_helper'));
-       	add_filter('manage_ai_galleries_posts_columns', array($this,'col_head'));
-		add_action('manage_ai_galleries_posts_custom_column', array($this,'col_content'), 10, 2);
-		add_filter( 'cmb_meta_boxes', array($this,'aesop_gallery_meta' ));
+		add_action('print_media_templates',  					array($this,'aesop_gallery_opts'));
+       	add_action('init',										array($this,'do_type'));
+       	add_action('admin_init',								array($this,'sc_helper'));
+       	add_filter('manage_ai_galleries_posts_columns', 		array($this,'col_head'));
+		add_action('manage_ai_galleries_posts_custom_column', 	array($this,'col_content'), 10, 2);
+		add_filter('cmb_meta_boxes', 							array($this,'aesop_gallery_meta' ));
 	}
 
 	/**
@@ -111,7 +111,7 @@ class AesopGalleryComponentAdmin {
 		add_meta_box('ai_gallery_sc',__('Gallery Instructions','aesop-core'),array($this,'sc_helper_cb'),'ai_galleries','side', 'low');
 	}
 	function sc_helper_cb(){
-		_e('1. Click the Add Media button<br />2. Click Create Gallery to create a gallery<br />3. Insert gallery into editor, and publish.<br /><br /> Once you\'ve created the gallery, copy the code below, and paste it into your story where you want the gallery to be shown.<br />','aesop-core');
+		_e('1. Click the Add Gallery button<br />2. Click Create Gallery to create a gallery<br />3. Insert gallery and publish.<br /><br /> Once you\'ve created the gallery, copy the code below, and paste it into your story where you want the gallery to be shown.<br />','aesop-core');
 		printf('<pre>[aesop_gallery id="%s"]</pre>',get_the_ID());
 	}
 
@@ -132,7 +132,7 @@ class AesopGalleryComponentAdmin {
 	 	* Callback for col_head
 	 	* Lists the posts that contain the specific gallery
 	 	*
-	 	* @since    1.0.0
+	 	* @since    1.
 	*/
 	function col_content($column_name, $post_ID) {
 
@@ -150,7 +150,7 @@ class AesopGalleryComponentAdmin {
 				foreach($pages as $page) {
 					$count ++;
 					$id = $page->ID;
-					if(has_shortcode($page->post_content,'aesop_gallery')){
+					if( has_shortcode($page->post_content,'aesop_gallery') ){
 						echo ucfirst($this->the_slug($id));
 
 						if( $count != count($pages) ){

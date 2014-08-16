@@ -20,7 +20,7 @@ if (!function_exists('aesop_quote_shortcode')){
 			'parallax'  => '',
 			'speed' 	=> 8,
 			'direction' => '',
-			'offset'	=> 300,
+			'offset'	=> 0,
 			'quote'		=> '',
 			'cite'		=> '',
 
@@ -36,7 +36,7 @@ if (!function_exists('aesop_quote_shortcode')){
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 
 		// set size
-		$size = $atts['size'] ? sprintf('%srem', $atts['size']) : false;
+		$size = $atts['size'] ? sprintf('%sem', $atts['size']) : false;
 
 		//bg img
 		$bgimg = $atts['img'] ? sprintf('background-image:url(%s);background-size:cover;background-position:center center',$atts['img']) : false;
@@ -75,7 +75,16 @@ if (!function_exists('aesop_quote_shortcode')){
 						<?php if ( 'on' == $atts['parallax'] && !wp_is_mobile() ) { ?>
 
 					       	function scrollParallax(){
-					       	    var floater = (jQuery(window).scrollTop() / <?php echo sanitize_text_field($atts['speed']);?>) - <?php echo $offset;?>;
+					       	    var floater 		= Math.round((jQuery(window).scrollTop() / <?php echo sanitize_text_field($atts['speed']);?>) - <?php echo $offset;?>),
+					       	    	height 			= jQuery('#aesop-quote-component-<?php echo $unique;?>').height(),
+        	        				offset 			= jQuery('#aesop-quote-component-<?php echo $unique;?>').offset().top,
+						       	    scrollTop 		= jQuery(window).scrollTop(),
+						       	    windowHeight 	= jQuery(window).height();
+
+						       	// only run parallax if image in view
+						       	if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
+									return;
+								}
 
 					            jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
 

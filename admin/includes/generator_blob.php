@@ -8,12 +8,16 @@ $blob = array();
 foreach( $codes as $slug => $shortcode ) {
 	$return = '';
 	// Shortcode has atts
+
 	if ( count( $shortcode['atts'] ) && $shortcode['atts'] ) {
+
 		foreach ( $shortcode['atts'] as $attr_name => $attr_info ) {
 
+			$prefix = isset($attr_info['prefix']) ? sprintf('<span class="aesop-option-prefix">%s</span>',$attr_info['prefix']) : null;
+
 			$return .= '<p>';
-			$return .= '<a rel="tooltip" class="aesop-option-tip" href="#" data-toggle="tooltip" data-placement="right" title="'.$attr_info['tip'].'" ><i class="dashicons dashicons-editor-help"></i></a>';
 			$return .= '<label for="aesop-generator-attr-' . $attr_name . '">' . $attr_info['desc'] . '</label>';
+			$return .= '<small class="aesop-option-desc">'.$attr_info['tip'].'</small>';
 			// Select
 			if ( count( $attr_info['values'] ) && $attr_info['values'] ) {
 				$return .= '<select name="' . $attr_name . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr">';
@@ -38,8 +42,12 @@ foreach( $codes as $slug => $shortcode ) {
 
 					$return .= '<input type="color" name="' . $attr_name . '" value="'.$attr_info['default'].'" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
 
+				} elseif ('text_area' == $attr_info['type']) {
+
+					$return .= '<textarea type="' . $attr_field_type . '" name="' . $attr_name . '" value="" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />'.$prefix.'';
+
 				} else {
-					$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
+					$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />'.$prefix.'';
 				}
 			}
 			$return .= '</p>';
@@ -56,7 +64,6 @@ foreach( $codes as $slug => $shortcode ) {
 		$return .= '<p><label>' . __( 'Content', 'aesop-shortcodes' ) . '</label><input type="text" name="aesop-generator-content" id="aesop-generator-content" value="' . $shortcode['content'] . '" /></p>';
 	}
 
-	$return .= '<p class="aesop-component-description">Description:&nbsp; '.$shortcode['desc'].'</p>';
 	$return .= '<p class="aesop-buttoninsert-wrap"><a href="#" id="aesop-generator-insert">' . __( 'Insert Component', 'aesop-shortcodes' ) . '</a></p> ';
 
 	$return .= '<input type="hidden" name="aesop-generator-result" id="aesop-generator-result" value="" />';

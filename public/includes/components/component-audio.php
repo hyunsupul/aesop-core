@@ -36,6 +36,9 @@ if (!function_exists('aesop_audio_shortcode')){
 		// loop
 		$loop = 'on' == $atts['loop'] ? 'true' : false;
 
+		// waypoint filter
+		$waypoint = apply_filters('aesop_audio_component_waypoint', 'bottom-in-view');
+
 	    ob_start();
 
 	    do_action('aesop_audio_before'); //action
@@ -46,7 +49,7 @@ if (!function_exists('aesop_audio_shortcode')){
 			    	<script>
 			    	jQuery(document).ready(function(){
 						jQuery('#aesop-audio-<?php echo $unique;?>').waypoint({
-							offset: 'bottom-in-view',
+							offset: '<?php echo $waypoint;?>',
 							handler: function(direction){
 						   		jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').trigger('click');
 
