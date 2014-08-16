@@ -46,7 +46,7 @@ class AesopContextualHelp {
 
 				<h4>Directions</h4>
 				<ol>
-					<li>Click the Add Media button</li>
+					<li>Click the Add Gallery button</li>
 					<li>Click Create Gallery to create a gallery</li>
 					<li>Create a gallery, then choose a gallery type while creating the gallery within the gallery modal. </li>
 					<li>Insert the gallery into the post, and publish the page.</li>
