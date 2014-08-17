@@ -16,9 +16,9 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 		if ( !parse ){
 			parse = re_short.exec(data);
-			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceNonEditable mceItem ' + cls + '"><div class="aesop-component-bar mceNonEditable"><div class="aesop-component-controls mceNonEditable"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit">&nbsp;</div></div><span class="mceNonEditable aesop-component-title aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-end">WcMgcq</div></div>';
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceNonEditable mceItem ' + cls + '"><div class="aesop-component-bar mceNonEditable"><div class="aesop-component-controls mceNonEditable"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div></div><span class="mceNonEditable aesop-component-title aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-end">WcMgcq</div></div>';
 		} else {
-			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem ' + cls + '"><div class="aesop-component-bar mceNonEditable"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit">&nbsp;</div></div><span class="mceNonEditable aesop-component-title aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '">' + parse[3] + '</div></div>';
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem ' + cls + '"><div class="aesop-component-bar mceNonEditable"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div></div><span class="mceNonEditable aesop-component-title aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '">' + parse[3] + '</div></div>';
 		}
 
 		return st;
@@ -96,8 +96,18 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		}
 
 		if ( e.target.className.indexOf('aesop-button-edit') > -1 ) {
-			//need to open up the dropkick window
-			window.tb_show('Component','#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap',null);
+			var re_scope = /aesop-scope-([a-z]*)/;
+			var scope = re_scope.exec(e.target.className);
+
+			if ( scope ) {
+				// open the editor window
+				window.tb_show('Component','#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap',null);
+
+				// open up the option based on scope
+				var selector = '.dk_options li.' + scope[1] + ' a';
+				window.jQuery(selector).click();
+
+			}
 		}
   });
 
