@@ -103,21 +103,24 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			}
 		}
 
-		attrs = parse[2].split(' ');
+		// split up based on a space
+		var attrs = parse[2].split(' ');
 
 		ai_map = [];
 
+		// split based on equal sign
 		attrs.forEach(function(attr) {
 			attr = attr.split('=');
 			
 			attr_key = attr[0];
 			attr_value = attr[1];
 
+			// trim first and last character to get rid of the quotes
 			attr_value = attr_value.slice(0, -1);
 			ai_map[attr_key] = attr_value.substring(1);
 		});
 
-		console.log(ai_map);
+		return ai_map;
 	}
 
 	editor.onClick.add(function(editor, e) {
@@ -132,12 +135,15 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 		// let's handle the edit button
 		if ( e.target.className.indexOf('aesop-button-edit') > -1 ) {
+
 			var re_scope = /aesop-scope-([a-z]*)/;
 			var scope = re_scope.exec(e.target.className);
 
 			var ai_parent = e.target.parentNode.parentNode.parentNode;
 
 			var sc = restoreAesopShortcodes(ai_parent.outerHTML);
+
+			ai_parent.setAttribute("id", 'aesop-generator-editing');
 
 			if ( scope ) {
 				// open the editor window
@@ -147,7 +153,11 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 				var selector = '.dk_options li.' + scope[1] + ' a';
 				window.jQuery(selector).click();
 
-				parse(sc);
+				var attrs = parse(sc);
+
+				for (var key in attrs) {
+					window.jQuery('#aesop-generator-settings input[name="' + key + '"]').val(attrs[key]);
+				}
 			}
 		}
   });

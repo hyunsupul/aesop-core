@@ -25,6 +25,10 @@ jQuery(document).ready(function($) {
 		if ( $('#aesop-generator-content').val() != 'false' ) {
 			$('#aesop-generator-result').val($('#aesop-generator-result').val() + $('#aesop-generator-content').val() + '[/' + aesop_compatibility_mode_prefix + queried_shortcode + ']');
 		}
+
+    var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
+    tinyMCE.activeEditor.dom.remove(editing);
+
 		window.send_to_editor(jQuery('#aesop-generator-result').val());
 		return false;
 	});
