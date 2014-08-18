@@ -138,7 +138,7 @@ class Aesop_Core_Admin {
 	*/
 	public function generator_button() {
 
-		$getbutton = sprintf('<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" class="button thickbox aesop-add-story-component" id="ai-add-component-button" title="Add Story Component"><span class="aesop-admin-button-icon dashicons dashicons-plus"></span> %s</a>', __('Add Component', 'aesop-core'));
+		$getbutton = sprintf('<a href="#aesop-generator-wrap" class="button aesop-add-story-component" title="Add Story Component"><span class="aesop-admin-button-icon dashicons dashicons-plus"></span> %s</a>', __('Add Component', 'aesop-core'));
 
 		$button = apply_filters('aesop_generator_button', $getbutton);
 

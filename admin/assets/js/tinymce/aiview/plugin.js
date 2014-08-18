@@ -147,7 +147,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 			if ( scope ) {
 				// open the editor window
-				window.tb_show('Component','#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap',null);
+				window.tb_show('Component','#aesop-generator-wrap',null);
 
 				// open up the option based on scope
 				var selector = '.dk_options li.' + scope[1] + ' a';
