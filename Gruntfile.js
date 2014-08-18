@@ -8,31 +8,25 @@ module.exports = function(grunt) {
         // watch our project for changes
         watch: {
             less: {
-				files: ['public/assets/less/*/**','admin/assets/css/*/**'],
-                tasks: ['less']
-            },
-            js: {
-                files: [
-                    '<%= jshint.all %>'
-                ],
-                tasks: ['jshint', 'uglify']
+				files: ['public/assets/less/*/**','admin/assets/less/*/**'],
+                tasks: ['less:adminLess']
             },
             livereload: {
                 options: { livereload: true },
-                files: ['public/assets/**/*', '**/*.html', '**/*.php', 'public/assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}']
+                files: ['admin/assets/**/*','public/assets/**/*', '**/*.html', '**/*.php', 'public/assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}']
             }
         },
-        // style (Sass) compilation via Compass
+        // less compiling
 		less: {
 
 		  	adminLess: {
-		    	options: {
-		      		paths: ["admin/assets/css/*"],
-		      		cleancss:true
-		    	},
-		    	files: {
-		     	 	"admin/assets/css/style.css": "admin/assets/css/style.less"
-		    	}
+			    options: {
+			      	paths: ["admin/assets/less/*/**"],
+			      	cleancss:true
+			    },
+			    files: {
+			      	"admin/assets/css/aesop-admin.css": "admin/assets/less/style.less"
+			    }
 		  	},
 		  	coreLess: {
 		  		options: {

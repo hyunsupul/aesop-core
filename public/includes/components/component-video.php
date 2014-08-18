@@ -64,13 +64,16 @@ if (!function_exists('aesop_video_shortcode')){
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'video', '' ) : null;
 
+		// waypoint filter
+		$waypoint = apply_filters('aesop_video_component_waypoint', 'bottom-in-view');
+
 	    ob_start();
 
 	    if ( 'on' == $atts['viewstart'] && 'self' == $atts['src'] ) { ?>
 	    	<script>
 		    	jQuery(document).ready(function(){
 					jQuery('#aesop-video-<?php echo $unique;?>').waypoint({
-						offset: 'bottom-in-view',
+						offset: '<?php echo $waypoint;?>',
 						handler: function(direction){
 					   		jQuery('#aesop-video-<?php echo $unique;?> .mejs-playpause-button button').trigger('click');
 					   	}

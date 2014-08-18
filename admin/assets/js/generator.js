@@ -1,5 +1,44 @@
 jQuery(document).ready(function($) {
 
+	var modal = $('#aesop-generator-wrap');
+
+	// start new
+	$('.aesop-add-story-component').click(function(e){
+		e.preventDefault();
+		jQuery('body').toggleClass('modal-open');
+		jQuery(modal).toggleClass('aesop-generator-open');
+	});
+
+	var settingsHeight = function(){
+		$('#aesop-generator-settings-outer').css({'height':$(window).height() - 90});
+	}
+
+	var destroyModal = function(){
+		$(modal).removeClass('aesop-generator-open');
+		$('body').removeClass('modal-open');
+	}
+	settingsHeight();
+
+	$(window).resize(function(){
+		settingsHeight();
+	});
+	  	// close modals on escape
+	$(document).keyup(function(e) {
+
+		if (e.keyCode == 27) {
+			destroyModal();
+		}
+	});
+
+	$('.aesop-close-modal').click(function(e){
+		e.preventDefault();
+		destroyModal();
+	});
+
+	$('.post-type-ai_galleries .insert-media').html('<span class="dashicons dashicons-images-alt2"></span> Add Gallery');
+
+	// end new
+
 	$('.aesop-generator').dropkick({
 		change: function () {
     		var queried_shortcode = $('#aesop-generator-select').find(':selected').val();
@@ -30,7 +69,13 @@ jQuery(document).ready(function($) {
     tinyMCE.activeEditor.dom.remove(editing);
 
 		window.send_to_editor(jQuery('#aesop-generator-result').val());
+
+		// start new
+		destroyModal();
+		// end new
+
 		return false;
+
 	});
 });
 

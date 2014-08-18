@@ -135,7 +135,9 @@ if (!function_exists('aesop_collection_shortcode')){
 						// if collection ID isn't set warn them
 						else:
 
+							?><div class="aesop-error aesop-content"><?php
 							_e('Specify a category ID to display stories from.','aesop-core');
+							?></div><?php
 
 						endif;
 

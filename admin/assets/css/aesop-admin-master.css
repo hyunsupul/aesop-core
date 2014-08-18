@@ -119,6 +119,24 @@
   border-width: 0 5px 5px;
   border-bottom-color: #0074a2;
 }
+#aesop-generator-settings-outer #aesop-generator-settings .aesop-buttoninsert-wrap {
+  margin: 20px auto 0;
+  border-bottom: none;
+  box-shadow: none;
+}
+.wp-media-buttons .aesop-admin-button-icon {
+  line-height: 1.5em;
+}
+.wp-fullscreen-active .aesop-add-story-component {
+  float: right;
+  line-height: 1.9;
+  height: auto;
+  margin-left: 12px;
+}
+.wp-fullscreen-active .aesop-add-story-component span {
+  line-height: 1.6;
+  font-size: 18px;
+}
 #aesop-generator-wrap {
   display: none;
   background: rgba(0, 0, 0, 0.5);
@@ -131,19 +149,6 @@
 }
 #aesop-generator-wrap.aesop-generator-open {
   display: block;
-}
-.post-type-ai_galleries #ed_toolbar,
-.post-type-ai_galleries #post-status-info,
-.post-type-ai_galleries .aesop-add-story-component,
-.post-type-ai_galleries .mce-statusbar,
-.post-type-ai_galleries .mce-toolbar-grp {
-  display: none !important;
-}
-.post-type-ai_galleries .insert-media span {
-  position: relative;
-  top: 5px;
-  font-size: 16px;
-  margin-right: 2px;
 }
 .aesop-generator-empty {
   text-align: center;
@@ -397,22 +402,4 @@
 #aesop-generator-settings-outer #aesop-generator-settings #aesop-upload-img:active {
   background: #0074a2;
   top: 1px;
-}
-#aesop-generator-settings-outer #aesop-generator-settings .aesop-buttoninsert-wrap {
-  margin: 20px auto 0;
-  border-bottom: none;
-  box-shadow: none;
-}
-.wp-media-buttons .aesop-admin-button-icon {
-  line-height: 1.5em;
-}
-.wp-fullscreen-active .aesop-add-story-component {
-  float: right;
-  line-height: 1.9;
-  height: auto;
-  margin-left: 12px;
-}
-.wp-fullscreen-active .aesop-add-story-component span {
-  line-height: 1.6;
-  font-size: 18px;
 }

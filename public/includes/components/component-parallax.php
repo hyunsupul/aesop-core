@@ -18,7 +18,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 			'floatermedia' 		=> '',
 			'floaterposition' 	=> 'right',
 			'floaterdirection'	=> 'up',
-			'floateroffset'		=> '',
+			'floateroffset'		=> 100,
 			'caption'			=> '',
 			'captionposition' 	=> 'bottom-left',
 			'lightbox' 			=> false
@@ -30,18 +30,12 @@ if (!function_exists('aesop_parallax_shortcode')){
 		static $instance = 0;
 		$instance++;
 		$unique = sprintf('%s-%s',get_the_ID(), $instance);
-		
+
 		$placeholder = sprintf('%s', AI_CORE_URL.'/public/assets/img/grey.gif');
 		$height = preg_replace('/[^0-9]/','',$atts['height']);
 
-        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-        if (is_plugin_active('aesop-lazy-loader/aesop-lazy-loader.php')) {
-       		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax aesop-lazy-img' : false;
-			$style 		= sprintf('data-original="%s" style="background-image:url(\'%s\');background-size:cover;"',$atts['img'],$placeholder);
-		} else {
-			$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
-			$style 		= sprintf('style="background-image:url(\'%s\');background-size:cover;"',$atts['img']);
-		}
+		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
+		$style 		= sprintf('style="background-image:url(\'%s\');background-size:cover;"',$atts['img']);
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'parallax', '' ) : null;
@@ -68,7 +62,16 @@ if (!function_exists('aesop_parallax_shortcode')){
 		        			<?php if ( 'on' == $atts['floater'] ) {?>
 								var obj = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?> .aesop-parallax-sc-floater');
 						       	function scrollParallax(){
-						       	    var floater = (jQuery(window).scrollTop() / jQuery(obj).data('speed')) - <?php echo absint(sanitize_text_field($atts['floateroffset']));?>;
+						       	    var height 			= <?php echo $height;?>,
+        	        					offset 			= jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?>').offset().top,
+						       	    	scrollTop 		= jQuery(window).scrollTop(),
+						       	    	windowHeight 	= jQuery(window).height(),
+						       	    	floater 		= Math.round( (offset - scrollTop - <?php echo absint(sanitize_text_field($atts['floateroffset']));?>) * 0.1);
+
+						       	    // only run parallax if image in view
+						       	    if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
+										return;
+									}
 
 						       	    <?php if ('left' == $atts['floaterdirection'] || 'right' == $atts['floaterdirection']){
 
