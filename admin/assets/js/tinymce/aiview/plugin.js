@@ -102,13 +102,12 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 				return match;
 			}
 		}
-		
-		ai_attrs = re_parse.exec(parse[2]);
-		console.log(re_parse.exec(parse[2]));
-		//ai_attrs.shift();
-		var ai_map = new Array();
 
-		ai_attrs.forEach(function(attr) {
+		attrs = parse[2].split(' ');
+
+		ai_map = [];
+
+		attrs.forEach(function(attr) {
 			attr = attr.split('=');
 			
 			attr_key = attr[0];
@@ -118,7 +117,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			ai_map[attr_key] = attr_value.substring(1);
 		});
 
-		//console.log(ai_map);
+		console.log(ai_map);
 	}
 
 	editor.onClick.add(function(editor, e) {
