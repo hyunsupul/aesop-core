@@ -87,7 +87,43 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		}*/
 	}
 
+	function parse( sc ) {
+		var re_full = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]/g;
+		var re_short = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]/g;
+		var re_parse = /([^\s]+)\s?/g;
+
+		var parse = re_full.exec(sc);
+
+		// what if it's short?
+		if ( !parse ){
+			parse = re_short.exec(sc);
+			// what if it's not nothin'
+			if ( !parse ){
+				return match;
+			}
+		}
+		
+		ai_attrs = re_parse.exec(parse[2]);
+		console.log(re_parse.exec(parse[2]));
+		//ai_attrs.shift();
+		var ai_map = new Array();
+
+		ai_attrs.forEach(function(attr) {
+			attr = attr.split('=');
+			
+			attr_key = attr[0];
+			attr_value = attr[1];
+
+			attr_value = attr_value.slice(0, -1);
+			ai_map[attr_key] = attr_value.substring(1);
+		});
+
+		//console.log(ai_map);
+	}
+
 	editor.onClick.add(function(editor, e) {
+
+		// let's handle the delete button
 		if ( e.target.className.indexOf('aesop-button-delete') > -1 ) {
 			var c = confirm('Are you sure you want to delete this Aesop Component?');
 			if (c == true) {
@@ -95,9 +131,14 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			}
 		}
 
+		// let's handle the edit button
 		if ( e.target.className.indexOf('aesop-button-edit') > -1 ) {
 			var re_scope = /aesop-scope-([a-z]*)/;
 			var scope = re_scope.exec(e.target.className);
+
+			var ai_parent = e.target.parentNode.parentNode.parentNode;
+
+			var sc = restoreAesopShortcodes(ai_parent.outerHTML);
 
 			if ( scope ) {
 				// open the editor window
@@ -107,6 +148,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 				var selector = '.dk_options li.' + scope[1] + ' a';
 				window.jQuery(selector).click();
 
+				parse(sc);
 			}
 		}
   });
