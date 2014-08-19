@@ -14,6 +14,8 @@ jQuery(document).ready(function($) {
 	}
 
 	var destroyModal = function(){
+    var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
+    editing[0].removeAttribute('id');
 		$(modal).removeClass('aesop-generator-open');
 		$('body').removeClass('modal-open');
 	}
