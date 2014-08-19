@@ -126,6 +126,9 @@ class AesopCoreGallery {
 		$autoplay 	= get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true) ? sprintf('data-autoplay="%s"', get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true)) : null;
 		$transition = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true) ? get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true) : 'slide';
 
+		// image size
+		$size    = apply_filters('aesop_thumb_gallery_size', 'full');
+
 		?><div id="aesop-thumb-gallery-<?php echo $atts['id'];?>" class="fotorama" 	data-transition="crossfade"
 																			data-width="<?php echo $width;?>"
 																			<?php echo $autoplay;?>
@@ -136,7 +139,7 @@ class AesopCoreGallery {
 
 			foreach ($image_ids as $image_id):
 
-                $full    =  wp_get_attachment_url($image_id, 'full', false,'');
+                $full    =  wp_get_attachment_url($image_id, $size, false,'');
                 $alt     =  get_post_meta($image_id, '_wp_attachment_image_alt', true);
                 $caption =  $image_id->post_excerpt;
                 $desc    =  $image_id->post_content;
@@ -161,6 +164,9 @@ class AesopCoreGallery {
 		// allow theme developers to determine the spacing between grid items
 		$space = apply_filters('aesop_grid_gallery_spacing', 5 );
 
+		// image size
+		$size    = apply_filters('aesop_grid_gallery_size', 'large');
+
 		?>
 		<!-- Aesop Grid Gallery -->
 		<script>
@@ -182,7 +188,7 @@ class AesopCoreGallery {
 			foreach ($image_ids as $image_id):
 
                 $getimage 		= wp_get_attachment_image($image_id, 'aesop-grid-image', false, array('class' => 'aesop-grid-image'));
-				$getimgsrc 		= wp_get_attachment_image_src($image_id,'large');
+				$getimgsrc 		= wp_get_attachment_image_src($image_id, $size);
                 $img_title 	  	= $image_id->post_title;
 
                	printf('<a class="aesop-lightbox" href="%s" title="%s"><span class="clearfix">%s</span></a>',$getimgsrc[0], esc_attr($img_title), $getimage);
@@ -220,9 +226,12 @@ class AesopCoreGallery {
 		$stacked_styles = 'background-size:cover;';
 		$styles = apply_filters( 'aesop_stacked_gallery_styles_'.$unique, $stacked_styles );
 
+		// image size
+		$size    = apply_filters('aesop_stacked_gallery_size', 'full');
+
 		foreach ( $image_ids as $image_id ):
 
-            $full    =  wp_get_attachment_url($image_id, 'full', false,'');
+            $full    =  wp_get_attachment_url($image_id, $size, false,'');
             $caption =  $image_id->post_excerpt;
 
            	?>
@@ -244,9 +253,12 @@ class AesopCoreGallery {
 	*/
 	function aesop_sequence_gallery( $gallery_id, $image_ids, $width ){
 
+		// image size
+		$size    = apply_filters('aesop_sequence_gallery_size', 'large');
+
 		foreach ( $image_ids as $image_id ):
 
-            $img     =  wp_get_attachment_url($image_id, 'large', false,'');
+            $img     =  wp_get_attachment_url($image_id, $size, false,'');
             $alt     =  get_post_meta($image_id, '_wp_attachment_image_alt', true);
             $caption =  $image_id->post_excerpt;
 
@@ -291,6 +303,9 @@ class AesopCoreGallery {
 		// lightbox
 		$lightbox = get_post_meta( $gallery_id, 'aesop_photoset_gallery_lightbox', true );
 
+		// image size
+		$size    = apply_filters('aesop_photoset_gallery_size', 'large');
+
 		?>
 		<!-- Aesop Photoset Gallery -->
 		<script>
@@ -333,7 +348,7 @@ class AesopCoreGallery {
 
 				foreach ( $image_ids as $image_id ):
 
-		            $full    	=  wp_get_attachment_url( $image_id, 'large', false, '' );
+		            $full    	=  wp_get_attachment_url( $image_id, $size, false, '' );
 		            $alt     	=  get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 		            $title 	  	= $image_id->post_title;
 
