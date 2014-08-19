@@ -37,6 +37,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	function shortcode( match ){
 		var re_full = /<div.*?class="[^"]+aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>/g;
 		var re_short = /<div class="[^"]+aesop-component.*aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g;
+		var re_clean = /<\/div>[\s\S]?<div class="aesop-component-content aesop-content">[\s]*/g;
 
 		var parse = re_full.exec(match);
 
@@ -55,7 +56,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			// let's replace the shortcode content with any edits
 			var sc_filter = /\[[^\]]*\]([^\[]*)[^\]]*\]/;
 			var sc_filtered = sc_filter.exec(sc);
-			sc = sc.replace(sc_filtered[1], parse[2]);
+			sc = sc.replace(sc_filtered[1], parse[2].replace(re_clean, ''));
 			return sc;
 		}
 	}
