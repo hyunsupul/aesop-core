@@ -1,12 +1,14 @@
 /* global tinymce */
 tinymce.PluginManager.add('aiview', function( editor ) {
 
+	// process any aesop shortcodes in the tinymce content
 	function replaceAesopShortcodes( content ) {
 		return content.replace( /(\[aesop_([a-zA-Z]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]|\[aesop_([a-zA-Z]+)\s?([^\[\]]*)])/g, function( match ) {
 			return html( 'aesop-component', match );
 		});
 	}
 
+	// return the html div equivalent of the shortcodes
 	function html( cls, data ) {
 		// let's pull out the shortcode type, options and content
 		var re_full = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]/g;
@@ -24,16 +26,14 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		return st;
 	}
 
-	function delAesopComponent( component ) {
-
-	}
-
+	// restore the Aesop shortcode from the div placeholder
 	function restoreAesopShortcodes( content ) {
 		return content.replace((/<div.*?class="[^"]+aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>|<div class="[^"]+aesop-component.*aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g), function( match ){
 			return shortcode( match );
 		});
 	}
 
+	// return the shortcode equivalent for any matches and update the content with the new version
 	function shortcode( match ){
 		var re_full = /<div.*?class="[^"]+aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>/g;
 		var re_short = /<div class="[^"]+aesop-component.*aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g;
@@ -60,6 +60,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		}
 	}
 
+	// parse the shortcode and turn it into an array
 	function parse( sc ) {
 		var re_full = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]/g;
 		var re_short = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]/g;
@@ -101,6 +102,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		return ai_map;
 	}
 
+	// handle the click events
 	editor.onClick.add(function(editor, e) {
 
 		// let's handle the delete button
