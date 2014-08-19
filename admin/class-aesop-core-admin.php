@@ -167,7 +167,7 @@ class Aesop_Core_Admin {
 		$plugins_array = array();
 
 		foreach ($plugins as $plugin) {
-			$plugins_array[ $plugin ] = plugins_url('assets/js/tinymce/', __FILE__) . $plugin . '/plugin.js';
+			$plugins_array[ $plugin ] = plugins_url('assets/js/tinymce/', __FILE__) . $plugin . '/plugin.min.js';
 		}
 		return $plugins_array;
 	}
