@@ -15,7 +15,7 @@ foreach( $codes as $slug => $shortcode ) {
 
 			$prefix = isset($attr_info['prefix']) ? sprintf('<span class="aesop-option-prefix">%s</span>',$attr_info['prefix']) : null;
 
-			$return .= '<p>';
+			$return .= '<p class="aesop-'.$slug.'-'.$attr_name.'">';
 			$return .= '<label for="aesop-generator-attr-' . $attr_name . '">' . $attr_info['desc'] . '</label>';
 			$return .= '<small class="aesop-option-desc">'.$attr_info['tip'].'</small>';
 			// Select

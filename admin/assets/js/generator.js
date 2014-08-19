@@ -42,7 +42,57 @@ jQuery(document).ready(function($) {
 	$('.aesop-generator').dropkick({
 		change: function () {
     		var queried_shortcode = $('#aesop-generator-select').find(':selected').val();
-			$('#aesop-generator-settings').html(aesopshortcodes[queried_shortcode])
+			$('#aesop-generator-settings').html(aesopshortcodes[queried_shortcode]);
+
+			////
+			// conditional loading
+			////
+			// quote component
+			var hiddenQuoteOpts = $('.aesop-quote-speed, .aesop-quote-offset, .aesop-quote-direction');
+
+			$(hiddenQuoteOpts).hide();
+			$('.aesop-quote-parallax #aesop-generator-attr-parallax').on('change',function(){
+				var selectedValue = $(this).val();
+
+				if( 'on' === selectedValue ) {
+					$(hiddenQuoteOpts).show();
+				} else {
+					$(hiddenQuoteOpts).hide();
+				}
+
+			});
+
+			// parallax component
+			var hiddenParallaxOpts = $('.aesop-parallax-floatermedia, .aesop-parallax-floaterposition, .aesop-parallax-floateroffset, .aesop-parallax-floaterdirection');
+
+			$(hiddenParallaxOpts).hide();
+			$('.aesop-parallax-floater #aesop-generator-attr-floater').on('change',function(){
+				var selectedValue = $(this).val();
+
+				if( 'on' === selectedValue ) {
+					$(hiddenParallaxOpts).show();
+				} else {
+					$(hiddenParallaxOpts).hide();
+				}
+
+			});
+
+			// video component
+			var hiddenVideoOpts = $('.aesop-video-hosted, .aesop-video-loop, .aesop-video-autoplay, .aesop-video-controls, .aesop-video-viewstart, .aesop-video-viewend');
+
+			$(hiddenVideoOpts).hide();
+			$('.aesop-video-src #aesop-generator-attr-src').on('change',function(){
+				var selectedValue = $(this).val();
+
+				if( 'self' === selectedValue ) {
+					$(hiddenVideoOpts).show();
+					$('.aesop-video-id').hide();
+				} else {
+					$(hiddenVideoOpts).hide();
+					$('.aesop-video-id').show();
+				}
+
+			});
         }
 	});
 
@@ -73,6 +123,8 @@ jQuery(document).ready(function($) {
 		return false;
 
 	});
+
+
 });
 
 // media uploader
