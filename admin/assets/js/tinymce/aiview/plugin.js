@@ -2,7 +2,7 @@
 tinymce.PluginManager.add('aiview', function( editor ) {
 
 	function replaceAesopShortcodes( content ) {
-		return content.replace( /(\[aesop_([a-zA-Z]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]|\[aesop_([a-zA-Z]+)\s([^\[\]]*)])/g, function( match ) {
+		return content.replace( /(\[aesop_([a-zA-Z]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]|\[aesop_([a-zA-Z]+)\s?([^\[\]]*)])/g, function( match ) {
 			return html( 'aesop-component', match );
 		});
 	}
@@ -10,7 +10,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	function html( cls, data ) {
 		// let's pull out the shortcode type, options and content
 		var re_full = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]/g;
-		var re_short = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]/g;
+		var re_short = /\[aesop_([a-zA-Z]+)\s?([^\[\]]*)]/g;
 
 		var parse = re_full.exec(data);
 
@@ -58,33 +58,6 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			sc = sc.replace(sc_filtered[1], parse[2]);
 			return sc;
 		}
-	}
-
-	function editComponent( node ) {
-		var content, frame, data;
-
-/*		if ( node.nodeName !== 'IMG' ) {
-			return;
-		}
-
-		// Check if the `wp.media` API exists.
-		if ( typeof wp === 'undefined' || ! wp.media ) {
-			return;
-		}
-
-		data = window.decodeURIComponent( editor.dom.getAttrib( node, 'data-wp-media' ) );
-
-		// Make sure we've selected a gallery node.
-		if ( editor.dom.hasClass( node, 'wp-gallery' ) && wp.media.gallery ) {
-			gallery = wp.media.gallery;
-			frame = gallery.edit( data );
-
-			frame.state('gallery-edit').on( 'update', function( selection ) {
-				var shortcode = gallery.shortcode( selection ).string();
-				editor.dom.setAttrib( node, 'data-wp-media', window.encodeURIComponent( shortcode ) );
-				frame.detach();
-			});
-		}*/
 	}
 
 	function parse( sc ) {
@@ -164,10 +137,6 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			}
 		}
   });
-
-	editor.addCommand( 'Aesop', function() {
-		editMedia( editor.selection.getNode() );
-	});
 
 	editor.on( 'BeforeSetContent', function( event ) {
 		event.content = replaceAesopShortcodes( event.content );
