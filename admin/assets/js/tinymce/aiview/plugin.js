@@ -143,7 +143,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 					if ( key == 'content' ) {
 						window.jQuery('#aesop-generator-content').val(attrs[key]);
 					}	else {
-						window.jQuery('#aesop-generator-settings input[name="' + key + '"]').val(attrs[key]);
+						window.jQuery('#aesop-generator-settings [name="' + key + '"]').val(attrs[key]);
 					}
 				}
 			}
