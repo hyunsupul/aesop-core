@@ -132,7 +132,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 				var attrs = parse(sc);
 
 				for (var key in attrs) {
-					window.jQuery('#aesop-generator-settings input[name="' + key + '"]').val(attrs[key]);
+					window.jQuery('.aesop-generator-attr[name="' + key + '"]').val(attrs[key]);
 				}
 			}
 		}
