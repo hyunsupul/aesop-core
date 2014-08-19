@@ -76,6 +76,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			}
 		}
 
+		console.log(parse);
 		// split up based on a space
 		var attrs = parse[2].split(' ');
 
@@ -92,6 +93,10 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			attr_value = attr_value.slice(0, -1);
 			ai_map[attr_key] = attr_value.substring(1);
 		});
+
+		if (typeof parse[3] != "undefined") {
+			ai_map['content'] = parse[3];
+		}
 
 		return ai_map;
 	}
@@ -132,7 +137,11 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 				var attrs = parse(sc);
 
 				for (var key in attrs) {
-					window.jQuery('.aesop-generator-attr[name="' + key + '"]').val(attrs[key]);
+					if ( key == 'content' ) {
+						window.jQuery('#aesop-generator-content').val(attrs[key]);
+					}	else {
+						window.jQuery('#aesop-generator-settings input[name="' + key + '"]').val(attrs[key]);
+					}
 				}
 			}
 		}
