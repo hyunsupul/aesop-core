@@ -122,14 +122,9 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		window.clipboardSource = p;
 		var ed = tinymce.activeEditor;
 
-		var el = ed.dom.create('div', { 'class' : 'clipboardControl' }, '<div class="aesop-button aesop-button-paste">&nbsp;</div>');
+		var el = ed.dom.create('div', { 'class' : 'clipboardControl mceNonEditable unselectable' }, '<div class="aesop-button aesop-button-paste mceNonEditable unselectable" title="Ctrl + Alt + Enter to Paste">&nbsp;</div>');
 		ed.getBody().insertBefore(el, ed.getBody().firstChild);
 		window.clipboardControl = $(el);
-		//$(el).click(function(ed, e){
-			//toggleComponent(window.clipboardSource);
-			//pasteClipboard(ed, e);
-			//removeClipboardControl(window.clipboardControl);
-		//});
 	}
 
 	function removeClipboardControl() {
