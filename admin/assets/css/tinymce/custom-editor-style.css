@@ -40,11 +40,21 @@
 .aesop-button { float: right; }
 .aesop-button-edit:before { content: "\f464"; }
 .aesop-button-delete:before { content: "\f182"; }
-.aesop-button-clipboard:before { content: "\f481"; }
+.aesop-button-clipboard:before { content: "\f161"; }
+.aesop-button-paste:before { content: "\f161"; }
 
 .unselectable {
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+.clipboardControl {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: #555555;
+	padding: 3px 4px 3px 9px;
+	color: rgb(214, 214, 214);
 }

@@ -1,6 +1,5 @@
 (function($) {
 /* global tinymce */
-/* global tinymce */
 tinymce.PluginManager.add('aiview', function( editor ) {
 
 	// process any aesop shortcodes in the tinymce content
@@ -107,24 +106,44 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	}
 
 	function removeComponent( c ) {
-
+		c.parentNode.removeChild(c);
 	}
 
 	function toggleComponent( c ) {
-		c.style.display="none";
+		if( c.style.display != "none" ) {
+			c.style.display = "none";
+		} else {
+			c.style.display = "block";
+		}
 	}
 
 	// add the clipboard control if the clipboard is active - p is the hidden component
 	function addClipboardControl( p ) {
 		window.clipboardTarget = p;
-		var clipboardControl = "<div>hello clipboard</div>";
-		var cb = ed.dom.create('div', { 'class' : '&nbsp;'}, clipboardContro);
+		var ed = tinymce.activeEditor;
+
+		var el = ed.dom.create('div', { 'class' : 'clipboardControl' }, '<div class="aesop-button aesop-button-paste">&nbsp;</div>');
 		ed.getBody().insertBefore(el, ed.getBody().firstChild);
+		window.clipboardControl = $(el);
+		$(el).click(function(ed, e){
+			toggleComponent(window.clipboardTarget);
+			pasteClipboard();
+			removeClipboardControl(window.clipboardControl);
+		});
+	}
+
+	function removeClipboardControl( c ) {
+		console.log($(c));
+		$(c).remove();
+		delete window.clipboard;
+		delete window.clipboardTarget;
+		delete window.clipboardControl;
 	}
 
 	function pasteClipboard( ) {
 		var p = window.clipboardTarget;
-		tinyMCE.activeEditor.execCommand('mceInsertContent', false, window.clipboard);
+		console.log(window.clipboard.outerHTML);
+		tinymce.execCommand('mceInsertContent', false, window.clipboard.outerHTML);
 		p.parentNode.removeChild(p);
 	}
 
@@ -177,17 +196,16 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		// let's handle the clipboard button
 		if (e.target.className.indexOf('aesop-button-clipboard') > -1 ) {
 			var ai_parent = e.target.parentNode.parentNode.parentNode;
-			window.clipboard = ai_parent.outerHTML;
+			window.clipboard = ai_parent;
 
 			toggleComponent(ai_parent);
-
-			ed.getBody().insertBefore(el, ed.getBody().firstChild);
+			addClipboardControl(ai_parent);
 		}
   });
 
 	// if they press enter while inside the editor, move to the next line
 	editor.onKeyDown.add(function(ed, e) {
-		if( e.keyCode==13 && !e.ctrlKey && !e.shiftKey && !e.altKey) {
+		if( e.keyCode===13 && !e.ctrlKey && !e.shiftKey && !e.altKey) {
 			var container = ed.selection.getNode();
 			var component = $(container).parents('.aesop-component');
 			if ( $(container).parents('.aesop-component')[0] ) {
@@ -199,7 +217,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 				var uniqueId = insertion.attr('id');
 				var element = ed.dom.select('#' + uniqueId)[0];
 				ed.selection.setCursorLocation(element);
-			};
+			}
 		}
 	});
 
