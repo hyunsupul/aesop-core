@@ -132,8 +132,11 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		//});
 	}
 
-	function removeClipboardControl( c ) {
-		$(c).remove();
+	function removeClipboardControl() {
+		var ed = tinymce.activeEditor;
+		var c = ed.dom.select('.clipboardControl');
+		ed.dom.remove(c);
+
 		delete window.clipboard;
 		delete window.clipboardSource;
 		delete window.clipboardControl;
@@ -144,8 +147,8 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		var ed = tinymce.activeEditor;
 		$(p).remove();
 		toggleComponent(window.clipboard);
-		console.log(ed.execCommand('mceInsertRawHTML', false, window.clipboard.outerHTML));
-
+		ed.execCommand('mceInsertRawHTML', false, window.clipboard.outerHTML);
+		removeClipboardControl();
 	}
 
 	// handle the click events
@@ -227,7 +230,6 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			if ( typeof window.clipboard == "undefined" ) {
 				console.log('clipboard is empty');
 			} else {
-				console.log('attempting to paste');
 				pasteClipboard();
 			}
 		}
