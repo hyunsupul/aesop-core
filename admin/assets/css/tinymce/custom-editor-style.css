@@ -40,6 +40,7 @@
 .aesop-button { float: right; }
 .aesop-button-edit:before { content: "\f464"; }
 .aesop-button-delete:before { content: "\f182"; }
+.aesop-button-clipboard:before { content: "\f481"; }
 
 .unselectable {
 	-moz-user-select: none;
