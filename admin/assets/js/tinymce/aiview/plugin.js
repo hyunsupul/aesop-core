@@ -37,7 +37,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	function shortcode( match ){
 		var re_full = /<div.*?class="[^"]+aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>/g;
 		var re_short = /<div class="[^"]+aesop-component.*aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g;
-		var re_clean = /<\/div>[\s\S]?<div class="aesop-component-content aesop-content">/g;
+		//var re_clean = /<p> <\/p>\s*/g;
 
 		var parse = re_full.exec(match);
 
@@ -56,7 +56,8 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			// let's replace the shortcode content with any edits
 			var sc_filter = /\[[^\]]*\]([^\[]*)[^\]]*\]/;
 			var sc_filtered = sc_filter.exec(sc);
-			sc = sc.replace(sc_filtered[1], parse[2].replace(re_clean, ''));
+			//parse[2] = parse[2].replace(re_clean, '');
+			sc = sc.replace(sc_filtered[1], parse[2]);
 			return sc;
 		}
 	}
@@ -149,6 +150,24 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			}
 		}
   });
+
+	// if they press enter while inside the editor, move to the next line
+	editor.onKeyDown.add(function(ed, e) {
+		if( e.keyCode==13 && !e.ctrlKey && !e.shiftKey && !e.altKey) {
+			var container = ed.selection.getNode();
+			var component = window.jQuery(container).parents('.aesop-component');
+			if ( window.jQuery(container).parents('.aesop-component') != '' ) {
+				e.preventDefault();
+				e.stopPropagation();
+				var insertion = window.jQuery('<p><br/></p>').insertAfter( component );
+				insertion.uniqueId();
+
+				var uniqueId = insertion.attr('id');
+				var element = ed.dom.select('#' + uniqueId)[0];
+				ed.selection.setCursorLocation(element);
+			};
+		}
+	});
 
 	editor.on( 'BeforeSetContent', function( event ) {
 		event.content = replaceAesopShortcodes( event.content );
