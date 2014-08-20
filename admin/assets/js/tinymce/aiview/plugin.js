@@ -143,9 +143,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		var p = window.clipboardSource;
 		var ed = tinymce.activeEditor;
 		$(p).remove();
-		console.log(window.clipboard.outerHTML);
 		toggleComponent(window.clipboard);
-		console.log(window.clipboard.outerHTML);
 		console.log(ed.execCommand('mceInsertRawHTML', false, window.clipboard.outerHTML));
 
 	}
@@ -229,6 +227,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			if ( typeof window.clipboard == "undefined" ) {
 				console.log('clipboard is empty');
 			} else {
+				console.log('attempting to paste');
 				pasteClipboard();
 			}
 		}
