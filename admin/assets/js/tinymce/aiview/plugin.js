@@ -1,3 +1,5 @@
+(function($) {
+/* global tinymce */
 /* global tinymce */
 tinymce.PluginManager.add('aiview', function( editor ) {
 
@@ -37,7 +39,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	function shortcode( match ){
 		var re_full = /<div.*?class="[^"]+aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>/g;
 		var re_short = /<div class="[^"]+aesop-component.*aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g;
-		//var re_clean = /<p> <\/p>\s*/g;
+		//var re_clean = /<p> <\/p>\s*/g;
 
 		var parse = re_full.exec(match);
 
@@ -179,3 +181,4 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		}
 	});
 });
+})( window.jQuery );

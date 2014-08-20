@@ -40,3 +40,10 @@
 .aesop-button { float: right; }
 .aesop-button-edit:before { content: "\f464"; }
 .aesop-button-delete:before { content: "\f182"; }
+
+.unselectable {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
