@@ -156,7 +156,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		if( e.keyCode==13 && !e.ctrlKey && !e.shiftKey && !e.altKey) {
 			var container = ed.selection.getNode();
 			var component = window.jQuery(container).parents('.aesop-component');
-			if ( window.jQuery(container).parents('.aesop-component') != '' ) {
+			if ( window.jQuery(container).parents('.aesop-component')[0] ) {
 				e.preventDefault();
 				e.stopPropagation();
 				var insertion = window.jQuery('<p><br/></p>').insertAfter( component );
