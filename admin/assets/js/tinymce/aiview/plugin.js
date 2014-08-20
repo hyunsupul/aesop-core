@@ -119,32 +119,35 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 	// add the clipboard control if the clipboard is active - p is the hidden component
 	function addClipboardControl( p ) {
-		window.clipboardTarget = p;
+		window.clipboardSource = p;
 		var ed = tinymce.activeEditor;
 
 		var el = ed.dom.create('div', { 'class' : 'clipboardControl' }, '<div class="aesop-button aesop-button-paste">&nbsp;</div>');
 		ed.getBody().insertBefore(el, ed.getBody().firstChild);
 		window.clipboardControl = $(el);
-		$(el).click(function(ed, e){
-			toggleComponent(window.clipboardTarget);
-			pasteClipboard();
-			removeClipboardControl(window.clipboardControl);
-		});
+		//$(el).click(function(ed, e){
+			//toggleComponent(window.clipboardSource);
+			//pasteClipboard(ed, e);
+			//removeClipboardControl(window.clipboardControl);
+		//});
 	}
 
 	function removeClipboardControl( c ) {
-		console.log($(c));
 		$(c).remove();
 		delete window.clipboard;
-		delete window.clipboardTarget;
+		delete window.clipboardSource;
 		delete window.clipboardControl;
 	}
 
-	function pasteClipboard( ) {
-		var p = window.clipboardTarget;
+	function pasteClipboard() {
+		var p = window.clipboardSource;
+		var ed = tinymce.activeEditor;
+		$(p).remove();
 		console.log(window.clipboard.outerHTML);
-		tinymce.execCommand('mceInsertContent', false, window.clipboard.outerHTML);
-		p.parentNode.removeChild(p);
+		toggleComponent(window.clipboard);
+		console.log(window.clipboard.outerHTML);
+		console.log(ed.execCommand('mceInsertRawHTML', false, window.clipboard.outerHTML));
+
 	}
 
 	// handle the click events
@@ -217,6 +220,16 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 				var uniqueId = insertion.attr('id');
 				var element = ed.dom.select('#' + uniqueId)[0];
 				ed.selection.setCursorLocation(element);
+			}
+		}
+
+		if( e.ctrlKey && e.altKey && e.keyCode===13 ) {
+			e.preventDefault();
+			e.stopPropagation();
+			if ( typeof window.clipboard == "undefined" ) {
+				console.log('clipboard is empty');
+			} else {
+				pasteClipboard();
 			}
 		}
 	});
