@@ -20,9 +20,9 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 		if ( !parse ){
 			parse = re_short.exec(data);
-			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem ' + cls + '"><div class="aesop-component-bar"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-end">WcMgcq</div></div>';
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem ' + cls + '"><div class="aesop-component-bar"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-end">WcMgcq</div></div>';
 		} else {
-			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem ' + cls + '"><div class="aesop-component-bar"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '">' + parse[3] + '</div></div>';
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem ' + cls + '"><div class="aesop-component-bar"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '">' + parse[3] + '</div></div>';
 		}
 
 		return st;
@@ -30,7 +30,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 	// restore the Aesop shortcode from the div placeholder
 	function restoreAesopShortcodes( content ) {
-		return content.replace((/<div.*?class="[^"]+aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>|<div class="[^"]+aesop-component.*aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g), function( match ){
+		return content.replace((/<div.*?class="[^"]+aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>|<div class="[^"]+?aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g), function( match ){
 			return shortcode( match );
 		});
 	}
@@ -38,7 +38,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	// return the shortcode equivalent for any matches and update the content with the new version
 	function shortcode( match ){
 		var re_full = /<div.*?class="[^"]+aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>/g;
-		var re_short = /<div class="[^"]+aesop-component.*aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g;
+		var re_short = /<div class="[^"]+?aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g;
 		//var re_clean = /<p> <\/p>\s*/g;
 
 		var parse = re_full.exec(match);
@@ -106,8 +106,30 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		return ai_map;
 	}
 
+	function removeComponent( c ) {
+
+	}
+
+	function toggleComponent( c ) {
+		c.style.display="none";
+	}
+
+	// add the clipboard control if the clipboard is active - p is the hidden component
+	function addClipboardControl( p ) {
+		window.clipboardTarget = p;
+		var clipboardControl = "<div>hello clipboard</div>";
+		var cb = ed.dom.create('div', { 'class' : '&nbsp;'}, clipboardContro);
+		ed.getBody().insertBefore(el, ed.getBody().firstChild);
+	}
+
+	function pasteClipboard( ) {
+		var p = window.clipboardTarget;
+		tinyMCE.activeEditor.execCommand('mceInsertContent', false, window.clipboard);
+		p.parentNode.removeChild(p);
+	}
+
 	// handle the click events
-	editor.onClick.add(function(editor, e) {
+	editor.onClick.add(function(ed, e) {
 
 		// let's handle the delete button
 		if ( e.target.className.indexOf('aesop-button-delete') > -1 ) {
@@ -133,23 +155,33 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 				// open the editor window
 				//window.tb_show('Component','#aesop-generator-wrap',null);
 
-				window.jQuery('body').toggleClass('modal-open');
-				window.jQuery('#aesop-generator-wrap').toggleClass('aesop-generator-open');
+				$('body').toggleClass('modal-open');
+				$('#aesop-generator-wrap').toggleClass('aesop-generator-open');
 
 				// open up the option based on scope
 				var selector = '.dk_options li.' + scope[1] + ' a';
-				window.jQuery(selector).click();
+				$(selector).click();
 
 				var attrs = parse(sc);
 
 				for (var key in attrs) {
 					if ( key == 'content' ) {
-						window.jQuery('#aesop-generator-content').val(attrs[key]);
+						$('#aesop-generator-content').val(attrs[key]);
 					}	else {
-						window.jQuery('#aesop-generator-settings [name="' + key + '"]').val(attrs[key]);
+						$('#aesop-generator-settings [name="' + key + '"]').val(attrs[key]);
 					}
 				}
 			}
+		}
+
+		// let's handle the clipboard button
+		if (e.target.className.indexOf('aesop-button-clipboard') > -1 ) {
+			var ai_parent = e.target.parentNode.parentNode.parentNode;
+			window.clipboard = ai_parent.outerHTML;
+
+			toggleComponent(ai_parent);
+
+			ed.getBody().insertBefore(el, ed.getBody().firstChild);
 		}
   });
 
@@ -157,11 +189,11 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	editor.onKeyDown.add(function(ed, e) {
 		if( e.keyCode==13 && !e.ctrlKey && !e.shiftKey && !e.altKey) {
 			var container = ed.selection.getNode();
-			var component = window.jQuery(container).parents('.aesop-component');
-			if ( window.jQuery(container).parents('.aesop-component')[0] ) {
+			var component = $(container).parents('.aesop-component');
+			if ( $(container).parents('.aesop-component')[0] ) {
 				e.preventDefault();
 				e.stopPropagation();
-				var insertion = window.jQuery('<p><br/></p>').insertAfter( component );
+				var insertion = $('<p><br/></p>').insertAfter( component );
 				insertion.uniqueId();
 
 				var uniqueId = insertion.attr('id');
