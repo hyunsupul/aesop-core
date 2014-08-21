@@ -127,6 +127,9 @@ class Aesop_Core_Admin {
 
 				// Enqueue styles
 				wp_enqueue_style( 'ai-core-styles' );
+
+				// 3rd party add-ons hook in to set icon in generator with css
+				do_action('aesop_admin_styles');
 			}
 		}
 	}
