@@ -19,9 +19,9 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 		if ( !parse ){
 			parse = re_short.exec(data);
-			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem ' + cls + '"><div class="aesop-component-bar"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-end">WcMgcq</div></div>';
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem aesop-component-short ' + cls + '"><div class="aesop-component-bar"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-end">WcMgcq</div></div>';
 		} else {
-			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem ' + cls + '"><div class="aesop-component-bar"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '">' + parse[3] + '</div></div>';
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem aesop-component-long ' + cls + '"><div class="aesop-component-bar"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '">' + parse[3] + '</div></div>';
 		}
 
 		return st;
@@ -29,15 +29,19 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 	// restore the Aesop shortcode from the div placeholder
 	function restoreAesopShortcodes( content ) {
-		return content.replace((/<div.*?class="[^"]+aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>|<div class="[^"]+?aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g), function( match ){
+		return content.replace((/<div[^>]+?class="[^"]+?aesop-component-long.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>|<div class="[^"+]+?aesop-component-short.*?aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g), function( match ){
+			console.log(match);
 			return shortcode( match );
 		});
 	}
 
 	// return the shortcode equivalent for any matches and update the content with the new version
 	function shortcode( match ){
-		var re_full = /<div.*?class="[^"]+aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>/g;
-		var re_short = /<div class="[^"]+?aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g;
+		var re_full = /<div[^>]+?class="[^"]+?aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>/g;
+		var re_short = /<div class="[^"+]+?aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g;
+		var re_clean = /<div\s*class="clipboardControl[^>]+?><div\s*class="aesop[^>]+>\s*<\/div><\/div>/g;
+
+		match = match.replace(re_clean, '');
 		//var re_clean = /<p> <\/p>\s*/g;
 
 		var parse = re_full.exec(match);
@@ -49,16 +53,19 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			if ( !parse ){
 				return match;
 			}
-			sc = window.decodeURIComponent(parse[1]);
+			var sc = window.decodeURIComponent(parse[1]);
+			console.log(sc);
 			return sc;
 		} else {
-			sc = window.decodeURIComponent(parse[1]);
+			var sc = window.decodeURIComponent(parse[1]);
 
 			// let's replace the shortcode content with any edits
 			var sc_filter = /\[[^\]]*\]([^\[]*)[^\]]*\]/;
 			var sc_filtered = sc_filter.exec(sc);
-			//parse[2] = parse[2].replace(re_clean, '');
-			sc = sc.replace(sc_filtered[1], parse[2]);
+			if( sc_filtered != null ){
+				sc = sc.replace(sc_filtered[1], parse[2]);
+			}
+			console.log(sc);
 			return sc;
 		}
 	}
@@ -84,22 +91,22 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		// split up based on a space
 		var attrs = parse[2].split(' ');
 
-		ai_map = [];
+		var ai_map = [];
 
 		// split based on equal sign
 		attrs.forEach(function(attr) {
 			attr = attr.split('=');
 			
-			attr_key = attr[0];
-			attr_value = attr[1];
+			var attr_key = attr[0];
+			var attr_value = attr[1];
 
 			// trim first and last character to get rid of the quotes
 			attr_value = attr_value.slice(0, -1);
 			ai_map[attr_key] = attr_value.substring(1);
 		});
 
-		if (typeof parse[3] != "undefined") {
-			ai_map['content'] = parse[3].replace(re_clean, '');
+		if (typeof parse[3] !== "undefined") {
+			ai_map.content = parse[3].replace(re_clean, '');
 		}
 
 		return ai_map;
@@ -109,12 +116,21 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		c.parentNode.removeChild(c);
 	}
 
-	function toggleComponent( c ) {
-		if( c.style.display != "none" ) {
+	function hideComponent( c ) {
+		if( c.style.display !== "none" ) {
 			c.style.display = "none";
-		} else {
+		}
+	}
+
+	function showComponent( c ) {
+		if( c.style.display !== "block" ) {
 			c.style.display = "block";
 		}
+	}
+
+	function restoreComponents( cls ) {
+		var components = timymce.activeEditor.dom.select('.' + cls);
+		console.log(components);
 	}
 
 	// add the clipboard control if the clipboard is active - p is the hidden component
@@ -140,8 +156,8 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	function pasteClipboard() {
 		var p = window.clipboardSource;
 		var ed = tinymce.activeEditor;
-		$(p).remove();
-		toggleComponent(window.clipboard);
+		ed.dom.remove(p);
+		showComponent(window.clipboard);
 		ed.execCommand('mceInsertRawHTML', false, window.clipboard.outerHTML);
 		removeClipboardControl();
 	}
@@ -152,7 +168,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		// let's handle the delete button
 		if ( e.target.className.indexOf('aesop-button-delete') > -1 ) {
 			var c = confirm('Are you sure you want to delete this Aesop Component?');
-			if (c == true) {
+			if (c === true) {
 				e.target.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode);
 			}
 		}
@@ -178,12 +194,12 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 				// open up the option based on scope
 				var selector = '.dk_options li.' + scope[1] + ' a';
-				$(selector).click();
+				$(selector). click();
 
 				var attrs = parse(sc);
 
 				for (var key in attrs) {
-					if ( key == 'content' ) {
+					if ( key === 'content' ) {
 						$('#aesop-generator-content').val(attrs[key]);
 					}	else {
 						$('#aesop-generator-settings [name="' + key + '"]').val(attrs[key]);
@@ -197,7 +213,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			var ai_parent = e.target.parentNode.parentNode.parentNode;
 			window.clipboard = ai_parent;
 
-			toggleComponent(ai_parent);
+			hideComponent(ai_parent);
 			addClipboardControl(ai_parent);
 		}
   });
@@ -222,7 +238,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		if( e.ctrlKey && e.altKey && e.keyCode===13 ) {
 			e.preventDefault();
 			e.stopPropagation();
-			if ( typeof window.clipboard == "undefined" ) {
+			if ( typeof window.clipboard === "undefined" ) {
 				console.log('clipboard is empty');
 			} else {
 				pasteClipboard();
