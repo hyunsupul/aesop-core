@@ -19,9 +19,9 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 		if ( !parse ){
 			parse = re_short.exec(data);
-			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem aesop-component-short ' + cls + '"><div class="aesop-component-bar"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-end">WcMgcq</div></div>';
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem aesop-component-short ' + cls + '"><div class="aesop-component-bar" contenteditable="false"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-end">WcMgcq</div></div>';
 		} else {
-			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem aesop-component-long ' + cls + '"><div class="aesop-component-bar"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '">' + parse[3] + '</div></div>';
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem aesop-component-long ' + cls + '"><div class="aesop-component-bar"  contenteditable="false"><div class="aesop-component-controls"><div class="aesop-button aesop-button-delete">&nbsp;</div><div class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1] + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '">' + parse[3] + '</div></div>';
 		}
 
 		return st;
@@ -30,7 +30,6 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	// restore the Aesop shortcode from the div placeholder
 	function restoreAesopShortcodes( content ) {
 		return content.replace((/<div[^>]+?class="[^"]+?aesop-component-long.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>|<div class="[^"+]+?aesop-component-short.*?aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g), function( match ){
-			console.log(match);
 			return shortcode( match );
 		});
 	}
@@ -54,7 +53,6 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 				return match;
 			}
 			var sc = window.decodeURIComponent(parse[1]);
-			console.log(sc);
 			return sc;
 		} else {
 			var sc = window.decodeURIComponent(parse[1]);
@@ -65,7 +63,6 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			if( sc_filtered != null ){
 				sc = sc.replace(sc_filtered[1], parse[2]);
 			}
-			console.log(sc);
 			return sc;
 		}
 	}
@@ -130,7 +127,6 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 	function restoreComponents( cls ) {
 		var components = timymce.activeEditor.dom.select('.' + cls);
-		console.log(components);
 	}
 
 	// add the clipboard control if the clipboard is active - p is the hidden component
@@ -165,6 +161,12 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	// handle the click events
 	editor.onClick.add(function(ed, e) {
 
+		if( typeof $(ed.selection.getNode()).parents('.aesop-component')[0] !== "undefined" ) {
+			window.aiactive = true;
+		} else {
+			delete window.aiactive;
+		};
+
 		// let's handle the delete button
 		if ( e.target.className.indexOf('aesop-button-delete') > -1 ) {
 			var c = confirm('Are you sure you want to delete this Aesop Component?');
@@ -186,9 +188,6 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			ai_parent.setAttribute("id", 'aesop-generator-editing');
 
 			if ( scope ) {
-				// open the editor window
-				//window.tb_show('Component','#aesop-generator-wrap',null);
-
 				$('body').toggleClass('modal-open');
 				$('#aesop-generator-wrap').toggleClass('aesop-generator-open');
 
@@ -239,11 +238,22 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			e.preventDefault();
 			e.stopPropagation();
 			if ( typeof window.clipboard === "undefined" ) {
-				console.log('clipboard is empty');
+				alert('Clipboard is empty');
+			} else if ( typeof window.aiactive !== 'undefined' ) {
+				alert('Please do not paste into an existing aesop component');
 			} else {
 				pasteClipboard();
 			}
 		}
+
+	});
+
+	editor.onKeyUp.add(function(ed, e) {
+		if( typeof $(ed.selection.getNode()).parents('.aesop-component')[0] !== "undefined" ) {
+			window.aiactive = true;
+		} else {
+			delete window.aiactive;
+		};
 	});
 
 	editor.on( 'BeforeSetContent', function( event ) {
