@@ -15,7 +15,14 @@ jQuery(document).ready(function($) {
 	});
 
 	var settingsHeight = function(){
-		$('#aesop-generator-settings-outer').css({'height':$(window).height() - 90});
+		var height  = $(window).height() - 90;
+		$('#aesop-generator-settings-outer').css({'height':height});
+
+		if ( height < 700 ) {
+			$('.aesop-generator-left').addClass('aesop-generator-small-height');
+		} else {
+			$('.aesop-generator-left').removeClass('aesop-generator-small-height');
+		}
 	}
 
 	var destroyModal = function(){
