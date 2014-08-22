@@ -149,7 +149,6 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'width' 			=> array(
 						'type'		=> 'text_small',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Width (px or %)', 'aesop-core' ),
 						'tip'		=> __('Width of the character component. You can enter the size as <code>40%</code> or <code>500px</code>.','aesop-core')
