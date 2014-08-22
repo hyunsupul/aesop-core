@@ -1,8 +1,8 @@
  @import url(//fonts.googleapis.com/css?family=Open+Sans);
 
 .aesop-component{
-	background-color: #222222;
-	margin: 15px;
+	background-color: #555;
+	margin: 15px 0;
 	display: block;
 	color: rgb(214, 214, 214);
 	position: relative;
@@ -10,11 +10,11 @@
 }
 
 .aesop-component-bar{
-	font-size: .8em;
+	font-size: 14px;
 	text-transform: uppercase;
 	display: block;
-	padding: 5px 15px;
-	background-color: #555555;
+	padding: 10px 15px;
+	background-color: #222;
 }
 
 .aesop-component-content{
@@ -31,7 +31,13 @@
 	display: none;
 }
 
-.aesop-component-title:before { padding-right: 5px; vertical-align: middle; font-family: Dashicons; }
+.aesop-component-title:before {
+	padding-right: 10px;
+	vertical-align: middle;
+	font-family: Dashicons;
+	position: relative;
+	top:-1px;
+}
 
 .aesop-content-title:before { content: "\f207"; }
 .aesop-chapter-title:before { content: "\f330"; }
@@ -74,7 +80,7 @@
 	position: absolute;
 	top:0;
 	left:-1px;
-	height:30px;
+	height:35px;
 	width:100%;
 	z-index: 1;
 }
