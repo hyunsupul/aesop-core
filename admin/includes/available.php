@@ -831,6 +831,20 @@ if(!function_exists('aesop_shortcodes')){
 					)
 				),
 				'desc' 				=> __( 'Show a collection of stories. Typically used on a page like the home page.','aesop-core' )
+			),
+			'gallery' 				=> array(
+				'name' 				=> __('Gallery', 'aesop-core'),
+				'type' 				=> 'single',
+				'atts' 				=> array(
+					'id' 			=> array(
+						'type'		=> 'text_small',
+						'values' 	=> array( ),
+						'default' 	=> '',
+						'desc' 		=> __( 'ID', 'aesop-core' ),
+						'tip'		=> __('Gallery ID','aesop-core')
+					)
+				),
+				'desc' 				=> __( ' ','aesop-core' )
 			)
 		);
 
