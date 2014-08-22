@@ -44,7 +44,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('ALT tag used for the image. Primarily used for SEO purposes.','aesop-core')
 					),
 					'align' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'left',
@@ -70,7 +70,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Using this option you can <em>float</em> an image outside of the text. Enter a size like <code>-200px</code>.','aesop-core')
 					),
 					'captionposition' => array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'left',
@@ -90,7 +90,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Use this to override the alignment as inherited from the image.','aesop-core')
 					),
 					'lightbox' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'on',
@@ -132,7 +132,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Optional caption for the character. If you do not enter a caption, it will not show.','aesop-core')
 					),
 					'align' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'left',
@@ -192,7 +192,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Choose a height for the component. The quote will automatically center itself vertically. By default this is set to <code>auto</code>.','aesop-core')
 					),
 					'align' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'left',
@@ -212,7 +212,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('By default the quote is centered, but you can choose to have it left, or right aligned as well.','aesop-core')
 					),
 					'size' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => '2',
@@ -232,7 +232,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Font size of the quote.','aesop-core')
 					),
 					'parallax' 		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values'	=> array(
 							array(
 								'value' => 'on',
@@ -261,7 +261,7 @@ if(!function_exists('aesop_shortcodes')){
 
 					),
 					'direction' => array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'up',
@@ -330,7 +330,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Enter an optional height for the component. By default it\'s set to <code>auto</code>. Use a large height like <code>1200px</code> to have a large blank area with small text.','aesop-core')
 					),
 					'columns' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => '1',
@@ -354,7 +354,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Here you can optionally set the number of columns that the text should be split into. Example <code>2</code> will make 2 columns of text.','aesop-core')
 					),
 					'position' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'none',
@@ -386,7 +386,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'imgrepeat' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'no-repeat',
@@ -428,7 +428,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('You can use text and images here. To use an image, use the full HTML tag without quotes around the image path.','aesop-core')
 					),
 					'floaterposition' => array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'left',
@@ -453,7 +453,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('This value will vary depending on your floater media. Enter a value like <code>-200px</code> and tweak as you see fit.','aesop-core')
 					),
 					'floaterdirection' => array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'up',
@@ -503,7 +503,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('If filled out, will display a <em>sub-title</em> after the chapter title text.','aesop-core')
 					),
 					'bgtype'			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'img',
@@ -545,7 +545,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('The height of the viewable image area. Enter a value such as <em>500</em>. Avoid using percentages as heights here.','aesop-core')
 					),
 					'parallaxbg' 	=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'on',
@@ -561,7 +561,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('If set to <em>on</em>, the image will move slightly as you scroll down the page.','aesop-core')
 					),
 					'floater' 		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values'	=> array(
 							array(
 								'value' => 'on',
@@ -583,7 +583,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('You can use text and images here. To use an image, use the full HTML tag without quotes around the image path.','aesop-core')
 					),
 					'floaterposition' => array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'left',
@@ -608,7 +608,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('This value will vary depending on your floater media. Enter a value like <code>-200px</code> and tweak as you see fit.','aesop-core')
 					),
 					'floaterdirection' => array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'up',
@@ -638,7 +638,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Provide an optional caption that will be displayed using the position below.','aesop-core')
 					),
 					'captionposition' => array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'bottom-left',
@@ -662,7 +662,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('If using a caption, where should it be positioned within the parallax component?','aesop-core')
 					),
 					'lightbox' 		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'on',
@@ -698,7 +698,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('URL to the mp3 file. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'loop'		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'on',
@@ -714,7 +714,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Enable looping within the audio player.','aesop-core')
 					),
 					'viewstart'		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'on',
@@ -730,7 +730,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('When set to <em>on</em> the audio will start playing automatically once scrolled into view.','aesop-core')
 					),
 					'viewend'		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'on',
@@ -746,7 +746,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Used together with the option above, this option when set to <em>on</em> will stop the audio player from playing once scrolled out of view.','aesop-core')
 					),
 					'hidden'		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'on',
@@ -775,7 +775,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.','aesop-core')
 					),
 					'align' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'left',
@@ -795,7 +795,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Should the video be floated to the left, right, or centered?','aesop-core')
 					),
 					'src' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 
 							array(
@@ -852,7 +852,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('This is only used if you are hosting the video yourself. Note, set the Video Source to <em>self</em> above to utilize this option.','aesop-core')
 					),
 					'loop' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'on',
@@ -868,7 +868,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Enable the video to loop.','aesop-core')
 					),
 					'autoplay' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'on',
@@ -884,7 +884,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Should the video automatically start playing.','aesop-core')
 					),
 					'controls' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'on',
@@ -900,7 +900,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Hide or show the controls for the self-hosted video player.','aesop-core')
 					),
 					'viewstart'		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'on',
@@ -916,7 +916,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('When set to <em>on</em> the video will start playing automatically once scrolled into view.','aesop-core')
 					),
 					'viewend'		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'on',
@@ -978,7 +978,7 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'single',
 				'atts' 				=> array(
 					'type' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'pdf',
@@ -1031,7 +1031,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('How many stories should be displayed.','aesop-core')
 					),
 					'columns' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => '2',
@@ -1055,7 +1055,7 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Stories are displayed in a grid. How many columns should the grid be?','aesop-core')
 					),
 					'splash' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
 							array(
 								'value' => 'on',
@@ -1078,7 +1078,7 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'single',
 				'atts' 				=> array(
 					'id' 			=> array(
-						'type'		=> 'text_small',
+						'type'		=> 'select',
 						'values' 	=> aesop_option_get_posts('ai_galleries'),
 						'default' 	=> '',
 						'desc' 		=> __( 'Choose Gallery', 'aesop-core' ),
