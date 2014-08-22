@@ -21,10 +21,17 @@ foreach( $codes as $slug => $shortcode ) {
 			// Select
 			if ( count( $attr_info['values'] ) && $attr_info['values'] ) {
 				$return .= '<select name="' . $attr_name . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr">';
-				foreach ( $attr_info['values'] as $attr_value ) {
+
+				$i=0;
+
+				foreach ( $attr_info['values'] as $attr_value ) { 
 					$attr_value_selected = ( $attr_info['default'] == $attr_value ) ? ' selected="selected"' : '';
-					$return .= '<option' . $attr_value_selected . '>' . $attr_value . '</option>';
+
+					$return .= '<option value="'.$attr_info['values'][$i]['value'].'" ' . $attr_value_selected . '>'.$attr_info['values'][$i]['name'].'</option>';
+				
+					$i++;
 				}
+
 				$return .= '</select>';
 			}
 			// Text input
