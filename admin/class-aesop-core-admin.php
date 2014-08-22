@@ -99,7 +99,7 @@ class Aesop_Core_Admin {
 		wp_register_script( 'ai-core-script', AI_CORE_URL. '/admin/assets/js/generator.min.js', AI_CORE_VERSION, true);
 
         //Register Styles
-		wp_register_style( 'ai-core-styles', AI_CORE_URL. '/admin/assets/css/style.css', AI_CORE_VERSION, true);
+		wp_register_style( 'ai-core-styles', AI_CORE_URL. '/admin/assets/css/aesop-admin.css', AI_CORE_VERSION, true);
 
 		// Load styles and scripts on areas that users will edit
 		if ( is_admin() ) {

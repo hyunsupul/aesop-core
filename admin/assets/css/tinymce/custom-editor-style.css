@@ -45,6 +45,7 @@
 .aesop-quote-title:before { content: "\f122"; }
 .aesop-document-title:before { content: "\f123"; }
 .aesop-collection-title:before { content: "\f175"; }
+.aesop-gallery-title:before { content: "\f161"; }
 
 .aesop-button:before { vertical-align: middle; font-family: Dashicons; display: inline-block; }
 .aesop-button { float: right; }
