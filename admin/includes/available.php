@@ -1153,6 +1153,7 @@ if(!function_exists('aesop_shortcodes')){
 *
 *	@since 1.1
 *   @todo cache this query
+* 	@param $type - post-type
 */
 
 function aesop_option_get_posts($type = ''){
