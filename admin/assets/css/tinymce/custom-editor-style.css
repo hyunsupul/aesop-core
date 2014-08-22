@@ -5,7 +5,7 @@
 	margin: 15px;
 	display: block;
 	color: rgb(214, 214, 214);
-
+	position: relative;
 	font-family: "Open Sans", sans-serif;
 }
 
@@ -23,6 +23,8 @@
 
 .aesop-component-controls{
 	float: right;
+	position: relative;
+	z-index: 2;
 }
 
 .aesop-end {
@@ -65,4 +67,21 @@
 	background-color: #555555;
 	padding: 3px 4px 3px 9px;
 	color: rgb(214, 214, 214);
+}
+
+.aesop-component-mask {
+	position: absolute;
+	top:0;
+	left:-1px;
+	height:30px;
+	width:100%;
+	z-index: 1;
+}
+.aesop-component-mask:after {
+	position: absolute;
+	top:0;
+	left:-1px;
+	height:100%;
+	width:100%;
+	content:'';
 }
