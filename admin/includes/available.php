@@ -1105,7 +1105,7 @@ if(!function_exists('aesop_shortcodes')){
 * 	@param $type - post-type
 */
 
-function aesop_option_get_posts($type = ''){
+function aesop_option_get_posts($type = 'post'){
 
 	$args = array('posts_per_page' => -1, 'post_type' => $type);
 	$posts = get_posts($args);
