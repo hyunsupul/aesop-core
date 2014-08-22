@@ -63,10 +63,12 @@ class Aesop_Core_Admin {
 		 	* Define custom functionality.
 		 	*
 		*/
-		add_action( 'media_buttons', array($this,'generator_button' ),100);
-		add_action( 'admin_footer', array($this,'generator_popup' ));
-		add_action('admin_enqueue_scripts', array($this,'admin_scripts'));
-		add_filter( 'wp_fullscreen_buttons', array($this,'fs_generator_button' ));
+		add_action( 'media_buttons', [$this,'generator_button'], 100 );
+		add_action( 'admin_footer', [$this,'generator_popup'] );
+		add_action( 'admin_enqueue_scripts', [$this,'admin_scripts'] );
+		add_filter( 'mce_css', [$this, 'aesop_editor_styles'] );
+		add_filter( 'wp_fullscreen_buttons', [$this,'fs_generator_button'] );
+		add_filter( 'mce_external_plugins', [$this, 'tinymce_plugin'] );
 	}
 
 	/**
@@ -125,6 +127,9 @@ class Aesop_Core_Admin {
 
 				// Enqueue styles
 				wp_enqueue_style( 'ai-core-styles' );
+
+				// 3rd party add-ons hook in to set icon in generator with css
+				do_action('aesop_admin_styles');
 			}
 		}
 	}
@@ -153,6 +158,27 @@ class Aesop_Core_Admin {
 		$buttons[] = self::generator_button();
 		return $buttons;
 	}
+
+	/**
+	 	* Add the tinymce plugin recognize specific shortcodes
+	 	*
+	 	* @since     1.1.0
+	*/
+	public function tinymce_plugin(){
+		$plugins = array('aiview','noneditable');
+		$plugins_array = array();
+
+		foreach ($plugins as $plugin) {
+			$plugins_array[ $plugin ] = plugins_url('assets/js/tinymce/', __FILE__) . $plugin . '/plugin.min.js';
+		}
+		return $plugins_array;
+	}
+
+	public function aesop_editor_styles( $mce_css ) {
+		$mce_css .= ', ' . plugins_url( 'assets/css/tinymce/custom-editor-style.css', __FILE__ );
+    return $mce_css;
+	}
+
 	/**
 	 	* Draw the component generator
 	 	*

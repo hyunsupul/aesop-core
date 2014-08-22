@@ -5,8 +5,13 @@ jQuery(document).ready(function($) {
 	// start new
 	$('.aesop-add-story-component').click(function(e){
 		e.preventDefault();
-		jQuery('body').toggleClass('modal-open');
-		jQuery(modal).toggleClass('aesop-generator-open');
+
+		if ( typeof window.aiactive === 'undefined' ) {
+      jQuery('body').toggleClass('modal-open');
+		  jQuery(modal).toggleClass('aesop-generator-open');
+    } else {
+      alert('Nesting components within the visual interface is not supported.');
+    }
 	});
 
 	var settingsHeight = function(){
@@ -14,6 +19,10 @@ jQuery(document).ready(function($) {
 	}
 
 	var destroyModal = function(){
+    var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
+    if(editing != ''){
+      editing[0].removeAttribute('id');
+    }
 		$(modal).removeClass('aesop-generator-open');
 		$('body').removeClass('modal-open');
 	}
@@ -114,6 +123,11 @@ jQuery(document).ready(function($) {
 		if ( $('#aesop-generator-content').val() != 'false' ) {
 			$('#aesop-generator-result').val($('#aesop-generator-result').val() + $('#aesop-generator-content').val() + '[/' + aesop_compatibility_mode_prefix + queried_shortcode + ']');
 		}
+
+    var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
+    tinyMCE.activeEditor.dom.remove(editing);
+
+    console.log(jQuery('#aesop-generator-result').val());
 		window.send_to_editor(jQuery('#aesop-generator-result').val());
 
 		// start new
