@@ -53,15 +53,15 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'left',
-								'name'	=> 'Left'
+								'name'	=> __('Left', 'aesop-core' ),
 							),
 							array(
 								'value' => 'right',
-								'name'	=> 'Right'
+								'name'	=> __('Right', 'aesop-core' ),
 							),
 							array(
 								'value' => 'center',
-								'name'	=> 'Center'
+								'name'	=> __('Center', 'aesop-core' ),
 							)
 						),
 						'default' 	=> 'left',
@@ -80,15 +80,15 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'left',
-								'name'	=> 'Left'
+								'name'	=> __('Left', 'aesop-core' ),
 							),
 							array(
 								'value' => 'right',
-								'name'	=> 'Right'
+								'name'	=> __('Right', 'aesop-core' ),
 							),
 							array(
 								'value' => 'center',
-								'name'	=> 'Center'
+								'name'	=> __('Center', 'aesop-core' ),
 							)
 						 ),
 						'default' 	=> 'left',
@@ -100,11 +100,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> 'off',
@@ -145,11 +145,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'left',
-								'name'	=> 'Left'
+								'name'	=> __('Left', 'aesop-core')
 							),
 							array(
 								'value' => 'right',
-								'name'	=> 'Right'
+								'name'	=> __('Right', 'aesop-core')
 							)
 						),
 						'default' 	=> 'left',
@@ -211,15 +211,15 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'left',
-								'name'	=> 'Left'
+								'name'	=> __('Left', 'aesop-core' ),
 							),
 							array(
 								'value' => 'right',
-								'name'	=> 'Right'
+								'name'	=> __('Right', 'aesop-core' ),
 							),
 							array(
 								'value' => 'center',
-								'name'	=> 'Center'
+								'name'	=> __('Center', 'aesop-core' ),
 							)
 						),
 						'default' 	=> 'center',
@@ -250,12 +250,12 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'text',
 						'values'	=> array(
 							array(
-								'value' => 'off',
-								'name'	=> 'Off'
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
-								'value' => 'on',
-								'name'	=> 'On'
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> 'off',
@@ -282,19 +282,19 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'up',
-								'name'	=> 'Up'
+								'name'	=> __('Up','aesop-core')
 							),
 							array(
 								'value' => 'down',
-								'name'	=> 'Down'
+								'name'	=> __('Down','aesop-core')
 							),
 							array(
 								'value' => 'left',
-								'name'	=> 'Left'
+								'name'	=> __('Left','aesop-core')
 							),
 							array(
 								'value' => 'right',
-								'name'	=> 'Right'
+								'name'	=> __('Right','aesop-core')
 							)
 						),
 						'default' 	=> 'up',
@@ -380,15 +380,15 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'none',
-								'name'	=> 'None'
+								'name'	=> __('None','aesop-core')
 							),
 							array(
 								'value' => 'left',
-								'name'	=> 'Left'
+								'name'	=> __('Left','aesop-core')
 							),
 							array(
 								'value' => 'right',
-								'name'	=> 'Right'
+								'name'	=> __('Right','aesop-core')
 							)
 						),
 						'default' 	=> 'none',
@@ -414,19 +414,19 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'no-repeat',
-								'name'	=> 'No Repeat'
+								'name'	=> __('No Repeat','aesop-core')
 							),
 							array(
 								'value' => 'repeat',
-								'name'	=> 'Repeat'
+								'name'	=> __('Repeat','aesop-core')
 							),
 							array(
 								'value' => 'repeat-vertical',
-								'name'	=> 'Repeat Vertical'
+								'name'	=> __('Repeat Vertical','aesop-core')
 							),
 							array(
 								'value' => 'repeat-horizontal',
-								'name'	=> 'Repeat Horizontal'
+								'name'	=> __('Repeat Horizontal','aesop-core')
 							)
 						),
 						'default' 	=> 'no-repeat',
@@ -459,15 +459,15 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'left',
-								'name'	=> 'Left'
+								'name'	=> __('Left', 'aesop-core' ),
 							),
 							array(
 								'value' => 'right',
-								'name'	=> 'Right'
+								'name'	=> __('Right', 'aesop-core' ),
 							),
 							array(
 								'value' => 'center',
-								'name'	=> 'Center'
+								'name'	=> __('Center', 'aesop-core' ),
 							)
 						),
 						'default' 	=> 'right',
@@ -485,19 +485,19 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'up',
-								'name'	=> 'Up'
+								'name'	=> __('Up','aesop-core')
 							),
 							array(
 								'value' => 'down',
-								'name'	=> 'Down'
+								'name'	=> __('Down','aesop-core')
 							),
 							array(
 								'value' => 'left',
-								'name'	=> 'Left'
+								'name'	=> __('Left','aesop-core')
 							),
 							array(
 								'value' => 'right',
-								'name'	=> 'Right'
+								'name'	=> __('Right','aesop-core')
 							)
 						),
 						'default' 	=> 'up',
@@ -538,11 +538,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'img',
-								'name'	=> 'Image'
+								'name'	=> __('Image','aesop-core')
 							),
 							array(
 								'value' => 'video',
-								'name'	=> 'Video'
+								'name'	=> __('Video','aesop-core')
 							)
 						),
 						'default'	=> 'img',
@@ -583,11 +583,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> 'on',
@@ -599,11 +599,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values'	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> 'off',
@@ -622,15 +622,15 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'left',
-								'name'	=> 'Left'
+								'name'	=> __('Left', 'aesop-core' ),
 							),
 							array(
 								'value' => 'right',
-								'name'	=> 'Right'
+								'name'	=> __('Right', 'aesop-core' ),
 							),
 							array(
 								'value' => 'center',
-								'name'	=> 'Center'
+								'name'	=> __('Center', 'aesop-core' ),
 							)
 						),
 						'default' 	=> 'right',
@@ -648,19 +648,19 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'up',
-								'name'	=> 'Up'
+								'name'	=> __('Up','aesop-core')
 							),
 							array(
 								'value' => 'down',
-								'name'	=> 'Down'
+								'name'	=> __('Down','aesop-core')
 							),
 							array(
 								'value' => 'left',
-								'name'	=> 'Left'
+								'name'	=> __('Left','aesop-core')
 							),
 							array(
 								'value' => 'right',
-								'name'	=> 'Right'
+								'name'	=> __('Right','aesop-core')
 							)
 						),
 						'default' 	=> 'up',
@@ -679,19 +679,19 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'bottom-left',
-								'name'	=> 'Bottom Left'
+								'name'	=> __('Bottom Left','aesop-core')
 							),
 							array(
 								'value' => 'bottom-right',
-								'name'	=> 'Bottom Right'
+								'name'	=> __('Bottom Right','aesop-core')
 							),
 							array(
 								'value' => 'top-left',
-								'name'	=> 'Top Left'
+								'name'	=> __('Top Left','aesop-core')
 							),
 							array(
 								'value' => 'top-right',
-								'name'	=> 'Top Right'
+								'name'	=> __('Top Right','aesop-core')
 							)
 						),
 						'default' 	=> 'bottom-left',
@@ -703,11 +703,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> 'off',
@@ -741,11 +741,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> '',
@@ -757,11 +757,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> 'off',
@@ -773,11 +773,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> 'off',
@@ -789,11 +789,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> '',
@@ -819,15 +819,15 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'left',
-								'name'	=> 'Left'
+								'name'	=> __('Left','aesop-core')
 							),
 							array(
 								'value' => 'right',
-								'name'	=> 'Right'
+								'name'	=> __('Right','aesop-core')
 							),
 							array(
 								'value' => 'center',
-								'name'	=> 'Center'
+								'name'	=> __('Center','aesop-core')
 							)
 						),
 						'default' 	=> 'center',
@@ -840,39 +840,39 @@ if(!function_exists('aesop_shortcodes')){
 
 							array(
 								'value' => 'vimeo',
-								'name'	=> 'Vimeo'
+								'name'	=> __('Vimeo','aesop-core')
 							),
 							array(
 								'value' => 'youtube',
-								'name'	=> 'YouTube'
+								'name'	=> __('YouTube','aesop-core')
 							),
 							array(
 								'value' => 'kickstarter',
-								'name'	=> 'Kickstarter'
+								'name'	=> __('Kickstarter','aesop-core')
 							),
 							array(
 								'value' => 'viddler',
-								'name'	=> 'Viddler'
+								'name'	=> __('Viddler','aesop-core')
 							),
 							array(
 								'value' => 'vine',
-								'name'	=> 'Vine'
+								'name'	=> __('Vine','aesop-core')
 							),
 							array(
 								'value' => 'wistia',
-								'name'	=> 'Wistia'
+								'name'	=> __('Wistia','aesop-core')
 							),
 							array(
 								'value' => 'instagram',
-								'name'	=> 'Instagram'
+								'name'	=> __('Instagram','aesop-core')
 							),
 							array(
 								'value' => 'dailymotion',
-								'name'	=> 'Dailymotion'
+								'name'	=> __('Dailymotion','aesop-core')
 							),
 							array(
 								'value' => 'self',
-								'name'	=> 'Self'
+								'name'	=> __('Self','aesop-core')
 							)
 						),
 						'default' 	=> 'vimeo',
@@ -898,11 +898,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> 'on',
@@ -914,11 +914,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> 'on',
@@ -930,11 +930,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> 'off',
@@ -946,11 +946,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> 'off',
@@ -962,11 +962,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> 'off',
@@ -1028,11 +1028,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'pdf',
-								'name'	=> 'PDF'
+								'name'	=> __('PDF','aesop-core')
 							),
 							array(
 								'value' => 'image',
-								'name'	=> 'Image'
+								'name'	=> __('Image','aesop-core')
 							)
 						),
 						'default' 	=> 'pdf',
@@ -1110,11 +1110,11 @@ if(!function_exists('aesop_shortcodes')){
 						'values' 	=> array(
 							array(
 								'value' => 'on',
-								'name'	=> 'On'
+								'name'	=> __('On', 'aesop-core')
 							),
 							array(
 								'value' => 'off',
-								'name'	=> 'Off'
+								'name'	=> __('Off', 'aesop-core')
 							)
 						),
 						'default' 	=> 'off',
