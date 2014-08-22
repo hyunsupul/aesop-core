@@ -1130,7 +1130,7 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'id' 			=> array(
 						'type'		=> 'text_small',
-						'values' 	=> aesop_option_get_galleries(),
+						'values' 	=> aesop_option_get_posts('ai_galleries'),
 						'default' 	=> '',
 						'desc' 		=> __( 'Choose Gallery', 'aesop-core' ),
 						'tip'		=> __('Select a gallery below to insert it.','aesop-core')
@@ -1155,9 +1155,9 @@ if(!function_exists('aesop_shortcodes')){
 *   @todo cache this query
 */
 
-function aesop_option_get_galleries(){
+function aesop_option_get_posts($type = ''){
 
-	$args = array('posts_per_page' => -1, 'post_type' => 'ai_galleries');
+	$args = array('posts_per_page' => -1, 'post_type' => $type);
 	$posts = get_posts($args);
 
 	$array = array();
@@ -1175,7 +1175,7 @@ function aesop_option_get_galleries(){
 
 	else:
 
-		echo 'No Galleries Found';
+		_e('No Posts Found','aesop-core');
 
 	endif;
 }
