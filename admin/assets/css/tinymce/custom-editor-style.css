@@ -53,8 +53,24 @@
 .aesop-collection-title:before { content: "\f175"; }
 .aesop-gallery-title:before { content: "\f161"; }
 
-.aesop-button:before { vertical-align: middle; font-family: Dashicons; display: inline-block; }
-.aesop-button { float: right; }
+.aesop-button:before {
+	vertical-align: middle;
+	font-family: Dashicons;
+	display: inline-block;
+}
+.aesop-button {
+	float: right;
+	margin:0 3px;
+}
+.aesop-button:last-child {
+	margin-right:0;
+}
+.aesop-button:first-child {
+	margin-left: 0;
+	-webkit-transition:.15s ease-in-out;
+}
+.aesop-button:hover {cursor:pointer;opacity:0.7;}
+
 .aesop-button-edit:before { content: "\f464"; }
 .aesop-button-delete:before { content: "\f182"; }
 .aesop-button-clipboard:before { content: "\f481"; }
