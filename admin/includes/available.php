@@ -15,35 +15,30 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'img' 			=> array(
 						'type'		=> 'media_upload',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image URL', 'aesop-core' ),
 						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'imgwidth' 			=> array(
 						'type'		=> 'text_small',
-						'values' 	=> array( ),
 						'default' 	=> '300px',
 						'desc' 		=> __( 'Image Width', 'aesop-core' ),
 						'tip'		=> __('Width of the image. You can enter the size as <code>40%</code> or <code>500px</code>.','aesop-core')
 					),
 					'caption' 			=> array(
 						'type'		=> 'text_area',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Caption', 'aesop-core' ),
 						'tip'		=> __('Optional caption for the image. If you do not enter a caption, it will not show.','aesop-core')
 					),
 					'credit' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image Credit', 'aesop-core' ),
 						'tip'		=> __('This is typically used for the credit for the photographer. Enter a name, and it will show as <em>Photo by: Name</em>.','aesop-core')
 					),
 					'alt' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image ALT', 'aesop-core' ),
 						'tip'		=> __('ALT tag used for the image. Primarily used for SEO purposes.','aesop-core')
@@ -70,7 +65,6 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'offset' 		=> array(
 						'type'		=> 'text_small',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image Offset', 'aesop-core' ),
 						'tip'		=> __('Using this option you can <em>float</em> an image outside of the text. Enter a size like <code>-200px</code>.','aesop-core')
@@ -121,21 +115,18 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'img' 			=> array(
 						'type'		=> 'media_upload',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Character Image', 'aesop-core' ),
 						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'name' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Character Name', 'aesop-core' ),
 						'tip'		=> __('Enter a name for the character. If you do not enter a name, it will not show.','aesop-core')
 					),
 					'caption' 			=> array(
 						'type'		=> 'text_area',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Caption', 'aesop-core' ),
 						'tip'		=> __('Optional caption for the character. If you do not enter a caption, it will not show.','aesop-core')
@@ -172,27 +163,23 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'width' 			=> array(
 						'type'		=> 'text_small',
-						'values' 	=> array( ),
 						'default' 	=> '100%',
 						'desc' 		=> __( 'Component Width', 'aesop-core' ),
 						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.','aesop-core')
 					),
 					'background' 	=> array(
-						'values' 	=> array( ),
 						'type'		=> 'color',
 						'default' 	=> '#282828',
 						'desc' 		=> __( 'Background Color', 'aesop-core' ),
 						'tip'		=> __('Select a background color to be used as the background.','aesop-core')
 					),
 					'img' 	=> array(
-						'values' 	=> array( ),
 						'type'		=> 'media_upload',
 						'default' 	=> '',
 						'desc' 		=> __( 'Optional Background Image', 'aesop-core' ),
 						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'text'			 => array(
-						'values' 	=> array(),
 						'type'		=> 'color',
 						'default' 	=> '#FFFFFF',
 						'desc' 		=> __('Text Color', 'aesop-core' ),
@@ -200,7 +187,6 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'height' 		=> array(
 						'type'		=> 'text_small',
-						'values'	=> array(),
 						'default' 	=> 'auto',
 						'prefix'	=> 'px',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
@@ -264,14 +250,12 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'offset' 		=> array(
 						'type'		=> 'text_small',
-						'values'	=> array(),
 						'default' 	=> 300,
 						'desc' 		=> __('If using parallax, starting offset.', 'aesop-core' ),
 						'tip'		=> __('Start with a value like <code>100px</code>, and tweak until desired. This moves starting position of the quote back 100px if using parallax.','aesop-core')
 					),
 					'speed' 		=> array(
 						'type'		=> 'text',
-						'values'	=> array(),
 						'default' 	=> '8',
 						'desc' 		=> __('Speed of parallax movement. Lower is faster.', 'aesop-core' ),
 						'tip'		=> __('How fast the quote should travel across the screen, if using parallax. Default is 8.','aesop-core')
@@ -303,7 +287,6 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'quote' 		=> array(
 						'type'		=> 'text_area',
-						'values'	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __('The quote', 'aesop-core' ),
 						'tip'		=> __('The actual quote that will be displayed.','aesop-core')
@@ -323,14 +306,12 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
 					'color' 		=> array(
-						'values' 	=> array(),
 						'type'		=> 'color',
 						'default' 	=> '#FFFFFF',
 						'desc' 		=> __('Color of Text', 'aesop-core' ),
 						'tip'		=> __('Set a color to be used for the main text.','aesop-core')
 					),
 					'background' 		=> array(
-						'values' 	=> array(),
 						'type'		=> 'color',
 						'default' 	=> '#333333',
 						'desc' 		=> __('Background Color', 'aesop-core' ),
@@ -338,14 +319,12 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'width'			=> array(
 						'type'		=> 'text_small',
-						'values' 	=> array( ),
 						'default' 	=> '100%',
 						'desc' 		=> __( 'Width of Component', 'aesop-core' ),
 						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.','aesop-core')
 					),
 					'height'			=> array(
 						'type'		=> 'text_small',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'prefix'	=> 'px',
 						'desc' 		=> __( 'Height of Component (optional)', 'aesop-core' ),
@@ -397,14 +376,12 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'innerposition' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Floating Text Position <br />(ex: 10px, 20px, auto, auto)', 'aesop-core' ),
 						'tip'		=> __('By setting this optional position, the text will be <em>floated</em> on the content component. In the example, it reads as 10px from the top, 20px from the right, and automatically positioned from bottom and left.','aesop-core')
 					),
 					'img' 			=> array(
 						'type'		=> 'media_upload',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Background Image', 'aesop-core' ),
 						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
@@ -435,21 +412,18 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'imgposition' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Background Image Position', 'aesop-core' ),
 						'tip'		=> __('If using a background image, the position of the background. Default is center center.','aesop-core')
 					),
 					'imgsize' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Background Image Size', 'aesop-core' ),
 						'tip'		=> __('If using a background image, the size of the image. By default it will be full width.','aesop-core')
 					),
 					'floatermedia' 	=> array(
 						'type'		=> 'text_area',
-						'values' 	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __('Floater Media', 'aesop-core' ),
 						'tip'		=> __('You can use text and images here. To use an image, use the full HTML tag without quotes around the image path.','aesop-core')
@@ -476,7 +450,6 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'floateroffset' => array(
 						'type'		=> 'text_small',
-						'values' 	=> array(),
 						'desc' 		=> __('Offset Amount of Floater (px or %)', 'aesop-core' ),
 						'tip'		=> __('This value will vary depending on your floater media. Enter a value like <code>-200px</code> and tweak as you see fit.','aesop-core')
 					),
@@ -514,21 +487,18 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'label'			=> array(
 						'type'		=> 'text',
-						'values' 	=> array(),
 						'default'	=> '',
 						'desc'		=> __('Label (not shown)','aesop-core'),
 						'tip'		=> __('The label is what shows as the chapter navigation, and can be different from the title below.','aesop-core')
 					),
 					'title'			=> array(
 						'type'		=> 'text',
-						'values' 	=> array(),
 						'default'	=> '',
 						'desc'		=> __('Chapter Title','aesop-core'),
 						'tip'		=> __('The title of the chapter.','aesop-core')
 					),
 					'subtitle'			=> array(
 						'type'		=> 'text',
-						'values' 	=> array(),
 						'default'	=> '',
 						'desc'		=> __('Chapter Subtitle (optional)','aesop-core'),
 						'tip'		=> __('If filled out, will display a <em>sub-title</em> after the chapter title text.','aesop-core')
@@ -551,7 +521,6 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'img' 			=> array(
 						'type'		=> 'media_upload',
-						'values' 	=> array( ),
 						'default' 	=> ' ',
 						'desc' 		=> __( 'Chapter Image or Video URL', 'aesop-core' ),
 						'tip'		=> __('URL for the image or video background as set above. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
@@ -565,14 +534,12 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'img' 			=> array(
 						'type'		=> 'media_upload',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image', 'aesop-core' ),
 						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'height' 		=> array(
 						'type'		=> 'text_small',
-						'values' 	=> array(),
 						'default' 	=> '500',
 						'prefix'	=> 'px',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
@@ -612,7 +579,6 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'floatermedia' 	=> array(
 						'type'		=> 'text',
-						'values' 	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __('Floater Media', 'aesop-core' ),
 						'tip'		=> __('You can use text and images here. To use an image, use the full HTML tag without quotes around the image path.','aesop-core')
@@ -639,7 +605,6 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'floateroffset' => array(
 						'type'		=> 'text_small',
-						'values' 	=> array(),
 						'desc' 		=> __('Offset Amount of Floater (px or %)', 'aesop-core' ),
 						'tip'		=> __('This value will vary depending on your floater media. Enter a value like <code>-200px</code> and tweak as you see fit.','aesop-core')
 					),
@@ -669,7 +634,6 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'caption' 	=> array(
 						'type'		=> 'text_area',
-						'values' 	=> array(),
 						'default' 	=> 'false',
 						'desc' 		=> __('Caption (optional)', 'aesop-core' ),
 						'tip'		=> __('Provide an optional caption that will be displayed using the position below.','aesop-core')
@@ -724,14 +688,12 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'title' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Title (optional)', 'aesop-core' ),
 						'tip'		=> __('Provide an optional heading for the audio player.','aesop-core')
 					),
 					'src' 			=> array(
 						'type'		=> 'media_upload',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Audio URL', 'aesop-core' ),
 						'tip'		=> __('URL to the mp3 file. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
@@ -809,7 +771,6 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'width' 			=> array(
 						'type'		=> 'text_small',
-						'values' 	=> array( ),
 						'default' 	=> '100%',
 						'desc' 		=> __( 'Component Width', 'aesop-core' ),
 						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.','aesop-core')
@@ -881,14 +842,12 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'id' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Video ID (enter URL for Viddler)', 'aesop-core' ),
 						'tip'		=> __('The video id can be found within any video URL, and typically looks something like <code>s8J2Ge4</code>.','aesop-core')
 					),
 					'hosted' 			=> array(
 						'type'		=> 'media_upload',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Video URL( if <em>self</em> as Source ). Click <em>Select Media</em> to open the WordPress Media Library. ', 'aesop-core' ),
 						'tip'		=> __('This is only used if you are hosting the video yourself. Note, set the Video Source to <em>self</em> above to utilize this option.','aesop-core')
@@ -975,7 +934,6 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'caption' 			=> array(
 						'type'		=> 'text_area',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Caption (optional)', 'aesop-core' ),
 						'tip'		=> __('Optionally display a caption below the video.','aesop-core')
@@ -989,7 +947,6 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'height' 			=> array(
 						'type'		=> 'text_small',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'prefix'	=> 'px',
 						'desc' 		=> __( 'Height', 'aesop-core' ),
@@ -1004,14 +961,12 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'num' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Date', 'aesop-core' ),
 						'tip'		=> __('This is what is displayed as the timeline navigation label, and doesn\'t have to be a date specifically. Any text will work.','aesop-core')
 					),
 					'title' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Title', 'aesop-core' ),
 						'tip'		=> __('The title that should be displayed within the story.','aesop-core')
@@ -1041,14 +996,12 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'src' 			=> array(
 						'type'		=> 'media_upload',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Document', 'aesop-core' ),
 						'tip'		=> __('URL to the document. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'caption' 			=> array(
 						'type'		=> 'text_area',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Optional Caption', 'aesop-core' ),
 						'tip'		=> __('Provide an optional caption for the document component.','aesop-core')
@@ -1062,21 +1015,18 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'title' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Optional Title', 'aesop-core' ),
 						'tip'		=> __('Display an optional heading to be used within the Collection component.','aesop-core')
 					),
 					'collection' 			=> array(
 						'type'		=> 'text_small',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Category ID', 'aesop-core' ),
 						'tip'		=> __('Provide the ID of the category that you want stories to be displayed from.','aesop-core')
 					),
 					'limit' 			=> array(
 						'type'		=> 'text_small',
-						'values' 	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __( 'Posts to Show', 'aesop-core' ),
 						'tip'		=> __('How many stories should be displayed.','aesop-core')
