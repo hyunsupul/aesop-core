@@ -65,6 +65,7 @@ jQuery(document).ready(function($) {
 			// conditional loading
 			////
 
+			/*
 			var hiddenClass			= $('aesop-option-hidden'),
 				openClass			= $('aesop-option-open'),
 				hiddenQuoteOpts 	= $('.aesop-quote-speed, .aesop-quote-offset, .aesop-quote-direction'),
@@ -140,6 +141,7 @@ jQuery(document).ready(function($) {
 			} else if ( 'hidden' == $.cookie('aesop-video-options') ) {
 				$(hiddenVideoOpts).addClass('aesop-option-hidden');
 			}
+			*/
         }
 	});
 
