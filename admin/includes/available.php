@@ -1019,10 +1019,11 @@ if(!function_exists('aesop_shortcodes')){
 						'tip'		=> __('Display an optional heading to be used within the Collection component.','aesop-core')
 					),
 					'collection' 			=> array(
-						'type'		=> 'text_small',
+						'type'		=> 'select',
+						'values'	=> aesop_option_get_categories(),
 						'default' 	=> '',
-						'desc' 		=> __( 'Category ID', 'aesop-core' ),
-						'tip'		=> __('Provide the ID of the category that you want stories to be displayed from.','aesop-core')
+						'desc' 		=> __( 'Category', 'aesop-core' ),
+						'tip'		=> __('Select the category that you want stories to be displayed from.','aesop-core')
 					),
 					'limit' 			=> array(
 						'type'		=> 'text_small',
@@ -1098,7 +1099,7 @@ if(!function_exists('aesop_shortcodes')){
 
 /**
 *
-*	Helper function to retrieve teh galleries for the gallery component in generator above
+*	Helper function to retrieve posts for use in option array
 *
 *	@since 1.1
 *   @todo cache this query
@@ -1113,7 +1114,8 @@ function aesop_option_get_posts($type = 'post'){
 	$array = array();
 
 	if ( $posts ):
-		foreach($posts as $post){
+
+		foreach( $posts as $post ){
 
 			array_push( $array, array(
 	            'value' => $post->ID,
@@ -1126,6 +1128,40 @@ function aesop_option_get_posts($type = 'post'){
 	else:
 
 		_e('No Posts Found','aesop-core');
+
+	endif;
+}
+
+/**
+*
+*	Helper function to retrieve teh categories for use in option array
+*
+*	@since 1.1
+*   @todo cache this query
+* 	@param $type - post-type
+*/
+function aesop_option_get_categories($type = 'post') {
+
+	$args = array('type' => $type);
+	$cats = get_categories($args);
+
+	$array = array();
+
+	if ( $cats ):
+
+		foreach( $cats as $cat ){
+
+			array_push( $array, array(
+	            'value' => $cat->cat_ID,
+	            'name' 	=> $cat->cat_name
+	        ));
+		}
+
+		return $array;
+
+	else:
+
+		_e('No Categories Found','aesop-core');
 
 	endif;
 }
