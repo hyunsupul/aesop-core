@@ -13,23 +13,23 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Image', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
-					'img' 			=> array(
-						'type'		=> 'media_upload',
-						'default' 	=> '',
-						'desc' 		=> __( 'Image URL', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
-					),
 					'imgwidth' 			=> array(
 						'type'		=> 'text_small',
 						'default' 	=> '300px',
 						'desc' 		=> __( 'Image Width', 'aesop-core' ),
 						'tip'		=> __('Width of the image. You can enter the size as <code>40%</code> or <code>500px</code>.','aesop-core')
 					),
-					'caption' 			=> array(
-						'type'		=> 'text_area',
+					'img' 			=> array(
+						'type'		=> 'media_upload',
 						'default' 	=> '',
-						'desc' 		=> __( 'Caption', 'aesop-core' ),
-						'tip'		=> __('Optional caption for the image. If you do not enter a caption, it will not show.','aesop-core')
+						'desc' 		=> __( 'Image URL', 'aesop-core' ),
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
+					),
+					'offset' 		=> array(
+						'type'		=> 'text_small',
+						'default' 	=> '',
+						'desc' 		=> __( 'Image Offset', 'aesop-core' ),
+						'tip'		=> __('Using this option you can <em>float</em> an image outside of the text. Enter a size like <code>-200px</code>.','aesop-core')
 					),
 					'credit' 			=> array(
 						'type'		=> 'text',
@@ -63,11 +63,27 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Image Alignment', 'aesop-core' ),
 						'tip'		=> __('How should the image be aligned? If using a caption, the caption will automatically align with this option.','aesop-core')
 					),
-					'offset' 		=> array(
-						'type'		=> 'text_small',
+					'lightbox' 			=> array(
+						'type'		=> 'select',
+						'values' 	=> array(
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
+						),
+						'default' 	=> 'off',
+						'desc' 		=> __( 'Lightbox', 'aesop-core' ),
+						'tip'		=> __('Choose <em>on</em> and the image will open up the full-size version in a lightbox.','aesop-core')
+					),
+					'caption' 			=> array(
+						'type'		=> 'text_area',
 						'default' 	=> '',
-						'desc' 		=> __( 'Image Offset', 'aesop-core' ),
-						'tip'		=> __('Using this option you can <em>float</em> an image outside of the text. Enter a size like <code>-200px</code>.','aesop-core')
+						'desc' 		=> __( 'Caption', 'aesop-core' ),
+						'tip'		=> __('Optional caption for the image. If you do not enter a caption, it will not show.','aesop-core')
 					),
 					'captionposition' => array(
 						'type'		=> 'select',
@@ -88,23 +104,7 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 'left',
 						'desc' 		=> __( 'Caption Position', 'aesop-core' ),
 						'tip'		=> __('Use this to override the alignment as inherited from the image.','aesop-core')
-					),
-					'lightbox' 			=> array(
-						'type'		=> 'select',
-						'values' 	=> array(
-							array(
-								'value' => 'on',
-								'name'	=> __('On', 'aesop-core')
-							),
-							array(
-								'value' => 'off',
-								'name'	=> __('Off', 'aesop-core')
-							)
-						),
-						'default' 	=> 'off',
-						'desc' 		=> __( 'Lightbox', 'aesop-core' ),
-						'tip'		=> __('Choose <em>on</em> and the image will open up the full-size version in a lightbox.','aesop-core')
-					),
+					)
 
 				),
 				'desc' 				=> __( 'Creates an image component with caption, alignment, and lightbox options.','aesop-core' )
@@ -160,29 +160,23 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Aesop Quote Section', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
-					'width' 			=> array(
-						'type'		=> 'text_small',
-						'default' 	=> '100%',
-						'desc' 		=> __( 'Component Width', 'aesop-core' ),
-						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.','aesop-core')
-					),
 					'background' 	=> array(
 						'type'		=> 'color',
 						'default' 	=> '#282828',
 						'desc' 		=> __( 'Background Color', 'aesop-core' ),
 						'tip'		=> __('Select a background color to be used as the background.','aesop-core')
 					),
-					'img' 	=> array(
-						'type'		=> 'media_upload',
-						'default' 	=> '',
-						'desc' 		=> __( 'Optional Background Image', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
-					),
 					'text'			 => array(
 						'type'		=> 'color',
 						'default' 	=> '#FFFFFF',
 						'desc' 		=> __('Text Color', 'aesop-core' ),
 						'tip'		=> __('Select a color for the quote text.','aesop-core')
+					),
+					'width' 			=> array(
+						'type'		=> 'text_small',
+						'default' 	=> '100%',
+						'desc' 		=> __( 'Component Width', 'aesop-core' ),
+						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.','aesop-core')
 					),
 					'height' 		=> array(
 						'type'		=> 'text_small',
@@ -230,6 +224,25 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> '2',
 						'desc' 		=> __( 'Quote Size', 'aesop-core' ),
 						'tip'		=> __('Font size of the quote.','aesop-core')
+					),
+					'img' 	=> array(
+						'type'		=> 'media_upload',
+						'default' 	=> '',
+						'desc' 		=> __( 'Optional Background Image', 'aesop-core' ),
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
+					),
+					'quote' 		=> array(
+						'type'		=> 'text_area',
+						'default' 	=> '',
+						'desc' 		=> __('The quote', 'aesop-core' ),
+						'tip'		=> __('The actual quote that will be displayed.','aesop-core')
+					),
+					'cite' 		=> array(
+						'type'		=> 'text_area',
+						'values'	=> array(),
+						'default' 	=> '',
+						'desc' 		=> __('Cite (optional)', 'aesop-core' ),
+						'tip'		=> __('Provide an optional cite or source for the quote.','aesop-core')
 					),
 					'parallax' 		=> array(
 						'type'		=> 'select',
@@ -283,19 +296,6 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 'up',
 						'desc' 		=> __('Parallax Direction of Quote', 'aesop-core' ),
 						'tip'		=> __('The direction that the quote should travel in, if using parallax.','aesop-core')
-					),
-					'quote' 		=> array(
-						'type'		=> 'text_area',
-						'default' 	=> '',
-						'desc' 		=> __('The quote', 'aesop-core' ),
-						'tip'		=> __('The actual quote that will be displayed.','aesop-core')
-					),
-					'cite' 		=> array(
-						'type'		=> 'text_area',
-						'values'	=> array(),
-						'default' 	=> '',
-						'desc' 		=> __('Cite (optional)', 'aesop-core' ),
-						'tip'		=> __('Provide an optional cite or source for the quote.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Section quote area with background and color controls.','aesop-core' )
@@ -531,18 +531,18 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Parallax Image', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
-					'img' 			=> array(
-						'type'		=> 'media_upload',
-						'default' 	=> '',
-						'desc' 		=> __( 'Image', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
-					),
 					'height' 		=> array(
 						'type'		=> 'text_small',
 						'default' 	=> '500',
 						'prefix'	=> 'px',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
 						'tip'		=> __('The height of the viewable image area. Enter a value such as <em>500</em>. Avoid using percentages as heights here.','aesop-core')
+					),
+					'img' 			=> array(
+						'type'		=> 'media_upload',
+						'default' 	=> '',
+						'desc' 		=> __( 'Image', 'aesop-core' ),
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'parallaxbg' 	=> array(
 						'type'		=> 'select',
@@ -559,6 +559,52 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 'on',
 						'desc' 		=> __('Parallax Background Image', 'aesop-core' ),
 						'tip'		=> __('If set to <em>on</em>, the image will move slightly as you scroll down the page.','aesop-core')
+					),
+					'caption' 	=> array(
+						'type'		=> 'text_area',
+						'default' 	=> 'false',
+						'desc' 		=> __('Caption (optional)', 'aesop-core' ),
+						'tip'		=> __('Provide an optional caption that will be displayed using the position below.','aesop-core')
+					),
+					'captionposition' => array(
+						'type'		=> 'select',
+						'values' 	=> array(
+							array(
+								'value' => 'bottom-left',
+								'name'	=> __('Bottom Left','aesop-core')
+							),
+							array(
+								'value' => 'bottom-right',
+								'name'	=> __('Bottom Right','aesop-core')
+							),
+							array(
+								'value' => 'top-left',
+								'name'	=> __('Top Left','aesop-core')
+							),
+							array(
+								'value' => 'top-right',
+								'name'	=> __('Top Right','aesop-core')
+							)
+						),
+						'default' 	=> 'bottom-left',
+						'desc' 		=> __('Caption Position', 'aesop-core' ),
+						'tip'		=> __('If using a caption, where should it be positioned within the parallax component?','aesop-core')
+					),
+					'lightbox' 		=> array(
+						'type'		=> 'select',
+						'values' 	=> array(
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
+						),
+						'default' 	=> 'off',
+						'desc' 		=> __('Image Lightbox', 'aesop-core' ),
+						'tip'		=> __('Enable an optional lightbox, that when clicked, will show the full size version of the parallax image.','aesop-core')
 					),
 					'floater' 		=> array(
 						'type'		=> 'select',
@@ -630,52 +676,6 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 'up',
 						'desc' 		=> __('Parallax Direction of Floater', 'aesop-core' ),
 						'tip'		=> __('What direction should the floater media travel in?','aesop-core')
-					),
-					'caption' 	=> array(
-						'type'		=> 'text_area',
-						'default' 	=> 'false',
-						'desc' 		=> __('Caption (optional)', 'aesop-core' ),
-						'tip'		=> __('Provide an optional caption that will be displayed using the position below.','aesop-core')
-					),
-					'captionposition' => array(
-						'type'		=> 'select',
-						'values' 	=> array(
-							array(
-								'value' => 'bottom-left',
-								'name'	=> __('Bottom Left','aesop-core')
-							),
-							array(
-								'value' => 'bottom-right',
-								'name'	=> __('Bottom Right','aesop-core')
-							),
-							array(
-								'value' => 'top-left',
-								'name'	=> __('Top Left','aesop-core')
-							),
-							array(
-								'value' => 'top-right',
-								'name'	=> __('Top Right','aesop-core')
-							)
-						),
-						'default' 	=> 'bottom-left',
-						'desc' 		=> __('Caption Position', 'aesop-core' ),
-						'tip'		=> __('If using a caption, where should it be positioned within the parallax component?','aesop-core')
-					),
-					'lightbox' 		=> array(
-						'type'		=> 'select',
-						'values' 	=> array(
-							array(
-								'value' => 'on',
-								'name'	=> __('On', 'aesop-core')
-							),
-							array(
-								'value' => 'off',
-								'name'	=> __('Off', 'aesop-core')
-							)
-						),
-						'default' 	=> 'off',
-						'desc' 		=> __('Image Lightbox', 'aesop-core' ),
-						'tip'		=> __('Enable an optional lightbox, that when clicked, will show the full size version of the parallax image.','aesop-core')
 					)
 				),
 				'content' 			=> __( 'Optional Caption', 'ba-shortcodes' ),

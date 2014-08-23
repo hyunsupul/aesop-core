@@ -182,11 +182,11 @@
         padding: 20px;
 
         p {
-            margin:0 auto 15px;
+            margin:0;
             position: relative;
             border-bottom:1px solid @border;
             //.box-shadow(0 1px 0 rgba(255,255,255,0.05));
-            padding-bottom:20px;
+            padding:15px 0 22px;
         }
 
         .aesop-option-prefix {
@@ -300,5 +300,53 @@
                 top:10px;
             }
         }
+    }
+}
+
+// color like options until we get conditional option loading
+#aesop-generator #aesop-generator-settings {
+    .aesop-quote-parallax,
+    .aesop-quote-speed,
+    .aesop-quote-offset,
+    .aesop-quote-direction,
+    .aesop-parallax-floater,
+    .aesop-parallax-floatermedia,
+    .aesop-parallax-floaterposition,
+    .aesop-parallax-floateroffset,
+    .aesop-parallax-floaterdirection,
+    .aesop-video-hosted,
+    .aesop-video-loop,
+    .aesop-video-autoplay,
+    .aesop-video-controls,
+    .aesop-video-viewstart,
+    .aesop-video-viewend,
+    .aesop-content-floatermedia,
+    .aesop-content-floaterposition,
+    .aesop-content-floateroffset,
+    .aesop-content-floaterdirection {
+        background:lighten(@dark-gray,3);
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+
+    // 1st
+    .aesop-quote-parallax,
+    .aesop-parallax-floater,
+    .aesop-video-hosted,
+    .aesop-content-floatermedia {
+        margin-top:-1px;
+        border-top:1px solid @dark-gray;
+
+    }
+
+    // last
+    .aesop-quote-direction,
+    .aesop-parallax-floaterdirection,
+    .aesop-video-viewend,
+    .aesop-content-floaterdirection {
+        margin-bottom:-1px;
+        border-bottom:1px solid @dark-gray;
     }
 }
