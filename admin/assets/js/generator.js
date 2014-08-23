@@ -57,60 +57,93 @@ jQuery(document).ready(function($) {
 
 	$('.aesop-generator').dropkick({
 		change: function () {
+
     		var queried_shortcode = $('#aesop-generator-select').find(':selected').val();
 			$('#aesop-generator-settings').html(aesopshortcodes[queried_shortcode]);
 
 			////
 			// conditional loading
 			////
-			// quote component
-			var hiddenQuoteOpts = $('.aesop-quote-speed, .aesop-quote-offset, .aesop-quote-direction');
 
-			$(hiddenQuoteOpts).hide();
+			var hiddenClass			= $('aesop-option-hidden'),
+				openClass			= $('aesop-option-open'),
+				hiddenQuoteOpts 	= $('.aesop-quote-speed, .aesop-quote-offset, .aesop-quote-direction'),
+				hiddenParallaxOpts 	= $('.aesop-parallax-floatermedia, .aesop-parallax-floaterposition, .aesop-parallax-floateroffset, .aesop-parallax-floaterdirection'),
+				hiddenVideoOpts 	= $('.aesop-video-hosted, .aesop-video-loop, .aesop-video-autoplay, .aesop-video-controls, .aesop-video-viewstart, .aesop-video-viewend');
+
+			// quote component
 			$('.aesop-quote-parallax #aesop-generator-attr-parallax').on('change',function(){
 				var selectedValue = $(this).val();
 
 				if( 'on' === selectedValue ) {
-					$(hiddenQuoteOpts).show();
+					$(hiddenQuoteOpts).removeClass('aesop-option-hidden').addClass('aesop-option-open');
+					$.cookie('aesop-quote-parallax-options', 'visible', { expires: 7 });
 				} else {
-					$(hiddenQuoteOpts).hide();
+					$(hiddenQuoteOpts).removeClass('aesop-option-open').addClass('aesop-option-hidden');
+					$.cookie('aesop-quote-parallax-options', 'hidden', { expires: 7 });
 				}
 
 			});
 
 			// parallax component
-			var hiddenParallaxOpts = $('.aesop-parallax-floatermedia, .aesop-parallax-floaterposition, .aesop-parallax-floateroffset, .aesop-parallax-floaterdirection');
-
-			$(hiddenParallaxOpts).hide();
 			$('.aesop-parallax-floater #aesop-generator-attr-floater').on('change',function(){
 				var selectedValue = $(this).val();
 
 				if( 'on' === selectedValue ) {
-					$(hiddenParallaxOpts).show();
+					$(hiddenParallaxOpts).addClass('aesop-option-open');
+					$.cookie('aesop-parallax-options', 'visible', { expires: 7 });
 				} else {
-					$(hiddenParallaxOpts).hide();
+					$(hiddenParallaxOpts).removeClass('aesop-option-open').addClass('aesop-option-hidden');
+					$.cookie('aesop-parallax-options', 'hidden', { expires: 7 });
 				}
 
 			});
 
 			// video component
-			var hiddenVideoOpts = $('.aesop-video-hosted, .aesop-video-loop, .aesop-video-autoplay, .aesop-video-controls, .aesop-video-viewstart, .aesop-video-viewend');
-
-			$(hiddenVideoOpts).hide();
 			$('.aesop-video-src #aesop-generator-attr-src').on('change',function(){
 				var selectedValue = $(this).val();
 
 				if( 'self' === selectedValue ) {
-					$(hiddenVideoOpts).show();
-					$('.aesop-video-id').hide();
+					$(hiddenVideoOpts).addClass('aesop-option-open');
+					$('.aesop-video-id').removeClass('aesop-option-open').addClass('aesop-option-hidden');
+					$.cookie('aesop-video-options', 'visible', { expires: 7 });
 				} else {
-					$(hiddenVideoOpts).hide();
-					$('.aesop-video-id').show();
+					$(hiddenVideoOpts).removeClass('aesop-option-open').addClass('aesop-option-hidden');
+					$('.aesop-video-id').addClass('aesop-option-open');
+					$.cookie('aesop-video-options', 'hidden', { expires: 7 });
 				}
 
 			});
+
+			////
+			// set cookies for remembered states
+			// @todo - need to account for multiple components in editor
+			////
+
+			// set quote cookie
+			if ( 'visible' == $.cookie('aesop-quote-parallax-options') ) {
+				$(hiddenQuoteOpts).addClass('aesop-option-open');
+			} else if ( 'hidden' == $.cookie('aesop-quote-parallax-options') ) {
+				$(hiddenQuoteOpts).addClass('aesop-option-hidden');
+			}
+
+			// set paralalx cookie
+			if ( 'visible' == $.cookie('aesop-parallax-options') ) {
+				$(hiddenParallaxOpts).addClass('aesop-option-open');
+			} else if ( 'hidden' == $.cookie('aesop-parallax-options') ) {
+				$(hiddenParallaxOpts).addClass('aesop-option-hidden');
+			}
+
+			// set paralalx cookie
+			if ( 'visible' == $.cookie('aesop-video-options') ) {
+				$(hiddenVideoOpts).addClass('aesop-option-open');
+			} else if ( 'hidden' == $.cookie('aesop-video-options') ) {
+				$(hiddenVideoOpts).addClass('aesop-option-hidden');
+			}
         }
 	});
+
+
 
 	// Insert shortcode
 	$('#aesop-generator-insert,.aesop-generator').live('click', function() {
