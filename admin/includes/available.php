@@ -484,12 +484,6 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Chapter Block', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
-					'label'			=> array(
-						'type'		=> 'text',
-						'default'	=> '',
-						'desc'		=> __('Label (not shown)','aesop-core'),
-						'tip'		=> __('The label is what shows as the chapter navigation, and can be different from the title below.','aesop-core')
-					),
 					'title'			=> array(
 						'type'		=> 'text',
 						'default'	=> '',
