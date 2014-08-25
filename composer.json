@@ -1,5 +1,5 @@
 {
-   "name": "aesop/aesop-story-engine",
+   "name": "aesop/aesop-core",
    "type": "wordpress-plugin",
    "description": "Aesop",
    "keywords": ["plugin","wordpress","aesop","core"],
