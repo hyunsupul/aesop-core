@@ -113,7 +113,7 @@ class AesopChapterHeadingComponent {
 				jQuery(document).ready(function(){
 
 					jQuery('<?php echo $contentClass;?>').scrollNav({
-					    sections: '.aesop-chapter-title',
+					    sections: '.aesop-article-chapter-wrap',
 					    arrowKeys: true,
 					    insertTarget: '<?php echo $contentHeaderClass;?>',
 					    insertLocation: 'appendTo',
