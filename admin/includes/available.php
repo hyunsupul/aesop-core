@@ -1125,10 +1125,6 @@ function aesop_option_get_posts($type = 'post'){
 
 		return $array;
 
-	else:
-
-		_e('No Posts Found','aesop-core');
-
 	endif;
 }
 
@@ -1158,10 +1154,6 @@ function aesop_option_get_categories($type = 'post') {
 		}
 
 		return $array;
-
-	else:
-
-		_e('No Categories Found','aesop-core');
 
 	endif;
 }
