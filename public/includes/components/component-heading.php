@@ -9,7 +9,6 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 	function aesop_chapter_shortcode($atts, $content = null) {
 		$defaults = array(
-			'label'		=> '',
 			'title' 	=> '',
 			'subtitle' 	=> '',
 			'bgtype' 	=> 'img',
@@ -41,8 +40,6 @@ if (!function_exists('aesop_chapter_shortcode')){
 				<?php do_action('aesop_chapter_inside_top'); //action ?>
 
 				<div class="aesop-article-chapter clearfix" <?php echo $img_style;?> >
-
-					<span class="aesop-chapter-title"><?php echo $atts['label'];?></span>
 
 					<h2 class="aesop-cover-title" itemprop="title" >
 						<?php echo $atts['title'];
