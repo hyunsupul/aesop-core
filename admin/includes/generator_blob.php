@@ -19,7 +19,9 @@ foreach( $codes as $slug => $shortcode ) {
 			$return .= '<label for="aesop-generator-attr-' . $attr_name . '">' . $attr_info['desc'] . '</label>';
 			$return .= '<small class="aesop-option-desc">'.$attr_info['tip'].'</small>';
 			// Select
-			if ( count( $attr_info['values'] ) && $attr_info['values'] ) {
+
+			if ( isset($attr_info['values']) ) {
+
 				$return .= '<select name="' . $attr_name . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr">';
 
 				$i=0;
@@ -28,14 +30,13 @@ foreach( $codes as $slug => $shortcode ) {
 					$attr_value_selected = ( $attr_info['default'] == $attr_value ) ? ' selected="selected"' : '';
 
 					$return .= '<option value="'.$attr_info['values'][$i]['value'].'" ' . $attr_value_selected . '>'.$attr_info['values'][$i]['name'].'</option>';
-				
+
 					$i++;
 				}
 
 				$return .= '</select>';
-			}
-			// Text input
-			else {
+
+			} else {
 
 				$attr_field_type = isset($attr_info['type']) ? $attr_info['type'] : 'text';
 
