@@ -141,8 +141,7 @@ class AesopCoreGallery {
 
                 $full    =  wp_get_attachment_url($image_id, $size, false,'');
                 $alt     =  get_post_meta($image_id, '_wp_attachment_image_alt', true);
-                $caption =  $image_id->post_excerpt;
-                $desc    =  $image_id->post_content;
+               	$caption =  isset( $image_id->post_excerpt ) ? $image_id->post_excerpt : null;
 
                ?><img src="<?php echo $full;?>" data-caption="<?php echo $caption;?>" alt="<?php echo esc_attr($alt);?>"><?php
 
@@ -189,7 +188,7 @@ class AesopCoreGallery {
 
                 $getimage 		= wp_get_attachment_image($image_id, 'aesop-grid-image', false, array('class' => 'aesop-grid-image'));
 				$getimgsrc 		= wp_get_attachment_image_src($image_id, $size);
-                $img_title 	  	= $image_id->post_title;
+                $img_title 	  	= isset( $image_id->post_title ) ? $image_id->post_title : null;
 
                	printf('<a class="aesop-lightbox" href="%s" title="%s"><span class="clearfix">%s</span></a>',$getimgsrc[0], esc_attr($img_title), $getimage);
 
@@ -232,7 +231,7 @@ class AesopCoreGallery {
 		foreach ( $image_ids as $image_id ):
 
             $full    =  wp_get_attachment_url($image_id, $size, false,'');
-            $caption =  $image_id->post_excerpt;
+            $caption =  isset( $image_id->post_excerpt ) ? $image_id->post_excerpt : null;
 
            	?>
            	<div class="aesop-stacked-img" style="background-image:url('<?php echo $full;?>');<?php echo $styles;?>">
@@ -260,7 +259,7 @@ class AesopCoreGallery {
 
             $img     =  wp_get_attachment_url($image_id, $size, false,'');
             $alt     =  get_post_meta($image_id, '_wp_attachment_image_alt', true);
-            $caption =  $image_id->post_excerpt;
+            $caption =  isset( $image_id->post_excerpt ) ? $image_id->post_excerpt : null;
 
            	?>
            	<figure class="aesop-sequence-img-wrap">
@@ -350,9 +349,9 @@ class AesopCoreGallery {
 
 		            $full    	=  wp_get_attachment_url( $image_id, $size, false, '' );
 		            $alt     	=  get_post_meta( $image_id, '_wp_attachment_image_alt', true );
-		            $title 	  	= $image_id->post_title;
+		            $title 	  	=  isset( $image_id->post_title ) ? $image_id->post_title : null;
 
-		            $lb_link    = $lightbox ? sprintf('data-highres="%s"', $full) : null;
+		            $lb_link    =  $lightbox ? sprintf('data-highres="%s"', $full) : null;
 
 		           	?><img src="<?php echo $full;?>" <?php echo $lb_link;?> data-title="<?php echo $title;?>" title="<?php echo $title;?>" alt="<?php echo $alt;?>"><?php
 
