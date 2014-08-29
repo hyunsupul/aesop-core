@@ -1,4 +1,4 @@
- @import url(//fonts.googleapis.com/css?family=Open+Sans);
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
 
 .aesop-component{
 	background-color: #555;
@@ -7,6 +7,8 @@
 	color: rgb(214, 214, 214);
 	position: relative;
 	font-family: "Open Sans", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .aesop-component-bar{
