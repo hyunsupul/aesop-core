@@ -168,11 +168,12 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	// handle the click events
 	editor.onClick.add(function(ed, e) {
 
+		delete window.ailocked;
+		delete window.aiactive;
+
 		if( typeof $(ed.selection.getNode()).parents('.aesop-component')[0] !== "undefined" ) {
 			window.aiactive = true;
-		} else {
-			delete window.aiactive;
-		};
+		}
 
 		// let's handle the delete button
 		if ( e.target.className.indexOf('aesop-button-delete') > -1 ) {
@@ -180,6 +181,12 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			if (c === true) {
 				e.target.parentNode.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode.parentNode);
 			}
+			//$(ed).click();
+			//tinymce.activeEditor.execCommand('mceFocus',false);
+			delete window.aiactive;
+			window.ailocked = true;
+			tinymce.execCommand('mceFocus',false,ed.id);
+			//ed.setCursorLocation();
 		}
 
 		// let's handle the edit button

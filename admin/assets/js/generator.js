@@ -6,11 +6,13 @@ jQuery(document).ready(function($) {
 	$('.aesop-add-story-component').click(function(e){
 		e.preventDefault();
 
-		if ( typeof window.aiactive === 'undefined' ) {
-      jQuery('body').toggleClass('modal-open');
-		  jQuery(modal).toggleClass('aesop-generator-open');
-    } else {
+		if ( typeof window.aiactive !== 'undefined' ) {
       alert('Nesting components within the visual interface is not supported.');
+    } else if ( typeof window.ailocked !== 'undefined' ) {
+      alert('Please click on the editor and set your cursor location first.');
+    } else {
+      jQuery('body').toggleClass('modal-open');
+      jQuery(modal).toggleClass('aesop-generator-open');
     }
 	});
 
