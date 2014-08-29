@@ -53,7 +53,8 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 				return match;
 			}
 			var sc = window.decodeURIComponent(parse[1]);
-			return sc;
+			return '<p>' + sc + '</p>';
+
 		} else {
 			var sc = window.decodeURIComponent(parse[1]);
 
@@ -63,7 +64,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			if( sc_filtered != null ){
 				sc = sc.replace(sc_filtered[1], parse[2]);
 			}
-			return sc;
+			return '<p>' + sc + '</p>';
 		}
 	}
 
