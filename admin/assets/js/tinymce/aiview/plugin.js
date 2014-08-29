@@ -73,6 +73,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		var re_full = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]/g;
 		var re_short = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]/g;
 		var re_clean = /<br data-mce-bogus="1">/g;
+		var re_slice = /([^\s]+="[^"]+")/g
 		var re_parse = /([^\s]+)\s?/g;
 
 		var parse = re_full.exec(sc);
@@ -86,8 +87,13 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			}
 		}
 
-		// split up based on a space
-		var attrs = parse[2].split(' ');
+		var result;
+		var attrs = [];
+
+		// loop through the matches and throw them into an array
+		while( (result = re_slice.exec(parse[2])) !== null ) {
+			attrs.push(result[1]);
+		}
 
 		var ai_map = [];
 
