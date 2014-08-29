@@ -1,5 +1,5 @@
 === Aesop Story Engine ===
-Contributors: nphaskins, mauryaratan, Tmeister
+Contributors: nphaskins, mauryaratan, Tmeister, etc
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
@@ -133,6 +133,22 @@ Full documentation can be found below.
 
 
 == Changelog ==
+
+= 1.1 = This update took 2 people an estimated 50 hours + approximately $3000 for new editable feature
+* NEW - New user interface
+* NEW - Components are now editable
+* NEW - API for creating addons to sell or give away
+* ADDED - Filters for Audio and Video component waypoints
+* ADDED - Filters for timeline and location offsets
+* ADDED - Filter to let Map component run on pages
+* ADDED - Gallery component to the component generator with a dropdown to select gallery to insert
+* TWEAK - No longer have to input collection ID they are now automatically fed into a dropdown to select
+* TWEAK - Parallax floater item offset now automatically calculated
+* TWEAK - Parallax optimizations and performance enhancements
+* TWEAK - Gallery performance optimizations
+* TWEAK - Cleaned up user interface for creating Galleries in admin
+* FIXED - Better support for Aesop Lazy Loader
+* FIXED - Video icon
 
 = 1.0.9 =
 * FIXED - Various generator fixes for WordPress 4.0
