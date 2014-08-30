@@ -40,6 +40,10 @@ if (!function_exists('aesop_image_shortcode')){
         $getlazysize = class_exists('AesopLazyLoader') ? getimagesize($atts['img']) : null;
         $lazysize = $getlazysize ? sprintf('height="%s" width="%s"', $getlazysize[1], $getlazysize[0]) : null;
 
+        // automatic alt tag fallback if none specified
+		$auto_alt 	= $atts['img'] ? basename($atts['img']) : null;
+		$alt 		= $atts['alt'] ? $atts['alt'] : preg_replace('/\\.[^.\\s]{3,4}$/', '', $auto_alt);
+
 		// combine into component shell
 		ob_start();
 
@@ -59,12 +63,12 @@ if (!function_exists('aesop_image_shortcode')){
 
 						<a class="aesop-lightbox" href="<?php echo $atts['img'];?>" title="<?php echo $atts['caption'];?>">
 							<p class="aesop-img-enlarge"><i class="aesopicon aesopicon-search-plus"></i> <?php _e('Enlarge','aesop-core');?></p>
-							<img <?php echo $lazy;?> <?php echo $lazysize;?> alt="<?php echo esc_attr($atts['alt']);?>">
+							<img <?php echo $lazy;?> <?php echo $lazysize;?> alt="<?php echo $alt;?>">
 						</a>
 
 					<?php } else { ?>
 
-						<img <?php echo $lazy;?> <?php echo $lazysize;?> alt="<?php echo esc_attr($atts['alt']);?>">
+						<img <?php echo $lazy;?> <?php echo $lazysize;?> alt="<?php echo $alt;?>">
 
 					<?php }
 
