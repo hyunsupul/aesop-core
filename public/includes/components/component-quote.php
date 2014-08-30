@@ -64,32 +64,33 @@ if (!function_exists('aesop_quote_shortcode')){
 				<script>
 					jQuery(document).ready(function(){
 
-						var obj = jQuery('#aesop-quote-component-<?php echo $unique;?> blockquote');
+						var moving 		= jQuery('#aesop-quote-component-<?php echo $unique;?> blockquote'),
+							component   = jQuery('#aesop-quote-component-<?php echo $unique;?>');
 
 						// if parallax is on and we're not on mobile
 						<?php if ( 'on' == $atts['parallax'] && !wp_is_mobile() ) { ?>
 
 					       	function scrollParallax(){
-					       	    var height 			= jQuery('#aesop-quote-component-<?php echo $unique;?>').height(),
-        	        				offset 			= jQuery('#aesop-quote-component-<?php echo $unique;?>').offset().top,
+					       	    var height 			= jQuery(component).height(),
+        	        				offset 			= jQuery(component).offset().top,
 						       	    scrollTop 		= jQuery(window).scrollTop(),
 						       	    windowHeight 	= jQuery(window).height(),
-						       	    floater 		= Math.round( scrollTop * 0.1 );
+						       	    position 		= Math.round( scrollTop * 0.1 );
 
-						       	// only run parallax if image in view
+						       	// only run parallax if in view
 						       	if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
 									return;
 								}
 
-					            jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
+					            jQuery(moving).css({'transform':'translate3d(0px,-' + position + 'px, 0px)'});
 
 					       	    <?php if ('left' == $atts['direction']){ ?>
-					            	jQuery(obj).css({'transform':'translate3d(-' + floater + 'px, 0px, 0px)'});
+					            	jQuery(moving).css({'transform':'translate3d(-' + position + 'px, 0px, 0px)'});
 					            <?php } elseif ( 'right' == $atts['direction'] ) { ?>
-									jQuery(obj).css({'transform':'translate3d(' + floater + 'px, 0px, 0px)'});
+									jQuery(moving).css({'transform':'translate3d(' + position + 'px, 0px, 0px)'});
 					            <?php } ?>
 					       	}
-					       	jQuery('#aesop-quote-component-<?php echo $unique;?>').waypoint({
+					       	jQuery(component).waypoint({
 								offset: '100%',
 								handler: function(direction){
 						   			jQuery(this).toggleClass('aesop-quote-faded');
@@ -102,7 +103,7 @@ if (!function_exists('aesop_quote_shortcode')){
 
 						<?php } else { ?>
 
-							jQuery(obj).waypoint({
+							jQuery(moving).waypoint({
 								offset: 'bottom-in-view',
 								handler: function(direction){
 							   		jQuery(this).toggleClass('aesop-quote-faded');

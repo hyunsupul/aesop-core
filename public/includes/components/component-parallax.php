@@ -67,7 +67,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 						       	    	windowHeight 	= jQuery(window).height(),
 						       	    	floater 		= Math.round( (offset - scrollTop) * 0.1);
 
-						       	    // only run parallax if image in view
+						       	    // only run parallax if in view
 						       	    if (offset >= scrollTop + windowHeight) {
 										return;
 									}
