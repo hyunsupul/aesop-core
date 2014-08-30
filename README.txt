@@ -138,12 +138,13 @@ Full documentation can be found below.
 * NEW - New user interface
 * NEW - Components are now editable
 * NEW - API for creating addons to sell or give away
+* NEW - RTL support
 * ADDED - Filters for Audio and Video component waypoints
 * ADDED - Filters for timeline and location offsets
 * ADDED - Filter to let Map component run on pages
 * ADDED - Gallery component to the component generator with a dropdown to select gallery to insert
 * TWEAK - No longer have to input collection ID they are now automatically fed into a dropdown to select
-* TWEAK - Parallax floater item offset now automatically calculated
+* TWEAK - Parallax floater item offset now automatically calculated - this means offset and speed options no longer necessary and have been removed
 * TWEAK - Parallax optimizations and performance enhancements
 * TWEAK - Gallery performance optimizations
 * TWEAK - Cleaned up user interface for creating Galleries in admin
