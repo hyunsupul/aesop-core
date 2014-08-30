@@ -20,7 +20,6 @@ if (!function_exists('aesop_quote_shortcode')){
 			'parallax'  => '',
 			'speed' 	=> 8,
 			'direction' => '',
-			'offset'	=> 0,
 			'quote'		=> '',
 			'cite'		=> '',
 
@@ -47,9 +46,6 @@ if (!function_exists('aesop_quote_shortcode')){
 		$isparallax = 'on' == $atts['parallax'] ? 'quote-is-parallax' : false;
 		$lrclass	= 'left' == $atts['direction'] || 'right' == $atts['direction'] ? 'quote-left-right' : false;
 
-		// clean offset
-		$offset = preg_replace('/[^0-9]/','',$atts['offset']);
-
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'quote', '' ) : null;
 
@@ -75,11 +71,11 @@ if (!function_exists('aesop_quote_shortcode')){
 						<?php if ( 'on' == $atts['parallax'] && !wp_is_mobile() ) { ?>
 
 					       	function scrollParallax(){
-					       	    var floater 		= Math.round((jQuery(window).scrollTop() / <?php echo sanitize_text_field($atts['speed']);?>) - <?php echo $offset;?>),
-					       	    	height 			= jQuery('#aesop-quote-component-<?php echo $unique;?>').height(),
+					       	    var height 			= jQuery('#aesop-quote-component-<?php echo $unique;?>').height(),
         	        				offset 			= jQuery('#aesop-quote-component-<?php echo $unique;?>').offset().top,
 						       	    scrollTop 		= jQuery(window).scrollTop(),
-						       	    windowHeight 	= jQuery(window).height();
+						       	    windowHeight 	= jQuery(window).height(),
+						       	    floater 		= Math.round( scrollTop * 0.1 );
 
 						       	// only run parallax if image in view
 						       	if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
@@ -91,9 +87,9 @@ if (!function_exists('aesop_quote_shortcode')){
 					       	    <?php if ('left' == $atts['direction'] || 'right' == $atts['direction']){
 
 									if ('left' == $atts['direction']){ ?>
-					            		jQuery(obj).css({'transform':'translate3d(' + floater + 'px, 0px, 0px)'});
+					            		jQuery(obj).css({'transform':'translate3d(-' + floater + 'px, 0px, 0px)'});
 					            	<?php } else { ?>
-										jQuery(obj).css({'transform':'translate3d(-' + floater + 'px, 0px, 0px)'});
+										jQuery(obj).css({'transform':'translate3d(' + floater + 'px, 0px, 0px)'});
 					            	<?php }
 
 					       	    } else {
@@ -105,8 +101,8 @@ if (!function_exists('aesop_quote_shortcode')){
 									<?php }
 					            } ?>
 					       	}
-					       	jQuery(obj).waypoint({
-								offset: 'bottom-in-view',
+					       	jQuery('#aesop-quote-component-<?php echo $unique;?>').waypoint({
+								offset: '100%',
 								handler: function(direction){
 						   			jQuery(this).toggleClass('aesop-quote-faded');
 

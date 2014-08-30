@@ -447,11 +447,6 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Position of Floater', 'aesop-core' ),
 						'tip'		=> __('If you are using the Floater option, where should the floater be positioned?','aesop-core')
 					),
-					'floateroffset' => array(
-						'type'		=> 'text_small',
-						'desc' 		=> __('Offset Amount of Floater (px or %)', 'aesop-core' ),
-						'tip'		=> __('This value will vary depending on your floater media. Enter a value like <code>-200px</code> and tweak as you see fit.','aesop-core')
-					),
 					'floaterdirection' => array(
 						'type'		=> 'select',
 						'values' 	=> array(
@@ -657,11 +652,6 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 'right',
 						'desc' 		=> __('Position of Floater', 'aesop-core' ),
 						'tip'		=> __('If you are using the Floater option, where should the floater be positioned?','aesop-core')
-					),
-					'floateroffset' => array(
-						'type'		=> 'text_small',
-						'desc' 		=> __('Offset Amount of Floater (px or %)', 'aesop-core' ),
-						'tip'		=> __('This value will vary depending on your floater media. Enter a value like <code>-200px</code> and tweak as you see fit.','aesop-core')
 					),
 					'floaterdirection' => array(
 						'type'		=> 'select',

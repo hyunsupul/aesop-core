@@ -18,7 +18,6 @@ if (!function_exists('aesop_parallax_shortcode')){
 			'floatermedia' 		=> '',
 			'floaterposition' 	=> 'right',
 			'floaterdirection'	=> 'up',
-			'floateroffset'		=> 0,
 			'caption'			=> '',
 			'captionposition' 	=> 'bottom-left',
 			'lightbox' 			=> false
@@ -66,7 +65,7 @@ if (!function_exists('aesop_parallax_shortcode')){
         	        					offset 			= jQuery(obj).offset().top,
 						       	    	scrollTop 		= jQuery(window).scrollTop(),
 						       	    	windowHeight 	= jQuery(window).height(),
-						       	    	floater 		= Math.round( (offset - scrollTop - <?php echo absint(sanitize_text_field($atts['floateroffset']));?>) * 0.1);
+						       	    	floater 		= Math.round( (offset - scrollTop) * 0.1);
 
 						       	    // only run parallax if image in view
 						       	    if (offset >= scrollTop + windowHeight) {
