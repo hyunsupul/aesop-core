@@ -207,20 +207,7 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'size' 			=> array(
 						'type'		=> 'select',
-						'values' 	=> array(
-							array(
-								'value' => '2',
-								'name'	=> '2'
-							),
-							array(
-								'value' => '3',
-								'name'	=> '3'
-							),
-							array(
-								'value' => '4',
-								'name'	=> '4'
-							)
-						),
+						'values' 	=> aesop_option_counter(10),
 						'default' 	=> '2',
 						'desc' 		=> __( 'Quote Size', 'aesop-core' ),
 						'tip'		=> __('Font size of the quote.','aesop-core')
@@ -309,24 +296,7 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'columns' 			=> array(
 						'type'		=> 'select',
-						'values' 	=> array(
-							array(
-								'value' => '1',
-								'name'	=> '1'
-							),
-							array(
-								'value' => '2',
-								'name'	=> '2'
-							),
-							array(
-								'value' => '3',
-								'name'	=> '3'
-							),
-							array(
-								'value' => '4',
-								'name'	=> '4'
-							)
-						),
+						'values' 	=> aesop_option_counter(4),
 						'default' 	=> '',
 						'desc' 		=> __( 'Number of Columns', 'aesop-core' ),
 						'tip'		=> __('Here you can optionally set the number of columns that the text should be split into. Example <code>2</code> will make 2 columns of text.','aesop-core')
@@ -1011,24 +981,7 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'columns' 			=> array(
 						'type'		=> 'select',
-						'values' 	=> array(
-							array(
-								'value' => '2',
-								'name'	=> '2'
-							),
-							array(
-								'value' => '3',
-								'name'	=> '3'
-							),
-							array(
-								'value' => '4',
-								'name'	=> '4'
-							),
-							array(
-								'value' => '5',
-								'name'	=> '5'
-							)
-						),
+						'values' 	=> aesop_option_counter(5),
 						'default' 	=> '2',
 						'desc' 		=> __( 'Columns', 'aesop-core' ),
 						'tip'		=> __('Stories are displayed in a grid. How many columns should the grid be?','aesop-core')
@@ -1134,6 +1087,29 @@ function aesop_option_get_categories($type = 'post') {
 		return $array;
 
 	endif;
+}
+
+/**
+*
+*	Helper function to build a dropdown with integers
+*
+*	@since 1.1
+* 	@param $count - int
+*/
+function aesop_option_counter( $count = 10 ) {
+
+	$array = array();
+
+	for ($i = 1; $i <= $count; $i++) {
+
+		array_push( $array, array(
+	        'value' => $i,
+	        'name' 	=> $i
+	    ));
+
+	}
+
+	return $array;
 }
 
 ?>
