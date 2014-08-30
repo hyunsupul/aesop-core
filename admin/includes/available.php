@@ -260,30 +260,9 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Enable Quote Parallax', 'aesop-core' ),
 						'tip'		=> __('Set to <em>on</em> to enable the quote text to animate across the component.','aesop-core')
 					),
-					'offset' 		=> array(
-						'type'		=> 'text_small',
-						'default' 	=> 300,
-						'desc' 		=> __('If using parallax, starting offset.', 'aesop-core' ),
-						'tip'		=> __('Start with a value like <code>100px</code>, and tweak until desired. This moves starting position of the quote back 100px if using parallax.','aesop-core')
-					),
-					'speed' 		=> array(
-						'type'		=> 'text',
-						'default' 	=> '8',
-						'desc' 		=> __('Speed of parallax movement. Lower is faster.', 'aesop-core' ),
-						'tip'		=> __('How fast the quote should travel across the screen, if using parallax. Default is 8.','aesop-core')
-
-					),
 					'direction' => array(
 						'type'		=> 'select',
 						'values' 	=> array(
-							array(
-								'value' => 'up',
-								'name'	=> __('Up','aesop-core')
-							),
-							array(
-								'value' => 'down',
-								'name'	=> __('Down','aesop-core')
-							),
 							array(
 								'value' => 'left',
 								'name'	=> __('Left','aesop-core')
@@ -293,7 +272,7 @@ if(!function_exists('aesop_shortcodes')){
 								'name'	=> __('Right','aesop-core')
 							)
 						),
-						'default' 	=> 'up',
+						'default' 	=> 'right',
 						'desc' 		=> __('Parallax Direction of Quote', 'aesop-core' ),
 						'tip'		=> __('The direction that the quote should travel in, if using parallax.','aesop-core')
 					)

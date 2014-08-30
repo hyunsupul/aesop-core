@@ -18,7 +18,6 @@ if (!function_exists('aesop_quote_shortcode')){
 			'align'		=> 'left',
 			'size'		=> '4',
 			'parallax'  => '',
-			'speed' 	=> 8,
 			'direction' => '',
 			'quote'		=> '',
 			'cite'		=> '',
@@ -84,22 +83,11 @@ if (!function_exists('aesop_quote_shortcode')){
 
 					            jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
 
-					       	    <?php if ('left' == $atts['direction'] || 'right' == $atts['direction']){
-
-									if ('left' == $atts['direction']){ ?>
-					            		jQuery(obj).css({'transform':'translate3d(-' + floater + 'px, 0px, 0px)'});
-					            	<?php } else { ?>
-										jQuery(obj).css({'transform':'translate3d(' + floater + 'px, 0px, 0px)'});
-					            	<?php }
-
-					       	    } else {
-
-					       	    	if ('up' == $atts['direction']){ ?>
-					            		jQuery(obj).css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
-									<?php } else { ?>
-										jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
-									<?php }
-					            } ?>
+					       	    <?php if ('left' == $atts['direction']){ ?>
+					            	jQuery(obj).css({'transform':'translate3d(-' + floater + 'px, 0px, 0px)'});
+					            <?php } elseif ( 'right' == $atts['direction'] ) { ?>
+									jQuery(obj).css({'transform':'translate3d(' + floater + 'px, 0px, 0px)'});
+					            <?php } ?>
 					       	}
 					       	jQuery('#aesop-quote-component-<?php echo $unique;?>').waypoint({
 								offset: '100%',
