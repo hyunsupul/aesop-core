@@ -239,7 +239,6 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'cite' 		=> array(
 						'type'		=> 'text_area',
-						'values'	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __('Cite (optional)', 'aesop-core' ),
 						'tip'		=> __('Provide an optional cite or source for the quote.','aesop-core')
