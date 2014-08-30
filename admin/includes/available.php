@@ -512,6 +512,22 @@ if(!function_exists('aesop_shortcodes')){
 						'desc'		=> __('Background Type','aesop-core'),
 						'tip'		=> __('Optionally set a looping video background.','aesop-core')
 					),
+					'full'			=> array(
+						'type'		=> 'select',
+						'values' 	=> array(
+							array(
+								'value' => 'on',
+								'name'	=> __('On','aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off','aesop-core')
+							)
+						),
+						'default'	=> '',
+						'desc'		=> __('Full-size Background Image','aesop-core'),
+						'tip'		=> __('If set to on, background image of the chapter will be as large as the browser.','aesop-core')
+					),
 					'img' 			=> array(
 						'type'		=> 'media_upload',
 						'default' 	=> ' ',
