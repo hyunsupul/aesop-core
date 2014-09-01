@@ -135,6 +135,7 @@ Full documentation can be found below.
 == Changelog ==
 
 = 1.1 = This update took 2 people an estimated 50 hours + approximately $3000 for new editable feature
+* NEW - Complete compatibilty with WordPress 4.0
 * NEW - New user interface
 * NEW - Components are now editable
 * NEW - API for creating addons to sell or give away
