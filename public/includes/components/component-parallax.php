@@ -55,7 +55,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 							<?php if ( 'on' == $atts['parallaxbg'] ) { ?>
 					   		jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?> .aesop-parallax-sc-img').parallax({speed: 0.1});
 					        var viewport = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?>').outerHeight();
-		        			jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1.65});
+		        			jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1.5});
 		        			<?php } ?>
 
 		        			<?php if ( 'on' == $atts['floater'] ) {?>
