@@ -5,7 +5,7 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -148,8 +148,10 @@ Full documentation can be found below.
 * TWEAK - Parallax optimizations and performance enhancements
 * TWEAK - Gallery performance optimizations
 * TWEAK - Cleaned up user interface for creating Galleries in admin
+* TWEAK - Audio/Video waypoint filters now targets individual components
 * FIXED - Better support for Aesop Lazy Loader
 * FIXED - Video icon
+* FIXED - Quote parallax floater options fixed (could not move up or down so two options are now left and right)
 
 = 1.0.9 =
 * FIXED - Various generator fixes for WordPress 4.0
