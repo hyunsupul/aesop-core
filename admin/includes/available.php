@@ -1035,18 +1035,14 @@ if(!function_exists('aesop_shortcodes')){
 *	@since 1.1
 *   @todo cache this query
 * 	@param $type - post-type
+* 	@todo implement caching based on component settings view
 */
 
 function aesop_option_get_posts($type = 'post'){
 
 	$args = array('posts_per_page' => -1, 'post_type' => $type);
 
-	$posts = wp_cache_get('aesop_option_get_posts');
-
-	if ( false == $posts ) {
-		$posts = get_posts($args);
-		wp_cache_set('aesop_option_get_posts', $posts);
-	}
+	$posts = get_posts($args);
 
 	$array = array();
 
@@ -1072,17 +1068,13 @@ function aesop_option_get_posts($type = 'post'){
 *	@since 1.1
 *   @todo cache this query
 * 	@param $type - post-type
+* 	@todo implement caching based on component settings view
 */
 function aesop_option_get_categories($type = 'post') {
 
 	$args = array('type' => $type);
 
-	$cats = wp_cache_get('aesop_option_get_cats');
-
-	if ( false == $cats ) {
-		$cats = get_categories($args);
-		wp_cache_set('aesop_option_get_cats', $cats);
-	}
+	$cats = get_categories($args);
 
 	$array = array();
 
