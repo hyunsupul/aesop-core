@@ -12,7 +12,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	// return the html div equivalent of the shortcodes
 	function html( cls, data ) {
 		// let's pull out the shortcode type, options and content
-		var re_full = /\[aesop_([a-zA-Z]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z_]+]/g;
+		var re_full = /\[aesop_([a-zA-Z_]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z_]+]/g;
 		var re_short = /\[aesop_([a-zA-Z_]+)\s?([^\[\]]*)]/g;
 
 		var parse = re_full.exec(data);
@@ -21,7 +21,8 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			parse = re_short.exec(data);
 			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem aesop-component-short ' + cls + '"><div class="aesop-component-mask"></div><div class="aesop-component-bar" contenteditable="false"><div class="aesop-component-controls"><div title="Delete Component" class="aesop-button aesop-button-delete">&nbsp;</div><div title="Edit Component" class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div title="Cut/Paste Component" class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1].replace(/_/g, " ") + '</span></div><div class="aesop-end">WcMgcq</div></div>';
 		} else {
-			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem aesop-component-long ' + cls + '"><div class="aesop-component-mask"></div><div class="aesop-component-bar"  contenteditable="false"><div class="aesop-component-controls"><div title="Delete Component" class="aesop-button aesop-button-delete">&nbsp;</div><div title="Edit Component" class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div title="Cut/Paste Component" class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1].replace(/_/g, " ") + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '">' + parse[3] + '</div></div>';
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem aesop-component-long ' + cls + '"><div class="aesop-component-mask"></div><div class="aesop-component-bar"  contenteditable="false"><div class="aesop-component-controls"><div title="Delete Component" class="aesop-button aesop-button-delete">&nbsp;</div><div title="Edit Component" class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div title="Cut/Paste Component" class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1].replace(/_/g, " ") + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '"><p>' + parse[3] + '</p></div></div>';
+			console.log(st);
 		}
 
 		return st;
