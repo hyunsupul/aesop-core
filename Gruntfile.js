@@ -9,7 +9,7 @@ module.exports = function(grunt) {
         watch: {
             less: {
 				files: ['public/assets/less/*/**','admin/assets/less/*/**'],
-                tasks: ['less:adminLess']
+                tasks: ['less:publicLess']
             },
             livereload: {
                 options: { livereload: true },
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
 		      		cleancss:true
 		    	},
 		    	files: {
-		      		"public/assets/css/ai-core.min.css": "public/assets/less/style.less"
+		      		"public/assets/css/ai-core.css": "public/assets/less/style.less"
 		    	}
 		  	},
 		  	publicLess: {
@@ -137,7 +137,22 @@ module.exports = function(grunt) {
 		        swapPath: '/tmp'
 		    },
 		    all: ['*.php', '**/*.php', '!node_modules/**/*.php']
-		}
+		},
+
+	    cssjanus: {
+			core: {
+				options: {
+					swapLtrRtlInUrl: false
+				},
+				files: [
+					{
+						src: 'public/assets/css/ai-core.css',
+						dest: 'public/assets/css/ai-core-rtl.css'
+					}
+				]
+			}
+
+	    }
     });
 
     // register task

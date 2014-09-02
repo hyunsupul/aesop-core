@@ -1,4 +1,4 @@
- @import url(//fonts.googleapis.com/css?family=Open+Sans);
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
 
 .aesop-component{
 	background-color: #555;
@@ -7,6 +7,8 @@
 	color: rgb(214, 214, 214);
 	position: relative;
 	font-family: "Open Sans", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .aesop-component-bar{
@@ -42,7 +44,7 @@
 .aesop-chapter-title:before { content: "\f330"; }
 .aesop-image-title:before { content: "\f128"; }
 .aesop-audio-title:before { content: "\f127"; }
-.aesop-video-title:before { content: "\f235"; }
+.aesop-video-title:before { content: "\f126"; }
 .aesop-map-title:before { content: "\f319"; }
 .aesop-character-title:before { content: "\f338"; }
 .aesop-timeline-title:before { content: "\f469"; }

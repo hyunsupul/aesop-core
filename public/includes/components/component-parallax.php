@@ -18,7 +18,6 @@ if (!function_exists('aesop_parallax_shortcode')){
 			'floatermedia' 		=> '',
 			'floaterposition' 	=> 'right',
 			'floaterdirection'	=> 'up',
-			'floateroffset'		=> 100,
 			'caption'			=> '',
 			'captionposition' 	=> 'bottom-left',
 			'lightbox' 			=> false
@@ -56,20 +55,20 @@ if (!function_exists('aesop_parallax_shortcode')){
 							<?php if ( 'on' == $atts['parallaxbg'] ) { ?>
 					   		jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?> .aesop-parallax-sc-img').parallax({speed: 0.1});
 					        var viewport = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?>').outerHeight();
-		        			jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1.65});
+		        			jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1.5});
 		        			<?php } ?>
 
 		        			<?php if ( 'on' == $atts['floater'] ) {?>
 								var obj = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?> .aesop-parallax-sc-floater');
 						       	function scrollParallax(){
-						       	    var height 			= <?php echo $height;?>,
-        	        					offset 			= jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?>').offset().top,
+						       	    var height 			= jQuery(obj).height(),
+        	        					offset 			= jQuery(obj).offset().top,
 						       	    	scrollTop 		= jQuery(window).scrollTop(),
 						       	    	windowHeight 	= jQuery(window).height(),
-						       	    	floater 		= Math.round( (offset - scrollTop - <?php echo absint(sanitize_text_field($atts['floateroffset']));?>) * 0.1);
+						       	    	floater 		= Math.round( (offset - scrollTop) * 0.1);
 
-						       	    // only run parallax if image in view
-						       	    if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
+						       	    // only run parallax if in view
+						       	    if (offset >= scrollTop + windowHeight) {
 										return;
 									}
 

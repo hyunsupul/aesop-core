@@ -213,7 +213,7 @@ jQuery('#aesop-upload-img').live('click', function( event ){
     // When an image is selected, run a callback.
     file_frame.on( 'select', function() {
       	attachment = file_frame.state().get('selection').first().toJSON();
-  		jQuery('#aesop-generator-attr-img,#aesop-generator-attr-src, #aesop-generator-attr-hosted').val(attachment.url);
+  		jQuery('.aesop-generator-attr-media_upload,#aesop-generator-attr-src, #aesop-generator-attr-hosted').val(attachment.url);
     });
 
     // Finally, open the modal

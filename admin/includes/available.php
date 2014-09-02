@@ -207,20 +207,7 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'size' 			=> array(
 						'type'		=> 'select',
-						'values' 	=> array(
-							array(
-								'value' => '2',
-								'name'	=> '2'
-							),
-							array(
-								'value' => '3',
-								'name'	=> '3'
-							),
-							array(
-								'value' => '4',
-								'name'	=> '4'
-							)
-						),
+						'values' 	=> aesop_option_counter(10),
 						'default' 	=> '2',
 						'desc' 		=> __( 'Quote Size', 'aesop-core' ),
 						'tip'		=> __('Font size of the quote.','aesop-core')
@@ -239,7 +226,6 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'cite' 		=> array(
 						'type'		=> 'text_area',
-						'values'	=> array(),
 						'default' 	=> '',
 						'desc' 		=> __('Cite (optional)', 'aesop-core' ),
 						'tip'		=> __('Provide an optional cite or source for the quote.','aesop-core')
@@ -260,30 +246,9 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Enable Quote Parallax', 'aesop-core' ),
 						'tip'		=> __('Set to <em>on</em> to enable the quote text to animate across the component.','aesop-core')
 					),
-					'offset' 		=> array(
-						'type'		=> 'text_small',
-						'default' 	=> 300,
-						'desc' 		=> __('If using parallax, starting offset.', 'aesop-core' ),
-						'tip'		=> __('Start with a value like <code>100px</code>, and tweak until desired. This moves starting position of the quote back 100px if using parallax.','aesop-core')
-					),
-					'speed' 		=> array(
-						'type'		=> 'text',
-						'default' 	=> '8',
-						'desc' 		=> __('Speed of parallax movement. Lower is faster.', 'aesop-core' ),
-						'tip'		=> __('How fast the quote should travel across the screen, if using parallax. Default is 8.','aesop-core')
-
-					),
 					'direction' => array(
 						'type'		=> 'select',
 						'values' 	=> array(
-							array(
-								'value' => 'up',
-								'name'	=> __('Up','aesop-core')
-							),
-							array(
-								'value' => 'down',
-								'name'	=> __('Down','aesop-core')
-							),
 							array(
 								'value' => 'left',
 								'name'	=> __('Left','aesop-core')
@@ -293,7 +258,7 @@ if(!function_exists('aesop_shortcodes')){
 								'name'	=> __('Right','aesop-core')
 							)
 						),
-						'default' 	=> 'up',
+						'default' 	=> 'right',
 						'desc' 		=> __('Parallax Direction of Quote', 'aesop-core' ),
 						'tip'		=> __('The direction that the quote should travel in, if using parallax.','aesop-core')
 					)
@@ -331,24 +296,7 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'columns' 			=> array(
 						'type'		=> 'select',
-						'values' 	=> array(
-							array(
-								'value' => '1',
-								'name'	=> '1'
-							),
-							array(
-								'value' => '2',
-								'name'	=> '2'
-							),
-							array(
-								'value' => '3',
-								'name'	=> '3'
-							),
-							array(
-								'value' => '4',
-								'name'	=> '4'
-							)
-						),
+						'values' 	=> aesop_option_counter(4),
 						'default' 	=> '',
 						'desc' 		=> __( 'Number of Columns', 'aesop-core' ),
 						'tip'		=> __('Here you can optionally set the number of columns that the text should be split into. Example <code>2</code> will make 2 columns of text.','aesop-core')
@@ -447,11 +395,6 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __('Position of Floater', 'aesop-core' ),
 						'tip'		=> __('If you are using the Floater option, where should the floater be positioned?','aesop-core')
 					),
-					'floateroffset' => array(
-						'type'		=> 'text_small',
-						'desc' 		=> __('Offset Amount of Floater (px or %)', 'aesop-core' ),
-						'tip'		=> __('This value will vary depending on your floater media. Enter a value like <code>-200px</code> and tweak as you see fit.','aesop-core')
-					),
 					'floaterdirection' => array(
 						'type'		=> 'select',
 						'values' 	=> array(
@@ -511,6 +454,22 @@ if(!function_exists('aesop_shortcodes')){
 						'default'	=> 'img',
 						'desc'		=> __('Background Type','aesop-core'),
 						'tip'		=> __('Optionally set a looping video background.','aesop-core')
+					),
+					'full'			=> array(
+						'type'		=> 'select',
+						'values' 	=> array(
+							array(
+								'value' => 'on',
+								'name'	=> __('On','aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off','aesop-core')
+							)
+						),
+						'default'	=> '',
+						'desc'		=> __('Full-size Background Image','aesop-core'),
+						'tip'		=> __('If set to on, background image of the chapter will be as large as the browser.','aesop-core')
 					),
 					'img' 			=> array(
 						'type'		=> 'media_upload',
@@ -641,11 +600,6 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 'right',
 						'desc' 		=> __('Position of Floater', 'aesop-core' ),
 						'tip'		=> __('If you are using the Floater option, where should the floater be positioned?','aesop-core')
-					),
-					'floateroffset' => array(
-						'type'		=> 'text_small',
-						'desc' 		=> __('Offset Amount of Floater (px or %)', 'aesop-core' ),
-						'tip'		=> __('This value will vary depending on your floater media. Enter a value like <code>-200px</code> and tweak as you see fit.','aesop-core')
 					),
 					'floaterdirection' => array(
 						'type'		=> 'select',
@@ -1027,24 +981,7 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'columns' 			=> array(
 						'type'		=> 'select',
-						'values' 	=> array(
-							array(
-								'value' => '2',
-								'name'	=> '2'
-							),
-							array(
-								'value' => '3',
-								'name'	=> '3'
-							),
-							array(
-								'value' => '4',
-								'name'	=> '4'
-							),
-							array(
-								'value' => '5',
-								'name'	=> '5'
-							)
-						),
+						'values' 	=> aesop_option_counter(5),
 						'default' 	=> '2',
 						'desc' 		=> __( 'Columns', 'aesop-core' ),
 						'tip'		=> __('Stories are displayed in a grid. How many columns should the grid be?','aesop-core')
@@ -1098,11 +1035,13 @@ if(!function_exists('aesop_shortcodes')){
 *	@since 1.1
 *   @todo cache this query
 * 	@param $type - post-type
+* 	@todo implement caching based on component settings view
 */
 
 function aesop_option_get_posts($type = 'post'){
 
 	$args = array('posts_per_page' => -1, 'post_type' => $type);
+
 	$posts = get_posts($args);
 
 	$array = array();
@@ -1129,10 +1068,12 @@ function aesop_option_get_posts($type = 'post'){
 *	@since 1.1
 *   @todo cache this query
 * 	@param $type - post-type
+* 	@todo implement caching based on component settings view
 */
 function aesop_option_get_categories($type = 'post') {
 
 	$args = array('type' => $type);
+
 	$cats = get_categories($args);
 
 	$array = array();
@@ -1150,6 +1091,29 @@ function aesop_option_get_categories($type = 'post') {
 		return $array;
 
 	endif;
+}
+
+/**
+*
+*	Helper function to build a dropdown with integers
+*
+*	@since 1.1
+* 	@param $count - int
+*/
+function aesop_option_counter( $count = 10 ) {
+
+	$array = array();
+
+	for ($i = 1; $i <= $count; $i++) {
+
+		array_push( $array, array(
+	        'value' => $i,
+	        'name' 	=> $i
+	    ));
+
+	}
+
+	return $array;
 }
 
 ?>

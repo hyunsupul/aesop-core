@@ -1,11 +1,11 @@
 === Aesop Story Engine ===
-Contributors: nphaskins, mauryaratan, Tmeister
+Contributors: nphaskins, mauryaratan, Tmeister, etc
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -133,6 +133,26 @@ Full documentation can be found below.
 
 
 == Changelog ==
+
+= 1.1 = This update took 2 people an estimated 50 hours + approximately $3000 for new editable feature
+* NEW - Complete compatibilty with WordPress 4.0
+* NEW - New user interface
+* NEW - Components are now editable
+* NEW - API for creating addons to sell or give away
+* NEW - RTL support
+* ADDED - Filters for Audio and Video component waypoints
+* ADDED - Filters for timeline and location offsets
+* ADDED - Filter to let Map component run on pages
+* ADDED - Gallery component to the component generator with a dropdown to select gallery to insert
+* TWEAK - No longer have to input collection ID they are now automatically fed into a dropdown to select
+* TWEAK - Parallax floater item offset now automatically calculated - this means offset and speed options no longer necessary and have been removed
+* TWEAK - Parallax optimizations and performance enhancements
+* TWEAK - Gallery performance optimizations
+* TWEAK - Cleaned up user interface for creating Galleries in admin
+* TWEAK - Audio/Video waypoint filters now targets individual components
+* FIXED - Better support for Aesop Lazy Loader
+* FIXED - Video icon
+* FIXED - Quote parallax floater options fixed (could not move up or down so two options are now left and right)
 
 = 1.0.9 =
 * FIXED - Various generator fixes for WordPress 4.0
