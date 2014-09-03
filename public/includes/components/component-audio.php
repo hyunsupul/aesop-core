@@ -37,7 +37,8 @@ if (!function_exists('aesop_audio_shortcode')){
 		$loop = 'on' == $atts['loop'] ? 'true' : false;
 
 		// waypoint filter
-		$waypoint = apply_filters('aesop_audio_component_waypoint-'.$unique, 'bottom-in-view');
+		$point 		= 'bottom-in-view';
+		$waypoint 	= apply_filters('aesop_audio_component_waypoint', $point, $unique);
 
 	    ob_start();
 

@@ -65,7 +65,8 @@ if (!function_exists('aesop_video_shortcode')){
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'video', '' ) : null;
 
 		// waypoint filter
-		$waypoint = apply_filters('aesop_video_component_waypoint-'.$unique, 'bottom-in-view');
+		$point 		= 'bottom-in-view';
+		$waypoint 	= apply_filters('aesop_video_component_waypoint', $point, $unique);
 
 	    ob_start();
 
