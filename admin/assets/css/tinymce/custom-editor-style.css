@@ -1,5 +1,9 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans);
 
+.aesop-button-clipboard {
+	display: none;
+}
+
 .aesop-component{
 	background-color: #555;
 	margin: 15px 0;
