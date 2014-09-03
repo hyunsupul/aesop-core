@@ -96,7 +96,7 @@ If you think something is missing, we want to hear from you. Post your request a
 
 = Uploading in WordPress Dashboard =
 
-1. Navigate to the 'Add New' in the plugins dashboard
+1. Navigate to 'Add New' in the plugins dashboard
 2. Navigate to the 'Upload' area
 3. Select `aesop-core.zip` from your computer
 4. Click 'Install Now'
