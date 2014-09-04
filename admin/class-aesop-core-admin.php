@@ -208,6 +208,10 @@ class Aesop_Core_Admin {
 							}
 							?>
 						</select>
+
+						<?php if ( !defined('AI_CORE_WATERMARK' ) ) {
+							echo self::messages();
+						} ?>
 					</div>
 
 					<div id="aesop-generator-settings-outer" class="aesop-generator-right">
@@ -227,5 +231,22 @@ class Aesop_Core_Admin {
 			</div>
 		</div>
 		<?php }
+	}
+
+	/**
+	*
+	*	@since 1.1
+	*	@return array of random messages used for watermark
+	*
+	*/
+	private function messages() {
+
+		$message = array(
+			__('Brought to you by Aesopinteractive L.L.C - <a href="http://aesopstoryengine.com">http://aesopstoryengine.com</a>', 'aesop-core'),
+			__('Donate to further development for Aesop Story Engine at <a href="http://aesopstoryengine.com/donate">http://aesopstoryengine.com/donate</a>', 'aesop-core')
+		);
+
+		return '<p class="aesop-generator-mark">'.$message[array_rand($message)].'</p>';
+
 	}
 }

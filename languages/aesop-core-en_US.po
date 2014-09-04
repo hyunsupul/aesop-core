@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Core\n"
-"POT-Creation-Date: 2014-09-01 10:19-0600\n"
-"PO-Revision-Date: 2014-09-01 10:19-0600\n"
+"POT-Creation-Date: 2014-09-03 19:53-0600\n"
+"PO-Revision-Date: 2014-09-03 19:53-0600\n"
 "Last-Translator: Team Aesop <support@aesopinteractive.com>\n"
 "Language-Team: Team Aesop <info@aesopinteractive.com>\n"
 "Language: en_US\n"
@@ -19,8 +19,20 @@ msgstr ""
 msgid "Add Component"
 msgstr ""
 
-#: ../admin/class-aesop-core-admin.php:217
+#: ../admin/class-aesop-core-admin.php:221
 msgid "Select a story component."
+msgstr ""
+
+#: ../admin/class-aesop-core-admin.php:245
+msgid ""
+"Brought to you by Aesopinteractive L.L.C - <a href=\"http://aesopstoryengine."
+"com\">http://aesopstoryengine.com</a>"
+msgstr ""
+
+#: ../admin/class-aesop-core-admin.php:246
+msgid ""
+"Donate to further development for Aesop Story Engine at <a href=\"http://"
+"aesopstoryengine.com/donate\">http://aesopstoryengine.com/donate</a>"
 msgstr ""
 
 #: ../admin/includes/available.php:13 ../admin/includes/available.php:447
@@ -1236,7 +1248,7 @@ msgid ""
 "gallery ID."
 msgstr ""
 
-#: ../public/includes/components/component-image.php:65
+#: ../public/includes/components/component-image.php:61
 msgid "Enlarge"
 msgstr ""
 
