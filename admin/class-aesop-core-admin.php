@@ -242,7 +242,7 @@ class Aesop_Core_Admin {
 	private function messages() {
 
 		$message = array(
-			__('Brought to you by Aesopinteractive L.L.C - <a href="http://aesopstoryengine.com">http://aesopstoryengine.com</a>', 'aesop-core'),
+			__('Brought to you by Aesopinteractive LLC - <a href="http://aesopstoryengine.com">http://aesopstoryengine.com</a>', 'aesop-core'),
 			__('Donate to further development for Aesop Story Engine at <a href="http://aesopstoryengine.com/donate">http://aesopstoryengine.com/donate</a>', 'aesop-core')
 		);
 
