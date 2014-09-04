@@ -55,35 +55,30 @@ class AesopTimelineComponent {
 		// add a body class if timeline is active
 		add_filter('body_class',		array($this,'body_class'));
 
-		// draw the timeline div, conditionally depending on version
-		if (AI_CORE_VERSION < '1.0.5') {
-			_deprecated_function( 'aesop_inside_body_top', '1.0.5', 'ase_theme_body_inside_top' );
-		} else {
-			add_action('ase_theme_body_inside_top', array($this,'draw_timeline')); // post 1.0.5
-		}
-
 	}
 
 	function aesop_timeline_loader(){
 
-		// maintain backwards compatibility
-		$offset = 0;
-
 		// allow theme developers to determine the offset amount
-		$timelineOffset = apply_filters('aesop_timeline_scroll_offset', $offset );
+		$timelineOffset = apply_filters('aesop_timeline_scroll_offset', 0 );
 
 		// filterable content class
-		$contentClass = apply_filters('aesop_timeline_scroll_container', '.aesop-entry-content');
+		$contentClass = apply_filters('aesop_timeline_scroll_container', 'article');
+
+		// filterable target class
+		$appendTo    = apply_filters('aesop_timeline_scroll_nav', '.aesop-timeline');
 
 		?>
 			<!-- Aesop Timeline -->
 			<script>
 			jQuery(document).ready(function(){
 
+				jQuery('body').append('<div class="aesop-timeline"></div>');
+
 				jQuery('<?php echo $contentClass;?>').scrollNav({
 				    sections: '.aesop-timeline-stop',
 				    arrowKeys: true,
-				    insertTarget: '.aesop-timeline',
+				    insertTarget: '<?php echo $appendTo;?>',
 				    insertLocation: 'appendTo',
 				    showTopLink: false,
 				    showHeadline: false,
@@ -102,11 +97,6 @@ class AesopTimelineComponent {
 		<?php 
 	}
 
-	function draw_timeline(){
-
-		?><div class="aesop-timeline"></div><?php
-
-	}
 
 	function body_class($classes) {
 
