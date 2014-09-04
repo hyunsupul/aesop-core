@@ -181,7 +181,6 @@ if(!function_exists('aesop_shortcodes')){
 					'height' 		=> array(
 						'type'		=> 'text_small',
 						'default' 	=> 'auto',
-						'prefix'	=> 'px',
 						'desc' 		=> __('Height of Quote Area', 'aesop-core' ),
 						'tip'		=> __('Enter a quote area height like <code>400px</code>. The quote will automatically center itself vertically. By default this is set to <code>auto</code>.','aesop-core')
 					),
@@ -290,7 +289,6 @@ if(!function_exists('aesop_shortcodes')){
 					'height'			=> array(
 						'type'		=> 'text_small',
 						'default' 	=> '',
-						'prefix'	=> 'px',
 						'desc' 		=> __( 'Height of Component', 'aesop-core' ),
 						'tip'		=> __('Enter an optional height for the component. ou can enter the size as <code>40%</code> or <code>500px</code>. By default it\'s set to <code>auto</code>. Use a large height like <code>1200px</code> to have a large blank area with small text.','aesop-core')
 					),
@@ -488,7 +486,6 @@ if(!function_exists('aesop_shortcodes')){
 					'height' 		=> array(
 						'type'		=> 'text_small',
 						'default' 	=> '500',
-						'prefix'	=> 'px',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
 						'tip'		=> __('The height of the viewable image area. Enter a value such as <code>500px</code>. Avoid using percentages with this option.','aesop-core')
 					),
@@ -896,7 +893,6 @@ if(!function_exists('aesop_shortcodes')){
 					'height' 			=> array(
 						'type'		=> 'text_small',
 						'default' 	=> '',
-						'prefix'	=> 'px',
 						'desc' 		=> __( 'Height', 'aesop-core' ),
 						'tip'		=> __('The height of the map component. By default this is set to <em>500px</em>. Avoid using percentages with this option.','aesop-core')
 					)
