@@ -144,6 +144,7 @@ Full documentation can be found below.
 * ADDED - Filters for timeline and location offsets
 * ADDED - Filter to let Map component run on pages
 * ADDED - Gallery component to the component generator with a dropdown to select gallery to insert
+* ADDED - Captions to grid gallery items if a caption is set
 * TWEAK - No longer have to input collection ID they are now automatically fed into a dropdown to select
 * TWEAK - Parallax floater item offset now automatically calculated - this means offset and speed options no longer necessary and have been removed
 * TWEAK - Parallax optimizations and performance enhancements
