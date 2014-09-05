@@ -134,7 +134,7 @@ Full documentation can be found below.
 
 == Changelog ==
 
-= 1.1 = This update took 2 people an estimated 50 hours + approximately $3000 for new editable feature
+= 1.1 = 
 * NEW - Complete compatibilty with WordPress 4.0
 * NEW - New user interface
 * NEW - Components are now editable
@@ -150,6 +150,7 @@ Full documentation can be found below.
 * TWEAK - Gallery performance optimizations
 * TWEAK - Cleaned up user interface for creating Galleries in admin
 * TWEAK - Audio/Video waypoint filters now targets individual components
+* TWEAK - Timeline component redesigned to perform well wihin *most* WordPress themes
 * FIXED - Better support for Aesop Lazy Loader
 * FIXED - Video icon
 * FIXED - Quote parallax floater options fixed (could not move up or down so two options are now left and right)
