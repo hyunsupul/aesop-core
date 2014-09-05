@@ -319,6 +319,33 @@
     display:block;
 }
 
+.aesop-grid-gallery {
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        .aesop-grid-gallery-item {
+            list-style-type:none;
+            position: relative;
+            line-height: 0;
+        }
+    }
+
+    a {color:inherit;}
+
+    .aesop-grid-gallery-caption {
+        position: absolute;
+        top:5px;
+        left:5px;
+        background:fadeout(white,10);
+        padding:5px 8px;
+        font-size:14px;
+        line-height:18px;
+    }
+
+}
+
 //galleries
 .aesop-gallery-component {z-index: 0;}
 .aesop-grid-gallery {position: relative;}

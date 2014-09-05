@@ -141,7 +141,7 @@ class AesopCoreGallery {
 
                 $full    =  wp_get_attachment_url($image_id, $size, false,'');
                 $alt     =  get_post_meta($image_id, '_wp_attachment_image_alt', true);
-               	$caption =  isset( $image_id->post_excerpt ) ? $image_id->post_excerpt : null;
+                $caption 		= get_post($image_id)->post_excerpt;
 
                ?><img src="<?php echo $full;?>" data-caption="<?php echo $caption;?>" alt="<?php echo esc_attr($alt);?>"><?php
 
@@ -177,25 +177,26 @@ class AesopCoreGallery {
 			          	offset: <?php echo $space;?>,
 			          	flexibleWidth: <?php echo $gridwidth;?>
 			        };
-			        var handler = jQuery('#aesop-grid-gallery-<?php echo $gallery_id;?> img');
+			        var handler = jQuery('#aesop-grid-gallery-<?php echo $gallery_id;?> li');
 			        jQuery(handler).wookmark(options);
 			    });
 			});
 		</script>
-		<div id="aesop-grid-gallery-<?php echo $gallery_id;?>" class="aesop-grid-gallery aesop-grid-gallery" style="width:100%;max-width:<?php echo $width;?>;margin:0 auto;"><?php
+		<div id="aesop-grid-gallery-<?php echo $gallery_id;?>" class="aesop-grid-gallery aesop-grid-gallery" style="width:100%;max-width:<?php echo $width;?>;margin:0 auto;"><ul><?php
 
 			foreach ($image_ids as $image_id):
 
                 $getimage 		= wp_get_attachment_image($image_id, 'aesop-grid-image', false, array('class' => 'aesop-grid-image'));
 				$getimgsrc 		= wp_get_attachment_image_src($image_id, $size);
-                $img_title 	  	= isset( $image_id->post_title ) ? $image_id->post_title : null;
+                $img_title 	  	= get_post($image_id)->post_title;
+                $caption 		= get_post($image_id)->post_excerpt;
 
-               	printf('<a class="aesop-lightbox" href="%s" title="%s"><span class="clearfix">%s</span></a>',$getimgsrc[0], esc_attr($img_title), $getimage);
+               	printf('<li class="aesop-grid-gallery-item"><a class="aesop-lightbox" href="%s" title="%s"><span class="aesop-grid-gallery-caption">%s</span><span class="clearfix">%s</span></a></li>',$getimgsrc[0], esc_attr($img_title), $caption, $getimage);
 
 			endforeach;
 
 
-		?></div><?php
+		?></ul></div><?php
 	}
 
     /**
@@ -230,8 +231,8 @@ class AesopCoreGallery {
 
 		foreach ( $image_ids as $image_id ):
 
-            $full    =  wp_get_attachment_url($image_id, $size, false,'');
-            $caption =  isset( $image_id->post_excerpt ) ? $image_id->post_excerpt : null;
+            $full    		=  wp_get_attachment_url($image_id, $size, false,'');
+            $caption 		= get_post($image_id)->post_excerpt;
 
            	?>
            	<div class="aesop-stacked-img" style="background-image:url('<?php echo $full;?>');<?php echo $styles;?>">
@@ -259,7 +260,7 @@ class AesopCoreGallery {
 
             $img     =  wp_get_attachment_url($image_id, $size, false,'');
             $alt     =  get_post_meta($image_id, '_wp_attachment_image_alt', true);
-            $caption =  isset( $image_id->post_excerpt ) ? $image_id->post_excerpt : null;
+            $caption 		= get_post($image_id)->post_excerpt;
 
            	?>
            	<figure class="aesop-sequence-img-wrap">
@@ -349,7 +350,7 @@ class AesopCoreGallery {
 
 		            $full    	=  wp_get_attachment_url( $image_id, $size, false, '' );
 		            $alt     	=  get_post_meta( $image_id, '_wp_attachment_image_alt', true );
-		            $title 	  	=  isset( $image_id->post_title ) ? $image_id->post_title : null;
+                	$title 	  	= 	get_post($image_id)->post_title;
 
 		            $lb_link    =  $lightbox ? sprintf('data-highres="%s"', $full) : null;
 
