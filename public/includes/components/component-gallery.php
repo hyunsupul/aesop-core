@@ -260,7 +260,7 @@ class AesopCoreGallery {
 
             $img     =  wp_get_attachment_url($image_id, $size, false,'');
             $alt     =  get_post_meta($image_id, '_wp_attachment_image_alt', true);
-            $caption 		= get_post($image_id)->post_excerpt;
+            $caption 	= get_post($image_id)->post_excerpt;
 
            	?>
            	<figure class="aesop-sequence-img-wrap">
