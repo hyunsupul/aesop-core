@@ -60,8 +60,8 @@ class Aesop_Core_Admin {
 
 
 		/*
-		 	* Define custom functionality.
-		 	*
+		*  Define custom functionality.
+		*
 		*/
 		add_action( 'media_buttons', 			array($this,'generator_button'), 100 );
 		add_action( 'admin_footer', 			array($this,'generator_popup'));
