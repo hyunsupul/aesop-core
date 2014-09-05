@@ -6,7 +6,7 @@ Aesop Story Engine is an open-sourced suite of tools that empowers developers to
 ### Installation 
 ##### Uploading in WordPress Dashboard    
 
-1. Navigate to the 'Add New' in the plugins dashboard  
+1. Navigate to 'Add New' in the plugins dashboard  
 2. Navigate to the 'Upload' area  
 3. Select `aesop-core.zip` from your computer  
 4. Click 'Install Now'  
@@ -32,18 +32,18 @@ At the heart of ASE are the storytelling components. They include:
 * Video  
 * Content  
 * Character  
-* Galleries  
-* Chapter Headings  
+* Gallery 
+* Chapter Heading  
 * Image  
-* Locations  
+* Location  
 * Parallax  
 * Quote  
 * Timeline  
-* Collections  
+* Collection  
 * Document Viewer  
 
 Interactive elements are created while crafting stories, with the Story Component Creator.    
-![Image](http://f.cl.ly/items/1m451j1I2a0v170D2k3m/Image%202014-09-01%20at%208.48.16%20AM.png)
+![Image](https://dl.dropboxusercontent.com/u/5594632/ase-screenshot.png)
 
 ---
 
@@ -57,6 +57,6 @@ Interactive elements are created while crafting stories, with the Story Componen
 
 ---
 
-### Demo Theme  (outdated)
-Here is a very, very basic sample WordPress theme showing implementation of the story engine component design. This demo theme ONLY includes styles for the single story as an example. 
+### Demo Theme  
+Here is a very, very basic sample WordPress theme showing implementation of the story engine component design. This demo theme ONLY includes styles for the single story as an example: 
 [https://github.com/bearded-avenger/aesop-sample-theme](https://github.com/bearded-avenger/aesop-sample-theme)  
