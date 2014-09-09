@@ -186,14 +186,22 @@
     background: @dark-gray;
 
     #aesop-generator-settings {
-        padding: 0 24px 20px;
+        padding-bottom:80px;
+
+        .aesop-buttoninsert-wrap {
+            position:absolute;
+            bottom:0;
+            right:0;
+            background:@dark-gray;
+            left:63%;
+        }
 
         p {
             margin:0;
             position: relative;
             border-bottom:1px solid @border;
             //.box-shadow(0 1px 0 rgba(255,255,255,0.05));
-            padding:15px 0 22px;
+            padding:15px 15px 22px;
 
             &:first-child {
                 padding-top:24px;
@@ -346,10 +354,6 @@
     .aesop-content-floateroffset,
     .aesop-content-floaterdirection {
         background:lighten(@dark-gray,3);
-        padding-left: 24px;
-        padding-right: 24px;
-        margin-left: -24px;
-        margin-right: -24px;
     }
 
     // 1st
