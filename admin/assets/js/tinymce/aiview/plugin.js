@@ -209,6 +209,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 			if ( scope ) {
 				$('body').toggleClass('modal-open');
+				$('body').addClass('modal-updating');
 				$('#aesop-generator-wrap').toggleClass('aesop-generator-open');
 
 				// open up the option based on scope

@@ -36,6 +36,7 @@ jQuery(document).ready(function($) {
     }
 		$(modal).removeClass('aesop-generator-open');
 		$('body').removeClass('modal-open');
+    $('body').removeClass('modal-updating');
 	}
 	settingsHeight();
 
