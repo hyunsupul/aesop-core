@@ -69,10 +69,10 @@ foreach( $codes as $slug => $shortcode ) {
 
 	} else {
 
-		$return .= '<p><label>' . __( 'Content', 'aesop-shortcodes' ) . '</label><input type="text" name="aesop-generator-content" id="aesop-generator-content" value="' . $shortcode['content'] . '" /></p>';
+		$return .= '<p><label>' . __( 'Content', 'aesop-core' ) . '</label><input type="text" name="aesop-generator-content" id="aesop-generator-content" value="' . $shortcode['content'] . '" /></p>';
 	}
 
-	$return .= '<p class="aesop-buttoninsert-wrap"><a href="#" id="aesop-generator-insert"><span class="aesop-generator-button-insert">' . __( 'Insert Component', 'aesop-shortcodes' ) . '</span><span class="aesop-generator-button-update">' . __( 'Update Component', 'aesop-shortcodes' ) . '</span></a></p> ';
+	$return .= '<p class="aesop-buttoninsert-wrap"><a href="#" id="aesop-generator-insert"><span class="aesop-generator-button-insert">' . __( 'Insert Component', 'aesop-core' ) . '</span><span class="aesop-generator-button-update">' . __( 'Update Component', 'aesop-core' ) . '</span></a></p> ';
 
 	$return .= '<input type="hidden" name="aesop-generator-result" id="aesop-generator-result" value="" />';
 
