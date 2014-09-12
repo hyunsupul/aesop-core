@@ -19,7 +19,15 @@ jQuery(document).ready(function($) {
 	var settingsHeight = function(){
 		var height  = $(window).height() - 90;
 		var width = $(window).width();
-		$('#aesop-generator-settings-outer').css({'height':height});
+
+		if ( width < 782 ) {
+			var genLeftHeight = $('.aesop-generator-left').height();
+			var buttonHeight = $('.aesop-buttoninsert-wrap').height();
+		} else {
+			var genLeftHeight = '';
+			var buttonHeight = '';
+		}
+		$('#aesop-generator-settings-outer').css({'height':height + genLeftHeight + buttonHeight});
 
 		if ( height < 700 && width > 782 ) {
 			$('.aesop-generator-left').addClass('aesop-generator-small-height');
