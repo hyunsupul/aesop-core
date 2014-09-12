@@ -18,9 +18,10 @@ jQuery(document).ready(function($) {
 
 	var settingsHeight = function(){
 		var height  = $(window).height() - 90;
+		var width = $(window).width();
 		$('#aesop-generator-settings-outer').css({'height':height});
 
-		if ( height < 700 ) {
+		if ( height < 700 && width > 782 ) {
 			$('.aesop-generator-left').addClass('aesop-generator-small-height');
 		} else {
 			$('.aesop-generator-left').removeClass('aesop-generator-small-height');
