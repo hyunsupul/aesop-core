@@ -64,14 +64,14 @@ if (!function_exists('aesop_collection_shortcode')){
 								$cats = wp_cache_get('aesop_splash_query_'.$atts['collection']);
 
 								// if no cached query then cache the query
-								if (false == $cats ) {
+								if ( false == $cats ) {
 									$cats = get_categories( apply_filters('aesop_splash_query',$cat_args) );
 									wp_cache_set('aesop_splash_query_'.$atts['collection'], $cats);
 								}
 
-								if ($cats):
+								if ( $cats ):
 
-									foreach($cats as $cat) {
+									foreach ( $cats as $cat ) {
 
 										?><div class="aesop-collection-item aesop-collection-category-<?php echo $cat->slug;?>">
 											<?php do_action('aesop_collection_inside_category_item_top'); // action ?>
@@ -103,13 +103,13 @@ if (!function_exists('aesop_collection_shortcode')){
 								$query = wp_cache_get('aesop_collection_query_' . $atts['collection'] );
 
 								// if no cached query then cache the query
-								if (false == $query ) {
+								if ( false == $query ) {
 									$query = new wp_query( apply_filters( 'aesop_collection_query', $args ) );
 									wp_cache_set('aesop_collection_query_' . $atts['collection'] , $query);
 								}
 
 								// loop through the stories
-								if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
+								if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 
 									$coverimg 		= wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID() ), 'large' );
 
