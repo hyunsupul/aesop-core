@@ -124,6 +124,17 @@
     .aesop-content-comp-columns-4 .aesop-content-comp-inner{
         .content-columns(4, 20);
     }
+
+    @media(max-width:766px){
+       .aesop-content-comp-wrap {
+            &.aesop-content-comp-columns-2 .aesop-content-comp-inner,
+            &.aesop-content-comp-columns-3 .aesop-content-comp-inner,
+            &.aesop-content-comp-columns-4 .aesop-content-comp-inner{
+                .content-columns(1, 20);
+                max-width:100% !important ; //overriding js
+            }
+        }
+    }
 }
 
 // image component
