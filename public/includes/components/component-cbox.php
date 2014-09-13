@@ -74,11 +74,14 @@ if (!function_exists('aesop_content_shortcode')){
 		// has image class
 		$has_img = $atts['img'] ? 'aesop-content-has-img' : false;
 
+		// has floater
+		$has_floater = $atts['floatermedia'] ? 'aesop-content-has-floater' : false;
+
 		ob_start();
 
 		do_action('aesop_cbox_before'); //action
 			?>
-				<div class="aesop-component aesop-content-component <?php echo $classes.' '.$has_img;?>" style="<?php echo $height;?>" >
+				<div class="aesop-component aesop-content-component <?php echo $classes.' '.$has_img. ' '.$has_floater;?>" style="<?php echo $height;?>" >
 
 					<?php if ( $atts['floatermedia'] && !wp_is_mobile() ) { ?>
 						<!-- Aesop Content Component -->
@@ -89,11 +92,16 @@ if (!function_exists('aesop_content_shortcode')){
 
 						       	function scrollParallax(){
 
-						       	    var height 			= jQuery('#aesop-content-component-<?php echo $unique;?>').height(),
-	        	        				offset 			= jQuery('#aesop-content-component-<?php echo $unique;?>').offset().top,
+						       	    var height 			= jQuery(obj).height(),
+	        	        				offset 			= jQuery(obj).offset().top,
 							       	    scrollTop 		= jQuery(window).scrollTop(),
 							       	    windowHeight 	= jQuery(window).height(),
-							       	    floater 		= Math.round( scrollTop * 0.1 );
+							       	    floater 		= Math.round( (offset - scrollTop) * 0.1);
+
+							    	// only run parallax if in view
+						       		if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
+										return;
+									}
 
 						       	    <?php if ('up' == $atts['floaterdirection']){ ?>
 						            	jQuery(obj).css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
@@ -125,7 +133,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 							<?php echo do_action('aesop_cbox_content_inner_inside_top'); //action ?>
 
-							<?php echo do_shortcode(wpautop($content));?>
+								<?php echo do_shortcode(wpautop($content));?>
 
 							<?php echo do_action('aesop_cbox_content_inner_inside_bottom'); //action ?>
 
