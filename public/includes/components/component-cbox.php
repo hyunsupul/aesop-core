@@ -25,7 +25,7 @@ if (!function_exists('aesop_content_shortcode')){
 			'imgposition'		=> 'center center',
 			'imgsize'			=> 'cover',
 			'floatermedia' 		=> '',
-			'floaterdirection'	=> 'up',
+			'floaterdirection'	=> 'down',
 			'color' 			=> '#FFFFFF',
 			'background'		=> '#333333'
 		);
