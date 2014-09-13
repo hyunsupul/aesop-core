@@ -39,8 +39,6 @@ if (!function_exists('aesop_content_shortcode')){
 		// height
 		$height = $atts['height'] ? sprintf('min-height:%s;',$atts['height']) : false;
 
-		// bg size
-
 		// inner positioning
 		$getinnerposition = $atts['innerposition'] ? preg_split("/[\s,]+/", $atts['innerposition']) : false;
 
@@ -51,13 +49,12 @@ if (!function_exists('aesop_content_shortcode')){
 			'left' 		=> $getinnerposition[3]
 		);
 
-		$innerposition =  is_array($positionArray) && $atts['innerposition'] ? sprintf('position:absolute;top:%s;right:%s;bottom:%s;left:%s;',$positionArray['top'], $positionArray['right'], $positionArray['bottom'], $positionArray['left']) : false;
+		$innerposition =  is_array( $positionArray ) && $atts['innerposition'] ? sprintf('position:absolute;top:%s;right:%s;bottom:%s;left:%s;',$positionArray['top'], $positionArray['right'], $positionArray['bottom'], $positionArray['left']) : false;
 
 		// are we doing columns or image and do a clas based on it
 		$columns = $atts['columns'] ? sprintf('aesop-content-comp-columns-%s',$atts['columns']) : false;
 		$image = $atts['img'] ? 'aesop-content-img' : false;
 			$typeclass = $columns.' '.$image;
-
 
 		// image and width inline styles
 		$bgcolor = $atts['background'] ? sprintf('background-color:%s;',$atts['background']) : false;
@@ -90,32 +87,32 @@ if (!function_exists('aesop_content_shortcode')){
 					<?php if ( $atts['floatermedia'] && !wp_is_mobile() ) { ?>
 						<!-- Aesop Content Component -->
 						<script>
-							jQuery(document).ready(function(){
+						jQuery(document).ready(function(){
 
-								var obj = jQuery('#aesop-content-component-<?php echo $unique;?> .aesop-content-component-floater');
+							var obj = jQuery('#aesop-content-component-<?php echo $unique;?> .aesop-content-component-floater');
 
-						       	function scrollParallax(){
+					       	function scrollParallax(){
 
-						       	    var height 			= jQuery(obj).height(),
-	        	        				offset 			= jQuery(obj).offset().top,
-							       	    scrollTop 		= jQuery(window).scrollTop(),
-							       	    windowHeight 	= jQuery(window).height(),
-							       	    floater 		= Math.round( (offset - scrollTop) * 0.1);
+					       	    var height 			= jQuery(obj).height(),
+        	        				offset 			= jQuery(obj).offset().top,
+						       	    scrollTop 		= jQuery(window).scrollTop(),
+						       	    windowHeight 	= jQuery(window).height(),
+						       	    floater 		= Math.round( (offset - scrollTop) * 0.1);
 
-							    	// only run parallax if in view
-						       		if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
-										return;
-									}
+						    	// only run parallax if in view
+					       		if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
+									return;
+								}
 
-						       	    <?php if ('up' == $atts['floaterdirection']){ ?>
-						            	jQuery(obj).css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
-									<?php } else { ?>
-										jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
-									<?php } ?>
-						       	}
-						      	scrollParallax();
+					       	    <?php if ('up' == $atts['floaterdirection']){ ?>
+					            	jQuery(obj).css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
+								<?php } else { ?>
+									jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
+								<?php } ?>
+					       	}
+					      	scrollParallax();
 
-						        jQuery(window).scroll(function() {scrollParallax();});
+					        jQuery(window).scroll(function() {scrollParallax();});
 						});
 						</script>
 
@@ -137,7 +134,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 							<?php echo do_action('aesop_cbox_content_inner_inside_top'); //action ?>
 
-								<?php echo do_shortcode(wpautop($content));?>
+								<?php echo do_shortcode( wpautop( $content ) );?>
 
 							<?php echo do_action('aesop_cbox_content_inner_inside_bottom'); //action ?>
 
