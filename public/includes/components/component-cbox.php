@@ -26,6 +26,7 @@ if (!function_exists('aesop_content_shortcode')){
 			'imgsize'			=> 'cover',
 			'floatermedia' 		=> '',
 			'floaterdirection'	=> 'down',
+			'floaterposition'	=> 'left',
 			'color' 			=> '#FFFFFF',
 			'background'		=> '#333333'
 		);
@@ -69,13 +70,16 @@ if (!function_exists('aesop_content_shortcode')){
 			$itemstyle = $imgstyle || $txtcolor || $height ? sprintf('style="%s%s%s%s"',$imgstyle, $txtcolor, $bgcolor, $height) : false;
 
 		// custom classes
-		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'content', '' ) : null;
+		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'content', '' ) : false;
 
 		// has image class
 		$has_img = $atts['img'] ? 'aesop-content-has-img' : false;
 
 		// has floater
 		$has_floater = $atts['floatermedia'] ? 'aesop-content-has-floater' : false;
+
+		// floater positoin
+		$floaterposition = $atts['floaterposition'] ? sprintf('floater-%s', $atts['floaterposition']) : false;
 
 		ob_start();
 
@@ -125,7 +129,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 						if ( $atts['floatermedia'] && !wp_is_mobile() ) { ?>
 
-							<div class="aesop-content-component-floater" data-speed="10"><?php echo $atts['floatermedia'];?></div>
+							<div class="aesop-content-component-floater <?php echo $floaterposition;?>" data-speed="10"><?php echo $atts['floatermedia'];?></div>
 
 						<?php } ?>
 

@@ -1,5 +1,22 @@
 // these styles are the bare necessities for all components
+.aesop-floater-center() {
+    &.floater-right {
+        right:30px;
+    }
+    &.floater-left {
+        left:30px;
+    }
+    &.floater-center {
+        text-align: center;
+        left:0;
+        right:0;
 
+        *{
+            margin-left:auto;
+            margin-right:auto;
+        }
+    }
+}
 // general
 .aesop-component {
     position: relative;
@@ -75,22 +92,7 @@
         position: absolute;
         z-index: 1;
 
-        &.floater-right {
-            right:30px;
-        }
-        &.floater-left {
-            left:30px;
-        }
-        &.floater-center {
-            text-align: center;
-            left:0;
-            right:0;
-
-            *{
-                margin-left:auto;
-                margin-right:auto;
-            }
-        }
+        .aesop-floater-center;
     }
 }
 
@@ -103,12 +105,13 @@
 
     &.aesop-content-has-floater {
         overflow: hidden;
-    }
 
-    .aesop-content-component-floater {
-        position: absolute;
-    }
+        .aesop-content-component-floater {
+            position: absolute;
 
+            .aesop-floater-center;
+        }
+    }
     .aesop-content-img {
         padding:1.2rem;
     }
