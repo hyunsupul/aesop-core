@@ -49,10 +49,10 @@ if (!function_exists('aesop_collection_shortcode')){
 						<?php
 
 						// if collection ID is set
-						if ($atts['collection']):
+						if ( $atts['collection'] ):
 
 							// if splash mode is set
-							if ('on' == $atts['splash']) {
+							if ( 'on' == $atts['splash'] ) {
 
 								// cat query args
 								$cat_args = array(
@@ -61,12 +61,12 @@ if (!function_exists('aesop_collection_shortcode')){
 								);
 
 								// get cached query
-								$cats = wp_cache_get('aesop_splash_query');
+								$cats = wp_cache_get('aesop_splash_query_'.$atts['collection']);
 
 								// if no cached query then cache the query
 								if (false == $cats ) {
-									$cats = get_categories(apply_filters('aesop_splash_query',$cat_args));
-									wp_cache_set('aesop_splash_query', $cats);
+									$cats = get_categories( apply_filters('aesop_splash_query',$cat_args) );
+									wp_cache_set('aesop_splash_query_'.$atts['collection'], $cats);
 								}
 
 								if ($cats):

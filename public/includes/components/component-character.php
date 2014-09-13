@@ -51,19 +51,19 @@ if (!function_exists('aesop_character_shortcode')){
 
 							<?php do_action('aesop_character_inner_inside_top'); //action ?>
 
-							<?php if ($atts['name']) {?>
+							<?php if ( $atts['name'] ) {?>
 								<span class="aesop-character-title"><?php echo $atts['name'];?></span>
 							<?php } ?>
 
-							<?php if ($atts['img']) {?>
+							<?php if ( $atts['img'] ) {?>
 								<img class="aesop-character-avatar" src="<?php echo $atts['img'];?>" alt="<?php echo $alt;?>">
 							<?php } ?>
 
-							<?php if ($content) {?>
+							<?php if ( $content ) {?>
 								<div class="aesop-character-text"><?php echo do_shortcode($content);?></div>
 							<?php } ?>
 
-							<?php if ($atts['caption']) { ?>
+							<?php if ( $atts['caption'] ) { ?>
 								<p class="aesop-character-cap"><?php echo $atts['caption'];?></p>
 							<?php } ?>
 
