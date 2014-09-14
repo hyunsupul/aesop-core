@@ -51,20 +51,22 @@ class AesopMapComponent {
 			<!-- Aesop Locations -->
 			<script>
 
-				var map = L.map('aesop-map-component',{
-					scrollWheelZoom: false,
-					zoom: <?php echo wp_filter_nohtml_kses( round( $zoom ) );?>,
-					center: [<?php echo $start;?>]
-				});
-
-				L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo $mapboxid;?>/{z}/{x}/{y}.png', {
-					maxZoom: 20
-				}).addTo(map);
-
 				<?php
 
 				if($markers):
 
+					?>
+					var map = L.map('aesop-map-component',{
+						scrollWheelZoom: false,
+						zoom: <?php echo wp_filter_nohtml_kses( round( $zoom ) );?>,
+						center: [<?php echo $start;?>]
+					});
+
+					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo $mapboxid;?>/{z}/{x}/{y}.png', {
+						maxZoom: 20
+					}).addTo(map);
+
+					<?php
 					foreach($markers as $marker):
 
 						$lat 	= sanitize_text_field($marker['lat']);
@@ -76,6 +78,10 @@ class AesopMapComponent {
 						?> L.marker([<?php echo $loc;?>]).addTo(map).bindPopup("<?php echo $text;?>").openPopup(); <?php
 
 					endforeach;
+
+				else:
+
+					?>jQuery('#aesop-map-component').append('<div class="aesop-error aesop-content"><?php echo __("Your map appears to be empty! Setup and configure your map markers for this post.","aesop-core");?></div>');<?php
 
 				endif;
 				?>
