@@ -39,10 +39,12 @@ class AesopMapComponent {
 
 		global $post;
 
+		$id         = $post->ID;
+
 		$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
-		$markers 	= isset( $post ) ? get_post_meta( $post->ID, 'aesop_map_component_locations', false) : false;
-		$start 		= isset( $post ) && self::get_map_meta( $post->ID, 'aesop_map_start') ? self::get_map_meta( $post->ID, 'aesop_map_start' ) : self::start_fallback( $markers );
-		$zoom 		= isset( $post ) && self::get_map_meta( $post->ID, 'aesop_map_component_zoom') ? self::get_map_meta( $post->ID, 'aesop_map_component_zoom' ) : 12;
+		$markers 	= isset( $post ) ? get_post_meta( $id, 'aesop_map_component_locations', false) : false;
+		$start 		= isset( $post ) && self::get_map_meta( $id, 'aesop_map_start') ? self::get_map_meta( $id, 'aesop_map_start' ) : self::start_fallback( $markers );
+		$zoom 		= isset( $post ) && self::get_map_meta( $id, 'aesop_map_component_zoom') ? self::get_map_meta( $id, 'aesop_map_component_zoom' ) : 12;
 
 		$default_location 	= is_single();
 		$location 			= apply_filters( 'aesop_map_component_appears', $default_location );
@@ -55,7 +57,7 @@ class AesopMapComponent {
 
 				if ( $markers ):
 
-					if ( !self::get_map_meta($post->ID,'aesop_map_start') && is_user_logged_in() ) { ?>
+					if ( !self::get_map_meta($id,'aesop_map_start') && is_user_logged_in() ) { ?>
 
 						jQuery('#aesop-map-component').before('<div class="aesop-error aesop-content"><?php echo __("Looks like you didn\'t specify a starting coordinate, so we\'re using the first one you entered.","aesop-core");?></div>');
 
@@ -93,11 +95,17 @@ class AesopMapComponent {
 
 					endforeach;
 
-				else: ?>
+				else:
 
-					jQuery('#aesop-map-component').append('<div class="aesop-error aesop-content"><?php echo __("Your map appears to be empty! Setup and configure your map markers for this post.","aesop-core");?></div>');
+					if ( is_user_logged_in() ) {
+						$url 		= admin_url( 'post.php?post='.$id.'&action=edit' );
+						$editlink 	= sprintf('<a href="%s">here</a>',$url );
 
-				<?php endif;
+						?>jQuery('#aesop-map-component').append('<div class="aesop-error aesop-content"><?php echo __("Your map appears to be empty! Setup and configure your map markers in this post {$editlink}.","aesop-core");?></div>');<?php
+
+					}
+
+				endif;
 				?>
 			</script>
 
