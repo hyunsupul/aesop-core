@@ -35,7 +35,7 @@ class AesopMapComponent {
 		add_action('wp_footer', array($this,'aesop_map_loader'),20);
 	}
 
-	function aesop_map_loader(){
+	public function aesop_map_loader(){
 
 		global $post;
 
@@ -76,11 +76,20 @@ class AesopMapComponent {
 
 						$lat 	= sanitize_text_field($marker['lat']);
 						$long 	= sanitize_text_field($marker['long']);
-						$text 	= $marker['content'] ? $marker['content'] : false;
+						$text 	= $marker['content'] ? $marker['content'] : null;
 
 						$loc 	= sprintf('%s,%s',$lat,$long);
 
-						?> L.marker([<?php echo $loc;?>]).addTo(map).bindPopup("<?php echo $text;?>").openPopup(); <?php
+						// if market content is set run a popup
+						if ( $text ) { ?>
+
+							L.marker([<?php echo $loc;?>]).addTo(map).bindPopup("<?php echo $text;?>").openPopup();
+
+						<?php } else { ?>
+
+							L.marker([<?php echo $loc;?>]).addTo(map);
+
+						<?php }
 
 					endforeach;
 
@@ -104,7 +113,7 @@ class AesopMapComponent {
 	* 	@return starting coordinate
 	* 	@since 1.1
 	*/
-	function get_map_meta($post_id = 0, $key = ''){
+	private function get_map_meta($post_id = 0, $key = ''){
 
 		// bail if no post id set or no key
 		if ( empty( $post_id ) || empty( $key ) )
@@ -126,7 +135,7 @@ class AesopMapComponent {
 	* 	@since 1.1
 	*
 	*/
-	function start_fallback( $markers ) {
+	private function start_fallback( $markers ) {
 
 		// bail if no markers found
 		if( empty( $markers ) )
