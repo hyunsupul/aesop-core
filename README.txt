@@ -159,6 +159,7 @@ Full documentation can be found below.
 * FIXED - Video icon
 * FIXED - Quote Component: parallax floater options fixed (could not move up or down so two options are now left and right)
 * FIXED - Map Component:  warn users if no markers are set
+* FIXED - Map Component:  fixed empty bubbles appearing on markers with no text set
 
 = 1.0.9 =
 * FIXED - Various generator fixes for WordPress 4.0
