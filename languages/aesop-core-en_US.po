@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Core\n"
-"POT-Creation-Date: 2014-09-13 18:00-0600\n"
-"PO-Revision-Date: 2014-09-13 18:00-0600\n"
+"POT-Creation-Date: 2014-09-14 09:23-0600\n"
+"PO-Revision-Date: 2014-09-14 09:23-0600\n"
 "Last-Translator: Team Aesop <support@aesopinteractive.com>\n"
 "Language-Team: Team Aesop <info@aesopinteractive.com>\n"
 "Language: en_US\n"
@@ -1302,6 +1302,12 @@ msgstr ""
 
 #: ../public/includes/components/component-image.php:61
 msgid "Enlarge"
+msgstr ""
+
+#: ../public/includes/components/component-map.php:62
+msgid ""
+"Looks like you didn\\'t specify a starting coordinate, so we\\'re using the "
+"first one you entered."
 msgstr ""
 
 #: ../public/includes/options.php:14
