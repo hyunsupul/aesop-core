@@ -134,7 +134,7 @@ Full documentation can be found below.
 
 == Changelog ==
 
-= 1.1 = 
+= 1.1 =
 * NEW - Complete compatibilty with WordPress 4.0
 * NEW - New user interface
 * NEW - Components are now editable
@@ -143,18 +143,22 @@ Full documentation can be found below.
 * ADDED - Filters for Audio and Video component waypoints
 * ADDED - Filters for timeline and location offsets
 * ADDED - Filter to let Map component run on pages
-* ADDED - Gallery component to the component generator with a dropdown to select gallery to insert
-* ADDED - Captions to grid gallery items if a caption is set
-* TWEAK - No longer have to input collection ID they are now automatically fed into a dropdown to select
-* TWEAK - Parallax floater item offset now automatically calculated - this means offset and speed options no longer necessary and have been removed
-* TWEAK - Parallax optimizations and performance enhancements
-* TWEAK - Gallery performance optimizations
+* ADDED - Gallery Component: added to the component generator with a dropdown to select gallery to insert
+* ADDED - Gallery Component: added captions to grid gallery items if a caption is set
+* ADDED - Content Component: added Floater Position option for parallax floater
+* TWEAK - Content Component: parallax code optimized and offsets automatically calculated
+* TWEAK - Map Component: automatically fall back to the first marker entered if the starting coordinate is missing and warn the user
+* TWEAK - Collection Component: mo longer have to input collection ID they are now automatically fed into a dropdown tand selectable by name
+* TWEAK - Parallax Component: floater item offset now automatically calculated - this means offset and speed options no longer necessary and have been removed
+* TWEAK - Parallax Component: optimizations and performance enhancements
+* TWEAK - Gallery Component: performance optimizations
 * TWEAK - Cleaned up user interface for creating Galleries in admin
-* TWEAK - Audio/Video waypoint filters now targets individual components
-* TWEAK - Timeline component redesigned to perform well wihin *most* WordPress themes
+* TWEAK - Audio/Video Component: waypoint filters now targets individual components
+* TWEAK - Timeline Component: redesigned to perform well wihin 98% of WordPress themes
 * FIXED - Better support for Aesop Lazy Loader
 * FIXED - Video icon
-* FIXED - Quote parallax floater options fixed (could not move up or down so two options are now left and right)
+* FIXED - Quote Component: parallax floater options fixed (could not move up or down so two options are now left and right)
+* FIXED - Map Component:  warn users if no markers are set
 
 = 1.0.9 =
 * FIXED - Various generator fixes for WordPress 4.0
