@@ -39,10 +39,10 @@ class AesopMapComponent {
 
 		global $post;
 
-		$markers 	= isset( $post ) ? get_post_meta($post->ID,'aesop_map_component_locations', false) : false;
-		$start 		= isset( $post ) && self::get_start_meta($post->ID) ? self::get_start_meta($post->ID) : self::start_fallback($markers);
 		$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
-		$zoom 		= isset( $post ) && get_post_meta($post->ID,'aesop_map_component_zoom', true) ? get_post_meta($post->ID,'aesop_map_component_zoom', true) : 12;
+		$markers 	= isset( $post ) ? get_post_meta( $post->ID, 'aesop_map_component_locations', false) : false;
+		$start 		= isset( $post ) && self::get_map_meta( $post->ID, 'aesop_map_start') ? self::get_map_meta( $post->ID, 'aesop_map_start' ) : self::start_fallback( $markers );
+		$zoom 		= isset( $post ) && self::get_map_meta( $post->ID, 'aesop_map_component_zoom') ? self::get_map_meta( $post->ID, 'aesop_map_component_zoom' ) : 12;
 
 		$default_location 	= is_single();
 		$location 			= apply_filters( 'aesop_map_component_appears', $default_location );
@@ -53,9 +53,9 @@ class AesopMapComponent {
 
 				<?php
 
-				if($markers):
+				if ( $markers ):
 
-					if ( !self::get_start_meta($post->ID) && is_user_logged_in() ) { ?>
+					if ( !self::get_map_meta($post->ID,'aesop_map_start') && is_user_logged_in() ) { ?>
 
 						jQuery('#aesop-map-component').before('<div class="aesop-error aesop-content"><?php echo __("Looks like you didn\'t specify a starting coordinate, so we\'re using the first one you entered.","aesop-core");?></div>');
 
@@ -72,7 +72,7 @@ class AesopMapComponent {
 					}).addTo(map);
 
 					<?php
-					foreach($markers as $marker):
+					foreach( $markers as $marker ):
 
 						$lat 	= sanitize_text_field($marker['lat']);
 						$long 	= sanitize_text_field($marker['long']);
@@ -97,19 +97,20 @@ class AesopMapComponent {
 
 	/**
 	*
-	*	Retrieve the starting coordinate
+	*	Retrieve meta settings for map component
 	*
-	*	@param $post_id - int
+	*	@param $post_id int
+	*   @param $key string -meta key
 	* 	@return starting coordinate
 	* 	@since 1.1
 	*/
-	function get_start_meta($post_id = 0){
+	function get_map_meta($post_id = 0, $key = ''){
 
-		// bail if no post id set
-		if ( empty( $post_id ) )
+		// bail if no post id set or no key
+		if ( empty( $post_id ) || empty( $key ) )
 			return;
 
-  		$meta = get_post_meta( $post_id, 'aesop_map_start', true );
+  		$meta = get_post_meta( $post_id, $key, true );
 
   		return empty( $meta ) ? null : $meta;
 
