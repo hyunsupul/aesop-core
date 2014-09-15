@@ -52,14 +52,14 @@ if (!function_exists('aesop_audio_shortcode')){
 						jQuery('#aesop-audio-<?php echo $unique;?>').waypoint({
 							offset: '<?php echo $waypoint;?>',
 							handler: function(direction){
-						   		jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').click();
+						   		jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
 
 						   	}
 						});
 						<?php if ('on' == $atts['viewend']) { ?>
 						jQuery('#aesop-audio-<?php echo $unique;?>').waypoint({
 							handler: function(direction){
-						   		jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').click();
+						   		jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
 						   	}
 						});
 						<?php } ?>
