@@ -49,21 +49,25 @@ if (!function_exists('aesop_audio_shortcode')){
 	   			<?php if ('on' == $atts['viewstart']) { ?>
 			    	<script>
 			    	jQuery(document).ready(function(){
-						jQuery('#aesop-audio-<?php echo $unique;?>').waypoint({
-							offset: '<?php echo $waypoint;?>',
-							handler: function(direction){
-						   		jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
+				    	jQuery('#aesop-audio-<?php echo $unique;?>').arrive('.mejs-audio', function(){
+								
+								jQuery('#aesop-audio-<?php echo $unique;?>').waypoint({
+									offset: '<?php echo $waypoint;?>',
+									handler: function(direction){
+								   		jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
+								   	}
+								});
 
-						   	}
-						});
-						<?php if ('on' == $atts['viewend']) { ?>
-						jQuery('#aesop-audio-<?php echo $unique;?>').waypoint({
-							handler: function(direction){
-						   		jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
-						   	}
-						});
-						<?php } ?>
-			    	});
+								<?php if ('on' == $atts['viewend']) { ?>
+								jQuery('#aesop-audio-<?php echo $unique;?>').waypoint({
+									handler: function(direction){
+								   		jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
+								   	}
+								});
+								<?php } ?>
+
+					    	});
+				    	});
 			    	</script>
 	   			<?php } ?>
 
