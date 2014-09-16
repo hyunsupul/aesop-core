@@ -1,6 +1,6 @@
 <?php
 /**
-* 	Open-sourced suite of tools to build interactive, long-form storytelling themes for Wordpress.
+* 	Open-sourced suite of components that empower interactive storytelling.
 *
 *
 * 	@package   Aesop_Core
@@ -12,7 +12,7 @@
 * 	@wordpress-plugin
 * 	Plugin Name:       Aesop Story Engine
 * 	Plugin URI:        http://aesopstoryengine.com
-* 	Description:       Aesop Story Engine is an open-sourced suite of tools that empowers developers to build feature-rich, interactive, long-form storytelling themes for Wordpress.
+* 	Description:       Open-sourced suite of components that empower interactive storytelling.
 * 	Version:           1.0.94
 * 	Author:            Nick "Bearded Avenger" Haskins
 * 	Author URI:        http://nickhaskins.com
