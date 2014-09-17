@@ -6,7 +6,7 @@
  * @author    Nick Haskins <nick@aesopinteractive.com>
  * @license   GPL-2.0+
  * @link      http://aesopinteractive.com
- * @copyright 2013 Nick Haskins
+ * @copyright 2014 Nick Haskins
  */
 
 /**
@@ -280,7 +280,8 @@ class Aesop_Core {
 		if (! defined('AI_CORE_UNSTYLED')) {
 
 			// core css file
-			wp_enqueue_style('ai-core-style', AI_CORE_URL.'/public/assets/css/ai-core.min.css', AI_CORE_VERSION, true);
+			wp_enqueue_style('ai-core-style', AI_CORE_URL.'/public/assets/css/ai-core.css', AI_CORE_VERSION, true);
+			wp_style_add_data( 'ai-core-style', 'rtl', 'replace' );
 
 			// load dashicons if extended support
 			if ( current_theme_supports( 'aesop-component-styles' ) ) {
@@ -291,7 +292,6 @@ class Aesop_Core {
 
 		// core script
 		wp_enqueue_script('ai-core', AI_CORE_URL.'/public/assets/js/ai-core.min.js', array('jquery'), AI_CORE_VERSION, true);
-
 	}
 
 	/**

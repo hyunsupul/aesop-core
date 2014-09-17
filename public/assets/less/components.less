@@ -1,5 +1,22 @@
 // these styles are the bare necessities for all components
+.aesop-floater-center() {
+    &.floater-right {
+        right:30px;
+    }
+    &.floater-left {
+        left:30px;
+    }
+    &.floater-center {
+        text-align: center;
+        left:0;
+        right:0;
 
+        *{
+            margin-left:auto;
+            margin-right:auto;
+        }
+    }
+}
 // general
 .aesop-component {
     position: relative;
@@ -75,17 +92,7 @@
         position: absolute;
         z-index: 1;
 
-        &.floater-right {
-            right:30px;
-        }
-        &.floater-left {
-            left:30px;
-        }
-        &.floater-center {
-            text-align: center;
-            margin-left:auto;
-            margin-right:auto;
-        }
+        .aesop-floater-center;
     }
 }
 
@@ -96,10 +103,15 @@
         .clearfix();
     }
 
-    .aesop-content-component-floater {
-        position: absolute;
-    }
+    &.aesop-content-has-floater {
+        overflow: hidden;
 
+        .aesop-content-component-floater {
+            position: absolute;
+
+            .aesop-floater-center;
+        }
+    }
     .aesop-content-img {
         padding:1.2rem;
     }
@@ -111,6 +123,17 @@
     }
     .aesop-content-comp-columns-4 .aesop-content-comp-inner{
         .content-columns(4, 20);
+    }
+
+    @media(max-width:766px){
+       .aesop-content-comp-wrap {
+            &.aesop-content-comp-columns-2 .aesop-content-comp-inner,
+            &.aesop-content-comp-columns-3 .aesop-content-comp-inner,
+            &.aesop-content-comp-columns-4 .aesop-content-comp-inner{
+                .content-columns(1, 20);
+                max-width:100% !important ; //overriding js
+            }
+        }
     }
 }
 
@@ -308,6 +331,37 @@
 
         }
     }
+}
+
+.aesop-gallery-edit {
+    display:block;
+}
+
+.aesop-grid-gallery {
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        .aesop-grid-gallery-item {
+            list-style-type:none;
+            position: relative;
+            line-height: 0;
+        }
+    }
+
+    a {color:inherit;}
+
+    .aesop-grid-gallery-caption {
+        position: absolute;
+        top:5px;
+        left:5px;
+        background:fadeout(white,10);
+        padding:5px 8px;
+        font-size:14px;
+        line-height:18px;
+    }
+
 }
 
 //galleries

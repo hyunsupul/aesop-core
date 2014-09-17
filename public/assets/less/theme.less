@@ -118,6 +118,10 @@
             text-align: center;
         }
     }
+
+        &.aesop-quote-faded blockquote{
+            .opacity(1);
+        }
 }
 
 // document
@@ -226,4 +230,43 @@
     &:hover {
         .opacity(1);
     }
+}
+
+//timelnie
+.aesop-timeline {
+
+    ol {
+
+        &:after {
+            content:'';
+            background-image: url('../img/timeline-break.png');
+            background-repeat: repeat-x;
+            position: absolute;
+            height:10px;
+            width:100%;
+            left:0;
+            right:0;
+            bottom:-5px;
+        }
+    }
+}
+
+.aesop-error {
+    background: #d9534f;
+    color:white;
+    font-size:14px;
+    line-height:20px;
+    padding:10px;
+    font-family: Arial;
+
+    a {
+        color:fadeout(white,15);
+        text-decoration: underline;
+    }
+}
+
+/* @noflip */
+body.rtl {
+    direction: rtl;
+    unicode-bidi: embed;
 }

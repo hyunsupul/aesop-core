@@ -13,80 +13,98 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Image', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
-					'img' 			=> array(
-						'type'		=> 'media_upload',
-						'values' 	=> array( ),
-						'default' 	=> '',
-						'desc' 		=> __( 'Image URL', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
-					),
 					'imgwidth' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
+						'type'		=> 'text_small',
 						'default' 	=> '300px',
 						'desc' 		=> __( 'Image Width', 'aesop-core' ),
 						'tip'		=> __('Width of the image. You can enter the size as <code>40%</code> or <code>500px</code>.','aesop-core')
 					),
-					'caption' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
+					'img' 			=> array(
+						'type'		=> 'media_upload',
 						'default' 	=> '',
-						'desc' 		=> __( 'Caption', 'aesop-core' ),
-						'tip'		=> __('Optional caption for the image. If you do not enter a caption, it will not show.','aesop-core')
+						'desc' 		=> __( 'Image URL', 'aesop-core' ),
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
+					),
+					'offset' 		=> array(
+						'type'		=> 'text_small',
+						'default' 	=> '',
+						'desc' 		=> __( 'Image Offset', 'aesop-core' ),
+						'tip'		=> __('Using this option you can <em>float</em> an image outside of the text. Enter a size like <code>-200px</code>.','aesop-core')
 					),
 					'credit' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image Credit', 'aesop-core' ),
-						'tip'		=> __('This is typically used for the credit for the photographer. Enter a name, and it will show as <em>Photo by: Name</em>.','aesop-core')
+						'tip'		=> __('This is typically used to credit the photographer. Enter a name and it will show as <em>Photo by: Name</em>.','aesop-core')
 					),
 					'alt' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Image ALT', 'aesop-core' ),
 						'tip'		=> __('ALT tag used for the image. Primarily used for SEO purposes.','aesop-core')
 					),
 					'align' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							'left',
-							'right',
-							'center'
+							array(
+								'value' => 'left',
+								'name'	=> __('Left', 'aesop-core' ),
+							),
+							array(
+								'value' => 'right',
+								'name'	=> __('Right', 'aesop-core' ),
+							),
+							array(
+								'value' => 'center',
+								'name'	=> __('Center', 'aesop-core' ),
+							)
 						),
 						'default' 	=> 'left',
 						'desc' 		=> __( 'Image Alignment', 'aesop-core' ),
 						'tip'		=> __('How should the image be aligned? If using a caption, the caption will automatically align with this option.','aesop-core')
 					),
-					'offset' 		=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
-						'default' 	=> '',
-						'desc' 		=> __( 'Image Offset', 'aesop-core' ),
-						'tip'		=> __('Using this option you can <em>float</em> an image outside of the text. Enter a size like <code>-200px</code>.','aesop-core')
-					),
-					'captionposition' => array(
-						'type'		=> 'text',
-						'values' 	=> array(
-							'left',
-							'right',
-							'center'
-						 ),
-						'default' 	=> 'left',
-						'desc' 		=> __( 'Caption Position', 'aesop-core' ),
-						'tip'		=> __('Use this to override the alignment as inherited from the image.','aesop-core')
-					),
 					'lightbox' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Lightbox', 'aesop-core' ),
 						'tip'		=> __('Choose <em>on</em> and the image will open up the full-size version in a lightbox.','aesop-core')
 					),
+					'caption' 			=> array(
+						'type'		=> 'text_area',
+						'default' 	=> '',
+						'desc' 		=> __( 'Caption', 'aesop-core' ),
+						'tip'		=> __('Optional caption for the image. If you do not enter a caption, it will not show.','aesop-core')
+					),
+					'captionposition' => array(
+						'type'		=> 'select',
+						'values' 	=> array(
+							array(
+								'value' => 'left',
+								'name'	=> __('Left', 'aesop-core' ),
+							),
+							array(
+								'value' => 'right',
+								'name'	=> __('Right', 'aesop-core' ),
+							),
+							array(
+								'value' => 'center',
+								'name'	=> __('Center', 'aesop-core' ),
+							)
+						 ),
+						'default' 	=> 'left',
+						'desc' 		=> __( 'Caption Position', 'aesop-core' ),
+						'tip'		=> __('Use this to override the alignment as inherited from the image.','aesop-core')
+					)
 
 				),
 				'desc' 				=> __( 'Creates an image component with caption, alignment, and lightbox options.','aesop-core' )
@@ -97,40 +115,42 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'img' 			=> array(
 						'type'		=> 'media_upload',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Character Image', 'aesop-core' ),
 						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'name' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Character Name', 'aesop-core' ),
 						'tip'		=> __('Enter a name for the character. If you do not enter a name, it will not show.','aesop-core')
 					),
 					'caption' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
+						'type'		=> 'text_area',
 						'default' 	=> '',
 						'desc' 		=> __( 'Caption', 'aesop-core' ),
 						'tip'		=> __('Optional caption for the character. If you do not enter a caption, it will not show.','aesop-core')
 					),
 					'align' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							'left',
-							'right'
+							array(
+								'value' => 'left',
+								'name'	=> __('Left', 'aesop-core')
+							),
+							array(
+								'value' => 'right',
+								'name'	=> __('Right', 'aesop-core')
+							)
 						),
 						'default' 	=> 'left',
 						'desc' 		=> __( 'Alignment', 'aesop-core' ),
-						'tip'		=> __('Alignment of the character component. To the left of the main text, or right of the main text.','aesop-core')
+						'tip'		=> __('Alignment of the character component. You can align it to the left or right of the main text.','aesop-core')
 					),
 					'width' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
+						'type'		=> 'text_small',
 						'default' 	=> '',
-						'desc' 		=> __( 'Width (px or %)', 'aesop-core' ),
+						'desc' 		=> __( 'Width', 'aesop-core' ),
 						'tip'		=> __('Width of the character component. You can enter the size as <code>40%</code> or <code>500px</code>.','aesop-core')
 					)
 				),
@@ -140,113 +160,106 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Aesop Quote Section', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
-					'width' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
-						'default' 	=> '100%',
-						'desc' 		=> __( 'Component Width', 'aesop-core' ),
-						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.','aesop-core')
-					),
 					'background' 	=> array(
-						'values' 	=> array( ),
 						'type'		=> 'color',
 						'default' 	=> '#282828',
 						'desc' 		=> __( 'Background Color', 'aesop-core' ),
-						'tip'		=> __('Select a background color to be used as the background.','aesop-core')
-					),
-					'img' 	=> array(
-						'values' 	=> array( ),
-						'type'		=> 'media_upload',
-						'default' 	=> '',
-						'desc' 		=> __( 'Optional Background Image', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
+						'tip'		=> __('Select a background color to be used as the quote background.','aesop-core')
 					),
 					'text'			 => array(
-						'values' 	=> array(),
 						'type'		=> 'color',
 						'default' 	=> '#FFFFFF',
 						'desc' 		=> __('Text Color', 'aesop-core' ),
 						'tip'		=> __('Select a color for the quote text.','aesop-core')
 					),
+					'width' 			=> array(
+						'type'		=> 'text_small',
+						'default' 	=> '100%',
+						'desc' 		=> __( 'Component Width', 'aesop-core' ),
+						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.','aesop-core')
+					),
 					'height' 		=> array(
-						'type'		=> 'text',
-						'values'	=> array(),
+						'type'		=> 'text_small',
 						'default' 	=> 'auto',
-						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
-						'tip'		=> __('Choose a height for the component. The quote will automatically center itself vertically. By default this is set to <code>auto</code>.','aesop-core')
+						'desc' 		=> __('Height of Quote Area', 'aesop-core' ),
+						'tip'		=> __('Enter a quote area height like <code>400px</code>. The quote will automatically center itself vertically. By default this is set to <code>auto</code>.','aesop-core')
 					),
 					'align' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							'left',
-							'center',
-							'right'
+							array(
+								'value' => 'left',
+								'name'	=> __('Left', 'aesop-core' ),
+							),
+							array(
+								'value' => 'right',
+								'name'	=> __('Right', 'aesop-core' ),
+							),
+							array(
+								'value' => 'center',
+								'name'	=> __('Center', 'aesop-core' ),
+							)
 						),
 						'default' 	=> 'center',
 						'desc' 		=> __( 'Alignment', 'aesop-core' ),
-						'tip'		=> __('By default the quote is centered, but you can choose to have it left, or right aligned as well.','aesop-core')
+						'tip'		=> __('By default the quote is centered but you can choose to have it left or right aligned as well.','aesop-core')
 					),
 					'size' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array(
-							__('2', 'aesop-core'),
-							__('3', 'aesop-core'),
-							__('4', 'aesop-core')
-						),
+						'type'		=> 'select',
+						'values' 	=> aesop_option_counter(10),
 						'default' 	=> '2',
 						'desc' 		=> __( 'Quote Size', 'aesop-core' ),
 						'tip'		=> __('Font size of the quote.','aesop-core')
 					),
+					'img' 	=> array(
+						'type'		=> 'media_upload',
+						'default' 	=> '',
+						'desc' 		=> __( 'Background Image', 'aesop-core' ),
+						'tip'		=> __('Optionally add a background image to the quote area. Enter the image URL or click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
+					),
+					'quote' 		=> array(
+						'type'		=> 'text_area',
+						'default' 	=> '',
+						'desc' 		=> __('Quote Text', 'aesop-core' ),
+						'tip'		=> __('The actual quote text that will be displayed.','aesop-core')
+					),
+					'cite' 		=> array(
+						'type'		=> 'text_area',
+						'default' 	=> '',
+						'desc' 		=> __('Cite', 'aesop-core' ),
+						'tip'		=> __('Provide an optional cite or source for the quote.','aesop-core')
+					),
 					'parallax' 		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values'	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __('Enable Quote Parallax', 'aesop-core' ),
 						'tip'		=> __('Set to <em>on</em> to enable the quote text to animate across the component.','aesop-core')
 					),
-					'offset' 		=> array(
-						'type'		=> 'text',
-						'values'	=> array(),
-						'default' 	=> 300,
-						'desc' 		=> __('If using parallax, starting offset.', 'aesop-core' ),
-						'tip'		=> __('Start with a value like <code>100px</code>, and tweak until desired. This moves starting position of the quote back 100px if using parallax.','aesop-core')
-					),
-					'speed' 		=> array(
-						'type'		=> 'text',
-						'values'	=> array(),
-						'default' 	=> '8',
-						'desc' 		=> __('Speed of parallax movement. Lower is faster.', 'aesop-core' ),
-						'tip'		=> __('How fast the quote should travel across the screen, if using parallax. Default is 8.','aesop-core')
-
-					),
 					'direction' => array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							'up',
-							'down',
-							'left',
-							'right'
+							array(
+								'value' => 'left',
+								'name'	=> __('Left','aesop-core')
+							),
+							array(
+								'value' => 'right',
+								'name'	=> __('Right','aesop-core')
+							)
 						),
-						'default' 	=> 'up',
+						'default' 	=> 'right',
 						'desc' 		=> __('Parallax Direction of Quote', 'aesop-core' ),
 						'tip'		=> __('The direction that the quote should travel in, if using parallax.','aesop-core')
-					),
-					'quote' 		=> array(
-						'type'		=> 'text',
-						'values'	=> array(),
-						'default' 	=> '',
-						'desc' 		=> __('The quote', 'aesop-core' ),
-						'tip'		=> __('The actual quote that will be displayed.','aesop-core')
-					),
-					'cite' 		=> array(
-						'type'		=> 'text',
-						'values'	=> array(),
-						'default' 	=> '',
-						'desc' 		=> __('Cite (optional)', 'aesop-core' ),
-						'tip'		=> __('Provide an optional cite or source for the quote.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Section quote area with background and color controls.','aesop-core' )
@@ -256,72 +269,87 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'wrap',
 				'atts' 				=> array(
 					'color' 		=> array(
-						'values' 	=> array(),
 						'type'		=> 'color',
 						'default' 	=> '#FFFFFF',
 						'desc' 		=> __('Color of Text', 'aesop-core' ),
 						'tip'		=> __('Set a color to be used for the main text.','aesop-core')
 					),
 					'background' 		=> array(
-						'values' 	=> array(),
 						'type'		=> 'color',
 						'default' 	=> '#333333',
 						'desc' 		=> __('Background Color', 'aesop-core' ),
 						'tip'		=> __('Choose an optional background color for the content component.','aesop-core')
 					),
 					'width'			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
+						'type'		=> 'text_small',
 						'default' 	=> '100%',
 						'desc' 		=> __( 'Width of Component', 'aesop-core' ),
 						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.','aesop-core')
 					),
 					'height'			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
+						'type'		=> 'text_small',
 						'default' 	=> '',
-						'desc' 		=> __( 'Height of Component (optional)', 'aesop-core' ),
-						'tip'		=> __('Enter an optional height for the component. By default it\'s set to <code>auto</code>. Use a large height like <code>1200px</code> to have a large blank area with small text.','aesop-core')
+						'desc' 		=> __( 'Height of Component', 'aesop-core' ),
+						'tip'		=> __('Enter an optional height for the component. ou can enter the size as <code>40%</code> or <code>500px</code>. By default it\'s set to <code>auto</code>. Use a large height like <code>1200px</code> to have a large blank area with small text.','aesop-core')
 					),
 					'columns' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
+						'type'		=> 'select',
+						'values' 	=> aesop_option_counter(4),
 						'default' 	=> '',
 						'desc' 		=> __( 'Number of Columns', 'aesop-core' ),
-						'tip'		=> __('Here you can optionally set the number of columns that the text should be split into. Example <code>2</code> will make 2 columns of text.','aesop-core')
+						'tip'		=> __('Optionally set the number of columns that the text should be split into. For example, <code>2</code> will make 2 columns of text.','aesop-core')
 					),
 					'position' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							'none',
-							'left',
-							'right'
+							array(
+								'value' => 'none',
+								'name'	=> __('None','aesop-core')
+							),
+							array(
+								'value' => 'left',
+								'name'	=> __('Left','aesop-core')
+							),
+							array(
+								'value' => 'right',
+								'name'	=> __('Right','aesop-core')
+							)
 						),
 						'default' 	=> 'none',
 						'desc' 		=> __( 'Text Block Alignment', 'aesop-core' ),
-						'tip'		=> __('This is optional, and allows you to float the text block to the left or right. This is useful when using a width like <code>300px</code>.','aesop-core')
+						'tip'		=> __('This option allows you to float the text block to the left or right. This is useful when using a width like <code>300px</code>.','aesop-core')
 					),
 					'innerposition' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Floating Text Position <br />(ex: 10px, 20px, auto, auto)', 'aesop-core' ),
-						'tip'		=> __('By setting this optional position, the text will be <em>floated</em> on the content component. In the example, it reads as 10px from the top, 20px from the right, and automatically positioned from bottom and left.','aesop-core')
+						'desc' 		=> __( 'Floating Text Position', 'aesop-core' ),
+						'tip'		=> __('By setting this optional position, the text will be <em>floated</em> on the content component. For example, entering <code>10px, 20px, auto, auto</code> outputs the position as 10px from the top, 20px from the right, and automatically positioned from the bottom and left.','aesop-core')
 					),
 					'img' 			=> array(
 						'type'		=> 'media_upload',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Background Image', 'aesop-core' ),
 						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'imgrepeat' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							'no-repeat',
-							'repeat',
-							'repeat-vertical',
-							'repeat-horizontal'
+							array(
+								'value' => 'no-repeat',
+								'name'	=> __('No Repeat','aesop-core')
+							),
+							array(
+								'value' => 'repeat',
+								'name'	=> __('Repeat','aesop-core')
+							),
+							array(
+								'value' => 'repeat-vertical',
+								'name'	=> __('Repeat Vertical','aesop-core')
+							),
+							array(
+								'value' => 'repeat-horizontal',
+								'name'	=> __('Repeat Horizontal','aesop-core')
+							)
 						),
 						'default' 	=> 'no-repeat',
 						'desc' 		=> __( 'Image Repeat', 'aesop-core' ),
@@ -329,96 +357,121 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'imgposition' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Background Image Position', 'aesop-core' ),
-						'tip'		=> __('If using a background image, the position of the background. Default is center center.','aesop-core')
+						'tip'		=> __('If using a background image, this option sets the position of the background image. Default is <code>center center</code> which results in the image being centered horizontally and vertically.','aesop-core')
 					),
 					'imgsize' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Background Image Size', 'aesop-core' ),
-						'tip'		=> __('If using a background image, the size of the image. By default it will be full width.','aesop-core')
+						'tip'		=> __('If using a background image, this option sets the size of the image. By default the image will be full width.','aesop-core')
 					),
 					'floatermedia' 	=> array(
-						'type'		=> 'text',
-						'values' 	=> array(),
+						'type'		=> 'text_area',
 						'default' 	=> '',
-						'desc' 		=> __('Floater Media', 'aesop-core' ),
+						'desc' 		=> __('Floater Element Content', 'aesop-core' ),
 						'tip'		=> __('You can use text and images here. To use an image, use the full HTML tag without quotes around the image path.','aesop-core')
 					),
 					'floaterposition' => array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							'right',
-							'left',
-							'center'
+							array(
+								'value' => 'left',
+								'name'	=> __('Left', 'aesop-core' ),
+							),
+							array(
+								'value' => 'right',
+								'name'	=> __('Right', 'aesop-core' ),
+							),
+							array(
+								'value' => 'center',
+								'name'	=> __('Center', 'aesop-core' ),
+							)
 						),
 						'default' 	=> 'right',
-						'desc' 		=> __('Position of Floater', 'aesop-core' ),
-						'tip'		=> __('If you are using the Floater option, where should the floater be positioned?','aesop-core')
-					),
-					'floateroffset' => array(
-						'type'		=> 'text',
-						'values' 	=> array(),
-						'desc' 		=> __('Offset Amount of Floater (px or %)', 'aesop-core' ),
-						'tip'		=> __('This value will vary depending on your floater media. Enter a value like <code>-200px</code> and tweak as you see fit.','aesop-core')
+						'desc' 		=> __('Position of Floater Element', 'aesop-core' ),
+						'tip'		=> __('If using the Floater Element option, where should it be positioned?','aesop-core')
 					),
 					'floaterdirection' => array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							'up',
-							'down',
-							'left',
-							'right'
+							array(
+								'value' => 'up',
+								'name'	=> __('Up','aesop-core')
+							),
+							array(
+								'value' => 'down',
+								'name'	=> __('Down','aesop-core')
+							),
+							array(
+								'value' => 'left',
+								'name'	=> __('Left','aesop-core')
+							),
+							array(
+								'value' => 'right',
+								'name'	=> __('Right','aesop-core')
+							)
 						),
 						'default' 	=> 'up',
-						'desc' 		=> __('Parallax Direction of Floater', 'aesop-core' ),
-						'tip'		=> __('What direction should the floater media travel in?','aesop-core')
+						'desc' 		=> __('Movement Direction of Floater Element', 'aesop-core' ),
+						'tip'		=> __('In what direction should the Floater Element travel?','aesop-core')
 					)
 				),
 				'content' 			=> __( 'All your normal text goes here.', 'ba-shortcodes' ),
-				'desc' 				=> __( 'Multiple use content area with options for background image, background color, and magazine style columns.','aesop-core' )
+				'desc' 				=> __( 'Multiple use content area with options for background image, background color, and magazine style columns.','aesop-core' ),
+				'tip'				=> __('The actual content text that will be displayed.','aesop-core')
 			),
 			'chapter' 	=> array(
 				'name' 				=> __('Chapter Block', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
-					'label'			=> array(
-						'type'		=> 'text',
-						'values' 	=> array(),
-						'default'	=> '',
-						'desc'		=> __('Label (not shown)','aesop-core'),
-						'tip'		=> __('The label is what shows as the chapter navigation, and can be different from the title below.','aesop-core')
-					),
 					'title'			=> array(
 						'type'		=> 'text',
-						'values' 	=> array(),
 						'default'	=> '',
 						'desc'		=> __('Chapter Title','aesop-core'),
 						'tip'		=> __('The title of the chapter.','aesop-core')
 					),
 					'subtitle'			=> array(
 						'type'		=> 'text',
-						'values' 	=> array(),
 						'default'	=> '',
-						'desc'		=> __('Chapter Subtitle (optional)','aesop-core'),
-						'tip'		=> __('If filled out, will display a <em>sub-title</em> after the chapter title text.','aesop-core')
+						'desc'		=> __('Chapter Subtitle','aesop-core'),
+						'tip'		=> __('This will optionally display a subtitle after the Chapter Title text.','aesop-core')
 					),
 					'bgtype'			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('img', 'aesop-core'),
-							__('video', 'aesop-core')
+							array(
+								'value' => 'img',
+								'name'	=> __('Image','aesop-core')
+							),
+							array(
+								'value' => 'video',
+								'name'	=> __('Video','aesop-core')
+							)
 						),
 						'default'	=> 'img',
 						'desc'		=> __('Background Type','aesop-core'),
-						'tip'		=> __('Optionally set a looping video background.','aesop-core')
+						'tip'		=> __('Choose from an image or a looping video background.','aesop-core')
+					),
+					'full'			=> array(
+						'type'		=> 'select',
+						'values' 	=> array(
+							array(
+								'value' => 'on',
+								'name'	=> __('On','aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off','aesop-core')
+							)
+						),
+						'default'	=> '',
+						'desc'		=> __('Full-size Background Image','aesop-core'),
+						'tip'		=> __('If set to on, the background image of the chapter will be as large as the browser window.','aesop-core')
 					),
 					'img' 			=> array(
 						'type'		=> 'media_upload',
-						'values' 	=> array( ),
 						'default' 	=> ' ',
 						'desc' 		=> __( 'Chapter Image or Video URL', 'aesop-core' ),
 						'tip'		=> __('URL for the image or video background as set above. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
@@ -430,104 +483,145 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Parallax Image', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
-					'img' 			=> array(
-						'type'		=> 'media_upload',
-						'values' 	=> array( ),
-						'default' 	=> '',
-						'desc' 		=> __( 'Image', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
-					),
 					'height' 		=> array(
-						'type'		=> 'text',
-						'values' 	=> array(),
+						'type'		=> 'text_small',
 						'default' 	=> '500',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
-						'tip'		=> __('The height of the viewable image area. Enter a value such as <em>500</em>. Avoid using percentages as heights here.','aesop-core')
+						'tip'		=> __('The height of the viewable image area. Enter a value such as <code>500px</code>. Avoid using percentages with this option.','aesop-core')
+					),
+					'img' 			=> array(
+						'type'		=> 'media_upload',
+						'default' 	=> '',
+						'desc' 		=> __( 'Parallax Image', 'aesop-core' ),
+						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'parallaxbg' 	=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> 'on',
-						'desc' 		=> __('Parallax Background Image', 'aesop-core' ),
+						'desc' 		=> __('Image Movement', 'aesop-core' ),
 						'tip'		=> __('If set to <em>on</em>, the image will move slightly as you scroll down the page.','aesop-core')
 					),
-					'floater' 		=> array(
-						'type'		=> 'text',
-						'values'	=> array(
-							__('off', 'aesop-core'),
-							__('on', 'aesop-core')
-						),
-						'default' 	=> 'off',
-						'desc' 		=> __('Enable Floating Element', 'aesop-core' ),
-						'tip'		=> __('This option will enable a second parallax media layer that will float on top of the background image.','aesop-core')
-					),
-					'floatermedia' 	=> array(
-						'type'		=> 'text',
-						'values' 	=> array(),
-						'default' 	=> '',
-						'desc' 		=> __('Floater Media', 'aesop-core' ),
-						'tip'		=> __('You can use text and images here. To use an image, use the full HTML tag without quotes around the image path.','aesop-core')
-					),
-					'floaterposition' => array(
-						'type'		=> 'text',
-						'values' 	=> array(
-							'right',
-							'left',
-							'center'
-						),
-						'default' 	=> 'right',
-						'desc' 		=> __('Position of Floater', 'aesop-core' ),
-						'tip'		=> __('If you are using the Floater option, where should the floater be positioned?','aesop-core')
-					),
-					'floateroffset' => array(
-						'type'		=> 'text',
-						'values' 	=> array(),
-						'desc' 		=> __('Offset Amount of Floater (px or %)', 'aesop-core' ),
-						'tip'		=> __('This value will vary depending on your floater media. Enter a value like <code>-200px</code> and tweak as you see fit.','aesop-core')
-					),
-					'floaterdirection' => array(
-						'type'		=> 'text',
-						'values' 	=> array(
-							'up',
-							'down',
-							'left',
-							'right'
-						),
-						'default' 	=> 'up',
-						'desc' 		=> __('Parallax Direction of Floater', 'aesop-core' ),
-						'tip'		=> __('What direction should the floater media travel in?','aesop-core')
-					),
 					'caption' 	=> array(
-						'type'		=> 'text',
-						'values' 	=> array(),
+						'type'		=> 'text_area',
 						'default' 	=> 'false',
-						'desc' 		=> __('Caption (optional)', 'aesop-core' ),
-						'tip'		=> __('Provide an optional caption that will be displayed using the position below.','aesop-core')
+						'desc' 		=> __('Caption', 'aesop-core' ),
+						'tip'		=> __('Display an optional caption that will appear where set in the next option.','aesop-core')
 					),
 					'captionposition' => array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							'bottom-left',
-							'bottom-right',
-							'top-left',
-							'top-right'
+							array(
+								'value' => 'bottom-left',
+								'name'	=> __('Bottom Left','aesop-core')
+							),
+							array(
+								'value' => 'bottom-right',
+								'name'	=> __('Bottom Right','aesop-core')
+							),
+							array(
+								'value' => 'top-left',
+								'name'	=> __('Top Left','aesop-core')
+							),
+							array(
+								'value' => 'top-right',
+								'name'	=> __('Top Right','aesop-core')
+							)
 						),
 						'default' 	=> 'bottom-left',
 						'desc' 		=> __('Caption Position', 'aesop-core' ),
 						'tip'		=> __('If using a caption, where should it be positioned within the parallax component?','aesop-core')
 					),
 					'lightbox' 		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __('Image Lightbox', 'aesop-core' ),
-						'tip'		=> __('Enable an optional lightbox, that when clicked, will show the full size version of the parallax image.','aesop-core')
+						'tip'		=> __('Enable an optional lightbox. When a user clicks the image, it will display the full size version of the parallax image in a lightbox.','aesop-core')
+					),
+					'floater' 		=> array(
+						'type'		=> 'select',
+						'values'	=> array(
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
+						),
+						'default' 	=> 'off',
+						'desc' 		=> __('Enable Floater Element', 'aesop-core' ),
+						'tip'		=> __('This option will enable a second parallax media layer that will float on top of the background image.','aesop-core')
+					),
+					'floatermedia' 	=> array(
+						'type'		=> 'text',
+						'default' 	=> '',
+						'desc' 		=> __('Floater Element Content', 'aesop-core' ),
+						'tip'		=> __('You can use text and images here. To use an image, use the full HTML tag without quotes around the image path.','aesop-core')
+					),
+					'floaterposition' => array(
+						'type'		=> 'select',
+						'values' 	=> array(
+							array(
+								'value' => 'left',
+								'name'	=> __('Left', 'aesop-core' ),
+							),
+							array(
+								'value' => 'right',
+								'name'	=> __('Right', 'aesop-core' ),
+							),
+							array(
+								'value' => 'center',
+								'name'	=> __('Center', 'aesop-core' ),
+							)
+						),
+						'default' 	=> 'right',
+						'desc' 		=> __('Position of Floater Element', 'aesop-core' ),
+						'tip'		=> __('If you are using the Floater option, where should the floater be positioned?','aesop-core')
+					),
+					'floaterdirection' => array(
+						'type'		=> 'select',
+						'values' 	=> array(
+							array(
+								'value' => 'up',
+								'name'	=> __('Up','aesop-core')
+							),
+							array(
+								'value' => 'down',
+								'name'	=> __('Down','aesop-core')
+							),
+							array(
+								'value' => 'left',
+								'name'	=> __('Left','aesop-core')
+							),
+							array(
+								'value' => 'right',
+								'name'	=> __('Right','aesop-core')
+							)
+						),
+						'default' 	=> 'up',
+						'desc' 		=> __('Movement Direction of Floater Element', 'aesop-core' ),
+						'tip'		=> __('What direction should the floater media travel in?','aesop-core')
 					)
 				),
 				'content' 			=> __( 'Optional Caption', 'ba-shortcodes' ),
@@ -539,53 +633,75 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'title' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Title (optional)', 'aesop-core' ),
+						'desc' 		=> __( 'Title', 'aesop-core' ),
 						'tip'		=> __('Provide an optional heading for the audio player.','aesop-core')
 					),
 					'src' 			=> array(
 						'type'		=> 'media_upload',
-						'values' 	=> array( ),
 						'default' 	=> '',
 						'desc' 		=> __( 'Audio URL', 'aesop-core' ),
 						'tip'		=> __('URL to the mp3 file. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'loop'		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('off', 'aesop-core'),
-							__('on', 'aesop-core')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> '',
 						'desc' 		=> __( 'Loop Audio Player', 'aesop-core' ),
 						'tip'		=> __('Enable looping within the audio player.','aesop-core')
 					),
 					'viewstart'		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Start Audio When in View', 'aesop-core' ),
 						'tip'		=> __('When set to <em>on</em> the audio will start playing automatically once scrolled into view.','aesop-core')
 					),
 					'viewend'		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> 'off',
-						'desc' 		=> __( 'Stop Audio When out of View', 'aesop-core' ),
+						'desc' 		=> __( 'Stop Audio When Out of View', 'aesop-core' ),
 						'tip'		=> __('Used together with the option above, this option when set to <em>on</em> will stop the audio player from playing once scrolled out of view.','aesop-core')
 					),
 					'hidden'		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('off', 'aesop-core'),
-							__('on', 'aesop-core')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> '',
 						'desc' 		=> __( 'Hide Audio Player', 'aesop-core' ),
@@ -599,35 +715,71 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'single',
 				'atts' 				=> array(
 					'width' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
+						'type'		=> 'text_small',
 						'default' 	=> '100%',
 						'desc' 		=> __( 'Component Width', 'aesop-core' ),
 						'tip'		=> __('You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.','aesop-core')
 					),
 					'align' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							'left',
-							'center',
-							'right'
+							array(
+								'value' => 'left',
+								'name'	=> __('Left','aesop-core')
+							),
+							array(
+								'value' => 'right',
+								'name'	=> __('Right','aesop-core')
+							),
+							array(
+								'value' => 'center',
+								'name'	=> __('Center','aesop-core')
+							)
 						),
 						'default' 	=> 'center',
 						'desc' 		=> __( 'Alignment', 'aesop-core' ),
 						'tip'		=> __('Should the video be floated to the left, right, or centered?','aesop-core')
 					),
 					'src' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('vimeo', 'aesop-core'),
-							__('youtube', 'aesop-core'),
-							__('kickstarter', 'aesop-core'),
-							__('viddler', 'aesop-core'),
-							__('vine', 'aesop-core'),
-							__('wistia', 'aesop-core'),
-							__('instagram','aesop-core'),
-							__('dailymotion', 'aesop-core'),
-							__('self', 'aesop-core')
+
+							array(
+								'value' => 'vimeo',
+								'name'	=> __('Vimeo','aesop-core')
+							),
+							array(
+								'value' => 'youtube',
+								'name'	=> __('YouTube','aesop-core')
+							),
+							array(
+								'value' => 'kickstarter',
+								'name'	=> __('Kickstarter','aesop-core')
+							),
+							array(
+								'value' => 'viddler',
+								'name'	=> __('Viddler','aesop-core')
+							),
+							array(
+								'value' => 'vine',
+								'name'	=> __('Vine','aesop-core')
+							),
+							array(
+								'value' => 'wistia',
+								'name'	=> __('Wistia','aesop-core')
+							),
+							array(
+								'value' => 'instagram',
+								'name'	=> __('Instagram','aesop-core')
+							),
+							array(
+								'value' => 'dailymotion',
+								'name'	=> __('Dailymotion','aesop-core')
+							),
+							array(
+								'value' => 'self',
+								'name'	=> __('Self','aesop-core')
+							)
 						),
 						'default' 	=> 'vimeo',
 						'desc' 		=> __('Video Source', 'aesop-core' ),
@@ -635,74 +787,101 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'id' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Video ID (enter URL for Viddler)', 'aesop-core' ),
-						'tip'		=> __('The video id can be found within any video URL, and typically looks something like <code>s8J2Ge4</code>.','aesop-core')
+						'desc' 		=> __( 'Video ID', 'aesop-core' ),
+						'tip'		=> __('The video ID can be found within the video URL and typically looks something like <code>s8J2Ge4</code>. For Viddler videos, enter the full URL instead.','aesop-core')
 					),
-					'hosted' 			=> array(
-						'type'		=> 'media_upload',
-						'values' 	=> array( ),
+					'caption' 		=> array(
+						'type'		=> 'text_area',
 						'default' 	=> '',
-						'desc' 		=> __( 'Video URL( if <em>self</em> as Source ). Click <em>Select Media</em> to open the WordPress Media Library. ', 'aesop-core' ),
-						'tip'		=> __('This is only used if you are hosting the video yourself. Note, set the Video Source to <em>self</em> above to utilize this option.','aesop-core')
+						'desc' 		=> __( 'Caption', 'aesop-core' ),
+						'tip'		=> __('Optionally display a caption below the video.','aesop-core')
+					),
+					'hosted' 		=> array(
+						'type'		=> 'media_upload',
+						'default' 	=> '',
+						'desc' 		=> __( 'Video URL (only if using <em>self</em> as video source)', 'aesop-core' ),
+						'tip'		=> __('This is only used if you are hosting the video yourself and have set the Video Source (above) to <em>self</em>. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'loop' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> 'on',
-						'desc' 		=> __('Video Loop ( if <em>self</em> as Source )', 'aesop-core' ),
+						'desc' 		=> __('Video Loop (only if using <em>self</em> as video source)', 'aesop-core' ),
 						'tip'		=> __('Enable the video to loop.','aesop-core')
 					),
 					'autoplay' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> 'on',
-						'desc' 		=> __('Autoplay ( if <em>self</em> as Source )', 'aesop-core' ),
+						'desc' 		=> __('Autoplay (only if using <em>self</em> as video source)', 'aesop-core' ),
 						'tip'		=> __('Should the video automatically start playing.','aesop-core')
 					),
 					'controls' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> 'off',
-						'desc' 		=> __('Video Controls ( if <em>self</em> as Source )', 'aesop-core' ),
+						'desc' 		=> __('Video Controls (only if using <em>self</em> as video source)', 'aesop-core' ),
 						'tip'		=> __('Hide or show the controls for the self-hosted video player.','aesop-core')
 					),
 					'viewstart'		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> 'off',
-						'desc' 		=> __( 'Start Video When in View  ( if <em>self</em> as Source )', 'aesop-core' ),
+						'desc' 		=> __( 'Start Video When in View (only if using <em>self</em> as video source)', 'aesop-core' ),
 						'tip'		=> __('When set to <em>on</em> the video will start playing automatically once scrolled into view.','aesop-core')
 					),
 					'viewend'		=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('on', 'aesop-core'),
-							__('off', 'aesop-core')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> 'off',
-						'desc' 		=> __( 'Stop Video When Out of View  ( if <em>self</em> as Source )', 'aesop-core' ),
+						'desc' 		=> __( 'Stop Video When Out of View (only if using <em>self</em> as video source)', 'aesop-core' ),
 						'tip'		=> __('Used together with the option above, this option when set to <em>on</em> will stop the video player from playing once scrolled out of view.','aesop-core')
-					),
-					'caption' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
-						'default' 	=> '',
-						'desc' 		=> __( 'Caption (optional)', 'aesop-core' ),
-						'tip'		=> __('Optionally display a caption below the video.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Responsive video component with alignment and optional caption.','aesop-core' ),
@@ -712,11 +891,10 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'single',
 				'atts' 				=> array(
 					'height' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
+						'type'		=> 'text_small',
 						'default' 	=> '',
 						'desc' 		=> __( 'Height', 'aesop-core' ),
-						'tip'		=> __('The height of the map component. By default this is set to <code>500</code>. Avoid using percentages here.','aesop-core')
+						'tip'		=> __('The height of the map component. By default this is set to <em>500px</em>. Avoid using percentages with this option.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Creates the basic map component. Use the Map Locations edit boxes when writing your story to add locations.','aesop-core' )
@@ -727,17 +905,15 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'num' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Date', 'aesop-core' ),
-						'tip'		=> __('This is what is displayed as the timeline navigation label, and doesn\'t have to be a date specifically. Any text will work.','aesop-core')
+						'desc' 		=> __( 'Navigation Menu Item Label', 'aesop-core' ),
+						'tip'		=> __('This is what is displayed for the timeline navigation menu item label. Example usage includes dates, years, colors, locations, and names.','aesop-core')
 					),
 					'title' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Title', 'aesop-core' ),
-						'tip'		=> __('The title that should be displayed within the story.','aesop-core')
+						'desc' 		=> __( 'Timeline Title', 'aesop-core' ),
+						'tip'		=> __('The timeline title that should be displayed within the story.','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Enter a number such as 2007, and a small timeline will be displayed with scroll to points. This works similar to the chapter heading.','aesop-core' )
@@ -747,10 +923,16 @@ if(!function_exists('aesop_shortcodes')){
 				'type' 				=> 'single',
 				'atts' 				=> array(
 					'type' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('pdf'),
-							__('image')
+							array(
+								'value' => 'pdf',
+								'name'	=> __('PDF','aesop-core')
+							),
+							array(
+								'value' => 'image',
+								'name'	=> __('Image','aesop-core')
+							)
 						),
 						'default' 	=> 'pdf',
 						'desc' 		=> __( 'Document Type', 'aesop-core' ),
@@ -758,16 +940,14 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'src' 			=> array(
 						'type'		=> 'media_upload',
-						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Document', 'aesop-core' ),
+						'desc' 		=> __( 'Document URL', 'aesop-core' ),
 						'tip'		=> __('URL to the document. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
 					),
 					'caption' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
+						'type'		=> 'text_area',
 						'default' 	=> '',
-						'desc' 		=> __( 'Optional Caption', 'aesop-core' ),
+						'desc' 		=> __( 'Document Caption', 'aesop-core' ),
 						'tip'		=> __('Provide an optional caption for the document component.','aesop-core')
 					)
 				),
@@ -779,49 +959,62 @@ if(!function_exists('aesop_shortcodes')){
 				'atts' 				=> array(
 					'title' 			=> array(
 						'type'		=> 'text',
-						'values' 	=> array( ),
 						'default' 	=> '',
-						'desc' 		=> __( 'Optional Title', 'aesop-core' ),
+						'desc' 		=> __( 'Title', 'aesop-core' ),
 						'tip'		=> __('Display an optional heading to be used within the Collection component.','aesop-core')
 					),
 					'collection' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array( ),
+						'type'		=> 'select',
+						'values'	=> aesop_option_get_categories(),
 						'default' 	=> '',
-						'desc' 		=> __( 'Category ID', 'aesop-core' ),
-						'tip'		=> __('Provide the ID of the category that you want stories to be displayed from.','aesop-core')
+						'desc' 		=> __( 'Category', 'aesop-core' ),
+						'tip'		=> __('Select the category that you want stories to be displayed from.','aesop-core')
 					),
 					'limit' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array(),
+						'type'		=> 'text_small',
 						'default' 	=> '',
-						'desc' 		=> __( 'Posts to Show', 'aesop-core' ),
-						'tip'		=> __('How many stories should be displayed.','aesop-core')
+						'desc' 		=> __( 'Number of Stories', 'aesop-core' ),
+						'tip'		=> __('How many stories should be displayed in this collection?','aesop-core')
 					),
 					'columns' 			=> array(
-						'type'		=> 'text',
-						'values' 	=> array(
-							__('2'),
-							__('3'),
-							__('4'),
-							__('5')
-						),
+						'type'		=> 'select',
+						'values' 	=> aesop_option_counter(5),
 						'default' 	=> '2',
 						'desc' 		=> __( 'Columns', 'aesop-core' ),
 						'tip'		=> __('Stories are displayed in a grid. How many columns should the grid be?','aesop-core')
 					),
 					'splash' 			=> array(
-						'type'		=> 'text',
+						'type'		=> 'select',
 						'values' 	=> array(
-							__('on'),
-							__('off')
+							array(
+								'value' => 'on',
+								'name'	=> __('On', 'aesop-core')
+							),
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							)
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Splash Mode', 'aesop-core' ),
-						'tip'		=> __('Setting this to <em>on</em>, will then only display the actual categories on your site with the category title.','aesop-core')
+						'tip'		=> __('Setting this to on will display only the actual category titles (without images).','aesop-core')
 					)
 				),
 				'desc' 				=> __( 'Show a collection of stories. Typically used on a page like the home page.','aesop-core' )
+			),
+			'gallery' 				=> array(
+				'name' 				=> __('Gallery', 'aesop-core'),
+				'type' 				=> 'single',
+				'atts' 				=> array(
+					'id' 			=> array(
+						'type'		=> 'select',
+						'values' 	=> aesop_option_get_posts('ai_galleries'),
+						'default' 	=> '',
+						'desc' 		=> __( 'Choose Gallery', 'aesop-core' ),
+						'tip'		=> __('Select a gallery below to insert it.','aesop-core')
+					)
+				),
+				'desc' 				=> __( ' ','aesop-core' )
 			)
 		);
 
@@ -830,6 +1023,94 @@ if(!function_exists('aesop_shortcodes')){
 		else
 			return apply_filters('aesop_avail_components', $shortcodes);
 	}
+}
+
+/**
+*
+*	Helper function to retrieve posts for use in option array
+*
+*	@since 1.1
+*   @todo cache this query
+* 	@param $type - post-type
+* 	@todo implement caching based on component settings view
+*/
+
+function aesop_option_get_posts($type = 'post'){
+
+	$args = array('posts_per_page' => -1, 'post_type' => $type);
+
+	$posts = get_posts($args);
+
+	$array = array();
+
+	if ( $posts ):
+
+		foreach( $posts as $post ){
+
+			array_push( $array, array(
+	            'value' => $post->ID,
+	            'name' 	=> $post->post_title
+	        ));
+		}
+
+		return $array;
+
+	endif;
+}
+
+/**
+*
+*	Helper function to retrieve teh categories for use in option array
+*
+*	@since 1.1
+*   @todo cache this query
+* 	@param $type - post-type
+* 	@todo implement caching based on component settings view
+*/
+function aesop_option_get_categories($type = 'post') {
+
+	$args = array('type' => $type);
+
+	$cats = get_categories($args);
+
+	$array = array();
+
+	if ( $cats ):
+
+		foreach( $cats as $cat ){
+
+			array_push( $array, array(
+	            'value' => $cat->cat_ID,
+	            'name' 	=> $cat->cat_name
+	        ));
+		}
+
+		return $array;
+
+	endif;
+}
+
+/**
+*
+*	Helper function to build a dropdown with integers
+*
+*	@since 1.1
+* 	@param $count - int
+*/
+function aesop_option_counter( $count = 10 ) {
+
+	$array = array();
+
+	for ($i = 1; $i <= $count; $i++) {
+
+		array_push( $array, array(
+	        'value' => $i,
+	        'name' 	=> $i
+	    ));
+
+	}
+
+	return $array;
 }
 
 ?>

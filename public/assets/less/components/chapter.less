@@ -1,3 +1,5 @@
+@import "base.less";
+
 .jorgen-article-cover-wrap {
     position: fixed;
 }
@@ -6,10 +8,41 @@
 
     .aesop-cover-title {
         max-width: 100%;
+        margin: 0;
+        padding-bottom: 20px;
+        bottom: 100px;
+        border-bottom: 1px solid @body-bg;
+        font-size: @font-size-mega;
+        color: #fff;
+        width: 90%;
+        left: 10%;
+        position: absolute;
+        z-index: 1;
+
+        small {
+            font-size:40px;
+        }
+    }
+
+    @media (max-width:@mobile-large){
+        .aesop-cover-title {
+            font-size:@font-size-mega - 10;
+            small { font-size:@font-size-mega - 20;}
+        }
+    }
+
+    @media(max-width:@mobile-medium) {
+        .aesop-cover-title {
+            display:block;
+            bottom:30px;
+            font-size:@font-size-mega - 30;
+            small { display:block;font-size:@font-size-mega - 42;}
+        }
     }
 }
 
+// deprecated
 .aesop-chapter-title {
     position: absolute;
-    left:-10000px
+    left:-10000px;
 }

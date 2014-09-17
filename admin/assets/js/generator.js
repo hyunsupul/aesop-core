@@ -1,11 +1,165 @@
 jQuery(document).ready(function($) {
 
+	var modal = $('#aesop-generator-wrap');
+
+	// start new
+	$('.aesop-add-story-component').click(function(e){
+		e.preventDefault();
+
+		if ( typeof window.aiactive !== 'undefined' ) {
+      alert('Nesting components within the visual interface is not supported.');
+    } else if ( typeof window.ailocked !== 'undefined' ) {
+      alert('Please click on the editor and set your cursor location first.');
+    } else {
+      jQuery('body').toggleClass('modal-open');
+      jQuery(modal).toggleClass('aesop-generator-open');
+    }
+	});
+
+	var settingsHeight = function(){
+		var height  = $(window).height() - 90;
+		var width = $(window).width();
+
+		if ( width < 782 ) {
+			var genLeftHeight = $('.aesop-generator-left').height();
+			var buttonHeight = $('.aesop-buttoninsert-wrap').height();
+		} else {
+			var genLeftHeight = '';
+			var buttonHeight = '';
+		}
+		$('#aesop-generator-settings-outer').css({'height':height + genLeftHeight + buttonHeight});
+
+		if ( height < 700 && width > 782 ) {
+			$('.aesop-generator-left').addClass('aesop-generator-small-height');
+		} else {
+			$('.aesop-generator-left').removeClass('aesop-generator-small-height');
+		}
+	}
+
+	var destroyModal = function(){
+    if ( tinyMCE.activeEditor ) {
+      var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
+      if(editing != ''){
+        editing[0].removeAttribute('id');
+      }
+    }
+		$(modal).removeClass('aesop-generator-open');
+		$('body').removeClass('modal-open');
+    $('body').removeClass('modal-updating');
+	}
+	settingsHeight();
+
+	$(window).resize(function(){
+		settingsHeight();
+	});
+	  	// close modals on escape
+	$(document).keyup(function(e) {
+
+		if (e.keyCode == 27) {
+			destroyModal();
+		}
+	});
+
+	$('.aesop-close-modal').click(function(e){
+		e.preventDefault();
+		destroyModal();
+	});
+
+	$('.post-type-ai_galleries .insert-media').html('<span class="dashicons dashicons-images-alt2"></span> Add Gallery');
+
+	// end new
+
 	$('.aesop-generator').dropkick({
 		change: function () {
+
     		var queried_shortcode = $('#aesop-generator-select').find(':selected').val();
-			$('#aesop-generator-settings').html(aesopshortcodes[queried_shortcode])
+			$('#aesop-generator-settings').html(aesopshortcodes[queried_shortcode]);
+
+			////
+			// conditional loading
+			////
+
+			/*
+			var hiddenClass			= $('aesop-option-hidden'),
+				openClass			= $('aesop-option-open'),
+				hiddenQuoteOpts 	= $('.aesop-quote-speed, .aesop-quote-offset, .aesop-quote-direction'),
+				hiddenParallaxOpts 	= $('.aesop-parallax-floatermedia, .aesop-parallax-floaterposition, .aesop-parallax-floateroffset, .aesop-parallax-floaterdirection'),
+				hiddenVideoOpts 	= $('.aesop-video-hosted, .aesop-video-loop, .aesop-video-autoplay, .aesop-video-controls, .aesop-video-viewstart, .aesop-video-viewend');
+
+			// quote component
+			$('.aesop-quote-parallax #aesop-generator-attr-parallax').on('change',function(){
+				var selectedValue = $(this).val();
+
+				if( 'on' === selectedValue ) {
+					$(hiddenQuoteOpts).removeClass('aesop-option-hidden').addClass('aesop-option-open');
+					$.cookie('aesop-quote-parallax-options', 'visible', { expires: 7 });
+				} else {
+					$(hiddenQuoteOpts).removeClass('aesop-option-open').addClass('aesop-option-hidden');
+					$.cookie('aesop-quote-parallax-options', 'hidden', { expires: 7 });
+				}
+
+			});
+
+			// parallax component
+			$('.aesop-parallax-floater #aesop-generator-attr-floater').on('change',function(){
+				var selectedValue = $(this).val();
+
+				if( 'on' === selectedValue ) {
+					$(hiddenParallaxOpts).addClass('aesop-option-open');
+					$.cookie('aesop-parallax-options', 'visible', { expires: 7 });
+				} else {
+					$(hiddenParallaxOpts).removeClass('aesop-option-open').addClass('aesop-option-hidden');
+					$.cookie('aesop-parallax-options', 'hidden', { expires: 7 });
+				}
+
+			});
+
+			// video component
+			$('.aesop-video-src #aesop-generator-attr-src').on('change',function(){
+				var selectedValue = $(this).val();
+
+				if( 'self' === selectedValue ) {
+					$(hiddenVideoOpts).addClass('aesop-option-open');
+					$('.aesop-video-id').removeClass('aesop-option-open').addClass('aesop-option-hidden');
+					$.cookie('aesop-video-options', 'visible', { expires: 7 });
+				} else {
+					$(hiddenVideoOpts).removeClass('aesop-option-open').addClass('aesop-option-hidden');
+					$('.aesop-video-id').addClass('aesop-option-open');
+					$.cookie('aesop-video-options', 'hidden', { expires: 7 });
+				}
+
+			});
+
+			////
+			// set cookies for remembered states
+			// @todo - need to account for multiple components in editor
+			////
+
+			// set quote cookie
+			if ( 'visible' == $.cookie('aesop-quote-parallax-options') ) {
+				$(hiddenQuoteOpts).addClass('aesop-option-open');
+			} else if ( 'hidden' == $.cookie('aesop-quote-parallax-options') ) {
+				$(hiddenQuoteOpts).addClass('aesop-option-hidden');
+			}
+
+			// set paralalx cookie
+			if ( 'visible' == $.cookie('aesop-parallax-options') ) {
+				$(hiddenParallaxOpts).addClass('aesop-option-open');
+			} else if ( 'hidden' == $.cookie('aesop-parallax-options') ) {
+				$(hiddenParallaxOpts).addClass('aesop-option-hidden');
+			}
+
+			// set paralalx cookie
+			if ( 'visible' == $.cookie('aesop-video-options') ) {
+				$(hiddenVideoOpts).addClass('aesop-option-open');
+			} else if ( 'hidden' == $.cookie('aesop-video-options') ) {
+				$(hiddenVideoOpts).addClass('aesop-option-hidden');
+			}
+			*/
         }
 	});
+
+
 
 	// Insert shortcode
 	$('#aesop-generator-insert,.aesop-generator').live('click', function() {
@@ -25,9 +179,23 @@ jQuery(document).ready(function($) {
 		if ( $('#aesop-generator-content').val() != 'false' ) {
 			$('#aesop-generator-result').val($('#aesop-generator-result').val() + $('#aesop-generator-content').val() + '[/' + aesop_compatibility_mode_prefix + queried_shortcode + ']');
 		}
+
+    if ( tinyMCE.activeEditor ) {
+      var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
+      tinyMCE.activeEditor.dom.remove(editing);
+    }
+
 		window.send_to_editor(jQuery('#aesop-generator-result').val());
+
+		// start new
+		destroyModal();
+		// end new
+
 		return false;
+
 	});
+
+
 });
 
 // media uploader
@@ -55,7 +223,7 @@ jQuery('#aesop-upload-img').live('click', function( event ){
     // When an image is selected, run a callback.
     file_frame.on( 'select', function() {
       	attachment = file_frame.state().get('selection').first().toJSON();
-  		jQuery('#aesop-generator-attr-img,#aesop-generator-attr-src, #aesop-generator-attr-hosted').val(attachment.url);
+  		jQuery('.aesop-generator-attr-media_upload').val(attachment.url);
     });
 
     // Finally, open the modal

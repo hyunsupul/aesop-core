@@ -6,7 +6,7 @@
  	* @author    Nick Haskins <nick@aesopinteractive.com>
  	* @license   GPL-2.0+
  	* @link      http://aesopinteractive.com
- 	* @copyright 2013 Nick Haskins
+ 	* @copyright 2014 Nick Haskins
 */
 /**
  	*
@@ -60,13 +60,15 @@ class Aesop_Core_Admin {
 
 
 		/*
-		 	* Define custom functionality.
-		 	*
+		*  Define custom functionality.
+		*
 		*/
-		add_action( 'media_buttons', array($this,'generator_button' ),100);
-		add_action( 'admin_footer', array($this,'generator_popup' ));
-		add_action('admin_enqueue_scripts', array($this,'admin_scripts'));
-		add_filter( 'wp_fullscreen_buttons', array($this,'fs_generator_button' ));
+		add_action( 'media_buttons', 			array($this,'generator_button'), 100 );
+		add_action( 'admin_footer', 			array($this,'generator_popup'));
+		add_action( 'admin_enqueue_scripts', 	array($this,'admin_scripts'));
+		add_filter( 'mce_css', 					array($this,'aesop_editor_styles'));
+		add_filter( 'wp_fullscreen_buttons', 	array($this,'fs_generator_button'));
+		add_filter( 'mce_external_plugins', 	array($this,'tinymce_plugin'));
 	}
 
 	/**
@@ -97,7 +99,7 @@ class Aesop_Core_Admin {
 		wp_register_script( 'ai-core-script', AI_CORE_URL. '/admin/assets/js/generator.min.js', AI_CORE_VERSION, true);
 
         //Register Styles
-		wp_register_style( 'ai-core-styles', AI_CORE_URL. '/admin/assets/css/style.css', AI_CORE_VERSION, true);
+		wp_register_style( 'ai-core-styles', AI_CORE_URL. '/admin/assets/css/aesop-admin.css', AI_CORE_VERSION, true);
 
 		// Load styles and scripts on areas that users will edit
 		if ( is_admin() ) {
@@ -125,6 +127,9 @@ class Aesop_Core_Admin {
 
 				// Enqueue styles
 				wp_enqueue_style( 'ai-core-styles' );
+
+				// 3rd party add-ons hook in to set icon in generator with css
+				do_action('aesop_admin_styles');
 			}
 		}
 	}
@@ -136,7 +141,7 @@ class Aesop_Core_Admin {
 	*/
 	public function generator_button() {
 
-		$getbutton = sprintf('<a href="#TB_inline?width=640&height=640&inlineId=aesop-generator-wrap" class="button thickbox aesop-add-story-component" title="Add Story Component"><span class="aesop-admin-button-icon dashicons dashicons-plus"></span> %s</a>', __('Add Component', 'aesop-core'));
+		$getbutton = sprintf('<a href="#aesop-generator-wrap" class="button aesop-add-story-component" title="Add Story Component"><span class="aesop-admin-button-icon dashicons dashicons-plus"></span> %s</a>', __('Add Component', 'aesop-core'));
 
 		$button = apply_filters('aesop_generator_button', $getbutton);
 
@@ -153,19 +158,46 @@ class Aesop_Core_Admin {
 		$buttons[] = self::generator_button();
 		return $buttons;
 	}
+
+	/**
+	 	* Add the tinymce plugin recognize specific shortcodes
+	 	*
+	 	* @since     1.1.0
+	*/
+	public function tinymce_plugin(){
+		$plugins = array('aiview','noneditable');
+		$plugins_array = array();
+
+		foreach ($plugins as $plugin) {
+			$plugins_array[ $plugin ] = plugins_url('assets/js/tinymce/', __FILE__) . $plugin . '/plugin.min.js';
+		}
+		return $plugins_array;
+	}
+
+	public function aesop_editor_styles( $mce_css ) {
+		$mce_css .= ', ' . plugins_url( 'assets/css/tinymce/custom-editor-style.css', __FILE__ );
+    return $mce_css;
+	}
+
 	/**
 	 	* Draw the component generator
 	 	*
 	 	* @since     1.0.0
 	*/
 	public function generator_popup() {
-		?>
-		<div id="aesop-generator-wrap" style="display:none">
+
+		global $pagenow;
+
+			// Load styles and scripts for bad ass generator only on these pages
+		$aesop_generator_includes_pages = array( 'post.php', 'edit.php', 'post-new.php', 'index.php' );
+		if ( in_array( $pagenow, $aesop_generator_includes_pages ) ) { ?>
+		<div id="aesop-generator-wrap">
 			<div id="aesop-generator" class="aesop-generator-inner-wrap">
+				<a class="media-modal-close aesop-close-modal" href="#"><span class="media-modal-icon"><span class="screen-reader-text">Close media panel</span></span></a>
 				<div id="aesop-generator-shell">
 
 
-					<div class="aesop-select-wrap fix">
+					<div class="aesop-select-wrap fix aesop-generator-left">
 						<select name="aesop-select" class="aesop-generator" id="aesop-generator-select">
 
 							<?php
@@ -176,9 +208,13 @@ class Aesop_Core_Admin {
 							}
 							?>
 						</select>
+
+						<?php if ( !defined('AI_CORE_WATERMARK' ) ) {
+							echo self::messages();
+						} ?>
 					</div>
 
-					<div id="aesop-generator-settings-outer">
+					<div id="aesop-generator-settings-outer" class="aesop-generator-right">
 						<div id="aesop-generator-settings">
 
 							<div class="aesop-generator-empty">
@@ -194,6 +230,23 @@ class Aesop_Core_Admin {
 				</div>
 			</div>
 		</div>
-		<?php
+		<?php }
+	}
+
+	/**
+	*
+	*	@since 1.1
+	*	@return array of random messages used for watermark
+	*
+	*/
+	private function messages() {
+
+		$message = array(
+			__('Brought to you by Aesopinteractive LLC - <a href="http://aesopstoryengine.com">http://aesopstoryengine.com</a>', 'aesop-core'),
+			__('Donate to further development of Aesop Story Engine at <a href="http://aesopstoryengine.com/donate">http://aesopstoryengine.com/donate</a>', 'aesop-core')
+		);
+
+		return '<p class="aesop-generator-mark">'.$message[array_rand($message)].'</p>';
+
 	}
 }

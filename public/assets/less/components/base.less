@@ -2,15 +2,26 @@
 @link-color:                #428bca;
 @body-bg:                   #fff;
 @baseContrast:              darken(@body-bg,10);
-@text-color:                #333;
+
 @accent:                    lighten(@text-color,33);
 @width:                     800px;
-@font-size-small:           14px;
-@font-size-xsmall:          12px;
+
 @caption-padding:           .25rem .75rem;
 @caption-bg:                fadeout(@body-bg,10);
+
+// type variables
+@font-size-small:           14px;
+@font-size-xsmall:          12px;
+@font-size-mega:            62px;
+@text-color:                #333;
 @font-family-sans-serif:    "Helvetica Neue", Helvetica, Arial, sans-serif;
 @aesop-flip-text:           contrast(@text-color, lighten(@text-color, 50), darken(@text-color,10), 50%);
+
+
+// responsive variables
+@mobile-large:               @width;
+@mobile-medium:              480px;
+@mobile-small:               320px;
 
 // mixins
 .transition(@transition) {
@@ -33,4 +44,15 @@
     padding:    @caption-padding;
     background: @caption-bg;
     font-size: @font-size-small;
+}
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
 }

@@ -8,31 +8,25 @@ module.exports = function(grunt) {
         // watch our project for changes
         watch: {
             less: {
-				files: ['public/assets/less/*/**','admin/assets/css/*/**'],
-                tasks: ['less']
-            },
-            js: {
-                files: [
-                    '<%= jshint.all %>'
-                ],
-                tasks: ['jshint', 'uglify']
+				files: ['public/assets/less/*/**','admin/assets/less/*/**'],
+                tasks: ['less:adminLess']
             },
             livereload: {
                 options: { livereload: true },
-                files: ['public/assets/**/*', '**/*.html', '**/*.php', 'public/assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}']
+                files: ['admin/assets/**/*','public/assets/**/*', '**/*.html', '**/*.php', 'public/assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}']
             }
         },
-        // style (Sass) compilation via Compass
+        // less compiling
 		less: {
 
 		  	adminLess: {
-		    	options: {
-		      		paths: ["admin/assets/css/*"],
-		      		cleancss:true
-		    	},
-		    	files: {
-		     	 	"admin/assets/css/style.css": "admin/assets/css/style.less"
-		    	}
+			    options: {
+			      	paths: ["admin/assets/less/*/**"],
+			      	cleancss:true
+			    },
+			    files: {
+			      	"admin/assets/css/aesop-admin.css": "admin/assets/less/style.less"
+			    }
 		  	},
 		  	coreLess: {
 		  		options: {
@@ -40,7 +34,7 @@ module.exports = function(grunt) {
 		      		cleancss:true
 		    	},
 		    	files: {
-		      		"public/assets/css/ai-core.min.css": "public/assets/less/style.less"
+		      		"public/assets/css/ai-core.css": "public/assets/less/style.less"
 		    	}
 		  	},
 		  	publicLess: {
@@ -107,7 +101,8 @@ module.exports = function(grunt) {
                     'admin/assets/js/generator.min.js': [
                      	'admin/assets/js/generator.js',
                      	'admin/assets/js/transition.js',
-                     	'admin/assets/js/tooltip.js'
+                     	'admin/assets/js/tooltip.js',
+                     	'admin/assets/js/jquery.cookie.js'
                     ]
                 }
             },
@@ -131,6 +126,7 @@ module.exports = function(grunt) {
                      	'public/assets/js/cookie.js',
                      	'public/assets/js/parallax.js',
                      	'public/assets/js/photoset.js',
+                     	'public/assets/js/arrive-2.0.0.min.js',
                      	'public/assets/js/methods.js'
                     ]
                 }
@@ -142,7 +138,22 @@ module.exports = function(grunt) {
 		        swapPath: '/tmp'
 		    },
 		    all: ['*.php', '**/*.php', '!node_modules/**/*.php']
-		}
+		},
+
+	    cssjanus: {
+			core: {
+				options: {
+					swapLtrRtlInUrl: false
+				},
+				files: [
+					{
+						src: 'public/assets/css/ai-core.css',
+						dest: 'public/assets/css/ai-core-rtl.css'
+					}
+				]
+			}
+
+	    }
     });
 
     // register task

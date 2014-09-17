@@ -1,0 +1,115 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans);
+
+.aesop-button-clipboard {
+	display: none;
+}
+
+.aesop-component{
+	background-color: #555;
+	margin: 15px 0;
+	display: block;
+	color: rgb(214, 214, 214);
+	position: relative;
+	font-family: "Open Sans", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.aesop-component-bar{
+	font-size: 14px;
+	text-transform: uppercase;
+	display: block;
+	padding: 10px 15px;
+	background-color: #222;
+
+}
+
+.aesop-component-content{
+	padding: 15px;
+}
+
+.aesop-component-controls{
+	float: right;
+}
+
+.aesop-end {
+	display: none;
+}
+
+.aesop-component-title:before {
+	padding-right: 10px;
+	vertical-align: middle;
+	font-family: Dashicons;
+	position: relative;
+	top:-1px;
+}
+
+.aesop-content-title:before { content: "\f207"; }
+.aesop-chapter-title:before { content: "\f330"; }
+.aesop-image-title:before { content: "\f128"; }
+.aesop-audio-title:before { content: "\f127"; }
+.aesop-video-title:before { content: "\f126"; }
+.aesop-map-title:before { content: "\f319"; }
+.aesop-character-title:before { content: "\f338"; }
+.aesop-timeline_stop-title:before { content: "\f469"; }
+.aesop-parallax-title:before { content: "\f168"; }
+.aesop-quote-title:before { content: "\f122"; }
+.aesop-document-title:before { content: "\f123"; }
+.aesop-collection-title:before { content: "\f175"; }
+.aesop-gallery-title:before { content: "\f161"; }
+
+.aesop-button:before {
+	vertical-align: middle;
+	font-family: Dashicons;
+	display: inline-block;
+}
+.aesop-button {
+	position: relative;
+	z-index: 2;
+	float: right;
+	margin:0 3px;
+	-webkit-transition:.15s ease-in-out;
+}
+.aesop-button:first-child{
+	margin-right:0;
+}
+.aesop-button:active {background:transparent;}
+.aesop-button:hover {cursor:pointer;opacity:0.7;}
+
+.aesop-button-edit:before { content: "\f464"; }
+.aesop-button-delete:before { content: "\f182"; }
+.aesop-button-clipboard:before { content: "\f481"; }
+.aesop-button-paste:before { content: "\f481"; }
+
+.unselectable {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.clipboardControl {
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: #555555;
+	padding: 3px 4px 3px 9px;
+	color: rgb(214, 214, 214);
+}
+
+.aesop-component-mask {
+	position: absolute;
+	top:0;
+	left:-1px;
+	height:41px;
+	width:100%;
+	z-index: 1;
+}
+.aesop-component-mask:after {
+	position: absolute;
+	top:0;
+	left:-1px;
+	height:100%;
+	width:100%;
+	content:'';
+}

@@ -1,11 +1,11 @@
 === Aesop Story Engine ===
-Contributors: nphaskins, mauryaratan, Tmeister
+Contributors: nphaskins, mauryaratan, Tmeister, etcio
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -96,7 +96,7 @@ If you think something is missing, we want to hear from you. Post your request a
 
 = Uploading in WordPress Dashboard =
 
-1. Navigate to the 'Add New' in the plugins dashboard
+1. Navigate to 'Add New' in the plugins dashboard
 2. Navigate to the 'Upload' area
 3. Select `aesop-core.zip` from your computer
 4. Click 'Install Now'
@@ -133,6 +133,33 @@ Full documentation can be found below.
 
 
 == Changelog ==
+
+= 1.1 =
+* NEW - Complete compatibilty with WordPress 4.0
+* NEW - New user interface
+* NEW - Components are now editable
+* NEW - API for creating addons to sell or give away
+* NEW - RTL support
+* ADDED - Filters for Audio and Video component waypoints
+* ADDED - Filters for timeline and location offsets
+* ADDED - Filter to let Map component run on pages
+* ADDED - Gallery Component: added to the component generator with a dropdown to select gallery to insert
+* ADDED - Gallery Component: added captions to grid gallery items if a caption is set
+* ADDED - Content Component: added Floater Position option for parallax floater
+* TWEAK - Content Component: parallax code optimized and offsets automatically calculated
+* TWEAK - Map Component: automatically fall back to the first marker entered if the starting coordinate is missing and warn the user
+* TWEAK - Collection Component: mo longer have to input collection ID they are now automatically fed into a dropdown tand selectable by name
+* TWEAK - Parallax Component: floater item offset now automatically calculated - this means offset and speed options no longer necessary and have been removed
+* TWEAK - Parallax Component: optimizations and performance enhancements
+* TWEAK - Gallery Component: performance optimizations
+* TWEAK - Cleaned up user interface for creating Galleries in admin
+* TWEAK - Audio/Video Component: waypoint filters now targets individual components
+* TWEAK - Timeline Component: redesigned to perform well wihin 98% of WordPress themes
+* FIXED - Better support for Aesop Lazy Loader
+* FIXED - Video icon
+* FIXED - Quote Component: parallax floater options fixed (could not move up or down so two options are now left and right)
+* FIXED - Map Component:  warn users if no markers are set
+* FIXED - Map Component:  fixed empty bubbles appearing on markers with no text set
 
 = 1.0.9 =
 * FIXED - Various generator fixes for WordPress 4.0

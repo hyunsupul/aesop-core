@@ -1,0 +1,395 @@
+.aesop-generator-empty {
+    text-align: center;
+    padding:30px;
+
+    h2 {
+        color:#d6d6d6;
+    }
+}
+
+.aesop-generator-button-update {
+    display: none;
+}
+.modal-updating {
+    .aesop-generator-button-insert {
+        display: none;
+    }
+    .aesop-generator-button-update {
+        display: block;
+    }
+}
+
+#jpb_vscbuttons, #jpb_vscbutton {
+    position:absolute;
+    z-index:999998;
+    padding:2px;
+    display:none;
+}
+
+#jpb_vscbuttons img, #jpb_vscbutton img {
+    background-color : #eee;
+    border: 1px solid #999;
+    border-radius: 3px;
+    margin: 2px;
+    padding: 2px;
+}
+
+#jpb_vscbuttons img:hover, #jpb_vscbutton img:hover {
+    background-color: #ccc;
+    border-color: #555;
+}
+
+// hide select
+.dk_toggle {
+    display: none !important;
+}
+// inner options
+.dk_container {
+    margin: 0 auto 25px;
+    width:100%;
+    position: relative;
+
+}
+.dk_options_inner {
+    margin:0;
+
+    li {
+        margin:0;
+        width:33.333%;
+        display: inline-block;
+        vertical-align: top;
+
+        a {
+            display:block;
+            position: relative;
+            color:@text;
+            text-align: center;
+            letter-spacing: 1px;
+            display: block;
+            padding: 20px 10px;
+            cursor: pointer;
+            text-decoration: none;
+
+            &:before {
+                content:'';
+                font-family: Dashicons;
+                font-size: 40px;
+                position: relative;
+                margin: 20px auto 30px;
+                display: block;
+                width: 100%;
+            }
+
+            &.active {
+                outline:0;
+            }
+        }
+
+        a:hover,
+        &.dk_option_current a {
+            background: @link;
+            color:@text;
+            transition:background .15s ease-in-out;
+            &:before {
+                color:@text;
+            }
+        }
+
+        // image
+        &.image     { a:before { content: "\f128"; } }
+        // character
+        &.character { a:before { content: "\f338"; } }
+        // qupte
+        &.quote     { a:before { content: "\f122"; } }
+        // content
+        &.content   { a:before { content: "\f207"; } }
+        // chapter head
+        &.chapter   { a:before { content: "\f330"; } }
+        // parallax
+        &.parallax  { a:before { content: "\f168"; } }
+        // audio
+        &.audio     { a:before { content: "\f127"; } }
+        // video
+        &.video     { a:before { content: "\f126"; } }
+        // map
+        &.map       { a:before { content: "\f319"; } }
+        // video
+        &.timeline_stop  { a:before { content: "\f469"; } }
+        // document
+        &.document  { a:before { content: "\f123"; } }
+        // collection
+        &.collection  { a:before { content: "\f175"; } }
+        // collection
+        &.gallery  { a:before { content: "\f161"; } }
+    }
+}
+
+// NEW
+
+// main generatoe
+#aesop-generator {
+    overflow: hidden;
+    position: absolute;
+    left: 30px;
+    top: 60px;
+    right: 30px;
+    bottom: 30px;
+    background: @black;
+    border:1px solid #262626;
+    .box-shadow(0 0 12px rgba(0,0,0,0.6));
+
+    #aesop-generator-shell {
+        .clearfix();
+    }
+
+    .aesop-generator-left,
+    .aesop-generator-right {
+        float: left;
+    }
+
+    // left panel
+    .aesop-generator-left {
+        width:63%;
+        padding: 24px;
+        .box-sizing(border-box);
+    }
+
+    .aesop-generator-right {
+        width:37%;
+        overflow-y: scroll;
+    }
+
+    #aesop-generator-insert {
+        border-radius:5px;
+        opacity:1.0;
+        position:relative;
+        font-weight: normal;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-size: 14px;
+        color:#fff;
+        text-decoration: none;
+        padding: 6px 15px;
+        height: auto;
+        display: block;
+        text-align: center;
+        line-height: 2em;
+        background: @link;
+        margin: 0 auto;
+
+        &:hover {
+            background: darken(@link,5);
+        }
+    }
+
+    .aesop-close-modal {
+        right:12px;
+        .media-modal-icon:before {
+            background: @dark-gray;
+            border-radius: 100%;
+        }
+    }
+
+}
+
+// OLD
+
+// settings view
+#aesop-generator-settings-outer {
+    background: @dark-gray;
+
+    #aesop-generator-settings {
+        padding-bottom:80px;
+
+        .aesop-buttoninsert-wrap {
+            position:absolute;
+            bottom:0;
+            right:0;
+            background:@dark-gray;
+            left:63%;
+            padding:15px;
+        }
+
+        p {
+            margin:0;
+            position: relative;
+            border-bottom:1px solid @border;
+            padding:15px 15px 22px;
+
+            &:first-child {
+                padding-top:24px;
+            }
+        }
+
+        .aesop-option-prefix {
+            color:@desc;
+            padding-left:5px;
+        }
+
+        .aesop-option-desc {
+            font-size:12px;
+            line-height: 15px;
+            color:@desc;
+            display: block;
+            margin-bottom:10px;
+        }
+
+        .aesop-option-hidden {
+            display: none;
+        }
+        .aesop-option-open {
+            display: block;
+        }
+
+        label {
+            display: block;
+            position: relative;
+            font-size:18px;
+            color:@text;
+
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 5px 8px;
+        }
+
+        input,
+        select {
+            font-size:1.25em;
+            line-height: 1.4em;
+            height:32px;
+        }
+
+        .aesop-generator-attr {
+            background:@text;
+            color: @black;
+
+            &.aesop-generator-attr-text_small {
+                width:80px;
+            }
+        }
+
+        input,
+        textarea {
+            border: 1px solid @black;
+            border-radius:5px;
+            position: relative;
+
+            &:focus {
+                border-color:#31b6e3;
+                outline:none;
+            }
+        }
+        select {
+            background:@text;
+            color: @black;
+            border: 1px solid @black;
+            border-radius:2px;
+            width: 60%;
+            position: relative;
+        }
+
+        textarea {
+            width:100%;
+        }
+
+        code {
+            background:darken(@dark-gray,3);
+            font-size:12px;
+        }
+
+        #aesop-generator-attr-img {
+            width:65%;
+        }
+
+        #aesop-upload-img {
+            background:@link;
+            border:1px solid rgba(0,0,0,0.6);
+            box-shadow:none;
+            top: -1px;
+            left: 5px;
+            width:34%;
+
+            &:hover {
+                background:darken(@link,2);
+            }
+            &:focus {
+                outline:none;
+            }
+
+            &:active {
+                background:@link;
+                top:1px;
+            }
+        }
+
+    }
+}
+
+.aesop-generator-mark {
+    position: absolute;
+    bottom:0;
+}
+
+.aesop-generator-left.aesop-generator-small-height {
+    .dk_options_inner {
+
+        li a {
+            text-align: left;
+            padding:17px 14px 24px;
+
+            &:before {
+                font-size: 30px;
+                margin: 20px auto 22px;
+                display: inline;
+                position: relative;
+                padding-right:10px;
+                top:10px;
+            }
+        }
+    }
+}
+
+// color like options until we get conditional option loading
+#aesop-generator #aesop-generator-settings {
+    .aesop-quote-parallax,
+    .aesop-quote-speed,
+    .aesop-quote-offset,
+    .aesop-quote-direction,
+    .aesop-parallax-floater,
+    .aesop-parallax-floatermedia,
+    .aesop-parallax-floaterposition,
+    .aesop-parallax-floateroffset,
+    .aesop-parallax-floaterdirection,
+    .aesop-video-hosted,
+    .aesop-video-loop,
+    .aesop-video-autoplay,
+    .aesop-video-controls,
+    .aesop-video-viewstart,
+    .aesop-video-viewend,
+    .aesop-content-floatermedia,
+    .aesop-content-floaterposition,
+    .aesop-content-floateroffset,
+    .aesop-content-floaterdirection {
+        background:lighten(@dark-gray,3);
+    }
+
+    // 1st
+    .aesop-quote-parallax,
+    .aesop-parallax-floater,
+    .aesop-video-hosted,
+    .aesop-content-floatermedia {
+        margin-top:-1px;
+        border-top:1px solid @dark-gray;
+
+    }
+
+    // last
+    .aesop-quote-direction,
+    .aesop-parallax-floaterdirection,
+    .aesop-video-viewend,
+    .aesop-content-floaterdirection {
+        margin-bottom:-1px;
+        border-bottom:1px solid @dark-gray;
+    }
+}

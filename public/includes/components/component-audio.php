@@ -1,23 +1,23 @@
 <?php
 
 /**
- 	* Audio component utilizes core wordpress audio
- 	*
- 	* @since    1.0.0
+	* Audio component utilizes core wordpress audio
+	*
+	* @since    1.0.0
 */
 if (!function_exists('aesop_audio_shortcode')){
 
 	function aesop_audio_shortcode($atts, $content = null) {
 
-    	$defaults 	= array(
-    		'title'		=> '',
-    		'src' 		=>	'',
-    		'viewstart' => 'off',
-    		'viewend'	=>  'off',
-    		'loop'		=> 'off',
-    		'hidden'	=> ''
-    	);
-	    $atts 		= apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
+			$defaults   = array(
+				'title'   => '',
+				'src'     =>  '',
+				'viewstart' => 'off',
+				'viewend' =>  'off',
+				'loop'    => 'off',
+				'hidden'  => ''
+			);
+			$atts     = apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
 		
 		// let this be used multiple times
 		static $instance = 0;
@@ -36,48 +36,56 @@ if (!function_exists('aesop_audio_shortcode')){
 		// loop
 		$loop = 'on' == $atts['loop'] ? 'true' : false;
 
-	    ob_start();
+		// waypoint filter
+		$point    = 'bottom-in-view';
+		$waypoint   = apply_filters('aesop_audio_component_waypoint', $point, $unique);
 
-	    do_action('aesop_audio_before'); //action
+			ob_start();
 
-	   		?><aside id="aesop-audio-<?php echo $unique;?>" class="aesop-component aesop-audio-component <?php echo $classes;?>" <?php echo $hidden;?>>
+			do_action('aesop_audio_before'); //action
 
-	   			<?php if ('on' == $atts['viewstart']) { ?>
-			    	<script>
-			    	jQuery(document).ready(function(){
-						jQuery('#aesop-audio-<?php echo $unique;?>').waypoint({
-							offset: 'bottom-in-view',
-							handler: function(direction){
-						   		jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').trigger('click');
+				?><aside id="aesop-audio-<?php echo $unique;?>" class="aesop-component aesop-audio-component <?php echo $classes;?>" <?php echo $hidden;?>>
 
-						   	}
-						});
-						<?php if ('on' == $atts['viewend']) { ?>
-						jQuery('#aesop-audio-<?php echo $unique;?>').waypoint({
-							handler: function(direction){
-						   		jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').trigger('click');
-						   	}
-						});
-						<?php } ?>
-			    	});
-			    	</script>
-	   			<?php } ?>
+					<?php if ('on' == $atts['viewstart']) { ?>
+						<script>
+						jQuery(document).ready(function(){
+							jQuery('#aesop-audio-<?php echo $unique;?>').arrive('.mejs-audio', function(){
+								
+								jQuery('#aesop-audio-<?php echo $unique;?>').waypoint({
+									offset: '<?php echo $waypoint;?>',
+									handler: function(direction){
+										jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
+									}
+								});
 
-	   			<?php
-	   			do_action('aesop_audio_inside_top'); //action
+								<?php if ('on' == $atts['viewend']) { ?>
+								jQuery('#aesop-audio-<?php echo $unique;?>').waypoint({
+									handler: function(direction){
+											jQuery('#aesop-audio-<?php echo $unique;?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
+										}
+								});
+								<?php } ?>
 
-	   				if ($title) {
-	   					echo $title;
-	   				}
+								});
+							});
+						</script>
+					<?php } ?>
 
-	   				echo wp_audio_shortcode(  array( 'src' => $atts['src'], 'loop' => $loop ) );
+					<?php
+					do_action('aesop_audio_inside_top'); //action
 
-	   			do_action('aesop_audio_inside_bottom'); //action
+						if ($title) {
+							echo $title;
+						}
 
-	   		?></aside><?php
+						echo wp_audio_shortcode(  array( 'src' => $atts['src'], 'loop' => $loop ) );
 
-	   	do_action('aesop_audio_after'); //action
+					do_action('aesop_audio_inside_bottom'); //action
 
-        return ob_get_clean();
+				?></aside><?php
+
+			do_action('aesop_audio_after'); //action
+
+				return ob_get_clean();
 	}
 }
