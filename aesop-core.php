@@ -13,7 +13,7 @@
 * 	Plugin Name:       Aesop Story Engine
 * 	Plugin URI:        http://aesopstoryengine.com
 * 	Description:       Open-sourced suite of components that empower interactive storytelling.
-* 	Version:           1.0.94
+* 	Version:           1.1
 * 	Author:            Nick "Bearded Avenger" Haskins
 * 	Author URI:        http://nickhaskins.com
 * 	Text Domain:       aesop-core
@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set some constants
-define('AI_CORE_VERSION', '1.0.94');
+define('AI_CORE_VERSION', '1.1');
 define('AI_CORE_DIR', plugin_dir_path( __FILE__ ));
 define('AI_CORE_URL', plugins_url( '', __FILE__ ));
 
