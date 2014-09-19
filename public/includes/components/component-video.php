@@ -31,7 +31,7 @@ if (!function_exists('aesop_video_shortcode')){
 	    );
 	    $atts = apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
 	    $contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
-	    $widthstyle = $atts['width'] ? sprintf('style="width:%s;"',$atts['width']) : false;
+	    $widthstyle = $atts['width'] ? sprintf('style="max-width:%s;"',$atts['width']) : false;
 
 	    // actions
 		$actiontop = do_action('aesop_video_before'); //action
