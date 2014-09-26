@@ -23,43 +23,50 @@ class AesopGalleryComponentAdmin {
 	*/
 	function aesop_gallery_opts (){
 
-	  	?>
-	  	<script type="text/html" id="tmpl-aesop-gallery-extended-opts">
-		    <label class="setting">
-		      	<span><?php _e('Type','aesop-core'); ?></span>
-		      	<select data-setting="a_type">
-		      		<option value="">- Select -</option>
-		        	<option value="grid">Grid</option>
-		        	<option value="thumbnail">Thumbnail</option>
-		        	<option value="sequence">Sequence</option>
-		        	<option value="photoset">Photoset</option>
-		        	<option value="stacked">Stacked Parallax</option>
-		        	<?php do_action('aesop_add_gallery_type');?>
-		      	</select>
-		    </label>
-	  	</script>
-	  	<!-- Aesop Gallery Opts -->
-	  	<script>
+		$screen = get_current_screen();
 
-		    jQuery(document).ready(function(){
+		// only run these modifications if in aesop gallery type
+		if ( 'ai_galleries' == $screen->id ):
 
-		     	 // add your shortcode attribute and its default value to the
-		      	// gallery settings list; $.extend should work as well...
-		      	_.extend(wp.media.gallery.defaults, {
-		        	a_type: 'a_type'
-		      	});
+		  	?>
+		  	<script type="text/html" id="tmpl-aesop-gallery-extended-opts">
+			    <label class="setting aesop-gallery-settings">
+			      	<span><?php _e('Type','aesop-core'); ?></span>
+			      	<select data-setting="a_type">
+			      		<option value="">- Select -</option>
+			        	<option value="grid">Grid</option>
+			        	<option value="thumbnail">Thumbnail</option>
+			        	<option value="sequence">Sequence</option>
+			        	<option value="photoset">Photoset</option>
+			        	<option value="stacked">Stacked Parallax</option>
+			        	<?php do_action('aesop_add_gallery_type');?>
+			      	</select>
+			    </label>
+		  	</script>
+		  	<!-- Aesop Gallery Opts -->
+		  	<script>
 
-		     	 // merge default gallery settings template with yours
-		      	wp.media.view.Settings.Gallery = wp.media.view.Settings.Gallery.extend({
-			        template: function(view){
-			          	return wp.media.template('gallery-settings')(view) + wp.media.template('aesop-gallery-extended-opts')(view);
-			        }
-		      	});
+			    jQuery(document).ready(function(){
 
-		    });
+			     	 // add your shortcode attribute and its default value to the
+			      	// gallery settings list; $.extend should work as well...
+			      	_.extend(wp.media.gallery.defaults, {
+			        	a_type: 'a_type'
+			      	});
 
-	  	</script>
-	<?php }
+			     	 // merge default gallery settings template with yours
+			      	wp.media.view.Settings.Gallery = wp.media.view.Settings.Gallery.extend({
+				        template: function(view){
+				          	return wp.media.template('gallery-settings')(view) + wp.media.template('aesop-gallery-extended-opts')(view);
+				        }
+			      	});
+
+			    });
+
+		  	</script>
+		  	<style>.gallery-settings .setting:not(.aesop-gallery-settings){display:none;}</style>
+		<?php endif;
+	}
 
 	/**
 	 	* Creates an Aesop Galleries custom post type to manage all psot galleries
