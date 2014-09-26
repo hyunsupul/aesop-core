@@ -34,6 +34,7 @@ class AesopGalleryComponentAdmin {
 		        	<option value="sequence">Sequence</option>
 		        	<option value="photoset">Photoset</option>
 		        	<option value="stacked">Stacked Parallax</option>
+		        	<?php do_action('aesop_add_gallery_type');?>
 		      	</select>
 		    </label>
 	  	</script>
