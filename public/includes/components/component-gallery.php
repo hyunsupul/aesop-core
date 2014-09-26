@@ -129,7 +129,7 @@ class AesopCoreGallery {
 		// image size
 		$size    = apply_filters('aesop_thumb_gallery_size', 'full');
 
-		?><div id="aesop-thumb-gallery-<?php echo $atts['id'];?>" class="fotorama" 	data-transition="crossfade"
+		?><div id="aesop-thumb-gallery-<?php echo $gallery_id;?>" class="fotorama" 	data-transition="crossfade"
 																			data-width="<?php echo $width;?>"
 																			<?php echo $autoplay;?>
 																			data-keyboard="true"
