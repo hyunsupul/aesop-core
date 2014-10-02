@@ -139,11 +139,11 @@ class AesopCoreGallery {
 
 			foreach ($image_ids as $image_id):
 
-                $full    =  wp_get_attachment_url($image_id, $size, false,'');
+                $full    =  wp_get_attachment_image_src($image_id, $size, false);
                 $alt     =  get_post_meta($image_id, '_wp_attachment_image_alt', true);
-                $caption 		= get_post($image_id)->post_excerpt;
+                $caption 	= get_post($image_id)->post_excerpt;
 
-               ?><img src="<?php echo $full;?>" data-caption="<?php echo $caption;?>" alt="<?php echo esc_attr($alt);?>"><?php
+               ?><img src="<?php echo $full[0];?>" data-caption="<?php echo $caption;?>" alt="<?php echo esc_attr($alt);?>"><?php
 
 			endforeach;
 
@@ -187,11 +187,11 @@ class AesopCoreGallery {
 			foreach ($image_ids as $image_id):
 
                 $getimage 		= wp_get_attachment_image($image_id, 'aesop-grid-image', false, array('class' => 'aesop-grid-image'));
-				$getimgsrc 		= wp_get_attachment_image_src($image_id, $size);
+            	$getimagesrc    = wp_get_attachment_image_src($getimage);
                 $img_title 	  	= get_post($image_id)->post_title;
                 $caption 		= get_post($image_id)->post_excerpt;
 
-               	printf('<li class="aesop-grid-gallery-item"><a class="aesop-lightbox" href="%s" title="%s"><span class="aesop-grid-gallery-caption">%s</span><span class="clearfix">%s</span></a></li>',$getimgsrc[0], esc_attr($img_title), $caption, $getimage);
+               	printf('<li class="aesop-grid-gallery-item"><a class="aesop-lightbox" href="%s" title="%s"><span class="aesop-grid-gallery-caption">%s</span><span class="clearfix">%s</span></a></li>',$getimagesrc[0], esc_attr($img_title), $caption, $getimage);
 
 			endforeach;
 
@@ -231,11 +231,11 @@ class AesopCoreGallery {
 
 		foreach ( $image_ids as $image_id ):
 
-            $full    		=  wp_get_attachment_url($image_id, $size, false,'');
+            $full    		=  wp_get_attachment_image_src($image_id, $size, false);
             $caption 		= get_post($image_id)->post_excerpt;
 
            	?>
-           	<div class="aesop-stacked-img" style="background-image:url('<?php echo $full;?>');<?php echo $styles;?>">
+           	<div class="aesop-stacked-img" style="background-image:url('<?php echo $full[0];?>');<?php echo $styles;?>">
            		<?php if ( $caption ){ ?>
            			<div class="aesop-stacked-caption"><?php echo $caption;?></div>
            		<?php } ?>
@@ -258,7 +258,7 @@ class AesopCoreGallery {
 
 		foreach ( $image_ids as $image_id ):
 
-            $img     =  wp_get_attachment_url($image_id, $size, false,'');
+            $img     =  wp_get_attachment_image($image_id, $size, false,'');
             $alt     =  get_post_meta($image_id, '_wp_attachment_image_alt', true);
             $caption 	= get_post($image_id)->post_excerpt;
 
@@ -269,9 +269,9 @@ class AesopCoreGallery {
 
            		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
            		if (is_plugin_active('aesop-lazy-loader/aesop-lazy-loader.php')) {?>
-					<img class="aesop-sequence-img" data-original="<?php echo $img;?>" alt="<?php echo esc_attr($alt);?>">
+					<img class="aesop-sequence-img" data-original="<?php echo $img[0];?>" alt="<?php echo esc_attr($alt);?>">
            		<?php } else {?>
-           			<img class="aesop-sequence-img" src="<?php echo $img;?>" alt="<?php echo esc_attr($alt);?>">
+           			<img class="aesop-sequence-img" src="<?php echo $img[0];?>" alt="<?php echo esc_attr($alt);?>">
            		<?php } ?>
 
            		<?php if($caption){ ?>
@@ -348,13 +348,13 @@ class AesopCoreGallery {
 
 				foreach ( $image_ids as $image_id ):
 
-		            $full    	=  wp_get_attachment_url( $image_id, $size, false, '' );
+		            $full    	=  wp_get_attachment_image_src( $image_id, $size, false);
 		            $alt     	=  get_post_meta( $image_id, '_wp_attachment_image_alt', true );
                 	$title 	  	= 	get_post($image_id)->post_title;
 
-		            $lb_link    =  $lightbox ? sprintf('data-highres="%s"', $full) : null;
+		            $lb_link    =  $lightbox ? sprintf('data-highres="%s"', $full[0]) : null;
 
-		           	?><img src="<?php echo $full;?>" <?php echo $lb_link;?> data-title="<?php echo $title;?>" title="<?php echo $title;?>" alt="<?php echo $alt;?>"><?php
+		           	?><img src="<?php echo $full[0];?>" <?php echo $lb_link;?> data-title="<?php echo $title;?>" title="<?php echo $title;?>" alt="<?php echo $alt;?>"><?php
 
 				endforeach;
 
