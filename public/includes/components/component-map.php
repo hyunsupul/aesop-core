@@ -39,7 +39,7 @@ class AesopMapComponent {
 
 		global $post;
 
-		$id         = $post->ID;
+		$id         = isset( $post ) ? $post->ID : null;
 
 		$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
 		$markers 	= isset( $post ) ? get_post_meta( $id, 'aesop_map_component_locations', false) : false;
