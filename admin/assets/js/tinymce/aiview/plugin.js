@@ -68,8 +68,10 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			var sc_filter = /\[[^\]]*\]([^\[]*)[^\]]*\]/;
 			var sc_filtered = sc_filter.exec(sc);
 			if( sc_filtered != null ){
+				parse[2] = parse[2].replace(/^<p>\W<\/p>/,'');
 				sc = sc.replace(sc_filtered[1], parse[2]);
 			}
+
 			return '<p>' + sc + '</p>';
 		}
 	}
