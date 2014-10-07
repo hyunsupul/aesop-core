@@ -182,7 +182,7 @@ jQuery(document).ready(function($) {
 
     if ( tinyMCE.activeEditor ) {
       var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
-      tinyMCE.activeEditor.dom.remove(editing);
+      $(editing).replaceWith('<p></p>');
     }
 
 		window.send_to_editor(jQuery('#aesop-generator-result').val());
