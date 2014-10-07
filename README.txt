@@ -134,6 +134,16 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.2 =
+* FIXED - Width on videos so that they remain responsive
+* FIXED - Undefined variable in thumbnail gallery
+* FIXED - Gallery images not respecting sizes
+* FIXED - Issue of overlapping placeholders when updating a component thats next to another component - #138 on GH
+* ADDED - New action "aesop_gallery_type" so 3rd party components can add new gallery types
+* TWEAK - Cleaned up the gallery creation process including removing core options from the gallery settings modal that Aesop doesn't use, along with only running our modifications on Aesop Galleries
+* TWEAK - Added additional checks to ensure $post is set before loading map components
+
+
 = 1.1 =
 * NEW - Complete compatibilty with WordPress 4.0
 * NEW - New user interface
