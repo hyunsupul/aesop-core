@@ -140,6 +140,7 @@ Full documentation can be found below.
 * FIXED - Gallery images not respecting sizes
 * FIXED - Issue of overlapping placeholders when updating a component thats next to another component - #138 on GH
 * ADDED - New action "aesop_gallery_type" so 3rd party components can add new gallery types
+* ADDED - New filter aesop_generator_loads_on which accepts an array of admin pages to load the generator
 * TWEAK - Cleaned up the gallery creation process including removing core options from the gallery settings modal that Aesop doesn't use, along with only running our modifications on Aesop Galleries
 * TWEAK - Added additional checks to ensure $post is set before loading map components
 
