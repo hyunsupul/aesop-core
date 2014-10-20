@@ -138,7 +138,7 @@ if (!function_exists('aesop_video_shortcode')){
 
 	        endswitch;
 
-	    printf('</div>%s%s</div>%s',esc_html( $caption ), $actioninsidebottom, $actionbottom);
+	    printf('</div>%s%s</div>%s',$caption, $actioninsidebottom, $actionbottom);
 
         return ob_get_clean();
 	}
