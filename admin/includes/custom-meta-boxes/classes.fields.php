@@ -1036,24 +1036,15 @@ class CMB_Select extends CMB_Field {
 
 		parent::enqueue_scripts();
 
-<<<<<<< HEAD
-		wp_enqueue_script( 'select2', trailingslashit( CMB_URL ) . 'js/vendor/select2/select2.js', array( 'jquery' ) );
-		wp_enqueue_script( 'field-select', trailingslashit( CMB_URL ) . 'js/field.select.js', array( 'jquery', 'select2', 'cmb-scripts' ) );
-=======
 		//wp_enqueue_script( 'select2', trailingslashit( CMB_URL ) . 'js/vendor/select2/select2.js', array( 'jquery' ) );
 		//wp_enqueue_script( 'field-select', trailingslashit( CMB_URL ) . 'js/field.select.js', array( 'jquery', 'select2', 'cmb-scripts' ) );
->>>>>>> master
 	}
 
 	public function enqueue_styles() {
 
 		parent::enqueue_styles();
-
-<<<<<<< HEAD
-		wp_enqueue_style( 'select2', trailingslashit( CMB_URL ) . 'js/vendor/select2/select2.css' );
-=======
 		//wp_enqueue_style( 'select2', trailingslashit( CMB_URL ) . 'js/vendor/select2/select2.css' );
->>>>>>> master
+
 	}
 
 	public function html() {
