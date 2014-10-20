@@ -134,6 +134,12 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.2.1 ==
+* FIXED - lightbox gallery images not opening in grid gallery
+* FIXED - warnings with custom meta boxes if wp-admin is set to SSL
+* UPDATED - custom meta boxes to 1.2
+* NOTE - The next update we will be moving from Custom Meta Boxes by Humanmade to CMB2 by WebDev Studios.
+
 = 1.2 =
 * FIXED - Width on videos so that they remain responsive
 * FIXED - Undefined variable in thumbnail gallery
