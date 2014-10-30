@@ -106,7 +106,7 @@ if (!function_exists('aesop_video_shortcode')){
 	                break;
 
 	            case 'youtube':
-	                printf( '<iframe src="//www.youtube.com/embed/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',$atts['id'], $iframe_size );
+	                printf( '<iframe src="//www.youtube.com/embed/%s?rel=0" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',$atts['id'], $iframe_size );
 	                break;
 
 	            case 'kickstarter':
