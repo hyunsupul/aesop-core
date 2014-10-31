@@ -5,14 +5,16 @@
 }
 
 .aesop-component{
-	background-color: #555;
-	margin: 15px 0;
+	background-color: #f1f1f1;
+	margin: 15px;
 	display: block;
-	color: rgb(214, 214, 214);
+	color: #444;
 	position: relative;
 	font-family: "Open Sans", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	border:1px solid #ddd;
+
 }
 
 .aesop-component-bar{
@@ -20,7 +22,7 @@
 	text-transform: uppercase;
 	display: block;
 	padding: 10px 15px;
-	background-color: #222;
+	background-color: #f1f1f1;
 
 }
 
@@ -68,13 +70,14 @@
 	z-index: 2;
 	float: right;
 	margin:0 3px;
-	-webkit-transition:.15s ease-in-out;
+	font-size:16px;
+	-webkit-transition:.15s ease;
 }
 .aesop-button:first-child{
 	margin-right:0;
 }
 .aesop-button:active {background:transparent;}
-.aesop-button:hover {cursor:pointer;opacity:0.7;}
+.aesop-button:hover {cursor:pointer;color:#007aab;}
 
 .aesop-button-edit:before { content: "\f464"; }
 .aesop-button-delete:before { content: "\f182"; }
@@ -104,6 +107,7 @@
 	height:41px;
 	width:100%;
 	z-index: 1;
+
 }
 .aesop-component-mask:after {
 	position: absolute;
@@ -112,4 +116,5 @@
 	height:100%;
 	width:100%;
 	content:'';
+
 }
