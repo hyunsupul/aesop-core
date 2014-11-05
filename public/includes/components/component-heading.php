@@ -35,27 +35,25 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 		do_action('aesop_chapter_before'); //action
 		?>
+			<?php if ( 'on' == $atts['full'] ) { ?>
+			<script>
+				jQuery(document).ready(function(){
 
+					var coverSizer = function(){
+						jQuery('.aesop-article-chapter').css({'height':(jQuery(window).height())+'px'});
+					}
+
+					coverSizer();
+
+				    jQuery(window).resize(function(){
+        				coverSizer();
+    				});
+				});
+			</script>
+			<?php } ?>
 			<div id="chapter-unique-<?php echo $unique;?>" class="aesop-article-chapter-wrap default-cover <?php echo $video_chapter_class;?> aesop-component <?php echo $img_style_class;?>" >
 
 				<?php do_action('aesop_chapter_inside_top'); //action ?>
-
-				<?php if ( 'on' == $atts['full'] ) { ?>
-				<script>
-					jQuery(document).ready(function(){
-
-						var coverSizer = function(){
-							jQuery('.aesop-article-chapter').css({'height':(jQuery(window).height())+'px'});
-						}
-
-						coverSizer();
-
-					    jQuery(window).resize(function(){
-	        				coverSizer();
-	    				});
-					});
-				</script>
-				<?php } ?>
 
 				<div class="aesop-article-chapter clearfix" <?php echo $img_style;?> >
 
