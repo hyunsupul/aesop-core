@@ -117,16 +117,67 @@ class AesopMapComponentAdmin {
 			<!-- Aesop Maps -->
 			<script>
 
-				var map = L.map('aesop-map',{
-					scrollWheelZoom: false,
-					zoom: 12,
-					center: [29.76, -95.38]
+				jQuery(document).ready(function(){
+
+					var map = L.map('aesop-map',{
+						scrollWheelZoom: false,
+						zoom: 12,
+						center: [29.76, -95.38]
+					});
+
+					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo $mapboxid;?>/{z}/{x}/{y}.png', {
+						maxZoom: 20
+					}).addTo(map);
+
+					// adding a new marker
+					map.on('click', onMapClick);
+
+					function onMapClick(e) {
+
+					    var geojsonFeature = {
+
+					        "type": "Feature",
+					        "properties": {},
+					        "geometry": {
+					                "type": "Point",
+					                "coordinates": [e.latlng.lat, e.latlng.lng]
+					        }
+					    }
+
+					    var marker;
+
+					    L.geoJson(geojsonFeature, {
+
+					        pointToLayer: function(feature, latlng){
+
+					            marker = L.marker(e.latlng, {
+
+					                title: "Resource Location",
+					                alt: "Resource Location",
+					                riseOnHover: true,
+					                draggable: true,
+
+					            }).bindPopup("<input type='button' value='Delete this marker' class='marker-delete-button'/>");
+
+					            marker.on("popupopen", onPopupOpen);
+
+					            return marker;
+					        }
+					    }).addTo(map);
+					}
+
+					// open popup
+					function onPopupOpen() {
+
+					    var tempMarker = this;
+
+					    // To remove marker on click of delete button in the popup of marker
+					    jQuery(".marker-delete-button:visible").click(function () {
+					        map.removeLayer(tempMarker);
+					    });
+					}
+
 				});
-
-				L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo $mapboxid;?>/{z}/{x}/{y}.png', {
-					maxZoom: 20
-				}).addTo(map);
-
 			</script>
 		<?php
 
