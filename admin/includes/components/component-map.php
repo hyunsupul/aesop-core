@@ -109,7 +109,27 @@ class AesopMapComponentAdmin {
 
 		wp_nonce_field( 'ase_map_meta', 'ase_map_meta_nonce' );
 
-		echo 'Go new maps!';
+		$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
+
+		echo '<div id="aesop-map" style="height:350px;"></div>';
+
+		?>
+			<!-- Aesop Maps -->
+			<script>
+
+				var map = L.map('aesop-map',{
+					scrollWheelZoom: false,
+					zoom: 12,
+					center: [29.76, -95.38]
+				});
+
+				L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo $mapboxid;?>/{z}/{x}/{y}.png', {
+					maxZoom: 20
+				}).addTo(map);
+
+			</script>
+		<?php
+
 	}
 	/**
 	*
@@ -120,22 +140,20 @@ class AesopMapComponentAdmin {
 	*/
 	function save_map_box( $post_id ) {
 
-		// Check if our nonce is set.
+		// if nonce not set bail
 		if ( ! isset( $_POST['ase_map_meta_nonce'] ) )
 			return $post_id;
 
 		$nonce = $_POST['ase_map_meta_nonce'];
 
-		// Verify that the nonce is valid.
+		// if nonce not verified bail
 		if ( ! wp_verify_nonce( $nonce, 'ase_map_meta' ) )
 			return $post_id;
 
-		// If this is an autosave, our form has not been submitted,
-                //     so we don't want to do anything.
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 			return $post_id;
 
-		// Check the user's permissions.
+		// if user doesn't have permissions then bail
 		if ( 'page' == $_POST['post_type'] ) {
 
 			if ( ! current_user_can( 'edit_page', $post_id ) )
@@ -148,6 +166,7 @@ class AesopMapComponentAdmin {
 		}
 
 		// ok to continue and save
+		//update_post_meta.....
 
 	}
 
