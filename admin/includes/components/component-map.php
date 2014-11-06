@@ -104,6 +104,9 @@ class AesopMapComponentAdmin {
 	*
 	* 	@param WP_Post $post The post object.
 	*	@since 1.3
+	*
+	* 	@todo - save map markers, currently a button just to retrieve, shoudl run on post_save ?
+	* 	@todo - retrieve any markers previously saved and add them to the map for backwards compatibility
 	*/
 	function render_map_box( $post ){
 
@@ -212,6 +215,8 @@ class AesopMapComponentAdmin {
 	*
 	* 	@param int $post_id The ID of the post being saved.
 	*	@since 1.3
+	*
+	*	@todo data needs to be saved
 	*/
 	function save_map_box( $post_id ) {
 
