@@ -10,7 +10,8 @@ class AesopMapComponentAdmin {
 		add_filter( 'cmb_meta_boxes', array($this,'aesop_map_meta') );
 
 		// new maps
-		add_action( 'add_meta_boxes', 	array($this,'new_map_box') );
+		add_action( 'add_meta_boxes', 					array($this,'new_map_box') );
+		add_action('admin_enqueue_scripts', 		array($this,'new_map_assets') );
 	}
 
 	function aesop_map_meta( array $meta_boxes ) {
@@ -66,6 +67,20 @@ class AesopMapComponentAdmin {
 
 		return $meta_boxes;
 
+	}
+
+	/**
+	*
+	*	Enqueue assets used for map but only on post pages
+	*
+	*	@since 1.3
+	*/
+	function new_map_assets($hook){
+
+		if ( $hook == 'post.php' || $hook == 'post-new.php' ) {
+			wp_enqueue_script('aesop-map-script',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js');
+			wp_enqueue_style('aesop-map-style',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.css', AI_CORE_VERSION, true);
+		}
 	}
 
 	/**
