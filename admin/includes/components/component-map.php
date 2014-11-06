@@ -111,6 +111,11 @@ class AesopMapComponentAdmin {
 
 		$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
 
+		// this is just a example button as a trigger to get all the makers
+		// maybe this should be tied into post_save or something?
+		// check console after clicking
+		echo '<a class="get-markers">click me</a>';
+
 		echo '<div id="aesop-map" style="height:350px;"></div>';
 
 		?>
@@ -125,7 +130,7 @@ class AesopMapComponentAdmin {
 						center: [29.76, -95.38]
 					});
 
-					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo $mapboxid;?>/{z}/{x}/{y}.png', {
+					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo esc_attr($mapboxid);?>/{z}/{x}/{y}.png', {
 						maxZoom: 20
 					}).addTo(map);
 
@@ -152,14 +157,14 @@ class AesopMapComponentAdmin {
 
 					            marker = L.marker(e.latlng, {
 
-					                title: "Resource Location",
-					                alt: "Resource Location",
+					                title: 'Resource Location',
+					                alt: 'Resource Location',
 					                riseOnHover: true,
 					                draggable: true,
 
 					            }).bindPopup("<input type='button' value='Delete this marker' class='marker-delete-button'/>");
 
-					            marker.on("popupopen", onPopupOpen);
+					            marker.on('popupopen', onPopupOpen);
 
 					            return marker;
 					        }
@@ -172,11 +177,30 @@ class AesopMapComponentAdmin {
 					    var tempMarker = this;
 
 					    // To remove marker on click of delete button in the popup of marker
-					    jQuery(".marker-delete-button:visible").click(function () {
+					    jQuery('.marker-delete-button:visible').click(function () {
 					        map.removeLayer(tempMarker);
 					    });
 					}
 
+					// get all the makers on teh map
+					function getAllMarkers() {
+
+					    var allMarkersObjArray = []; // for marker objects
+					    var allMarkersGeoJsonArray = []; // for readable geoJson markers
+
+					    jQuery.each(map._layers, function (ml) {
+
+					        if (map._layers[ml].feature) {
+
+					            allMarkersObjArray.push(this)
+					            allMarkersGeoJsonArray.push(JSON.stringify(this.toGeoJSON()))
+					        }
+					    })
+
+					    console.log(allMarkersObjArray);
+					}
+
+					jQuery('.get-markers').on('click', getAllMarkers);
 				});
 			</script>
 		<?php
