@@ -8,6 +8,9 @@ class AesopMapComponentAdmin {
 
 	public function __construct(){
 		add_filter( 'cmb_meta_boxes', array($this,'aesop_map_meta') );
+
+		// new maps
+		add_action( 'add_meta_boxes', 	array($this,'new_map_box') );
 	}
 
 	function aesop_map_meta( array $meta_boxes ) {
@@ -62,6 +65,74 @@ class AesopMapComponentAdmin {
 		);
 
 		return $meta_boxes;
+
+	}
+
+	/**
+	*
+	*	New metabox to select map markers on the map
+	*
+	*	@since 1.3
+	*/
+	function new_map_box(){
+
+		$screens = apply_filters('aesop_map_meta_location',array( 'post' ) );
+
+		foreach ( $screens as $screen ) {
+			add_meta_box('ase_map_component',__( 'Map Locations', 'aesop-core' ),array($this,'render_map_box'), $screen);
+
+		}
+	}
+
+	/**
+	* 	Render Meta Box content.
+	*
+	* 	@param WP_Post $post The post object.
+	*	@since 1.3
+	*/
+	function render_map_box( $post ){
+
+		wp_nonce_field( 'ase_map_meta', 'ase_map_meta_nonce' );
+
+		echo 'Go new maps!';
+	}
+	/**
+	*
+	* 	Save the meta when the post is saved.
+	*
+	* 	@param int $post_id The ID of the post being saved.
+	*	@since 1.3
+	*/
+	function save_map_box( $post_id ) {
+
+		// Check if our nonce is set.
+		if ( ! isset( $_POST['ase_map_meta_nonce'] ) )
+			return $post_id;
+
+		$nonce = $_POST['ase_map_meta_nonce'];
+
+		// Verify that the nonce is valid.
+		if ( ! wp_verify_nonce( $nonce, 'ase_map_meta' ) )
+			return $post_id;
+
+		// If this is an autosave, our form has not been submitted,
+                //     so we don't want to do anything.
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+			return $post_id;
+
+		// Check the user's permissions.
+		if ( 'page' == $_POST['post_type'] ) {
+
+			if ( ! current_user_can( 'edit_page', $post_id ) )
+				return $post_id;
+
+		} else {
+
+			if ( ! current_user_can( 'edit_post', $post_id ) )
+				return $post_id;
+		}
+
+		// ok to continue and save
 
 	}
 
