@@ -14,6 +14,11 @@ class AesopMapComponentAdmin {
 		add_action('admin_enqueue_scripts', 		array($this,'new_map_assets') );
 	}
 
+	/**
+	*
+	*	Create metabox to store coordinates for maps
+	*	@since 1.0
+	*/
 	function aesop_map_meta( array $meta_boxes ) {
 
 		$opts = array(
@@ -107,6 +112,7 @@ class AesopMapComponentAdmin {
 	*
 	* 	@todo - save map markers, currently a button just to retrieve, shoudl run on post_save ?
 	* 	@todo - retrieve any markers previously saved and add them to the map for backwards compatibility
+	*	@todo - we need a way for the user to enter text in the popup called "Marker Text"
 	*/
 	function render_map_box( $post ){
 
