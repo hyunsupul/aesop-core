@@ -171,7 +171,10 @@ class AesopMapComponentAdmin {
 					                riseOnHover: true,
 					                draggable: true,
 
-					            }).bindPopup("<input type='button' value='Delete this marker' class='marker-delete-button'/>");
+					            }).bindPopup("\
+					            	<input type='text' id='ase_marker_text[]' value='test'>\
+					            	<input type='button' value='Delete this marker' class='marker-delete-button'/>\
+					            	");
 
 					            marker.on('popupopen', onPopupOpen);
 
