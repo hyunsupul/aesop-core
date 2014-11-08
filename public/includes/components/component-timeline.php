@@ -15,12 +15,12 @@ if (!function_exists('aesop_timeline_stop_shortcode')){
 		);
 		$atts = apply_filters('aesop_timeline_defaults',shortcode_atts($defaults, $atts));
 
-		$datatitle = $atts['title'] ? sprintf('data-title="%s"', $atts['title']) : null;
+		$datatitle = $atts['title'] ? sprintf('data-title="%s"', esc_attr($atts['title'])) : null;
 		// actions
 		$actiontop = do_action('aesop_timeline_before'); //action
 		$actionbottom = do_action('aesop_timeline_after'); //action
 
-		$out = sprintf('%s<h2 class="aesop-timeline-stop" %s>%s</h2>',$actiontop, $datatitle, $atts['num'] );
+		$out = sprintf('%s<h2 class="aesop-timeline-stop" %s>%s</h2>',$actiontop, $datatitle, esc_html($atts['num']) );
 
 		return apply_filters('aesop_timeline_output', $out);
 	}
@@ -78,7 +78,7 @@ class AesopTimelineComponent {
 				jQuery('<?php echo sanitize_html_class( $contentClass );?>').scrollNav({
 				    sections: '.aesop-timeline-stop',
 				    arrowKeys: true,
-				    insertTarget: '<?php echo $appendTo;?>',
+				    insertTarget: '<?php echo esc_attr($appendTo);?>',
 				    insertLocation: 'appendTo',
 				    showTopLink: false,
 				    showHeadline: false,
