@@ -34,9 +34,9 @@ if (!function_exists('aesop_video_shortcode')){
 	    $widthstyle = $atts['width'] ? sprintf("style=max-width:%s;",$atts['width']) : false;
 
 	    // actions
-		$actiontop = do_action('aesop_video_before'); //action
+		//$actiontop = do_action('aesop_video_before'); //action
 		$actionbottom = do_action('aesop_video_after'); //action
-		$actioninsidetop = do_action('aesop_videox_inside_top'); //action
+		//$actioninsidetop = do_action('aesop_videox_inside_top'); //action
 		$actioninsidebottom = do_action('aesop_video_inside_bottom'); //action
 
 	    $caption = $atts['caption'] ? sprintf('<div class="aesop-video-component-caption aesop-component-align-%s" %s>%s</div>',$atts['align'], $widthstyle, $atts['caption']) : false;
@@ -92,55 +92,80 @@ if (!function_exists('aesop_video_shortcode')){
 	    	</script>
     	<?php }
 
-	    printf('%s<div id="aesop-video-%s" class="aesop-component aesop-video-component %s %s %s %s %s">%s<div class="aesop-video-container aesop-video-container-%s aesop-component-align-%s %s" %s>',$actiontop, esc_attr( $unique ), sanitize_html_class( $classes ), sanitize_html_class( $controlstatus ), sanitize_html_class( $contentwidth ), sanitize_html_class( $vineStagramClass ), sanitize_html_class( $vineStagramAlign ), $actioninsidetop, esc_attr( $unique ), sanitize_html_class( $atts['align'] ), sanitize_html_class( $atts['src'] ), esc_attr($widthstyle) );
+	    do_action('aesop_video_before'); //action
+
+	    ?>
+	    <div id="aesop-video-<?php echo esc_attr( $unique );?>" class="aesop-component aesop-video-component <?php echo sanitize_html_class( $classes );?> <?php echo sanitize_html_class( $controlstatus );?> <?php echo sanitize_html_class( $contentwidth );?> <?php echo sanitize_html_class( $vineStagramClass );?> <?php echo sanitize_html_class( $vineStagramAlign );?>">
+
+	    	<?php do_action('aesop_video_inside_top'); //action ?>
+
+	    	<div class="aesop-video-container aesop-video-container-<?php echo esc_attr( $unique );?> aesop-component-align-<?php echo sanitize_html_class( $atts['align']);?> <?php echo sanitize_html_class( $atts['src'] );?>" <?php echo $widthstyle;?> >
+
+				<?php
+		        switch( $atts['src'] ):
+
+		            case 'vimeo':
+
+		                printf( '<iframe src="//player.vimeo.com/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
+		                break;
+
+		            case 'dailymotion':
+
+		                printf( '<iframe src="//www.dailymotion.com/embed/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
+		                break;
 
 
-	        switch( $atts['src'] ):
+		            case 'youtube':
 
-	            case 'vimeo':
-	                printf( '<iframe src="//player.vimeo.com/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
-	                break;
+		                printf( '<iframe src="//www.youtube.com/embed/%s?rel=0" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',esc_attr($atts['id']), esc_attr($iframe_size) );
+		                break;
 
-	            case 'dailymotion':
-	                printf( '<iframe src="//www.dailymotion.com/embed/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
-	                break;
+		            case 'kickstarter':
 
-	            case 'youtube':
+		                printf( '<iframe src="%s" %s scrolling="no"> </iframe>',esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
+		                break;
 
-	                printf( '<iframe src="//www.youtube.com/embed/%s?rel=0" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',esc_attr($atts['id']), esc_attr($iframe_size) );
 
-	                break;
+		            case 'viddler':
 
-	            case 'kickstarter':
-	                printf( '<iframe src="%s" %s scrolling="no"> </iframe>',esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
-	                break;
+		                printf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" %s mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',esc_attr( $atts['id'] ), esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
+		                break;
 
-	            case 'viddler':
-	                printf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" %s mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',esc_attr( $atts['id'] ), esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
-	                break;
 
-	           	case 'vine':
-	                printf( '<iframe class="vine-embed" src="//vine.co/v/%s/embed/simple" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',esc_attr( $atts['id'] ) );
-	                break;
+		           	case 'vine':
 
-	           	case 'wistia':
-	                printf( '
-						<div id="wistia_%s" class="wistia_embed" style="width:640px;height:360px;">&nbsp;</div>
-						<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
-						<script> wistiaEmbed = Wistia.embed("%s",{videoFoam: true }); </script>
-	                	',esc_attr( $atts['id'] ), esc_attr( $atts['id'] ) );
-	                break;
+		                printf( '<iframe class="vine-embed" src="//vine.co/v/%s/embed/simple" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',esc_attr( $atts['id'] ) );
+		                break;
 
-	           	case 'instagram':
-	                printf( '<iframe class="instagram-embed" src="//instagram.com/p/%s/embed" width="612" height="710" frameborder="0"></iframe>',esc_attr( $atts['id'] ) );
-	                break;
 
-	            case 'self':
-	            	echo do_shortcode('[video src="'.$atts['hosted'].'" loop="'.esc_attr( $loopstatus ).'" autoplay="'.esc_attr( $autoplaystatus ).'"]');
+		           	case 'wistia':
 
-	        endswitch;
+		                printf( '
+							<div id="wistia_%s" class="wistia_embed" style="width:640px;height:360px;">&nbsp;</div>
+							<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/E-v1.js"></script>
+							<script> wistiaEmbed = Wistia.embed("%s",{videoFoam: true }); </script>
+		                	',esc_attr( $atts['id'] ), esc_attr( $atts['id'] ) );
+		                break;
 
-	    printf('</div>%s%s</div>%s',$caption, $actioninsidebottom, $actionbottom);
+		           	case 'instagram':
+
+		                printf( '<iframe class="instagram-embed" src="//instagram.com/p/%s/embed" width="612" height="710" frameborder="0"></iframe>',esc_attr( $atts['id'] ) );
+		                break;
+
+		            case 'self':
+
+		            	echo do_shortcode('[video src="'.$atts['hosted'].'" loop="'.esc_attr( $loopstatus ).'" autoplay="'.esc_attr( $autoplaystatus ).'"]');
+
+		        endswitch;
+		        ?>
+		    </div>
+
+	   	 	<?php echo $caption;
+
+	    	do_action('aesop_video_inside_bottom'); //action ?>
+		</div>
+
+		<?php do_action('aesop_video_after'); //action
 
         return ob_get_clean();
 	}
