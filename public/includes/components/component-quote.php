@@ -120,7 +120,7 @@ if (!function_exists('aesop_quote_shortcode')){
 				<blockquote class="<?php echo sanitize_html_class( $align );?>" style="font-size:<?php echo esc_attr( $size);?>;">
 					<?php echo esc_html( $atts['quote'] );?>
 
-					<?php echo esc_html( $cite );?>
+					<?php echo $cite;?>
 				</blockquote>
 
 				<?php do_action('aesop_quote_inside_bottom'); //action ?>
