@@ -50,7 +50,7 @@ if (!function_exists('aesop_image_shortcode')){
 			<?php do_action('aesop_image_inside_top'); //action ?>
 
 			<figure class="aesop-content">
-				<div class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> aesop-image-component-caption-<?php echo sanitize_html_class( $atts['captionposition'] );?>" <?php echo esc_html( $offsetstyle );?>>
+				<div class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> aesop-image-component-caption-<?php echo sanitize_html_class( $atts['captionposition'] );?>" <?php echo esc_attr( $offsetstyle );?>>
 					<?php
 
 					do_action('aesop_image_inner_inside_top'); //action 
