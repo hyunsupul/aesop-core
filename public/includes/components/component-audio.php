@@ -28,7 +28,7 @@ if (!function_exists('aesop_audio_shortcode')){
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'audio', '' ) : null;
 
 		// hidden
-		$hidden = 'on' == $atts['hidden'] ? 'style="height:0;z-index:-1;position:absolute;opacity:0;"' : null;
+		$hidden = 'on' == $atts['hidden'] ? 'style=height:0;z-index:-1;position:absolute;opacity:0;' : null;
 
 		// optional title
 		$title = $atts['title'] ? apply_filters('aesop_audio_component_title', sprintf('<h5>%s</h5>', $atts['title'])) : null;
@@ -44,24 +44,24 @@ if (!function_exists('aesop_audio_shortcode')){
 
 			do_action('aesop_audio_before'); //action
 
-				?><aside id="aesop-audio-<?php echo esc_html( $unique );?>" class="aesop-component aesop-audio-component <?php echo sanitize_html_class( $classes );?>" <?php echo esc_html( $hidden );?>>
+				?><aside id="aesop-audio-<?php echo esc_attr( $unique );?>" class="aesop-component aesop-audio-component <?php echo sanitize_html_class( $classes );?>" <?php echo esc_attr( $hidden );?>>
 
 					<?php if ('on' == $atts['viewstart']) { ?>
 						<script>
 						jQuery(document).ready(function(){
-							jQuery('#aesop-audio-<?php echo esc_html( $unique );?>').arrive('.mejs-audio', function(){
+							jQuery('#aesop-audio-<?php echo esc_attr( $unique );?>').arrive('.mejs-audio', function(){
 
-								jQuery('#aesop-audio-<?php echo esc_html( $unique );?>').waypoint({
-									offset: '<?php echo esc_html( $waypoint );?>',
+								jQuery('#aesop-audio-<?php echo esc_attr( $unique );?>').waypoint({
+									offset: '<?php echo esc_attr( $waypoint );?>',
 									handler: function(direction){
-										jQuery('#aesop-audio-<?php echo esc_html( $unique );?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
+										jQuery('#aesop-audio-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
 									}
 								});
 
 								<?php if ('on' == $atts['viewend']) { ?>
-								jQuery('#aesop-audio-<?php echo esc_html( $unique );?>').waypoint({
+								jQuery('#aesop-audio-<?php echo esc_attr( $unique );?>').waypoint({
 									handler: function(direction){
-											jQuery('#aesop-audio-<?php echo esc_html( $unique );?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
+											jQuery('#aesop-audio-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
 										}
 								});
 								<?php } ?>
