@@ -53,13 +53,13 @@ if (!function_exists('aesop_parallax_shortcode')){
 						jQuery(document).ready(function(){
 
 							<?php if ( 'on' == $atts['parallaxbg'] ) { ?>
-					   		jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_html( $unique );?> .aesop-parallax-sc-img').parallax({speed: 0.1});
-					        var viewport = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_html( $unique );?>').outerHeight();
-		        			jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_html( $unique );?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1.5});
+					   		jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-img').parallax({speed: 0.1});
+					        var viewport = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?>').outerHeight();
+		        			jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1.5});
 		        			<?php } ?>
 
 		        			<?php if ( 'on' == $atts['floater'] ) {?>
-								var obj = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_html( $unique );?> .aesop-parallax-sc-floater');
+								var obj = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-floater');
 						       	function scrollParallax(){
 						       	    var height 			= jQuery(obj).height(),
         	        					offset 			= jQuery(obj).offset().top,
@@ -95,13 +95,13 @@ if (!function_exists('aesop_parallax_shortcode')){
 						});
 					</script>
 				<?php } ?>
-					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_html( $unique );?>" style="height:<?php echo absint( $height );?>px;">
+					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>" style="height:<?php echo absint( $height );?>px;">
 
 						<?php do_action('aesop_parallax_inner_inside_top'); //action ?>
 
 						<?php if ('on' == $atts['floater']){?>
 							<div class="aesop-parallax-sc-floater floater-<?php echo sanitize_html_class( $atts['floaterposition'] );?>" data-speed="10">
-								<?php echo $atts['floatermedia'];?>
+								<?php echo esc_html($atts['floatermedia']);?>
 							</div>
 						<?php } ?>
 
