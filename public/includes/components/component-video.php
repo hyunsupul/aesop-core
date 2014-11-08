@@ -33,12 +33,6 @@ if (!function_exists('aesop_video_shortcode')){
 	    $contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 	    $widthstyle = $atts['width'] ? sprintf("style=max-width:%s;",$atts['width']) : false;
 
-	    // actions
-		//$actiontop = do_action('aesop_video_before'); //action
-		$actionbottom = do_action('aesop_video_after'); //action
-		//$actioninsidetop = do_action('aesop_videox_inside_top'); //action
-		$actioninsidebottom = do_action('aesop_video_inside_bottom'); //action
-
 	    $caption = $atts['caption'] ? sprintf('<div class="aesop-video-component-caption aesop-component-align-%s" %s>%s</div>',$atts['align'], $widthstyle, $atts['caption']) : false;
 
 	    if ( 'vine' == $atts['src'] || 'instagram' == $atts['src'] ) {
