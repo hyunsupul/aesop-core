@@ -28,10 +28,10 @@ if (!function_exists('aesop_character_shortcode')){
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'character', '' ) : null;
 
 		// width styles
-		$styles = $atts['width'] ? sprintf('style="width:%s;"',esc_html( $atts['width'] ) ) : null;
+		$styles = $atts['width'] ? sprintf('style="width:%s;"',esc_attr( $atts['width'] ) ) : null;
 
 		// wrapper float class
-		$float = $atts['align'] ? sprintf('aesop-component-align-%s', sanitize_html_class( $atts['align'] ) ) : null;
+		$float = $atts['align'] ? sprintf('aesop-component-align-%s', esc_attr( $atts['align'] ) ) : null;
 
 		// automatic alt tag
 		$auto_alt 	= $atts['img'] ? basename($atts['img']) : null;
@@ -42,12 +42,12 @@ if (!function_exists('aesop_character_shortcode')){
 
 			do_action('aesop_character_before'); //action
 			?>
-				<aside id="aesop-character-component-<?php echo sanitize_html_class( $unique );?>" class="aesop-character-component <?php echo sanitize_html_class( $classes ).''.sanitize_html_class( $float );?> ">
+				<aside id="aesop-character-component-<?php echo esc_attr( $unique );?>" class="aesop-character-component <?php echo sanitize_html_class( $classes ).''.sanitize_html_class( $float );?> ">
 
 					<?php do_action('aesop_character_inside_top'); //action ?>
 
 					<div class="aesop-character-inner aesop-content">
-						<div class="aesop-character-float aesop-character-<?php echo sanitize_html_class( $atts['align'] );?>" <?php echo $styles;?>>
+						<div class="aesop-character-float aesop-character-<?php echo esc_attr( $atts['align'] );?>" <?php echo $styles;?>>
 
 							<?php do_action('aesop_character_inner_inside_top'); //action ?>
 
