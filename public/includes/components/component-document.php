@@ -52,11 +52,11 @@ if (!function_exists('aesop_document_shortcode')){
 				});
 			});
 		</script>
-		',esc_html( $unique ), esc_html( $unique ));
+		',esc_attr( $unique ), esc_attr( $unique ));
 
 		$slide = $atts['caption'] ? esc_html( $atts['caption'] ) : false;
-		$link = sprintf('<a href="#" class="aesop-doc-reveal-%s"><span>document</span><br /> %s</a>', esc_html( $unique ),$slide);
-		$guts = sprintf('<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>',esc_html( $unique ), $source);
+		$link = sprintf('<a href="#" class="aesop-doc-reveal-%s"><span>document</span><br /> %s</a>', esc_attr( $unique ),$slide);
+		$guts = sprintf('<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>',esc_attr( $unique ), $source);
 		
 		$out .= sprintf('%s<aside class="aesop-documument-component aesop-content %s">%s%s%s%s</aside>%s',$actiontop, $classes, $actioninsidetop, $link, $guts, $actioninsidebottom, $actionbottom);
 
