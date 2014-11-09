@@ -4,7 +4,8 @@ if (!function_exists('aesop_map_shortcode')) {
 	function aesop_map_shortcode($atts, $content = null) {
 
 		$defaults = array(
-			'height' 				=> 500,
+			'height' 	=> 500,
+			'sticky'	=> 'off'
 		);
 
 		wp_enqueue_script('aesop-map-script',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js');
@@ -16,13 +17,16 @@ if (!function_exists('aesop_map_shortcode')) {
 		$actiontop = do_action('aesop_map_before'); //action
 		$actionbottom = do_action('aesop_map_after'); //action
 
+		// sticky maps
+		$sticky = 'on' == $atts['sticky'] ? 'aesop-sticky-map' : null;
+
 		//clean height
-		$height = preg_replace('/[^0-9]/','',$atts['height']);
+		$height = 'off' == $atts['sticky'] ? preg_replace('/[^0-9]/','',$atts['height']) : null;
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'map', '' ) : null;
 
-		$out = sprintf('%s<div id="aesop-map-component" class="aesop-component aesop-map-component %s" style="height:%spx"></div>%s',$actiontop, $classes, $height, $actionbottom);
+		$out = sprintf('%s<div id="aesop-map-component" class="aesop-component aesop-map-component %s %s" style="height:%spx"></div>%s',$actiontop, $classes, $sticky, $height, $actionbottom);
 
 		return apply_filters('aesop_map_output',$out);
 	}
@@ -33,6 +37,24 @@ class AesopMapComponent {
 
 	function __construct(){
 		add_action('wp_footer', array($this,'aesop_map_loader'),20);
+
+		// add a body class if map is sticky
+		add_filter('body_class',		array($this,'body_class'));
+	}
+
+	/**
+	*
+	*	Add a body class if map is in sticky mod
+	*
+	*	@param $classes array return array of classes
+	*	@since 1.3
+	*/
+	function body_class($classes) {
+
+	    $classes[] = 'aesop-sticky-map';
+
+	    return $classes;
+
 	}
 
 	public function aesop_map_loader(){
