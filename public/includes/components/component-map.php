@@ -21,12 +21,13 @@ if (!function_exists('aesop_map_shortcode')) {
 		$sticky = 'on' == $atts['sticky'] ? 'aesop-sticky-map' : null;
 
 		//clean height
-		$height = 'off' == $atts['sticky'] ? preg_replace('/[^0-9]/','',$atts['height']) : null;
+		$get_height = 'off' == $atts['sticky'] ? preg_replace('/[^0-9]/','',$atts['height']) : null;
+		$height = $get_height ? sprintf('style="height:%s;"',$get_height) : null;
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'map', '' ) : null;
 
-		$out = sprintf('%s<div id="aesop-map-component" class="aesop-component aesop-map-component %s %s" style="height:%spx"></div>%s',$actiontop, $classes, $sticky, $height, $actionbottom);
+		$out = sprintf('%s<div id="aesop-map-component" class="aesop-component aesop-map-component %s %s" %s></div>%s',$actiontop, $classes, $sticky, $height, $actionbottom);
 
 		return apply_filters('aesop_map_output',$out);
 	}
@@ -117,6 +118,20 @@ class AesopMapComponent {
 
 					endforeach;
 
+					// sticky maps - since 1.3
+					?>
+					jQuery(document).ready(function(){
+
+						jQuery('#thing').waypoint({
+							offset: '100%',
+							handler: function(direction){
+								map.panTo(new L.LatLng(29.70, -95.42));
+							}
+						});
+					});
+					// end sticky maps
+
+					<?php
 				else:
 
 					if ( is_user_logged_in() ) {
