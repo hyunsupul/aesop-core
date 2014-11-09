@@ -134,7 +134,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 							<?php echo do_action('aesop_cbox_content_inner_inside_top'); //action ?>
 
-								<?php echo do_shortcode( wpautop( $content ) );?>
+								<?php echo do_shortcode( wpautop( html_entity_decode($content) ) );?>
 
 							<?php echo do_action('aesop_cbox_content_inner_inside_bottom'); //action ?>
 
