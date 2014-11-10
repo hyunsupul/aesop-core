@@ -11,7 +11,9 @@ class AesopMapComponentAdmin {
 
 		// new maps
 		add_action( 'add_meta_boxes', 					array($this,'new_map_box') );
-		add_action('admin_enqueue_scripts', 		array($this,'new_map_assets') );
+		add_action( 'admin_enqueue_scripts', 		array($this,'new_map_assets') );
+		add_action( 'save_post',								[$this, 'save_map_box'] );
+
 	}
 
 	/**
@@ -116,7 +118,9 @@ class AesopMapComponentAdmin {
 	*/
 	function render_map_box( $post ){
 
+		echo '<div class="aesop-map-data" style="display: hidden;">';
 		wp_nonce_field( 'ase_map_meta', 'ase_map_meta_nonce' );
+		echo '</div>';
 
 		$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
 
@@ -172,8 +176,9 @@ class AesopMapComponentAdmin {
 					                draggable: true,
 
 					            }).bindPopup("\
-					            	<input type='text' id='ase_marker_text[]' value='test'>\
-					            	<input type='button' value='Delete this marker' class='marker-delete-button'/>\
+					            	<input type='text' name='ase_marker_text[]' value='Location Title'>\
+					            	<input type='button' value='Update' class='marker-update-button'/>\
+					            	<input type='button' value='Delete' class='marker-delete-button'/>\
 					            	");
 
 					            marker.on('popupopen', onPopupOpen);
@@ -181,6 +186,11 @@ class AesopMapComponentAdmin {
 					            return marker;
 					        }
 					    }).addTo(map);
+
+					    console.log(marker);
+
+					    jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-locations[]" data-ase="map" data-marker=' + marker._leaflet_id + ' data-lat="' + e.latlng.lat + '" data-lng="' + e.latlng.lng + '" value="Location Title">')
+
 					}
 
 					// open popup
@@ -190,7 +200,17 @@ class AesopMapComponentAdmin {
 
 					    // To remove marker on click of delete button in the popup of marker
 					    jQuery('.marker-delete-button:visible').click(function () {
-					        map.removeLayer(tempMarker);
+					      map.removeLayer(tempMarker);
+					    });
+
+					    // Update the title of the location
+					    jQuery('.marker-update-button:visible').click(function (t) {
+
+					    	console.log(jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]'));
+
+					    	console.log(tempMarker._latlng.lat);
+					    	console.log(tempMarker);
+					    	console.log(t.target.previousElementSibling.value);
 					    });
 					}
 
@@ -203,13 +223,11 @@ class AesopMapComponentAdmin {
 					    jQuery.each(map._layers, function (ml) {
 
 					        if (map._layers[ml].feature) {
-
 					            allMarkersObjArray.push(this)
 					            allMarkersGeoJsonArray.push(JSON.stringify(this.toGeoJSON()))
 					        }
 					    })
 
-					    console.log(allMarkersObjArray);
 					}
 
 					jQuery('.get-markers').on('click', getAllMarkers);
@@ -242,20 +260,8 @@ class AesopMapComponentAdmin {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 			return $post_id;
 
-		// if user doesn't have permissions then bail
-		if ( 'page' == $_POST['post_type'] ) {
-
-			if ( ! current_user_can( 'edit_page', $post_id ) )
-				return $post_id;
-
-		} else {
-
-			if ( ! current_user_can( 'edit_post', $post_id ) )
-				return $post_id;
-		}
-
-		// ok to continue and save
-		//update_post_meta.....
+		//delete_post_meta( $post_id, 'ase_map_component_locations' );
+		//add_post_meta( $post_id, 'ase_map_component_locations', $_POST[] );
 
 	}
 
