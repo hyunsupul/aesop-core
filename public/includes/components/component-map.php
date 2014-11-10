@@ -13,10 +13,6 @@ if (!function_exists('aesop_map_shortcode')) {
 
 		$atts = apply_filters('aesop_map_defaults',shortcode_atts($defaults, $atts));
 
-		// actions
-		$actiontop = do_action('aesop_map_before'); //action
-		$actionbottom = do_action('aesop_map_after'); //action
-
 		// sticky maps
 		$sticky = 'on' == $atts['sticky'] ? 'aesop-sticky-map' : null;
 
@@ -27,9 +23,51 @@ if (!function_exists('aesop_map_shortcode')) {
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'map', '' ) : null;
 
-		$out = sprintf('%s<div id="aesop-map-component" class="aesop-component aesop-map-component %s %s" %s></div>%s',$actiontop, $classes, $sticky, $height, $actionbottom);
+		// get markers - since 1.3
+		$markers 	= get_post_meta( get_the_ID(), 'aesop_map_component_locations', false);
 
-		return apply_filters('aesop_map_output',$out);
+		// filterable map marker waypoint offset - since 1.3
+		// 50% means when the id hits 50% from the top the waypoint will fire
+		$marker_waypoint_offset = apply_filters('aesop_map_waypoint_offset', '50%');
+
+		ob_start();
+
+		// if sticky do scroll waypoints - since 1.3
+		if ( 'on' == $atts['sticky'] ):
+
+			?><script>
+				jQuery(document).ready(function(){
+
+					<?php if ( $markers ):
+
+						$i = 0;
+
+						foreach( $markers as $key => $marker ): $i++;
+
+							$loc 	= sprintf('%s,%s',$marker['lat'],$marker['long']);
+
+							?>
+							jQuery('#aesop-map-marker-<?php echo $i;?>').waypoint({
+								offset: '<?php echo esc_attr($marker_waypoint_offset);?>',
+								handler: function(direction){
+									map.panTo(new L.LatLng(<?php echo esc_attr($loc);?>));
+								}
+							});
+							<?php
+
+						endforeach;
+
+					endif;?>
+				});
+			</script><?php
+
+		endif;
+
+		do_action('aesop_map_before');
+			?><div id="aesop-map-component" class="aesop-component aesop-map-component <?php echo sanitize_html_class($classes);?> <?php sanitize_html_class($sticky);?>" <?php echo $height;?>></div><?php
+		do_action('aesop_map_before');
+
+		return ob_get_clean();
 	}
 
 }
@@ -118,20 +156,6 @@ class AesopMapComponent {
 
 					endforeach;
 
-					// sticky maps - since 1.3
-					?>
-					jQuery(document).ready(function(){
-
-						jQuery('#thing').waypoint({
-							offset: '100%',
-							handler: function(direction){
-								map.panTo(new L.LatLng(29.70, -95.42));
-							}
-						});
-					});
-					// end sticky maps
-
-					<?php
 				else:
 
 					if ( is_user_logged_in() ) {
