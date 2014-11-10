@@ -182,7 +182,7 @@ class AesopMapComponentAdmin {
 					                title: 'Resource Location',
 					                alt: 'Resource Location',
 					                riseOnHover: true,
-					                draggable: true,
+					                draggable: false,
 
 					            }).bindPopup("\
 					            	<input type='text' name='ase_marker_text[]' value='Location Title'>\
@@ -236,7 +236,7 @@ class AesopMapComponentAdmin {
 					// let's create a hidden form element for the marker
 					function createMarkerField(mid, mlat, mlng, mtitle) {
 						var marker_data = encodeURIComponent(JSON.stringify({lat: mlat, lng: mlng, title: mtitle}));
-					  jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-locations[]" data-ase="map" data-marker="' + mid + '" data-lat="' + mlat + '" data-lng="' + mlng + '" value="' + marker_data + '">');
+					  jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-locations[]" data-ase="map" data-marker="' + mid + '" value="' + marker_data + '">');
 					}
 
 					jQuery('.get-markers').on('click', getAllMarkers);
