@@ -83,6 +83,10 @@ class AesopMapComponent {
 
 	function __construct(){
 		add_action('wp_footer', array($this,'aesop_map_loader'),20);
+
+		// map marker shortcode
+		add_shortcode('aesop_map_marker', array($this,'aesop_map_marker_sc'));
+
 	}
 
 	public function aesop_map_loader(){
@@ -217,5 +221,26 @@ class AesopMapComponent {
 
 	}
 
+	/**
+	*
+	*	Add a shortcode that lets users decide trigger points in map component
+	*	Note: this is ONLY used when maps is in sticky mode, considered an internal but public function
+	*
+	*
+	*/
+	function aesop_map_marker_sc($atts, $content = null) {
+
+		$defaults = array('title' => '','hidden' => '');
+
+		$atts = shortcode_atts( $defaults, $atts );
+
+		// let this be used multiple times
+		static $instance = 0;
+		$instance++;
+
+		$out = sprintf('<aside id="aesop-map-marker-%s" class="aesop-map-marker">%s</aside>', $instance, esc_html( $atts[ 'title'] ) );
+
+		return $out;
+	}
 }
 new AesopMapComponent;

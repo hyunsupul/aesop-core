@@ -8,6 +8,9 @@ class AesopMapComponentAdmin {
 
 	public function __construct(){
 		add_filter( 'cmb_meta_boxes', array($this,'aesop_map_meta') );
+
+		add_action('aesop_admin_styles', 		array($this, 'icon') );
+		add_filter('aesop_avail_components',	array($this, 'options'));
 	}
 
 	function aesop_map_meta( array $meta_boxes ) {
@@ -65,5 +68,64 @@ class AesopMapComponentAdmin {
 
 	}
 
+	/**
+	*
+	*	Create the options for the shortcode that gets created when stickky maps is activated
+	*	This lets the user use the user interface to add teh specific points in the story that the map should jump markers
+	*
+	*	@since 1.3
+	*	@param $shortcodes array array of shortcodes to return
+	*	@return return our own options merged into the aesop availabel optoins array
+	*/
+	function options($shortcodes) {
+
+		$custom = array(
+			'map_marker' 				=> array(
+				'name' 					=> __('Aesop Map Marker', 'aesop-core'), // name of the component
+				'type' 					=> 'single', // single - wrap
+				'atts' 					=> array(
+					'title' 			=> array(
+						'type'			=> 'text_small', // a small text field
+						'default' 		=> '',
+						'desc' 			=> __('Title', 'aesop-core'),
+						'tip'			=> __('By default we\'ll display an H2 heading with the text you specify here.','aesop-core')
+					),
+					'hidden' 				=> array(
+						'type'			=> 'select', // a select dropdown 
+						'values' 		=> array(
+							array(
+								'value' => 'off',
+								'name'	=> __('Off','aesop-core')
+							),
+							array(
+								'value' => 'on',
+								'name'	=> __('On','aesop-core')
+							)
+						),
+						'default' 		=> '',
+						'desc' 			=> __('Hidden', 'aesop-core'),
+						'tip'			=> __('By default an H2 heading will be used. You can optionally hide this completely but retain the scroll to point in the map.','aesop-core')
+					)
+				)
+			)
+		);
+
+
+		return array_merge( $shortcodes, $custom );
+
+	}
+
+	/**
+	*
+	*	Set a custom icon for our new map marker shortcode
+	*
+	*/
+	function icon(){
+
+		$icon = '\f230'; //css code for dashicon
+		$slug = 'map_marker'; // name of component
+
+		wp_add_inline_style('ai-core-styles', '#aesop-generator-wrap li.'.$slug.' {display:none;} #aesop-generator-wrap li.'.$slug.' a:before {content: "'.$icon.'";}');
+	}
 }
 new AesopMapComponentAdmin;

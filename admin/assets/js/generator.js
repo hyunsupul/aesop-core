@@ -7,13 +7,24 @@ jQuery(document).ready(function($) {
 		e.preventDefault();
 
 		if ( typeof window.aiactive !== 'undefined' ) {
-      alert('Nesting components within the visual interface is not supported.');
-    } else if ( typeof window.ailocked !== 'undefined' ) {
-      alert('Please click on the editor and set your cursor location first.');
-    } else {
-      jQuery('body').toggleClass('modal-open');
-      jQuery(modal).toggleClass('aesop-generator-open');
-    }
+	      alert('Nesting components within the visual interface is not supported.');
+	    } else if ( typeof window.ailocked !== 'undefined' ) {
+	      alert('Please click on the editor and set your cursor location first.');
+	    } else {
+	      jQuery('body').toggleClass('modal-open');
+	      jQuery(modal).toggleClass('aesop-generator-open');
+	    }
+
+		// check conditionals on load
+		// conditionally load the map marker shortcode
+		// since 1.3
+		var stickyMapStatus = $('.aesop-map-sticky #aesop-generator-attr-sticky').val();
+
+		if( 'off' !== stickyMapStatus ) {
+			$('#aesop-generator-wrap li.map_marker').fadeIn().css('display','inline-block');
+		} else {
+			$('#aesop-generator-wrap li.map_marker').fadeOut();
+		}
 	});
 
 	var settingsHeight = function(){
@@ -74,6 +85,19 @@ jQuery(document).ready(function($) {
 
     		var queried_shortcode = $('#aesop-generator-select').find(':selected').val();
 			$('#aesop-generator-settings').html(aesopshortcodes[queried_shortcode]);
+
+			// conditionally load the map marker shortcode
+			// since 1.3
+			$('.aesop-map-sticky #aesop-generator-attr-sticky').on('change',function(){
+				var selectedValue = $(this).val();
+
+				if( 'off' !== selectedValue ) {
+					$('#aesop-generator-wrap li.map_marker').fadeIn().css('display','inline-block');
+				} else {
+					$('#aesop-generator-wrap li.map_marker').fadeOut();
+				}
+
+			});
 
 			////
 			// conditional loading
