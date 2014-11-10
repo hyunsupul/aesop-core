@@ -5,7 +5,7 @@ if (!function_exists('aesop_map_shortcode')) {
 
 		$defaults = array(
 			'height' 	=> 500,
-			'sticky'	=> 'off'
+			'sticky'	=> 'left'
 		);
 
 		wp_enqueue_script('aesop-map-script',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js');
@@ -13,8 +13,8 @@ if (!function_exists('aesop_map_shortcode')) {
 
 		$atts = apply_filters('aesop_map_defaults',shortcode_atts($defaults, $atts));
 
-		// sticky maps
-		$sticky = 'on' == $atts['sticky'] ? 'aesop-sticky-map' : null;
+		// sticky maps class
+		$sticky = 'off' !== $atts['sticky'] ? sprintf('aesop-sticky-map-%s', esc_attr($atts['sticky'])) : null;
 
 		//clean height
 		$get_height = 'off' == $atts['sticky'] ? preg_replace('/[^0-9]/','',$atts['height']) : null;
@@ -30,13 +30,17 @@ if (!function_exists('aesop_map_shortcode')) {
 		// 50% means when the id hits 50% from the top the waypoint will fire
 		$marker_waypoint_offset = apply_filters('aesop_map_waypoint_offset', '50%');
 
+		// 
+
 		ob_start();
 
 		// if sticky do scroll waypoints - since 1.3
-		if ( 'on' == $atts['sticky'] ):
+		if ( 'off' !== $atts['sticky'] ):
 
 			?><script>
 				jQuery(document).ready(function(){
+
+					jQuery('body').addClass('<?php echo esc_attr($sticky);?>');
 
 					<?php if ( $markers ):
 
@@ -47,7 +51,7 @@ if (!function_exists('aesop_map_shortcode')) {
 							$loc 	= sprintf('%s,%s',$marker['lat'],$marker['long']);
 
 							?>
-							jQuery('#aesop-map-marker-<?php echo $i;?>').waypoint({
+							jQuery('#aesop-map-marker-<?php echo absint($i);?>').waypoint({
 								offset: '<?php echo esc_attr($marker_waypoint_offset);?>',
 								handler: function(direction){
 									map.panTo(new L.LatLng(<?php echo esc_attr($loc);?>));
@@ -64,7 +68,7 @@ if (!function_exists('aesop_map_shortcode')) {
 		endif;
 
 		do_action('aesop_map_before');
-			?><div id="aesop-map-component" class="aesop-component aesop-map-component <?php echo sanitize_html_class($classes);?> <?php sanitize_html_class($sticky);?>" <?php echo $height;?>></div><?php
+			?><div id="aesop-map-component" class="aesop-component aesop-map-component <?php echo sanitize_html_class($classes);?> " <?php echo $height;?>></div><?php
 		do_action('aesop_map_before');
 
 		return ob_get_clean();
