@@ -187,9 +187,8 @@ class AesopMapComponentAdmin {
 					        }
 					    }).addTo(map);
 
-					    console.log(marker);
-
-					    jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-locations[]" data-ase="map" data-marker=' + marker._leaflet_id + ' data-lat="' + e.latlng.lat + '" data-lng="' + e.latlng.lng + '" value="Location Title">')
+					    var marker_data = encodeURIComponent(JSON.stringify({id: marker._leaflet_id, lat: e.latlng.lat, lng: e.latlng.lng, title: 'Location Title'}));
+					    jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-locations[]" data-ase="map" data-marker="' + marker._leaflet_id + '" data-lat="' + e.latlng.lat + '" data-lng="' + e.latlng.lng + '" value="' + marker_data + '">');
 
 					}
 
@@ -256,8 +255,13 @@ class AesopMapComponentAdmin {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 			return $post_id;
 
-		//delete_post_meta( $post_id, 'ase_map_component_locations' );
-		//add_post_meta( $post_id, 'ase_map_component_locations', $_POST[] );
+		delete_post_meta( $post_id, 'ase_map_component_locations' );
+
+		foreach( $_POST['ase-map-component-locations'] as $location ){
+			// let's decode and convert the data into an array
+			$location_data = json_decode(urldecode($location), true);
+			add_post_meta( $post_id, 'ase_map_component_locations', $location_data);	
+		}
 
 	}
 
