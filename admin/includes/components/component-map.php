@@ -220,11 +220,13 @@ class AesopMapComponentAdmin {
 				    	var title = t.target.previousElementSibling.value;
 				    	var tdata = encodeMarkerData(tempMarker._latlng.lat, tempMarker._latlng.lng, title);
 				    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').val(tdata);
+				    	tempMarker.closePopup();
 				    	tempMarker.bindPopup("\
 					            	<input type='text' name='ase_marker_text[]' value='" + title + "'>\
 					            	<input type='button' value='Update' class='marker-update-button'/>\
 					            	<input type='button' value='Delete' class='marker-delete-button'/>\
 					            	");
+
 				    });
 					}
 
