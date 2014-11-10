@@ -157,7 +157,7 @@ class AesopMapComponentAdmin {
 
 					ase_locations.forEach(function(location) {
 						createMapMarker([location['lat'],location['lng']],location['title']).addTo(map);
-						createMarkerField( marker._leaflet_id, location['lat'], location['lng'], location['title'] );
+						createMarkerField( marker._leaflet_id, encodeMarkerData(location['lat'], location['lng'], location['title']) );
 					});
 
 					// adding a new marker
@@ -217,7 +217,9 @@ class AesopMapComponentAdmin {
 
 				    // Update the title of the location
 				    jQuery('.marker-update-button:visible').click(function (t) {
-				    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').val(t.target.previousElementSibling.value);
+				    	tdata = encodeMarkerData(tempMarker._latlng.lat, tempMarker._latlng.lng, t.target.previousElementSibling.value);
+				    	console.log(tdata);
+				    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').val(tdata);
 				    });
 					}
 
@@ -263,6 +265,11 @@ class AesopMapComponentAdmin {
 						return encodeURIComponent(JSON.stringify({lat: mlat, lng: mlng, title: mtitle}));
 					}
 
+					// decode the information
+					function decodeMarkerData(mdata) {
+						return decodeURIComponent(JSON.parse(mdata));
+					}
+
 					jQuery('.get-markers').on('click', getAllMarkers);
 				});
 			</script>
@@ -297,8 +304,10 @@ class AesopMapComponentAdmin {
 
 		if ( isset( $_POST['ase-map-component-locations'] ) ) {
 			foreach( $_POST['ase-map-component-locations'] as $location ){
+				//var_dump($location);
 				// let's decode and convert the data into an array
 				$location_data = json_decode(urldecode($location), true);
+				//var_dump($location_data);
 				add_post_meta( $post_id, 'ase_map_component_locations', $location_data);	
 			}
 		}
