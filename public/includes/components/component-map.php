@@ -18,7 +18,7 @@ if (!function_exists('aesop_map_shortcode')) {
 
 		//clean height
 		$get_height = 'off' == $atts['sticky'] ? preg_replace('/[^0-9]/','',$atts['height']) : null;
-		$height = $get_height ? sprintf('style="height:%s;"',$get_height) : null;
+		$height = $get_height ? sprintf('style="height:%spx;"',$get_height) : null;
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'map', '' ) : null;
@@ -40,7 +40,7 @@ if (!function_exists('aesop_map_shortcode')) {
 			?><script>
 				jQuery(document).ready(function(){
 
-					jQuery('body').addClass('<?php echo esc_attr($sticky);?>');
+					jQuery('body').addClass('aesop-sticky-map <?php echo esc_attr($sticky);?>');
 
 					<?php if ( $markers ):
 
@@ -80,24 +80,6 @@ class AesopMapComponent {
 
 	function __construct(){
 		add_action('wp_footer', array($this,'aesop_map_loader'),20);
-
-		// add a body class if map is sticky
-		add_filter('body_class',		array($this,'body_class'));
-	}
-
-	/**
-	*
-	*	Add a body class if map is in sticky mod
-	*
-	*	@param $classes array return array of classes
-	*	@since 1.3
-	*/
-	function body_class($classes) {
-
-	    $classes[] = 'aesop-sticky-map';
-
-	    return $classes;
-
 	}
 
 	public function aesop_map_loader(){
