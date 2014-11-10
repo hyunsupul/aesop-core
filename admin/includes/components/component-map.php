@@ -200,7 +200,7 @@ class AesopMapComponentAdmin {
 					        }
 					    }).addTo(map);
 
-					   	createMarkerField( marker._leaflet_id, e.latlng.lat, e.latlng.lng, 'Location Title' );
+					   	createMarkerField( marker._leaflet_id, encodeMarkerData(e.latlng.lat, e.latlng.lng, 'Location Title') );
 
 					}
 
@@ -254,9 +254,13 @@ class AesopMapComponentAdmin {
 					}
 
 					// let's create a hidden form element for the marker
-					function createMarkerField(mid, mlat, mlng, mtitle) {
-						var marker_data = encodeURIComponent(JSON.stringify({lat: mlat, lng: mlng, title: mtitle}));
-					  jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-locations[]" data-ase="map" data-marker="' + mid + '" value="' + marker_data + '">');
+					function createMarkerField(mid, mdata) {
+					  jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-locations[]" data-ase="map" data-marker="' + mid + '" value="' + mdata + '">');
+					}
+
+					// encode the information into a string
+					function encodeMarkerData(mlat, mlng, mtitle) {
+						return encodeURIComponent(JSON.stringify({lat: mlat, lng: mlng, title: mtitle}));
 					}
 
 					jQuery('.get-markers').on('click', getAllMarkers);
