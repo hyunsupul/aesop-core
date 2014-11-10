@@ -131,6 +131,8 @@ class AesopMapComponentAdmin {
 
 		echo '<div id="aesop-map" style="height:350px;"></div>';
 
+		$ase_locations = json_encode(get_post_meta( $post->ID, 'ase_map_component_locations' ));
+
 		?>
 			<!-- Aesop Maps -->
 			<script>
@@ -146,6 +148,13 @@ class AesopMapComponentAdmin {
 					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo esc_attr($mapboxid);?>/{z}/{x}/{y}.png', {
 						maxZoom: 20
 					}).addTo(map);
+
+					var ase_locations = <?php echo $ase_locations; ?>
+
+					ase_locations.forEach(function(location) {
+						marker = L.marker([location['lat'], location['lng']]).addTo(map);
+						createMarkerField( marker._leaflet_id, location['lat'], location['lng'], location['title'] );
+					});
 
 					// adding a new marker
 					map.on('click', onMapClick);
@@ -187,8 +196,7 @@ class AesopMapComponentAdmin {
 					        }
 					    }).addTo(map);
 
-					    var marker_data = encodeURIComponent(JSON.stringify({id: marker._leaflet_id, lat: e.latlng.lat, lng: e.latlng.lng, title: 'Location Title'}));
-					    jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-locations[]" data-ase="map" data-marker="' + marker._leaflet_id + '" data-lat="' + e.latlng.lat + '" data-lng="' + e.latlng.lng + '" value="' + marker_data + '">');
+					   	createMarkerField( marker._leaflet_id, e.latlng.lat, e.latlng.lng, 'Location Title' );
 
 					}
 
@@ -223,6 +231,12 @@ class AesopMapComponentAdmin {
 					        }
 					    })
 
+					}
+
+					// let's create a hidden form element for the marker
+					function createMarkerField(mid, mlat, mlng, mtitle) {
+						var marker_data = encodeURIComponent(JSON.stringify({lat: mlat, lng: mlng, title: mtitle}));
+					  jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-locations[]" data-ase="map" data-marker="' + mid + '" data-lat="' + mlat + '" data-lng="' + mlng + '" value="' + marker_data + '">');
 					}
 
 					jQuery('.get-markers').on('click', getAllMarkers);
