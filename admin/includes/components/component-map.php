@@ -156,7 +156,7 @@ class AesopMapComponentAdmin {
 					<?php endif; ?>
 
 					ase_locations.forEach(function(location) {
-						marker = L.marker([location['lat'], location['lng']]).addTo(map);
+						createMapMarker([location['lat'],location['lng']],location['title']).addTo(map);
 						createMarkerField( marker._leaflet_id, location['lat'], location['lng'], location['title'] );
 					});
 
@@ -186,7 +186,7 @@ class AesopMapComponentAdmin {
 					                title: 'Resource Location',
 					                alt: 'Resource Location',
 					                riseOnHover: true,
-					                draggable: false,
+					                draggable: true,
 
 					            }).bindPopup("\
 					            	<input type='text' name='ase_marker_text[]' value='Location Title'>\
@@ -207,18 +207,34 @@ class AesopMapComponentAdmin {
 					// open popup
 					function onPopupOpen() {
 
-					    var tempMarker = this;
+				    var tempMarker = this;
 
-					    // To remove marker on click of delete button in the popup of marker
-					    jQuery('.marker-delete-button:visible').click(function () {
-					    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').remove();
-					      map.removeLayer(tempMarker);
-					    });
+				    // To remove marker on click of delete button in the popup of marker
+				    jQuery('.marker-delete-button:visible').click(function () {
+				    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').remove();
+				      map.removeLayer(tempMarker);
+				    });
 
-					    // Update the title of the location
-					    jQuery('.marker-update-button:visible').click(function (t) {
-					    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').val(t.target.previousElementSibling.value);
-					    });
+				    // Update the title of the location
+				    jQuery('.marker-update-button:visible').click(function (t) {
+				    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').val(t.target.previousElementSibling.value);
+				    });
+					}
+
+					// create map marker
+					function createMapMarker(latlng, title) {
+            marker = L.marker(latlng, {
+              title: title,
+              alt: title,
+              riseOnHover: true,
+              draggable: true,
+            }).bindPopup("\
+            	<input type='text' name='ase_marker_text[]' value='Location Title'>\
+            	<input type='button' value='Update' class='marker-update-button'/>\
+            	<input type='button' value='Delete' class='marker-delete-button'/>\
+            	");
+            marker.on('popupopen', onPopupOpen);
+            return marker;
 					}
 
 					// get all the makers on teh map
