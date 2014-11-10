@@ -218,7 +218,6 @@ class AesopMapComponentAdmin {
 				    // Update the title of the location
 				    jQuery('.marker-update-button:visible').click(function (t) {
 				    	tdata = encodeMarkerData(tempMarker._latlng.lat, tempMarker._latlng.lng, t.target.previousElementSibling.value);
-				    	console.log(tdata);
 				    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').val(tdata);
 				    });
 					}
@@ -231,7 +230,7 @@ class AesopMapComponentAdmin {
               riseOnHover: true,
               draggable: true,
             }).bindPopup("\
-            	<input type='text' name='ase_marker_text[]' value='Location Title'>\
+            	<input type='text' name='ase_marker_text[]' value='" + title + "'>\
             	<input type='button' value='Update' class='marker-update-button'/>\
             	<input type='button' value='Delete' class='marker-delete-button'/>\
             	");
@@ -239,20 +238,15 @@ class AesopMapComponentAdmin {
             return marker;
 					}
 
-					// get all the makers on teh map
 					function getAllMarkers() {
-
-					    var allMarkersObjArray = []; // for marker objects
-					    var allMarkersGeoJsonArray = []; // for readable geoJson markers
-
-					    jQuery.each(map._layers, function (ml) {
-
-					        if (map._layers[ml].feature) {
-					            allMarkersObjArray.push(this)
-					            allMarkersGeoJsonArray.push(JSON.stringify(this.toGeoJSON()))
-					        }
-					    })
-
+				    var allMarkersObjArray = []; // for marker objects
+				    var allMarkersGeoJsonArray = []; // for readable geoJson markers
+				    jQuery.each(map._layers, function (ml) {
+			        if (map._layers[ml].feature) {
+			          allMarkersObjArray.push(this)
+			          allMarkersGeoJsonArray.push(JSON.stringify(this.toGeoJSON()))
+			        }
+				    })
 					}
 
 					// let's create a hidden form element for the marker
