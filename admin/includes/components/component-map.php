@@ -200,17 +200,13 @@ class AesopMapComponentAdmin {
 
 					    // To remove marker on click of delete button in the popup of marker
 					    jQuery('.marker-delete-button:visible').click(function () {
+					    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').remove();
 					      map.removeLayer(tempMarker);
 					    });
 
 					    // Update the title of the location
 					    jQuery('.marker-update-button:visible').click(function (t) {
-
-					    	console.log(jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]'));
-
-					    	console.log(tempMarker._latlng.lat);
-					    	console.log(tempMarker);
-					    	console.log(t.target.previousElementSibling.value);
+					    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').val(t.target.previousElementSibling.value);
 					    });
 					}
 
