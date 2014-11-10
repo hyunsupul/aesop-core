@@ -5,7 +5,7 @@ if (!function_exists('aesop_map_shortcode')) {
 
 		$defaults = array(
 			'height' 	=> 500,
-			'sticky'	=> 'left'
+			'sticky'	=> 'off'
 		);
 
 		wp_enqueue_script('aesop-map-script',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js');
@@ -14,11 +14,11 @@ if (!function_exists('aesop_map_shortcode')) {
 		$atts = apply_filters('aesop_map_defaults',shortcode_atts($defaults, $atts));
 
 		// sticky maps class
-		$sticky = 'off' !== $atts['sticky'] ? sprintf('aesop-sticky-map-%s', esc_attr($atts['sticky'])) : null;
+		$sticky = 'off' !== $atts['sticky'] ? sprintf('aesop-sticky-map-%s', esc_attr( $atts['sticky'] ) ) : null;
 
 		//clean height
-		$get_height = 'off' == $atts['sticky'] ? preg_replace('/[^0-9]/','',$atts['height']) : null;
-		$height = $get_height ? sprintf('style="height:%spx;"',$get_height) : null;
+		$get_height = 'off' == $atts['sticky'] ? preg_replace('/[^0-9]/','',$atts['height'] ) : null;
+		$height = $get_height ? sprintf('style="height:%spx;"',$get_height ) : null;
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'map', '' ) : null;
@@ -30,38 +30,41 @@ if (!function_exists('aesop_map_shortcode')) {
 		// 50% means when the id hits 50% from the top the waypoint will fire
 		$marker_waypoint_offset = apply_filters('aesop_map_waypoint_offset', '50%');
 
-		// 
-
 		ob_start();
 
-		// if sticky do scroll waypoints - since 1.3
-		if ( 'off' !== $atts['sticky'] ):
+		/**
+		*
+		* 	if sticky and we have markers do scroll waypoints
+		*
+		* 	@since 1.3
+		*/
+		if ( 'off' !== $atts['sticky'] && $markers ):
 
-			?><script>
+			?>
+			<!-- Aesop Sticky Maps -->
+			<script>
 				jQuery(document).ready(function(){
 
 					jQuery('body').addClass('aesop-sticky-map <?php echo esc_attr($sticky);?>');
 
-					<?php if ( $markers ):
+					<?php
+					$i = 0;
 
-						$i = 0;
+					foreach( $markers as $key => $marker ): $i++;
 
-						foreach( $markers as $key => $marker ): $i++;
+						$loc 	= sprintf('%s,%s',$marker['lat'],$marker['long']);
 
-							$loc 	= sprintf('%s,%s',$marker['lat'],$marker['long']);
+						?>
+						jQuery('#aesop-map-marker-<?php echo absint($i);?>').waypoint({
+							offset: '<?php echo esc_attr($marker_waypoint_offset);?>',
+							handler: function(direction){
+								map.panTo(new L.LatLng(<?php echo esc_attr($loc);?>));
+							}
+						});
+						<?php
 
-							?>
-							jQuery('#aesop-map-marker-<?php echo absint($i);?>').waypoint({
-								offset: '<?php echo esc_attr($marker_waypoint_offset);?>',
-								handler: function(direction){
-									map.panTo(new L.LatLng(<?php echo esc_attr($loc);?>));
-								}
-							});
-							<?php
-
-						endforeach;
-
-					endif;?>
+					endforeach;
+					?>
 				});
 			</script><?php
 
