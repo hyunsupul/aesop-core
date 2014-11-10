@@ -242,7 +242,7 @@ class AesopMapComponent {
 
 		$out = sprintf('<aside id="aesop-map-marker-%s" class="aesop-map-marker">%s</aside>', $instance, esc_html( $atts[ 'title'] ) );
 
-		return $out;
+		return apply_filters('aesop_map_marker_output', $out);
 	}
 }
 new AesopMapComponent;
