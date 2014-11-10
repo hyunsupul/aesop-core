@@ -131,7 +131,9 @@ class AesopMapComponentAdmin {
 
 		echo '<div id="aesop-map" style="height:350px;"></div>';
 
-		$ase_locations = json_encode(get_post_meta( $post->ID, 'ase_map_component_locations' ));
+		$ase_locations = get_post_meta( $post->ID, 'ase_map_component_locations' );
+
+		$ase_locations = json_encode($ase_locations);
 
 		?>
 			<!-- Aesop Maps -->
@@ -149,7 +151,9 @@ class AesopMapComponentAdmin {
 						maxZoom: 20
 					}).addTo(map);
 
-					var ase_locations = <?php echo $ase_locations; ?>
+					<?php if ( ! empty( $ase_locations )) : ?>
+						var ase_locations = <?php echo $ase_locations; ?>
+					<?php endif; ?>
 
 					ase_locations.forEach(function(location) {
 						marker = L.marker([location['lat'], location['lng']]).addTo(map);
@@ -271,12 +275,13 @@ class AesopMapComponentAdmin {
 
 		delete_post_meta( $post_id, 'ase_map_component_locations' );
 
-		foreach( $_POST['ase-map-component-locations'] as $location ){
-			// let's decode and convert the data into an array
-			$location_data = json_decode(urldecode($location), true);
-			add_post_meta( $post_id, 'ase_map_component_locations', $location_data);	
+		if ( isset( $_POST['ase-map-component-locations'] ) ) {
+			foreach( $_POST['ase-map-component-locations'] as $location ){
+				// let's decode and convert the data into an array
+				$location_data = json_decode(urldecode($location), true);
+				add_post_meta( $post_id, 'ase_map_component_locations', $location_data);	
+			}
 		}
-
 	}
 
 }
