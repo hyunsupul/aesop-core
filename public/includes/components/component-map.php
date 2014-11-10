@@ -47,6 +47,8 @@ if (!function_exists('aesop_map_shortcode')) {
 
 					jQuery('body').addClass('aesop-sticky-map <?php echo esc_attr($sticky);?>');
 
+					map.invalidateSize();
+
 					<?php
 					$i = 0;
 
