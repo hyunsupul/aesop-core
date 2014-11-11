@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
 	}
 
 	var destroyModal = function(){
-    if ( tinyMCE.activeEditor ) {
+    if ( typeof tinyMCE !== 'undefined' && tinyMCE.activeEditor ) {
       var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
       if(editing != ''){
         editing[0].removeAttribute('id');
@@ -180,7 +180,7 @@ jQuery(document).ready(function($) {
 			$('#aesop-generator-result').val($('#aesop-generator-result').val() + $('#aesop-generator-content').val() + '[/' + aesop_compatibility_mode_prefix + queried_shortcode + ']');
 		}
 
-    if ( tinyMCE.activeEditor ) {
+   if ( typeof tinyMCE !== 'undefined' && tinyMCE.activeEditor ) {
       var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
       $(editing).replaceWith('<p></p>');
     }
