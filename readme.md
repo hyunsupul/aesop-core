@@ -59,4 +59,4 @@ Interactive elements are created while crafting stories, with the Story Componen
 
 ### Demo Theme  
 Here is a very, very basic sample WordPress theme showing implementation of the story engine component design. This demo theme ONLY includes styles for the single story as an example: 
-[https://github.com/bearded-avenger/aesop-sample-theme](https://github.com/bearded-avenger/aesop-sample-theme)  
+[https://github.com/AesopInteractive/aesop-story-theme](https://github.com/AesopInteractive/aesop-story-theme)  
