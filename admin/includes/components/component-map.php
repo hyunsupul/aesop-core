@@ -151,17 +151,21 @@ class AesopMapComponentAdmin {
 
 				jQuery(document).ready(function(){
 
+					var start_point = <?php echo $ase_map_start_point; ?>;
+
 					var map = L.map('aesop-map',{
 						scrollWheelZoom: false,
 						zoom: 12,
-						center: <?php echo $ase_map_start_point; ?>
+						center: start_point
 					});
 
+					setMapCenter(start_point[0],start_point[1]);
+
 					jQuery('#aesop-map-address').geocomplete().bind('geocode:result', function(event, result){
-						map.panTo(new L.LatLng(result.geometry.location.k,result.geometry.location.B));
-						var ldata = encodeLocationData(result.geometry.location.k,result.geometry.location.B);
-						jQuery('input[name="ase-map-component-start-point"').remove();
-						jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-start-point" data-ase="map" value="' + ldata + '">');
+						var lat = result.geometry.location.k;
+						var lng = result.geometry.location.B;
+						map.panTo(new L.LatLng(lat,lng));
+						setMapCenter(lat,lng);
   				});
 
 					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo esc_attr($mapboxid);?>/{z}/{x}/{y}.png', {
@@ -179,13 +183,26 @@ class AesopMapComponentAdmin {
 
 					// adding a new marker
 					map.on('click', onMapClick);
+					map.on('dragend', onMapDrag);
 
-					function recenterMap(e, r) {
-						//
+					function setMapCenter(k, B) {
+						var ldata = encodeLocationData(k,B);
+						jQuery('input[name="ase-map-component-start-point"').remove();
+						jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-start-point" data-ase="map" value="' + ldata + '">');
+						jQuery('#aesop-map-address').val(k + ', ' + B);
 					}
 
 					function onMarkerDrag(e) {
 						updateMarkerField(e.target);
+					}
+
+					function onMapDrag(e) {
+						var mapCenter = e.target.getCenter()
+						setMapCenter(rnd(mapCenter.lat),rnd(mapCenter.lng));
+					}
+
+					function rnd(n) {
+						return Math.round(n * 100) / 100
 					}
 
 					function onMapClick(e) {
@@ -356,7 +373,7 @@ class AesopMapComponentAdmin {
 			// let's decode and convert the data into an array
 			$start_point = json_decode(urldecode($_POST['ase-map-component-start-point']), true);
 			//var_dump($location_data);
-			add_post_meta( $post_id, 'ase_map_component_start_point', $start_point);
+			update_post_meta( $post_id, 'ase_map_component_start_point', $start_point);
 		}
 	}
 
