@@ -135,11 +135,16 @@ class AesopMapComponentAdmin {
 
 		$ase_map_locations = get_post_meta( $post->ID, 'ase_map_component_locations' );
 		$ase_map_start_point = get_post_meta( $post->ID, 'ase_map_component_start_point', true );
+		$ase_map_zoom = get_post_meta( $post->ID, 'ase_map_component_zoom', true);
 
 		if ( empty ( $ase_map_start_point ) ) {
 			$ase_map_start_point = [29.76, -95.38];
 		} else {
 			$ase_map_start_point = [$ase_map_start_point['lat'],$ase_map_start_point['lng']];
+		}
+
+		if ( empty ( $ase_map_zoom ) ) {
+			$ase_map_zoom = 12;
 		}
 
 		$ase_map_start_point = json_encode($ase_map_start_point);
@@ -152,10 +157,11 @@ class AesopMapComponentAdmin {
 				jQuery(document).ready(function(){
 
 					var start_point = <?php echo $ase_map_start_point; ?>;
+					var start_zoom = <?php echo $ase_map_zoom; ?>;
 
 					var map = L.map('aesop-map',{
 						scrollWheelZoom: false,
-						zoom: 12,
+						zoom: start_zoom,
 						center: start_point
 					});
 
@@ -184,12 +190,18 @@ class AesopMapComponentAdmin {
 					// adding a new marker
 					map.on('click', onMapClick);
 					map.on('dragend', onMapDrag);
+					map.on('zoomend', onMapZoom);
 
 					function setMapCenter(k, B) {
 						var ldata = encodeLocationData(k,B);
 						jQuery('input[name="ase-map-component-start-point"').remove();
 						jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-start-point" data-ase="map" value="' + ldata + '">');
 						jQuery('#aesop-map-address').val(k + ', ' + B);
+					}
+
+					function setMapZoom(z) {
+						jQuery('input[name="ase-map-component-zoom"').remove();
+						jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-zoom" data-ase="map" value="' + z + '">');
 					}
 
 					function onMarkerDrag(e) {
@@ -199,6 +211,10 @@ class AesopMapComponentAdmin {
 					function onMapDrag(e) {
 						var mapCenter = e.target.getCenter()
 						setMapCenter(rnd(mapCenter.lat),rnd(mapCenter.lng));
+					}
+
+					function onMapZoom(e) {
+						setMapZoom(e.target.getZoom());
 					}
 
 					function rnd(n) {
@@ -372,8 +388,13 @@ class AesopMapComponentAdmin {
 		if ( isset( $_POST['ase-map-component-start-point'] ) ) {
 			// let's decode and convert the data into an array
 			$start_point = json_decode(urldecode($_POST['ase-map-component-start-point']), true);
-			//var_dump($location_data);
 			update_post_meta( $post_id, 'ase_map_component_start_point', $start_point);
+		}
+
+		if ( isset( $_POST['ase-map-component-zoom'] ) ) {
+			// let's decode and convert the data into an array
+			$zoom = json_decode(urldecode($_POST['ase-map-component-zoom']), true);
+			update_post_meta( $post_id, 'ase_map_component_zoom', $zoom);
 		}
 	}
 
