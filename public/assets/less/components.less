@@ -416,6 +416,21 @@
     }
 }
 
+
+    @media(max-width:767px){
+        .aesop-sticky-map.aesop-sticky-map-left, 
+        .aesop-sticky-map.aesop-sticky-map-top, 
+        .aesop-sticky-map.aesop-sticky-map-right, 
+        .aesop-sticky-map.aesop-sticky-map-bottom, {
+            padding:0;
+            .aesop-map-component {
+                position:relative;
+                width:100%;
+                height:400px;
+            }
+        }
+    }
+
 //galleries
 .aesop-gallery-component {z-index: 0;}
 .aesop-grid-gallery {position: relative;}
