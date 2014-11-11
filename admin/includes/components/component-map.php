@@ -463,6 +463,8 @@ class AesopMapComponentAdmin {
 				jQuery(document).ready(function(){
 				  	jQuery('#aesop-upgrade-map-meta').click(function(e){
 
+				  		e.preventDefault();
+
 				  		var data = {
 				            action: 'upgrade_marker_meta'
 				        };
