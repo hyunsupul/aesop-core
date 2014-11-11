@@ -452,7 +452,7 @@ class AesopMapComponentAdmin {
 				$id = $post->ID;
 
 				// additional check really isnt necessary but doesn't hurt
-				if ( has_shortcode($post->post_content,'aesop_gallery') ){
+				if ( has_shortcode($post->post_content,'aesop_map') ){
 
 					// at this point we have an array of posts that have our shortcodes
 					// now let's loop through the map meta in this post and map to the new meta
