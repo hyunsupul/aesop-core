@@ -90,6 +90,13 @@ class AesopMapComponentAdmin {
 						'desc' 			=> __('Title', 'aesop-core'),
 						'tip'			=> __('By default we\'ll display an H2 heading with the text you specify here.','aesop-core')
 					),
+					'marker' 				=> array(
+						'type'			=> 'select', // a select dropdown 
+						'values' 		=> self::get_markers_for_option_array(),
+						'default' 		=> '',
+						'desc' 			=> __('Choose a marker to display', 'aesop-core'),
+						'tip'			=> __('By default an H2 heading will be used. You can optionally hide this completely but retain the scroll to point in the map.','aesop-core')
+					),
 					'hidden' 				=> array(
 						'type'			=> 'select', // a select dropdown 
 						'values' 		=> array(
@@ -103,8 +110,8 @@ class AesopMapComponentAdmin {
 							)
 						),
 						'default' 		=> '',
-						'desc' 			=> __('Hidden', 'aesop-core'),
-						'tip'			=> __('By default an H2 heading will be used. You can optionally hide this completely but retain the scroll to point in the map.','aesop-core')
+						'desc' 			=> __('Hide this marker', 'aesop-core'),
+						'tip'			=> __('Optionally hide this marker but retain the scroll to point in the map.','aesop-core')
 					)
 				)
 			)
@@ -118,6 +125,7 @@ class AesopMapComponentAdmin {
 	/**
 	*
 	*	Set a custom icon for our new map marker shortcode
+	*	@since 1.3
 	*
 	*/
 	function icon(){
@@ -126,6 +134,42 @@ class AesopMapComponentAdmin {
 		$slug = 'map_marker'; // name of component
 
 		wp_add_inline_style('ai-core-styles', '#aesop-generator-wrap li.'.$slug.' {display:none;} #aesop-generator-wrap li.'.$slug.' a:before {content: "'.$icon.'";}');
+	}
+
+	/**
+	*
+	*	Get teh available markers for this post and create an option array to use in the optoin function above
+	*
+	*	@since 1.3
+	*/
+	function get_markers_for_option_array($postid = 0) {
+
+		if ( empty($postid) )
+			$postid = get_the_ID();
+
+		$markers = get_post_meta( $postid, 'aesop_map_component_locations', false );
+
+
+		$array = array();
+
+		if ( $markers ):
+
+			foreach( $markers as $marker ){
+
+				$lat 	= $marker['lat'];
+				$long 	= $marker['long'];
+
+				$mark 	= sprintf('%s,%s',esc_attr($lat),esc_attr($long));
+
+				array_push( $array, array(
+		            'value' => $mark,
+		            'name' 	=> !empty($marker['content']) ? esc_attr($marker['content']) : 'Marker'
+		        ));
+			}
+
+			return $array;
+
+		endif;
 	}
 }
 new AesopMapComponentAdmin;
