@@ -85,7 +85,9 @@ class AesopMapComponentAdmin {
 	function new_map_assets($hook){
 
 		if ( $hook == 'post.php' || $hook == 'post-new.php' ) {
+			wp_enqueue_script('google-maps','//maps.googleapis.com/maps/api/js?libraries=places&sensor=false');
 			wp_enqueue_script('aesop-map-script',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js');
+			wp_enqueue_script('jquery-geocomplete',AI_CORE_URL.'/admin/assets/js/vendor/jquery.geocomplete.min.js');
 			wp_enqueue_style('aesop-map-style',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.css', AI_CORE_VERSION, true);
 		}
 	}
@@ -127,8 +129,8 @@ class AesopMapComponentAdmin {
 		// this is just a example button as a trigger to get all the makers
 		// maybe this should be tied into post_save or something?
 		// check console after clicking
-		echo '<a class="get-markers">click me</a>';
 
+		echo "Starting location: <input type='text' id='aesop-map-address'/>";
 		echo '<div id="aesop-map" style="height:350px;"></div>';
 
 		$ase_locations = get_post_meta( $post->ID, 'ase_map_component_locations' );
@@ -147,6 +149,12 @@ class AesopMapComponentAdmin {
 						center: [29.76, -95.38]
 					});
 
+					jQuery('#aesop-map-address').geocomplete().bind('geocode:result', function(event, result){
+						map.panTo(new L.LatLng(result.geometry.location.k,result.geometry.location.B));
+						var ldata = encodeLocationData(result.geometry.location.k,result.geometry.location.B);
+						jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-start-point" data-ase="map" value="' + ldata + '">');
+  				});
+
 					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo esc_attr($mapboxid);?>/{z}/{x}/{y}.png', {
 						maxZoom: 20
 					}).addTo(map);
@@ -162,6 +170,10 @@ class AesopMapComponentAdmin {
 
 					// adding a new marker
 					map.on('click', onMapClick);
+
+					function recenterMap(e, r) {
+						//
+					}
 
 					function onMarkerDrag(e) {
 						updateMarkerField(e.target);
@@ -232,7 +244,6 @@ class AesopMapComponentAdmin {
 					            	<input type='button' value='Update' class='marker-update-button'/>\
 					            	<input type='button' value='Delete' class='marker-delete-button'/>\
 					            	");
-
 				    });
 					}
 
@@ -279,6 +290,11 @@ class AesopMapComponentAdmin {
 						return encodeURIComponent(JSON.stringify({lat: mlat, lng: mlng, title: mtitle}));
 					}
 
+					// encode location into a string
+					function encodeLocationData(mlat, mlng) {
+						return encodeURIComponent(JSON.stringify({lat: mlat, lng: mlng}));
+					}
+
 					// decode the information
 					function decodeMarkerData(mdata) {
 						return decodeURIComponent(JSON.parse(mdata));
@@ -315,6 +331,7 @@ class AesopMapComponentAdmin {
 			return $post_id;
 
 		delete_post_meta( $post_id, 'ase_map_component_locations' );
+		delete_post_meta( $post_id, 'ase_map_component_start_point' );
 
 		if ( isset( $_POST['ase-map-component-locations'] ) ) {
 			foreach( $_POST['ase-map-component-locations'] as $location ){
@@ -324,6 +341,13 @@ class AesopMapComponentAdmin {
 				//var_dump($location_data);
 				add_post_meta( $post_id, 'ase_map_component_locations', $location_data);	
 			}
+		}
+
+		if ( isset( $_POST['ase-map-component-start-point'] ) ) {
+			// let's decode and convert the data into an array
+			$start_point = json_decode(urldecode($_POST['ase-map-component-start-point']), true);
+			//var_dump($location_data);
+			add_post_meta( $post_id, 'ase_map_component_start_point', $start_point);
 		}
 	}
 
