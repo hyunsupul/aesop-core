@@ -437,11 +437,30 @@ class AesopMapComponentAdmin {
 	*	When the user starts the upgrade process let's run a function to map the old meta to the new meta
 	*
 	*	@since 1.3
-	*	@todo this is returning 0 but not our succes message?
+	*	@todo map the new meta to the old meta
 	*/
 	function upgrade_marker_meta(){
 
-		echo 'success';
+		// get the posts with the maps shortode
+		$posts = get_posts(array ('s' => '[aesop_map','post_type' => array ( 'page', 'post' ) ));
+
+		$count = 0;
+
+		if ( $posts ) :
+			foreach( $posts as $post ) {
+
+				$id = $post->ID;
+
+				// additional check really isnt necessary but doesn't hurt
+				if ( has_shortcode($post->post_content,'aesop_gallery') ){
+
+					// at this point we have an array of posts that have our shortcodes
+					// now let's loop through the map meta in this post and map to the new meta
+				}
+			}
+		endif;
+
+		echo 'AJAX SUCCESS!';
 
 		// die for ajax
 		die();
