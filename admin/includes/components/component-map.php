@@ -439,7 +439,7 @@ class AesopMapComponentAdmin {
 	*	When the user starts the upgrade process let's run a function to map the old meta to the new meta
 	*
 	*	@since 1.3
-	*	@todo this isn't currently connected to anything should probably run on ajax call
+	*	@todo this is returning 0 but not our succes message?
 	*/
 	function upgrade_marker_meta(){
 
