@@ -63,7 +63,7 @@ class AesopTimelineComponent {
 		$timelineOffset = apply_filters('aesop_timeline_scroll_offset', 0 );
 
 		// filterable content class
-		$contentClass = apply_filters('aesop_timeline_scroll_container', 'article');
+		$contentClass = apply_filters('aesop_timeline_scroll_container', '.aesop-entry-content');
 
 		// filterable target class
 		$appendTo    = apply_filters('aesop_timeline_scroll_nav', '.aesop-timeline');
@@ -75,7 +75,7 @@ class AesopTimelineComponent {
 
 				jQuery('body').append('<div class="aesop-timeline"></div>');
 
-				jQuery('<?php echo $contentClass;?>').scrollNav({
+				jQuery('<?php echo esc_attr($contentClass);?>').scrollNav({
 				    sections: '.aesop-timeline-stop',
 				    arrowKeys: true,
 				    insertTarget: '<?php echo $appendTo;?>',
