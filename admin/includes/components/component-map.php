@@ -133,9 +133,17 @@ class AesopMapComponentAdmin {
 		echo "Starting location: <input type='text' id='aesop-map-address'/>";
 		echo '<div id="aesop-map" style="height:350px;"></div>';
 
-		$ase_locations = get_post_meta( $post->ID, 'ase_map_component_locations' );
+		$ase_map_locations = get_post_meta( $post->ID, 'ase_map_component_locations' );
+		$ase_map_start_point = get_post_meta( $post->ID, 'ase_map_component_start_point', true );
 
-		$ase_locations = json_encode($ase_locations);
+		if ( empty ( $ase_map_start_point ) ) {
+			$ase_map_start_point = [29.76, -95.38];
+		} else {
+			$ase_map_start_point = [$ase_map_start_point['lat'],$ase_map_start_point['lng']];
+		}
+
+		$ase_map_start_point = json_encode($ase_map_start_point);
+		$ase_map_locations = json_encode($ase_map_locations);
 
 		?>
 			<!-- Aesop Maps -->
@@ -146,12 +154,13 @@ class AesopMapComponentAdmin {
 					var map = L.map('aesop-map',{
 						scrollWheelZoom: false,
 						zoom: 12,
-						center: [29.76, -95.38]
+						center: <?php echo $ase_map_start_point; ?>
 					});
 
 					jQuery('#aesop-map-address').geocomplete().bind('geocode:result', function(event, result){
 						map.panTo(new L.LatLng(result.geometry.location.k,result.geometry.location.B));
 						var ldata = encodeLocationData(result.geometry.location.k,result.geometry.location.B);
+						jQuery('input[name="ase-map-component-start-point"').remove();
 						jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-start-point" data-ase="map" value="' + ldata + '">');
   				});
 
@@ -159,11 +168,11 @@ class AesopMapComponentAdmin {
 						maxZoom: 20
 					}).addTo(map);
 
-					<?php if ( ! empty( $ase_locations )) : ?>
-						var ase_locations = <?php echo $ase_locations; ?>
+					<?php if ( ! empty( $ase_map_locations )) : ?>
+						var ase_map_locations = <?php echo $ase_map_locations; ?>
 					<?php endif; ?>
 
-					ase_locations.forEach(function(location) {
+					ase_map_locations.forEach(function(location) {
 						createMapMarker([location['lat'],location['lng']],location['title']).addTo(map);
 						createMarkerField( marker._leaflet_id, encodeMarkerData(location['lat'], location['lng'], location['title']) );
 					});
