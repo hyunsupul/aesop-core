@@ -56,11 +56,19 @@ if (!function_exists('aesop_map_shortcode')) {
 
 						$loc 	= sprintf('%s,%s',$marker['lat'],$marker['long']);
 
+						//jQuery(this).attr('data-location')
+
 						?>
+						//console.log(<?php echo $loc;?>);
+
+						var loc =  jQuery('#aesop-map-marker-<?php echo absint($i);?>').attr('data-location');
+
+						console.log(loc);
+
 						jQuery('#aesop-map-marker-<?php echo absint($i);?>').waypoint({
 							offset: '<?php echo esc_attr($marker_waypoint_offset);?>',
 							handler: function(direction){
-								map.panTo(new L.LatLng(<?php echo esc_attr($loc);?>));
+								map.panTo(new L.LatLng(loc));
 							}
 						});
 						<?php

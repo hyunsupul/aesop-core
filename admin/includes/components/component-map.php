@@ -159,7 +159,7 @@ class AesopMapComponentAdmin {
 				$lat 	= $marker['lat'];
 				$long 	= $marker['long'];
 
-				$mark 	= sprintf('%s,%s',esc_attr($lat),esc_attr($long));
+				$mark 	= sprintf('%s,%s',$lat,$long);
 
 				array_push( $array, array(
 		            'value' => $mark,
