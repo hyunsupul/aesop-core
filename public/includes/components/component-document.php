@@ -32,13 +32,13 @@ if (!function_exists('aesop_document_shortcode')){
 
 		switch($atts['type']) {
 			case 'pdf':
-				$source = sprintf('<object class="aesop-pdf" data="%s" type="application/pdf" ></object>', $atts['src']);
+				$source = sprintf('<object class="aesop-pdf" data="%s" type="application/pdf" ></object>', esc_url( $atts['src'] ) );
 			break;
 			case 'image':
-				$source = sprintf('<img src="%s"', $atts['src']);
+				$source = sprintf('<img src="%s"', esc_url( $atts['src'] ) );
 			break;
 			default:
-				$source = sprintf('<object class="aesop-pdf" data="%s" type="application/pdf" ></object>', $atts['src']);
+				$source = sprintf('<object class="aesop-pdf" data="%s" type="application/pdf" ></object>', esc_url( $atts['src'] ) );
 			break;
 		}
 
@@ -52,11 +52,11 @@ if (!function_exists('aesop_document_shortcode')){
 				});
 			});
 		</script>
-		',$unique, $unique);
+		',esc_attr( $unique ), esc_attr( $unique ));
 
-		$slide = $atts['caption'] ? $atts['caption'] : false;
-		$link = sprintf('<a href="#" class="aesop-doc-reveal-%s"><span>document</span><br /> %s</a>', $unique,$slide);
-		$guts = sprintf('<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>',$unique, $source);
+		$slide = $atts['caption'] ? esc_html( $atts['caption'] ) : false;
+		$link = sprintf('<a href="#" class="aesop-doc-reveal-%s"><span>document</span><br /> %s</a>', esc_attr( $unique ),$slide);
+		$guts = sprintf('<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>',esc_attr( $unique ), $source);
 		
 		$out .= sprintf('%s<aside class="aesop-documument-component aesop-content %s">%s%s%s%s</aside>%s',$actiontop, $classes, $actioninsidetop, $link, $guts, $actioninsidebottom, $actionbottom);
 

@@ -36,15 +36,15 @@ if (!function_exists('aesop_collection_shortcode')){
 
 		?>
 			<!-- Collections -->
-			<div class="aesop-story-collection <?php echo $classes;?>">
+			<div class="aesop-story-collection <?php echo sanitize_html_class($classes);?>">
 
 				<?php do_action('aesop_collection_inside_top'); // action ?>
 
 				<?php if($atts['title']){?>
-					<h4 class="aesop-story-collection-title"><span><?php echo $atts['title'];?></span></h4>
+					<h4 class="aesop-story-collection-title"><span><?php echo esc_html($atts['title']);?></span></h4>
 				<?php } ?>
 
-					<div id="aesop-collection-<?php echo $unique;?>" class="aesop-collection-grid clearfix aesop-collection-grid-<?php echo $col;?>col <?php echo $splash_class;?>">
+					<div id="aesop-collection-<?php echo $unique;?>" class="aesop-collection-grid clearfix aesop-collection-grid-<?php echo absint($col);?>col <?php echo sanitize_html_class($splash_class);?>">
 
 						<?php
 
