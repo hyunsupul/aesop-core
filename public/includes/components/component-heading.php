@@ -34,14 +34,14 @@ if (!function_exists('aesop_chapter_shortcode')){
 		$video_chapter_class = 'video' == $atts['bgtype'] ? 'aesop-video-chapter' : null;
 
 		do_action('aesop_chapter_before'); //action
-		?>
-			<?php if ( 'on' == $atts['full'] ) { ?>
 
-				<script>
-					jQuery(document).ready(function(){
-
+			if ( 'on' == $atts['full'] ) { ?>
+			<script>
+				jQuery(document).ready(function(){
+					var coverSizer = function(){
+						jQuery('.aesop-article-chapter').css({'height':(jQuery(window).height())+'px'});
+					}
 					coverSizer();
-
 				    jQuery(window).resize(function(){
         				coverSizer();
     				});
