@@ -90,7 +90,7 @@ class AesopMapComponentAdmin {
 						'desc' 			=> __('Title', 'aesop-core'),
 						'tip'			=> __('By default we\'ll display an H2 heading with the text you specify here.','aesop-core')
 					),
-					'marker' 				=> array(
+					'location' 				=> array(
 						'type'			=> 'select', // a select dropdown 
 						'values' 		=> self::get_markers_for_option_array(),
 						'default' 		=> '',

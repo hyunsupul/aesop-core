@@ -232,7 +232,7 @@ class AesopMapComponent {
 	*/
 	function aesop_map_marker_sc($atts, $content = null) {
 
-		$defaults = array('title' => '','hidden' => '');
+		$defaults = array('title' => '','hidden' => '', 'location' => '');
 
 		$atts = shortcode_atts( $defaults, $atts );
 
@@ -240,7 +240,7 @@ class AesopMapComponent {
 		static $instance = 0;
 		$instance++;
 
-		$out = sprintf('<aside id="aesop-map-marker-%s" class="aesop-map-marker">%s</aside>', $instance, esc_html( $atts[ 'title'] ) );
+		$out = sprintf('<aside id="aesop-map-marker-%s" data-location="%s" class="aesop-map-marker">%s</aside>', $instance, esc_attr( $atts['location'] ), esc_html( $atts[ 'title'] ) );
 
 		return apply_filters('aesop_map_marker_output', $out);
 	}
