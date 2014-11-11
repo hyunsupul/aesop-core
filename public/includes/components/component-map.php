@@ -56,19 +56,11 @@ if (!function_exists('aesop_map_shortcode')) {
 
 						$loc 	= sprintf('%s,%s',$marker['lat'],$marker['long']);
 
-						//jQuery(this).attr('data-location')
-
 						?>
-						//console.log(<?php echo $loc;?>);
-
-						var loc =  jQuery('#aesop-map-marker-<?php echo absint($i);?>').attr('data-location');
-
-						console.log(loc);
-
 						jQuery('#aesop-map-marker-<?php echo absint($i);?>').waypoint({
 							offset: '<?php echo esc_attr($marker_waypoint_offset);?>',
 							handler: function(direction){
-								map.panTo(new L.LatLng(loc));
+								map.panTo(new L.LatLng(<?php echo esc_attr($loc);?>));
 							}
 						});
 						<?php
@@ -240,7 +232,7 @@ class AesopMapComponent {
 	*/
 	function aesop_map_marker_sc($atts, $content = null) {
 
-		$defaults = array('title' => '','hidden' => '', 'location' => '');
+		$defaults = array('title' => '','hidden' => '');
 
 		$atts = shortcode_atts( $defaults, $atts );
 
@@ -248,7 +240,7 @@ class AesopMapComponent {
 		static $instance = 0;
 		$instance++;
 
-		$out = sprintf('<aside id="aesop-map-marker-%s" data-location="%s" class="aesop-map-marker">%s</aside>', $instance, esc_attr( $atts['location'] ), esc_html( $atts[ 'title'] ) );
+		$out = sprintf('<aside id="aesop-map-marker-%s" class="aesop-map-marker">%s</aside>', $instance, esc_html( $atts[ 'title'] ) );
 
 		return apply_filters('aesop_map_marker_output', $out);
 	}

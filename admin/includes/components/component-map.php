@@ -90,6 +90,7 @@ class AesopMapComponentAdmin {
 						'desc' 			=> __('Title', 'aesop-core'),
 						'tip'			=> __('By default we\'ll display an H2 heading with the text you specify here.','aesop-core')
 					),
+					/*
 					'location' 				=> array(
 						'type'			=> 'select', // a select dropdown 
 						'values' 		=> self::get_markers_for_option_array(),
@@ -97,6 +98,7 @@ class AesopMapComponentAdmin {
 						'desc' 			=> __('Choose a marker to display', 'aesop-core'),
 						'tip'			=> __('By default an H2 heading will be used. You can optionally hide this completely but retain the scroll to point in the map.','aesop-core')
 					),
+					*/
 					'hidden' 				=> array(
 						'type'			=> 'select', // a select dropdown 
 						'values' 		=> array(
