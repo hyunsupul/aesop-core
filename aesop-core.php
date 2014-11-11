@@ -57,7 +57,7 @@ add_action( 'plugins_loaded', array( 'Aesop_Core', 'get_instance' ) );
 /*
 * 	The code below is intended to to give the lightest footprint possible.
 */
-if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
+if ( is_admin() ) {
 
 	require_once( AI_CORE_DIR.'admin/class-aesop-core-admin.php' );
 
