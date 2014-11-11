@@ -19,7 +19,8 @@ class AesopMapComponentAdmin {
 
 		// admin notice for upgrading
 		add_action( 'admin_notices', 					array($this, 'upgrade_map_notice' ) );
-		add_action( 'wp_ajax_upgrade_map_meta', 		array($this, 'upgrade_map_meta' ));
+		add_action( 'wp_ajax_upgrade_marker_meta', 		array($this, 'upgrade_marker_meta' ));
+		add_action( 'admin_head',						array($this, 'upgrade_click_handle'));
 
 
 	}
@@ -94,6 +95,7 @@ class AesopMapComponentAdmin {
 	function new_map_assets($hook){
 
 		if ( $hook == 'post.php' || $hook == 'post-new.php' ) {
+
 			wp_enqueue_script('google-maps','//maps.googleapis.com/maps/api/js?libraries=places&sensor=false');
 			wp_enqueue_script('aesop-map-script',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js');
 			wp_enqueue_script('jquery-geocomplete',AI_CORE_URL.'/admin/assets/js/vendor/jquery.geocomplete.min.js');
@@ -421,7 +423,7 @@ class AesopMapComponentAdmin {
 
 			$out = '<div class="error"><p>';
 
-			$out .= __( 'Welcome to Aesop Story Engine 1.3. We need to upgrade any map markers that you might have. Click <a href="#">here</a> to start the upgrade process.', 'aesop-core' );
+			$out .= __( 'Welcome to Aesop Story Engine 1.3. We need to upgrade any map markers that you might have. Click <a id="aesop-upgrade-map-meta" href="#">here</a> to start the upgrade process.', 'aesop-core' );
 
 			$out .= '</p></div>';
 
@@ -436,12 +438,44 @@ class AesopMapComponentAdmin {
 	*
 	*	When the user starts the upgrade process let's run a function to map the old meta to the new meta
 	*
+	*	@since 1.3
 	*	@todo this isn't currently connected to anything should probably run on ajax call
 	*/
-	function upgrade_map_meta(){
+	function upgrade_marker_meta(){
+
+		echo 'success';
 
 		// die for ajax
-		die();
+		exit();
 	}
+
+	/**
+	*
+	*	Handles the click function for upgrading the old map meta to the new map meta
+	*
+	*	@since 1.3
+	*/
+	function upgrade_click_handle(){
+
+		//if( get_option('ai_core_version') >= 1.3 ) { ?>
+			<!-- Aesop Upgrade Map Meta -->
+			<script>
+				jQuery(document).ready(function(){
+				  	jQuery('#aesop-upgrade-map-meta').click(function(e){
+
+				  		var data = {
+				            action: 'upgrade_marker_meta'
+				        };
+
+					  	jQuery.post(ajaxurl, data, function(response) {
+					        alert(response);
+					    });
+
+				    });
+				});
+			</script>
+		<?php // }
+	}
+
 }
 new AesopMapComponentAdmin;
