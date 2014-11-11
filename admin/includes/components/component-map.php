@@ -7,12 +7,20 @@
 class AesopMapComponentAdmin {
 
 	public function __construct(){
+
+		// old meta
+		// @todo - retire before 1.3 goes out
 		add_filter( 'cmb_meta_boxes', array($this,'aesop_map_meta') );
 
 		// new maps
 		add_action( 'add_meta_boxes', 					array($this,'new_map_box') );
-		add_action( 'admin_enqueue_scripts', 		array($this,'new_map_assets') );
-		add_action( 'save_post',								[$this, 'save_map_box'] );
+		add_action( 'admin_enqueue_scripts', 			array($this,'new_map_assets') );
+		add_action( 'save_post',						array($this,'save_map_box') );
+
+		// admin notice for upgrading
+		add_action( 'admin_notices', 					array($this, 'upgrade_map_notice' ) );
+		add_action( 'wp_ajax_upgrade_map_meta', 		array($this, 'upgrade_map_meta' ));
+
 
 	}
 
@@ -20,6 +28,7 @@ class AesopMapComponentAdmin {
 	*
 	*	Create metabox to store coordinates for maps
 	*	@since 1.0
+	*	@todo map these to the new map meta keys and retire this beofre 1.3 goes out
 	*/
 	function aesop_map_meta( array $meta_boxes ) {
 
@@ -398,5 +407,41 @@ class AesopMapComponentAdmin {
 		}
 	}
 
+	/**
+	*
+	*	Map the old map post meta keys to the new map post meta keys to preserve backwards compatibility
+	*	when the user updates to 1.3
+	*
+	*	@since 1.3
+	*	@todo uncomment the version conditional before 1.3 goes live
+	*/
+	function upgrade_map_notice(){
+
+		//if( get_option('ai_core_version') >= 1.3 ) {
+
+			$out = '<div class="error"><p>';
+
+			$out .= __( 'Welcome to Aesop Story Engine 1.3. We need to upgrade any map markers that you might have. Click <a href="#">here</a> to start the upgrade process.', 'aesop-core' );
+
+			$out .= '</p></div>';
+
+			update_option('ai_core_version', AI_CORE_VERSION );
+
+			echo apply_filters('ai_activation_notification',$out);
+
+		//}
+	}
+
+	/**
+	*
+	*	When the user starts the upgrade process let's run a function to map the old meta to the new meta
+	*
+	*	@todo this isn't currently connected to anything should probably run on ajax call
+	*/
+	function upgrade_map_meta(){
+
+		// die for ajax
+		die();
+	}
 }
 new AesopMapComponentAdmin;
