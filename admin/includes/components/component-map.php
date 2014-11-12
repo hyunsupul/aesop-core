@@ -142,6 +142,7 @@ class AesopMapComponentAdmin {
 		// check console after clicking
 
 		echo "Starting location: <input type='text' id='aesop-map-address'/>";
+		echo __('<em>Hint: Type to search for locations</em>','aesop-core');
 		echo '<div id="aesop-map" style="height:350px;"></div>';
 
 		$ase_map_locations = get_post_meta( $post->ID, 'ase_map_component_locations' );
