@@ -31,6 +31,9 @@ class AesopContextualHelp {
 				<h4 style="margin-bottom:0;">Working with Components</h4>
 				<p>After adding a component to the editor, simply press "enter" and that will get you to the next line in the editor. Nesting components inside each other isn\'t allowed within the visual editor at this time.</p>
 
+				<h4 style="margin-bottom:0;">Using Maps</h4>
+				<p>At this time one map is allowed per post. Click into the map meta box to add a marker. Click the marker to add optional title and or content. Clicking update will update the marker text. You can drag around the markers. You can also drag around the map, and set the zoom. These will be saved and the map displayed on your post will reflect this. Map markers are shown in the order that they are added.</p>
+
 				<h4 style="margin-bottom:0;">Theme Compatibility</h4>
 				<p>Aesop will work with most WordPress themes by adding a code snippet to enable Extended CSS Support. The following code snippet can be entered with a plugin such as Code Snippets. If you\'re a developer you can selectively load additional styles based on the component that you define in the array.</p>
 				<code>add_theme_support("aesop-component-styles", array("parallax", "image", "quote", "gallery", "content", "video", "audio", "collection", "chapter", "document", "character", "map", "timeline" ) );</code>
