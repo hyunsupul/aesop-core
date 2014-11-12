@@ -364,6 +364,73 @@
 
 }
 
+// sticky maps - since 1.3
+.aesop-sticky-map {
+
+    &.aesop-sticky-map-left {
+        padding-left:250px;
+
+        .aesop-map-component {
+            left:0;
+            top:0;
+            bottom:0;
+            width:250px;
+        }
+    }
+    &.aesop-sticky-map-top {
+        padding-top:220px;
+
+        .aesop-map-component {
+            height:220px;
+            top:0;
+            left:0;
+            right:0;
+            width:100%;
+        }
+    }
+    &.aesop-sticky-map-right {
+        padding-right:250px;
+
+        .aesop-map-component {
+            right:0;
+            top:0;
+            bottom:0;
+            width:250px;
+        }
+    }
+    &.aesop-sticky-map-bottom {
+        padding-bottom:220px;
+
+        .aesop-map-component {
+            height:220px;
+            bottom:0;
+            left:0;
+            right:0;
+            width:100%;
+        }
+    }
+    .aesop-map-component {
+        position: fixed;
+        margin:0;
+        z-index:120;
+    }
+}
+// maps resonsive
+@media(max-width:767px){
+    .aesop-sticky-map.aesop-sticky-map-left, 
+    .aesop-sticky-map.aesop-sticky-map-top, 
+    .aesop-sticky-map.aesop-sticky-map-right, 
+    .aesop-sticky-map.aesop-sticky-map-bottom, {
+        padding:0;
+        .aesop-map-component {
+            position:relative;
+            width:100%;
+            height:0;
+            padding-bottom:56.25%;
+        }
+    }
+}
+
 //galleries
 .aesop-gallery-component {z-index: 0;}
 .aesop-grid-gallery {position: relative;}

@@ -4,7 +4,8 @@ if (!function_exists('aesop_map_shortcode')) {
 	function aesop_map_shortcode($atts, $content = null) {
 
 		$defaults = array(
-			'height' 				=> 500,
+			'height' 	=> 500,
+			'sticky'	=> 'off'
 		);
 
 		wp_enqueue_script('aesop-map-script',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js');
@@ -12,19 +13,70 @@ if (!function_exists('aesop_map_shortcode')) {
 
 		$atts = apply_filters('aesop_map_defaults',shortcode_atts($defaults, $atts));
 
-		// actions
-		$actiontop = do_action('aesop_map_before'); //action
-		$actionbottom = do_action('aesop_map_after'); //action
+		// sticky maps class
+		$sticky = 'off' !== $atts['sticky'] ? sprintf('aesop-sticky-map-%s', esc_attr( $atts['sticky'] ) ) : null;
 
 		//clean height
-		$height = preg_replace('/[^0-9]/','',$atts['height']);
+		$get_height = 'off' == $atts['sticky'] ? preg_replace('/[^0-9]/','',$atts['height'] ) : null;
+		$height = $get_height ? sprintf('style="height:%spx;"',$get_height ) : null;
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'map', '' ) : null;
 
-		$out = sprintf('%s<div id="aesop-map-component" class="aesop-component aesop-map-component %s" style="height:%spx"></div>%s',$actiontop, $classes, $height, $actionbottom);
+		// get markers - since 1.3
+		$markers 	= get_post_meta( get_the_ID(), 'aesop_map_component_locations', false);
 
-		return apply_filters('aesop_map_output',$out);
+		// filterable map marker waypoint offset - since 1.3
+		// 50% means when the id hits 50% from the top the waypoint will fire
+		$marker_waypoint_offset = apply_filters('aesop_map_waypoint_offset', '50%');
+
+		ob_start();
+
+		/**
+		*
+		* 	if sticky and we have markers do scroll waypoints
+		*
+		* 	@since 1.3
+		*/
+		if ( 'off' !== $atts['sticky'] && $markers ):
+
+			?>
+			<!-- Aesop Sticky Maps -->
+			<script>
+				jQuery(document).ready(function(){
+
+					jQuery('body').addClass('aesop-sticky-map <?php echo esc_attr($sticky);?>');
+
+					map.invalidateSize();
+
+					<?php
+					$i = 0;
+
+					foreach( $markers as $key => $marker ): $i++;
+
+						$loc 	= sprintf('%s,%s',$marker['lat'],$marker['long']);
+
+						?>
+						jQuery('#aesop-map-marker-<?php echo absint($i);?>').waypoint({
+							offset: '<?php echo esc_attr($marker_waypoint_offset);?>',
+							handler: function(direction){
+								map.panTo(new L.LatLng(<?php echo esc_attr($loc);?>));
+							}
+						});
+						<?php
+
+					endforeach;
+					?>
+				});
+			</script><?php
+
+		endif;
+
+		do_action('aesop_map_before');
+			?><div id="aesop-map-component" class="aesop-component aesop-map-component <?php echo sanitize_html_class($classes);?> " <?php echo $height;?>></div><?php
+		do_action('aesop_map_before');
+
+		return ob_get_clean();
 	}
 
 }
@@ -33,6 +85,10 @@ class AesopMapComponent {
 
 	function __construct(){
 		add_action('wp_footer', array($this,'aesop_map_loader'),20);
+
+		// map marker shortcode
+		add_shortcode('aesop_map_marker', array($this,'aesop_map_marker_sc'));
+
 	}
 
 	public function aesop_map_loader(){
@@ -167,5 +223,26 @@ class AesopMapComponent {
 
 	}
 
+	/**
+	*
+	*	Add a shortcode that lets users decide trigger points in map component
+	*	Note: this is ONLY used when maps is in sticky mode, considered an internal but public function
+	*
+	*
+	*/
+	function aesop_map_marker_sc($atts, $content = null) {
+
+		$defaults = array('title' => '','hidden' => '');
+
+		$atts = shortcode_atts( $defaults, $atts );
+
+		// let this be used multiple times
+		static $instance = 0;
+		$instance++;
+
+		$out = sprintf('<h2 id="aesop-map-marker-%s" class="aesop-map-marker">%s</h2>', $instance, esc_html( $atts[ 'title'] ) );
+
+		return apply_filters('aesop_map_marker_output', $out);
+	}
 }
 new AesopMapComponent;

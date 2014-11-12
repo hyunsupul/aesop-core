@@ -895,6 +895,35 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> '',
 						'desc' 		=> __( 'Height', 'aesop-core' ),
 						'tip'		=> __('The height of the map component. By default this is set to <em>500px</em>. Avoid using percentages with this option.','aesop-core')
+					),
+					'sticky'		=> array(
+						'type'		=> 'select',
+						'default'	=> 'off',
+						'desc'		=> __('Sticky Maps','aesop-core'),
+						'tip'		=> __('By choosing a position the map will follow the scrolling of the story provided that you have added the IDs as described below.<br /><br />Add any HTML element to your post (like an H2 heading) with an id of <code>aesop-map-marker-1</code>. This will indicate teh first map marker position. Add as many ID\'s as there are markers. The order follow the order that you placed the markers in.','aesop-core'),
+						'values'	=> array(
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							),
+							array(
+								'value' => 'left',
+								'name'	=> __('Sticky Left', 'aesop-core')
+							),
+							array(
+								'value' => 'top',
+								'name'	=> __('Sticky Top', 'aesop-core')
+							),
+							array(
+								'value' => 'right',
+								'name'	=> __('Sticky Right', 'aesop-core')
+							),
+							array(
+								'value' => 'bottom',
+								'name'
+									=> __('Sticky Bottom', 'aesop-core')
+							)
+						)
 					)
 				),
 				'desc' 				=> __( 'Creates the basic map component. Use the Map Locations edit boxes when writing your story to add locations.','aesop-core' )
