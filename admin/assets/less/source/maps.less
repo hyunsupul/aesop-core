@@ -1,0 +1,40 @@
+#aesop-map {
+    .marker-update-button,
+    .marker-delete-button {
+        border-radius:0;
+        padding:4px 6px;
+        color:white;
+        box-shadow:none;
+        border:none;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            outline:none;
+            focus:none;
+            box-shadow: none;
+        }
+    }
+    .marker-update-button {
+        background:@green;
+
+        &:hover {
+            background:darken(@green,6);
+        }
+        &:active {
+            background:darken(@green,10);
+        }
+    }
+    .marker-delete-button {
+        background:@red;
+
+        &:hover {
+            background:darken(@red,6);
+        }
+        &:active {
+            background:darken(@red,10);
+        }
+    }
+}
