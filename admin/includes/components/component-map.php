@@ -420,7 +420,7 @@ class AesopMapComponentAdmin {
 	*/
 	function upgrade_map_notice(){
 
-		//if( get_option('ai_core_version') >= 1.3 ) {
+		if( get_option('ase_upgraded_to') < AI_CORE_VERSION ) {
 
 			$out = '<div class="error"><p>';
 
@@ -430,7 +430,7 @@ class AesopMapComponentAdmin {
 
 			echo $out;
 
-		//}
+		}
 	}
 
 	/**
@@ -469,7 +469,7 @@ class AesopMapComponentAdmin {
 			}
 		endif;
 
-		echo 'AJAX SUCCESS!';
+		update_option( 'ase_upgraded_to', AI_CORE_VERSION );
 
 		// die for ajax
 		die();
