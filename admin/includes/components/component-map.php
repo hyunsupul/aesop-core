@@ -59,7 +59,7 @@ class AesopMapComponentAdmin {
 				'type' 					=> 'single', // single - wrap
 				'atts' 					=> array(
 					'title' 			=> array(
-						'type'			=> 'text_small', // a small text field
+						'type'			=> 'text', // a small text field
 						'default' 		=> '',
 						'desc' 			=> __('Title', 'aesop-core'),
 						'tip'			=> __('By default we\'ll display an H2 heading with the text you specify here.','aesop-core')

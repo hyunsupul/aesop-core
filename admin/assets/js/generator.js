@@ -13,18 +13,17 @@ jQuery(document).ready(function($) {
 	    } else {
 	      jQuery('body').toggleClass('modal-open');
 	      jQuery(modal).toggleClass('aesop-generator-open');
+
+	      	// check conditionals on load
+			// conditionally load the map marker shortcode
+			// since 1.3
+			var stickyMapStatus = $('.aesop-map-sticky #aesop-generator-attr-sticky').val();
+
+			if( 'off' !== stickyMapStatus || typeof stickyMapStatus !== 'undefined' ) {
+				$('#aesop-generator-wrap li.map_marker').fadeIn().css('display','inline-block');
+			}
 	    }
 
-		// check conditionals on load
-		// conditionally load the map marker shortcode
-		// since 1.3
-		var stickyMapStatus = $('.aesop-map-sticky #aesop-generator-attr-sticky').val();
-
-		if( 'off' !== stickyMapStatus ) {
-			$('#aesop-generator-wrap li.map_marker').fadeIn().css('display','inline-block');
-		} else {
-			$('#aesop-generator-wrap li.map_marker').fadeOut();
-		}
 	});
 
 	var settingsHeight = function(){
@@ -91,10 +90,11 @@ jQuery(document).ready(function($) {
 			$('.aesop-map-sticky #aesop-generator-attr-sticky').on('change',function(){
 				var selectedValue = $(this).val();
 
-				if( 'off' !== selectedValue ) {
-					$('#aesop-generator-wrap li.map_marker').fadeIn().css('display','inline-block');
-				} else {
+				if( 'off' == selectedValue ) {
 					$('#aesop-generator-wrap li.map_marker').fadeOut();
+
+				} else {
+					$('#aesop-generator-wrap li.map_marker').fadeIn().css('display','inline-block');
 				}
 
 			});
