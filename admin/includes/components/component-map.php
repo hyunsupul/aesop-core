@@ -461,15 +461,34 @@ class AesopMapComponentAdmin {
 						$translated['lat'] = $location['lat'];
 						$translated['lng'] = $location['long'];
 						$translated['title'] = $location['content'];
-						add_post_meta( $id, 'ase_map_component_locations', $translated);
+						add_post_meta( $id, 'ase_map_component_locations', $translated );
 					}
-
-					// leave the old meta there for now. we may do cleanup in a few versions.
 				}
+
+				$old_zoom = get_post_meta( $id, 'aesop_map_component_zoom' );
+				if ( ! empty ( $old_zoom ) && is_numeric( $old_zoom ) ) {
+					update_post_meta( $id, 'ase_map_component_zoom', $old_zoom);
+				}
+
+				$old_start_point = get_post_meta( $id, 'aesop_map_start', true );
+				if ( ! empty ( $old_start_point ) ) {
+					echo $old_start_point;
+					$old_start_point = explode ( ',', $old_start_point);
+					if ( count( $old_start_point ) == 2 ) {
+						$translated = [];
+						$translated['lat'] = $old_start_point[0];
+						$translated['lng'] = $old_start_point[1];
+						update_post_meta( $id, 'ase_map_component_start_point', $translated );
+					}
+				}
+
+				delete_post_meta( $id, 'aesop_map_component_locations' );
+				delete_post_meta( $id, 'aesop_map_start' );
+				delete_post_meta( $id, 'aesop_map_component_zoom' );
 			}
 		endif;
 
-		update_option( 'ase_upgraded_to', AI_CORE_VERSION );
+		//update_option( 'ase_upgraded_to', AI_CORE_VERSION );
 
 		echo 'SUCCESS';
 
@@ -498,10 +517,8 @@ class AesopMapComponentAdmin {
 				        };
 
 					  	jQuery.post(ajaxurl, data, function(response) {
-					  		if( response == 'SUCCESS' ){
+					  		if( response ){
 					        location.reload();
-					  		} else {
-					  			alert('ERROR: Unfortunately your map meta could not be updated.');
 					  		}
 					    });
 
