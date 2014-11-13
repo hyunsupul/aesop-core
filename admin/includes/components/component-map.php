@@ -389,10 +389,8 @@ class AesopMapComponentAdmin {
 
 		if ( isset( $_POST['ase-map-component-locations'] ) ) {
 			foreach( $_POST['ase-map-component-locations'] as $location ){
-				//var_dump($location);
 				// let's decode and convert the data into an array
 				$location_data = json_decode(urldecode($location), true);
-				//var_dump($location_data);
 				add_post_meta( $post_id, 'ase_map_component_locations', $location_data);	
 			}
 		}
