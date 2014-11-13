@@ -13,15 +13,6 @@ jQuery(document).ready(function($) {
 	    } else {
 	      jQuery('body').toggleClass('modal-open');
 	      jQuery(modal).toggleClass('aesop-generator-open');
-
-	      	// check conditionals on load
-			// conditionally load the map marker shortcode
-			// since 1.3
-			var stickyMapStatus = $('.aesop-map-sticky #aesop-generator-attr-sticky').val();
-
-			if( 'off' !== stickyMapStatus || typeof stickyMapStatus !== 'undefined' ) {
-				$('#aesop-generator-wrap li.map_marker').fadeIn().css('display','inline-block');
-			}
 	    }
 
 	});
