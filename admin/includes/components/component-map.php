@@ -443,20 +443,28 @@ class AesopMapComponentAdmin {
 	function upgrade_marker_meta(){
 
 		// get the posts with the maps shortode
-		$posts = get_posts(array ('s' => '[aesop_map','post_type' => array ( 'page', 'post' ) ));
+		$posts = get_posts(array ('post_type' => array ( 'page', 'post' ) ));
 
 		$count = 0;
 
 		if ( $posts ) :
 			foreach( $posts as $post ) {
-
 				$id = $post->ID;
 
-				// additional check really isnt necessary but doesn't hurt
-				if ( has_shortcode($post->post_content,'aesop_map') ){
+				// at this point we have an array of posts that have our shortcodes
+				// now let's loop through the map meta in this post and map to the new meta
+				
+				$old_locations = get_post_meta( $id, 'aesop_map_component_locations' );
+				if ( ! empty ( $old_locations ) ) {
+					foreach( $old_locations as $location ){
+						$translated = [];
+						$translated['lat'] = $location['lat'];
+						$translated['lng'] = $location['long'];
+						$translated['title'] = $location['content'];
+						add_post_meta( $id, 'ase_map_component_locations', $translated);
+					}
 
-					// at this point we have an array of posts that have our shortcodes
-					// now let's loop through the map meta in this post and map to the new meta
+					// leave the old meta there for now. we may do cleanup in a few versions.
 				}
 			}
 		endif;
