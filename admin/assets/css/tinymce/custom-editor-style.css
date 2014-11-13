@@ -79,6 +79,7 @@
 .aesop-button:active {background:transparent;}
 .aesop-button:hover {cursor:pointer;color:#007aab;}
 
+.aesop-button-clone:before { content: "\f105"; }
 .aesop-button-edit:before { content: "\f464"; }
 .aesop-button-delete:before { content: "\f182"; }
 .aesop-button-clipboard:before { content: "\f481"; }
