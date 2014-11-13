@@ -271,7 +271,12 @@ class Aesop_Core_Admin {
 			    // let's check to see if sticky is on
 			    if( sc_attr.match(/sticky=['"](top|left|right|bottom)['"]/) ) {
 			    	var sticky_location = sc_attr.match(/sticky=['"](top|left|right|bottom)['"]/)[1];
-			    	console.log( 'The chosen sticky location is: ' + sticky_location );
+			    	//console.log( 'The chosen sticky location is: ' + sticky_location );
+
+					if( 'off' !== sticky_location ) {
+						jQuery('#aesop-generator-wrap li.map_marker').fadeIn().css('display','inline-block');
+					}
+
 			    }
 
 			  } else {
