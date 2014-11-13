@@ -264,6 +264,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 					}
 				}
 			}
+			ed.selection.collapse(false);
 		}
 
 		// let's handle the clipboard button
@@ -273,12 +274,14 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 			hideComponent(ai_parent);
 			addClipboardControl(ai_parent);
+			ed.selection.collapse(false);
 		}
 
 		// let's handle the clone button
 		if (e.target.className.indexOf('aesop-button-clone') > -1 ) {
 			var ai_parent = e.target.parentNode.parentNode.parentNode;
 			cloneComponent( ai_parent );
+			ed.selection.collapse(false);
 		}
   });
 
