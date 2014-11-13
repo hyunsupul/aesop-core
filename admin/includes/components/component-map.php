@@ -443,7 +443,7 @@ class AesopMapComponentAdmin {
 	function upgrade_marker_meta(){
 
 		// get the posts with the maps shortode
-		$posts = get_posts(array ('post_type' => array ( 'page', 'post' ) ));
+		$posts = get_posts(array ('post_type' => array ( 'page', 'post' ), 'posts_per_page' => -1 ));
 
 		$count = 0;
 
