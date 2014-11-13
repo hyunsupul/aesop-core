@@ -264,7 +264,7 @@ class Aesop_Core_Admin {
 		
 		<script type="text/javascript">
 			function mceAlive() {
-		  	if (tinymce.activeEditor) {
+		  	if ( typeof tinymce !== 'undefined' && tinymce.activeEditor ) {
 		  		var ed = tinymce.activeEditor;
 			    var sc_attr = jQuery(ed.contentDocument).find('.aesop-component').data('aesop-sc');
 			    sc_attr = window.decodeURIComponent(sc_attr);
