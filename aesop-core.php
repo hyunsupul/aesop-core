@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set some constants
-define('AI_CORE_VERSION', '1.2.1');
+define('AI_CORE_VERSION', '1.3');
 define('AI_CORE_DIR', plugin_dir_path( __FILE__ ));
 define('AI_CORE_URL', plugins_url( '', __FILE__ ));
 
@@ -57,7 +57,7 @@ add_action( 'plugins_loaded', array( 'Aesop_Core', 'get_instance' ) );
 /*
 * 	The code below is intended to to give the lightest footprint possible.
 */
-if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
+if ( is_admin() ) {
 
 	require_once( AI_CORE_DIR.'admin/class-aesop-core-admin.php' );
 
