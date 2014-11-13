@@ -98,9 +98,9 @@ class AesopMapComponent {
 		$id         = isset( $post ) ? $post->ID : null;
 
 		$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
-		$markers 	= isset( $post ) ? get_post_meta( $id, 'aesop_map_component_locations', false) : false;
-		$start 		= isset( $post ) && self::get_map_meta( $id, 'aesop_map_start') ? self::get_map_meta( $id, 'aesop_map_start' ) : self::start_fallback( $markers );
-		$zoom 		= isset( $post ) && self::get_map_meta( $id, 'aesop_map_component_zoom') ? self::get_map_meta( $id, 'aesop_map_component_zoom' ) : 12;
+		$markers 	= isset( $post ) ? get_post_meta( $id, 'ase_map_component_locations', false) : false;
+		$start 		= isset( $post ) && self::get_map_meta( $id, 'ase_map_component_start') ? self::get_map_meta( $id, 'ase_map_component_start' ) : self::start_fallback( $markers );
+		$zoom 		= isset( $post ) && self::get_map_meta( $id, 'ase_map_component_zoom') ? self::get_map_meta( $id, 'ase_map_component_zoom' ) : 12;
 
 		$default_location 	= is_single();
 		$location 			= apply_filters( 'aesop_map_component_appears', $default_location );
@@ -111,13 +111,7 @@ class AesopMapComponent {
 
 				<?php
 
-				if ( $markers ):
-
-					if ( !self::get_map_meta($id,'aesop_map_start') && is_user_logged_in() ) { ?>
-
-						jQuery('#aesop-map-component').before('<div class="aesop-error aesop-content"><?php echo __("Looks like you didn\'t specify a starting coordinate, so we\'re using the first one you entered.","aesop-core");?></div>');
-
-					<?php } ?>
+				if ( $markers ): ?>
 
 					var map = L.map('aesop-map-component',{
 						scrollWheelZoom: false,
@@ -133,8 +127,8 @@ class AesopMapComponent {
 					foreach( $markers as $marker ):
 
 						$lat 	= sanitize_text_field($marker['lat']);
-						$long 	= sanitize_text_field($marker['long']);
-						$text 	= $marker['content'] ? $marker['content'] : null;
+						$long 	= sanitize_text_field($marker['lng']);
+						$text 	= $marker['title'] ? $marker['title'] : null;
 
 						$loc 	= sprintf('%s,%s',$lat,$long);
 
@@ -210,7 +204,7 @@ class AesopMapComponent {
 		foreach ( $markers as $marker ) { $i++;
 
 			$lat 	= sanitize_text_field($marker['lat']);
-			$long 	= sanitize_text_field($marker['long']);
+			$long 	= sanitize_text_field($marker['lng']);
 
 			$mark 	= sprintf('%s,%s',$lat,$long);
 
