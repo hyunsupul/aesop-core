@@ -177,10 +177,6 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		var ed = tinymce.activeEditor;
 		//jQuery(p).focusEnd();
 		jQuery(p.outerHTML).insertAfter( p );
-<<<<<<< HEAD
-		ed.selection.collapse(false);
-=======
->>>>>>> c282eb9... cloning
 		//ed.execCommand('mceInsertRawHTML', false, 'hello');
 	}
 
@@ -285,12 +281,6 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			var ai_parent = e.target.parentNode.parentNode.parentNode;
 			cloneComponent( ai_parent );
 			ed.selection.collapse(false);
-		}
-
-		// let's handle the clone button
-		if (e.target.className.indexOf('aesop-button-clone') > -1 ) {
-			var ai_parent = e.target.parentNode.parentNode.parentNode;
-			cloneComponent( ai_parent );
 		}
   });
 
