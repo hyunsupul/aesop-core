@@ -144,10 +144,13 @@ Full documentation can be found below.
 * NEW - Freshly designed user interface with light color scheme to match WordPress design patterns
 * NEW - Map component admin with ability to click the map to add markers instead of manually adding GPS coordinates
 * NEW - Map component "sticky" mode that changes map markers as you scroll down the story
+* NEW - Components can now be cloned
 * FIXED - All variables now properly escaped within components
 * FIXED - The "used in" column of the Galleries edit screen
 * FIXED - Additional spaces being added on the front end after saving components 
 * FIXED - Timeline scrollnav build failing on certain occassions
+* FIXED - Some parts of the component placeholder highlighting after clicking the edit button
+* FIXED - JS error that shows if the visual editor is turned off in options
 * TWEAK - Related videos at the end of YouTube videos now off by default
 * TWEAK - Improved video markup
 * UPDATED - Fotorama, fitvids, scrollnav, and images loaded to their respective current versions
