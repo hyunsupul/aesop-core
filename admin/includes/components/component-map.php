@@ -471,6 +471,8 @@ class AesopMapComponentAdmin {
 
 		update_option( 'ase_upgraded_to', AI_CORE_VERSION );
 
+		echo 'SUCCESS';
+
 		// die for ajax
 		die();
 	}
@@ -496,7 +498,11 @@ class AesopMapComponentAdmin {
 				        };
 
 					  	jQuery.post(ajaxurl, data, function(response) {
-					        alert(response);
+					  		if( response == 'SUCCESS' ){
+					        location.reload();
+					  		} else {
+					  			alert('ERROR: Unfortunately your map meta could not be updated.');
+					  		}
 					    });
 
 				    });
