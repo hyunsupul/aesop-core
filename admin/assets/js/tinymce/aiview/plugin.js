@@ -177,6 +177,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		var ed = tinymce.activeEditor;
 		//jQuery(p).focusEnd();
 		jQuery(p.outerHTML).insertAfter( p );
+		ed.selection.collapse(false);
 		//ed.execCommand('mceInsertRawHTML', false, 'hello');
 	}
 
