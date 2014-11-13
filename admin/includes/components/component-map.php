@@ -22,6 +22,8 @@ class AesopMapComponentAdmin {
 		add_action( 'wp_ajax_upgrade_marker_meta', 		array($this, 'upgrade_marker_meta' ));
 		add_action( 'admin_head',						array($this, 'upgrade_click_handle'));
 
+		add_action('aesop_admin_styles', 		array($this, 'icon') );
+		add_filter('aesop_avail_components',	array($this, 'options'));
 
 	}
 
@@ -88,6 +90,7 @@ class AesopMapComponentAdmin {
 
 	/**
 	*
+	*
 	*	Enqueue assets used for map but only on post pages
 	*
 	*	@since 1.3
@@ -101,9 +104,67 @@ class AesopMapComponentAdmin {
 			wp_enqueue_script('jquery-geocomplete',AI_CORE_URL.'/admin/assets/js/vendor/jquery.geocomplete.min.js');
 			wp_enqueue_style('aesop-map-style',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.css', AI_CORE_VERSION, true);
 		}
+
+	}
+
+
+	/**
+	*	Create the options for the shortcode that gets created when stickky maps is activated
+	*	This lets the user use the user interface to add teh specific points in the story that the map should jump markers
+	*
+	*	@since 1.3
+	*	@param $shortcodes array array of shortcodes to return
+	*	@return return our own options merged into the aesop availabel optoins array
+	*/
+	function options($shortcodes) {
+
+		$custom = array(
+			'map_marker' 				=> array(
+				'name' 					=> __('Aesop Map Marker', 'aesop-core'), // name of the component
+				'type' 					=> 'single', // single - wrap
+				'atts' 					=> array(
+					'title' 			=> array(
+						'type'			=> 'text_small', // a small text field
+						'default' 		=> '',
+						'desc' 			=> __('Title', 'aesop-core'),
+						'tip'			=> __('By default we\'ll display an H2 heading with the text you specify here.','aesop-core')
+					),
+					/*
+					'location' 				=> array(
+						'type'			=> 'select', // a select dropdown 
+						'values' 		=> self::get_markers_for_option_array(),
+						'default' 		=> '',
+						'desc' 			=> __('Choose a marker to display', 'aesop-core'),
+						'tip'			=> __('By default an H2 heading will be used. You can optionally hide this completely but retain the scroll to point in the map.','aesop-core')
+					),
+					*/
+					'hidden' 				=> array(
+						'type'			=> 'select', // a select dropdown 
+						'values' 		=> array(
+							array(
+								'value' => 'off',
+								'name'	=> __('Off','aesop-core')
+							),
+							array(
+								'value' => 'on',
+								'name'	=> __('On','aesop-core')
+							)
+						),
+						'default' 		=> '',
+						'desc' 			=> __('Hide this marker', 'aesop-core'),
+						'tip'			=> __('Optionally hide this marker but retain the scroll to point in the map.','aesop-core')
+					)
+				)
+			)
+		);
+
+
+		return array_merge( $shortcodes, $custom );
+
 	}
 
 	/**
+	*
 	*
 	*	New metabox to select map markers on the map
 	*
@@ -406,9 +467,20 @@ class AesopMapComponentAdmin {
 			$zoom = json_decode(urldecode($_POST['ase-map-component-zoom']), true);
 			update_post_meta( $post_id, 'ase_map_component_zoom', $zoom);
 		}
+
+	}
+
+	function icon(){
+
+		$icon = '\f230'; //css code for dashicon
+		$slug = 'map_marker'; // name of component
+
+		wp_add_inline_style('ai-core-styles', '#aesop-generator-wrap li.'.$slug.' {display:none;} #aesop-generator-wrap li.'.$slug.' a:before {content: "'.$icon.'";}');
+
 	}
 
 	/**
+	*
 	*
 	*	Map the old map post meta keys to the new map post meta keys to preserve backwards compatibility
 	*	when the user updates to 1.3
@@ -525,6 +597,5 @@ class AesopMapComponentAdmin {
 			</script>
 		<?php // }
 	}
-
 }
 new AesopMapComponentAdmin;
