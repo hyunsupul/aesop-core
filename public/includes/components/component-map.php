@@ -24,7 +24,7 @@ if (!function_exists('aesop_map_shortcode')) {
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'map', '' ) : null;
 
 		// get markers - since 1.3
-		$markers 	= get_post_meta( get_the_ID(), 'aesop_map_component_locations', false);
+		$markers 	= get_post_meta( get_the_ID(), 'ase_map_component_locations', false);
 
 		// filterable map marker waypoint offset - since 1.3
 		// 50% means when the id hits 50% from the top the waypoint will fire
@@ -54,7 +54,7 @@ if (!function_exists('aesop_map_shortcode')) {
 
 					foreach( $markers as $key => $marker ): $i++;
 
-						$loc 	= sprintf('%s,%s',$marker['lat'],$marker['long']);
+						$loc 	= sprintf('%s,%s',$marker['lat'],$marker['lng']);
 
 						?>
 						jQuery('#aesop-map-marker-<?php echo absint($i);?>').waypoint({
