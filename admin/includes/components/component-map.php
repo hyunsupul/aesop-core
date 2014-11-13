@@ -488,7 +488,7 @@ class AesopMapComponentAdmin {
 			}
 		endif;
 
-		//update_option( 'ase_upgraded_to', AI_CORE_VERSION );
+		update_option( 'ase_upgraded_to', AI_CORE_VERSION );
 
 		echo 'SUCCESS';
 
