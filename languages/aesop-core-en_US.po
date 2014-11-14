@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Core\n"
-"POT-Creation-Date: 2014-09-14 09:23-0600\n"
-"PO-Revision-Date: 2014-09-14 09:23-0600\n"
+"POT-Creation-Date: 2014-11-14 16:24-0600\n"
+"PO-Revision-Date: 2014-11-14 16:24-0600\n"
 "Last-Translator: Team Aesop <support@aesopinteractive.com>\n"
 "Language-Team: Team Aesop <info@aesopinteractive.com>\n"
 "Language: en_US\n"
@@ -15,28 +15,28 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../admin/class-aesop-core-admin.php:144
+#: ../admin/class-aesop-core-admin.php:145
 msgid "Add Component"
 msgstr ""
 
-#: ../admin/class-aesop-core-admin.php:221
+#: ../admin/class-aesop-core-admin.php:223
 msgid "Select a story component."
 msgstr ""
 
-#: ../admin/class-aesop-core-admin.php:245
+#: ../admin/class-aesop-core-admin.php:247
 msgid ""
 "Brought to you by Aesopinteractive LLC - <a href=\"http://aesopstoryengine."
 "com\">http://aesopstoryengine.com</a>"
 msgstr ""
 
-#: ../admin/class-aesop-core-admin.php:246
+#: ../admin/class-aesop-core-admin.php:248
 msgid ""
 "Donate to further development of Aesop Story Engine at <a href=\"http://"
 "aesopstoryengine.com/donate\">http://aesopstoryengine.com/donate</a>"
 msgstr ""
 
 #: ../admin/includes/available.php:13 ../admin/includes/available.php:446
-#: ../admin/includes/available.php:934
+#: ../admin/includes/available.php:963
 msgid "Image"
 msgstr ""
 
@@ -130,7 +130,8 @@ msgstr ""
 #: ../admin/includes/available.php:683 ../admin/includes/available.php:699
 #: ../admin/includes/available.php:811 ../admin/includes/available.php:827
 #: ../admin/includes/available.php:843 ../admin/includes/available.php:859
-#: ../admin/includes/available.php:875 ../admin/includes/available.php:991
+#: ../admin/includes/available.php:875 ../admin/includes/available.php:1020
+#: ../admin/includes/components/component-map.php:76
 msgid "On"
 msgstr ""
 
@@ -141,7 +142,9 @@ msgstr ""
 #: ../admin/includes/available.php:687 ../admin/includes/available.php:703
 #: ../admin/includes/available.php:815 ../admin/includes/available.php:831
 #: ../admin/includes/available.php:847 ../admin/includes/available.php:863
-#: ../admin/includes/available.php:879 ../admin/includes/available.php:995
+#: ../admin/includes/available.php:879 ../admin/includes/available.php:907
+#: ../admin/includes/available.php:1024
+#: ../admin/includes/components/component-map.php:72
 msgid "Off"
 msgstr ""
 
@@ -643,7 +646,8 @@ msgstr ""
 msgid "Audio"
 msgstr ""
 
-#: ../admin/includes/available.php:637 ../admin/includes/available.php:963
+#: ../admin/includes/available.php:637 ../admin/includes/available.php:992
+#: ../admin/includes/components/component-map.php:64
 msgid "Title"
 msgstr ""
 
@@ -843,199 +847,228 @@ msgid ""
 "Avoid using percentages with this option."
 msgstr ""
 
-#: ../admin/includes/available.php:900
+#: ../admin/includes/available.php:902
+msgid "Sticky Maps"
+msgstr ""
+
+#: ../admin/includes/available.php:903
+msgid ""
+"By choosing a position the map will follow the scrolling of the story with "
+"the markers that you'll add below.<br /><br />After toggling a location, a "
+"new Map Marker component will show up. Add a marker for each stop in the "
+"story that you would ike the map to start at. Stops are made in the order "
+"that you added the markers in the map admin."
+msgstr ""
+
+#: ../admin/includes/available.php:911
+msgid "Sticky Left"
+msgstr ""
+
+#: ../admin/includes/available.php:915
+msgid "Sticky Top"
+msgstr ""
+
+#: ../admin/includes/available.php:919
+msgid "Sticky Right"
+msgstr ""
+
+#: ../admin/includes/available.php:924
+msgid "Sticky Bottom"
+msgstr ""
+
+#: ../admin/includes/available.php:929
 msgid ""
 "Creates the basic map component. Use the Map Locations edit boxes when "
 "writing your story to add locations."
 msgstr ""
 
-#: ../admin/includes/available.php:903
+#: ../admin/includes/available.php:932
 msgid "Timeline Stop"
 msgstr ""
 
-#: ../admin/includes/available.php:909
+#: ../admin/includes/available.php:938
 msgid "Navigation Menu Item Label"
 msgstr ""
 
-#: ../admin/includes/available.php:910
+#: ../admin/includes/available.php:939
 msgid ""
 "This is what is displayed for the timeline navigation menu item label. "
 "Example usage includes dates, years, colors, locations, and names."
 msgstr ""
 
-#: ../admin/includes/available.php:915
+#: ../admin/includes/available.php:944
 msgid "Timeline Title"
 msgstr ""
 
-#: ../admin/includes/available.php:916
+#: ../admin/includes/available.php:945
 msgid "The timeline title that should be displayed within the story."
 msgstr ""
 
-#: ../admin/includes/available.php:919
+#: ../admin/includes/available.php:948
 msgid ""
 "Enter a number such as 2007, and a small timeline will be displayed with "
 "scroll to points. This works similar to the chapter heading."
 msgstr ""
 
-#: ../admin/includes/available.php:922
+#: ../admin/includes/available.php:951
 msgid "Document"
 msgstr ""
 
-#: ../admin/includes/available.php:930
+#: ../admin/includes/available.php:959
 msgid "PDF"
 msgstr ""
 
-#: ../admin/includes/available.php:938
+#: ../admin/includes/available.php:967
 msgid "Document Type"
 msgstr ""
 
-#: ../admin/includes/available.php:939
+#: ../admin/includes/available.php:968
 msgid "The type of document. Choose image or PDF."
 msgstr ""
 
-#: ../admin/includes/available.php:944
+#: ../admin/includes/available.php:973
 msgid "Document URL"
 msgstr ""
 
-#: ../admin/includes/available.php:945
+#: ../admin/includes/available.php:974
 msgid ""
 "URL to the document. Click <em>Select Media</em> to open the WordPress Media "
 "Library."
 msgstr ""
 
-#: ../admin/includes/available.php:950
+#: ../admin/includes/available.php:979
 msgid "Document Caption"
 msgstr ""
 
-#: ../admin/includes/available.php:951
+#: ../admin/includes/available.php:980
 msgid "Provide an optional caption for the document component."
 msgstr ""
 
-#: ../admin/includes/available.php:954
+#: ../admin/includes/available.php:983
 msgid "Show a document that is revealed with a click."
 msgstr ""
 
-#: ../admin/includes/available.php:957
+#: ../admin/includes/available.php:986
 msgid "Collections"
 msgstr ""
 
-#: ../admin/includes/available.php:964
+#: ../admin/includes/available.php:993
 msgid "Display an optional heading to be used within the Collection component."
 msgstr ""
 
-#: ../admin/includes/available.php:970
+#: ../admin/includes/available.php:999
 msgid "Category"
 msgstr ""
 
-#: ../admin/includes/available.php:971
+#: ../admin/includes/available.php:1000
 msgid "Select the category that you want stories to be displayed from."
 msgstr ""
 
-#: ../admin/includes/available.php:976
+#: ../admin/includes/available.php:1005
 msgid "Number of Stories"
 msgstr ""
 
-#: ../admin/includes/available.php:977
+#: ../admin/includes/available.php:1006
 msgid "How many stories should be displayed in this collection?"
 msgstr ""
 
-#: ../admin/includes/available.php:983
+#: ../admin/includes/available.php:1012
 msgid "Columns"
 msgstr ""
 
-#: ../admin/includes/available.php:984
+#: ../admin/includes/available.php:1013
 msgid "Stories are displayed in a grid. How many columns should the grid be?"
 msgstr ""
 
-#: ../admin/includes/available.php:999
+#: ../admin/includes/available.php:1028
 msgid "Splash Mode"
 msgstr ""
 
-#: ../admin/includes/available.php:1000
+#: ../admin/includes/available.php:1029
 msgid ""
 "Setting this to on will display only the actual category titles (without "
 "images)."
 msgstr ""
 
-#: ../admin/includes/available.php:1003
+#: ../admin/includes/available.php:1032
 msgid ""
 "Show a collection of stories. Typically used on a page like the home page."
 msgstr ""
 
-#: ../admin/includes/available.php:1006
+#: ../admin/includes/available.php:1035
 msgid "Gallery"
 msgstr ""
 
-#: ../admin/includes/available.php:1013
+#: ../admin/includes/available.php:1042
 msgid "Choose Gallery"
 msgstr ""
 
-#: ../admin/includes/available.php:1014
+#: ../admin/includes/available.php:1043
 msgid "Select a gallery below to insert it."
 msgstr ""
 
-#: ../admin/includes/available.php:1017
+#: ../admin/includes/available.php:1046
 msgid " "
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:29
+#: ../admin/includes/components/component-gallery.php:34
 msgid "Type"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:73
-#: ../admin/includes/components/component-gallery.php:86
+#: ../admin/includes/components/component-gallery.php:81
+#: ../admin/includes/components/component-gallery.php:94
 msgid "Galleries"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:74
+#: ../admin/includes/components/component-gallery.php:82
 msgid "Parent Gallery:"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:75
+#: ../admin/includes/components/component-gallery.php:83
 msgid "All Galleries"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:76
+#: ../admin/includes/components/component-gallery.php:84
 msgid "View Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:77
+#: ../admin/includes/components/component-gallery.php:85
 msgid "Add New Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:78
+#: ../admin/includes/components/component-gallery.php:86
 msgid "New Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:79
+#: ../admin/includes/components/component-gallery.php:87
 msgid "Edit Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:80
+#: ../admin/includes/components/component-gallery.php:88
 msgid "Update Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:81
+#: ../admin/includes/components/component-gallery.php:89
 msgid "Search Galleries"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:82
+#: ../admin/includes/components/component-gallery.php:90
 msgid "No Galleries found"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:83
+#: ../admin/includes/components/component-gallery.php:91
 msgid "No Galleries found in Trash"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:87
+#: ../admin/includes/components/component-gallery.php:95
 msgid "Create responsive galleries."
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:111
+#: ../admin/includes/components/component-gallery.php:119
 msgid "Gallery Instructions"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:114
+#: ../admin/includes/components/component-gallery.php:122
 msgid ""
 "1. Click the Add Gallery button<br />2. Click Create Gallery to create a "
 "gallery<br />3. Insert gallery and publish.<br /><br /> Once you've created "
@@ -1043,144 +1076,161 @@ msgid ""
 "want the gallery to be shown.<br />"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:126
+#: ../admin/includes/components/component-gallery.php:134
 msgid "Gallery Code"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:127
+#: ../admin/includes/components/component-gallery.php:135
 msgid "Used In"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:185
+#: ../admin/includes/components/component-gallery.php:187
 msgid "Gallery Options"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:190
+#: ../admin/includes/components/component-gallery.php:192
 msgid "Main Gallery Width"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:192
+#: ../admin/includes/components/component-gallery.php:194
 msgid ""
 "Adjust the overall width of the grid/thumbnail gallery. Acceptable values "
 "include <code>500px</code> or <code>50%</code>."
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:197
+#: ../admin/includes/components/component-gallery.php:199
 msgid "Gallery Grid Item Width"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:199
+#: ../admin/includes/components/component-gallery.php:201
 msgid ""
 "Adjust the width of the individual grid items, only if using Grid gallery "
 "style.  Default is <code>400</code>."
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:204
+#: ../admin/includes/components/component-gallery.php:206
 msgid "Gallery Caption (optional)"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:206
+#: ../admin/includes/components/component-gallery.php:208
 msgid "Add an optional caption for the gallery. "
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:214
+#: ../admin/includes/components/component-gallery.php:216
 msgid "Thumbnail Gallery Options"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:219
+#: ../admin/includes/components/component-gallery.php:221
 msgid "Transition Effect"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:223
+#: ../admin/includes/components/component-gallery.php:225
 msgid "Slide"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:224
+#: ../admin/includes/components/component-gallery.php:226
 msgid "Fade"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:225
+#: ../admin/includes/components/component-gallery.php:227
 msgid "Dissolve"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:227
+#: ../admin/includes/components/component-gallery.php:229
 msgid ""
 "Adjust the transition effect for the Thumbnail gallery. Default is slide."
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:232
+#: ../admin/includes/components/component-gallery.php:234
 msgid "Gallery Transition Speed"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:234
+#: ../admin/includes/components/component-gallery.php:236
 msgid ""
 "Activate slideshow by setting a speed for the transition.<code>5000</code> = "
 "5 seconds. "
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:239
+#: ../admin/includes/components/component-gallery.php:241
 msgid "Hide Gallery Thumbnails"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:249
+#: ../admin/includes/components/component-gallery.php:251
 msgid "Photoset Gallery Options"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:254
+#: ../admin/includes/components/component-gallery.php:256
 msgid "Gallery Layout"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:257
+#: ../admin/includes/components/component-gallery.php:259
 msgid ""
 "Let's say you have 4 images in this gallery. If you enter <code>121</code> "
 "you will have one image on the top row, two images on the second row, and "
 "one image on the third row."
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:261
+#: ../admin/includes/components/component-gallery.php:263
 msgid "Enable Lightbox"
 msgstr ""
 
-#: ../admin/includes/components/component-map.php:18
-msgid "Starting Coordinates"
-msgstr ""
-
-#: ../admin/includes/components/component-map.php:23
-msgid "Default Zoom Level"
-msgstr ""
-
-#: ../admin/includes/components/component-map.php:25
-msgid ""
-"The larger the number, the more zoomed in the default will be. Limit is 20. "
-"Default is 12."
-msgstr ""
-
-#: ../admin/includes/components/component-map.php:29
-msgid "Map Markers"
-msgstr ""
-
-#: ../admin/includes/components/component-map.php:33
-msgid "Assign latitude and longitude for each marker."
-msgstr ""
-
-#: ../admin/includes/components/component-map.php:37
-msgid "Latitude"
-msgstr ""
-
-#: ../admin/includes/components/component-map.php:43
-msgid "Longitude"
-msgstr ""
-
-#: ../admin/includes/components/component-map.php:49
-msgid "Marker Text"
-msgstr ""
-
 #: ../admin/includes/components/component-map.php:58
-msgid "Map Component Locations"
+msgid "Aesop Map Marker"
 msgstr ""
 
-#: ../admin/includes/custom-meta-boxes/classes.fields.php:1011
+#: ../admin/includes/components/component-map.php:65
+msgid "By default we'll display an H2 heading with the text you specify here."
+msgstr ""
+
+#: ../admin/includes/components/component-map.php:80
+msgid "Hide this marker"
+msgstr ""
+
+#: ../admin/includes/components/component-map.php:81
+msgid "Optionally hide this marker but retain the scroll to point in the map."
+msgstr ""
+
+#: ../admin/includes/components/component-map.php:104
+msgid "Map Locations"
+msgstr ""
+
+#: ../admin/includes/components/component-map.php:132
+msgid "<em>Hint: Type to search for locations</em>"
+msgstr ""
+
+#: ../admin/includes/components/component-map.php:423
+msgid ""
+"Welcome to Aesop Story Engine 1.3. We need to upgrade any map markers that "
+"you might have. Click <a id=\"aesop-upgrade-map-meta\" href=\"#\">here</a> "
+"to start the upgrade process."
+msgstr ""
+
+#: ../admin/includes/custom-meta-boxes/class.cmb-meta-box.php:86
+msgid "Are you sure you want to delete this field?"
+msgstr ""
+
+#: ../admin/includes/custom-meta-boxes/classes.fields.php:68
+msgid "Add New"
+msgstr ""
+
+#: ../admin/includes/custom-meta-boxes/classes.fields.php:69
+msgid "Remove Field"
+msgstr ""
+
+#: ../admin/includes/custom-meta-boxes/classes.fields.php:1096
 msgid "Type to search"
+msgstr ""
+
+#: ../admin/includes/custom-meta-boxes/classes.fields.php:1423
+msgid "Add New Group"
+msgstr ""
+
+#: ../admin/includes/custom-meta-boxes/classes.fields.php:1424
+msgid "Remove Group"
+msgstr ""
+
+#: ../admin/includes/custom-meta-boxes/classes.fields.php:1623
+msgid "Drag to set the exact location"
 msgstr ""
 
 #: ../admin/includes/generator_blob.php:75
@@ -1215,6 +1265,14 @@ msgid ""
 "and that will get you to the next line in the editor. Nesting components "
 "inside each other isn't allowed within the visual editor at this time.</p>\n"
 "\n"
+"\t\t\t\t<h4 style=\"margin-bottom:0;\">Using Maps</h4>\n"
+"\t\t\t\t<p>At this time one map is allowed per post. Click into the map meta "
+"box to add a marker. Click the marker to add optional title and or content. "
+"Clicking update will update the marker text. You can drag around the "
+"markers. You can also drag around the map, and set the zoom. These will be "
+"saved and the map displayed on your post will reflect this. Map markers are "
+"shown in the order that they are added.</p>\n"
+"\n"
 "\t\t\t\t<h4 style=\"margin-bottom:0;\">Theme Compatibility</h4>\n"
 "\t\t\t\t<p>Aesop will work with most WordPress themes by adding a code "
 "snippet to enable Extended CSS Support. The following code snippet can be "
@@ -1244,11 +1302,11 @@ msgid ""
 "\t      \t\t"
 msgstr ""
 
-#: ../admin/includes/help.php:53
+#: ../admin/includes/help.php:56
 msgid "Aesop Galleries"
 msgstr ""
 
-#: ../admin/includes/help.php:54
+#: ../admin/includes/help.php:57
 msgid ""
 "\n"
 "\t      \t\t<h3>Aesop Gallery Component</h3>\n"
@@ -1275,7 +1333,7 @@ msgid ""
 "\t      \t\t"
 msgstr ""
 
-#: ../admin/includes/notify.php:22
+#: ../admin/includes/notify.php:23
 msgid ""
 "Thanks for checking out Aesop! Get started by going to any post and clicking "
 "the \"Add Component\" button. Refer to the Help tab while editing a post for "
@@ -1304,16 +1362,10 @@ msgstr ""
 msgid "Enlarge"
 msgstr ""
 
-#: ../public/includes/components/component-map.php:62
-msgid ""
-"Looks like you didn\\'t specify a starting coordinate, so we\\'re using the "
-"first one you entered."
-msgstr ""
-
 #: ../public/includes/options.php:14
 msgid ""
-"Refer to the documentation located <a href=\"http://aesopstoryengine.com/"
-"documentation\" target=\"_blank\">here</a> for full option descriptions."
+"Refer to the documentation located <a href=\"http://aesopstoryengine.com/help"
+"\" target=\"_blank\">here</a> for full option descriptions."
 msgstr ""
 
 #: ../public/includes/options.php:24
