@@ -153,7 +153,7 @@ class AesopMapComponentAdmin {
 			<!-- Aesop Maps -->
 			<script>
 
-				jQuery(document).ready(function(){
+				jQuery(window).load(function(){
 
 					var start_point = <?php echo $ase_map_start_point; ?>;
 					var start_zoom = <?php echo $ase_map_zoom; ?>;
