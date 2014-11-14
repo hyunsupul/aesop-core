@@ -104,7 +104,7 @@ if (!function_exists('aesop_quote_shortcode')){
 						<?php } else { ?>
 
 							jQuery(moving).waypoint({
-								offset: 'bottom-in-view',
+								offset: '90%',
 								handler: function(direction){
 							   		jQuery(this).toggleClass('aesop-quote-faded');
 
