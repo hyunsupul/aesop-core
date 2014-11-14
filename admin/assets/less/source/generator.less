@@ -134,7 +134,7 @@
     overflow: hidden;
     position: absolute;
     left: 30px;
-    top: 60px;
+    top: 30px;
     right: 30px;
     bottom: 30px;
     background: @generator--background;
@@ -214,10 +214,11 @@
             position:absolute;
             bottom:0;
             right:0;
-            background:@generator--bg-accent;
+            background:darken(@generator--bg-accent,5);
             left:63%;
             padding:15px;
             border-left:1px solid @border;
+            border-top:1px solid darken(@generator--bg-accent,10);
             .box-sizing(border-box);
         }
 
@@ -298,6 +299,12 @@
             border-radius:2px;
             width: 60%;
             position: relative;
+
+            &:focus {
+                box-shadow:none;
+                outline:none;
+                border:1px solid @border;
+            }
         }
 
         textarea {
@@ -398,7 +405,7 @@ Don't need small height mod anymore due to making the icons smaller
     .aesop-content-floaterposition,
     .aesop-content-floateroffset,
     .aesop-content-floaterdirection {
-        background:lighten(@generator--bg-accent,3);
+        background:darken(@generator--bg-accent,3);
     }
 
     // 1st
