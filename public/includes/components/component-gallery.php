@@ -191,7 +191,15 @@ class AesopCoreGallery {
                 $img_title 	  	= get_post($image_id)->post_title;
                 $caption 		= get_post($image_id)->post_excerpt;
 
-               	printf('<li class="aesop-grid-gallery-item"><a class="aesop-lightbox" href="%s" title="%s"><span class="aesop-grid-gallery-caption">%s</span><span class="clearfix">%s</span></a></li>',esc_url($getimagesrc[0]), esc_attr($img_title), esc_html($caption), $getimage );
+			?>
+
+			<li class="aesop-grid-gallery-item"><a class="aesop-lightbox" href="<?php echo $getimagesrc[0];?>" title="<?php echo esc_attr($img_title);?>">
+				<?php if ( $caption ){ ?>
+					<span class="aesop-grid-gallery-caption"><?php echo $caption;?></span>
+				<?php } ?>
+			<span class="clearfix"><?php echo $getimage;?></span></a></li>
+
+			<?php
 
 			endforeach;
 
