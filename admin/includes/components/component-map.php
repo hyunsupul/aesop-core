@@ -64,15 +64,6 @@ class AesopMapComponentAdmin {
 						'desc' 			=> __('Title', 'aesop-core'),
 						'tip'			=> __('By default we\'ll display an H2 heading with the text you specify here.','aesop-core')
 					),
-					/*
-					'location' 				=> array(
-						'type'			=> 'select', // a select dropdown 
-						'values' 		=> self::get_markers_for_option_array(),
-						'default' 		=> '',
-						'desc' 			=> __('Choose a marker to display', 'aesop-core'),
-						'tip'			=> __('By default an H2 heading will be used. You can optionally hide this completely but retain the scroll to point in the map.','aesop-core')
-					),
-					*/
 					'hidden' 				=> array(
 						'type'			=> 'select', // a select dropdown 
 						'values' 		=> array(
@@ -447,6 +438,8 @@ class AesopMapComponentAdmin {
 	*/
 	function upgrade_marker_meta(){
 
+		check_ajax_referer( 'aesop-map-upgrade', 'security' );
+
 		// get the posts with the maps shortode
 		$posts = get_posts(array ('post_type' => array ( 'page', 'post' ), 'posts_per_page' => -1 ));
 
@@ -458,7 +451,7 @@ class AesopMapComponentAdmin {
 
 				// at this point we have an array of posts that have our shortcodes
 				// now let's loop through the map meta in this post and map to the new meta
-				
+
 				$old_locations = get_post_meta( $id, 'aesop_map_component_locations' );
 				if ( ! empty ( $old_locations ) ) {
 					foreach( $old_locations as $location ){
@@ -509,6 +502,8 @@ class AesopMapComponentAdmin {
 	*/
 	function upgrade_click_handle(){
 
+		$nonce = wp_create_nonce('aesop-map-upgrade');
+
 		//if( get_option('ai_core_version') >= 1.3 ) { ?>
 			<!-- Aesop Upgrade Map Meta -->
 			<script>
@@ -518,12 +513,13 @@ class AesopMapComponentAdmin {
 				  		e.preventDefault();
 
 				  		var data = {
-				            action: 'upgrade_marker_meta'
+				            action: 'upgrade_marker_meta',
+				            security: '<?php echo $nonce;?>'
 				        };
 
 					  	jQuery.post(ajaxurl, data, function(response) {
 					  		if( response ){
-					        location.reload();
+					        	location.reload();
 					  		}
 					    });
 
