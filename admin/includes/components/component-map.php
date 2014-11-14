@@ -256,8 +256,8 @@ class AesopMapComponentAdmin {
 
 					            }).bindPopup("\
 					            	<input type='text' name='ase_marker_text[]' value='Location Title'>\
-					            	<input type='button' value='Update' class='marker-update-button'/>\
-					            	<input type='button' value='Delete' class='marker-delete-button'/>\
+					            	<a class='marker-update-button dashicons dashicons-yes'/></a>\
+					            	<a class='marker-delete-button dashicons dashicons-trash'/></a>\
 					            	");
 
 					            marker.on('popupopen', onPopupOpen);
@@ -274,60 +274,60 @@ class AesopMapComponentAdmin {
 					// open popup
 					function onPopupOpen() {
 
-				    var tempMarker = this;
+					    var tempMarker = this;
 
-				    // To remove marker on click of delete button in the popup of marker
-				    jQuery('.marker-delete-button:visible').click(function () {
-				    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').remove();
-				      map.removeLayer(tempMarker);
-				    });
+					    // To remove marker on click of delete button in the popup of marker
+					    jQuery('.marker-delete-button:visible').click(function () {
+					    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').remove();
+					      	map.removeLayer(tempMarker);
+					    });
 
-				    // Update the title of the location
-				    jQuery('.marker-update-button:visible').click(function (t) {
-				    	var title = t.target.previousElementSibling.value;
-				    	var tdata = encodeMarkerData(tempMarker._latlng.lat, tempMarker._latlng.lng, title);
-				    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').val(tdata);
-				    	tempMarker.options.title = title;
-				    	tempMarker.closePopup();
-				    	tempMarker.bindPopup("\
-					            	<input type='text' name='ase_marker_text[]' value='" + title + "'>\
-					            	<input type='button' value='Update' class='marker-update-button'/>\
-					            	<input type='button' value='Delete' class='marker-delete-button'/>\
-					            	");
-				    });
+					    // Update the title of the location
+					    jQuery('.marker-update-button:visible').click(function (t) {
+					    	var title = t.target.previousElementSibling.value;
+					    	var tdata = encodeMarkerData(tempMarker._latlng.lat, tempMarker._latlng.lng, title);
+					    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').val(tdata);
+					    	tempMarker.options.title = title;
+					    	tempMarker.closePopup();
+					    	tempMarker.bindPopup("\
+						            	<input type='text' name='ase_marker_text[]' value='" + title + "'>\
+						            	<a class='marker-update-button dashicons dashicons-yes'/></a>\
+						            	<a class='marker-delete-button dashicons dashicons-trash'/></a>\
+						            	");
+					    });
 					}
 
 					// create map marker
 					function createMapMarker(latlng, title) {
-            marker = L.marker(latlng, {
-              title: title,
-              alt: title,
-              riseOnHover: true,
-              draggable: true,
-            }).bindPopup("\
-            	<input type='text' name='ase_marker_text[]' value='" + title + "'>\
-            	<input type='button' value='Update' class='marker-update-button'/>\
-            	<input type='button' value='Delete' class='marker-delete-button'/>\
-            	");
-            marker.on('popupopen', onPopupOpen);
-            marker.on('dragend', onMarkerDrag);
-            return marker;
+			            marker = L.marker(latlng, {
+			              	title: title,
+			              	alt: title,
+			              	riseOnHover: true,
+			              	draggable: true,
+			            }).bindPopup("\
+			            	<input type='text' name='ase_marker_text[]' value='" + title + "'>\
+			            	<a class='marker-update-button dashicons dashicons-yes'/></a>\
+			            	<a class='marker-delete-button dashicons dashicons-trash'/></a>\
+			            	");
+			            marker.on('popupopen', onPopupOpen);
+			            marker.on('dragend', onMarkerDrag);
+			            return marker;
 					}
 
 					function getAllMarkers() {
-				    var allMarkersObjArray = []; // for marker objects
-				    var allMarkersGeoJsonArray = []; // for readable geoJson markers
-				    jQuery.each(map._layers, function (ml) {
-			        if (map._layers[ml].feature) {
-			          allMarkersObjArray.push(this)
-			          allMarkersGeoJsonArray.push(JSON.stringify(this.toGeoJSON()))
-			        }
-				    })
+					    var allMarkersObjArray = []; // for marker objects
+					    var allMarkersGeoJsonArray = []; // for readable geoJson markers
+					    jQuery.each(map._layers, function (ml) {
+					        if (map._layers[ml].feature) {
+					          	allMarkersObjArray.push(this)
+					          	allMarkersGeoJsonArray.push(JSON.stringify(this.toGeoJSON()))
+					        }
+					    })
 					}
 
 					// let's create a hidden form element for the marker
 					function createMarkerField(mid, mdata) {
-					  jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-locations[]" data-ase="map" data-marker="' + mid + '" value="' + mdata + '">');
+					  	jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-locations[]" data-ase="map" data-marker="' + mid + '" value="' + mdata + '">');
 					}
 
 					function updateMarkerField(m) {
