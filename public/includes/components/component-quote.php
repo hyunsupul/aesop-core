@@ -1,7 +1,7 @@
 <?php
 
 /**
- 	* Audio component utilizes core wordpress audio
+ 	* Creates a styled quote with large type
  	*
  	* @since    1.0.0
 */
