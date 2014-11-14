@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
 	});
 
 	var settingsHeight = function(){
-		var height  = $(window).height() - 90;
+		var height  = $(window).height() - 60;
 		var width = $(window).width();
 
 		if ( width < 782 ) {
