@@ -364,55 +364,116 @@
 
 }
 
+.aesop-map-component {
+    // marker wrap
+    .leaflet-popup-content-wrapper, 
+    .leaflet-popup-tip {
+        border-radius:4px;
+    }
+
+    // inner marker content
+    .leaflet-popup-content {
+        margin:9px 15px;
+    }
+
+}
+
 // sticky maps - since 1.3
 .aesop-sticky-map {
 
-    &.aesop-sticky-map-left {
-        padding-left:250px;
+    @width: 250px;
 
-        .aesop-map-component {
-            left:0;
-            top:0;
-            bottom:0;
-            width:250px;
-        }
-    }
-    &.aesop-sticky-map-top {
-        padding-top:220px;
-
-        .aesop-map-component {
-            height:220px;
-            top:0;
-            left:0;
-            right:0;
-            width:100%;
-        }
-    }
-    &.aesop-sticky-map-right {
-        padding-right:250px;
-
-        .aesop-map-component {
-            right:0;
-            top:0;
-            bottom:0;
-            width:250px;
-        }
-    }
-    &.aesop-sticky-map-bottom {
-        padding-bottom:220px;
-
-        .aesop-map-component {
-            height:220px;
-            bottom:0;
-            left:0;
-            right:0;
-            width:100%;
-        }
-    }
     .aesop-map-component {
         position: fixed;
         margin:0;
         z-index:120;
+
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: 99;
+        }
+    }
+
+    &.aesop-sticky-map-left {
+        padding-left:@width;
+
+        .aesop-map-component {
+            left:0;
+            top:0;
+            bottom:0;
+            width:@width;
+
+            &:before {
+                right: 0;
+                top: 0;
+                height: 100%;
+                width: 10px;
+                left:@width - 10;
+                .box-shadow(inset -7px 0 7px -7px rgba(0,0,0,0.2));
+            }
+        }
+    }
+    &.aesop-sticky-map-top {
+        padding-top:@width - 30;
+
+        .aesop-map-component {
+            height:@width - 30;
+            top:0;
+            left:0;
+            right:0;
+            width:100%;
+
+            &:before {
+                right: 0;
+                left:0;
+                top:0;
+                height: 10px;
+                width: 100%;
+                top:@width - 40;
+                .box-shadow(inset 0 -7px 7px -7px rgba(0,0,0,0.2));
+            }
+        }
+    }
+    &.aesop-sticky-map-right {
+        padding-right:@width;
+
+        .aesop-map-component {
+            right:0;
+            top:0;
+            bottom:0;
+            width:@width;
+
+            &:before {
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 10px;
+                right:@width - 10;
+                .box-shadow(inset 7px 0 7px -7px rgba(0,0,0,0.2));
+            }
+        }
+    }
+    &.aesop-sticky-map-bottom {
+        padding-bottom:@width - 30;
+
+        .aesop-map-component {
+            height:@width - 30;
+            bottom:0;
+            left:0;
+            right:0;
+            width:100%;
+
+            &:before {
+                right: 0;
+                left:0;
+                bottom:0;
+                height: 10px;
+                width: 100%;
+                bottom:@width - 40;
+                .box-shadow(inset 0 7px 7px -7px rgba(0,0,0,0.2));
+            }
+        }
     }
 }
 // maps resonsive
