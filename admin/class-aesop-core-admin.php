@@ -69,6 +69,7 @@ class Aesop_Core_Admin {
 		add_filter( 'mce_css', 					array($this,'aesop_editor_styles'));
 		add_filter( 'wp_fullscreen_buttons', 	array($this,'fs_generator_button'));
 		add_filter( 'mce_external_plugins', 	array($this,'tinymce_plugin'));
+		add_action( 'after_wp_tiny_mce', [$this, 'ase_after_wp_tiny_mce'] );
 	}
 
 	/**
@@ -248,6 +249,44 @@ class Aesop_Core_Admin {
 		);
 
 		return '<p class="aesop-generator-mark">'.$message[array_rand($message)].'</p>';
+
+	}
+
+	/**
+	*
+	*	@since 1.3
+	*	@return handle some stuff after tiny mce is loaded
+	*
+	*/
+	public function ase_after_wp_tiny_mce() {
+
+		?>
+		
+		<script type="text/javascript">
+			function mceAlive() {
+		  	if ( typeof tinymce !== 'undefined' && tinymce.activeEditor ) {
+		  		var ed = tinymce.activeEditor;
+			    var sc_attr = jQuery(ed.contentDocument).find('.aesop-component').data('aesop-sc');
+			    sc_attr = window.decodeURIComponent(sc_attr);
+			    // let's check to see if sticky is on
+			    if( sc_attr.match(/sticky=['"](top|left|right|bottom)['"]/) ) {
+			    	var sticky_location = sc_attr.match(/sticky=['"](top|left|right|bottom)['"]/)[1];
+			    	//console.log( 'The chosen sticky location is: ' + sticky_location );
+
+					if( 'off' !== sticky_location ) {
+						jQuery('#aesop-generator-wrap li.map_marker').fadeIn().css('display','inline-block');
+					}
+
+			    }
+
+			  } else {
+			    setTimeout(mceAlive, 15);
+			  }
+			}
+			mceAlive();
+		</script>
+
+		<?php
 
 	}
 }

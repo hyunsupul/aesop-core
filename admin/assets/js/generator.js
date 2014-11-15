@@ -7,17 +7,18 @@ jQuery(document).ready(function($) {
 		e.preventDefault();
 
 		if ( typeof window.aiactive !== 'undefined' ) {
-      alert('Nesting components within the visual interface is not supported.');
-    } else if ( typeof window.ailocked !== 'undefined' ) {
-      alert('Please click on the editor and set your cursor location first.');
-    } else {
-      jQuery('body').toggleClass('modal-open');
-      jQuery(modal).toggleClass('aesop-generator-open');
-    }
+	      alert('Nesting components within the visual interface is not supported.');
+	    } else if ( typeof window.ailocked !== 'undefined' ) {
+	      alert('Please click on the editor and set your cursor location first.');
+	    } else {
+	      jQuery('body').toggleClass('modal-open');
+	      jQuery(modal).toggleClass('aesop-generator-open');
+	    }
+
 	});
 
 	var settingsHeight = function(){
-		var height  = $(window).height() - 90;
+		var height  = $(window).height() - 60;
 		var width = $(window).width();
 
 		if ( width < 782 ) {
@@ -37,7 +38,7 @@ jQuery(document).ready(function($) {
 	}
 
 	var destroyModal = function(){
-    if ( tinyMCE.activeEditor ) {
+    if ( typeof tinyMCE !== 'undefined' && tinyMCE.activeEditor ) {
       var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
       if(editing != ''){
         editing[0].removeAttribute('id');
@@ -74,6 +75,20 @@ jQuery(document).ready(function($) {
 
     		var queried_shortcode = $('#aesop-generator-select').find(':selected').val();
 			$('#aesop-generator-settings').html(aesopshortcodes[queried_shortcode]);
+
+			// conditionally load the map marker shortcode
+			// since 1.3
+			$('.aesop-map-sticky #aesop-generator-attr-sticky').on('change',function(){
+				var selectedValue = $(this).val();
+
+				if( 'off' == selectedValue ) {
+					$('#aesop-generator-wrap li.map_marker').fadeOut();
+
+				} else {
+					$('#aesop-generator-wrap li.map_marker').fadeIn().css('display','inline-block');
+				}
+
+			});
 
 			////
 			// conditional loading
@@ -180,7 +195,7 @@ jQuery(document).ready(function($) {
 			$('#aesop-generator-result').val($('#aesop-generator-result').val() + $('#aesop-generator-content').val() + '[/' + aesop_compatibility_mode_prefix + queried_shortcode + ']');
 		}
 
-    if ( tinyMCE.activeEditor ) {
+    if ( typeof tinyMCE !== 'undefined' && tinyMCE.activeEditor ) {
       var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
       $(editing).replaceWith('<p></p>');
     }

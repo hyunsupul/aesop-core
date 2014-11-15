@@ -19,7 +19,10 @@ The Aesop Story Engine is a suite of open-sourced tools and components that empo
 
 [http://aesopstoryengine.com](http://aesopstoryengine.com)
 
-[youtube http://www.youtube.com/watch?v=BndId0gvMlA]
+[youtube http://www.youtube.com/watch?v=84BFGxkHby0]
+
+**Try Aesop for Free**
+[http://tryaesop.com](http://tryaesop.com)
 
 Utilizing these components, writers can can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. Here’s a demo theme incorporating these story components.
 [http://playground.aesopstories.com](http://playground.aesopstories.com)
@@ -66,8 +69,11 @@ This component allows you to upload a PDF or image, that is shown to the user on
 Here’s a demo theme incorporating these story components.
 [http://playground.aesopstories.com](http://playground.aesopstories.com)
 
+Here’s a real story.
+[http://aesopstoryseri.es/the-quiet-day/](http://aesopstoryseri.es/the-quiet-day/)
+
 Here’s documentation on the Story Engine.
-[http://aesopstoryengine.com/documentation](http://aesopstoryengine.com/documentation)
+[http://aesopstoryengine.com/help](http://aesopstoryengine.com/help)
 
 
 = Theme Implementation =
@@ -83,7 +89,7 @@ Aesop Story Engine 1.0.9 now features full theme compatibility with a simple cod
 
 `add_theme_support("aesop-component-styles", array("parallax", "image", "quote", "gallery", "content", "video", "audio", "collection", "chapter", "document", "character", "map", "timeline") );`
 
-We reccommend placing this in a WordPress themes functions.php, or use a plugin like [Code Snippets](https://wordpress.org/plugins/code-snippets/) and put it there.
+We recommend placing this in a WordPress themes functions.php, or use a plugin like [Code Snippets](https://wordpress.org/plugins/code-snippets/) and put it there.
 
 = Developers =
 This story engine was in beta for over 4 months, and every attempt has been made to ensure that 1.0 is as stable as can be. No breaking changes will be made until the next major version, which at the moment isn’t even a speckle in my daddies eye. All components are pluggable, and there are ample filters and actions to manipulate just about everything you can imagine. Refer to the documentation below for more.
@@ -134,6 +140,21 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.3 =
+* NEW - Freshly designed user interface with light color scheme to match WordPress design patterns
+* NEW - Map component admin with ability to click the map to add markers instead of manually adding GPS coordinates
+* NEW - Map component "sticky" mode that changes map markers as you scroll down the story
+* NEW - Components can now be cloned
+* FIXED - All variables now properly escaped within components
+* FIXED - The "used in" column of the Galleries edit screen
+* FIXED - Additional spaces being added on the front end after saving components 
+* FIXED - Timeline scrollnav build failing on certain occassions
+* FIXED - Some parts of the component placeholder highlighting after clicking the edit button
+* FIXED - JS error that shows if the visual editor is turned off in options
+* TWEAK - Related videos at the end of YouTube videos now off by default
+* TWEAK - Improved video markup
+* UPDATED - Fotorama, fitvids, scrollnav, and images loaded to their respective current versions
+
 = 1.2.1 ==
 * FIXED - lightbox gallery images not opening in grid gallery
 * FIXED - warnings with custom meta boxes if wp-admin is set to SSL
@@ -149,7 +170,6 @@ Full documentation can be found below.
 * ADDED - New filter aesop_generator_loads_on which accepts an array of admin pages to load the generator
 * TWEAK - Cleaned up the gallery creation process including removing core options from the gallery settings modal that Aesop doesn't use, along with only running our modifications on Aesop Galleries
 * TWEAK - Added additional checks to ensure $post is set before loading map components
-
 
 = 1.1 =
 * NEW - Complete compatibilty with WordPress 4.0
