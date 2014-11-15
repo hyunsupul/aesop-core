@@ -18,8 +18,8 @@ class AesopMapComponentAdmin {
 		add_action( 'wp_ajax_upgrade_marker_meta', 		array($this, 'upgrade_marker_meta' ));
 		add_action( 'admin_head',						array($this, 'upgrade_click_handle'));
 
-		add_action('aesop_admin_styles', 		array($this, 'icon') );
-		add_filter('aesop_avail_components',	array($this, 'options'));
+		add_action('aesop_admin_styles', 				array($this, 'icon') );
+		add_filter('aesop_avail_components',			array($this, 'options'));
 
 	}
 
@@ -98,7 +98,7 @@ class AesopMapComponentAdmin {
 	*/
 	function new_map_box(){
 
-		$screens = apply_filters('aesop_map_meta_location',array( 'post' ) );
+		$screens = apply_filters('aesop_map_meta_location', array( 'post' ) );
 
 		foreach ( $screens as $screen ) {
 			add_meta_box('ase_map_component',__( 'Map Locations', 'aesop-core' ),array($this,'render_map_box'), $screen);
@@ -112,51 +112,37 @@ class AesopMapComponentAdmin {
 	* 	@param WP_Post $post The post object.
 	*	@since 1.3
 	*
-	* 	@todo - save map markers, currently a button just to retrieve, shoudl run on post_save ?
-	* 	@todo - retrieve any markers previously saved and add them to the map for backwards compatibility
-	*	@todo - we need a way for the user to enter text in the popup called "Marker Text"
 	*/
 	function render_map_box( $post ){
 
 		echo '<div class="aesop-map-data" style="display: hidden;">';
-		wp_nonce_field( 'ase_map_meta', 'ase_map_meta_nonce' );
+			wp_nonce_field( 'ase_map_meta', 'ase_map_meta_nonce' );
 		echo '</div>';
 
 		$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
-
-		// this is just a example button as a trigger to get all the makers
-		// maybe this should be tied into post_save or something?
-		// check console after clicking
 
 		echo "Starting location: <input type='text' id='aesop-map-address'/>";
 		echo __('<em>Hint: Type to search for locations</em>','aesop-core');
 		echo '<div id="aesop-map" style="height:350px;"></div>';
 
-		$ase_map_locations = get_post_meta( $post->ID, 'ase_map_component_locations' );
-		$ase_map_start_point = get_post_meta( $post->ID, 'ase_map_component_start_point', true );
-		$ase_map_zoom = get_post_meta( $post->ID, 'ase_map_component_zoom', true);
+		$ase_map_locations 		= get_post_meta( $post->ID, 'ase_map_component_locations' );
+		$ase_map_start_point 	= get_post_meta( $post->ID, 'ase_map_component_start_point', true );
+		$get_map_zoom 			= get_post_meta( $post->ID, 'ase_map_component_zoom', true);
 
-		if ( empty ( $ase_map_start_point ) ) {
-			$ase_map_start_point = [29.76, -95.38];
-		} else {
-			$ase_map_start_point = [$ase_map_start_point['lat'],$ase_map_start_point['lng']];
-		}
+		$ase_map_start_point 	= empty ( $ase_map_start_point ) ? [29.76, -95.38] : [$ase_map_start_point['lat'],$ase_map_start_point['lng']];
+		$ase_map_zoom 			= empty ( $get_map_zoom ) ? 12 : $get_map_zoom;
 
-		if ( empty ( $ase_map_zoom ) ) {
-			$ase_map_zoom = 12;
-		}
-
-		$ase_map_start_point = json_encode($ase_map_start_point);
-		$ase_map_locations = json_encode($ase_map_locations);
+		$ase_map_start_point 	= json_encode($ase_map_start_point);
+		$ase_map_locations 		= json_encode($ase_map_locations);
 
 		?>
 			<!-- Aesop Maps -->
 			<script>
 
-				jQuery(window).load(function(){
+				jQuery(document).ready(function(){
 
 					var start_point = <?php echo $ase_map_start_point; ?>;
-					var start_zoom = <?php echo $ase_map_zoom; ?>;
+					var start_zoom = <?php echo absint($ase_map_zoom); ?>;
 
 					var map = L.map('aesop-map',{
 						scrollWheelZoom: false,
@@ -171,13 +157,13 @@ class AesopMapComponentAdmin {
 						var lng = result.geometry.location.B;
 						map.panTo(new L.LatLng(lat,lng));
 						setMapCenter(lat,lng);
-  				});
+  					});
 
 					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo esc_attr($mapboxid);?>/{z}/{x}/{y}.png', {
 						maxZoom: 20
 					}).addTo(map);
 
-					<?php if ( ! empty( $ase_map_locations )) : ?>
+					<?php if ( ! empty( $ase_map_locations ) ) : ?>
 						var ase_map_locations = <?php echo $ase_map_locations; ?>
 					<?php endif; ?>
 
@@ -340,8 +326,6 @@ class AesopMapComponentAdmin {
 					function decodeMarkerData(mdata) {
 						return decodeURIComponent(JSON.parse(mdata));
 					}
-
-					jQuery('.get-markers').on('click', getAllMarkers);
 				});
 			</script>
 		<?php
@@ -354,7 +338,6 @@ class AesopMapComponentAdmin {
 	* 	@param int $post_id The ID of the post being saved.
 	*	@since 1.3
 	*
-	*	@todo data needs to be saved
 	*/
 	function save_map_box( $post_id ) {
 
@@ -412,7 +395,6 @@ class AesopMapComponentAdmin {
 	*	when the user updates to 1.3
 	*
 	*	@since 1.3
-	*	@todo uncomment the version conditional before 1.3 goes live
 	*/
 	function upgrade_map_notice(){
 
@@ -434,7 +416,6 @@ class AesopMapComponentAdmin {
 	*	When the user starts the upgrade process let's run a function to map the old meta to the new meta
 	*
 	*	@since 1.3
-	*	@todo map the new meta to the old meta
 	*/
 	function upgrade_marker_meta(){
 
