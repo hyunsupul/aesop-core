@@ -504,7 +504,7 @@ class AesopMapComponentAdmin {
 
 		$nonce = wp_create_nonce('aesop-map-upgrade');
 
-		//if( get_option('ai_core_version') >= 1.3 ) { ?>
+		if ( get_option('ase_upgraded_to') < AI_CORE_VERSION ) { ?>
 			<!-- Aesop Upgrade Map Meta -->
 			<script>
 				jQuery(document).ready(function(){
@@ -526,7 +526,7 @@ class AesopMapComponentAdmin {
 				    });
 				});
 			</script>
-		<?php // }
+		<?php }
 	}
 }
 new AesopMapComponentAdmin;
