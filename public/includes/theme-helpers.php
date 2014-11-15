@@ -86,3 +86,41 @@ function aesop_check_theme($classes){
 	return $classes;
 
 }
+
+/**
+*	Used on the front end to properly escape attributes where users have control over what input is entered
+*	Currently used in content component floater and maps marker content
+*	
+*	@since 1.3
+*	@return a sanitized string
+*/
+function aesop_component_media_filter( $input = '' ) {
+
+	// bail if no input
+	if ( empty( $input ) )
+		return;
+
+	// setup our array of allowed content to pass
+	$allowed_html = array(
+		'a' 			=> array(
+		    'href' 		=> array(),
+		    'title' 	=> array(),
+		    'rel'		=> array(),
+		    'target'	=> array(),
+		    'name' 		=> array()
+		),
+		'img'			=> array(
+			'src' 		=> array(),
+			'alt'		=> array(),
+			'title'		=> array()
+		),
+		'p'				=> array(),
+		'br' 			=> array(),
+		'em' 			=> array(),
+		'strong' 		=> array()
+	);
+
+	$out = wp_kses( $input, apply_filters('aesop_content_allowed_html', $allowed_html ) );
+
+	return $out;
+}
