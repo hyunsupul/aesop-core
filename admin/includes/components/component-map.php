@@ -18,8 +18,8 @@ class AesopMapComponentAdmin {
 		add_action( 'wp_ajax_upgrade_marker_meta', 		array($this, 'upgrade_marker_meta' ));
 		add_action( 'admin_head',						array($this, 'upgrade_click_handle'));
 
-		add_action('aesop_admin_styles', 				array($this, 'icon') );
-		add_filter('aesop_avail_components',			array($this, 'options'));
+		add_action( 'aesop_admin_styles', 				array($this, 'icon') );
+		add_filter( 'aesop_avail_components',			array($this, 'options'));
 
 	}
 
@@ -422,7 +422,7 @@ class AesopMapComponentAdmin {
 		check_ajax_referer( 'aesop-map-upgrade', 'security' );
 
 		// get the posts with the maps shortode
-		$posts = get_posts(array ('post_type' => array ( 'page', 'post' ), 'posts_per_page' => -1 ));
+		$posts = get_posts( array( 'post_type' => array('page', 'post'), 'posts_per_page' => -1 ) );
 
 		$count = 0;
 
