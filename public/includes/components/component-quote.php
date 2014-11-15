@@ -1,7 +1,7 @@
 <?php
 
 /**
- 	* Audio component utilizes core wordpress audio
+ 	* Quote component creates a styled quote with large type
  	*
  	* @since    1.0.0
 */
@@ -104,7 +104,7 @@ if (!function_exists('aesop_quote_shortcode')){
 						<?php } else { ?>
 
 							jQuery(moving).waypoint({
-								offset: 'bottom-in-view',
+								offset: '90%',
 								handler: function(direction){
 							   		jQuery(this).toggleClass('aesop-quote-faded');
 
