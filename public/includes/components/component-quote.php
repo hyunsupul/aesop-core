@@ -1,7 +1,7 @@
 <?php
 
 /**
- 	* Creates a styled quote with large type
+ 	* Quote component creates a styled quote with large type
  	*
  	* @since    1.0.0
 */
