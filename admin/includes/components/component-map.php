@@ -18,8 +18,8 @@ class AesopMapComponentAdmin {
 		add_action( 'wp_ajax_upgrade_marker_meta', 		array($this, 'upgrade_marker_meta' ));
 		add_action( 'admin_head',						array($this, 'upgrade_click_handle'));
 
-		add_action( 'aesop_admin_styles', 				array($this, 'icon') );
 		add_filter( 'aesop_avail_components',			array($this, 'options'));
+		add_action( 'aesop_admin_styles', 				array($this, 'icon'));
 
 	}
 
@@ -48,6 +48,7 @@ class AesopMapComponentAdmin {
 	*	This lets the user use the user interface to add teh specific points in the story that the map should jump markers
 	*
 	*	@since 1.3
+	*	@subpackage Component API
 	*	@param $shortcodes array array of shortcodes to return
 	*	@return return our own options merged into the aesop availabel optoins array
 	*/
@@ -86,6 +87,21 @@ class AesopMapComponentAdmin {
 
 
 		return array_merge( $shortcodes, $custom );
+
+	}
+
+	/**
+	*
+	*	Add an icon to our placeholder
+	*	@subpackage Component API
+	*	@since 1.3
+	*/
+	function icon(){
+
+		$icon = '\f230'; //css code for dashicon
+		$slug = 'map_marker'; // name of component
+
+		wp_add_inline_style('ai-core-styles', '#aesop-generator-wrap li.'.$slug.' {display:none;} #aesop-generator-wrap li.'.$slug.' a:before {content: "'.$icon.'";}');
 
 	}
 
@@ -379,15 +395,6 @@ class AesopMapComponentAdmin {
 
 	}
 
-	function icon(){
-
-		$icon = '\f230'; //css code for dashicon
-		$slug = 'map_marker'; // name of component
-
-		wp_add_inline_style('ai-core-styles', '#aesop-generator-wrap li.'.$slug.' {display:none;} #aesop-generator-wrap li.'.$slug.' a:before {content: "'.$icon.'";}');
-
-	}
-
 	/**
 	*
 	*
@@ -418,6 +425,7 @@ class AesopMapComponentAdmin {
 	*	if it does exist then proceed with the upgrade
 	*
 	*	@since 1.3
+	*	@return bool true if old meta exists, false if not
 	*/
 	function aesop_check_for_old_markers(){
 
