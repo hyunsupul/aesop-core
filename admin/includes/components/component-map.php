@@ -398,7 +398,8 @@ class AesopMapComponentAdmin {
 	*/
 	function upgrade_map_notice(){
 
-		if( get_option('ase_upgraded_to') < AI_CORE_VERSION ) {
+		// only run if we have markers and have never upgraded
+		if ( get_option('ase_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_old_markers() ) {
 
 			$out = '<div class="error"><p>';
 
@@ -409,6 +410,37 @@ class AesopMapComponentAdmin {
 			echo $out;
 
 		}
+	}
+
+	/**
+	*
+	*	Check to see if our old post meta exists
+	*	if it does exist then proceed with the upgrade
+	*
+	*	@since 1.3
+	*/
+	function aesop_check_for_old_markers(){
+
+		$posts = get_posts( array( 'post_type' => array('page', 'post'), 'posts_per_page' => -1 ) );
+
+		$return = '';
+
+		if ( $posts ) :
+
+			foreach( $posts as $post ) {
+
+				$meta = get_post_meta( get_the_ID(), 'aesop_map_component_locations', true );
+
+				if ( ! empty ( $meta ) )
+					$return = 'true';
+				else
+					$return = 'false';
+			}
+
+		endif;
+
+		return $return;
+
 	}
 
 	/**
@@ -485,7 +517,8 @@ class AesopMapComponentAdmin {
 
 		$nonce = wp_create_nonce('aesop-map-upgrade');
 
-		if ( get_option('ase_upgraded_to') < AI_CORE_VERSION ) { ?>
+		// only run if we have markers and have never upgraded
+		if ( get_option('ase_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_old_markers() ) { ?>
 			<!-- Aesop Upgrade Map Meta -->
 			<script>
 				jQuery(document).ready(function(){
@@ -509,5 +542,6 @@ class AesopMapComponentAdmin {
 			</script>
 		<?php }
 	}
+
 }
 new AesopMapComponentAdmin;
