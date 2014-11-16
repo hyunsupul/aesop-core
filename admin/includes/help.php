@@ -34,6 +34,8 @@ class AesopContextualHelp {
 				<h4 style="margin-bottom:0;">Using Maps</h4>
 				<p>At this time one map is allowed per post. Click into the map meta box to add a marker. Click the marker to add optional title and or content. Clicking update will update the marker text. You can drag around the markers. You can also drag around the map, and set the zoom. These will be saved and the map displayed on your post will reflect this. Map markers are shown in the order that they are added.</p>
 
+				<p>Map tiles are provided by our free account through Mapbox. If the map is grayed out, and the map tiles are 404, then the free Aesop account has reached its monthly quota. For this reason it\'s highly recommended to sign up for your own free <a href="http://mapbox.com">Mapbox</a> account. Further documentation on this can be found <a href="http://aesopstoryengine.com/help/maps-component/">here</a>. </p>
+
 				<h4 style="margin-bottom:0;">Theme Compatibility</h4>
 				<p>Aesop will work with most WordPress themes by adding a code snippet to enable Extended CSS Support. The following code snippet can be entered with a plugin such as Code Snippets. If you\'re a developer you can selectively load additional styles based on the component that you define in the array.</p>
 				<code>add_theme_support("aesop-component-styles", array("parallax", "image", "quote", "gallery", "content", "video", "audio", "collection", "chapter", "document", "character", "map", "timeline" ) );</code>
