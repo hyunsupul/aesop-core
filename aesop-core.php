@@ -14,8 +14,8 @@
 * 	Plugin URI:        http://aesopstoryengine.com
 * 	Description:       Open-sourced suite of components that empower interactive storytelling.
 * 	Version:           1.2.1
-* 	Author:            Nick "Bearded Avenger" Haskins
-* 	Author URI:        http://nickhaskins.com
+* 	Author:            Aesopinteractive LLC
+* 	Author URI:        http://aesopstoryengine.com
 * 	Text Domain:       aesop-core
 * 	License:           GPL-2.0+
 * 	License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
