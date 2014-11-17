@@ -106,7 +106,7 @@ class AesopGalleryComponentAdmin {
 			'capability_type' 			=> 'post'
 		);
 
-		register_post_type( 'ai_galleries', apply_filters('ai_gallery_args',$args ) );
+		register_post_type( 'ai_galleries', apply_filters('ai_gallery_args', $args ) );
 
 	}
 
@@ -162,15 +162,13 @@ class AesopGalleryComponentAdmin {
 
 					if ( has_shortcode( $page->post_content ,'aesop_gallery' ) ){
 
-						echo ucfirst(get_the_title($page->ID));
+						echo '<a href="'.get_edit_post_link($page->ID).'" title="Edit" >'.$page->post_title.'</a>';
 
 						if( $count != count($pages) ){
 							echo  ', ';
 						}
 					}
 				}
-			else:
-				return false;
 			endif;
 
 	    }

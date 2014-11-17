@@ -8,6 +8,7 @@ class AesopMapComponentAdmin {
 
 	public function __construct(){
 
+<<<<<<< HEAD
 		// old meta
 		// @todo - retire before 1.3 goes out
 		add_filter( 'cmb_meta_boxes', array($this,'aesop_map_meta') );
@@ -15,6 +16,8 @@ class AesopMapComponentAdmin {
 		add_action('aesop_admin_styles', 		array($this, 'icon') );
 		add_filter('aesop_avail_components',	array($this, 'options'));
 
+=======
+>>>>>>> release/1.3
 		// new maps
 		add_action( 'add_meta_boxes', 					array($this,'new_map_box') );
 		add_action( 'admin_enqueue_scripts', 			array($this,'new_map_assets') );
@@ -25,75 +28,44 @@ class AesopMapComponentAdmin {
 		add_action( 'wp_ajax_upgrade_marker_meta', 		array($this, 'upgrade_marker_meta' ));
 		add_action( 'admin_head',						array($this, 'upgrade_click_handle'));
 
+<<<<<<< HEAD
+=======
+		add_filter( 'aesop_avail_components',			array($this, 'options'));
+		add_action( 'aesop_admin_styles', 				array($this, 'icon'));
+
+>>>>>>> release/1.3
 	}
 
 	/**
 	*
-	*	Create metabox to store coordinates for maps
-	*	@since 1.0
-	*	@todo map these to the new map meta keys and retire this beofre 1.3 goes out
+	*
+	*	Enqueue assets used for map but only on post pages
+	*
+	*	@since 1.3
 	*/
-	function aesop_map_meta( array $meta_boxes ) {
+	function new_map_assets($hook){
 
-		$opts = array(
-			array(
-				'id'			=> 'aesop_map_start',
-				'name'			=> __('Starting Coordinates', 'aesop-core'),
-				'type'			=> 'text',
-			),
-			array(
-				'id'			=> 'aesop_map_component_zoom',
-				'name'			=> __('Default Zoom Level', 'aesop-core'),
-				'type'			=> 'text',
-				'desc'			=> __('The larger the number, the more zoomed in the default will be. Limit is 20. Default is 12.','aesop-core')
-			),
-			array(
-				'id' 			=> 'aesop_map_component_locations',
-				'name' 			=> __('Map Markers', 'aesop-core'),
-				'type' 			=> 'group',
-				'repeatable'     => true,
-				'repeatable_max' => 20,
-				'desc'			=> __('Assign latitude and longitude for each marker.', 'aesop-core'),
-				'fields' 		=> array(
-					array(
-						'id' 	=> 'lat',
-						'name' 	=> __('Latitude', 'aesop-core'),
-						'type' 	=> 'text',
-						'cols'	=> 6
-					),
-					array(
-						'id' 	=> 'long',
-						'name' 	=> __('Longitude', 'aesop-core'),
-						'type' 	=> 'text',
-						'cols'	=> 6
-					),
-					array(
-						'id' 	=> 'content',
-						'name' 	=> __('Marker Text', 'aesop-core'),
-						'type' 	=> 'textarea',
-						'cols'	=> 12
-					)
-				)
-			),
-		);
+		if ( $hook == 'post.php' || $hook == 'post-new.php' ) {
 
-		$meta_boxes[] = array(
-			'title' 	=> __('Map Component Locations', 'aesop-core'),
-			'pages' 	=> apply_filters('aesop_map_meta_location','post'),
-			'context' 	=> 'side',
-			'fields' 	=> $opts
-		);
-
-		return $meta_boxes;
+			wp_enqueue_script('google-maps','//maps.googleapis.com/maps/api/js?libraries=places&sensor=false');
+			wp_enqueue_script('aesop-map-script',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js');
+			wp_enqueue_script('jquery-geocomplete',AI_CORE_URL.'/admin/assets/js/vendor/jquery.geocomplete.min.js');
+			wp_enqueue_style('aesop-map-style',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.css', AI_CORE_VERSION, true);
+		}
 
 	}
 
+
 	/**
+<<<<<<< HEAD
 	*
+=======
+>>>>>>> release/1.3
 	*	Create the options for the shortcode that gets created when stickky maps is activated
 	*	This lets the user use the user interface to add teh specific points in the story that the map should jump markers
 	*
 	*	@since 1.3
+	*	@subpackage Component API
 	*	@param $shortcodes array array of shortcodes to return
 	*	@return return our own options merged into the aesop availabel optoins array
 	*/
@@ -105,20 +77,11 @@ class AesopMapComponentAdmin {
 				'type' 					=> 'single', // single - wrap
 				'atts' 					=> array(
 					'title' 			=> array(
-						'type'			=> 'text_small', // a small text field
+						'type'			=> 'text', // a small text field
 						'default' 		=> '',
 						'desc' 			=> __('Title', 'aesop-core'),
 						'tip'			=> __('By default we\'ll display an H2 heading with the text you specify here.','aesop-core')
 					),
-					/*
-					'location' 				=> array(
-						'type'			=> 'select', // a select dropdown 
-						'values' 		=> self::get_markers_for_option_array(),
-						'default' 		=> '',
-						'desc' 			=> __('Choose a marker to display', 'aesop-core'),
-						'tip'			=> __('By default an H2 heading will be used. You can optionally hide this completely but retain the scroll to point in the map.','aesop-core')
-					),
-					*/
 					'hidden' 				=> array(
 						'type'			=> 'select', // a select dropdown 
 						'values' 		=> array(
@@ -142,6 +105,7 @@ class AesopMapComponentAdmin {
 
 		return array_merge( $shortcodes, $custom );
 
+<<<<<<< HEAD
 	}
 
 	/**
@@ -158,14 +122,20 @@ class AesopMapComponentAdmin {
 			wp_enqueue_script('jquery-geocomplete',AI_CORE_URL.'/admin/assets/js/vendor/jquery.geocomplete.min.js');
 			wp_enqueue_style('aesop-map-style',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.css', AI_CORE_VERSION, true);
 		}
+=======
+>>>>>>> release/1.3
 	}
 
 	/**
 	*
+<<<<<<< HEAD
 	*
 	*	Set a custom icon for our new map marker shortcode
+=======
+	*	Add an icon to our placeholder
+	*	@subpackage Component API
+>>>>>>> release/1.3
 	*	@since 1.3
-	*
 	*/
 	function icon(){
 
@@ -173,16 +143,25 @@ class AesopMapComponentAdmin {
 		$slug = 'map_marker'; // name of component
 
 		wp_add_inline_style('ai-core-styles', '#aesop-generator-wrap li.'.$slug.' {display:none;} #aesop-generator-wrap li.'.$slug.' a:before {content: "'.$icon.'";}');
+<<<<<<< HEAD
 	}
 
 	/**
+=======
+
+	}
+
+	/**
+	*
+	*
+>>>>>>> release/1.3
 	*	New metabox to select map markers on the map
 	*
 	*	@since 1.3
 	*/
 	function new_map_box(){
 
-		$screens = apply_filters('aesop_map_meta_location',array( 'post' ) );
+		$screens = apply_filters('aesop_map_meta_location', array( 'post' ) );
 
 		foreach ( $screens as $screen ) {
 			add_meta_box('ase_map_component',__( 'Map Locations', 'aesop-core' ),array($this,'render_map_box'), $screen);
@@ -196,42 +175,28 @@ class AesopMapComponentAdmin {
 	* 	@param WP_Post $post The post object.
 	*	@since 1.3
 	*
-	* 	@todo - save map markers, currently a button just to retrieve, shoudl run on post_save ?
-	* 	@todo - retrieve any markers previously saved and add them to the map for backwards compatibility
-	*	@todo - we need a way for the user to enter text in the popup called "Marker Text"
 	*/
 	function render_map_box( $post ){
 
 		echo '<div class="aesop-map-data" style="display: hidden;">';
-		wp_nonce_field( 'ase_map_meta', 'ase_map_meta_nonce' );
+			wp_nonce_field( 'ase_map_meta', 'ase_map_meta_nonce' );
 		echo '</div>';
 
 		$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
-
-		// this is just a example button as a trigger to get all the makers
-		// maybe this should be tied into post_save or something?
-		// check console after clicking
 
 		echo "Starting location: <input type='text' id='aesop-map-address'/>";
 		echo __('<em>Hint: Type to search for locations</em>','aesop-core');
 		echo '<div id="aesop-map" style="height:350px;"></div>';
 
-		$ase_map_locations = get_post_meta( $post->ID, 'ase_map_component_locations' );
-		$ase_map_start_point = get_post_meta( $post->ID, 'ase_map_component_start_point', true );
-		$ase_map_zoom = get_post_meta( $post->ID, 'ase_map_component_zoom', true);
+		$ase_map_locations 		= get_post_meta( $post->ID, 'ase_map_component_locations' );
+		$ase_map_start_point 	= get_post_meta( $post->ID, 'ase_map_component_start_point', true );
+		$get_map_zoom 			= get_post_meta( $post->ID, 'ase_map_component_zoom', true);
 
-		if ( empty ( $ase_map_start_point ) ) {
-			$ase_map_start_point = [29.76, -95.38];
-		} else {
-			$ase_map_start_point = [$ase_map_start_point['lat'],$ase_map_start_point['lng']];
-		}
+		$ase_map_start_point 	= empty ( $ase_map_start_point ) ? [29.76, -95.38] : [$ase_map_start_point['lat'],$ase_map_start_point['lng']];
+		$ase_map_zoom 			= empty ( $get_map_zoom ) ? 12 : $get_map_zoom;
 
-		if ( empty ( $ase_map_zoom ) ) {
-			$ase_map_zoom = 12;
-		}
-
-		$ase_map_start_point = json_encode($ase_map_start_point);
-		$ase_map_locations = json_encode($ase_map_locations);
+		$ase_map_start_point 	= json_encode($ase_map_start_point);
+		$ase_map_locations 		= json_encode($ase_map_locations);
 
 		?>
 			<!-- Aesop Maps -->
@@ -240,7 +205,7 @@ class AesopMapComponentAdmin {
 				jQuery(document).ready(function(){
 
 					var start_point = <?php echo $ase_map_start_point; ?>;
-					var start_zoom = <?php echo $ase_map_zoom; ?>;
+					var start_zoom = <?php echo absint($ase_map_zoom); ?>;
 
 					var map = L.map('aesop-map',{
 						scrollWheelZoom: false,
@@ -255,13 +220,13 @@ class AesopMapComponentAdmin {
 						var lng = result.geometry.location.B;
 						map.panTo(new L.LatLng(lat,lng));
 						setMapCenter(lat,lng);
-  				});
+  					});
 
 					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo esc_attr($mapboxid);?>/{z}/{x}/{y}.png', {
 						maxZoom: 20
 					}).addTo(map);
 
-					<?php if ( ! empty( $ase_map_locations )) : ?>
+					<?php if ( ! empty( $ase_map_locations ) ) : ?>
 						var ase_map_locations = <?php echo $ase_map_locations; ?>
 					<?php endif; ?>
 
@@ -331,8 +296,8 @@ class AesopMapComponentAdmin {
 
 					            }).bindPopup("\
 					            	<input type='text' name='ase_marker_text[]' value='Location Title'>\
-					            	<input type='button' value='Update' class='marker-update-button'/>\
-					            	<input type='button' value='Delete' class='marker-delete-button'/>\
+					            	<a class='marker-update-button dashicons dashicons-yes'/></a>\
+					            	<a class='marker-delete-button dashicons dashicons-trash'/></a>\
 					            	");
 
 					            marker.on('popupopen', onPopupOpen);
@@ -349,60 +314,60 @@ class AesopMapComponentAdmin {
 					// open popup
 					function onPopupOpen() {
 
-				    var tempMarker = this;
+					    var tempMarker = this;
 
-				    // To remove marker on click of delete button in the popup of marker
-				    jQuery('.marker-delete-button:visible').click(function () {
-				    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').remove();
-				      map.removeLayer(tempMarker);
-				    });
+					    // To remove marker on click of delete button in the popup of marker
+					    jQuery('.marker-delete-button:visible').click(function () {
+					    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').remove();
+					      	map.removeLayer(tempMarker);
+					    });
 
-				    // Update the title of the location
-				    jQuery('.marker-update-button:visible').click(function (t) {
-				    	var title = t.target.previousElementSibling.value;
-				    	var tdata = encodeMarkerData(tempMarker._latlng.lat, tempMarker._latlng.lng, title);
-				    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').val(tdata);
-				    	tempMarker.options.title = title;
-				    	tempMarker.closePopup();
-				    	tempMarker.bindPopup("\
-					            	<input type='text' name='ase_marker_text[]' value='" + title + "'>\
-					            	<input type='button' value='Update' class='marker-update-button'/>\
-					            	<input type='button' value='Delete' class='marker-delete-button'/>\
-					            	");
-				    });
+					    // Update the title of the location
+					    jQuery('.marker-update-button:visible').click(function (t) {
+					    	var title = t.target.previousElementSibling.value;
+					    	var tdata = encodeMarkerData(tempMarker._latlng.lat, tempMarker._latlng.lng, title);
+					    	jQuery('input[data-marker="' + tempMarker._leaflet_id + '"]').val(tdata);
+					    	tempMarker.options.title = title;
+					    	tempMarker.closePopup();
+					    	tempMarker.bindPopup("\
+						            	<input type='text' name='ase_marker_text[]' value='" + title + "'>\
+						            	<a class='marker-update-button dashicons dashicons-yes'/></a>\
+						            	<a class='marker-delete-button dashicons dashicons-trash'/></a>\
+						            	");
+					    });
 					}
 
 					// create map marker
 					function createMapMarker(latlng, title) {
-            marker = L.marker(latlng, {
-              title: title,
-              alt: title,
-              riseOnHover: true,
-              draggable: true,
-            }).bindPopup("\
-            	<input type='text' name='ase_marker_text[]' value='" + title + "'>\
-            	<input type='button' value='Update' class='marker-update-button'/>\
-            	<input type='button' value='Delete' class='marker-delete-button'/>\
-            	");
-            marker.on('popupopen', onPopupOpen);
-            marker.on('dragend', onMarkerDrag);
-            return marker;
+			            marker = L.marker(latlng, {
+			              	title: title,
+			              	alt: title,
+			              	riseOnHover: true,
+			              	draggable: true,
+			            }).bindPopup("\
+			            	<input type='text' name='ase_marker_text[]' value='" + title + "'>\
+			            	<a class='marker-update-button dashicons dashicons-yes'/></a>\
+			            	<a class='marker-delete-button dashicons dashicons-trash'/></a>\
+			            	");
+			            marker.on('popupopen', onPopupOpen);
+			            marker.on('dragend', onMarkerDrag);
+			            return marker;
 					}
 
 					function getAllMarkers() {
-				    var allMarkersObjArray = []; // for marker objects
-				    var allMarkersGeoJsonArray = []; // for readable geoJson markers
-				    jQuery.each(map._layers, function (ml) {
-			        if (map._layers[ml].feature) {
-			          allMarkersObjArray.push(this)
-			          allMarkersGeoJsonArray.push(JSON.stringify(this.toGeoJSON()))
-			        }
-				    })
+					    var allMarkersObjArray = []; // for marker objects
+					    var allMarkersGeoJsonArray = []; // for readable geoJson markers
+					    jQuery.each(map._layers, function (ml) {
+					        if (map._layers[ml].feature) {
+					          	allMarkersObjArray.push(this)
+					          	allMarkersGeoJsonArray.push(JSON.stringify(this.toGeoJSON()))
+					        }
+					    })
 					}
 
 					// let's create a hidden form element for the marker
 					function createMarkerField(mid, mdata) {
-					  jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-locations[]" data-ase="map" data-marker="' + mid + '" value="' + mdata + '">');
+					  	jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-locations[]" data-ase="map" data-marker="' + mid + '" value="' + mdata + '">');
 					}
 
 					function updateMarkerField(m) {
@@ -424,8 +389,6 @@ class AesopMapComponentAdmin {
 					function decodeMarkerData(mdata) {
 						return decodeURIComponent(JSON.parse(mdata));
 					}
-
-					jQuery('.get-markers').on('click', getAllMarkers);
 				});
 			</script>
 		<?php
@@ -438,7 +401,6 @@ class AesopMapComponentAdmin {
 	* 	@param int $post_id The ID of the post being saved.
 	*	@since 1.3
 	*
-	*	@todo data needs to be saved
 	*/
 	function save_map_box( $post_id ) {
 
@@ -477,55 +439,28 @@ class AesopMapComponentAdmin {
 			$zoom = json_decode(urldecode($_POST['ase-map-component-zoom']), true);
 			update_post_meta( $post_id, 'ase_map_component_zoom', $zoom);
 		}
+<<<<<<< HEAD
+=======
+
+>>>>>>> release/1.3
 	}
 
 	/**
 	*
 	*
+<<<<<<< HEAD
 	*	Get teh available markers for this post and create an option array to use in the optoin function above
-	*
-	*	@since 1.3
-	*/
-	function get_markers_for_option_array($postid = 0) {
-
-		if ( empty($postid) )
-			$postid = get_the_ID();
-
-		$markers = get_post_meta( $postid, 'aesop_map_component_locations', false );
-
-
-		$array = array();
-
-		if ( $markers ):
-
-			foreach( $markers as $marker ){
-
-				$lat 	= $marker['lat'];
-				$long 	= $marker['long'];
-
-				$mark 	= sprintf('%s,%s',$lat,$long);
-
-				array_push( $array, array(
-		            'value' => $mark,
-		            'name' 	=> !empty($marker['content']) ? esc_attr($marker['content']) : 'Marker'
-		        ));
-			}
-
-			return $array;
-
-		endif;
-	}
-
-	/**
+=======
 	*	Map the old map post meta keys to the new map post meta keys to preserve backwards compatibility
 	*	when the user updates to 1.3
+>>>>>>> release/1.3
 	*
 	*	@since 1.3
-	*	@todo uncomment the version conditional before 1.3 goes live
 	*/
 	function upgrade_map_notice(){
 
-		if( get_option('ase_upgraded_to') < AI_CORE_VERSION ) {
+		// only run if we have markers and have never upgraded
+		if ( get_option('ase_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_old_markers() ) {
 
 			$out = '<div class="error"><p>';
 
@@ -539,16 +474,54 @@ class AesopMapComponentAdmin {
 	}
 
 	/**
+<<<<<<< HEAD
+	*	Map the old map post meta keys to the new map post meta keys to preserve backwards compatibility
+	*	when the user updates to 1.3
+=======
+	*
+	*	Check to see if our old post meta exists
+	*	if it does exist then proceed with the upgrade
+>>>>>>> release/1.3
+	*
+	*	@since 1.3
+	*	@return bool true if old meta exists, false if not
+	*/
+	function aesop_check_for_old_markers(){
+
+		$posts = get_posts( array( 'post_type' => array('page', 'post'), 'posts_per_page' => -1 ) );
+
+		$return = '';
+
+		if ( $posts ) :
+
+			foreach( $posts as $post ) {
+
+				$meta = get_post_meta( get_the_ID(), 'aesop_map_component_locations', true );
+
+				if ( ! empty ( $meta ) )
+					$return = 'true';
+				else
+					$return = 'false';
+			}
+
+		endif;
+
+		return $return;
+
+	}
+
+	/**
 	*
 	*	When the user starts the upgrade process let's run a function to map the old meta to the new meta
 	*
 	*	@since 1.3
-	*	@todo map the new meta to the old meta
 	*/
 	function upgrade_marker_meta(){
 
+		check_ajax_referer( 'aesop-map-upgrade', 'security' );
+
 		// get the posts with the maps shortode
-		$posts = get_posts(array ('post_type' => array ( 'page', 'post' ), 'posts_per_page' => -1 ));
+		$posts = get_posts( array( 'post_type' => array('page', 'post'), 'posts_per_page' => -1 ) );
 
 		$count = 0;
 
@@ -558,7 +531,7 @@ class AesopMapComponentAdmin {
 
 				// at this point we have an array of posts that have our shortcodes
 				// now let's loop through the map meta in this post and map to the new meta
-				
+
 				$old_locations = get_post_meta( $id, 'aesop_map_component_locations' );
 				if ( ! empty ( $old_locations ) ) {
 					foreach( $old_locations as $location ){
@@ -609,7 +582,10 @@ class AesopMapComponentAdmin {
 	*/
 	function upgrade_click_handle(){
 
-		//if( get_option('ai_core_version') >= 1.3 ) { ?>
+		$nonce = wp_create_nonce('aesop-map-upgrade');
+
+		// only run if we have markers and have never upgraded
+		if ( get_option('ase_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_old_markers() ) { ?>
 			<!-- Aesop Upgrade Map Meta -->
 			<script>
 				jQuery(document).ready(function(){
@@ -618,19 +594,20 @@ class AesopMapComponentAdmin {
 				  		e.preventDefault();
 
 				  		var data = {
-				            action: 'upgrade_marker_meta'
+				            action: 'upgrade_marker_meta',
+				            security: '<?php echo $nonce;?>'
 				        };
 
 					  	jQuery.post(ajaxurl, data, function(response) {
 					  		if( response ){
-					        location.reload();
+					        	location.reload();
 					  		}
 					    });
 
 				    });
 				});
 			</script>
-		<?php // }
+		<?php }
 	}
 
 }

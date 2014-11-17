@@ -78,22 +78,6 @@ if (!function_exists('aesop_content_shortcode')){
 		// floater positoin
 		$floaterposition = $atts['floaterposition'] ? sprintf('floater-%s', $atts['floaterposition']) : false;
 
-		// floater media
-		$allowed_html = array(
-			'a' 		=> array(
-			    'href' 	=> array(),
-			    'title' => array()
-			),
-			'img'		=> array(
-				'src' 	=> array(),
-				'alt'	=> array()
-			),
-			'br' 		=> array(),
-			'em' 		=> array(),
-			'strong' 	=> array()
-		);
-		$floatermedia = wp_kses($atts['floatermedia'], apply_filters('aesop_content_allowed_html',$allowed_html));
-
 		ob_start();
 
 		do_action('aesop_cbox_before'); //action
@@ -142,7 +126,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 						if ( $atts['floatermedia'] && !wp_is_mobile() ) { ?>
 
-							<div class="aesop-content-component-floater <?php echo $floaterposition;?>" data-speed="10"><?php echo $floatermedia;?></div>
+							<div class="aesop-content-component-floater <?php echo $floaterposition;?>" data-speed="10"><?php echo aesop_component_media_filter($atts['floatermedia']);?></div>
 
 						<?php } ?>
 

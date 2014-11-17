@@ -134,7 +134,7 @@
     overflow: hidden;
     position: absolute;
     left: 30px;
-    top: 60px;
+    top: 30px;
     right: 30px;
     bottom: 30px;
     background: @generator--background;
@@ -214,10 +214,11 @@
             position:absolute;
             bottom:0;
             right:0;
-            background:@generator--bg-accent;
+            background:darken(@generator--bg-accent,5);
             left:63%;
             padding:15px;
             border-left:1px solid @border;
+            border-top:1px solid darken(@generator--bg-accent,10);
             .box-sizing(border-box);
         }
 
@@ -266,7 +267,7 @@
 
         input,
         select {
-            font-size:1.25em;
+            //font-size:1.25em;
             line-height: 1.4em;
             height:32px;
         }
@@ -282,13 +283,18 @@
 
         input,
         textarea {
-            border: 1px solid lighten(@border,5);
-            border-radius:5px;
+            border: 1px solid fadeout(white,20);
+            border-radius:3px;
             position: relative;
+            border-bottom:1px solid #f0f0f0;
+            border-right:1px solid #f0f0f0;
+            .transition(border .25s ease);
+            .box-shadow(inset 1px 1px 0 rgba(0,0,0,.2));
 
             &:focus {
-                border-color:@generator--background;
+                border-color:fadeout(@link,80);
                 outline:none;
+                box-shadow:none;
             }
         }
         select {
@@ -298,6 +304,12 @@
             border-radius:2px;
             width: 60%;
             position: relative;
+
+            &:focus {
+                box-shadow:none;
+                outline:none;
+                border:1px solid fadeout(@link,80);
+            }
         }
 
         textarea {
@@ -314,11 +326,12 @@
             border-color:transparent;
             box-shadow:none;
             left: 5px;
-            top:-2px;
+            top:-1px;
             width:134px;
             font-size:14px;
             text-transform: uppercase;
             -webkit-font-smoothing: antialiased;
+            height:30px;
             .box-sizing(border-box);
 
             &:hover {
@@ -343,6 +356,16 @@
 .aesop-generator-mark {
     position: absolute;
     bottom:0;
+    left:20px;
+    color:lighten(@desc,35);
+
+    a {
+        color:fadeout(@link,35);
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 /*
@@ -388,7 +411,7 @@ Don't need small height mod anymore due to making the icons smaller
     .aesop-content-floaterposition,
     .aesop-content-floateroffset,
     .aesop-content-floaterdirection {
-        background:lighten(@generator--bg-accent,3);
+        background:darken(@generator--bg-accent,3);
     }
 
     // 1st

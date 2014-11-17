@@ -900,7 +900,7 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'select',
 						'default'	=> 'off',
 						'desc'		=> __('Sticky Maps','aesop-core'),
-						'tip'		=> __('By choosing a position the map will follow the scrolling of the story provided that you have added the IDs as described below.<br /><br />Add any HTML element to your post (like an H2 heading) with an id of <code>aesop-map-marker-1</code>. This will indicate teh first map marker position. Add as many ID\'s as there are markers. The order follow the order that you placed the markers in.','aesop-core'),
+						'tip'		=> __('By choosing a position the map will follow the scrolling of the story with the markers that you\'ll add below.<br /><br />After toggling a location, a new Map Marker component will show up. Add a marker for each stop in the story that you would ike the map to start at. Stops are made in the order that you added the markers in the map admin.','aesop-core'),
 						'values'	=> array(
 							array(
 								'value' => 'off',
