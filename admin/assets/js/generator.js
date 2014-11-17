@@ -195,11 +195,7 @@ jQuery(document).ready(function($) {
 			$('#aesop-generator-result').val($('#aesop-generator-result').val() + $('#aesop-generator-content').val() + '[/' + aesop_compatibility_mode_prefix + queried_shortcode + ']');
 		}
 
-<<<<<<< HEAD
-   if ( typeof tinyMCE !== 'undefined' && tinyMCE.activeEditor ) {
-=======
     if ( typeof tinyMCE !== 'undefined' && tinyMCE.activeEditor ) {
->>>>>>> release/1.3
       var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
       $(editing).replaceWith('<p></p>');
     }
@@ -220,7 +216,7 @@ jQuery(document).ready(function($) {
 // media uploader
 var file_frame;
 
-jQuery('.aesop-upload-img').live('click', function( event ){
+jQuery('#aesop-upload-img').live('click', function( event ){
 
     event.preventDefault();
 
@@ -241,9 +237,8 @@ jQuery('.aesop-upload-img').live('click', function( event ){
 
     // When an image is selected, run a callback.
     file_frame.on( 'select', function() {
-      attachment = file_frame.state().get('selection').first().toJSON();
-      mediaTarget = '.' + event.currentTarget.parentElement.className;
-  		jQuery(mediaTarget + ' .aesop-generator-attr-media_upload').val(attachment.url);
+      	attachment = file_frame.state().get('selection').first().toJSON();
+  		jQuery('.aesop-generator-attr-media_upload').val(attachment.url);
     });
 
     // Finally, open the modal

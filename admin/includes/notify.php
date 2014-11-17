@@ -20,7 +20,7 @@ class AesopNotifyonActivation {
 
 			$out = '<div class="updated"><p>';
 
-			$out .= __( 'Thanks for checking out Aesop! Get started by going to any post and clicking the "Add Component" button. Refer to the Help tab while editing a post for more information', 'aesop-core' );
+			$out .= __( 'Thanks for checking out Aesop! Get started by going to any post and clicking the "Add Component" button. Refer to the Help tab while editing a post for more information.', 'aesop-core' );
 
 			$out .= '</p></div>';
 

@@ -1043,8 +1043,8 @@ class CMB_Select extends CMB_Field {
 	public function enqueue_styles() {
 
 		parent::enqueue_styles();
-		//wp_enqueue_style( 'select2', trailingslashit( CMB_URL ) . 'js/vendor/select2/select2.css' );
 
+		//wp_enqueue_style( 'select2', trailingslashit( CMB_URL ) . 'js/vendor/select2/select2.css' );
 	}
 
 	public function html() {

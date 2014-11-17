@@ -8,16 +8,6 @@ class AesopMapComponentAdmin {
 
 	public function __construct(){
 
-<<<<<<< HEAD
-		// old meta
-		// @todo - retire before 1.3 goes out
-		add_filter( 'cmb_meta_boxes', array($this,'aesop_map_meta') );
-
-		add_action('aesop_admin_styles', 		array($this, 'icon') );
-		add_filter('aesop_avail_components',	array($this, 'options'));
-
-=======
->>>>>>> release/1.3
 		// new maps
 		add_action( 'add_meta_boxes', 					array($this,'new_map_box') );
 		add_action( 'admin_enqueue_scripts', 			array($this,'new_map_assets') );
@@ -28,12 +18,9 @@ class AesopMapComponentAdmin {
 		add_action( 'wp_ajax_upgrade_marker_meta', 		array($this, 'upgrade_marker_meta' ));
 		add_action( 'admin_head',						array($this, 'upgrade_click_handle'));
 
-<<<<<<< HEAD
-=======
 		add_filter( 'aesop_avail_components',			array($this, 'options'));
 		add_action( 'aesop_admin_styles', 				array($this, 'icon'));
 
->>>>>>> release/1.3
 	}
 
 	/**
@@ -57,10 +44,6 @@ class AesopMapComponentAdmin {
 
 
 	/**
-<<<<<<< HEAD
-	*
-=======
->>>>>>> release/1.3
 	*	Create the options for the shortcode that gets created when stickky maps is activated
 	*	This lets the user use the user interface to add teh specific points in the story that the map should jump markers
 	*
@@ -105,36 +88,12 @@ class AesopMapComponentAdmin {
 
 		return array_merge( $shortcodes, $custom );
 
-<<<<<<< HEAD
-	}
-
-	/**
-	*	Enqueue assets used for map but only on post pages
-	*
-	*	@since 1.3
-	*/
-	function new_map_assets($hook){
-
-		if ( $hook == 'post.php' || $hook == 'post-new.php' ) {
-
-			wp_enqueue_script('google-maps','//maps.googleapis.com/maps/api/js?libraries=places&sensor=false');
-			wp_enqueue_script('aesop-map-script',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js');
-			wp_enqueue_script('jquery-geocomplete',AI_CORE_URL.'/admin/assets/js/vendor/jquery.geocomplete.min.js');
-			wp_enqueue_style('aesop-map-style',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.css', AI_CORE_VERSION, true);
-		}
-=======
->>>>>>> release/1.3
 	}
 
 	/**
 	*
-<<<<<<< HEAD
-	*
-	*	Set a custom icon for our new map marker shortcode
-=======
 	*	Add an icon to our placeholder
 	*	@subpackage Component API
->>>>>>> release/1.3
 	*	@since 1.3
 	*/
 	function icon(){
@@ -143,18 +102,12 @@ class AesopMapComponentAdmin {
 		$slug = 'map_marker'; // name of component
 
 		wp_add_inline_style('ai-core-styles', '#aesop-generator-wrap li.'.$slug.' {display:none;} #aesop-generator-wrap li.'.$slug.' a:before {content: "'.$icon.'";}');
-<<<<<<< HEAD
-	}
-
-	/**
-=======
 
 	}
 
 	/**
 	*
 	*
->>>>>>> release/1.3
 	*	New metabox to select map markers on the map
 	*
 	*	@since 1.3
@@ -439,21 +392,14 @@ class AesopMapComponentAdmin {
 			$zoom = json_decode(urldecode($_POST['ase-map-component-zoom']), true);
 			update_post_meta( $post_id, 'ase_map_component_zoom', $zoom);
 		}
-<<<<<<< HEAD
-=======
 
->>>>>>> release/1.3
 	}
 
 	/**
 	*
 	*
-<<<<<<< HEAD
-	*	Get teh available markers for this post and create an option array to use in the optoin function above
-=======
 	*	Map the old map post meta keys to the new map post meta keys to preserve backwards compatibility
 	*	when the user updates to 1.3
->>>>>>> release/1.3
 	*
 	*	@since 1.3
 	*/
@@ -474,14 +420,9 @@ class AesopMapComponentAdmin {
 	}
 
 	/**
-<<<<<<< HEAD
-	*	Map the old map post meta keys to the new map post meta keys to preserve backwards compatibility
-	*	when the user updates to 1.3
-=======
 	*
 	*	Check to see if our old post meta exists
 	*	if it does exist then proceed with the upgrade
->>>>>>> release/1.3
 	*
 	*	@since 1.3
 	*	@return bool true if old meta exists, false if not

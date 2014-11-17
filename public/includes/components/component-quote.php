@@ -1,11 +1,7 @@
 <?php
 
 /**
-<<<<<<< HEAD
- 	* Quote component creates a styled quote with large type
-=======
  	* Creates a styled quote with large type
->>>>>>> release/1.3
  	*
  	* @since    1.0.0
 */

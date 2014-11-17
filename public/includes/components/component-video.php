@@ -28,12 +28,8 @@ if (!function_exists('aesop_video_shortcode')){
 	    $atts = apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
 
 	    $contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
-<<<<<<< HEAD
-	    $widthstyle = $atts['width'] ? sprintf("style=max-width:%s;",$atts['width']) : false;
-=======
 
 	    $widthstyle = $atts['width'] && 'center' !== $atts['align'] ? sprintf("style=width:%s;",$atts['width']) : sprintf("style=max-width:%s;",$atts['width']);
->>>>>>> release/1.3
 
 	    // width constraint class if
 	    $caption = $atts['caption'] ? sprintf('<div class="aesop-video-component-caption aesop-component-align-%s" %s>%s</div>',$atts['align'], $widthstyle, $atts['caption']) : false;
@@ -83,10 +79,6 @@ if (!function_exists('aesop_video_shortcode')){
 		    	});
 	    	</script>
     	<?php }
-<<<<<<< HEAD
-
-=======
->>>>>>> release/1.3
 	    do_action('aesop_video_before'); //action
 	    ?>
 	    <div id="aesop-video-<?php echo esc_attr( $unique );?>" class="aesop-component aesop-video-component aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $classes );?> <?php echo sanitize_html_class( $controlstatus );?> <?php echo sanitize_html_class( $contentwidth );?> <?php echo sanitize_html_class( $vineStagramClass );?> <?php echo sanitize_html_class( $vineStagramAlign );?>">
@@ -112,19 +104,9 @@ if (!function_exists('aesop_video_shortcode')){
 		            case 'viddler':
 		                printf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" %s mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>',esc_attr( $atts['id'] ), esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
 		                break;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> release/1.3
 		           	case 'vine':
 		                printf( '<iframe class="vine-embed" src="//vine.co/v/%s/embed/simple" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',esc_attr( $atts['id'] ) );
 		                break;
-<<<<<<< HEAD
-
-
-=======
->>>>>>> release/1.3
 		           	case 'wistia':
 		                printf( '
 							<div id="wistia_%s" class="wistia_embed" style="width:640px;height:360px;">&nbsp;</div>
@@ -142,10 +124,6 @@ if (!function_exists('aesop_video_shortcode')){
 		    </div>
 
 	   	 	<?php echo $caption;
-<<<<<<< HEAD
-
-=======
->>>>>>> release/1.3
 	    	do_action('aesop_video_inside_bottom'); //action ?>
 		</div>
 
