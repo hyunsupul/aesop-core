@@ -26,9 +26,14 @@ if (!function_exists('aesop_video_shortcode')){
 	    	'vidheight' => ''
 	    );
 	    $atts = apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
+
 	    $contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
-	    $widthstyle = $atts['width'] ? sprintf("style=max-width:%s;",$atts['width']) : false;
+
+	    $widthstyle = $atts['width'] && 'center' !== $atts['align'] ? sprintf("style=width:%s;",$atts['width']) : sprintf("style=max-width:%s;",$atts['width']);
+
+	    // width constraint class if
 	    $caption = $atts['caption'] ? sprintf('<div class="aesop-video-component-caption aesop-component-align-%s" %s>%s</div>',$atts['align'], $widthstyle, $atts['caption']) : false;
+
 	    if ( 'vine' == $atts['src'] || 'instagram' == $atts['src'] ) {
 	    	$vineStagramClass = 'aesop-vine-stagram-container';
 			$vineStagramAlign = $atts['align'] ? sprintf('aesop-vine-stagram-container-%s',$atts['align']) : false;
@@ -36,18 +41,23 @@ if (!function_exists('aesop_video_shortcode')){
 	    	$vineStagramAlign = null;
 	    	$vineStagramClass = null;
 	    }
+
 	    $loopstatus 	= 'on' == $atts['loop'] ? true : false;
 	    $autoplaystatus = 'on' == $atts['autoplay'] ? true : false;
 	    $controlstatus = 'on' == $atts['controls'] ? 'controls-visible' : 'controls-hidden';
 	    $iframe_height = $atts['vidheight'] ? sprintf('height="%s"', preg_replace('/[^0-9]/', '', $atts['vidheight']) ) : sprintf('height=""');
 	    $iframe_width = $atts['vidwidth'] ? sprintf('width="%s"', preg_replace('/[^0-9]/', '', $atts['vidwidth']) ) : sprintf('width=""');
 	    $iframe_size = sprintf('%s %s' ,$iframe_height, $iframe_width);
+
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'video', '' ) : null;
+
 		// waypoint filter
 		$point 		= 'bottom-in-view';
 		$waypoint 	= apply_filters('aesop_video_component_waypoint', $point, $unique);
+
 	    ob_start();
+
 	    if ( 'on' == $atts['viewstart'] && 'self' == $atts['src'] ) { ?>
 	    	<script>
 		    	jQuery(document).ready(function(){
@@ -71,7 +81,7 @@ if (!function_exists('aesop_video_shortcode')){
     	<?php }
 	    do_action('aesop_video_before'); //action
 	    ?>
-	    <div id="aesop-video-<?php echo esc_attr( $unique );?>" class="aesop-component aesop-video-component <?php echo sanitize_html_class( $classes );?> <?php echo sanitize_html_class( $controlstatus );?> <?php echo sanitize_html_class( $contentwidth );?> <?php echo sanitize_html_class( $vineStagramClass );?> <?php echo sanitize_html_class( $vineStagramAlign );?>">
+	    <div id="aesop-video-<?php echo esc_attr( $unique );?>" class="aesop-component aesop-video-component aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $classes );?> <?php echo sanitize_html_class( $controlstatus );?> <?php echo sanitize_html_class( $contentwidth );?> <?php echo sanitize_html_class( $vineStagramClass );?> <?php echo sanitize_html_class( $vineStagramAlign );?>">
 
 	    	<?php do_action('aesop_video_inside_top'); //action ?>
 

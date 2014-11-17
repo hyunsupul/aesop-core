@@ -167,6 +167,7 @@
 // fullscreen video
 .aesop-video-component {
     height: auto;
+    .clearfix();
 
     &.controls-hidden {
 
@@ -228,6 +229,22 @@
         }
     }
 
+    &.aesop-component-align-left,
+    &.aesop-component-align-right {
+        position: relative;
+
+        .aesop-video-container {
+            margin-right:0;
+            margin-left:0;
+        }
+
+    }
+    &.aesop-component-align-left {
+        margin:0 15px 15px 15px;
+    }
+    &.aesop-component-align-right {
+        margin:0 15px 15px 15px;
+    }
 }
 
 // quote

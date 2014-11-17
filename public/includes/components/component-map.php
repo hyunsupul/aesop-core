@@ -119,23 +119,23 @@ class AesopMapComponent {
 						center: [<?php echo $start;?>]
 					});
 
-					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo $mapboxid;?>/{z}/{x}/{y}.png', {
+					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo esc_attr($mapboxid);?>/{z}/{x}/{y}.png', {
 						maxZoom: 20
 					}).addTo(map);
 
 					<?php
 					foreach( $markers as $marker ):
 
-						$lat 	= sanitize_text_field($marker['lat']);
-						$long 	= sanitize_text_field($marker['lng']);
+						$lat 	= $marker['lat'];
+						$long 	= $marker['lng'];
 						$text 	= $marker['title'] ? $marker['title'] : null;
 
-						$loc 	= sprintf('%s,%s',$lat,$long);
+						$loc 	= sprintf('%s,%s',esc_attr($lat),esc_attr($long));
 
 						// if market content is set run a popup
 						if ( $text ) { ?>
 
-							L.marker([<?php echo $loc;?>]).addTo(map).bindPopup("<?php echo $text;?>").openPopup();
+							L.marker([<?php echo $loc;?>]).addTo(map).bindPopup('<?php echo aesop_component_media_filter($text);?>').openPopup();
 
 						<?php } else { ?>
 

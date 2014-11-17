@@ -18,8 +18,8 @@ class AesopMapComponentAdmin {
 		add_action( 'wp_ajax_upgrade_marker_meta', 		array($this, 'upgrade_marker_meta' ));
 		add_action( 'admin_head',						array($this, 'upgrade_click_handle'));
 
-		add_action('aesop_admin_styles', 				array($this, 'icon') );
-		add_filter('aesop_avail_components',			array($this, 'options'));
+		add_filter( 'aesop_avail_components',			array($this, 'options'));
+		add_action( 'aesop_admin_styles', 				array($this, 'icon'));
 
 	}
 
@@ -48,6 +48,7 @@ class AesopMapComponentAdmin {
 	*	This lets the user use the user interface to add teh specific points in the story that the map should jump markers
 	*
 	*	@since 1.3
+	*	@subpackage Component API
 	*	@param $shortcodes array array of shortcodes to return
 	*	@return return our own options merged into the aesop availabel optoins array
 	*/
@@ -86,6 +87,21 @@ class AesopMapComponentAdmin {
 
 
 		return array_merge( $shortcodes, $custom );
+
+	}
+
+	/**
+	*
+	*	Add an icon to our placeholder
+	*	@subpackage Component API
+	*	@since 1.3
+	*/
+	function icon(){
+
+		$icon = '\f230'; //css code for dashicon
+		$slug = 'map_marker'; // name of component
+
+		wp_add_inline_style('ai-core-styles', '#aesop-generator-wrap li.'.$slug.' {display:none;} #aesop-generator-wrap li.'.$slug.' a:before {content: "'.$icon.'";}');
 
 	}
 
@@ -379,15 +395,6 @@ class AesopMapComponentAdmin {
 
 	}
 
-	function icon(){
-
-		$icon = '\f230'; //css code for dashicon
-		$slug = 'map_marker'; // name of component
-
-		wp_add_inline_style('ai-core-styles', '#aesop-generator-wrap li.'.$slug.' {display:none;} #aesop-generator-wrap li.'.$slug.' a:before {content: "'.$icon.'";}');
-
-	}
-
 	/**
 	*
 	*
@@ -398,7 +405,8 @@ class AesopMapComponentAdmin {
 	*/
 	function upgrade_map_notice(){
 
-		if( get_option('ase_upgraded_to') < AI_CORE_VERSION ) {
+		// only run if we have markers and have never upgraded
+		if ( get_option('ase_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_old_markers() ) {
 
 			$out = '<div class="error"><p>';
 
@@ -413,6 +421,38 @@ class AesopMapComponentAdmin {
 
 	/**
 	*
+	*	Check to see if our old post meta exists
+	*	if it does exist then proceed with the upgrade
+	*
+	*	@since 1.3
+	*	@return bool true if old meta exists, false if not
+	*/
+	function aesop_check_for_old_markers(){
+
+		$posts = get_posts( array( 'post_type' => array('page', 'post'), 'posts_per_page' => -1 ) );
+
+		$return = '';
+
+		if ( $posts ) :
+
+			foreach( $posts as $post ) {
+
+				$meta = get_post_meta( get_the_ID(), 'aesop_map_component_locations', true );
+
+				if ( ! empty ( $meta ) )
+					$return = 'true';
+				else
+					$return = 'false';
+			}
+
+		endif;
+
+		return $return;
+
+	}
+
+	/**
+	*
 	*	When the user starts the upgrade process let's run a function to map the old meta to the new meta
 	*
 	*	@since 1.3
@@ -422,7 +462,7 @@ class AesopMapComponentAdmin {
 		check_ajax_referer( 'aesop-map-upgrade', 'security' );
 
 		// get the posts with the maps shortode
-		$posts = get_posts(array ('post_type' => array ( 'page', 'post' ), 'posts_per_page' => -1 ));
+		$posts = get_posts( array( 'post_type' => array('page', 'post'), 'posts_per_page' => -1 ) );
 
 		$count = 0;
 
@@ -485,7 +525,8 @@ class AesopMapComponentAdmin {
 
 		$nonce = wp_create_nonce('aesop-map-upgrade');
 
-		if ( get_option('ase_upgraded_to') < AI_CORE_VERSION ) { ?>
+		// only run if we have markers and have never upgraded
+		if ( get_option('ase_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_old_markers() ) { ?>
 			<!-- Aesop Upgrade Map Meta -->
 			<script>
 				jQuery(document).ready(function(){
@@ -509,5 +550,6 @@ class AesopMapComponentAdmin {
 			</script>
 		<?php }
 	}
+
 }
 new AesopMapComponentAdmin;
