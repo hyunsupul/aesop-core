@@ -20,6 +20,45 @@ class AesopMapComponentAdmin {
 
 		add_filter( 'aesop_avail_components',			array($this, 'options'));
 		add_action( 'aesop_admin_styles', 				array($this, 'icon'));
+		add_filter('cmb_meta_boxes', 							array($this,'aesop_map_tiles' ));
+
+	}
+
+/**
+	 	* Adds custom gallery meta
+	 	*
+	 	* @since    1.0.0
+	*/
+	function aesop_map_tiles( array $meta_boxes ) {
+
+		$meta_boxes[] = array(
+			'title' 	=> __('Map Tiles', 'aesop-core'),
+			'pages' 	=> 'post',
+			'fields' 	=> array(
+				array(
+					'id'             => 'aesop_map_tiles',	
+					'type'           => 'select',
+					'desc'			=> __('Select from multiple map tiles -- the backdrop to your map. Free providers are below. <a href="http://mapbox.com/" target="_blank">Mapbox</a> offers a limited number of free tiles and awesome custom maps.','aesop-core'),
+					'cols'			=> 12,
+					'default'		=> 'mapbox',
+					'options' => array(
+        				'mapbox' => 'Mapbox',
+        				'hydda' => 'Hydda',
+        				'mq-sat' => 'MapQuest Satellite',
+        				'mq-sat-c' => 'MapQuest Satellite Clean',
+        				'acetate' => 'Acetate',
+        				'stamen-tonerlite' => 'Stamen Grayscale',
+        				'stamen-toner' => 'Stamen High Contrast',
+        				'stamen-w' => 'Stamen Watercolor',
+        				'stamen-w-c' => 'Stamen Watercolor Clean',
+        				'openc' => 'OpenCycleMap',
+        				'greenglobe' => 'GreenGlobe'
+    				)
+				)
+			)
+		);
+		
+		return $meta_boxes;
 
 	}
 
@@ -84,8 +123,7 @@ class AesopMapComponentAdmin {
 				)
 			)
 		);
-
-
+		
 		return array_merge( $shortcodes, $custom );
 
 	}
@@ -121,7 +159,7 @@ class AesopMapComponentAdmin {
 
 		}
 	}
-
+	
 	/**
 	* 	Render Meta Box content.
 	*
@@ -144,6 +182,7 @@ class AesopMapComponentAdmin {
 		$ase_map_locations 		= get_post_meta( $post->ID, 'ase_map_component_locations' );
 		$ase_map_start_point 	= get_post_meta( $post->ID, 'ase_map_component_start_point', true );
 		$get_map_zoom 			= get_post_meta( $post->ID, 'ase_map_component_zoom', true);
+		$tiles 					= get_post_meta( $post->ID, 'aesop_map_tiles', true);
 
 		$ase_map_start_point 	= empty ( $ase_map_start_point ) ? [29.76, -95.38] : [$ase_map_start_point['lat'],$ase_map_start_point['lng']];
 		$ase_map_zoom 			= empty ( $get_map_zoom ) ? 12 : $get_map_zoom;
@@ -175,11 +214,90 @@ class AesopMapComponentAdmin {
 						setMapCenter(lat,lng);
   					});
 
+			  <?php if ( 'hydda' == $tiles ) { ?>
+					L.tileLayer('http://{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png', {
+						minZoom: 0,
+						maxZoom: 18,
+						attribution: 'Tiles <a href="http://openstreetmap.se/" target="_blank">OSM Sweden</a> &mdash; Data &copy; <a href="http://openstreetmap.org">OSM</a>'
+					}).addTo(map);
+				<?php } elseif ( 'mq-sat' == $tiles ) { ?>
+					L.tileLayer('http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg', {
+						attribution: 'Tiles <a href="http://www.mapquest.com/">MapQuest</a>, NASA/JPL-Caltech, US Dept. of Ag.',
+						subdomains: '1234'
+					}).addTo(map);
+					L.tileLayer('http://{s}.tile.stamen.com/toner-hybrid/{z}/{x}/{y}.png', {
+						attribution: 'Tiles <a href="http://stamen.com">Stamen Design</a> &mdash; Data &copy; <a href="http://openstreetmap.org">OSM</a>',
+						subdomains: 'abcd',
+						minZoom: 0,
+						maxZoom: 20
+					}).addTo(map);
+				<?php } elseif ( 'mq-sat-c' == $tiles ) { ?>
+					L.tileLayer('http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg', {
+						attribution: 'Tiles <a href="http://www.mapquest.com/">MapQuest</a>, NASA/JPL-Caltech, US Dept. of Ag.',
+						subdomains: '1234'
+					}).addTo(map);
+				<?php } elseif ( 'acetate' == $tiles ) { ?>
+					L.tileLayer('http://a{s}.acetate.geoiq.com/tiles/acetate-hillshading/{z}/{x}/{y}.png', {
+						attribution: '&copy; Esri & Stamen, Data OSM & Natural Earth',
+						subdomains: '0123',
+						minZoom: 2,
+						maxZoom: 18
+					}).addTo(map);
+				<?php } elseif ( 'stamen-tonerlite' == $tiles ) { ?>
+					L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
+						attribution: 'Tiles <a href="http://stamen.com">Stamen Design</a> &mdash; Data &copy; <a href="http://openstreetmap.org">OSM</a>',
+						subdomains: 'abcd',
+						minZoom: 0,
+						maxZoom: 20
+					}).addTo(map);
+				<?php } elseif ( 'stamen-toner' == $tiles ) { ?>
+					L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png', {
+						attribution: 'Tiles <a href="http://stamen.com">Stamen Design</a> &mdash; Data &copy; <a href="http://openstreetmap.org">OSM</a>',
+						subdomains: 'abcd',
+						minZoom: 0,
+						maxZoom: 20
+					}).addTo(map);
+				<?php } elseif ( 'stamen-w' == $tiles ) { ?>
+					L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
+						attribution: 'Tiles <a href="http://stamen.com">Stamen Design</a> &mdash; Data &copy; <a href="http://openstreetmap.org">OSM</a>',
+						subdomains: 'abcd',
+						minZoom: 1,
+						maxZoom: 16
+					}).addTo(map);
+					L.tileLayer('http://{s}.tile.stamen.com/toner-hybrid/{z}/{x}/{y}.png', {
+						attribution: 'Tiles <a href="http://stamen.com">Stamen Design</a> &mdash; Data &copy; <a href="http://openstreetmap.org">OSM</a>',
+						subdomains: 'abcd',
+						minZoom: 0,
+						maxZoom: 20
+					}).addTo(map);
+				<?php } elseif ( 'stamen-w-c' == $tiles ) { ?>
+					L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
+						attribution: 'Tiles <a href="http://stamen.com">Stamen Design</a> &mdash; Data &copy; <a href="http://openstreetmap.org">OSM</a>',
+						subdomains: 'abcd',
+						minZoom: 1,
+						maxZoom: 16
+					}).addTo(map);
+				<?php } elseif ( 'openc' == $tiles ) { ?>
+				L.tileLayer('http://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png', {
+					attribution: '&copy; <a href="http://www.opencyclemap.org">OpenCycleMap</a>, &copy; <a href="http://openstreetmap.org">OSM</a>'
+					}).addTo(map);
+				<?php } elseif ( 'greenglobe' == $tiles) { ?>
+				L.tileLayer('http://tile.mtbmap.cz/mtbmap_tiles/{z}/{x}/{y}.png').addTo(map);
+				L.tileLayer('http://{s}.tile.stamen.com/toner-hybrid/{z}/{x}/{y}.png', {
+					attribution: 'Tiles <a href="http://stamen.com">Stamen Design</a>, <a href="http://openstreetmap.org">OSM</a>',
+					subdomains: 'abcd',
+					minZoom: 0,
+					maxZoom: 20
+					}).addTo(map);
+				<?php } elseif ( 'mapbox' == $tiles) { ?>
 					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo esc_attr($mapboxid);?>/{z}/{x}/{y}.png', {
 						maxZoom: 20
 					}).addTo(map);
-
-					<?php if ( ! empty( $ase_map_locations ) ) : ?>
+				<?php } else { ?>
+					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo esc_attr($mapboxid);?>/{z}/{x}/{y}.png', {
+						maxZoom: 20
+					}).addTo(map);
+				<?php } if ( ! empty( $ase_map_locations ) ) : ?>
 						var ase_map_locations = <?php echo $ase_map_locations; ?>
 					<?php endif; ?>
 
