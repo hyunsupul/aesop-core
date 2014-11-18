@@ -896,42 +896,6 @@ if(!function_exists('aesop_shortcodes')){
 						'desc' 		=> __( 'Height', 'aesop-core' ),
 						'tip'		=> __('The height of the map component. By default this is set to <em>500px</em>. Avoid using percentages with this option.','aesop-core')
 					),
-					'tiles' 			=> array(
-						'type'		=> 'select',
-						'values' 	=> array(
-							array(
-								'value' => 'mapbox',
-								'name'	=> __('Mapbox (ID Req&#39;d)', 'aesop-core')
-							),
-							array(
-								'value' => 'Stamen.TonerLite',
-								'name'	=> __('Stamen Grayscale', 'aesop-core')
-							),
-							array(
-								'value' => 'Stamen.Toner',
-								'name'	=> __('Stamen Grayscale High Contrast', 'aesop-core')
-							),
-							array(
-								'value' => 'Stamen.Watercolor',
-								'name'	=> __('Stamen Watercolor', 'aesop-core')
-							),
-							array(
-								'value' => 'MapQuestOpen.Satellite',
-								'name'	=> __('MapQuest Satellite', 'aesop-core')
-							),
-							array(
-								'value' => 'Acetate.all',
-								'name' => __('Acetate.all', 'aesop-core')
-							),
-							array(
-								'value' => 'hydda-full',
-								'name'	=> __('Hydda', 'aesop-core')
-							)
-						),
-						'default' 	=> 'Hydda',
-						'desc' 		=> __( 'Map Type', 'aesop-core' ),
-						'tip'		=> __('Choose your map tiles to change the look-and-feel of your map','aesop-core')
-					),
 					'sticky'		=> array(
 						'type'		=> 'select',
 						'default'	=> 'off',
