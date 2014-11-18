@@ -151,6 +151,8 @@ class AesopMapComponentAdmin {
 		$ase_map_start_point 	= json_encode($ase_map_start_point);
 		$ase_map_locations 		= json_encode($ase_map_locations);
 
+		$tiles 					= aesop_map_tile_provider($post->ID);
+
 		?>
 			<!-- Aesop Maps -->
 			<script>
@@ -175,7 +177,7 @@ class AesopMapComponentAdmin {
 						setMapCenter(lat,lng);
   					});
 
-					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo esc_attr($mapboxid);?>/{z}/{x}/{y}.png', {
+					L.tileLayer('<?php echo $tiles;?>', {
 						maxZoom: 20
 					}).addTo(map);
 

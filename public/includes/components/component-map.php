@@ -105,6 +105,8 @@ class AesopMapComponent {
 		$default_location 	= is_single();
 		$location 			= apply_filters( 'aesop_map_component_appears', $default_location );
 
+		$tiles = aesop_map_tile_provider($post->ID);
+
 		if ( function_exists('aesop_component_exists') && aesop_component_exists('map') && ( $location ) )  { ?>
 			<!-- Aesop Locations -->
 			<script>
@@ -119,7 +121,7 @@ class AesopMapComponent {
 						center: [<?php echo $start;?>]
 					});
 
-					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo esc_attr($mapboxid);?>/{z}/{x}/{y}.png', {
+					L.tileLayer('<?php echo $tiles;?>', {
 						maxZoom: 20
 					}).addTo(map);
 
