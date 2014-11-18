@@ -3,7 +3,7 @@
     padding:30px;
 
     h2 {
-        color:#d6d6d6;
+        color:@text;
     }
 }
 
@@ -19,6 +19,7 @@
     }
 }
 
+
 #jpb_vscbuttons, #jpb_vscbutton {
     position:absolute;
     z-index:999998;
@@ -27,17 +28,18 @@
 }
 
 #jpb_vscbuttons img, #jpb_vscbutton img {
-    background-color : #eee;
-    border: 1px solid #999;
+    background-color : red;
+    border: 1px solid red;
     border-radius: 3px;
     margin: 2px;
     padding: 2px;
 }
 
 #jpb_vscbuttons img:hover, #jpb_vscbutton img:hover {
-    background-color: #ccc;
-    border-color: #555;
+    background-color: red;
+    border-color: red;
 }
+
 
 // hide select
 .dk_toggle {
@@ -55,7 +57,7 @@
 
     li {
         margin:0;
-        width:33.333%;
+        width:25%;
         display: inline-block;
         vertical-align: top;
 
@@ -69,15 +71,17 @@
             padding: 20px 10px;
             cursor: pointer;
             text-decoration: none;
+            font-weight:bold;
 
             &:before {
                 content:'';
                 font-family: Dashicons;
-                font-size: 40px;
+                font-size: 34px;
                 position: relative;
-                margin: 20px auto 30px;
+                margin: 20px auto;
                 display: block;
                 width: 100%;
+                color:lighten(@text,5);
             }
 
             &.active {
@@ -87,11 +91,10 @@
 
         a:hover,
         &.dk_option_current a {
-            background: @link;
-            color:@text;
-            transition:background .15s ease-in-out;
+            color:@link;
+            transition:color .15s ease;
             &:before {
-                color:@text;
+                color:@link;
             }
         }
 
@@ -131,11 +134,10 @@
     overflow: hidden;
     position: absolute;
     left: 30px;
-    top: 60px;
+    top: 30px;
     right: 30px;
     bottom: 30px;
-    background: @black;
-    border:1px solid #262626;
+    background: @generator--background;
     .box-shadow(0 0 12px rgba(0,0,0,0.6));
 
     #aesop-generator-shell {
@@ -150,7 +152,7 @@
     // left panel
     .aesop-generator-left {
         width:63%;
-        padding: 24px;
+        padding: 10px;
         .box-sizing(border-box);
     }
 
@@ -167,7 +169,7 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
         font-size: 14px;
-        color:#fff;
+        color:@white;
         text-decoration: none;
         padding: 6px 15px;
         height: auto;
@@ -180,12 +182,17 @@
         &:hover {
             background: darken(@link,5);
         }
+
+        &:active {
+            background: darken(@link,8);
+            .box-shadow(inset 0 2px 2px rgba(0,0,0,0.15));
+        }
     }
 
     .aesop-close-modal {
         right:12px;
         .media-modal-icon:before {
-            background: @dark-gray;
+            background: @generator--bg-accent;
             border-radius: 100%;
         }
     }
@@ -196,7 +203,9 @@
 
 // settings view
 #aesop-generator-settings-outer {
-    background: @dark-gray;
+    background: @generator--bg-accent;
+    border-left:1px solid @border;
+    .box-sizing(border-box);
 
     #aesop-generator-settings {
         padding-bottom:80px;
@@ -205,9 +214,12 @@
             position:absolute;
             bottom:0;
             right:0;
-            background:@dark-gray;
+            background:darken(@generator--bg-accent,5);
             left:63%;
             padding:15px;
+            border-left:1px solid @border;
+            border-top:1px solid darken(@generator--bg-accent,10);
+            .box-sizing(border-box);
         }
 
         p {
@@ -245,7 +257,7 @@
             display: block;
             position: relative;
             font-size:18px;
-            color:@text;
+            color:darken(@desc,5);
 
         }
         input[type="text"] {
@@ -255,14 +267,14 @@
 
         input,
         select {
-            font-size:1.25em;
+            //font-size:1.25em;
             line-height: 1.4em;
             height:32px;
         }
 
         .aesop-generator-attr {
-            background:@text;
-            color: @black;
+            background:@generator--background;
+            color: @desc;
 
             &.aesop-generator-attr-text_small {
                 width:80px;
@@ -271,22 +283,33 @@
 
         input,
         textarea {
-            border: 1px solid @black;
-            border-radius:5px;
+            border: 1px solid fadeout(white,20);
+            border-radius:3px;
             position: relative;
+            border-bottom:1px solid #f0f0f0;
+            border-right:1px solid #f0f0f0;
+            .transition(border .25s ease);
+            .box-shadow(inset 1px 1px 0 rgba(0,0,0,.2));
 
             &:focus {
-                border-color:#31b6e3;
+                border-color:fadeout(@link,80);
                 outline:none;
+                box-shadow:none;
             }
         }
         select {
-            background:@text;
-            color: @black;
-            border: 1px solid @black;
+            background:@desc;
+            color: @generator--background;
+            border:1px solid lighten(@border,5);
             border-radius:2px;
             width: 60%;
             position: relative;
+
+            &:focus {
+                box-shadow:none;
+                outline:none;
+                border:1px solid fadeout(@link,80);
+            }
         }
 
         textarea {
@@ -294,23 +317,25 @@
         }
 
         code {
-            background:darken(@dark-gray,3);
+            background:darken(@generator--bg-accent,3);
             font-size:12px;
-        }
-
-        #aesop-generator-attr-img {
-            width:65%;
         }
 
         #aesop-upload-img {
             background:@link;
-            border:1px solid rgba(0,0,0,0.6);
+            border-color:transparent;
             box-shadow:none;
-            top: -1px;
             left: 5px;
-            width:34%;
+            top:-1px;
+            width:134px;
+            font-size:14px;
+            text-transform: uppercase;
+            -webkit-font-smoothing: antialiased;
+            height:30px;
+            .box-sizing(border-box);
 
             &:hover {
+                font-weight:400;
                 background:darken(@link,2);
             }
             &:focus {
@@ -318,8 +343,10 @@
             }
 
             &:active {
-                background:@link;
-                top:1px;
+                border-color:transparent;
+                background: darken(@link,8);
+                vertical-align: baseline;
+                .box-shadow(inset 0 1px 1px rgba(0,0,0,0.15));
             }
         }
 
@@ -329,8 +356,20 @@
 .aesop-generator-mark {
     position: absolute;
     bottom:0;
+    left:20px;
+    color:lighten(@desc,35);
+
+    a {
+        color:fadeout(@link,35);
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
+/*
+Don't need small height mod anymore due to making the icons smaller
 .aesop-generator-left.aesop-generator-small-height {
     .dk_options_inner {
 
@@ -349,6 +388,7 @@
         }
     }
 }
+*/
 
 // color like options until we get conditional option loading
 #aesop-generator #aesop-generator-settings {
@@ -371,7 +411,7 @@
     .aesop-content-floaterposition,
     .aesop-content-floateroffset,
     .aesop-content-floaterdirection {
-        background:lighten(@dark-gray,3);
+        background:darken(@generator--bg-accent,3);
     }
 
     // 1st
@@ -380,7 +420,7 @@
     .aesop-video-hosted,
     .aesop-content-floatermedia {
         margin-top:-1px;
-        border-top:1px solid @dark-gray;
+        border-top:1px solid @generator--bg-accent;
 
     }
 
@@ -390,6 +430,6 @@
     .aesop-video-viewend,
     .aesop-content-floaterdirection {
         margin-bottom:-1px;
-        border-bottom:1px solid @dark-gray;
+        border-bottom:1px solid @generator--bg-accent;
     }
 }

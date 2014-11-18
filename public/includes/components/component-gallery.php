@@ -55,13 +55,13 @@ class AesopCoreGallery {
 
 		// set the type of gallery into post meta
 		// @todo - move this to  save_post action so it doesn't run every time the sc loads
-		update_post_meta( $gallery_id, 'aesop_gallery_type', $type );
+		update_post_meta( $gallery_id, 'aesop_gallery_type', sanitize_text_field( $type ) );
 
 		ob_start();
 
 			do_action('aesop_gallery_before', $type, $gallery_id); //action
 
-			?><div id="aesop-gallery-<?php echo $unique;?>" class="aesop-component aesop-gallery-component aesop-<?php echo $type;?>-gallery-wrap"><?php
+			?><div id="aesop-gallery-<?php echo esc_attr( $unique );?>" class="aesop-component aesop-gallery-component aesop-<?php echo esc_attr($type);?>-gallery-wrap"><?php
 
 				do_action('aesop_gallery_inside_top', $type, $gallery_id); //action
 
@@ -89,7 +89,7 @@ class AesopCoreGallery {
 					endswitch;
 
 					if ( $gallery_caption ) {
-						printf('<p class="aesop-component-caption">%s</p>', $gallery_caption);
+						printf('<p class="aesop-component-caption">%s</p>', esc_html( $gallery_caption ) );
 					}
 
 					if ( is_user_logged_in() ) {
@@ -122,18 +122,18 @@ class AesopCoreGallery {
 	*/
 	function aesop_thumb_gallery($gallery_id, $image_ids, $width){
 
-		$thumbs 	= get_post_meta( $gallery_id, 'aesop_thumb_gallery_hide_thumbs', true) ? sprintf('data-nav="false"') : sprintf('data-nav="thumbs"');
+		$thumbs 	= get_post_meta( $gallery_id, 'aesop_thumb_gallery_hide_thumbs', true) ? sprintf('data-nav=false') : sprintf('data-nav=thumbs');
 		$autoplay 	= get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true) ? sprintf('data-autoplay="%s"', get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true)) : null;
 		$transition = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true) ? get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true) : 'slide';
 
 		// image size
 		$size    = apply_filters('aesop_thumb_gallery_size', 'full');
 
-		?><div id="aesop-thumb-gallery-<?php echo $gallery_id;?>" class="fotorama" 	data-transition="crossfade"
-																			data-width="<?php echo $width;?>"
-																			<?php echo $autoplay;?>
+		?><div id="aesop-thumb-gallery-<?php echo esc_attr($gallery_id);?>" class="fotorama" 	data-transition="crossfade"
+																			data-width="<?php echo esc_attr($width);?>"
+																			<?php echo esc_attr($autoplay);?>
 																			data-keyboard="true"
-																			<?php echo $thumbs;?>
+																			<?php echo esc_attr($thumbs);?>
 																			data-allow-full-screen="native"
 																			data-click="true"><?php
 
@@ -143,7 +143,7 @@ class AesopCoreGallery {
                 $alt     =  get_post_meta($image_id, '_wp_attachment_image_alt', true);
                 $caption 	= get_post($image_id)->post_excerpt;
 
-               ?><img src="<?php echo $full[0];?>" data-caption="<?php echo $caption;?>" alt="<?php echo esc_attr($alt);?>"><?php
+               ?><img src="<?php echo esc_url($full[0]);?>" data-caption="<?php echo esc_attr($caption);?>" alt="<?php echo esc_attr($alt);?>"><?php
 
 			endforeach;
 
@@ -170,19 +170,19 @@ class AesopCoreGallery {
 		<!-- Aesop Grid Gallery -->
 		<script>
 			jQuery(document).ready(function(){
-			    jQuery('#aesop-grid-gallery-<?php echo $gallery_id;?>').imagesLoaded(function() {
+			    jQuery('#aesop-grid-gallery-<?php echo esc_attr($gallery_id);?>').imagesLoaded(function() {
 			        var options = {
 			          	autoResize: true,
-			          	container: jQuery('#aesop-grid-gallery-<?php echo $gallery_id;?>'),
+			          	container: jQuery('#aesop-grid-gallery-<?php echo esc_attr($gallery_id);?>'),
 			          	offset: <?php echo $space;?>,
 			          	flexibleWidth: <?php echo $gridwidth;?>
 			        };
-			        var handler = jQuery('#aesop-grid-gallery-<?php echo $gallery_id;?> li');
+			        var handler = jQuery('#aesop-grid-gallery-<?php echo esc_attr($gallery_id);?> li');
 			        jQuery(handler).wookmark(options);
 			    });
 			});
 		</script>
-		<div id="aesop-grid-gallery-<?php echo $gallery_id;?>" class="aesop-grid-gallery aesop-grid-gallery" style="width:100%;max-width:<?php echo $width;?>;margin:0 auto;"><ul><?php
+		<div id="aesop-grid-gallery-<?php echo esc_attr($gallery_id);?>" class="aesop-grid-gallery aesop-grid-gallery" style="width:100%;max-width:<?php echo esc_attr($width);?>;margin:0 auto;"><ul><?php
 
 			foreach ($image_ids as $image_id):
 
@@ -191,7 +191,15 @@ class AesopCoreGallery {
                 $img_title 	  	= get_post($image_id)->post_title;
                 $caption 		= get_post($image_id)->post_excerpt;
 
-               	printf('<li class="aesop-grid-gallery-item"><a class="aesop-lightbox" href="%s" title="%s"><span class="aesop-grid-gallery-caption">%s</span><span class="clearfix">%s</span></a></li>',$getimagesrc[0], esc_attr($img_title), $caption, $getimage);
+			?>
+
+			<li class="aesop-grid-gallery-item"><a class="aesop-lightbox" href="<?php echo $getimagesrc[0];?>" title="<?php echo esc_attr($img_title);?>">
+				<?php if ( $caption ){ ?>
+					<span class="aesop-grid-gallery-caption"><?php echo $caption;?></span>
+				<?php } ?>
+			<span class="clearfix"><?php echo $getimage;?></span></a></li>
+
+			<?php
 
 			endforeach;
 
@@ -235,9 +243,9 @@ class AesopCoreGallery {
             $caption 		= get_post($image_id)->post_excerpt;
 
            	?>
-           	<div class="aesop-stacked-img" style="background-image:url('<?php echo $full[0];?>');<?php echo $styles;?>">
+           	<div class="aesop-stacked-img" style="background-image:url('<?php echo esc_url($full[0]);?>');<?php echo $styles;?>">
            		<?php if ( $caption ){ ?>
-           			<div class="aesop-stacked-caption"><?php echo $caption;?></div>
+           			<div class="aesop-stacked-caption"><?php echo esc_html($caption);?></div>
            		<?php } ?>
            	</div>
            	<?php
@@ -268,14 +276,14 @@ class AesopCoreGallery {
            		<?php
 
            		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-           		if (is_plugin_active('aesop-lazy-loader/aesop-lazy-loader.php')) {?>
-					<img class="aesop-sequence-img" data-original="<?php echo $img[0];?>" alt="<?php echo esc_attr($alt);?>">
-           		<?php } else {?>
-           			<img class="aesop-sequence-img" src="<?php echo $img[0];?>" alt="<?php echo esc_attr($alt);?>">
+           		if ( is_plugin_active('aesop-lazy-loader/aesop-lazy-loader.php') ) {?>
+					<img class="aesop-sequence-img" data-original="<?php echo esc_url($img[0]);?>" alt="<?php echo esc_attr($alt);?>">
+           		<?php } else { ?>
+           			<img class="aesop-sequence-img" src="<?php echo esc_url($img[0]);?>" alt="<?php echo esc_attr($alt);?>">
            		<?php } ?>
 
-           		<?php if($caption){ ?>
-           			<figcaption class="aesop-content aesop-component-caption aesop-sequence-caption"><?php echo $caption;?></figcaption>
+           		<?php if ( $caption ) { ?>
+           			<figcaption class="aesop-content aesop-component-caption aesop-sequence-caption"><?php echo esc_html($caption);?></figcaption>
            		<?php } ?>
 
            	</figure>
@@ -298,7 +306,7 @@ class AesopCoreGallery {
 		// layout
 		$layout = get_post_meta( $gallery_id, 'aesop_photoset_gallery_layout', true) ? get_post_meta( $gallery_id, 'aesop_photoset_gallery_layout', true) : '';
 
-		$style 	= $width ? sprintf('style="max-width:%s;margin-left:auto;margin-right:auto;"', $width) : null;
+		$style 	= $width ? sprintf('style="max-width:%s;margin-left:auto;margin-right:auto;"', esc_attr( $width ) ) : null;
 
 		// lightbox
 		$lightbox = get_post_meta( $gallery_id, 'aesop_photoset_gallery_lightbox', true );
@@ -311,7 +319,7 @@ class AesopCoreGallery {
 		<script>
 			jQuery(window).load(function(){
 				jQuery('.aesop-gallery-photoset').photosetGrid({
-				  	gutter: "<?php echo $space.'px';?>",
+				  	gutter: "<?php echo absint($space).'px';?>",
 				  	<?php if ( $lightbox ) { ?>
 				  	highresLinks:true,
 				  	<?php } ?>
@@ -344,7 +352,7 @@ class AesopCoreGallery {
 			echo '<div class="aesop-gallery-photoset-width" '.$style.' >';
 		}
 
-			?><div class="aesop-gallery-photoset" data-layout="<?php echo $layout;?>" ><?php
+			?><div class="aesop-gallery-photoset" data-layout="<?php echo absint($layout);?>" ><?php
 
 				foreach ( $image_ids as $image_id ):
 
@@ -352,9 +360,9 @@ class AesopCoreGallery {
 		            $alt     	=  get_post_meta( $image_id, '_wp_attachment_image_alt', true );
                 	$title 	  	= 	get_post($image_id)->post_title;
 
-		            $lb_link    =  $lightbox ? sprintf('data-highres="%s"', $full[0]) : null;
+		            $lb_link    =  $lightbox ? sprintf('data-highres="%s"', esc_url( $full[0] ) ) : null;
 
-		           	?><img src="<?php echo $full[0];?>" <?php echo $lb_link;?> data-title="<?php echo $title;?>" title="<?php echo $title;?>" alt="<?php echo $alt;?>"><?php
+		           	?><img src="<?php echo esc_url($full[0]);?>" <?php echo $lb_link;?> data-title="<?php echo esc_attr($title);?>" title="<?php echo esc_attr($title);?>" alt="<?php echo esc_attr($alt);?>"><?php
 
 				endforeach;
 

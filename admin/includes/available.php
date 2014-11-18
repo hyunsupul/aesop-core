@@ -895,6 +895,35 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> '',
 						'desc' 		=> __( 'Height', 'aesop-core' ),
 						'tip'		=> __('The height of the map component. By default this is set to <em>500px</em>. Avoid using percentages with this option.','aesop-core')
+					),
+					'sticky'		=> array(
+						'type'		=> 'select',
+						'default'	=> 'off',
+						'desc'		=> __('Sticky Maps','aesop-core'),
+						'tip'		=> __('By choosing a position the map will follow the scrolling of the story with the markers that you\'ll add below.<br /><br />After toggling a location, a new Map Marker component will show up. Add a marker for each stop in the story that you would ike the map to start at. Stops are made in the order that you added the markers in the map admin.','aesop-core'),
+						'values'	=> array(
+							array(
+								'value' => 'off',
+								'name'	=> __('Off', 'aesop-core')
+							),
+							array(
+								'value' => 'left',
+								'name'	=> __('Sticky Left', 'aesop-core')
+							),
+							array(
+								'value' => 'top',
+								'name'	=> __('Sticky Top', 'aesop-core')
+							),
+							array(
+								'value' => 'right',
+								'name'	=> __('Sticky Right', 'aesop-core')
+							),
+							array(
+								'value' => 'bottom',
+								'name'
+									=> __('Sticky Bottom', 'aesop-core')
+							)
+						)
 					)
 				),
 				'desc' 				=> __( 'Creates the basic map component. Use the Map Locations edit boxes when writing your story to add locations.','aesop-core' )

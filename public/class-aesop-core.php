@@ -317,14 +317,19 @@ class Aesop_Core {
 	 	* @since    1.0.0
 	*/
     function shortcode_empty_paragraph_fix($content) {
-        $array = array (
+
+        $array = array(
             '<p>[' => '[',
             ']</p>' => ']',
             ']<br />' => ']'
         );
 
+        // remove empty paragraphs and break tags next to shortcodes
         $content = strtr($content, $array);
 
-		return $content;
+        // remove paragraphs with empty spaces
+        $clean_content = str_replace('<p>&nbsp;</p>', '', $content);
+
+		return $clean_content;
     }
 }

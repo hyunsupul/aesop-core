@@ -106,7 +106,7 @@ class AesopGalleryComponentAdmin {
 			'capability_type' 			=> 'post'
 		);
 
-		register_post_type( 'ai_galleries', apply_filters('ai_gallery_args',$args ) );
+		register_post_type( 'ai_galleries', apply_filters('ai_gallery_args', $args ) );
 
 	}
 
@@ -144,22 +144,25 @@ class AesopGalleryComponentAdmin {
 	*/
 	function col_content($column_name, $post_ID) {
 
+
 	    if ('aesop_gallery' == $column_name) {
 	        printf('[aesop_gallery id="%s"]',$post_ID);
 	    }
 
 	   	if ('used_in' == $column_name) {
 
-			$pages = get_posts(array ('s' => '[aesop_gallery','post_type' => array ( 'page', 'post' ) ));
+			$pages = get_posts(array ('s' => '[aesop_gallery id="'.$post_ID.'"','post_type' => array ( 'page', 'post' ) ));
 
 			$count = 0;
 
 			if ( $pages ) :
-				foreach($pages as $page) {
+				foreach ($pages as $page ) {
+
 					$count ++;
-					$id = $page->ID;
-					if( has_shortcode($page->post_content,'aesop_gallery') ){
-						echo ucfirst($this->the_slug($id));
+
+					if ( has_shortcode( $page->post_content ,'aesop_gallery' ) ){
+
+						echo '<a href="'.get_edit_post_link($page->ID).'" title="Edit" >'.$page->post_title.'</a>';
 
 						if( $count != count($pages) ){
 							echo  ', ';
@@ -169,17 +172,6 @@ class AesopGalleryComponentAdmin {
 			endif;
 
 	    }
-	}
-
-	/**
-	 	* Return the post slug based on ID
-	 	*
-	 	* @since    1.0.0
-	*/
-	function the_slug($id) {
-		$post_data = get_post($id, ARRAY_A);
-		$slug = $post_data['post_name'];
-		return $slug; 
 	}
 
 	/**
