@@ -30,7 +30,6 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$instance++;
 		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
-		$placeholder = sprintf('%s', AI_CORE_URL.'/public/assets/img/grey.gif');
 		$height = preg_replace('/[^0-9]/','',$atts['height']);
 
 		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
