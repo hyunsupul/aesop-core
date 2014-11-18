@@ -183,7 +183,7 @@ class AesopMapComponentAdmin {
 		$ase_map_start_point 	= get_post_meta( $post->ID, 'ase_map_component_start_point', true );
 		$get_map_zoom 			= get_post_meta( $post->ID, 'ase_map_component_zoom', true);
 		$tiles 					= get_post_meta( $post->ID, 'aesop_map_tiles', true);
-		
+
 		$ase_map_start_point 	= empty ( $ase_map_start_point ) ? [29.76, -95.38] : [$ase_map_start_point['lat'],$ase_map_start_point['lng']];
 		$ase_map_zoom 			= empty ( $get_map_zoom ) ? 12 : $get_map_zoom;
 
