@@ -135,8 +135,6 @@ class AesopMapComponentAdmin {
 			wp_nonce_field( 'ase_map_meta', 'ase_map_meta_nonce' );
 		echo '</div>';
 
-		$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
-
 		echo "Starting location: <input type='text' id='aesop-map-address'/>";
 		echo __('<em>Hint: Type to search for locations</em>','aesop-core');
 		echo '<div id="aesop-map" style="height:350px;"></div>';

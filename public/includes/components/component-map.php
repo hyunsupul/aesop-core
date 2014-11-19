@@ -97,7 +97,6 @@ class AesopMapComponent {
 
 		$id         = isset( $post ) ? $post->ID : null;
 
-		$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
 		$markers 	= isset( $post ) ? get_post_meta( $id, 'ase_map_component_locations', false) : false;
 		$start 		= isset( $post ) && self::get_map_meta( $id, 'ase_map_component_start') ? self::get_map_meta( $id, 'ase_map_component_start' ) : self::start_fallback( $markers );
 		$zoom 		= isset( $post ) && self::get_map_meta( $id, 'ase_map_component_zoom') ? self::get_map_meta( $id, 'ase_map_component_zoom' ) : 12;

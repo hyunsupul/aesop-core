@@ -130,15 +130,10 @@ function aesop_component_media_filter( $input = '' ) {
 *	Used to filter the map tile provider per post
 *
 *	@param $postid int id of the post for the map tile provider to change on
-*	@param $provider string map tile url - pass 'custom' and use $custom arg to pass map tile
 *	@return a filtered map tile url based on provider
 *	@since 1.3
 */
-function aesop_map_tile_provider( $postid = 0, $provider = '' ) {
-
-	// bail if no post id
-	if ( empty( $postid ) )
-		return;
+function aesop_map_tile_provider( $postid = 0 ) {
 
 	// default provider
 	$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
