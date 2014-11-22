@@ -20,7 +20,7 @@ if (!function_exists('aesop_timeline_stop_shortcode')){
 		$actiontop = do_action('aesop_timeline_before'); //action
 		$actionbottom = do_action('aesop_timeline_after'); //action
 
-		$out = sprintf('%s<h2 class="aesop-timeline-stop" %s>%s</h2>',$actiontop, $datatitle, esc_html($atts['num']) );
+		$out = sprintf('%s<h2 class="aesop-timeline-stop" %s>%s</h2>%s',$actiontop, $datatitle, esc_html($atts['num']), $actionbottom );
 
 		return apply_filters('aesop_timeline_output', $out);
 	}

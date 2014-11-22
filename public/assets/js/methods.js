@@ -15,4 +15,6 @@ jQuery(document).ready(function(){
             jQuery('#swipebox-close').trigger('click');
         });
     });
+
+    window.blockFotoramaData = true;
 });
