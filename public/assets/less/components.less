@@ -181,13 +181,6 @@
         }
     }
 
-    .wp-video-shortcode,
-    .wp-video {
-        width:100% !important;
-        max-width:100% !important;
-    }
-
-
     &.aesop-vine-stagram-container {
 
         .instagram,
@@ -245,6 +238,25 @@
     &.aesop-component-align-right {
         margin:0 15px 15px 15px;
     }
+
+    // self hosted
+     // self hosted responsive
+
+    .self {
+
+        .mejs-container,
+        .wp-video {
+            height:0 !important; // overriding JS set by video shortcode
+            padding-bottom:56.25%;
+            width:100% !important; // overriding JS set by video shortcode
+            max-width:100% !important; // overriding JS set by video shortcode
+        }
+        .mejs-overlay-button {
+            margin-top:25% !important; // overriding JS set by video shortcode
+        }
+
+    }
+
 }
 
 // quote

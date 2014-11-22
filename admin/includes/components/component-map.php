@@ -135,8 +135,6 @@ class AesopMapComponentAdmin {
 			wp_nonce_field( 'ase_map_meta', 'ase_map_meta_nonce' );
 		echo '</div>';
 
-		$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
-
 		echo "Starting location: <input type='text' id='aesop-map-address'/>";
 		echo __('<em>Hint: Type to search for locations</em>','aesop-core');
 		echo '<div id="aesop-map" style="height:350px;"></div>';
@@ -150,6 +148,8 @@ class AesopMapComponentAdmin {
 
 		$ase_map_start_point 	= json_encode($ase_map_start_point);
 		$ase_map_locations 		= json_encode($ase_map_locations);
+
+		$tiles 					= aesop_map_tile_provider($post->ID);
 
 		?>
 			<!-- Aesop Maps -->
@@ -175,7 +175,7 @@ class AesopMapComponentAdmin {
 						setMapCenter(lat,lng);
   					});
 
-					L.tileLayer('//{s}.tiles.mapbox.com/v3/<?php echo esc_attr($mapboxid);?>/{z}/{x}/{y}.png', {
+					L.tileLayer('<?php echo $tiles;?>', {
 						maxZoom: 20
 					}).addTo(map);
 

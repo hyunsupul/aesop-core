@@ -245,8 +245,9 @@ class Aesop_Core_Admin {
 	private function messages() {
 
 		$message = array(
-			__('Brought to you by Aesopinteractive LLC - <a href="http://aesopstoryengine.com">http://aesopstoryengine.com</a>', 'aesop-core'),
-			__('Donate to further development of Aesop Story Engine at <a href="http://aesopstoryengine.com/donate">http://aesopstoryengine.com/donate</a>', 'aesop-core')
+			__('Product of <span><a href="http://aesopstoryengine.com">AESOP INTERACTIVE LLC</a></span>', 'aesop-core'),
+			__('<span><a href="http://aesopstoryengine.com/donate">Support new features and bug fixes</a></span> of Aesop Story Engine', 'aesop-core'),
+			__('Story Beautiful? <span><a href="http://aesopstoryengine.com/donate">Thank the developer</a></span>.', 'aesop-core')
 		);
 
 		return '<p class="aesop-generator-mark">'.$message[array_rand($message)].'</p>';

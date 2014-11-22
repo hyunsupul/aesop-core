@@ -124,3 +124,49 @@ function aesop_component_media_filter( $input = '' ) {
 
 	return $out;
 }
+
+/**
+*
+*	Used to filter the map tile provider per post
+*
+*	@param $postid int id of the post for the map tile provider to change on
+*	@return a filtered map tile url based on provider
+*	@since 1.3
+*/
+function aesop_map_tile_provider( $postid = 0 ) {
+
+	// default provider
+	$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
+
+	// setup a filter to change the provider
+	$provider = apply_filters('aesop_map_tile_provider', 'mapbox', $postid);
+
+	switch ($provider) {
+		case 'mapbox':
+			$out = sprintf('//{s}.tiles.mapbox.com/v3/%s/{z}/{x}/{y}.png', esc_attr( $mapboxid ) );
+			break;
+		case 'stamen-toner-lite':
+			$out = '//{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png';
+			break;
+		case 'stamen-toner':
+			$out = '//{s}.tile.stamen.com/toner/{z}/{x}/{y}.png';
+			break;
+		case 'stamen-watercolor':
+			$out = '//{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png';
+			break;
+		case 'mapquest':
+			$out = '//oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg';
+			break;
+		case 'acetate':
+			$out = '//a{s}.acetate.geoiq.com/tiles/acetate-hillshading/{z}/{x}/{y}.png';
+			break;
+		case 'hydda-full':
+			$out = '//{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png';
+			break;
+		default:
+			$out = sprintf('//{s}.tiles.mapbox.com/v3/%s/{z}/{x}/{y}.png', esc_attr( $mapboxid ) );
+			break;
+	}
+
+	return $out;
+}

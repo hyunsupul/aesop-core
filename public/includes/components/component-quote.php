@@ -34,7 +34,8 @@ if (!function_exists('aesop_quote_shortcode')){
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 
 		// set size
-		$size = $atts['size'] ? sprintf( '%sem', $atts['size'] ) : false;
+		$size_unit 	= apply_filters( 'aesop_quote_size_unit', 'em', $unique );
+		$size 		= $atts['size'] ? sprintf( '%s%s', $atts['size'], $size_unit ) : false;
 
 		//bg img
 		$bgimg = $atts['img'] ? sprintf('background-image:url(%s);background-size:cover;background-position:center center',esc_url( $atts['img'] )) : false;

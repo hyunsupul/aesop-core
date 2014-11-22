@@ -360,11 +360,25 @@
     color:lighten(@desc,35);
 
     a {
-        color:fadeout(@link,35);
+        color:fadeout(white,35);
+        text-decoration: none;
 
         &:hover {
             text-decoration: none;
         }
+    }
+    span {
+        display: inline;
+        padding: .1em .4em .2em;
+        font-size: 100%;
+        line-height: 1;
+        color: #fff;
+        background-color: #888;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: .3em;
+        margin: 0 4px;
     }
 }
 
