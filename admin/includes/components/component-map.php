@@ -66,7 +66,7 @@ class AesopMapComponentAdmin {
 						'tip'			=> __('By default we\'ll display an H2 heading with the text you specify here.','aesop-core')
 					),
 					'hidden' 				=> array(
-						'type'			=> 'select', // a select dropdown 
+						'type'			=> 'select', // a select dropdown
 						'values' 		=> array(
 							array(
 								'value' => 'off',
@@ -143,7 +143,7 @@ class AesopMapComponentAdmin {
 		$ase_map_start_point 	= get_post_meta( $post->ID, 'ase_map_component_start_point', true );
 		$get_map_zoom 			= get_post_meta( $post->ID, 'ase_map_component_zoom', true);
 
-		$ase_map_start_point 	= empty ( $ase_map_start_point ) ? [29.76, -95.38] : [$ase_map_start_point['lat'],$ase_map_start_point['lng']];
+		$ase_map_start_point 	= empty ( $ase_map_start_point ) ? array(29.76, -95.38) : array($ase_map_start_point['lat'],$ase_map_start_point['lng']);
 		$ase_map_zoom 			= empty ( $get_map_zoom ) ? 12 : $get_map_zoom;
 
 		$ase_map_start_point 	= json_encode($ase_map_start_point);
@@ -377,7 +377,7 @@ class AesopMapComponentAdmin {
 			foreach( $_POST['ase-map-component-locations'] as $location ){
 				// let's decode and convert the data into an array
 				$location_data = json_decode(urldecode($location), true);
-				add_post_meta( $post_id, 'ase_map_component_locations', $location_data);	
+				add_post_meta( $post_id, 'ase_map_component_locations', $location_data);
 			}
 		}
 
@@ -476,7 +476,7 @@ class AesopMapComponentAdmin {
 				$old_locations = get_post_meta( $id, 'aesop_map_component_locations' );
 				if ( ! empty ( $old_locations ) ) {
 					foreach( $old_locations as $location ){
-						$translated = [];
+						$translated = array();
 						$translated['lat'] = $location['lat'];
 						$translated['lng'] = $location['long'];
 						$translated['title'] = $location['content'];
@@ -494,7 +494,7 @@ class AesopMapComponentAdmin {
 					echo $old_start_point;
 					$old_start_point = explode ( ',', $old_start_point);
 					if ( count( $old_start_point ) == 2 ) {
-						$translated = [];
+						$translated = array();
 						$translated['lat'] = $old_start_point[0];
 						$translated['lng'] = $old_start_point[1];
 						update_post_meta( $id, 'ase_map_component_start_point', $translated );
