@@ -11,7 +11,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
-Suite of components that enables the creation of interactive storytelling themes for WordPress.
+Suite of components that enables the creation of interactive longform stories WordPress.
 
 == Description ==
 
@@ -28,10 +28,10 @@ Utilizing these components, writers can can take their work to the next level, a
 [http://playground.aesopstories.com](http://playground.aesopstories.com)
 
 **Audio**
-Display an audio player with support for MP3. This is great for showcasing audio interviews.
+Display an audio player with support for MP3 that can be optionally hidden. This is great for showcasing audio interviews.
 
 **Video**
-Showcase a fullscreen video with support for Kickstarter, Viddler, YouTube, Vimeo, Daily Motion, and Blip.TV.
+Showcase a fullscreen video with support for Kickstarter, Viddler, YouTube, Vimeo, Daily Motion, and Blip.TV with support for captions and alignment.
 
 **Content**
 The content component is a multi-purpose component that can display a background image, background color, or can split the content into multiple magazine type columns.
@@ -43,13 +43,13 @@ Display a character avatar, title, and small bio to help readers be reminded of 
 The ASE Gallery component allows you to create and manage unlimited story galleries. Each gallery can be displayed as a grid, a thumbnail gallery, stacked, or sequential type gallery, all with caption support.
 
 **Chapter Headings**
-Creates scroll-to points with headings.
+Creates scroll-to points with large full-screen images as headings.
 
 **Image**
 The image component displays an image and caption, with optional lightbox. Also allows you to align the image, as well as offset the image so it hangs outside of the content column.
 
 **Locations**
-This component allows you to create a map for your story. You can add markers to the map with custom messages. This is a great component for showcasing a characters travels.
+This component allows you to create a map for your story. You can add markers to the map with custom messages, and even have the map scroll to points as you scroll through the story.
 
 **Parallax**
 A fullwidth image component with caption and lightbox. As you scroll, the image moves slightly to provide a parallax effect. Includes optional floater parallax item to use for multiple levels of parallax engagement.
@@ -132,6 +132,7 @@ Full documentation can be found below.
 1. The component generator triggered within the edit post screen.
 2. Story Engine components and their descriptions
 /Users/Nick/Sites/wp-aesop/wp-content/plugins/aesop-core/README.txt
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -144,14 +145,19 @@ Full documentation can be found below.
 * NEW - Freshly designed user interface with light color scheme to match WordPress design patterns
 * NEW - Map component admin with ability to click the map to add markers instead of manually adding GPS coordinates
 * NEW - Map component "sticky" mode that changes map markers as you scroll down the story
+* NEW - Map component tile filter aesop_map_tile_provider that allow you to specify a different tile provider per post (or globally) [ref](https://github.com/bearded-avenger/aesop-core/pull/172#issuecomment-63518448)
 * NEW - Components can now be cloned
+* NEW - New filter aesop_quote_component_unit to change unit size of blockquote 
 * FIXED - All variables now properly escaped within components
 * FIXED - The "used in" column of the Galleries edit screen
 * FIXED - Additional spaces being added on the front end after saving components 
 * FIXED - Timeline scrollnav build failing on certain occassions
 * FIXED - Some parts of the component placeholder highlighting after clicking the edit button
-* FIXED - JS error that shows if the visual editor is turned off in options
-* TWEAK - Related videos at the end of YouTube videos now off by default
+* FIXED - JS error that shows if the visual editor is turned off in options (props @wavetree)
+* FIXED - Self hosted videos not stretching to 100% width
+* FIXED - Zero height on an aligned video component
+* FIXED - Only show grid caption markup if captions present (props @artjomsimon)
+* TWEAK - Related videos at the end of YouTube videos now off by default (props @artjomsimon)
 * TWEAK - Improved video markup
 * UPDATED - Fotorama, fitvids, scrollnav, and images loaded to their respective current versions
 
