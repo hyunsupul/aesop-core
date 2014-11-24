@@ -233,6 +233,17 @@ class AesopGalleryComponentAdmin {
 		echo '</div>';
 
 		echo 'Wassup wassup new gallery stuffs here yo';
+
+		// get the existing images for this post prior to 1.4, else get the id's set into post meta for 1.4
+		if ( AI_CORE_VERSION < 1.4 ) {
+			$gallery 		= get_post_gallery( $post->ID, false);
+		} else {
+			$gallery_ids 	= get_post_meta( $post->ID,'_ase_gallery_images', true);
+			$gallery_images = explode( ',', $gallery );
+		}
+
+		var_dump($gallery['ids']);
+
 	}
 
 	/**
