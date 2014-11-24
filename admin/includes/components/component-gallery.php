@@ -8,65 +8,16 @@ class AesopGalleryComponentAdmin {
 
 	public function __construct(){
 
-		add_action('print_media_templates',  					array($this,'aesop_gallery_opts'));
        	add_action('init',										array($this,'do_type'));
-       	add_action('admin_init',								array($this,'sc_helper'));
        	add_filter('manage_ai_galleries_posts_columns', 		array($this,'col_head'));
 		add_action('manage_ai_galleries_posts_custom_column', 	array($this,'col_content'), 10, 2);
 		add_filter('cmb_meta_boxes', 							array($this,'aesop_gallery_meta' ));
+
+		// new
+		add_action( 'add_meta_boxes', 							array($this,'new_gallery_box') );
+		add_action( 'save_post',								array($this,'save_gallery_box'), 10, 3 );
 	}
 
-	/**
-	 	* Merges custom shortcode attributes into native wordpress gallery
-	 	*
-	 	* @since    1.0.0
-	*/
-	function aesop_gallery_opts (){
-
-		$screen = get_current_screen();
-
-		// only run these modifications if in aesop gallery type
-		if ( 'ai_galleries' == $screen->id ):
-
-		  	?>
-		  	<script type="text/html" id="tmpl-aesop-gallery-extended-opts">
-			    <label class="setting aesop-gallery-settings">
-			      	<span><?php _e('Type','aesop-core'); ?></span>
-			      	<select data-setting="a_type">
-			      		<option value="">- Select -</option>
-			        	<option value="grid">Grid</option>
-			        	<option value="thumbnail">Thumbnail</option>
-			        	<option value="sequence">Sequence</option>
-			        	<option value="photoset">Photoset</option>
-			        	<option value="stacked">Stacked Parallax</option>
-			        	<?php do_action('aesop_add_gallery_type');?>
-			      	</select>
-			    </label>
-		  	</script>
-		  	<!-- Aesop Gallery Opts -->
-		  	<script>
-
-			    jQuery(document).ready(function(){
-
-			     	 // add your shortcode attribute and its default value to the
-			      	// gallery settings list; $.extend should work as well...
-			      	_.extend(wp.media.gallery.defaults, {
-			        	a_type: 'a_type'
-			      	});
-
-			     	 // merge default gallery settings template with yours
-			      	wp.media.view.Settings.Gallery = wp.media.view.Settings.Gallery.extend({
-				        template: function(view){
-				          	return wp.media.template('gallery-settings')(view) + wp.media.template('aesop-gallery-extended-opts')(view);
-				        }
-			      	});
-
-			    });
-
-		  	</script>
-		  	<style>.gallery-settings .setting:not(.aesop-gallery-settings){display:none;}</style>
-		<?php endif;
-	}
 
 	/**
 	 	* Creates an Aesop Galleries custom post type to manage all psot galleries
@@ -108,19 +59,6 @@ class AesopGalleryComponentAdmin {
 
 		register_post_type( 'ai_galleries', apply_filters('ai_gallery_args', $args ) );
 
-	}
-
-	/**
-	 	* Adds meta box to gallery post type in admin that displays the shortcode 
-	 	*
-	 	* @since    1.0.0
-	*/
-	function sc_helper(){
-		add_meta_box('ai_gallery_sc',__('Gallery Instructions','aesop-core'),array($this,'sc_helper_cb'),'ai_galleries','side', 'low');
-	}
-	function sc_helper_cb(){
-		_e('1. Click the Add Gallery button<br />2. Click Create Gallery to create a gallery<br />3. Insert gallery and publish.<br /><br /> Once you\'ve created the gallery, copy the code below, and paste it into your story where you want the gallery to be shown.<br />','aesop-core');
-		printf('<pre>[aesop_gallery id="%s"]</pre>',get_the_ID());
 	}
 
 	/**
@@ -267,6 +205,67 @@ class AesopGalleryComponentAdmin {
 		);
 		return $meta_boxes;
 
+	}
+
+	/**
+	*
+	*
+	*	New metabox to better manage images within galleries
+	*
+	*	@since 1.4
+	*/
+	function new_gallery_box(){
+
+		add_meta_box('ase_gallery_component',__( 'Gallery Images', 'aesop-core' ),array($this,'render_gallery_box'), 'ai_galleries','normal','core');
+	}
+
+	/**
+	* 	Render Meta Box content.
+	*
+	* 	@param WP_Post $post The post object.
+	*	@since 1.4
+	*
+	*/
+	function render_gallery_box( $post ){
+
+		echo '<div class="aesop-gallery-data" style="display: hidden;">';
+			wp_nonce_field( 'ase_gallery_meta', 'ase_gallery_meta_nonce' );
+		echo '</div>';
+
+		echo 'Wassup wassup new gallery stuffs here yo';
+	}
+
+	/**
+	*
+	* 	Save the meta when the post is saved.
+	*
+	* 	@param int $post_id The ID of the post being saved.
+	*	@param post $post the post
+	*	@since 1.4
+	*
+	*/
+	function save_gallery_box( $post_id, $post, $update ) {
+
+		// if nonce not set bail
+		if ( ! isset( $_POST['ase_gallery_meta_nonce'] ) )
+			return $post_id;
+
+		$nonce = $_POST['ase_gallery_meta_nonce'];
+		$slug = 'ai_galleries';
+
+
+		// if nonce not verified bail
+		if ( ! wp_verify_nonce( $nonce, 'ase_gallery_meta' ) )
+			return $post_id;
+
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+			return $post_id;
+
+	    // only update ai_galleries post type
+	    if ( $slug != $post->post_type )
+	        return $post_id;
+
+		// safe to proceed
 	}
 
 }
