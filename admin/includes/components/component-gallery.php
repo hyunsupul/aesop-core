@@ -253,17 +253,9 @@ class AesopGalleryComponentAdmin {
 		$nonce = $_POST['ase_gallery_meta_nonce'];
 		$slug = 'ai_galleries';
 
-
-		// if nonce not verified bail
-		if ( ! wp_verify_nonce( $nonce, 'ase_gallery_meta' ) )
+		// check nonce, auto save, and make sure we're in our galleries psot type
+		if ( !wp_verify_nonce( $nonce, 'ase_gallery_meta' ) || defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE || $slug != $post->post_type )
 			return $post_id;
-
-		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
-			return $post_id;
-
-	    // only update ai_galleries post type
-	    if ( $slug != $post->post_type )
-	        return $post_id;
 
 		// safe to proceed
 	}
