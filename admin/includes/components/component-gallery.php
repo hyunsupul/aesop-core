@@ -232,17 +232,24 @@ class AesopGalleryComponentAdmin {
 			wp_nonce_field( 'ase_gallery_meta', 'ase_gallery_meta_nonce' );
 		echo '</div>';
 
-		echo 'Wassup wassup new gallery stuffs here yo';
-
 		// get the existing images for this post prior to 1.4, else get the id's set into post meta for 1.4
 		if ( AI_CORE_VERSION < 1.4 ) {
-			$gallery 		= get_post_gallery( $post->ID, false);
+			$image_ids 		= get_post_gallery( $post->ID, false);
+			$image_ids 		= explode(',', $image_ids['ids']);
 		} else {
-			$gallery_ids 	= get_post_meta( $post->ID,'_ase_gallery_images', true);
-			$gallery_images = explode( ',', $gallery );
+			$image_ids 		= get_post_meta( $post->ID,'_ase_gallery_images', true);
+			$image_ids 		= explode( ',', $gallery );
 		}
 
-		var_dump($gallery['ids']);
+		echo 'Wassup wassup new gallery stuffs here yo';
+
+		foreach ($image_ids as $image_id):
+
+            $image    =  wp_get_attachment_image_src($image_id, 'thumbnail', false);
+
+           	echo '<img src="'.$image[0].'">';
+
+		endforeach;
 
 	}
 
