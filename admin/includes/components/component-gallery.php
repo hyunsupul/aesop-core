@@ -275,7 +275,6 @@ class AesopGalleryComponentAdmin {
 				});
 
 				$(gallery).sortable({
-					axis: 'x',
 					containment: 'parent',
 					cursor: 'move',
 					opacity:0.8,
