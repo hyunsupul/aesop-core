@@ -237,8 +237,8 @@ class AesopGalleryComponentAdmin {
 			$image_ids 		= get_post_gallery( $post->ID, false);
 			$image_ids 		= explode(',', $image_ids['ids']);
 		} else {
-			$image_ids 		= get_post_meta( $post->ID,'_ase_gallery_images', true);
-			$image_ids 		= explode( ',', $gallery );
+			$get_image_ids 	= get_post_meta( $post->ID,'_ase_gallery_images', true);
+			$image_ids 		= explode( ',', $get_image_ids );
 		}
 
 		echo 'Wassup wassup new gallery stuffs here yo';
