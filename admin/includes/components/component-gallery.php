@@ -23,6 +23,8 @@ class AesopGalleryComponentAdmin {
 		add_action( 'admin_notices', 					array($this, 'upgrade_galleries_notice' ) );
 		add_action( 'wp_ajax_upgrade_galleries', 		array($this, 'upgrade_galleries' ));
 		add_action( 'admin_head',						array($this, 'upgrade_click_handle'));
+	
+		add_action( 'wp_ajax_ase_update_gallery', 		array($this, 'ase_update_gallery' ));
 	}
 	/**
 	 	* Creates an Aesop Galleries custom post type to manage all psot galleries
@@ -267,15 +269,33 @@ class AesopGalleryComponentAdmin {
 					gallery = $('#ase-gallery-images');
 
 				$(image).on('click', 'i', function(){
-					$(this).next('img').fadeOut();
-					$(gallery).sortable('sortupdate');
+					$(this).next('img').fadeOut(); 
 				});
 
 				$(gallery).sortable({
 					axis: 'x',
 					containment: 'parent',
 					cursor: 'move',
-					opacity:0.8
+					opacity:0.8,
+					stop: function() {
+
+					    var imageArray = $(this).sortable('toArray', { attribute: 'id' });
+
+					    var data = {
+					        action: 'ase_update_gallery',
+					        image_list: imageArray
+					    };
+
+					    $.ajax({
+					        type: "POST",
+					        url: ajaxurl,
+					        data: data,
+					        success: function(response) {
+					        	console.log(response);
+					        }
+					    });
+					}
+
 				});
 			});
 		</script>
@@ -290,7 +310,7 @@ class AesopGalleryComponentAdmin {
 		            $image    =  wp_get_attachment_image_src($image_id, 'thumbnail', false);
 
 		        	?>
-		        	<li class="ase-gallery-image">
+		        	<li id="<?php echo $image_id;?>" class="ase-gallery-image">
 		        		<i class="dashicons dashicons-no-alt"></i>
 		           		<img style="margin-right:5px;" src="<?php echo $image[0];?>">
 		           	</li>
@@ -305,6 +325,26 @@ class AesopGalleryComponentAdmin {
 			endif;
 
 		echo '</ul>';
+
+	}
+
+	/**
+	*
+	*	Process fired on image sort used in render_gallery_box above
+	*	@since 1.4
+	*/
+	function ase_update_gallery(){
+
+
+		if ( isset( $_POST['action'] ) && $_POST['action'] == 'ase_update_gallery' ) {
+
+			echo 'success';
+
+			var_dump($_POST);
+
+		}
+
+		exit();
 
 	}
 
