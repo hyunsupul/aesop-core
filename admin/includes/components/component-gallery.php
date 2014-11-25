@@ -381,8 +381,6 @@ class AesopGalleryComponentAdmin {
 
 		$galleries = get_posts( array( 'post_type' => array('ai_galleries'), 'posts_per_page' => -1 ) );
 
-		$return = '';
-
 		if ( $galleries ) :
 			$return = 'true';
 		else:
