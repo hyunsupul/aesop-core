@@ -241,15 +241,18 @@ class AesopGalleryComponentAdmin {
 			$image_ids 		= explode( ',', $get_image_ids );
 		}
 
-		echo 'Wassup wassup new gallery stuffs here yo';
+		// loop through and display the images
+		if ( $image_ids ):
+			foreach ($image_ids as $image_id):
 
-		foreach ($image_ids as $image_id):
+	            $image    =  wp_get_attachment_image_src($image_id, 'thumbnail', false);
 
-            $image    =  wp_get_attachment_image_src($image_id, 'thumbnail', false);
+	           	echo '<img src="'.$image[0].'">';
 
-           	echo '<img src="'.$image[0].'">';
-
-		endforeach;
+			endforeach;
+		else:
+			echo '<a href="#">Add Images</a>';
+		endif;
 
 	}
 
