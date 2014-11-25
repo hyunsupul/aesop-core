@@ -240,23 +240,40 @@ class AesopGalleryComponentAdmin {
 
 		// get the existing images for this post prior to 1.4, else get the id's set into post meta for 1.4
 		if ( AI_CORE_VERSION < 1.4 ) {
-			$image_ids 		= get_post_gallery( $post->ID, false);
-			$image_ids 		= explode(',', $image_ids['ids']);
+			$get_image_ids 	= get_post_gallery( $post->ID, false);
+			$image_ids 		= explode(',', $get_image_ids['ids']);
 		} else {
 			$get_image_ids 	= get_post_meta( $post->ID,'_ase_gallery_images', true);
 			$image_ids 		= explode( ',', $get_image_ids );
 		}
 
+		?>
+		<script>
+			jQuery(document).ready(function($){
+
+				var image = $('.ase-gallery-image');
+
+				$(image).on('click', 'i', function(){
+					$(this).next('img').fadeOut();
+				});
+			});
+		</script>
+		<?php
 
 		echo '<div id="ase-gallery-images">';
 			// loop through and display the images
-			if ( $image_ids ):
+			if ( !empty( $get_image_ids ) ):
 
 				foreach ($image_ids as $image_id):
 
 		            $image    =  wp_get_attachment_image_src($image_id, 'thumbnail', false);
 
-		           	echo '<img style="margin-right:5px;" src="'.$image[0].'">';
+		        	?>
+		        	<div class="ase-gallery-image">
+		        		<i class="dashicons dashicons-no-alt"></i>
+		           		<img style="margin-right:5px;" src="<?php echo $image[0];?>">
+		           	</div>
+		           	<?php
 
 				endforeach;
 
