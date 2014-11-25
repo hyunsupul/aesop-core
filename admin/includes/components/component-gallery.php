@@ -16,6 +16,12 @@ class AesopGalleryComponentAdmin {
 		// new
 		add_action( 'add_meta_boxes', 							array($this,'new_gallery_box') );
 		add_action( 'save_post',								array($this,'save_gallery_box'), 10, 3 );
+
+
+		// admin notice for upgrading
+		add_action( 'admin_notices', 					array($this, 'upgrade_galleries_notice' ) );
+		add_action( 'wp_ajax_upgrade_galleries', 		array($this, 'upgrade_galleries' ));
+		add_action( 'admin_head',						array($this, 'upgrade_click_handle'));
 	}
 
 
@@ -287,6 +293,104 @@ class AesopGalleryComponentAdmin {
 			return $post_id;
 
 		// safe to proceed
+	}
+
+	/**
+	*
+	*
+	*	Map the old galleries to post meta
+	*
+	*	@since 1.4
+	*/
+	function upgrade_galleries_notice(){
+
+		// only run if we have markers and have never upgraded
+		//if ( get_option('ase_galleries_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_galleries() ) {
+
+			$out = '<div class="error"><p>';
+
+			$out .= __( 'Welcome to Aesop Story Engine 1.4. We need to upgrade any galleries that you might have. Click <a id="aesop-upgrade-galleries" href="#">here</a> to start the upgrade process.', 'aesop-core' );
+
+			$out .= '</p></div>';
+
+			echo $out;
+
+		//}
+	}
+
+	/**
+	*
+	*	When the user starts the upgrade process let's run a function to map the old gallery ids to psot meta
+	*
+	*	@since 1.4
+	*/
+	function upgrade_galleries(){
+
+		check_ajax_referer( 'aesop-galleries-upgrade', 'security' );
+
+		echo 'ajax-success';
+
+		exit;
+
+	}
+	/**
+	*
+	*	Handles the click function for upgrading the old gallery ids to post meta
+	*
+	*	@since 1.3
+	*/
+	function upgrade_click_handle(){
+
+		$nonce = wp_create_nonce('aesop-galleries-upgrade');
+
+		// only run if we have galleries and haven't yet upgraded
+		//if ( get_option('ase_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_galleries() ) { ?>
+			<!-- Aesop Upgrade Galleries -->
+			<script>
+				jQuery(document).ready(function(){
+				  	jQuery('#aesop-upgrade-galleries').click(function(e){
+
+				  		e.preventDefault();
+
+				  		var data = {
+				            action: 'upgrade_galleries',
+				            security: '<?php echo $nonce;?>'
+				        };
+
+					  	jQuery.post(ajaxurl, data, function(response) {
+					  		if( response ){
+					        	//location.reload();
+					        	alert(response);
+					  		}
+					    });
+
+				    });
+				});
+			</script>
+		<?php // }
+	}
+
+	/**
+	*
+	*	Check to see if any galleries exist
+	*
+	*	@since 1.4
+	*	@return bool true if galleries exist, false if not
+	*/
+	function aesop_check_for_galleries(){
+
+		$galleries = get_posts( array( 'post_type' => array('ai_galleries'), 'posts_per_page' => -1 ) );
+
+		$return = '';
+
+		if ( $galleries ) :
+			$return = 'true';
+		else:
+			$return = 'false';
+		endif;
+
+		return $return;
+
 	}
 
 }
