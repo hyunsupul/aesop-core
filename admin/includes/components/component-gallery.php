@@ -243,6 +243,7 @@ class AesopGalleryComponentAdmin {
 
 		// loop through and display the images
 		if ( $image_ids ):
+
 			foreach ($image_ids as $image_id):
 
 	            $image    =  wp_get_attachment_image_src($image_id, 'thumbnail', false);
@@ -250,8 +251,11 @@ class AesopGalleryComponentAdmin {
 	           	echo '<img src="'.$image[0].'">';
 
 			endforeach;
+
 		else:
+
 			echo '<a href="#">Add Images</a>';
+
 		endif;
 
 	}
