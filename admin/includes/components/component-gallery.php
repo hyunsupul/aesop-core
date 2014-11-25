@@ -47,7 +47,7 @@ class AesopGalleryComponentAdmin {
 			'menu_icon' 		  		=> AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
 			'menu_position'				=> 15,
 			'labels'              		=> $labels,
-			'supports'            		=> array( 'title', 'editor' ),
+			'supports'            		=> array( 'title' ),
 			'hierarchical'        		=> false,
 			'public'              		=> false,
  			'show_ui' 					=> true,
@@ -241,22 +241,26 @@ class AesopGalleryComponentAdmin {
 			$image_ids 		= explode( ',', $get_image_ids );
 		}
 
-		// loop through and display the images
-		if ( $image_ids ):
 
-			foreach ($image_ids as $image_id):
+		echo '<div id="ase-gallery-images">';
+			// loop through and display the images
+			if ( $image_ids ):
 
-	            $image    =  wp_get_attachment_image_src($image_id, 'thumbnail', false);
+				foreach ($image_ids as $image_id):
 
-	           	echo '<img src="'.$image[0].'">';
+		            $image    =  wp_get_attachment_image_src($image_id, 'thumbnail', false);
 
-			endforeach;
+		           	echo '<img style="margin-right:5px;" src="'.$image[0].'">';
 
-		else:
+				endforeach;
 
-			echo '<a href="#">Add Images</a>';
+			else:
 
-		endif;
+				echo '<a href="#">Add Images</a>';
+
+			endif;
+
+		echo '</div>';
 
 	}
 
