@@ -1,7 +1,13 @@
 #ase-gallery-images {
+    .clearfix();
+
     .ase-gallery-image {
-        display: inline-block;
+        float:left;
+        width:150px;
+        height:150px;
     }
+
+    .ui-state-highlight { height: 1.5em; line-height: 1.2em; }
 }
 
 // gallery image
@@ -22,4 +28,12 @@
             .opacity(1.0);
         }
     }
+}
+
+.aes-gallery-image-placeholder {
+    height:150px;
+    width:150px;
+    float:left;
+    border:1px solid black;
+    .box-sizing(border-box);
 }

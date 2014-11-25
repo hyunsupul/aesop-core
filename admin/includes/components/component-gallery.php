@@ -14,6 +14,7 @@ class AesopGalleryComponentAdmin {
 		add_filter('cmb_meta_boxes', 							array($this,'aesop_gallery_meta' ));
 
 		// new
+		add_action( 'admin_head',								array($this,'gallery_box_assets'));
 		add_action( 'add_meta_boxes', 							array($this,'new_gallery_box') );
 		add_action( 'save_post',								array($this,'save_gallery_box'), 10, 3 );
 
@@ -23,8 +24,6 @@ class AesopGalleryComponentAdmin {
 		add_action( 'wp_ajax_upgrade_galleries', 		array($this, 'upgrade_galleries' ));
 		add_action( 'admin_head',						array($this, 'upgrade_click_handle'));
 	}
-
-
 	/**
 	 	* Creates an Aesop Galleries custom post type to manage all psot galleries
 	 	*
@@ -216,6 +215,19 @@ class AesopGalleryComponentAdmin {
 	/**
 	*
 	*
+	*	Load the assets that we need for the gallery meta
+	*	
+	*	@since 1.4
+	*/
+	function gallery_box_assets(){
+
+		if ( 'ai_galleries' == get_current_screen()->id ) {
+			wp_enqueue_script('jquery-ui-sortable');
+		}
+	}
+	/**
+	*
+	*
 	*	New metabox to better manage images within galleries
 	*
 	*	@since 1.4
@@ -251,16 +263,25 @@ class AesopGalleryComponentAdmin {
 		<script>
 			jQuery(document).ready(function($){
 
-				var image = $('.ase-gallery-image');
+				var image 	= $('.ase-gallery-image'),
+					gallery = $('#ase-gallery-images');
 
 				$(image).on('click', 'i', function(){
 					$(this).next('img').fadeOut();
+					$(gallery).sortable('sortupdate');
+				});
+
+				$(gallery).sortable({
+					axis: 'x',
+					containment: 'parent',
+					cursor: 'move',
+					opacity:0.8
 				});
 			});
 		</script>
 		<?php
 
-		echo '<div id="ase-gallery-images">';
+		echo '<ul id="ase-gallery-images">';
 			// loop through and display the images
 			if ( !empty( $get_image_ids ) ):
 
@@ -269,10 +290,10 @@ class AesopGalleryComponentAdmin {
 		            $image    =  wp_get_attachment_image_src($image_id, 'thumbnail', false);
 
 		        	?>
-		        	<div class="ase-gallery-image">
+		        	<li class="ase-gallery-image">
 		        		<i class="dashicons dashicons-no-alt"></i>
 		           		<img style="margin-right:5px;" src="<?php echo $image[0];?>">
-		           	</div>
+		           	</li>
 		           	<?php
 
 				endforeach;
@@ -283,7 +304,7 @@ class AesopGalleryComponentAdmin {
 
 			endif;
 
-		echo '</div>';
+		echo '</ul>';
 
 	}
 
