@@ -248,6 +248,8 @@ class AesopGalleryComponentAdmin {
 	*/
 	function render_gallery_box( $post ){
 
+		$ajax_nonce = wp_create_nonce('ase-update-gallery');
+
 		echo '<div class="aesop-gallery-data" style="display: hidden;">';
 			wp_nonce_field( 'ase_gallery_meta', 'ase_gallery_meta_nonce' );
 		echo '</div>';
@@ -283,6 +285,7 @@ class AesopGalleryComponentAdmin {
 
 					    var data = {
 					        action: 'ase_update_gallery',
+					        nonce: '<?php echo $ajax_nonce;?>',
 					        image_list: imageArray
 					    };
 
@@ -312,7 +315,7 @@ class AesopGalleryComponentAdmin {
 		        	?>
 		        	<li id="<?php echo $image_id;?>" class="ase-gallery-image">
 		        		<i class="dashicons dashicons-no-alt"></i>
-		           		<img style="margin-right:5px;" src="<?php echo $image[0];?>">
+		           		<img src="<?php echo $image[0];?>">
 		           	</li>
 		           	<?php
 
@@ -335,10 +338,9 @@ class AesopGalleryComponentAdmin {
 	*/
 	function ase_update_gallery(){
 
+		check_ajax_referer('ase-update-gallery','nonce');
 
 		if ( isset( $_POST['action'] ) && $_POST['action'] == 'ase_update_gallery' ) {
-
-			echo 'success';
 
 			var_dump($_POST);
 
