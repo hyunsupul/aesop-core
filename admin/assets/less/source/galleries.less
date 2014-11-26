@@ -1,5 +1,6 @@
 #ase-gallery-images {
     .clearfix();
+    margin:20px 10px 5px;
 
     .ase-gallery-image {
         float:left;
@@ -35,10 +36,39 @@
     }
 }
 
-.aes-gallery-image-placeholder {
-    height:100px;
-    width:100px;
+.ase-gallery-image-placeholder {
+    height:120px;
+    width:120px;
     float:left;
-    border:1px solid black;
+    margin-right:10px;
+    border:1px dashed #777;
     .box-sizing(border-box);
+    .transition(background .2s ease);
+    position:relative;
+
+    i {
+        position:absolute;
+        width:100%;
+        left:0;
+        right:0;
+        text-align:center;
+        top:42%;
+    }
+
+    &:hover {
+        background:@link;
+        color:white;
+        cursor: pointer;
+        border-color:@link;
+    }
+}
+
+.ase-gallery-drop-zone {
+    border: 1px solid #fcefa1;
+    background: #fbf9ee;
+    color: #363636;
+    width:120px;
+    height:120px;
+    float:left;
+    margin-right:10px;
 }

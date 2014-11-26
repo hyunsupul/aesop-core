@@ -279,6 +279,9 @@ class AesopGalleryComponentAdmin {
 					containment: 'parent',
 					cursor: 'move',
 					opacity:0.8,
+					items: 'li:not(.ase-gallery-image-placeholder)',
+					placeholder: 'ase-gallery-drop-zone',
+					forcePlaceholderSize:true,
 					update: function() {
 
 						var imageArray = $(this).sortable('toArray');
@@ -310,9 +313,10 @@ class AesopGalleryComponentAdmin {
 		<?php
 
 		echo '<ul id="ase-gallery-images">';
-			// loop through and display the images
-			if ( !empty( $get_image_ids ) ):
 
+			?><li id="ase-gallery-add-image" class="ase-gallery-image-placeholder"><i class="dashicons dashicons-plus"></i></li><?php
+
+			if ( !empty( $get_image_ids ) ):
 				foreach ($image_ids as $image_id):
 
 		            $image    =  wp_get_attachment_image_src($image_id, 'thumbnail', false);
@@ -325,10 +329,6 @@ class AesopGalleryComponentAdmin {
 		           	<?php
 
 				endforeach;
-
-			else:
-
-				echo '<a href="#">Add Images</a>';
 
 			endif;
 
