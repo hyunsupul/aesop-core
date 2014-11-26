@@ -281,7 +281,8 @@ class AesopGalleryComponentAdmin {
 					opacity:0.8,
 					update: function() {
 
-					    var imageArray = $(this).sortable('toArray', { attribute: 'id' });
+						var imageArray = $(this).sortable('toArray');
+					    $('#ase_gallery_ids').val( imageArray );
 
 					    var data = {
 					        action: 'ase_update_gallery',
@@ -300,6 +301,10 @@ class AesopGalleryComponentAdmin {
 					}
 
 				});
+
+
+				$('#ase_gallery_ids').val( $(gallery).sortable('toArray') );
+
 			});
 		</script>
 		<?php
@@ -328,6 +333,8 @@ class AesopGalleryComponentAdmin {
 			endif;
 
 		echo '</ul>';
+
+		echo '<input type="hidden" id="ase_gallery_ids" name="ase_gallery_ids" value="">';
 
 	}
 
