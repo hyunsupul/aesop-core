@@ -271,14 +271,15 @@ class AesopGalleryComponentAdmin {
 					gallery = $('#ase-gallery-images');
 
 				$(image).on('click', 'i', function(){
-					$(this).next('img').fadeOut(); 
+					$(this).parent().remove();
+					$(gallery).sortable('refresh');
 				});
 
 				$(gallery).sortable({
 					containment: 'parent',
 					cursor: 'move',
 					opacity:0.8,
-					stop: function() {
+					update: function() {
 
 					    var imageArray = $(this).sortable('toArray', { attribute: 'id' });
 
