@@ -155,6 +155,12 @@ class AesopChapterHeadingComponent {
 
 	}
 
+	/**
+	*
+	*	Draws the off canvas menu and close button
+	*
+	*	@since 1.3.2
+	*/
 	function aesop_chapter_menu(){
 
 		$out = '<a id="aesop-toggle-chapter-menu" class="aesop-toggle-chapter-menu" href="#aesop-chapter-menu"><i class="dashicons dashicons-tag aesop-close-chapter-menu"></i></a>';
