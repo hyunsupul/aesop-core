@@ -122,14 +122,14 @@ class AesopChapterHeadingComponent {
 					    scrollOffset: <?php echo absint( $chapterOffset );?>,
 					});
 
-				});
+					var coverSizer = function(){
+						jQuery('.aesop-chapter-full .aesop-article-chapter').css({'height':(jQuery(window).height())+'px'});
+					}
+					coverSizer();
+				    jQuery(window).resize(function(){
+	    				coverSizer();
+					});
 
-				var coverSizer = function(){
-					jQuery('.aesop-chapter-full .aesop-article-chapter').css({'height':(jQuery(window).height())+'px'});
-				}
-				coverSizer();
-			    jQuery(window).resize(function(){
-    				coverSizer();
 				});
 			</script>
 		<?php
