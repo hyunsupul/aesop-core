@@ -44,7 +44,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 				<div class="aesop-article-chapter clearfix" <?php echo $img_style;?> >
 
-					<h2 class="aesop-cover-title" itemprop="title" >
+					<h2 class="aesop-cover-title" itemprop="title" data-title="<?php echo esc_attr( $atts['title'] );?>">
 						<?php echo esc_html( $atts['title'] );
 
 						if ( $atts['subtitle'] ) { ?>
@@ -120,6 +120,22 @@ class AesopChapterHeadingComponent {
 					    showTopLink: true,
 					    showHeadline: false,
 					    scrollOffset: <?php echo absint( $chapterOffset );?>,
+					    onRender: function() {
+					       	jQuery('.scroll-nav__section').each(function(){
+
+					       		var id = jQuery(this).attr('id');
+					       		var title = jQuery(this).find('.aesop-cover-title').attr('data-title');
+
+					       		jQuery('.scroll-nav__link').each(function(){
+					       			var match = jQuery(this).attr('href');
+
+					       			if ( match == '#'+id ) {
+					       				jQuery(this).text(title);
+					       			}
+					       		});
+
+					       	});
+					    }
 					});
 
 					var coverSizer = function(){
