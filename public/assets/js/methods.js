@@ -35,4 +35,7 @@ jQuery(document).ready(function(){
 		e.preventDefault();
 		closeChapter();
 	});
+	//jQuery('.scroll-nav__link').live('click',function(){
+	//	closeChapter();
+	//});
 });
