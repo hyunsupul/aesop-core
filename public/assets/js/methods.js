@@ -18,6 +18,10 @@ jQuery(document).ready(function(){
 
     window.blockFotoramaData = true;
 
+    var closeChapter = function(){
+    	jQuery('body').removeClass('aesop-chapter-menu-open');
+    }
+
     // chapter component
 	jQuery('.aesop-toggle-chapter-menu').click(function(e){
 		e.preventDefault()
@@ -25,6 +29,10 @@ jQuery(document).ready(function(){
 	});
 	jQuery('.aesop-close-chapter-menu').click(function(e){
 		e.preventDefault();
-		jQuery('body').removeClass('aesop-chapter-menu-open');
+		closeChapter();
+	});
+	jQuery('.aesop-chapter-menu-open article').live('click',function(e){
+		e.preventDefault();
+		closeChapter();
 	});
 });
