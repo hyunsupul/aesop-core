@@ -132,7 +132,25 @@ class AesopChapterHeadingComponent {
 
 				});
 			</script>
+
 		<?php
+
+		echo self::aesop_chapter_menu();
+
+	}
+
+	function aesop_chapter_menu(){
+
+		$out = '<a id="aesop-toggle-chapter-menu" class="aesop-toggle-chapter-menu" href="#aesop-chapter-menu"><i class="dashicons dashicons-tag aesop-close-chapter-menu"></i></a>';
+		$out .= '<div id="aesop-chapter-menu" class="aesop-chapter-menu">
+					<i class="dashicons dashicons-no-alt aesop-close-chapter-menu"></i>
+					<div class="aesop-chapter-menu--inner aesop-entry-header">
+					</div>
+				</div>';
+
+		$return = apply_filters('aesop_chapter_menu_output', $out );
+
+		return $return;
 	}
 }
 

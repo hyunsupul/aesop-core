@@ -17,4 +17,14 @@ jQuery(document).ready(function(){
     });
 
     window.blockFotoramaData = true;
+
+    // chapter component
+	jQuery('.aesop-toggle-chapter-menu').click(function(e){
+		e.preventDefault()
+		jQuery('body').toggleClass('aesop-chapter-menu-open');
+	});
+	jQuery('.aesop-close-chapter-menu').click(function(e){
+		e.preventDefault();
+		jQuery('body').removeClass('aesop-chapter-menu-open');
+	});
 });
