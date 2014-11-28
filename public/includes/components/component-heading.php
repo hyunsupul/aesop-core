@@ -33,22 +33,12 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 		$video_chapter_class = 'video' == $atts['bgtype'] ? 'aesop-video-chapter' : null;
 
+		$full_class = 'on' == $atts['full'] ? 'aesop-chapter-full' : false;
+
 		do_action('aesop_chapter_before'); //action
 
-			if ( 'on' == $atts['full'] ) { ?>
-			<script>
-				jQuery(document).ready(function(){
-					var coverSizer = function(){
-						jQuery('.aesop-article-chapter').css({'height':(jQuery(window).height())+'px'});
-					}
-					coverSizer();
-				    jQuery(window).resize(function(){
-        				coverSizer();
-    				});
-				});
-			</script>
-			<?php } ?>
-			<div id="chapter-unique-<?php echo $unique;?>" class="aesop-article-chapter-wrap default-cover <?php echo $video_chapter_class;?> aesop-component <?php echo $img_style_class;?>" >
+			?>
+			<div id="chapter-unique-<?php echo $unique;?>" class="aesop-article-chapter-wrap default-cover <?php echo $video_chapter_class;?> aesop-component <?php echo $img_style_class;?> <?php echo $full_class;?> " >
 
 				<?php do_action('aesop_chapter_inside_top'); //action ?>
 
@@ -133,8 +123,15 @@ class AesopChapterHeadingComponent {
 					});
 
 				});
-			</script>
 
+				var coverSizer = function(){
+					jQuery('.aesop-chapter-full .aesop-article-chapter').css({'height':(jQuery(window).height())+'px'});
+				}
+				coverSizer();
+			    jQuery(window).resize(function(){
+    				coverSizer();
+				});
+			</script>
 		<?php
 	}
 }
