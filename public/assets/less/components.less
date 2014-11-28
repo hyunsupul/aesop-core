@@ -307,17 +307,18 @@
 // new cahpter menu as of 1.4
 
 @chapter-menu-width: 250px;
+@chapter-toggle-width: 44px;
 
 // toggle chapter menu open
 .aesop-toggle-chapter-menu {
     position:fixed;
     right:-1px; // covers border right
-    bottom:44px;
-    height:44px;
-    width:44px;
+    bottom:@chapter-toggle-width;
+    height:@chapter-toggle-width;
+    width:@chapter-toggle-width;
     background:fadeout(white,3);
     border:1px solid darken(white,5);
-    .transition(background .2s ease);
+    .transition(right .25s ease);
 
     &:hover {
         background:#007aac;
@@ -339,6 +340,9 @@
     .aesop-chapter-menu {
         right:0;
     }
+    .aesop-toggle-chapter-menu {
+        right:@chapter-menu-width;
+    }
 }
 
 // chapter close button
@@ -359,10 +363,10 @@
     top:0;
     position:fixed;
     bottom:0;
-    background:fadeout(white,3);
+    background:white;
     border-left:1px solid darken(white,5);
     .transition(right .25s ease);
-    z-index: 120;
+    z-index: 500;
 
     * {
         .box-sizing(border-box);
