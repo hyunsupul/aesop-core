@@ -255,7 +255,8 @@ class AesopGalleryComponentAdmin {
 		echo '</div>';
 
 		// get the existing images for this post prior to 1.4, else get the id's set into post meta for 1.4
-		if ( AI_CORE_VERSION < 1.4 ) {
+		//if ( AI_CORE_VERSION < 1.4 ) {
+		if ( false ) {
 			$get_image_ids 	= get_post_gallery( $post->ID, false);
 			$image_ids 		= explode(',', $get_image_ids['ids']);
 		} else {
@@ -417,14 +418,12 @@ class AesopGalleryComponentAdmin {
 			return $post_id;
 
 		// safe to proceed
-		delete_post_meta( $post_id, 'ase_gallery_ids' );
+		delete_post_meta( $post_id, '_ase_gallery_images' );
 
-		if ( isset( $_POST['ase-map-component-locations'] ) ) {
-			foreach( $_POST['ase-map-component-locations'] as $location ){
-				// let's decode and convert the data into an array
-				$location_data = json_decode(urldecode($location), true);
-				add_post_meta( $post_id, 'ase_map_component_locations', $location_data);
-			}
+		if ( isset( $_POST['ase_gallery_ids'] ) ) {
+			// let's decode and convert the data into an array
+			$items = urldecode($_POST['ase_gallery_ids']);
+			update_post_meta( $post_id, '_ase_gallery_images', $items);
 		}
 	}
 
