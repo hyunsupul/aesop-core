@@ -8,8 +8,8 @@ class AesopGalleryComponentAdmin {
 
 	public function __construct(){
 
-       	add_action('init',										array($this,'do_type'));
-       	add_filter('manage_ai_galleries_posts_columns', 		array($this,'col_head'));
+    add_action('init',										array($this,'do_type'));
+    add_filter('manage_ai_galleries_posts_columns', 		array($this,'col_head'));
 		add_action('manage_ai_galleries_posts_custom_column', 	array($this,'col_content'), 10, 2);
 		add_filter('cmb_meta_boxes', 							array($this,'aesop_gallery_meta' ));
 
@@ -267,46 +267,102 @@ class AesopGalleryComponentAdmin {
 		<script>
 			jQuery(document).ready(function($){
 
-				var image 	= $('.ase-gallery-image'),
-					gallery = $('#ase-gallery-images');
+				var	gallery = $('#ase-gallery-images');
 
-				$(image).on('click', 'i', function(){
+				$(document).on('click', '.ase-gallery-image > i', function(){
 					$(this).parent().remove();
-					$(gallery).sortable('refresh');
+					gallery.sortable('refresh');
+					ase_encode_gallery_items();
 				});
 
-				$(gallery).sortable({
+				gallery.sortable({
 					containment: 'parent',
 					cursor: 'move',
-					opacity:0.8,
+					opacity: 0.8,
 					items: 'li:not(.ase-gallery-image-placeholder)',
 					placeholder: 'ase-gallery-drop-zone',
 					forcePlaceholderSize:true,
-					update: function() {
-
+					update: function(){
 						var imageArray = $(this).sortable('toArray');
-					    $('#ase_gallery_ids').val( imageArray );
-
-					    var data = {
-					        action: 'ase_update_gallery',
-					        nonce: '<?php echo $ajax_nonce;?>',
-					        image_list: imageArray
-					    };
-
-					    $.ajax({
-					        type: "POST",
-					        url: ajaxurl,
-					        data: data,
-					        success: function(response) {
-					        	console.log(response);
-					        }
-					    });
+				  	$('#ase_gallery_ids').val( imageArray );
 					}
-
 				});
 
+				function ase_string_encode(gData){
+					return encodeURIComponent(JSON.stringify(gData));
+				}
 
-				$('#ase_gallery_ids').val( $(gallery).sortable('toArray') );
+				function ase_string_decode(gData){
+					return JSON.parse(decodeURIComponent(gData));
+				}
+
+				function ase_encode_gallery_items(){
+					var imageArray = gallery.sortable('toArray');
+				  $('#ase_gallery_ids').val( imageArray );
+				}
+
+				function ase_insert_gallery_item(id, url){
+
+					var item_html = "<li id='" + id + "' class='ase-gallery-image'><i class='dashicons dashicons-no-alt'></i><img src='" + url + "'></li>";
+					$('#ase-gallery-images').append( item_html );
+					gallery.sortable('refresh');
+					ase_encode_gallery_items();
+					
+				}
+
+				var ase_media_init = function(selector, button_selector)  {
+				    var clicked_button = false;
+				 
+				    $(selector).each(function (i, input) {
+				        var button = $(input).children(button_selector);
+				        button.click(function (event) {
+				            event.preventDefault();
+				            var selected_img;
+				            clicked_button = $(this);
+				 
+				            if(wp.media.frames.ase_frame) {
+										  wp.media.frames.ase_frame.open();
+										  return;
+										}
+				 
+				            wp.media.frames.ase_frame = wp.media({
+										   title: 'Select Aesop Gallery Image',
+										   multiple: false,
+										   library: {
+										      type: 'image'
+										   },
+										   button: {
+										      text: 'Use selected image'
+										   }
+										});
+				 
+				            var ase_media_set_image = function() {
+										    var selection = wp.media.frames.ase_frame.state().get('selection');
+										 
+										    if (!selection) {
+										        return;
+										    }
+										 
+										    // iterate through selected elements
+										    selection.each(function(attachment) {
+										    	var id = attachment.id;
+										    	var url = attachment.attributes.sizes.thumbnail.url;
+										    	ase_insert_gallery_item(id, url);
+										    });
+										};
+
+				            // closing event for media manger
+				            //wp.media.frames.ase_frame.on('close', ase_media_set_image);
+				            // image selection event
+				            wp.media.frames.ase_frame.on('select', ase_media_set_image);
+				            // showing media manager
+				            wp.media.frames.ase_frame.open();
+				       });
+				   });
+				};
+
+				ase_media_init('#ase-gallery-add-image', 'i');
+				ase_encode_gallery_items();
 
 			});
 		</script>
@@ -340,25 +396,6 @@ class AesopGalleryComponentAdmin {
 
 	/**
 	*
-	*	Process fired on image sort used in render_gallery_box above
-	*	@since 1.4
-	*/
-	function ase_update_gallery(){
-
-		check_ajax_referer('ase-update-gallery','nonce');
-
-		if ( isset( $_POST['action'] ) && $_POST['action'] == 'ase_update_gallery' ) {
-
-			var_dump($_POST);
-
-		}
-
-		exit();
-
-	}
-
-	/**
-	*
 	* 	Save the meta when the post is saved.
 	*
 	* 	@param int $post_id The ID of the post being saved.
@@ -380,6 +417,15 @@ class AesopGalleryComponentAdmin {
 			return $post_id;
 
 		// safe to proceed
+		delete_post_meta( $post_id, 'ase_gallery_ids' );
+
+		if ( isset( $_POST['ase-map-component-locations'] ) ) {
+			foreach( $_POST['ase-map-component-locations'] as $location ){
+				// let's decode and convert the data into an array
+				$location_data = json_decode(urldecode($location), true);
+				add_post_meta( $post_id, 'ase_map_component_locations', $location_data);
+			}
+		}
 	}
 
 	/**
@@ -451,7 +497,7 @@ class AesopGalleryComponentAdmin {
 		//if ( get_option('ase_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_galleries() ) { ?>
 			<!-- Aesop Upgrade Galleries -->
 			<script>
-				jQuery(document).ready(function(){
+				jQuery(document).ready(function($){
 				  	jQuery('#aesop-upgrade-galleries').click(function(e){
 
 				  		e.preventDefault();
