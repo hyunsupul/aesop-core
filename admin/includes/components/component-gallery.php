@@ -333,7 +333,7 @@ class AesopGalleryComponentAdmin {
 							      type: 'image'
 							   },
 							   button: {
-							      text: 'Use selected image'
+							      text: 'Use Selected Images'
 							   }
 								});
 		 
@@ -388,7 +388,7 @@ class AesopGalleryComponentAdmin {
 							  type: 'image'
 							},
 							button: {
-							  text: 'Use selected image'
+							  text: 'Update Selected Image'
 							}
 						});
 
