@@ -8,8 +8,8 @@ class AesopGalleryComponentAdmin {
 
 	public function __construct(){
 
-    add_action('init',										array($this,'do_type'));
-    add_filter('manage_ai_galleries_posts_columns', 		array($this,'col_head'));
+    	add_action('init',										array($this,'do_type'));
+    	add_filter('manage_ai_galleries_posts_columns', 		array($this,'col_head'));
 		add_action('manage_ai_galleries_posts_custom_column', 	array($this,'col_content'), 10, 2);
 		add_filter('cmb_meta_boxes', 							array($this,'aesop_gallery_meta' ));
 
@@ -18,13 +18,10 @@ class AesopGalleryComponentAdmin {
 		add_action( 'add_meta_boxes', 							array($this,'new_gallery_box') );
 		add_action( 'save_post',								array($this,'save_gallery_box'), 10, 3 );
 
-
 		// admin notice for upgrading
-		add_action( 'admin_notices', 					array($this, 'upgrade_galleries_notice' ) );
-		add_action( 'wp_ajax_upgrade_galleries', 		array($this, 'upgrade_galleries' ));
-		add_action( 'admin_head',						array($this, 'upgrade_click_handle'));
-	
-		add_action( 'wp_ajax_ase_update_gallery', 		array($this, 'ase_update_gallery' ));
+		add_action( 'admin_notices', 							array($this, 'upgrade_galleries_notice' ) );
+		add_action( 'wp_ajax_upgrade_galleries', 				array($this, 'upgrade_galleries' ));
+		add_action( 'admin_head',								array($this, 'upgrade_click_handle'));
 	}
 	/**
 	 	* Creates an Aesop Galleries custom post type to manage all psot galleries
@@ -236,11 +233,13 @@ class AesopGalleryComponentAdmin {
 	*/
 	function new_gallery_box(){
 
-		add_meta_box('ase_gallery_component',__( 'Gallery Images', 'aesop-core' ),array($this,'render_gallery_box'), 'ai_galleries','normal','core');
+		add_meta_box('ase_gallery_layout',__( 'Layout', 'aesop-core' ),array($this,'render_layout_box'), 'ai_galleries','normal','core');
+		add_meta_box('ase_gallery_component',__( 'Images', 'aesop-core' ),array($this,'render_gallery_box'), 'ai_galleries','normal','core');
+
 	}
 
 	/**
-	* 	Render Meta Box content.
+	* 	Render meta box used for the gallery
 	*
 	* 	@param WP_Post $post The post object.
 	*	@since 1.4
@@ -448,6 +447,21 @@ class AesopGalleryComponentAdmin {
 
 		echo '<input type="hidden" id="ase_gallery_ids" name="ase_gallery_ids" value="">';
 
+	}
+
+	function render_layout_box( $post ) {
+
+		$type = get_post_meta( $post->ID,'aesop_gallery_type', true);
+      	
+      	?>
+        <label for="wdm_new_field"><?php _e( 'Choose a layout:', 'ah-core' ); ?></label>
+        <br />
+        <input type="radio" name="aesop_gallery_type" value="grid" <?php checked( $type, 'grid' ); ?> ><?php _e('Grid','ah-core');?><br>
+        <input type="radio" name="aesop_gallery_type" value="thumbnail" <?php checked( $type, 'thumbnail' ); ?> ><?php _e('Thumbnail','ah-core');?><br>
+        <input type="radio" name="aesop_gallery_type" value="sequence" <?php checked( $type, 'sequence' ); ?> ><?php _e('Sequence','ah-core');?><br>
+        <input type="radio" name="aesop_gallery_type" value="photoset" <?php checked( $type, 'photoset' ); ?> ><?php _e('Photoset','ah-core');?><br>
+        <input type="radio" name="aesop_gallery_type" value="stacked" <?php checked( $type, 'stacked' ); ?> ><?php _e('Stacked Parallax','ah-core');?><br>
+        <?php
 	}
 
 	/**
