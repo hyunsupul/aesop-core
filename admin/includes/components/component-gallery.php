@@ -558,16 +558,41 @@ class AesopGalleryComponentAdmin {
 
 		?>
 		<div class="ase-gallery-opts--global">
-			GLOBAL OPTS
+
+			<div class="ase-gallery-opts--single">
+				<label for="aesop-gallery-width">Main Gallery Width</label>
+				<p class="aesop-gallery-opts--desc">Adjust the overall width of the grid/thumbnail gallery. Acceptable values include 500px or 50%.</p>
+				<input type="text" name="aesop_gallery_width" value="<?php echo esc_html($width);?>">
+			</div>
+			<div class="ase-gallery-opts--single">
+				<label for="aesop-gallery-caption">Gallery Caption</label>
+				<p class="aesop-gallery-opts--desc">Add an optional caption for the gallery.</p>
+				<textarea name="aesop_gallery_caption"><?php echo esc_html($caption);?></textarea>
+			</div>
+
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--grid" style="display:none;">
-			GRID OPTS
+			<h3>Grid Options</h3>
+
+			<div class="ase-gallery-opts--single">
+				<label for="aesop-grid-gallery-width">Grid Gallery Width</label>
+				<p class="aesop-gallery-opts--desc">Adjust the width of the individual grid items, only if using Grid gallery style. Default is 400.</p>
+				<input type="text" name="aesop_grid_gallery_width" value="<?php echo (int) $grid_item_width;?>">
+			</div>
+
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--thumb" style="display:none;">
-			THUMB OPTS
+			<h3>Thumbnail Options</h3>
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--photoset" style="display:none;">
-			PHOTOSET OPTS
+			<h3>Photoset Options</h3>
+
+			<div class="ase-gallery-opts--single">
+				<label for="aesop-photoset-gallery-layout">Gallery Layout</label>
+				<p class="aesop-gallery-opts--desc">Let's say you have 4 images in this gallery. If you enter 121 you will have one image on the top row, two images on the second row, and one image on the third row.</p>
+				<input type="text" name="aesop_photoset_gallery_layout" value="<?php echo (int) $photoset_layout;?>">
+			</div>
+
 		</div>
 		<?php
 
