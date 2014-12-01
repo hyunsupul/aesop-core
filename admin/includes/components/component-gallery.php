@@ -450,7 +450,7 @@ class AesopGalleryComponentAdmin {
 
 		        	?>
 		        	<li id="<?php echo $image_id;?>" class="ase-gallery-image">
-		        		
+		        		<i class="dashicons dashicons-no-alt"></i>
 		        		<i class='dashicons dashicons-edit'></i>
 		           	<img src="<?php echo $image[0];?>">
 		          </li>
