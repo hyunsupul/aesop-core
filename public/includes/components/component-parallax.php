@@ -100,7 +100,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 						<?php if ('on' == $atts['floater']){?>
 							<div class="aesop-parallax-sc-floater floater-<?php echo sanitize_html_class( $atts['floaterposition'] );?>" data-speed="10">
-								<?php echo esc_html($atts['floatermedia']);?>
+								<?php echo aesop_component_media_filter($atts['floatermedia']);?>
 							</div>
 						<?php } ?>
 
