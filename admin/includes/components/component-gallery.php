@@ -308,138 +308,122 @@ class AesopGalleryComponentAdmin {
 					$('#ase-gallery-images').append( item_html );
 					gallery.sortable('refresh');
 					ase_encode_gallery_items();
-					
-				}
-
-				function ase_edit_gallery_item(id, url, editable){
-
-					var item_html = "<li id='" + id + "' class='ase-gallery-image'><i class='dashicons dashicons-no-alt'></i><i class='dashicons dashicons-edit'></i><img src='" + url + "'></li>";
-					$(editable).replaceWith( item_html );
-					gallery.sortable('refresh');
-					ase_encode_gallery_items();
-					ase_media_edit_init('.ase-gallery-image', 'i.dashicons-edit');
+					//ase_media_edit_init('.ase-gallery-image', 'i.dashicons-edit');
 				}
 
 				var ase_media_init = function(selector, button_selector)  {
 				    var clicked_button = false;
 				 
 				    $(selector).each(function (i, input) {
-				        var button = $(input).children(button_selector);
-				        button.click(function (event) {
-				            event.preventDefault();
-				            var selected_img;
-				            clicked_button = $(this);
-				 
-				            if(wp.media.frames.ase_frame) {
-										  wp.media.frames.ase_frame.open();
-										  return;
-										}
-				 
-				            wp.media.frames.ase_frame = wp.media({
-										   title: 'Select Aesop Gallery Image',
-										   multiple: true,
-										   library: {
-										      type: 'image'
-										   },
-										   button: {
-										      text: 'Use selected image'
-										   }
-										});
-				 
-				            var ase_media_set_image = function() {
-										    var selection = wp.media.frames.ase_frame.state().get('selection');
-										 
-										    if (!selection) {
-										        return;
-										    }
-										 
-										    // iterate through selected elements
-										    selection.each(function(attachment) {
-										    	var id = attachment.id;
-										    	var url = attachment.attributes.sizes.thumbnail.url;
-										    	ase_insert_gallery_item(id, url);
-										    });
-										};
-
-				            // closing event for media manger
-				            //wp.media.frames.ase_frame.on('close', ase_media_set_image);
-				            // image selection event
-				            wp.media.frames.ase_frame.on('select', ase_media_set_image);
-										wp.media.frames.ase_frame.open();
-				       });
-				   });
-				};
-
-
-				var ase_media_edit_init = function(selector, button_selector)  {
-				    var clicked_button;
-
-				    $(selector).each(function (i, input) {
-				        var button = $(input).children(button_selector);
-				        button.click(function (event) {
-			            event.preventDefault();
-			            var selected_img;
-			            clicked_button = $(this);
-			 
-			            if(wp.media.frames.ase_edit_frame) {
-									  wp.media.frames.ase_edit_frame.open();
-									  return;
-									}
-			 
-			            wp.media.frames.ase_edit_frame = wp.media({
-									   title: 'Edit Image',
-									   multiple: false,
-									   editing: true,
-									   library: {
-									      type: 'image'
-									   },
-									   button: {
-									      text: 'Use selected image'
-									   }
-									});
-
-									var ase_media_edit_image = function() {
-								    var selection = wp.media.frames.ase_edit_frame.state().get('selection');
+			        var button = $(input).children(button_selector);
+			        button.click(function (event) {
+		            event.preventDefault();
+		            var selected_img;
+		            clicked_button = $(this);
+		 
+		            if(wp.media.frames.ase_frame) {
+								  wp.media.frames.ase_frame.open();
+								  return;
+								}
+		 
+		            wp.media.frames.ase_frame = wp.media({
+							   title: 'Select Aesop Gallery Image',
+							   multiple: true,
+							   library: {
+							      type: 'image'
+							   },
+							   button: {
+							      text: 'Use selected image'
+							   }
+								});
+		 
+		            var ase_media_set_image = function() {
+								    var selection = wp.media.frames.ase_frame.state().get('selection');
 								 
 								    if (!selection) {
 								        return;
 								    }
-
+								 
 								    // iterate through selected elements
 								    selection.each(function(attachment) {
 								    	var id = attachment.id;
 								    	var url = attachment.attributes.sizes.thumbnail.url;
-								    	ase_edit_gallery_item(id, url, clicked_button.parent());
+								    	ase_insert_gallery_item(id, url);
 								    });
-									};
+								};
 
-			            // closing event for media manger
-			            wp.media.frames.ase_edit_frame.on('close', function(){
-			            	ase_media_edit_init('.ase-gallery-image', 'i.dashicons-edit');
-			            });
-			            // image selection event
-			            wp.media.frames.ase_edit_frame.on('select', ase_media_edit_image);
-			            
-			            function bindLate(funcName, fixThis){
-			            	return function(){
-			            		return fixThis[funcName].apply(fixThis, arguments)
-			            	}
-			            }
-
-			            wp.media.frames.ase_edit_frame.on('open',function(){
-			            	console.log(clicked_button.parent());
-									  var selection = wp.media.frames.ase_edit_frame.state().get('selection');
-			            	attachment = wp.media.attachment( clicked_button.parent().attr('id') );
-			            	attachment.fetch();
-          					selection.add( attachment ? [ attachment ] : [] );
-			            });
-									wp.media.frames.ase_edit_frame.open();
-				       });
+		            // closing event for media manger
+		            //wp.media.frames.ase_frame.on('close', ase_media_set_image);
+		            // image selection event
+		            wp.media.frames.ase_frame.on('select', ase_media_set_image);
+								wp.media.frames.ase_frame.open();
+			       });
 				   });
 				};
 
+				function ase_edit_gallery_item(id, url, editable){
+					var item_html = "<li id='" + id + "' class='ase-gallery-image'><i class='dashicons dashicons-no-alt'></i><i class='dashicons dashicons-edit'></i><img src='" + url + "'></li>";
+					$(editable).replaceWith( item_html );
+					gallery.sortable('refresh');
+					ase_encode_gallery_items();
+				}
+
+				var ase_media_edit_init = function()  {
+				    var clicked_button;
+
+				    $(document).on('click', '.ase-gallery-image > i.dashicons-edit', function(event){
+							event.preventDefault();
+	            var selected_img;
+	            clicked_button = $(this);
+	            var target = clicked_button.parent();
+	 
+	            if(wp.media.frames.ase_edit_frame) {
+							  wp.media.frames.ase_edit_frame.open();
+							  return;
+							}
+	 
+	            wp.media.frames.ase_edit_frame = wp.media({
+							   title: 'Edit Image',
+							   multiple: false,
+							   library: {
+							      type: 'image'
+							   },
+							   button: {
+							      text: 'Use selected image'
+							   }
+							});
+
+							var ase_media_edit_image = function() {
+						    var selection = wp.media.frames.ase_edit_frame.state().get('selection');
+						 
+						    if (!selection) {
+						        return;
+						    }
+
+						    // iterate through selected elements
+						    selection.each(function(attachment) {
+						    	var id = attachment.id;
+						    	var url = attachment.attributes.sizes.thumbnail.url;
+						    	ase_edit_gallery_item(id, url, target);
+						    });
+							};
+
+	            // image selection event
+	            wp.media.frames.ase_edit_frame.on('select', ase_media_edit_image);
+	            wp.media.frames.ase_edit_frame.on('open',function(){
+	            	console.log(clicked_button.parent().attr('id'));
+							  var selection = wp.media.frames.ase_edit_frame.state().get('selection');
+	            	attachment = wp.media.attachment( clicked_button.parent().attr('id') );
+	            	attachment.fetch();
+      					selection.add( attachment ? [ attachment ] : [] );
+	            });
+							wp.media.frames.ase_edit_frame.open();
+				    });
+
+				};
+
 				ase_media_init('#ase-gallery-add-image', 'i');
-				ase_media_edit_init('.ase-gallery-image', 'i.dashicons-edit');
+				ase_media_edit_init();
 				ase_encode_gallery_items();
 
 			});
