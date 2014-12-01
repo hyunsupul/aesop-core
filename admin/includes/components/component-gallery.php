@@ -233,11 +233,11 @@ class AesopGalleryComponentAdmin {
 	*/
 	function new_gallery_box(){
 
-		// layout
-		add_meta_box('ase_gallery_layout',__( 'Layout', 'aesop-core' ),array($this,'render_layout_box'), 'ai_galleries','normal','core');
-
 		// images
 		add_meta_box('ase_gallery_component',__( 'Images', 'aesop-core' ),array($this,'render_gallery_box'), 'ai_galleries','normal','core');
+
+		// layout
+		add_meta_box('ase_gallery_layout',__( 'Layout', 'aesop-core' ),array($this,'render_layout_box'), 'ai_galleries','normal','core');
 
 		// global options
 		add_meta_box('ase_gallery_options',__( 'Options', 'aesop-core' ),array($this,'render_options_box'), 'ai_galleries','normal','core');
@@ -467,31 +467,66 @@ class AesopGalleryComponentAdmin {
 		$type = get_post_meta( $post->ID,'aesop_gallery_type', true);
 
       	?>
-        <label>
-        	<?php _e('Grid','ah-core');?>
-        	<input type="radio" name="aesop_gallery_type" value="grid" <?php checked( $type, 'grid' ); ?> >
-        </label>
 
-        <label>
-        	<?php _e('Thumbnail','ah-core');?>
-        	<input type="radio" name="aesop_gallery_type" value="thumbnail" <?php checked( $type, 'thumbnail' ); ?> >
-        </label>
+      	<script>
+	      	jQuery(document).ready(function($){
 
-        <label>
-        	<?php _e('Sequence','ah-core');?>
-        	<input type="radio" name="aesop_gallery_type" value="sequence" <?php checked( $type, 'sequence' ); ?> >
-        </label>
+				var value_check = function( value ){
 
-        <label>
-        	<?php _e('Photoset','ah-core');?>
-        	<input type="radio" name="aesop_gallery_type" value="photoset" <?php checked( $type, 'photoset' ); ?> >
-        </label>
+	      			if ( 'grid' == value ) {
+	      				$('.ase-gallery-opts--thumb').fadeOut();
+	      				$('.ase-gallery-opts--photoset').fadeOut();
+	      				$('.ase-gallery-opts--grid').fadeIn();
+	      			} else {
+	      				$('.ase-gallery-opts--grid').fadeOut();
+	      			}
 
-        <label>
-       		<?php _e('Stacked Parallax','ah-core');?>
-        	<input type="radio" name="aesop_gallery_type" value="stacked" <?php checked( $type, 'stacked' ); ?> >
-        </label>
-        <?php
+	      			if ( 'thumbnail' == value ) {
+	      				$('.ase-gallery-opts--grid').fadeOut();
+	      				$('.ase-gallery-opts--photoset').fadeOut();
+	      				$('.ase-gallery-opts--thumb').fadeIn();
+	      			} else {
+	      				$('.ase-gallery-opts--thumb').fadeOut();
+	      			}
+
+	      			if ( 'photoset' == value ) {
+	      				$('.ase-gallery-opts--grid').fadeOut();
+	      				$('.ase-gallery-opts--thumb').fadeOut();
+	      				$('.ase-gallery-opts--photoset').fadeIn();
+	      			} else {
+	      				$('.ase-gallery-opts--photoset').fadeOut();
+	      			}
+				}
+
+	      		$('.ase-gallery-type-radio').each(function(){
+
+	      			if ( $(this).is(':checked') ) {
+	      				$(this).parent().addClass('selected');
+						var value = $(this).val();
+			      		value_check(value);
+
+	      			}
+
+	      		});
+
+	      		$('.ase-gallery-layout-label').click(function(){
+	      			$('.ase-gallery-layout-label').removeClass('selected');
+	      			$(this).addClass('selected');
+	      			var value = $(this).find('input').val();
+	      			value_check(value);
+	      		});
+
+	      	});
+      	</script>
+
+      	<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="grid" <?php checked( $type, 'grid' ); ?> ><?php _e('Grid','ah-core');?></label>
+        <label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="thumbnail" <?php checked( $type, 'thumbnail' ); ?> ><?php _e('Thumbnail','ah-core');?></label>
+		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="sequence" <?php checked( $type, 'sequence' ); ?> >Sequence</label>
+		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="photoset" <?php checked( $type, 'photoset' ); ?> ><?php _e('Photoset','ah-core');?></label>
+		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="stacked" <?php checked( $type, 'stacked' ); ?> ><?php _e('Stacked Parallax','ah-core');?></label>
+
+        <?php do_action('aesop_add_gallery_type');
+
 	}
 
 	/**
@@ -521,7 +556,21 @@ class AesopGalleryComponentAdmin {
 		$photoset_layout = get_post_meta( $id, 'aesop_photoset_gallery_layout', true );
 		$photoset_lb 	 = get_post_meta( $id, 'aesop_photoset_gallery_lightbox', true );
 
-		echo 'options';
+		?>
+		<div class="ase-gallery-opts--global">
+			GLOBAL OPTS
+		</div>
+		<div class="ase-gallery-opts ase-gallery-opts--grid" style="display:none;">
+			GRID OPTS
+		</div>
+		<div class="ase-gallery-opts ase-gallery-opts--thumb" style="display:none;">
+			THUMB OPTS
+		</div>
+		<div class="ase-gallery-opts ase-gallery-opts--photoset" style="display:none;">
+			PHOTOSET OPTS
+		</div>
+		<?php
+
 	}
 
 	/**
@@ -553,6 +602,11 @@ class AesopGalleryComponentAdmin {
 			// let's decode and convert the data into an array
 			$items = urldecode($_POST['ase_gallery_ids']);
 			update_post_meta( $post_id, '_ase_gallery_images', $items);
+		}
+
+		if( isset( $_POST['aesop_gallery_type'] ) ){
+			$type = $_POST['aesop_gallery_type'];
+			update_post_meta( $post_id,'aesop_gallery_type',sanitize_text_field( trim( $type ) ) );
 		}
 	}
 
