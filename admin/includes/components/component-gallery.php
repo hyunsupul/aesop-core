@@ -308,7 +308,6 @@ class AesopGalleryComponentAdmin {
 					$('#ase-gallery-images').append( item_html );
 					gallery.sortable('refresh');
 					ase_encode_gallery_items();
-					//ase_media_edit_init('.ase-gallery-image', 'i.dashicons-edit');
 				}
 
 				var ase_media_init = function(selector, button_selector)  {
@@ -344,7 +343,6 @@ class AesopGalleryComponentAdmin {
 								        return;
 								    }
 								 
-								    // iterate through selected elements
 								    selection.each(function(attachment) {
 								    	var id = attachment.id;
 								    	var url = attachment.attributes.sizes.thumbnail.url;
@@ -352,9 +350,6 @@ class AesopGalleryComponentAdmin {
 								    });
 								};
 
-		            // closing event for media manger
-		            //wp.media.frames.ase_frame.on('close', ase_media_set_image);
-		            // image selection event
 		            wp.media.frames.ase_frame.on('select', ase_media_set_image);
 								wp.media.frames.ase_frame.open();
 			       });
