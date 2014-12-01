@@ -369,56 +369,54 @@ class AesopGalleryComponentAdmin {
 				}
 
 				var ase_media_edit_init = function()  {
-				    var clicked_button;
+			    var clicked_button;
 
-				    $(document).on('click', '.ase-gallery-image > i.dashicons-edit', function(event){
-							event.preventDefault();
-	            var selected_img;
-	            clicked_button = $(this);
-	            var target = clicked_button.parent();
-	 
-	            if(wp.media.frames.ase_edit_frame) {
-							  wp.media.frames.ase_edit_frame.open();
-							  return;
+			    $(document).on('click', '.ase-gallery-image > i.dashicons-edit', function(event){
+						event.preventDefault();
+            var selected_img;
+            clicked_button = $(this);
+ 
+            if(wp.media.frames.ase_edit_frame) {
+						  wp.media.frames.ase_edit_frame.open();
+						  return;
+						}
+ 
+            wp.media.frames.ase_edit_frame = wp.media({
+							title: 'Edit Image',
+							multiple: false,
+							library: {
+							  type: 'image'
+							},
+							button: {
+							  text: 'Use selected image'
 							}
-	 
-	            wp.media.frames.ase_edit_frame = wp.media({
-							   title: 'Edit Image',
-							   multiple: false,
-							   library: {
-							      type: 'image'
-							   },
-							   button: {
-							      text: 'Use selected image'
-							   }
-							});
+						});
 
-							var ase_media_edit_image = function() {
-						    var selection = wp.media.frames.ase_edit_frame.state().get('selection');
-						 
-						    if (!selection) {
-						        return;
-						    }
+						var ase_media_edit_image = function() {
+					    var selection = wp.media.frames.ase_edit_frame.state().get('selection');
+					 
+					    if (!selection) {
+				        return;
+					    }
 
-						    // iterate through selected elements
-						    selection.each(function(attachment) {
-						    	var id = attachment.id;
-						    	var url = attachment.attributes.sizes.thumbnail.url;
-						    	ase_edit_gallery_item(id, url, target);
-						    });
-							};
+					    // iterate through selected elements
+					    selection.each(function(attachment) {
+					    	var id = attachment.id;
+					    	var url = attachment.attributes.sizes.thumbnail.url;
+					    	ase_edit_gallery_item(id, url, clicked_button.parent());
+					    });
+						};
 
-	            // image selection event
-	            wp.media.frames.ase_edit_frame.on('select', ase_media_edit_image);
-	            wp.media.frames.ase_edit_frame.on('open',function(){
-	            	console.log(clicked_button.parent().attr('id'));
-							  var selection = wp.media.frames.ase_edit_frame.state().get('selection');
-	            	attachment = wp.media.attachment( clicked_button.parent().attr('id') );
-	            	attachment.fetch();
-      					selection.add( attachment ? [ attachment ] : [] );
-	            });
-							wp.media.frames.ase_edit_frame.open();
-				    });
+            // image selection event
+            wp.media.frames.ase_edit_frame.on('select', ase_media_edit_image);
+            wp.media.frames.ase_edit_frame.on('open',function(){
+						  var selection = wp.media.frames.ase_edit_frame.state().get('selection');
+            	attachment = wp.media.attachment( clicked_button.parent().attr('id') );
+            	attachment.fetch();
+    					selection.add( attachment ? [ attachment ] : [] );
+            });
+						wp.media.frames.ase_edit_frame.open();
+			    });
 
 				};
 
