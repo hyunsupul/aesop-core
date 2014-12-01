@@ -328,7 +328,7 @@ class AesopGalleryComponentAdmin {
 				 
 				            wp.media.frames.ase_frame = wp.media({
 										   title: 'Select Aesop Gallery Image',
-										   multiple: false,
+										   multiple: true,
 										   library: {
 										      type: 'image'
 										   },
