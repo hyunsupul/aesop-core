@@ -317,7 +317,7 @@ class AesopGalleryComponentAdmin {
 					$(editable).replaceWith( item_html );
 					gallery.sortable('refresh');
 					ase_encode_gallery_items();
-					
+					ase_media_edit_init('.ase-gallery-image', 'i.dashicons-edit');
 				}
 
 				var ase_media_init = function(selector, button_selector)  {
