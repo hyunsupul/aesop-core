@@ -215,7 +215,7 @@ class AesopGalleryComponentAdmin {
 	*
 	*
 	*	Load the assets that we need for the gallery meta
-	*	
+	*
 	*	@since 1.4
 	*/
 	function gallery_box_assets(){
@@ -233,8 +233,14 @@ class AesopGalleryComponentAdmin {
 	*/
 	function new_gallery_box(){
 
+		// layout
 		add_meta_box('ase_gallery_layout',__( 'Layout', 'aesop-core' ),array($this,'render_layout_box'), 'ai_galleries','normal','core');
+
+		// images
 		add_meta_box('ase_gallery_component',__( 'Images', 'aesop-core' ),array($this,'render_gallery_box'), 'ai_galleries','normal','core');
+
+		// global options
+		add_meta_box('ase_gallery_options',__( 'Options', 'aesop-core' ),array($this,'render_options_box'), 'ai_galleries','normal','core');
 
 	}
 
@@ -311,19 +317,19 @@ class AesopGalleryComponentAdmin {
 
 				var ase_media_init = function(selector, button_selector)  {
 				    var clicked_button = false;
-				 
+
 				    $(selector).each(function (i, input) {
 			        var button = $(input).children(button_selector);
 			        button.click(function (event) {
 		            event.preventDefault();
 		            var selected_img;
 		            clicked_button = $(this);
-		 
+
 		            if(wp.media.frames.ase_frame) {
 								  wp.media.frames.ase_frame.open();
 								  return;
 								}
-		 
+
 		            wp.media.frames.ase_frame = wp.media({
 							   title: 'Select Aesop Gallery Image',
 							   multiple: true,
@@ -334,14 +340,14 @@ class AesopGalleryComponentAdmin {
 							      text: 'Use Selected Images'
 							   }
 								});
-		 
+
 		            var ase_media_set_image = function() {
 								    var selection = wp.media.frames.ase_frame.state().get('selection');
-								 
+
 								    if (!selection) {
 								        return;
 								    }
-								 
+
 								    selection.each(function(attachment) {
 								    	var id = attachment.id;
 								    	var url = attachment.attributes.sizes.thumbnail.url;
@@ -369,12 +375,12 @@ class AesopGalleryComponentAdmin {
 						event.preventDefault();
             var selected_img;
             clicked_button = $(this);
- 
+
             if(wp.media.frames.ase_edit_frame) {
 						  wp.media.frames.ase_edit_frame.open();
 						  return;
 						}
- 
+
             wp.media.frames.ase_edit_frame = wp.media({
 							title: 'Edit Image',
 							multiple: false,
@@ -388,7 +394,7 @@ class AesopGalleryComponentAdmin {
 
 						var ase_media_edit_image = function() {
 					    var selection = wp.media.frames.ase_edit_frame.state().get('selection');
-					 
+
 					    if (!selection) {
 				        return;
 					    }
@@ -449,19 +455,73 @@ class AesopGalleryComponentAdmin {
 
 	}
 
+	/**
+	*
+	*	Draw the metabox used to pick the layout of the gallery
+	*
+	*	@param WP_Post $post The post object.
+	*	@since 1.4
+	*/
 	function render_layout_box( $post ) {
 
 		$type = get_post_meta( $post->ID,'aesop_gallery_type', true);
-      	
+
       	?>
-        <label for="wdm_new_field"><?php _e( 'Choose a layout:', 'ah-core' ); ?></label>
-        <br />
-        <input type="radio" name="aesop_gallery_type" value="grid" <?php checked( $type, 'grid' ); ?> ><?php _e('Grid','ah-core');?><br>
-        <input type="radio" name="aesop_gallery_type" value="thumbnail" <?php checked( $type, 'thumbnail' ); ?> ><?php _e('Thumbnail','ah-core');?><br>
-        <input type="radio" name="aesop_gallery_type" value="sequence" <?php checked( $type, 'sequence' ); ?> ><?php _e('Sequence','ah-core');?><br>
-        <input type="radio" name="aesop_gallery_type" value="photoset" <?php checked( $type, 'photoset' ); ?> ><?php _e('Photoset','ah-core');?><br>
-        <input type="radio" name="aesop_gallery_type" value="stacked" <?php checked( $type, 'stacked' ); ?> ><?php _e('Stacked Parallax','ah-core');?><br>
+        <label>
+        	<?php _e('Grid','ah-core');?>
+        	<input type="radio" name="aesop_gallery_type" value="grid" <?php checked( $type, 'grid' ); ?> >
+        </label>
+
+        <label>
+        	<?php _e('Thumbnail','ah-core');?>
+        	<input type="radio" name="aesop_gallery_type" value="thumbnail" <?php checked( $type, 'thumbnail' ); ?> >
+        </label>
+
+        <label>
+        	<?php _e('Sequence','ah-core');?>
+        	<input type="radio" name="aesop_gallery_type" value="sequence" <?php checked( $type, 'sequence' ); ?> >
+        </label>
+
+        <label>
+        	<?php _e('Photoset','ah-core');?>
+        	<input type="radio" name="aesop_gallery_type" value="photoset" <?php checked( $type, 'photoset' ); ?> >
+        </label>
+
+        <label>
+       		<?php _e('Stacked Parallax','ah-core');?>
+        	<input type="radio" name="aesop_gallery_type" value="stacked" <?php checked( $type, 'stacked' ); ?> >
+        </label>
         <?php
+	}
+
+	/**
+	*
+	*	Draw the metabox used to pick the layout of the gallery
+	*
+	*	@param WP_Post $post The post object.
+	*	@since 1.4
+	*/
+	function render_options_box( $post ) {
+
+		$id 			= $post->ID;
+
+		// global
+		$width 			= get_post_meta( $id, 'aesop_gallery_width', true );
+		$caption 		= get_post_meta( $id, 'aesop_gallery_caption', true );
+
+		// grid
+		$grid_item_width = get_post_meta( $id, 'aesop_grid_gallery_width', true );
+
+		// thumbnail
+		$thumb_trans 	= get_post_meta( $id, 'aesop_thumb_gallery_transition', true );
+		$thumb_speed 	= get_post_meta( $id, 'aesop_thumb_gallery_transition_speed', true );
+		$thumb_hide 	= get_post_meta( $id, 'aesop_thumb_gallery_hide_thumbs', true );
+
+		// photoset
+		$photoset_layout = get_post_meta( $id, 'aesop_photoset_gallery_layout', true );
+		$photoset_lb 	 = get_post_meta( $id, 'aesop_photoset_gallery_lightbox', true );
+
+		echo 'options';
 	}
 
 	/**
