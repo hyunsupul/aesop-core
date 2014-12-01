@@ -372,8 +372,8 @@ class AesopGalleryComponentAdmin {
 
 
 				var ase_media_edit_init = function(selector, button_selector)  {
-				    var clicked_button = false;
-				 
+				    var clicked_button;
+
 				    $(selector).each(function (i, input) {
 				        var button = $(input).children(button_selector);
 				        button.click(function (event) {
@@ -389,7 +389,7 @@ class AesopGalleryComponentAdmin {
 			            wp.media.frames.ase_edit_frame = wp.media({
 									   title: 'Edit Image',
 									   multiple: false,
-									   editing:    true,
+									   editing: true,
 									   library: {
 									      type: 'image'
 									   },
@@ -399,33 +399,40 @@ class AesopGalleryComponentAdmin {
 									});
 
 									var ase_media_edit_image = function() {
-									    var selection = wp.media.frames.ase_edit_frame.state().get('selection');
-									 
-									    if (!selection) {
-									        return;
-									    }
-									 
-									    // iterate through selected elements
-									    selection.each(function(attachment) {
-									    	var id = attachment.id;
-									    	var url = attachment.attributes.sizes.thumbnail.url;
-									    	ase_edit_gallery_item(id, url, clicked_button.parent());
-									    });
+								    var selection = wp.media.frames.ase_edit_frame.state().get('selection');
+								 
+								    if (!selection) {
+								        return;
+								    }
+
+								    // iterate through selected elements
+								    selection.each(function(attachment) {
+								    	var id = attachment.id;
+								    	var url = attachment.attributes.sizes.thumbnail.url;
+								    	ase_edit_gallery_item(id, url, clicked_button.parent());
+								    });
 									};
 
 			            // closing event for media manger
-			            //wp.media.frames.ase_frame.on('close', ase_media_set_image);
+			            wp.media.frames.ase_edit_frame.on('close', function(){
+			            	ase_media_edit_init('.ase-gallery-image', 'i.dashicons-edit');
+			            });
 			            // image selection event
 			            wp.media.frames.ase_edit_frame.on('select', ase_media_edit_image);
-			            // showing media manager
-			            // wp.media.frames.ase_frame.open();
-			            wp.media.frames.ase_edit_frame.on('open',function() {
+			            
+			            function bindLate(funcName, fixThis){
+			            	return function(){
+			            		return fixThis[funcName].apply(fixThis, arguments)
+			            	}
+			            }
+
+			            wp.media.frames.ase_edit_frame.on('open',function(){
+			            	console.log(clicked_button.parent());
 									  var selection = wp.media.frames.ase_edit_frame.state().get('selection');
 			            	attachment = wp.media.attachment( clicked_button.parent().attr('id') );
 			            	attachment.fetch();
           					selection.add( attachment ? [ attachment ] : [] );
-									}, wp.media.frames.ase_edit_frame);
-
+			            });
 									wp.media.frames.ase_edit_frame.open();
 				       });
 				   });
