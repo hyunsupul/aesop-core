@@ -270,7 +270,7 @@ class AesopGalleryComponentAdmin {
 
 				var	gallery = $('#ase-gallery-images');
 
-				$(document).on('click', '.ase-gallery-image > i', function(){
+				$(document).on('click', '.ase-gallery-image > i.dashicons-no-alt', function(){
 					$(this).parent().remove();
 					gallery.sortable('refresh');
 					ase_encode_gallery_items();
@@ -304,8 +304,17 @@ class AesopGalleryComponentAdmin {
 
 				function ase_insert_gallery_item(id, url){
 
-					var item_html = "<li id='" + id + "' class='ase-gallery-image'><i class='dashicons dashicons-no-alt'></i><img src='" + url + "'></li>";
+					var item_html = "<li id='" + id + "' class='ase-gallery-image'><i class='dashicons dashicons-no-alt'></i><i class='dashicons dashicons-edit'></i><img src='" + url + "'></li>";
 					$('#ase-gallery-images').append( item_html );
+					gallery.sortable('refresh');
+					ase_encode_gallery_items();
+					
+				}
+
+				function ase_edit_gallery_item(id, url, editable){
+
+					var item_html = "<li id='" + id + "' class='ase-gallery-image'><i class='dashicons dashicons-no-alt'></i><i class='dashicons dashicons-edit'></i><img src='" + url + "'></li>";
+					$(editable).replaceWith( item_html );
 					gallery.sortable('refresh');
 					ase_encode_gallery_items();
 					
@@ -356,13 +365,74 @@ class AesopGalleryComponentAdmin {
 				            //wp.media.frames.ase_frame.on('close', ase_media_set_image);
 				            // image selection event
 				            wp.media.frames.ase_frame.on('select', ase_media_set_image);
-				            // showing media manager
-				            wp.media.frames.ase_frame.open();
+										wp.media.frames.ase_frame.open();
+				       });
+				   });
+				};
+
+
+				var ase_media_edit_init = function(selector, button_selector)  {
+				    var clicked_button = false;
+				 
+				    $(selector).each(function (i, input) {
+				        var button = $(input).children(button_selector);
+				        button.click(function (event) {
+			            event.preventDefault();
+			            var selected_img;
+			            clicked_button = $(this);
+			 
+			            if(wp.media.frames.ase_edit_frame) {
+									  wp.media.frames.ase_edit_frame.open();
+									  return;
+									}
+			 
+			            wp.media.frames.ase_edit_frame = wp.media({
+									   title: 'Edit Image',
+									   multiple: false,
+									   editing:    true,
+									   library: {
+									      type: 'image'
+									   },
+									   button: {
+									      text: 'Use selected image'
+									   }
+									});
+
+									var ase_media_edit_image = function() {
+									    var selection = wp.media.frames.ase_edit_frame.state().get('selection');
+									 
+									    if (!selection) {
+									        return;
+									    }
+									 
+									    // iterate through selected elements
+									    selection.each(function(attachment) {
+									    	var id = attachment.id;
+									    	var url = attachment.attributes.sizes.thumbnail.url;
+									    	ase_edit_gallery_item(id, url, clicked_button.parent());
+									    });
+									};
+
+			            // closing event for media manger
+			            //wp.media.frames.ase_frame.on('close', ase_media_set_image);
+			            // image selection event
+			            wp.media.frames.ase_edit_frame.on('select', ase_media_edit_image);
+			            // showing media manager
+			            // wp.media.frames.ase_frame.open();
+			            wp.media.frames.ase_edit_frame.on('open',function() {
+									  var selection = wp.media.frames.ase_edit_frame.state().get('selection');
+			            	attachment = wp.media.attachment( clicked_button.parent().attr('id') );
+			            	attachment.fetch();
+          					selection.add( attachment ? [ attachment ] : [] );
+									}, wp.media.frames.ase_edit_frame);
+
+									wp.media.frames.ase_edit_frame.open();
 				       });
 				   });
 				};
 
 				ase_media_init('#ase-gallery-add-image', 'i');
+				ase_media_edit_init('.ase-gallery-image', 'i.dashicons-edit');
 				ase_encode_gallery_items();
 
 			});
@@ -380,10 +450,11 @@ class AesopGalleryComponentAdmin {
 
 		        	?>
 		        	<li id="<?php echo $image_id;?>" class="ase-gallery-image">
-		        		<i class="dashicons dashicons-no-alt"></i>
-		           		<img src="<?php echo $image[0];?>">
-		           	</li>
-		           	<?php
+		        		
+		        		<i class='dashicons dashicons-edit'></i>
+		           	<img src="<?php echo $image[0];?>">
+		          </li>
+		          <?php
 
 				endforeach;
 
