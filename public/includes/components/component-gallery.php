@@ -266,7 +266,7 @@ class AesopCoreGallery {
 
 		foreach ( $image_ids as $image_id ):
 
-            $img     =  wp_get_attachment_image($image_id, $size, false,'');
+            $img     =  wp_get_attachment_image_src($image_id, $size, false,'');
             $alt     =  get_post_meta($image_id, '_wp_attachment_image_alt', true);
             $caption 	= get_post($image_id)->post_excerpt;
 
