@@ -69,11 +69,11 @@ class AesopContextualHelp {
 					<li>5. Go to any post, open the Component generator, select the Gallery component, and choose the gallery that you just created from the list.</li>
 					</ol>
 
-				<p>Tips:Clicking the "x" icon over the image will delete the image from this gallery (but not from your site). Clicking the "pencil" icon will let you edit any information for the image such as caption and title used by some galleries.</p>
+				<p>Tips: Clicking the "x" icon over the image will delete the image from this gallery (but not from your site). Clicking the "pencil" icon will let you edit any information for the image such as a caption or title used by some galleries.</p>
 
 
 				<h4>Documentation</h4>
-				<p>All components, options, and hooks are full documented at <a href="http://developers.aesopstories.com">http://developers.aesopstories.com</a></p>
+				<p>All components, options, and hooks are fully documented at <a href="http://developers.aesopstories.com">http://developers.aesopstories.com</a></p>
 	      		','aesop-core')
 	      	));
 		}
