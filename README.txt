@@ -141,6 +141,14 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.3.2 =
+* FIXED - Code showing in Chapter Component
+* FIXED - Parallax floater markup
+* FIXED - Sequence gallery images not showing
+
+= 1.3.1 =
+* HOTFIX - Fix syntax not supported by PHP older than 5.4
+
 = 1.3 =
 * NEW - Freshly designed user interface with light color scheme to match WordPress design patterns
 * NEW - Map component admin with ability to click the map to add markers instead of manually adding GPS coordinates
