@@ -1,3 +1,11 @@
+// hide the main title and collapse thingee for the add images area
+#ase_gallery_component {
+    .handlediv,
+    h3 {
+        display: none;
+    }
+}
+
 // gallery images metabox
 #ase-gallery-images {
     .clearfix();
@@ -45,30 +53,27 @@
 }
 
 // placeholder
-.ase-gallery-image-placeholder {
-    height:120px;
-    width:120px;
-    float:left;
-    margin-right:10px;
-    border:1px dashed #777;
-    .box-sizing(border-box);
-    .transition(background .2s ease);
+#ase-gallery-add-image {
     position:relative;
+    margin:20px auto 0;
+    padding:0;
+    width:180px;
+    display: block;
+    text-transform: uppercase;
 
     i {
-        position:absolute;
-        width:100%;
-        left:0;
-        right:0;
-        text-align:center;
-        top:42%;
-    }
+        width:auto;
+        height:28px;
+        font-size:14px;
+        display:block;
+        padding:4px 10px;
+        .box-sizing(border-box);
 
-    &:hover {
-        background:@link;
-        color:white;
-        cursor: pointer;
-        border-color:@link;
+        &:before {
+            position:relative;
+            top:4px;
+            left:-2px;
+        }
     }
 }
 

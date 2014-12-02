@@ -189,7 +189,6 @@ class AesopGalleryComponentAdmin {
 					containment: 'parent',
 					cursor: 'move',
 					opacity: 0.8,
-					items: 'li:not(.ase-gallery-image-placeholder)',
 					placeholder: 'ase-gallery-drop-zone',
 					forcePlaceholderSize:true,
 					update: function(){
@@ -332,9 +331,9 @@ class AesopGalleryComponentAdmin {
 		</script>
 		<?php
 
-		echo '<ul id="ase-gallery-images">';
+		echo '<a id="ase-gallery-add-image" class="ase-gallery-image-placeholder button-primary"><i class="dashicons dashicons-plus">Add Images</i></a>';
 
-			?><li id="ase-gallery-add-image" class="ase-gallery-image-placeholder"><i class="dashicons dashicons-plus"></i></li><?php
+		echo '<ul id="ase-gallery-images">';
 
 			if ( !empty( $get_image_ids ) ):
 				foreach ($image_ids as $image_id):
