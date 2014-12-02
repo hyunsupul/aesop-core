@@ -11,7 +11,6 @@ class AesopGalleryComponentAdmin {
     	add_action('init',										array($this,'do_type'));
     	add_filter('manage_ai_galleries_posts_columns', 		array($this,'col_head'));
 		add_action('manage_ai_galleries_posts_custom_column', 	array($this,'col_content'), 10, 2);
-		add_filter('cmb_meta_boxes', 							array($this,'aesop_gallery_meta' ));
 
 		// new
 		add_action( 'admin_head',								array($this,'gallery_box_assets'));
@@ -114,101 +113,6 @@ class AesopGalleryComponentAdmin {
 			endif;
 
 	    }
-	}
-
-	/**
-	 	* Adds custom gallery meta
-	 	*
-	 	* @since    1.0.0
-	*/
-	function aesop_gallery_meta( array $meta_boxes ) {
-
-		$meta_boxes[] = array(
-			'title' 	=> __('Gallery Options', 'aesop-core'),
-			'pages' 	=> array('ai_galleries'),
-			'fields' 	=> array(
-				array(
-					'id'             => 'aesop_gallery_width',
-					'name'           => __('Main Gallery Width', 'aesop-core'),
-					'type'           => 'text',
-					'desc'			=> __('Adjust the overall width of the grid/thumbnail gallery. Acceptable values include <code>500px</code> or <code>50%</code>.','aesop-core'),
-					'cols'			=> 6
-				),
-				array(
-					'id'             => 'aesop_grid_gallery_width',
-					'name'           => __('Gallery Grid Item Width', 'aesop-core'),
-					'type'           => 'text',
-					'desc'			=> __('Adjust the width of the individual grid items, only if using Grid gallery style.  Default is <code>400</code>.','aesop-core'),
-					'cols'			=> 6
-				),
-				array(
-					'id'             => 'aesop_gallery_caption',
-					'name'           => __('Gallery Caption (optional)', 'aesop-core'),
-					'type'           => 'textarea',
-					'desc'			=> __('Add an optional caption for the gallery. ','aesop-core')
-				)
-
-			)
-		);
-
-		// thumbanil gallery options
-		$meta_boxes[] = array(
-			'title' 	=> __('Thumbnail Gallery Options', 'aesop-core'),
-			'pages' 	=> array('ai_galleries'),
-			'fields' 	=> array(
-				array(
-					'id'             => 'aesop_thumb_gallery_transition',
-					'name'           => __('Transition Effect', 'aesop-core'),
-					'type'           => 'select',
-					'default'		=> 'slide',
-					'options'		=> array(
-						'slide'			=> __('Slide', 'aesop-core'),
-						'crossfade'		=> __('Fade', 'aesop-core'),
-						'dissolve'		=> __('Dissolve' , 'aesop-core')
-					),
-					'desc'			=> __('Adjust the transition effect for the Thumbnail gallery. Default is slide.','aesop-core'),
-					'cols'			=> 6
-				),
-				array(
-					'id'             => 'aesop_thumb_gallery_transition_speed',
-					'name'           => __('Gallery Transition Speed', 'aesop-core'),
-					'type'           => 'text',
-					'desc'			=> __('Activate slideshow by setting a speed for the transition.<code>5000</code> = 5 seconds. ','aesop-core'),
-					'cols'			=> 6
-				),
-				array(
-					'id'             => 'aesop_thumb_gallery_hide_thumbs',
-					'name'           => __('Hide Gallery Thumbnails', 'aesop-core'),
-					'type'           => 'checkbox'
-				)
-
-			)
-
-		);
-
-		// photoset gallery options
-		$meta_boxes[] = array(
-			'title' 	=> __('Photoset Gallery Options', 'aesop-core'),
-			'pages' 	=> array('ai_galleries'),
-			'fields' 	=> array(
-				array(
-					'id'             => 'aesop_photoset_gallery_layout',
-					'name'           => __('Gallery Layout', 'aesop-core'),
-					'type'           => 'text_small',
-					'default'		=> '',
-					'desc'			=> __('Let\'s say you have 4 images in this gallery. If you enter <code>121</code> you will have one image on the top row, two images on the second row, and one image on the third row.','aesop-core')
-				),
-				array(
-					'id'             => 'aesop_photoset_gallery_lightbox',
-					'name'           => __('Enable Lightbox', 'aesop-core'),
-					'type'           => 'checkbox'
-				)
-
-			)
-
-		);
-		return $meta_boxes;
-
 	}
 
 	/**
@@ -560,12 +464,12 @@ class AesopGalleryComponentAdmin {
 		<div class="ase-gallery-opts--global">
 
 			<div class="ase-gallery-opts--single">
-				<label for="aesop-gallery-width">Main Gallery Width</label>
+				<label for="aesop_gallery_width">Main Gallery Width</label>
 				<p class="aesop-gallery-opts--desc">Adjust the overall width of the grid/thumbnail gallery. Acceptable values include 500px or 50%.</p>
 				<input type="text" name="aesop_gallery_width" value="<?php echo esc_html($width);?>">
 			</div>
 			<div class="ase-gallery-opts--single">
-				<label for="aesop-gallery-caption">Gallery Caption</label>
+				<label for="aesop_gallery_caption">Gallery Caption</label>
 				<p class="aesop-gallery-opts--desc">Add an optional caption for the gallery.</p>
 				<textarea name="aesop_gallery_caption"><?php echo esc_html($caption);?></textarea>
 			</div>
@@ -575,7 +479,7 @@ class AesopGalleryComponentAdmin {
 			<h3>Grid Options</h3>
 
 			<div class="ase-gallery-opts--single">
-				<label for="aesop-grid-gallery-width">Grid Gallery Width</label>
+				<label for="aesop_grid_gallery_width">Grid Gallery Width</label>
 				<p class="aesop-gallery-opts--desc">Adjust the width of the individual grid items, only if using Grid gallery style. Default is 400.</p>
 				<input type="text" name="aesop_grid_gallery_width" value="<?php echo (int) $grid_item_width;?>">
 			</div>
@@ -583,6 +487,28 @@ class AesopGalleryComponentAdmin {
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--thumb" style="display:none;">
 			<h3>Thumbnail Options</h3>
+
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_thumb_gallery_transition">Gallery Transition</label>
+				<p class="aesop-gallery-opts--desc">Adjust the transition effect for the Thumbnail gallery. Default is slide.</p>
+			   	<select name="aesop_thumb_gallery_transition">
+			      <option value="crossfade" <?php selected( $thumb_trans, 'fade' ); ?>>Fade</option>
+			      <option value="slide" <?php selected( $thumb_trans, 'slide' ); ?>>Slide</option>
+			      <option value="dissolve" <?php selected( $thumb_trans, 'dissolve' ); ?>>Dissolve</option>
+			    </select>
+			</div>
+
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_thumb_gallery_transition_speed">Gallery Transition Speed</label>
+				<p class="aesop-gallery-opts--desc">Activate slideshow by setting a speed for the transition.5000 = 5 seconds.</p>
+				<input type="text" name="aesop_thumb_gallery_transition_speed" value="<?php echo (int) $thumb_speed;?>">
+			</div>
+
+			<div class="ase-gallery-opts--single">
+				<input type="checkbox" name="aesop_thumb_gallery_hide_thumbs" <?php if( $thumb_hide == true ) { ?>checked="checked"<?php } ?>>
+				<label for="aesop_thumb_gallery_hide_thumbs">Hide Gallery Thumbnails</label>
+			</div>
+
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--photoset" style="display:none;">
 			<h3>Photoset Options</h3>
@@ -591,6 +517,11 @@ class AesopGalleryComponentAdmin {
 				<label for="aesop-photoset-gallery-layout">Gallery Layout</label>
 				<p class="aesop-gallery-opts--desc">Let's say you have 4 images in this gallery. If you enter 121 you will have one image on the top row, two images on the second row, and one image on the third row.</p>
 				<input type="text" name="aesop_photoset_gallery_layout" value="<?php echo (int) $photoset_layout;?>">
+			</div>
+
+			<div class="ase-gallery-opts--single">
+				<input type="checkbox" name="aesop_photoset_gallery_lightbox" <?php if( $photoset_lb == true ) { ?>checked="checked"<?php } ?>>
+				<label for="aesop_photoset_gallery_lightbox">Enable Lightbox</label>
 			</div>
 
 		</div>
@@ -620,19 +551,52 @@ class AesopGalleryComponentAdmin {
 		if ( !wp_verify_nonce( $nonce, 'ase_gallery_meta' ) || defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE || $slug != $post->post_type )
 			return $post_id;
 
+		// gallery ids
+		$gallery_ids   = isset( $_POST['ase_gallery_ids'] ) ? urldecode( $_POST['ase_gallery_ids'] ) : false;
+
+		$type 			= isset( $_POST['aesop_gallery_type']) ? $_POST['aesop_gallery_type'] : false;
+
+		// global
+		$width 			= isset( $_POST['aesop_gallery_width'] ) ? $_POST['aesop_gallery_width'] : false;
+		$caption 		= isset( $_POST['aesop_gallery_caption'] ) ? $_POST['aesop_gallery_caption'] : false;
+
+		// grid
+		$grid_item_width = isset( $_POST['aesop_grid_gallery_width'] ) ? $_POST['aesop_grid_gallery_width'] : false;
+
+		// thumbnail
+		$thumb_trans 	= isset( $_POST['aesop_thumb_gallery_transition'] ) ? $_POST['aesop_thumb_gallery_transition'] : false;
+		$thumb_speed 	= isset( $_POST['aesop_thumb_gallery_transition_speed'] ) ? $_POST['aesop_thumb_gallery_transition_speed'] : false;
+		$thumb_hide 	= isset( $_POST['aesop_thumb_gallery_hide_thumbs'] ) ? $_POST['aesop_thumb_gallery_hide_thumbs'] : false;
+
+		// photoset
+		$photoset_layout = isset( $_POST['aesop_photoset_gallery_layout'] ) ? $_POST['aesop_photoset_gallery_layout'] : false;
+		$photoset_lb 	 = isset( $_POST['aesop_photoset_gallery_lightbox'] ) ? $_POST['aesop_photoset_gallery_lightbox'] : false;
+
 		// safe to proceed
 		delete_post_meta( $post_id, '_ase_gallery_images' );
 
-		if ( isset( $_POST['ase_gallery_ids'] ) ) {
-			// let's decode and convert the data into an array
-			$items = urldecode($_POST['ase_gallery_ids']);
-			update_post_meta( $post_id, '_ase_gallery_images', $items);
-		}
 
-		if( isset( $_POST['aesop_gallery_type'] ) ){
-			$type = $_POST['aesop_gallery_type'];
-			update_post_meta( $post_id,'aesop_gallery_type',sanitize_text_field( trim( $type ) ) );
-		}
+		// gallery ids
+		update_post_meta( $post_id, '_ase_gallery_images', $gallery_ids);
+
+		// update gallery type
+		update_post_meta( $post_id,'aesop_gallery_type',sanitize_text_field( trim( $type ) ) );
+
+		// global
+		update_post_meta( $post_id, 'aesop_gallery_width', sanitize_text_field($width) );
+		update_post_meta( $post_id, 'aesop_gallery_caption', sanitize_text_field($caption) );
+
+		// grid
+		update_post_meta( $post_id, 'aesop_grid_gallery_width', absint($grid_item_width) );
+
+		// thumbnail
+		update_post_meta( $post_id, 'aesop_thumb_gallery_transition', sanitize_text_field($thumb_trans) );
+		update_post_meta( $post_id, 'aesop_thumb_gallery_transition_speed', absint($thumb_speed) );
+		update_post_meta( $post_id, 'aesop_thumb_gallery_hide_thumbs', $thumb_hide );
+
+		// photoset
+		update_post_meta( $post_id, 'aesop_photoset_gallery_layout', absint($photoset_layout) );
+		update_post_meta( $post_id, 'aesop_photoset_gallery_lightbox', $photoset_lb );
 	}
 
 	/**
