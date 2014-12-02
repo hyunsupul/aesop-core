@@ -138,13 +138,13 @@ class AesopGalleryComponentAdmin {
 	function new_gallery_box(){
 
 		// images
-		add_meta_box('ase_gallery_component',__( 'Images', 'aesop-core' ),array($this,'render_gallery_box'), 'ai_galleries','normal','core');
+		add_meta_box('ase_gallery_component',__( 'Add Images', 'aesop-core' ),array($this,'render_gallery_box'), 'ai_galleries','normal','core');
 
 		// layout
-		add_meta_box('ase_gallery_layout',__( 'Layout', 'aesop-core' ),array($this,'render_layout_box'), 'ai_galleries','normal','core');
+		add_meta_box('ase_gallery_layout',__( 'Select Layout', 'aesop-core' ),array($this,'render_layout_box'), 'ai_galleries','normal','core');
 
 		// global options
-		add_meta_box('ase_gallery_options',__( 'Options', 'aesop-core' ),array($this,'render_options_box'), 'ai_galleries','normal','core');
+		add_meta_box('ase_gallery_options',__( 'Set Options', 'aesop-core' ),array($this,'render_options_box'), 'ai_galleries','normal','core');
 
 	}
 

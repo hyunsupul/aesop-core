@@ -15,6 +15,7 @@
     }
 }
 
+// metabox gallery iamge
 #ase_gallery_layout{
 
     position: relative;
@@ -81,4 +82,55 @@
      label:last-of-type:after {
         background-position: -2px -404px;
     }
+}
+
+#ase_gallery_options {
+
+    .ase-gallery-opts {
+        clear:left;
+        .clearfix();
+
+        h3 {
+            border-bottom:1px solid #eee;
+            padding-left:0;
+            margin:10px auto;
+        }
+    }
+    .inside{
+
+        .clearfix();
+
+        // universal
+        .ase-gallery-opts--single {
+            width:50%;
+            display: inline-block;
+            vertical-align: top;
+            margin-right:-4px;
+        }
+    }
+
+    // general alyout
+    .ase-gallery-opts--single {
+        label {
+            font-weight:bold;
+        }
+
+        textarea {
+            width:100%;
+        }
+
+        p {
+            color:#888;
+            line-height:1.2;
+            margin-top:3px;
+        }
+    }
+
+    // thumb
+    .ase-gallery-opts--thumb {
+        .ase-gallery-opts--single:first-of-type{
+            margin-bottom:15px;
+        }
+    }
+
 }
