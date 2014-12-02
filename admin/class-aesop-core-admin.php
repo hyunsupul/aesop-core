@@ -46,11 +46,6 @@ class Aesop_Core_Admin {
 		require_once( AI_CORE_DIR.'admin/includes/notify.php' );
 		require_once( AI_CORE_DIR.'admin/includes/components/component-map.php' );
         require_once( AI_CORE_DIR.'admin/includes/components/component-gallery.php' );
-
-        if( !class_exists( 'CMB_Meta_Box' ) ) {
-    		require_once( AI_CORE_DIR.'/admin/includes/custom-meta-boxes/custom-meta-boxes.php' );
-    	}
-
 		/*
 		 	* Call $plugin_slug from public plugin class.
 		 	*
