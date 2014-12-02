@@ -343,7 +343,7 @@ class AesopGalleryComponentAdmin {
 		// gallery ids
 		$gallery_ids   = isset( $_POST['ase_gallery_ids'] ) ? urldecode( $_POST['ase_gallery_ids'] ) : false;
 
-		$type 			= isset( $_POST['aesop_gallery_type']) ? $_POST['aesop_gallery_type'] : false;
+		$type 			= isset( $_POST['aesop_gallery_type']) ? $_POST['aesop_gallery_type'] : 'grid';
 
 		// global
 		$width 			= isset( $_POST['aesop_gallery_width'] ) ? $_POST['aesop_gallery_width'] : false;
