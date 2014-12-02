@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Core\n"
-"POT-Creation-Date: 2014-11-14 16:24-0600\n"
-"PO-Revision-Date: 2014-11-14 16:24-0600\n"
+"POT-Creation-Date: 2014-12-02 15:17-0600\n"
+"PO-Revision-Date: 2014-12-02 15:17-0600\n"
 "Last-Translator: Team Aesop <support@aesopinteractive.com>\n"
 "Language-Team: Team Aesop <info@aesopinteractive.com>\n"
 "Language: en_US\n"
@@ -15,24 +15,30 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../admin/class-aesop-core-admin.php:145
+#: ../admin/class-aesop-core-admin.php:141
 msgid "Add Component"
 msgstr ""
 
-#: ../admin/class-aesop-core-admin.php:223
+#: ../admin/class-aesop-core-admin.php:219
 msgid "Select a story component."
 msgstr ""
 
-#: ../admin/class-aesop-core-admin.php:247
+#: ../admin/class-aesop-core-admin.php:243
 msgid ""
-"Brought to you by Aesopinteractive LLC - <a href=\"http://aesopstoryengine."
-"com\">http://aesopstoryengine.com</a>"
+"Product of <span><a href=\"http://aesopstoryengine.com\">AESOP INTERACTIVE "
+"LLC</a></span>"
 msgstr ""
 
-#: ../admin/class-aesop-core-admin.php:248
+#: ../admin/class-aesop-core-admin.php:244
 msgid ""
-"Donate to further development of Aesop Story Engine at <a href=\"http://"
-"aesopstoryengine.com/donate\">http://aesopstoryengine.com/donate</a>"
+"<span><a href=\"http://aesopstoryengine.com/donate\">Support new features "
+"and bug fixes</a></span> of Aesop Story Engine"
+msgstr ""
+
+#: ../admin/class-aesop-core-admin.php:245
+msgid ""
+"Story Beautiful? <span><a href=\"http://aesopstoryengine.com/donate\">Thank "
+"the developer</a></span>."
 msgstr ""
 
 #: ../admin/includes/available.php:13 ../admin/includes/available.php:446
@@ -131,7 +137,7 @@ msgstr ""
 #: ../admin/includes/available.php:811 ../admin/includes/available.php:827
 #: ../admin/includes/available.php:843 ../admin/includes/available.php:859
 #: ../admin/includes/available.php:875 ../admin/includes/available.php:1020
-#: ../admin/includes/components/component-map.php:76
+#: ../admin/includes/components/component-map.php:77
 msgid "On"
 msgstr ""
 
@@ -144,7 +150,7 @@ msgstr ""
 #: ../admin/includes/available.php:847 ../admin/includes/available.php:863
 #: ../admin/includes/available.php:879 ../admin/includes/available.php:907
 #: ../admin/includes/available.php:1024
-#: ../admin/includes/components/component-map.php:72
+#: ../admin/includes/components/component-map.php:73
 msgid "Off"
 msgstr ""
 
@@ -647,7 +653,7 @@ msgid "Audio"
 msgstr ""
 
 #: ../admin/includes/available.php:637 ../admin/includes/available.php:992
-#: ../admin/includes/components/component-map.php:64
+#: ../admin/includes/components/component-map.php:65
 msgid "Title"
 msgstr ""
 
@@ -1011,226 +1017,220 @@ msgstr ""
 msgid " "
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:34
-msgid "Type"
-msgstr ""
-
-#: ../admin/includes/components/component-gallery.php:81
-#: ../admin/includes/components/component-gallery.php:94
+#: ../admin/includes/components/component-gallery.php:35
+#: ../admin/includes/components/component-gallery.php:48
 msgid "Galleries"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:82
+#: ../admin/includes/components/component-gallery.php:36
 msgid "Parent Gallery:"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:83
+#: ../admin/includes/components/component-gallery.php:37
 msgid "All Galleries"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:84
+#: ../admin/includes/components/component-gallery.php:38
 msgid "View Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:85
+#: ../admin/includes/components/component-gallery.php:39
 msgid "Add New Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:86
+#: ../admin/includes/components/component-gallery.php:40
 msgid "New Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:87
+#: ../admin/includes/components/component-gallery.php:41
 msgid "Edit Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:88
+#: ../admin/includes/components/component-gallery.php:42
 msgid "Update Gallery"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:89
+#: ../admin/includes/components/component-gallery.php:43
 msgid "Search Galleries"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:90
+#: ../admin/includes/components/component-gallery.php:44
 msgid "No Galleries found"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:91
+#: ../admin/includes/components/component-gallery.php:45
 msgid "No Galleries found in Trash"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:95
+#: ../admin/includes/components/component-gallery.php:49
 msgid "Create responsive galleries."
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:119
-msgid "Gallery Instructions"
-msgstr ""
-
-#: ../admin/includes/components/component-gallery.php:122
-msgid ""
-"1. Click the Add Gallery button<br />2. Click Create Gallery to create a "
-"gallery<br />3. Insert gallery and publish.<br /><br /> Once you've created "
-"the gallery, copy the code below, and paste it into your story where you "
-"want the gallery to be shown.<br />"
-msgstr ""
-
-#: ../admin/includes/components/component-gallery.php:134
+#: ../admin/includes/components/component-gallery.php:75
 msgid "Gallery Code"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:135
+#: ../admin/includes/components/component-gallery.php:76
 msgid "Used In"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:187
-msgid "Gallery Options"
+#: ../admin/includes/components/component-gallery.php:141
+msgid "Add Images"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:192
-msgid "Main Gallery Width"
+#: ../admin/includes/components/component-gallery.php:144
+msgid "Select Layout"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:194
-msgid ""
-"Adjust the overall width of the grid/thumbnail gallery. Acceptable values "
-"include <code>500px</code> or <code>50%</code>."
+#: ../admin/includes/components/component-gallery.php:147
+msgid "Set Options"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:199
-msgid "Gallery Grid Item Width"
-msgstr ""
-
-#: ../admin/includes/components/component-gallery.php:201
-msgid ""
-"Adjust the width of the individual grid items, only if using Grid gallery "
-"style.  Default is <code>400</code>."
-msgstr ""
-
-#: ../admin/includes/components/component-gallery.php:206
-msgid "Gallery Caption (optional)"
-msgstr ""
-
-#: ../admin/includes/components/component-gallery.php:208
-msgid "Add an optional caption for the gallery. "
+#: ../admin/includes/components/component-gallery.php:215
+msgid "Grid"
 msgstr ""
 
 #: ../admin/includes/components/component-gallery.php:216
-msgid "Thumbnail Gallery Options"
+msgid "Thumbnail"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:221
-msgid "Transition Effect"
+#: ../admin/includes/components/component-gallery.php:218
+msgid "Photoset"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:225
-msgid "Slide"
+#: ../admin/includes/components/component-gallery.php:219
+msgid "Parallax"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:226
-msgid "Fade"
+#: ../admin/includes/components/component-gallery.php:256
+msgid "Main Gallery Width"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:227
-msgid "Dissolve"
+#: ../admin/includes/components/component-gallery.php:257
+msgid ""
+"Adjust the overall width of the grid/thumbnail gallery. Acceptable values "
+"include 500px or 50%."
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:229
+#: ../admin/includes/components/component-gallery.php:261
+msgid "Gallery Caption"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:262
+msgid "Add an optional caption for the gallery."
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:268
+msgid "Grid Options"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:271
+msgid "Grid Gallery Width"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:272
+msgid ""
+"Adjust the width of the individual grid items, only if using Grid gallery "
+"style. Default is 400."
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:278
+msgid "Thumbnail Options"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:281
+msgid "Gallery Transition"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:282
 msgid ""
 "Adjust the transition effect for the Thumbnail gallery. Default is slide."
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:234
+#: ../admin/includes/components/component-gallery.php:284
+msgid "Fade"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:285
+msgid "Slide"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:286
+msgid "Dissolve"
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:291
 msgid "Gallery Transition Speed"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:236
+#: ../admin/includes/components/component-gallery.php:292
 msgid ""
-"Activate slideshow by setting a speed for the transition.<code>5000</code> = "
-"5 seconds. "
+"Activate slideshow by setting a speed for the transition.5000 = 5 seconds."
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:241
+#: ../admin/includes/components/component-gallery.php:298
 msgid "Hide Gallery Thumbnails"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:251
-msgid "Photoset Gallery Options"
+#: ../admin/includes/components/component-gallery.php:303
+msgid "Photoset Options"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:256
+#: ../admin/includes/components/component-gallery.php:306
 msgid "Gallery Layout"
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:259
+#: ../admin/includes/components/component-gallery.php:307
 msgid ""
-"Let's say you have 4 images in this gallery. If you enter <code>121</code> "
-"you will have one image on the top row, two images on the second row, and "
-"one image on the third row."
+"Let's say you have 4 images in this gallery. If you enter 121 you will have "
+"one image on the top row, two images on the second row, and one image on the "
+"third row."
 msgstr ""
 
-#: ../admin/includes/components/component-gallery.php:263
+#: ../admin/includes/components/component-gallery.php:313
 msgid "Enable Lightbox"
 msgstr ""
 
-#: ../admin/includes/components/component-map.php:58
+#: ../admin/includes/components/component-gallery.php:406
+msgid ""
+"Welcome to Aesop Story Engine 1.4. We need to upgrade any galleries that you "
+"might have. Click <a id=\"aesop-upgrade-galleries\" href=\"#\">here</a> to "
+"start the upgrade process."
+msgstr ""
+
+#: ../admin/includes/components/component-gallery.php:444
+msgid "All done!"
+msgstr ""
+
+#: ../admin/includes/components/component-map.php:59
 msgid "Aesop Map Marker"
 msgstr ""
 
-#: ../admin/includes/components/component-map.php:65
+#: ../admin/includes/components/component-map.php:66
 msgid "By default we'll display an H2 heading with the text you specify here."
 msgstr ""
 
-#: ../admin/includes/components/component-map.php:80
+#: ../admin/includes/components/component-map.php:81
 msgid "Hide this marker"
 msgstr ""
 
-#: ../admin/includes/components/component-map.php:81
+#: ../admin/includes/components/component-map.php:82
 msgid "Optionally hide this marker but retain the scroll to point in the map."
 msgstr ""
 
-#: ../admin/includes/components/component-map.php:104
+#: ../admin/includes/components/component-map.php:120
 msgid "Map Locations"
 msgstr ""
 
-#: ../admin/includes/components/component-map.php:132
+#: ../admin/includes/components/component-map.php:139
 msgid "<em>Hint: Type to search for locations</em>"
 msgstr ""
 
-#: ../admin/includes/components/component-map.php:423
+#: ../admin/includes/components/component-map.php:413
 msgid ""
 "Welcome to Aesop Story Engine 1.3. We need to upgrade any map markers that "
 "you might have. Click <a id=\"aesop-upgrade-map-meta\" href=\"#\">here</a> "
 "to start the upgrade process."
-msgstr ""
-
-#: ../admin/includes/custom-meta-boxes/class.cmb-meta-box.php:86
-msgid "Are you sure you want to delete this field?"
-msgstr ""
-
-#: ../admin/includes/custom-meta-boxes/classes.fields.php:68
-msgid "Add New"
-msgstr ""
-
-#: ../admin/includes/custom-meta-boxes/classes.fields.php:69
-msgid "Remove Field"
-msgstr ""
-
-#: ../admin/includes/custom-meta-boxes/classes.fields.php:1096
-msgid "Type to search"
-msgstr ""
-
-#: ../admin/includes/custom-meta-boxes/classes.fields.php:1423
-msgid "Add New Group"
-msgstr ""
-
-#: ../admin/includes/custom-meta-boxes/classes.fields.php:1424
-msgid "Remove Group"
-msgstr ""
-
-#: ../admin/includes/custom-meta-boxes/classes.fields.php:1623
-msgid "Drag to set the exact location"
 msgstr ""
 
 #: ../admin/includes/generator_blob.php:75
@@ -1273,6 +1273,13 @@ msgid ""
 "saved and the map displayed on your post will reflect this. Map markers are "
 "shown in the order that they are added.</p>\n"
 "\n"
+"\t\t\t\t<p>Map tiles are provided by our free account through Mapbox. If the "
+"map is grayed out, and the map tiles are 404, then the free Aesop account "
+"has reached its monthly quota. For this reason it's highly recommended to "
+"sign up for your own free <a href=\"http://mapbox.com\">Mapbox</a> account. "
+"Further documentation on this can be found <a href=\"http://aesopstoryengine."
+"com/help/maps-component/\">here</a>. </p>\n"
+"\n"
 "\t\t\t\t<h4 style=\"margin-bottom:0;\">Theme Compatibility</h4>\n"
 "\t\t\t\t<p>Aesop will work with most WordPress themes by adding a code "
 "snippet to enable Extended CSS Support. The following code snippet can be "
@@ -1302,11 +1309,11 @@ msgid ""
 "\t      \t\t"
 msgstr ""
 
-#: ../admin/includes/help.php:56
+#: ../admin/includes/help.php:58
 msgid "Aesop Galleries"
 msgstr ""
 
-#: ../admin/includes/help.php:57
+#: ../admin/includes/help.php:59
 msgid ""
 "\n"
 "\t      \t\t<h3>Aesop Gallery Component</h3>\n"
@@ -1316,14 +1323,22 @@ msgid ""
 "\n"
 "\t\t\t\t<h4>Directions</h4>\n"
 "\t\t\t\t<ol>\n"
-"\t\t\t\t\t<li>Click the Add Gallery button</li>\n"
-"\t\t\t\t\t<li>Click Create Gallery to create a gallery</li>\n"
-"\t\t\t\t\t<li>Create a gallery, then choose a gallery type while creating "
-"the gallery within the gallery modal. </li>\n"
-"\t\t\t\t\t<li>Insert the gallery into the post, and publish the page.</li>\n"
-"\t\t\t\t\t<li>Take note of the code produced that you'll copy and paste into "
-"the post where you want the gallery to show up.</li>\n"
+"\t\t\t\t\t<li>1. Add images by clicking the Add Images button. Select "
+"multiple by holding down CNTRL or COMMAND, then click \"Use Selected Images."
+"\"</li>\n"
+"\t\t\t\t\t<li>2. Choose a layout by clicking a layout option.</li>\n"
+"\t\t\t\t\t<li>3. Adjust any available options for your specified gallery "
+"type.</li>\n"
+"\t\t\t\t\t<li>4. Publish the gallery.</li>\n"
+"\t\t\t\t\t<li>5. Go to any post, open the Component generator, select the "
+"Gallery component, and choose the gallery that you just created from the "
+"list.</li>\n"
 "\t\t\t\t\t</ol>\n"
+"\n"
+"\t\t\t\t<p>Tips:Clicking the \"x\" icon over the image will delete the image "
+"from this gallery (but not from your site). Clicking the \"pencil\" icon "
+"will let you edit any information for the image such as caption and title "
+"used by some galleries.</p>\n"
 "\n"
 "\n"
 "\t\t\t\t<h4>Documentation</h4>\n"
@@ -1348,11 +1363,11 @@ msgstr ""
 msgid "Specify a category ID to display stories from."
 msgstr ""
 
-#: ../public/includes/components/component-gallery.php:97
+#: ../public/includes/components/component-gallery.php:84
 msgid "edit gallery"
 msgstr ""
 
-#: ../public/includes/components/component-gallery.php:104
+#: ../public/includes/components/component-gallery.php:91
 msgid ""
 "This gallery is empty! It's also possible that you simply have the wrong "
 "gallery ID."
