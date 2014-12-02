@@ -598,6 +598,7 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, 'aesop_photoset_gallery_lightbox', $photoset_lb );
 	}
 
+
 	/**
 	*
 	*
@@ -608,7 +609,7 @@ class AesopGalleryComponentAdmin {
 	function upgrade_galleries_notice(){
 
 		// only run if we have markers and have never upgraded
-		//if ( get_option('ase_galleries_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_galleries() ) {
+		if ( get_option('ase_galleries_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_galleries() ) {
 
 			$out = '<div class="error"><p>';
 
@@ -618,7 +619,7 @@ class AesopGalleryComponentAdmin {
 
 			echo $out;
 
-		//}
+		}
 	}
 
 	/**
@@ -648,7 +649,9 @@ class AesopGalleryComponentAdmin {
 			}
 		endif;
 
-		echo 'ajax-success';
+		update_option( 'ase_galleries_upgraded_to', AI_CORE_VERSION );
+
+		echo __('All done! Reloading page...','aesop-core');
 
 		exit;
 
@@ -664,7 +667,7 @@ class AesopGalleryComponentAdmin {
 		$nonce = wp_create_nonce('aesop-galleries-upgrade');
 
 		// only run if we have galleries and haven't yet upgraded
-		//if ( get_option('ase_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_galleries() ) { ?>
+		if ( get_option('ase_galleries_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_galleries() ) { ?>
 			<!-- Aesop Upgrade Galleries -->
 			<script>
 				jQuery(document).ready(function($){
@@ -679,15 +682,15 @@ class AesopGalleryComponentAdmin {
 
 					  	jQuery.post(ajaxurl, data, function(response) {
 					  		if( response ){
-					        	//location.reload();
 					        	alert(response);
+					        	location.reload();
 					  		}
 					    });
 
 				    });
 				});
 			</script>
-		<?php // }
+		<?php }
 	}
 
 	/**
