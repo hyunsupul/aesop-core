@@ -423,11 +423,11 @@ class AesopGalleryComponentAdmin {
 	      	});
       	</script>
 
-      	<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="grid" <?php checked( $type, 'grid' ); ?> ><?php _e('Grid','ah-core');?></label>
-        <label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="thumbnail" <?php checked( $type, 'thumbnail' ); ?> ><?php _e('Thumbnail','ah-core');?></label>
+      	<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="grid" <?php checked( $type, 'grid' ); ?> ><?php _e('Grid','aesop-core');?></label>
+        <label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="thumbnail" <?php checked( $type, 'thumbnail' ); ?> ><?php _e('Thumbnail','aesop-core');?></label>
 		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="sequence" <?php checked( $type, 'sequence' ); ?> >Sequence</label>
-		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="photoset" <?php checked( $type, 'photoset' ); ?> ><?php _e('Photoset','ah-core');?></label>
-		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="stacked" <?php checked( $type, 'stacked' ); ?> ><?php _e('Stacked Parallax','ah-core');?></label>
+		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="photoset" <?php checked( $type, 'photoset' ); ?> ><?php _e('Photoset','aesop-core');?></label>
+		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="stacked" <?php checked( $type, 'stacked' ); ?> ><?php _e('Parallax','aesop-core');?></label>
 
         <?php do_action('aesop_add_gallery_type');
 
@@ -464,64 +464,64 @@ class AesopGalleryComponentAdmin {
 		<div class="ase-gallery-opts--global">
 
 			<div class="ase-gallery-opts--single">
-				<label for="aesop_gallery_width">Main Gallery Width</label>
-				<p class="aesop-gallery-opts--desc">Adjust the overall width of the grid/thumbnail gallery. Acceptable values include 500px or 50%.</p>
+				<label for="aesop_gallery_width"><?php _e('Main Gallery Width','aesop-core');?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e('Adjust the overall width of the grid/thumbnail gallery. Acceptable values include 500px or 50%.','aesop-core');?></p>
 				<input type="text" name="aesop_gallery_width" value="<?php echo esc_html($width);?>">
 			</div>
 			<div class="ase-gallery-opts--single">
-				<label for="aesop_gallery_caption">Gallery Caption</label>
-				<p class="aesop-gallery-opts--desc">Add an optional caption for the gallery.</p>
+				<label for="aesop_gallery_caption"><?php _e('Gallery Caption','aesop-core');?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e('Add an optional caption for the gallery.','aesop-core');?></p>
 				<textarea name="aesop_gallery_caption"><?php echo esc_html($caption);?></textarea>
 			</div>
 
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--grid" style="display:none;">
-			<h3>Grid Options</h3>
+			<h3><?php _e('Grid Options','aesop-core');?></h3>
 
 			<div class="ase-gallery-opts--single">
-				<label for="aesop_grid_gallery_width">Grid Gallery Width</label>
-				<p class="aesop-gallery-opts--desc">Adjust the width of the individual grid items, only if using Grid gallery style. Default is 400.</p>
+				<label for="aesop_grid_gallery_width"><?php _e('Grid Gallery Width','aesop-core');?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e('Adjust the width of the individual grid items, only if using Grid gallery style. Default is 400.','aesop-core');?></p>
 				<input type="text" name="aesop_grid_gallery_width" value="<?php echo (int) $grid_item_width;?>">
 			</div>
 
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--thumb" style="display:none;">
-			<h3>Thumbnail Options</h3>
+			<h3><?php _e('Thumbnail Options','aesop-core');?></h3>
 
 			<div class="ase-gallery-opts--single">
-				<label for="aesop_thumb_gallery_transition">Gallery Transition</label>
-				<p class="aesop-gallery-opts--desc">Adjust the transition effect for the Thumbnail gallery. Default is slide.</p>
+				<label for="aesop_thumb_gallery_transition"><?php _e('Gallery Transition','aesop-core');?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e('Adjust the transition effect for the Thumbnail gallery. Default is slide.','aesop-core');?></p>
 			   	<select name="aesop_thumb_gallery_transition">
-			      <option value="crossfade" <?php selected( $thumb_trans, 'fade' ); ?>>Fade</option>
-			      <option value="slide" <?php selected( $thumb_trans, 'slide' ); ?>>Slide</option>
-			      <option value="dissolve" <?php selected( $thumb_trans, 'dissolve' ); ?>>Dissolve</option>
+			      <option value="crossfade" <?php selected( $thumb_trans, 'fade' ); ?>><?php _e('Fade','aesop-core');?></option>
+			      <option value="slide" <?php selected( $thumb_trans, 'slide' ); ?>><?php _e('Slide','aesop-core');?></option>
+			      <option value="dissolve" <?php selected( $thumb_trans, 'dissolve' ); ?>><?php _e('Dissolve','aesop-core');?></option>
 			    </select>
 			</div>
 
 			<div class="ase-gallery-opts--single">
-				<label for="aesop_thumb_gallery_transition_speed">Gallery Transition Speed</label>
-				<p class="aesop-gallery-opts--desc">Activate slideshow by setting a speed for the transition.5000 = 5 seconds.</p>
+				<label for="aesop_thumb_gallery_transition_speed"><?php _e('Gallery Transition Speed','aesop-core');?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e('Activate slideshow by setting a speed for the transition.5000 = 5 seconds.','aesop-core');?></p>
 				<input type="text" name="aesop_thumb_gallery_transition_speed" value="<?php echo (int) $thumb_speed;?>">
 			</div>
 
 			<div class="ase-gallery-opts--single">
 				<input type="checkbox" name="aesop_thumb_gallery_hide_thumbs" <?php if( $thumb_hide == true ) { ?>checked="checked"<?php } ?>>
-				<label for="aesop_thumb_gallery_hide_thumbs">Hide Gallery Thumbnails</label>
+				<label for="aesop_thumb_gallery_hide_thumbs"><?php _e('Hide Gallery Thumbnails','aesop-core');?></label>
 			</div>
 
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--photoset" style="display:none;">
-			<h3>Photoset Options</h3>
+			<h3><?php _e('Photoset Options','aesop-core');?></h3>
 
 			<div class="ase-gallery-opts--single">
-				<label for="aesop-photoset-gallery-layout">Gallery Layout</label>
-				<p class="aesop-gallery-opts--desc">Let's say you have 4 images in this gallery. If you enter 121 you will have one image on the top row, two images on the second row, and one image on the third row.</p>
+				<label for="aesop-photoset-gallery-layout"><?php _e('Gallery Layout','aesop-core');?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e('Let\'s say you have 4 images in this gallery. If you enter 121 you will have one image on the top row, two images on the second row, and one image on the third row.','aesop-core');?></p>
 				<input type="text" name="aesop_photoset_gallery_layout" value="<?php echo (int) $photoset_layout;?>">
 			</div>
 
 			<div class="ase-gallery-opts--single">
 				<input type="checkbox" name="aesop_photoset_gallery_lightbox" <?php if( $photoset_lb == true ) { ?>checked="checked"<?php } ?>>
-				<label for="aesop_photoset_gallery_lightbox">Enable Lightbox</label>
+				<label for="aesop_photoset_gallery_lightbox"><?php _e('Enable Lightbox','aesop-core');?></label>
 			</div>
 
 		</div>
