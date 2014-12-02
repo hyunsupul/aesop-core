@@ -111,12 +111,12 @@ class AesopCoreGallery {
 
 		$thumbs 	= get_post_meta( $gallery_id, 'aesop_thumb_gallery_hide_thumbs', true) ? sprintf('data-nav=false') : sprintf('data-nav=thumbs');
 		$autoplay 	= get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true) ? sprintf('data-autoplay="%s"', get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true)) : null;
-		$transition = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true) ? get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true) : 'slide';
+		$transition = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true) ? get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true) : 'crossfade';
 
 		// image size
 		$size    = apply_filters('aesop_thumb_gallery_size', 'full');
 
-		?><div id="aesop-thumb-gallery-<?php echo esc_attr($gallery_id);?>" class="fotorama" 	data-transition="crossfade"
+		?><div id="aesop-thumb-gallery-<?php echo esc_attr($gallery_id);?>" class="fotorama" 	data-transition="<?php echo esc_attr($transition);?>"
 																			data-width="<?php echo esc_attr($width);?>"
 																			<?php echo esc_attr($autoplay);?>
 																			data-keyboard="true"
@@ -318,12 +318,12 @@ class AesopCoreGallery {
 				  		<?php } ?>
 
 					    jQuery('.aesop-gallery-photoset').attr('style', '');
-					    jQuery(".aesop-gallery-photoset img").each(function(){
+					    jQuery(".photoset-cell img").each(function(){
 
-							caption = jQuery(this).attr('alt');
+							caption = jQuery(this).attr('data-caption');
 
-							if ( caption ) {
-								title = jQuery(this).attr('data-title');
+							if ( caption) {
+								title = jQuery(this).attr('title');
 								jQuery(this).after('<span class="aesop-photoset-caption"><span class="aesop-photoset-caption-title">' + title + '</span><span class="aesop-photoset-caption-caption">' + caption +'</span></span>');
 								jQuery('.aesop-photoset-caption').hide().fadeIn();
 
@@ -345,11 +345,12 @@ class AesopCoreGallery {
 
 		            $full    	=  wp_get_attachment_image_src( $image_id, $size, false);
 		            $alt     	=  get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+		            $caption    = 	get_post($image_id)->post_excerpt;
                 	$title 	  	= 	get_post($image_id)->post_title;
 
 		            $lb_link    =  $lightbox ? sprintf('data-highres="%s"', esc_url( $full[0] ) ) : null;
 
-		           	?><img src="<?php echo esc_url($full[0]);?>" <?php echo $lb_link;?> data-title="<?php echo esc_attr($title);?>" title="<?php echo esc_attr($title);?>" alt="<?php echo esc_attr($alt);?>"><?php
+		           	?><img src="<?php echo esc_url($full[0]);?>" <?php echo $lb_link;?> data-caption="<?php echo esc_attr($caption);?>" title="<?php echo esc_attr($title);?>" alt="<?php echo esc_attr($alt);?>"><?php
 
 				endforeach;
 
