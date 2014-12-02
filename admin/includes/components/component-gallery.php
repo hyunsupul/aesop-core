@@ -212,7 +212,7 @@ class AesopGalleryComponentAdmin {
 
 				function ase_insert_gallery_item(id, url){
 
-					var item_html = "<li id='" + id + "' class='ase-gallery-image'><i class='dashicons dashicons-no-alt'></i><i class='dashicons dashicons-edit'></i><img src='" + url + "'></li>";
+					var item_html = "<li id='" + id + "' class='ase-gallery-image'><i class='dashicons dashicons-no-alt'></i><i title='Edit Image Caption' class='dashicons dashicons-edit'></i><img src='" + url + "'></li>";
 					$('#ase-gallery-images').append( item_html );
 					gallery.sortable('refresh');
 					ase_encode_gallery_items();
@@ -265,7 +265,7 @@ class AesopGalleryComponentAdmin {
 				};
 
 				function ase_edit_gallery_item(id, url, editable){
-					var item_html = "<li id='" + id + "' class='ase-gallery-image'><i class='dashicons dashicons-no-alt'></i><i class='dashicons dashicons-edit'></i><img src='" + url + "'></li>";
+					var item_html = "<li id='" + id + "' class='ase-gallery-image'><i class='dashicons dashicons-no-alt'></i><i title='Edit Image Caption' class='dashicons dashicons-edit'></i><img src='" + url + "'></li>";
 					$(editable).replaceWith( item_html );
 					gallery.sortable('refresh');
 					ase_encode_gallery_items();
@@ -342,8 +342,8 @@ class AesopGalleryComponentAdmin {
 
 		        	?>
 		        	<li id="<?php echo $image_id;?>" class="ase-gallery-image">
-		        		<i class="dashicons dashicons-no-alt"></i>
-		        		<i class='dashicons dashicons-edit'></i>
+		        		<i class="dashicons dashicons-no-alt" title="Delete From Gallery"></i>
+		        		<i class='dashicons dashicons-edit' title="Edit Image Caption"></i>
 		           	<img src="<?php echo $image[0];?>">
 		          </li>
 		          <?php

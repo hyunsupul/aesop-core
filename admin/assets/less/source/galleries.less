@@ -29,13 +29,17 @@
         position: absolute;
         z-index:1;
         color:white;
-        text-shadow:0 1px 1px rgba(0,0,0,0.1);
+        text-shadow:0 1px 1px rgba(0,0,0,0.5);
         .opacity(0.6);
         .transition(opacity .25s ease);
 
         &:hover {
             cursor: pointer;
             .opacity(1.0);
+        }
+
+        &.dashicons-edit {
+            left:6px;
         }
     }
 
@@ -57,22 +61,24 @@
     position:relative;
     margin:20px auto 0;
     padding:0;
+    height:32px;
     width:180px;
     display: block;
     text-transform: uppercase;
 
     i {
         width:auto;
-        height:28px;
+        height:32px;
         font-size:14px;
+        line-height: 1.2;
         display:block;
-        padding:4px 10px;
+        padding:5px 10px;
         .box-sizing(border-box);
 
         &:before {
             position:relative;
-            top:4px;
-            left:-2px;
+            top:3px;
+            left:-3px;
         }
     }
 }
