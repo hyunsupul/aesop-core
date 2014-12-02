@@ -651,7 +651,7 @@ class AesopGalleryComponentAdmin {
 
 		update_option( 'ase_galleries_upgraded_to', AI_CORE_VERSION );
 
-		echo __('All done! Reloading page...','aesop-core');
+		echo __('All done!','aesop-core');
 
 		exit;
 
