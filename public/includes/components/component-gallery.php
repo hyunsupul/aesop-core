@@ -34,20 +34,11 @@ class AesopCoreGallery {
 		$instance++;
 		$unique 	= sprintf('%s-%s', $gallery_id, $instance);
 
-		// get the gallery
-		$gallery 	= wp_cache_get('aesop_gallery_retrieval_'.$unique);
-
-		// cache teh gallery retrieval
-		if ( false == $gallery ) {
-
-			$gallery 	= get_post_gallery( $gallery_id , false);
-			wp_cache_set('aesop_gallery_retrieval_'.$unique, $gallery);
-
-		}
-
 		// get gallery images and custom attrs
-		$image_ids 	= explode( ',', $gallery['ids'] );
-		$type 		= $gallery['a_type'];
+		$image_ids 	= get_post_meta($gallery_id,'_ase_gallery_images', true);
+		$image_ids	= array_map('intval', explode(',', $image_ids));
+
+		$type 		=  get_post_meta($gallery_id,'aesop_gallery_type', true);
 		$width 		= get_post_meta($gallery_id,'aesop_gallery_width', true);
 
 		//gallery caption
@@ -61,7 +52,7 @@ class AesopCoreGallery {
 
 				do_action('aesop_gallery_inside_top', $type, $gallery_id); //action
 
-				if ( !empty($gallery['ids']) ) {
+				if ( !empty($image_ids) ) {
 
 					switch($type):
 						case 'thumbnail':
