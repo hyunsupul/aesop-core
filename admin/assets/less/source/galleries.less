@@ -24,6 +24,7 @@
 .ase-gallery-image {
     position:relative;
     margin-right:8px;
+    .transition(transform .1s ease);
     i {
         top:3px;
         position: absolute;
@@ -53,6 +54,13 @@
 
     img{
         max-width:120px;
+    }
+
+    // being dragged
+    &.ui-sortable-helper {
+        -ms-transform: rotate(7deg); /* IE 9 */
+        -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+        transform: rotate(7deg);
     }
 }
 
