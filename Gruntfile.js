@@ -102,6 +102,8 @@ module.exports = function(grunt) {
                      	'admin/assets/js/generator.js',
                      	'admin/assets/js/transition.js',
                         'admin/assets/js/tooltip.js',
+                        'admin/assets/js/gallery-conditionals.js',
+                        'admin/assets/js/gallery-images.js',
                      	'admin/assets/js/jquery.cookie.js'
                     ]
                 }
