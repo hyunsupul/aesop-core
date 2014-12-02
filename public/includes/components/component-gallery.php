@@ -53,10 +53,6 @@ class AesopCoreGallery {
 		//gallery caption
 		$gallery_caption = get_post_meta( $gallery_id, 'aesop_gallery_caption', true);
 
-		// set the type of gallery into post meta
-		// @todo - move this to  save_post action so it doesn't run every time the sc loads
-		update_post_meta( $gallery_id, 'aesop_gallery_type', sanitize_text_field( $type ) );
-
 		ob_start();
 
 			do_action('aesop_gallery_before', $type, $gallery_id); //action
