@@ -141,6 +141,10 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.4 =
+* NEW - The gallery admin has been completely re-designed from the ground up to make creating and managing easier.
+* NEW - Chapter component is now fully compatible with all WordPress themes so long as you have the extended css support added.
+
 = 1.3.2 =
 * FIXED - Code showing in Chapter Component
 * FIXED - Parallax floater markup
