@@ -52,7 +52,7 @@
 .aesop-toggle-chapter-menu {
     position:fixed;
     right:-1px; // covers border right
-    bottom:@chapter-toggle-width;
+    bottom:57px; // matches up with the chapter line from the title
     height:@chapter-toggle-width;
     width:@chapter-toggle-width;
     background:@baseContrast;
@@ -137,6 +137,13 @@
         color:#777;
         padding-top:5px;
         padding-bottom:5px;
+    }
+}
+
+// account for admin menu
+.admin-bar {
+    .aesop-chapter-menu {
+        top:32px;
     }
 }
 
