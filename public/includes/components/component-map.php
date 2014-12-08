@@ -107,7 +107,7 @@ class AesopMapComponent {
 		$default_location 	= is_single();
 		$location 			= apply_filters( 'aesop_map_component_appears', $default_location );
 
-		$tiles = aesop_map_tile_provider($post->ID);
+		$tiles = isset( $post ) ? aesop_map_tile_provider($post->ID) : false;
 
 		if ( function_exists('aesop_component_exists') && aesop_component_exists('map') && ( $location ) )  { ?>
 			<!-- Aesop Locations -->
