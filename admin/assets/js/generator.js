@@ -215,10 +215,13 @@ jQuery(document).ready(function($) {
 
 // media uploader
 var file_frame;
+var className;
 
-jQuery('#aesop-upload-img').live('click', function( event ){
+jQuery(document).on('click', '#aesop-upload-img', function( e ){
 
-    event.preventDefault();
+    e.preventDefault();
+
+    className = e.currentTarget.parentElement.className;
 
     // If the media frame already exists, reopen it.
     if ( file_frame ) {
@@ -237,8 +240,8 @@ jQuery('#aesop-upload-img').live('click', function( event ){
 
     // When an image is selected, run a callback.
     file_frame.on( 'select', function() {
-      	attachment = file_frame.state().get('selection').first().toJSON();
-  		jQuery('.aesop-generator-attr-media_upload').val(attachment.url);
+      var attachment = file_frame.state().get('selection').first().toJSON();
+      jQuery('.' + className + ' .aesop-generator-attr-media_upload').val(attachment.url);
     });
 
     // Finally, open the modal
