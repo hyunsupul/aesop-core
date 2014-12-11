@@ -44,7 +44,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 				<div class="aesop-article-chapter clearfix" <?php echo $img_style;?> >
 
-					<h2 class="aesop-cover-title" itemprop="title" >
+					<h2 class="aesop-cover-title" itemprop="title" data-title="<?php echo esc_attr( $atts['title'] );?>">
 						<?php echo esc_html( $atts['title'] );
 
 						if ( $atts['subtitle'] ) { ?>
@@ -120,19 +120,59 @@ class AesopChapterHeadingComponent {
 					    showTopLink: true,
 					    showHeadline: false,
 					    scrollOffset: <?php echo absint( $chapterOffset );?>,
+					    onRender: function() {
+					       	jQuery('.scroll-nav__section').each(function(){
+
+					       		var id = jQuery(this).attr('id');
+					       		var title = jQuery(this).find('.aesop-cover-title').attr('data-title');
+
+					       		jQuery('.scroll-nav__link').each(function(){
+					       			var match = jQuery(this).attr('href');
+
+					       			if ( match == '#'+id ) {
+					       				jQuery(this).text(title);
+					       			}
+					       		});
+
+					       	});
+					    }
+					});
+
+					var coverSizer = function(){
+						jQuery('.aesop-chapter-full .aesop-article-chapter').css({'height':(jQuery(window).height())+'px'});
+					}
+					coverSizer();
+				    jQuery(window).resize(function(){
+	    				coverSizer();
 					});
 
 				});
-
-				var coverSizer = function(){
-					jQuery('.aesop-chapter-full .aesop-article-chapter').css({'height':(jQuery(window).height())+'px'});
-				}
-				coverSizer();
-			    jQuery(window).resize(function(){
-    				coverSizer();
-				});
 			</script>
+
 		<?php
+
+		echo self::aesop_chapter_menu();
+
+	}
+
+	/**
+	*
+	*	Draws the off canvas menu and close button
+	*
+	*	@since 1.3.2
+	*/
+	function aesop_chapter_menu(){
+
+		$out = '<a id="aesop-toggle-chapter-menu" class="aesop-toggle-chapter-menu" href="#aesop-chapter-menu"><i class="dashicons dashicons-tag aesop-close-chapter-menu"></i></a>';
+		$out .= '<div id="aesop-chapter-menu" class="aesop-chapter-menu">
+					<i class="dashicons dashicons-no-alt aesop-close-chapter-menu"></i>
+					<div class="aesop-chapter-menu--inner aesop-entry-header">
+					</div>
+				</div>';
+
+		$return = apply_filters('aesop_chapter_menu_output', $out );
+
+		return $return;
 	}
 }
 

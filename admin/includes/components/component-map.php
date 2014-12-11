@@ -195,13 +195,13 @@ class AesopMapComponentAdmin {
 
 					function setMapCenter(k, B) {
 						var ldata = encodeLocationData(k,B);
-						jQuery('input[name="ase-map-component-start-point"').remove();
+						jQuery('input[name="ase-map-component-start-point"]').remove();
 						jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-start-point" data-ase="map" value="' + ldata + '">');
 						jQuery('#aesop-map-address').val(k + ', ' + B);
 					}
 
 					function setMapZoom(z) {
-						jQuery('input[name="ase-map-component-zoom"').remove();
+						jQuery('input[name="ase-map-component-zoom"]').remove();
 						jQuery('.aesop-map-data').append('<input type="hidden" name="ase-map-component-zoom" data-ase="map" value="' + z + '">');
 					}
 

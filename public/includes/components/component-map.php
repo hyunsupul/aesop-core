@@ -30,6 +30,9 @@ if (!function_exists('aesop_map_shortcode')) {
 		// 50% means when the id hits 50% from the top the waypoint will fire
 		$marker_waypoint_offset = apply_filters('aesop_map_waypoint_offset', '50%');
 
+		$default_location 	= is_single();
+		$location 			= apply_filters( 'aesop_map_component_appears', $default_location );
+
 		ob_start();
 
 		/**
@@ -38,7 +41,7 @@ if (!function_exists('aesop_map_shortcode')) {
 		*
 		* 	@since 1.3
 		*/
-		if ( 'off' !== $atts['sticky'] && $markers ):
+		if ( 'off' !== $atts['sticky'] && $markers && $location ):
 
 			?>
 			<!-- Aesop Sticky Maps -->
@@ -104,7 +107,7 @@ class AesopMapComponent {
 		$default_location 	= is_single();
 		$location 			= apply_filters( 'aesop_map_component_appears', $default_location );
 
-		$tiles = aesop_map_tile_provider($post->ID);
+		$tiles = isset( $post ) ? aesop_map_tile_provider($post->ID) : false;
 
 		if ( function_exists('aesop_component_exists') && aesop_component_exists('map') && ( $location ) )  { ?>
 			<!-- Aesop Locations -->
