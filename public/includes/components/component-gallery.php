@@ -144,8 +144,7 @@ class AesopCoreGallery {
 	*/
 	function aesop_grid_gallery($gallery_id, $image_ids, $width){
 
-		$getgridwidth 	= get_post_meta( $gallery_id, 'aesop_grid_gallery_width', true );
-		$gridwidth 		= $getgridwidth ? self::sanitize_int($getgridwidth) : 400;
+		$gridwidth 	= get_post_meta( $gallery_id, 'aesop_grid_gallery_width', true ) ? get_post_meta( $gallery_id, 'aesop_grid_gallery_width', true ) : 400;
 
 		// allow theme developers to determine the spacing between grid items
 		$space = apply_filters('aesop_grid_gallery_spacing', 5 );
@@ -161,8 +160,8 @@ class AesopCoreGallery {
 			        var options = {
 			          	autoResize: true,
 			          	container: jQuery('#aesop-grid-gallery-<?php echo esc_attr($gallery_id);?>'),
-			          	offset: <?php echo $space;?>,
-			          	flexibleWidth: <?php echo $gridwidth;?>
+			          	offset: <?php echo (int) $space;?>,
+			          	flexibleWidth: <?php echo (int) $gridwidth;?>
 			        };
 			        var handler = jQuery('#aesop-grid-gallery-<?php echo esc_attr($gallery_id);?> li');
 			        jQuery(handler).wookmark(options);
@@ -362,14 +361,5 @@ class AesopCoreGallery {
 
 	}
 
-    /**
-	 	* Ensure users only enter whole number
-	 	*
-	 	* @since    1.0.0
-	*/
-	function sanitize_int( $input = ''  ) {
-		return wp_filter_nohtml_kses( round( $input ) );
-
-	}
 }
 new AesopCoreGallery;

@@ -62,16 +62,18 @@ class AesopContextualHelp {
 
 				<h4>Directions</h4>
 				<ol>
-					<li>Click the Add Gallery button</li>
-					<li>Click Create Gallery to create a gallery</li>
-					<li>Create a gallery, then choose a gallery type while creating the gallery within the gallery modal. </li>
-					<li>Insert the gallery into the post, and publish the page.</li>
-					<li>Take note of the code produced that you\'ll copy and paste into the post where you want the gallery to show up.</li>
+					<li>1. Add images by clicking the Add Images button. Select multiple by holding down CNTRL or COMMAND, then click "Use Selected Images."</li>
+					<li>2. Choose a layout by clicking a layout option.</li>
+					<li>3. Adjust any available options for your specified gallery type.</li>
+					<li>4. Publish the gallery.</li>
+					<li>5. Go to any post, open the Component generator, select the Gallery component, and choose the gallery that you just created from the list.</li>
 					</ol>
+
+				<p>Tips: Clicking the "x" icon over the image will delete the image from this gallery (but not from your site). Clicking the "pencil" icon will let you edit any information for the image such as a caption or title used by some galleries.</p>
 
 
 				<h4>Documentation</h4>
-				<p>All components, options, and hooks are full documented at <a href="http://developers.aesopstories.com">http://developers.aesopstories.com</a></p>
+				<p>All components, options, and hooks are fully documented at <a href="http://developers.aesopstories.com">http://developers.aesopstories.com</a></p>
 	      		','aesop-core')
 	      	));
 		}

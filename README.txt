@@ -138,8 +138,15 @@ Full documentation can be found below.
 = 1.0 =
 * Initial Release
 
-
 == Changelog ==
+
+= 1.4 =
+* NEW - Gallery admin area to make creating and managing easier.
+* NEW - Chapter component slideout - fully compatible with all WordPress themes ( with extended css support snippet ).
+* FIXED - Bug with maps not correctly displaying in admin in Firefox
+* FIXED - Sticky map styles bleeding out of single posts
+* FIXED - Image upload bug when using multiple image fields (only affects 3rd party plugins)
+* NOTE - With the new Galleries in 1.4, the metabox library has been removed from Aesop Story Engine, saving space and reducing the size of the code base. This will only affect 3rd party developers who are relying on our library. Visit Github repo for more details on fixes.
 
 = 1.3.2 =
 * FIXED - Code showing in Chapter Component
