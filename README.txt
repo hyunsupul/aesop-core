@@ -143,6 +143,7 @@ Full documentation can be found below.
 = 1.4 =
 * NEW - Gallery admin area to make creating and managing easier.
 * NEW - Chapter component slideout - fully compatible with all WordPress themes ( with extended css support snippet ).
+* NEW - Chapter component placeholders now show Chapter titles in the editor - props @crowjonah
 * FIXED - Bug with maps not correctly displaying in admin in Firefox
 * FIXED - Sticky map styles bleeding out of single posts
 * FIXED - Image upload bug when using multiple image fields (only affects 3rd party plugins)
