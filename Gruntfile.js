@@ -108,6 +108,18 @@ module.exports = function(grunt) {
                     ]
                 }
             },
+            tinymcepluginscripts: {
+                options: {
+                    sourceMap: 'admin/assets/js/tinymce/aiview/plugin.min.js.map',
+                    sourceMappingURL: 'plugin.min.js.map',
+                    sourceMapPrefix: 3
+                },
+                files: {
+                    'admin/assets/js/tinymce/aiview/plugin.min.js': [
+                        'admin/assets/js/tinymce/aiview/plugin.js'
+                    ]
+                }
+            },
             publicscripts: {
                 options: {
                     sourceMap: 'public/assets/js/ai-core.js.map',
