@@ -261,6 +261,8 @@
 
 // quote
 .aesop-quote-component {
+    // this is very important, and prevents issues with the stacked gallery compoonent flicking due to its fixed background position
+    -webkit-transform: translateZ(0);
     &.quote-left-right {
         overflow: hidden;
     }

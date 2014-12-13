@@ -206,7 +206,7 @@ class AesopCoreGallery {
 		jQuery(document).ready(function(){
 
 			var stackedResizer = function(){
-				jQuery('.aesop-stacked-img').css({'height':(jQuery(window).height())+'px', 'width':(jQuery(this).parent())+'px'});
+				jQuery('.aesop-stacked-img').css({'height':(jQuery(window).height())+'px'});
 			}
 			stackedResizer();
 
