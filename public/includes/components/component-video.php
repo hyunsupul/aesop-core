@@ -96,7 +96,7 @@ if (!function_exists('aesop_video_shortcode')){
 		                printf( '<iframe src="//www.dailymotion.com/embed/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
 		                break;
 		            case 'youtube':
-		                printf( '<iframe src="//www.youtube.com/embed/%s?rel=0" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',esc_attr($atts['id']), esc_attr($iframe_size) );
+		                printf( '<iframe src="//www.youtube.com/embed/%s?rel=0&wmode=transparent" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>',esc_attr($atts['id']), esc_attr($iframe_size) );
 		                break;
 		            case 'kickstarter':
 		                printf( '<iframe src="%s" %s scrolling="no"> </iframe>',esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
