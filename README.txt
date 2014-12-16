@@ -141,11 +141,15 @@ Full documentation can be found below.
 == Changelog ==
 
 = 1.4 =
-* NEW - Gallery admin area to make creating and managing easier.
+* NEW - Redesigned gallery admin - makes creating and managing galleries easier than ever before
 * NEW - Chapter component slideout - fully compatible with all WordPress themes ( with extended css support snippet ).
+* NEW - Chapter component placeholders now show Chapter titles in the editor - props @crowjonah
+* NEW - Map markers (used with Sticky Maps) now shows Marker textin the placeholder in the editor - propes @crowjonah
 * FIXED - Bug with maps not correctly displaying in admin in Firefox
 * FIXED - Sticky map styles bleeding out of single posts
 * FIXED - Image upload bug when using multiple image fields (only affects 3rd party plugins)
+* FIXED - Transparent issue with YouTube video player in IE 11 - props @artjosimon
+* FIXED - Stacked Parallax gallery bug
 * NOTE - With the new Galleries in 1.4, the metabox library has been removed from Aesop Story Engine, saving space and reducing the size of the code base. This will only affect 3rd party developers who are relying on our library. Visit Github repo for more details on fixes.
 
 = 1.3.2 =

@@ -13,3 +13,7 @@
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
+
+delete_option('ai_core_version');
+delete_option('ase_upgraded_to');
+delete_option('ase_galleries_upgraded_to');
