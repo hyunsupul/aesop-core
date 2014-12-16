@@ -62,11 +62,11 @@ class AesopContextualHelp {
 
 				<h4>Directions</h4>
 				<ol>
-					<li>1. Add images by clicking the Add Images button. Select multiple by holding down CNTRL or COMMAND, then click "Use Selected Images."</li>
-					<li>2. Choose a layout by clicking a layout option.</li>
-					<li>3. Adjust any available options for your specified gallery type.</li>
-					<li>4. Publish the gallery.</li>
-					<li>5. Go to any post, open the Component generator, select the Gallery component, and choose the gallery that you just created from the list.</li>
+					<li>Add images by clicking the Add Images button. Select multiple by holding down CNTRL or COMMAND, then click "Use Selected Images."</li>
+					<li>Choose a layout by clicking a layout option.</li>
+					<li>Adjust any available options for your specified gallery type.</li>
+					<li>Publish the gallery.</li>
+					<li>Go to any post, open the Component generator, select the Gallery component, and choose the gallery that you just created from the list.</li>
 					</ol>
 
 				<p>Tips: Clicking the "x" icon over the image will delete the image from this gallery (but not from your site). Clicking the "pencil" icon will let you edit any information for the image such as a caption or title used by some galleries.</p>
