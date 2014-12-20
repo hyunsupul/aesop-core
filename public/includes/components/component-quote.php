@@ -11,14 +11,14 @@ if (!function_exists('aesop_quote_shortcode')){
 
 		$defaults = array(
 			'width'		=> '100%',
-			'background' => '#222222',
+			'background'	=> '#222222',
 			'img'		=> '',
-			'text' 		=> '#FFFFFF',
+			'text'		=> '#FFFFFF',
 			'height'	=> 'auto',
 			'align'		=> 'left',
 			'size'		=> '4',
-			'parallax'  => '',
-			'direction' => '',
+			'parallax'	=> '',
+			'direction'	=> '',
 			'quote'		=> '',
 			'cite'		=> '',
 
