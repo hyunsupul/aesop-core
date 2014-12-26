@@ -1,0 +1,9 @@
+Mashes both license-free Brankic1979 and Octicons by GitHub.
+
+Brankic1979 Download / Pseudo-License Info (unlimited commercial+personal use, shoutouts like this appreciated)
+http://www.brankic1979.com/icons/
+
+(c) 2012-2014 GitHub
+Font License: SIL OFL 1.1 (http://scripts.sil.org/OFL)
+
+ASE was generated using IcoMoo App.

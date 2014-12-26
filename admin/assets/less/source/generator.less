@@ -1,3 +1,44 @@
+@font-face {
+	font-family:ase;
+	src:url('../font/ase.eot?-njejrw');
+	src:url('../font/ase.eot?#iefix-njejrw') format('embedded-opentype'),
+		url('../font/ase.woff?-njejrw') format('woff'),
+		url('../font/ase.ttf?-njejrw') format('truetype'),
+		url('../font/ase.svg?-njejrw#ase') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="ase-"], [class*=" ase-"] {
+	font-family: 'ase';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.ase-component:before {
+	content: "\a79";
+}
+
+.ase-donate:before {
+	content: "\a76";
+	font-size:1.85em;
+	padding-top:-10px;
+}
+
+.ase-git:before {
+	content: "\a78";
+	font-size:1.4em;
+	margin-top:2px;
+}
+
 .aesop-generator-empty {
     text-align: center;
     padding:30px;
@@ -75,8 +116,8 @@
 
             &:before {
                 content:'';
-                font-family: Dashicons;
-                font-size: 34px;
+                font-family:'ase';
+                font-size: 38px;
                 font-weight:normal;
                 position: relative;
                 margin: 20px auto;
@@ -99,32 +140,19 @@
             }
         }
 
-        // image
-        &.image     { a:before { content: "\f128"; } }
-        // character
-        &.character { a:before { content: "\f338"; } }
-        // qupte
-        &.quote     { a:before { content: "\f122"; } }
-        // content
-        &.content   { a:before { content: "\f207"; } }
-        // chapter head
-        &.chapter   { a:before { content: "\f330"; } }
-        // parallax
-        &.parallax  { a:before { content: "\f168"; } }
-        // audio
-        &.audio     { a:before { content: "\f127"; } }
-        // video
-        &.video     { a:before { content: "\f126"; } }
-        // map
-        &.map       { a:before { content: "\f319"; } }
-        // video
-        &.timeline_stop  { a:before { content: "\f469"; } }
-        // document
-        &.document  { a:before { content: "\f123"; } }
-        // collection
-        &.collection  { a:before { content: "\f175"; } }
-        // collection
-        &.gallery  { a:before { content: "\f161"; } }
+        &.image     { a:before { content: "\a5b"; } }
+        &.character { a:before { content: "\a6e"; } }
+        &.quote     { a:before { content: "\a52"; } }
+        &.content   { a:before { content: "\a72"; } }
+        &.chapter   { a:before { content: "\a6f"; } }
+        &.parallax  { a:before { content: "\a7b"; } }
+        &.audio     { a:before { content: "\a73"; } }
+        &.video     { a:before { content: "\a57"; } }
+        &.map       { a:before { content: "\a77"; } }
+        &.timeline_stop  { a:before { content: "\a5f"; } }
+        &.document  { a:before { content: "\a56"; } }
+        &.collection  { a:before { content: "\a68"; } }
+        &.gallery  { a:before { content: "\a74"; } }
     }
 }
 
@@ -361,25 +389,12 @@
     color:lighten(@desc,35);
 
     a {
-        color:fadeout(white,35);
+        color:#c7c7c7;
         text-decoration: none;
 
         &:hover {
             text-decoration: none;
         }
-    }
-    span {
-        display: inline;
-        padding: .1em .4em .2em;
-        font-size: 100%;
-        line-height: 1;
-        color: #fff;
-        background-color: #888;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: baseline;
-        border-radius: .3em;
-        margin: 0 4px;
     }
 }
 

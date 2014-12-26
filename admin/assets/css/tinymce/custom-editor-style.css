@@ -1,4 +1,14 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans);
+@font-face {
+	font-family:ase;
+	src:url('../../font/ase.eot?-njejrw');
+	src:url('../../font/ase.eot?#iefix-njejrw') format('embedded-opentype'),
+		url('../../font/ase.woff?-njejrw') format('woff'),
+		url('../../font/ase.ttf?-njejrw') format('truetype'),
+		url('../../font/ase.svg?-njejrw#ase') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
 .aesop-button-clipboard {
 	display: none;
@@ -41,25 +51,25 @@
 .aesop-component-title:before {
 	padding-right: 10px;
 	vertical-align: middle;
-	font-family: Dashicons;
+	font-family:ase;
+	font-size: 20px;
 	position: relative;
 	top:-1px;
 }
 
-.aesop-content-title:before { content: "\f207"; }
-.aesop-chapter-title:before { content: "\f330"; }
-.aesop-image-title:before { content: "\f128"; }
-.aesop-audio-title:before { content: "\f127"; }
-.aesop-video-title:before { content: "\f126"; }
-.aesop-map-title:before { content: "\f319"; }
-	.aesop-map_marker-title:before {content:'\f230';}
-.aesop-character-title:before { content: "\f338"; }
-.aesop-timeline_stop-title:before { content: "\f469"; }
-.aesop-parallax-title:before { content: "\f168"; }
-.aesop-quote-title:before { content: "\f122"; }
-.aesop-document-title:before { content: "\f123"; }
-.aesop-collection-title:before { content: "\f175"; }
-.aesop-gallery-title:before { content: "\f161"; }
+.aesop-image-title:before { content: "\a5b"; }
+.aesop-character-title:before { content: "\a6e"; }
+.aesop-quote-title:before { content: "\a52"; }
+.aesop-content-title:before { content: "\a72"; }
+.aesop-chapter-title:before { content: "\a6f"; }
+.aesop-parallax-title:before { content: "\a7b"; }
+.aesop-audio-title:before { content: "\a73"; }
+.aesop-video-title:before { content: "\a57"; }
+.aesop-map-title:before { content: "\a77"; }
+.aesop-timeline_stop-title:before { content: "\a5f"; }
+.aesop-document-title:before { content: "\a56"; }
+.aesop-collection-title:before { content: "\a68"; }
+.aesop-gallery-title:before { content: "\a74"; }
 
 .aesop-button:before {
 	vertical-align: middle;
