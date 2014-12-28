@@ -33,6 +33,10 @@ if (!function_exists('aesop_map_shortcode')) {
 		$default_location 	= is_single();
 		$location 			= apply_filters( 'aesop_map_component_appears', $default_location );
 
+		static $instance = 0;
+		$instance++;
+		$unique = sprintf('%s-%s',get_the_ID(), $instance);
+
 		ob_start();
 
 		/**
