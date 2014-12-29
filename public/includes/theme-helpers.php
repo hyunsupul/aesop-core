@@ -170,3 +170,25 @@ function aesop_map_tile_provider( $postid = 0 ) {
 
 	return $out;
 }
+
+/**
+*
+*
+*	Return the options in a component as inline data-attributes
+*	Mosty used with Aesop Story Editor
+*	@since 1.5
+*/
+function aesop_component_options_as_atts( $defaults = array() ) {
+
+	if( empty( $defaults ))
+		return;
+
+	$out = '';
+	foreach ( $defaults as $default => $value ) {
+		$out .= !empty( $value ) ? sprintf('data-%s="%s" ', $default, $value ) : false;
+	}
+
+	return $out;
+}
+
+
