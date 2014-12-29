@@ -48,7 +48,7 @@ class AesopCoreGallery {
 
 			do_action('aesop_gallery_before', $type, $gallery_id); //action
 
-			?><div id="aesop-gallery-<?php echo esc_attr( $unique );?>" class="aesop-component aesop-gallery-component aesop-<?php echo esc_attr($type);?>-gallery-wrap"><?php
+			?><div <?php echo aesop_component_options_as_atts($atts);?> id="aesop-gallery-<?php echo esc_attr( $unique );?>" class="aesop-component aesop-gallery-component aesop-<?php echo esc_attr($type);?>-gallery-wrap"><?php
 
 				do_action('aesop_gallery_inside_top', $type, $gallery_id); //action
 

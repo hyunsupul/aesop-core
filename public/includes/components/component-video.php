@@ -81,7 +81,7 @@ if (!function_exists('aesop_video_shortcode')){
     	<?php }
 	    do_action('aesop_video_before'); //action
 	    ?>
-	    <div data-unique="<?php echo esc_attr( $unique );?>" id="aesop-video-<?php echo esc_attr( $unique );?>" class="aesop-component aesop-video-component aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $classes );?> <?php echo sanitize_html_class( $controlstatus );?> <?php echo sanitize_html_class( $contentwidth );?> <?php echo sanitize_html_class( $vineStagramClass );?> <?php echo sanitize_html_class( $vineStagramAlign );?>">
+	    <div <?php echo aesop_component_options_as_atts($atts);?> data-unique="<?php echo esc_attr( $unique );?>" id="aesop-video-<?php echo esc_attr( $unique );?>" class="aesop-component aesop-video-component aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $classes );?> <?php echo sanitize_html_class( $controlstatus );?> <?php echo sanitize_html_class( $contentwidth );?> <?php echo sanitize_html_class( $vineStagramClass );?> <?php echo sanitize_html_class( $vineStagramAlign );?>">
 
 	    	<?php do_action('aesop_video_inside_top'); //action ?>
 

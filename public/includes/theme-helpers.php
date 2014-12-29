@@ -176,11 +176,13 @@ function aesop_map_tile_provider( $postid = 0 ) {
 *
 *	Return the options in a component as inline data-attributes
 *	Mosty used with Aesop Story Editor
+*
+*	@param $defaults array available options for this component
 *	@since 1.5
 */
 function aesop_component_options_as_atts( $defaults = array() ) {
 
-	if( empty( $defaults ))
+	if( empty( $defaults ) || !is_user_logged_in() )
 		return;
 
 	$out = '';

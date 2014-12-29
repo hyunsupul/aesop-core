@@ -38,7 +38,7 @@ if (!function_exists('aesop_chapter_shortcode')){
 		do_action('aesop_chapter_before'); //action
 
 			?>
-			<div data-unique="<?php echo esc_attr( $unique );?>" id="chapter-unique-<?php echo $unique;?>" class="aesop-article-chapter-wrap default-cover <?php echo $video_chapter_class;?> aesop-component <?php echo $img_style_class;?> <?php echo $full_class;?> " >
+			<div <?php echo aesop_component_options_as_atts($atts);?> data-unique="<?php echo esc_attr( $unique );?>" id="chapter-unique-<?php echo $unique;?>" class="aesop-article-chapter-wrap default-cover <?php echo $video_chapter_class;?> aesop-component <?php echo $img_style_class;?> <?php echo $full_class;?> " >
 
 				<?php do_action('aesop_chapter_inside_top'); //action ?>
 
