@@ -178,11 +178,12 @@ function aesop_map_tile_provider( $postid = 0 ) {
 *	Mosty used with Aesop Story Editor
 *
 *	@param $defaults array available options for this component
+*	@param $type the type of component
 *	@since 1.5
 */
-function aesop_component_options_as_atts( $defaults = array() ) {
+function aesop_component_options_as_atts( $defaults = array(), $type ) {
 
-	if( empty( $defaults ) || !is_user_logged_in() )
+	if( empty( $defaults ) || empty( $type ) || !is_user_logged_in() )
 		return;
 
 	$out = '';
@@ -190,7 +191,7 @@ function aesop_component_options_as_atts( $defaults = array() ) {
 		$out .= !empty( $value ) ? sprintf('data-%s="%s" ', $default, $value ) : false;
 	}
 
-	return $out;
+	return $out.' data-component-type="'.$type.'" ';
 }
 
 

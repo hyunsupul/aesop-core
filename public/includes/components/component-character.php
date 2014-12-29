@@ -42,7 +42,7 @@ if (!function_exists('aesop_character_shortcode')){
 
 			do_action('aesop_character_before'); //action
 			?>
-				<aside <?php echo aesop_component_options_as_atts($atts);?> data-unique="<?php echo esc_attr( $unique );?>" id="aesop-character-component-<?php echo esc_attr( $unique );?>" class="aesop-character-component <?php echo sanitize_html_class( $classes ).''.sanitize_html_class( $float );?> ">
+				<aside data-unique="<?php echo esc_attr( $unique );?>" id="aesop-character-component-<?php echo esc_attr( $unique );?>" class="aesop-character-component <?php echo sanitize_html_class( $classes ).''.sanitize_html_class( $float );?> ">
 
 					<?php do_action('aesop_character_inside_top'); //action ?>
 
