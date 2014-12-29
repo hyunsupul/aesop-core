@@ -80,7 +80,7 @@ if (!function_exists('aesop_map_shortcode')) {
 		endif;
 
 		do_action('aesop_map_before');
-			?><div contenteditable="false" data-unique="<?php echo esc_attr( $unique );?>" id="aesop-map-component" class="aesop-component aesop-map-component <?php echo sanitize_html_class($classes);?> " <?php echo $height;?>></div><?php
+			?><div contenteditable="false" data-unique="<?php echo esc_attr( $unique );?>" id="aesop-map-component" data-component-type="mao" class="aesop-component aesop-map-component <?php echo sanitize_html_class($classes);?> " <?php echo $height;?>></div><?php
 		do_action('aesop_map_before');
 
 		return ob_get_clean();

@@ -36,7 +36,7 @@ if (!function_exists('aesop_collection_shortcode')){
 
 		?>
 			<!-- Collections -->
-			<div contenteditable="false" data-unique="<?php echo esc_attr( $unique );?>" class="aesop-story-collection <?php echo sanitize_html_class($classes);?>">
+			<div contenteditable="false" data-unique="<?php echo esc_attr( $unique );?>" data-component-type="collection" class="aesop-story-collection aesop-component <?php echo sanitize_html_class($classes);?>">
 
 				<?php do_action('aesop_collection_inside_top'); // action ?>
 
