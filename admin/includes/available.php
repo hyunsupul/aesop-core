@@ -889,6 +889,8 @@ if(!function_exists('aesop_shortcodes')){
 			'map' 				=> array(
 				'name' 				=> __('Map', 'aesop-core'),
 				'type' 				=> 'single',
+				'front'				=> true,
+				'front_type'		=> 'map',
 				'atts' 				=> array(
 					'height' 			=> array(
 						'type'		=> 'text_small',
@@ -1034,6 +1036,8 @@ if(!function_exists('aesop_shortcodes')){
 			'gallery' 				=> array(
 				'name' 				=> __('Gallery', 'aesop-core'),
 				'type' 				=> 'single',
+				'front'				=> true,
+				'front_type'		=> 'gallery',
 				'atts' 				=> array(
 					'id' 			=> array(
 						'type'		=> 'select',
