@@ -182,12 +182,10 @@ function aesop_map_tile_provider( $postid = 0 ) {
 */
 function aesop_component_data_atts( $type, $unique ) {
 
-	if( empty( $type ) || !is_user_logged_in() )
+	if ( empty( $type ) )
 		return;
 
-	$editable = 'content' == $unique ? 'contenteditable=true' : 'contenteditable=false';
-
-	$out = sprintf('%s data-component-type=quote data-unique=%s', $editable, $unique);
+	$out = sprintf('contenteditable=false data-component-type=%s data-unique=%s', $type, $unique);
 
 	return $out;
 }
