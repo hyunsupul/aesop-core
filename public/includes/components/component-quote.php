@@ -59,7 +59,7 @@ if (!function_exists('aesop_quote_shortcode')){
 
 		do_action('aesop_quote_before'); //action
 		?>
-			<div contenteditable="false" data-component-type="quote" data-unique="<?php echo esc_attr( $unique );?>" id="aesop-quote-component-<?php echo esc_attr( $unique );?>" class="aesop-component aesop-quote-component <?php echo sanitize_html_class( $classes ).' '.sanitize_html_class( $align ).' '.sanitize_html_class( $contentwidth ).' '.sanitize_html_class( $isparallax ).' '.sanitize_html_class( $lrclass ).' ';?>" <?php echo $style;?>>
+			<div id="aesop-quote-component-<?php echo esc_attr( $unique );?>" <?php echo esc_attr( aesop_component_data_atts( 'quote', $unique ) );?> class="aesop-component aesop-quote-component <?php echo sanitize_html_class( $classes ).' '.sanitize_html_class( $align ).' '.sanitize_html_class( $contentwidth ).' '.sanitize_html_class( $isparallax ).' '.sanitize_html_class( $lrclass ).' ';?>" <?php echo $style;?>>
 				<!-- Aesop Core | Quote -->
 				<script>
 					jQuery(document).ready(function(){

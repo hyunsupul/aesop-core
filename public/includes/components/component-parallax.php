@@ -42,7 +42,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 		do_action('aesop_parallax_before'); //action
 
-			?><div contenteditable="false" data-unique="<?php echo esc_attr( $unique );?>" id="aesop-parallax-component-<?php echo esc_attr( $unique );?>" data-component-type="parallax" class="aesop-component aesop-parallax-component <?php echo sanitize_html_class( $classes );?>"><?php
+			?><div id="aesop-parallax-component-<?php echo esc_attr( $unique );?>" <?php echo esc_attr( aesop_component_data_atts( 'parallax', $unique ) );?> class="aesop-component aesop-parallax-component <?php echo sanitize_html_class( $classes );?>"><?php
 
 				do_action('aesop_parallax_inside_top'); // action
 

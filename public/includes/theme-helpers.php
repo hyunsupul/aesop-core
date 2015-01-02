@@ -174,24 +174,20 @@ function aesop_map_tile_provider( $postid = 0 ) {
 /**
 *
 *
-*	Return the options in a component as inline data-attributes
-*	Mosty used with Aesop Story Editor
+*	Return data attributes for use with Aesop Story Editor
 *
-*	@param $defaults array available options for this component
 *	@param $type the type of component
+*	@param $unique string unique identifier for this component
 *	@since 1.5
 */
-function aesop_component_options_as_atts( $defaults = array(), $type ) {
+function aesop_component_data_atts( $type, $unique ) {
 
-	if( empty( $defaults ) || empty( $type ) || !is_user_logged_in() )
+	if( empty( $type ) || !is_user_logged_in() )
 		return;
 
-	$out = '';
-	foreach ( $defaults as $default => $value ) {
-		$out .= !empty( $value ) ? sprintf('data-%s="%s" ', $default, $value ) : false;
-	}
+	$out = sprintf('contenteditable=false data-component-type=quote data-unique=%s', $unique);
 
-	return $out.' data-component-type="'.$type.'" ';
+	return $out;
 }
 
 
