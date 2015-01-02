@@ -185,7 +185,11 @@ function aesop_component_data_atts( $type, $unique ) {
 	if( empty( $type ) || !is_user_logged_in() )
 		return;
 
-	$out = sprintf('contenteditable=false data-component-type=quote data-unique=%s', $unique);
+	if ( 'content' == $unique ) {
+		$editable = 'contenteditable=false';
+	}
+
+	$out = sprintf('%s data-component-type=quote data-unique=%s', $editable, $unique);
 
 	return $out;
 }
