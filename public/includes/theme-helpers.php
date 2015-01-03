@@ -190,14 +190,10 @@ function aesop_component_data_atts( $type, $unique, $defaults = array(), $editab
 		return;
 
 	// we're looping through the default attributes that are fed to us and outputting them as data-attributes
-	// if there's no default value we pass 0 so it's at least not empty and krufty
 	$options = '';
 	foreach ( $defaults as $default => $value ) {
 
-		if ( empty($value) )
-			$value = 0;
-
-		$options .= sprintf('data-%s=%s ', $default, $value );
+		$options .= !empty( $value ) ? sprintf('data-%s=%s ', $default, $value ) : false;
 	}
 
 	$edit_state = true == $editable ? 'contenteditable=true' : 'contenteditable=false';
