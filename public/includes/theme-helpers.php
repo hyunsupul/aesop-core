@@ -183,7 +183,7 @@ function aesop_map_tile_provider( $postid = 0 ) {
 */
 function aesop_component_data_atts( $type, $unique, $defaults = array() ) {
 
-	if ( empty( $type ) || empty( $defaults ) )
+	if ( empty( $type ) || empty( $defaults ) || !current_user_can('edit_posts') )
 		return;
 
 	$options = '';
