@@ -130,7 +130,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 						<?php } ?>
 
-						<div class="aesop-content-comp-inner <?php echo $contentwidth;?>" <?php echo $innerstyle;?>>
+						<div class="aesop-component-content-data aesop-content-comp-inner <?php echo $contentwidth;?>" <?php echo $innerstyle;?>>
 
 							<?php echo do_action('aesop_cbox_content_inner_inside_top'); //action ?>
 
