@@ -178,14 +178,24 @@ function aesop_map_tile_provider( $postid = 0 ) {
 *
 *	@param $type the type of component
 *	@param $unique string unique identifier for this component
+*	@param $defaults array the components data attributes
 *	@since 1.5
 */
-function aesop_component_data_atts( $type, $unique ) {
+function aesop_component_data_atts( $type, $unique, $defaults = array() ) {
 
-	if ( empty( $type ) )
+	if ( empty( $type ) || empty( $defaults ) )
 		return;
 
-	$out = sprintf('contenteditable=false data-component-type=%s data-unique=%s', $type, $unique);
+	$options = '';
+	foreach ( $defaults as $default => $value ) {
+
+		if ( empty($value) )
+			$value = 0;
+
+		$options .= sprintf('data-%s=%s ', $default, $value );
+	}
+
+	$out = sprintf('contenteditable=false data-component-type=%s data-unique=%s %s', $type, $unique, $options);
 
 	return $out;
 }
