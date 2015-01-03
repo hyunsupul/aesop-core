@@ -182,7 +182,7 @@ function aesop_map_tile_provider( $postid = 0 ) {
 *	@param $editable bool is this component editable directly inline
 *	@since 1.5
 */
-function aesop_component_data_atts( $type, $unique, $defaults = array(), $editable = false ) {
+function aesop_component_data_atts( $type, $unique, $defaults, $editable = false ) {
 
 	// bail if we dont have a type, defaults or if the current user can't do anything
 	// may just need to back out to is user logged in like we had before
@@ -193,7 +193,7 @@ function aesop_component_data_atts( $type, $unique, $defaults = array(), $editab
 	$options = '';
 	foreach ( $defaults as $default => $value ) {
 
-		$options .= !empty( $value ) ? sprintf('data-%s=%s ', $default, $value ) : false;
+		$options .= !empty( $value ) ? sprintf('data-%s=%s ', $default, str_replace(' ', '%20', $value) ) : false;
 	}
 
 	$edit_state = true == $editable ? 'contenteditable=true' : 'contenteditable=false';
