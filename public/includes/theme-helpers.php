@@ -179,13 +179,18 @@ function aesop_map_tile_provider( $postid = 0 ) {
 *	@param $type the type of component
 *	@param $unique string unique identifier for this component
 *	@param $defaults array the components data attributes
+*	@param $editable bool is this component editable directly inline
 *	@since 1.5
 */
-function aesop_component_data_atts( $type, $unique, $defaults = array() ) {
+function aesop_component_data_atts( $type, $unique, $defaults = array(), $editable = false ) {
 
+	// bail if we dont have a type, defaults or if the current user can't do anything
+	// may just need to back out to is user logged in like we had before
 	if ( empty( $type ) || empty( $defaults ) || !current_user_can('edit_posts') )
 		return;
 
+	// we're looping through the default attributes that are fed to us and outputting them as data-attributes
+	// if there's no default value we pass 0 so it's at least not empty and krufty
 	$options = '';
 	foreach ( $defaults as $default => $value ) {
 
@@ -195,7 +200,9 @@ function aesop_component_data_atts( $type, $unique, $defaults = array() ) {
 		$options .= sprintf('data-%s=%s ', $default, $value );
 	}
 
-	$out = sprintf('contenteditable=false data-component-type=%s data-unique=%s %s', $type, $unique, $options);
+	$edit_state = true == $editable ? 'contenteditable=true' : 'contenteditable=false';
+
+	$out = sprintf('%s data-component-type=%s data-unique=%s %s', $edit_state, $type, $unique, $options);
 
 	return $out;
 }

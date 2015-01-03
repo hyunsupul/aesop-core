@@ -82,7 +82,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 		do_action('aesop_cbox_before'); //action
 			?>
-				<div data-unique="<?php echo esc_attr( $unique );?>" class="aesop-component aesop-content-component <?php echo sanitize_html_class($classes).' '.$has_img. ' '.$has_floater;?>" style="<?php echo $height;?>" >
+				<div <?php echo esc_attr( aesop_component_data_atts( 'content', $unique, $defaults, true ) );?> class="aesop-component aesop-content-component <?php echo sanitize_html_class($classes).' '.$has_img. ' '.$has_floater;?>" style="<?php echo $height;?>" >
 
 					<?php if ( $atts['floatermedia'] && !wp_is_mobile() ) { ?>
 						<!-- Aesop Content Component -->
