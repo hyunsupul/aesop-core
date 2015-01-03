@@ -58,7 +58,7 @@ if (!function_exists('aesop_document_shortcode')){
 		$link = sprintf('<a href="#" class="aesop-doc-reveal-%s"><span>document</span><br /> %s</a>', esc_attr( $unique ),$slide);
 		$guts = sprintf('<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>',esc_attr( $unique ), $source);
 		
-		$out .= sprintf('%s<aside %s class="aesop-documument-component aesop-content %s">%s%s%s%s</aside>%s',$actiontop, esc_attr( aesop_component_data_atts( 'document', $unique )), $classes, $actioninsidetop, $link, $guts, $actioninsidebottom, $actionbottom);
+		$out .= sprintf('%s<aside %s class="aesop-documument-component aesop-content %s">%s%s%s%s</aside>%s',$actiontop, esc_attr( aesop_component_data_atts( 'document', $unique, $defaults )), $classes, $actioninsidetop, $link, $guts, $actioninsidebottom, $actionbottom);
 
 		return apply_filters('aesop_document_output', $out);
 	}
