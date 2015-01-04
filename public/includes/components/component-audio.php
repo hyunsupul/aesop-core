@@ -44,7 +44,7 @@ if (!function_exists('aesop_audio_shortcode')){
 
 			do_action('aesop_audio_before'); //action
 
-				?><aside id="aesop-audio-<?php echo esc_attr( $unique );?>" <?php echo esc_attr( aesop_component_data_atts( 'audio', $unique, $defaults ) );?> class="aesop-component aesop-audio-component <?php echo sanitize_html_class( $classes );?>" <?php echo esc_attr( $hidden );?>>
+				?><aside id="aesop-audio-<?php echo esc_attr( $unique );?>" <?php echo esc_attr( aesop_component_data_atts( 'audio', $unique, $atts ) );?> class="aesop-component aesop-audio-component <?php echo sanitize_html_class( $classes );?>" <?php echo esc_attr( $hidden );?>>
 
 					<?php if ('on' == $atts['viewstart']) { ?>
 						<script>

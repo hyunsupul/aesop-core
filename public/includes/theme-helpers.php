@@ -178,7 +178,7 @@ function aesop_map_tile_provider( $postid = 0 ) {
 *
 *	@param $type the type of component
 *	@param $unique string unique identifier for this component
-*	@param $defaults array the components data attributes if not found in post meta
+*	@param $defaults array the components attributes including users set merged
 *	@param $editable bool is this component editable directly inline
 *	@since 1.5
 */
@@ -188,12 +188,6 @@ function aesop_component_data_atts( $type, $unique, $defaults, $editable = false
 	// may just need to back out to is user logged in like we had before
 	if ( empty( $type ) || empty( $defaults ) || !current_user_can('edit_posts') )
 		return;
-
-	// does this component have existing saved options
-	$existing_atts = get_post_meta( get_the_ID(), '_aesop_options_'.$type.'-'.$unique.'', true );
-
-	$defaults = $existing_atts ? $existing_atts : $defaults;
-
 
 	// we're looping through the default attributes that are fed to us and outputting them as data-attributes
 	$options = '';

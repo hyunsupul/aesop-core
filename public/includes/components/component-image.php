@@ -45,7 +45,7 @@ if (!function_exists('aesop_image_shortcode')){
 
 		do_action('aesop_image_before'); //action
 		?>
-		<div id="aesop-image-component-<?php echo esc_html( $unique );?>" <?php echo esc_attr( aesop_component_data_atts( 'image', $unique, $defaults ) );?> class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes );?>" >
+		<div id="aesop-image-component-<?php echo esc_html( $unique );?>" <?php echo esc_attr( aesop_component_data_atts( 'image', $unique, $atts ) );?> class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes );?>" >
 
 			<?php do_action('aesop_image_inside_top'); //action ?>
 
