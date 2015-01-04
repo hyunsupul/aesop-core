@@ -19,8 +19,8 @@ if (!function_exists('aesop_quote_shortcode')){
 			'size'		=> '1',
 			'parallax'  => '',
 			'direction' => '',
-			'quote'		=> 'The Universe is made of stories, not atoms.',
-			'cite'		=> 'Muriel Rukeyser',
+			'quote'		=> 'Quote',
+			'cite'		=> 'Cite',
 
 		);
 		$atts = apply_filters('aesop_quote_defaults',shortcode_atts($defaults, $atts));

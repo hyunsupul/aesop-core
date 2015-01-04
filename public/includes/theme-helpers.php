@@ -193,7 +193,7 @@ function aesop_component_data_atts( $type, $unique, $defaults, $editable = false
 	$options = '';
 	foreach ( $defaults as $default => $value ) {
 
-		$options .= !empty( $value ) ? sprintf('data-%s=%s ', $default, str_replace(' ', '%20', $value) ) : false;
+		$options .= !empty( $value ) ? sprintf('data-%s=%s ', $default, $value ) : false;
 	}
 
 	$edit_state = true == $editable ? 'contenteditable=true' : 'contenteditable=false';
