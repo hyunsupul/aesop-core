@@ -192,7 +192,6 @@ function aesop_component_data_atts( $type, $unique, $defaults, $editable = false
 	// does this component have existing saved options
 	$existing_atts = get_post_meta( get_the_ID(), '_aesop_options_'.$type.'-'.$unique.'', true );
 
-
 	$defaults = $existing_atts ? $existing_atts : $defaults;
 
 
