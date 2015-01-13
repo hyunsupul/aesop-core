@@ -27,7 +27,7 @@ class AesopCoreGallery {
 		$atts 		= shortcode_atts($defaults, $atts);
 
 		// gallery ID
-		$gallery_id = $atts['id'];
+		$gallery_id = isset( $atts['id'] ) ? (int) $atts['id'] : false;
 
 		// let this be used multiple times
 		static $instance = 0;
@@ -85,7 +85,7 @@ class AesopCoreGallery {
 						printf('<a class="aesop-gallery-edit aesop-content" href="%s" target="_blank" title="%s">(%s)</a>',$url, $edit_gallery, $edit_gallery );
 					}
 
-				} else {
+				} elseif( empty( $image_ids ) || empty( $gallery_id ) ) {
 
 					?><div class="aesop-error aesop-content"><?php
 						_e('This gallery is empty! It\'s also possible that you simply have the wrong gallery ID.', 'aesop-core');

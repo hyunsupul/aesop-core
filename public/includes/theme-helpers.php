@@ -198,7 +198,7 @@ function aesop_component_data_atts( $type, $unique, $defaults, $editable = false
 
 	$edit_state = true == $editable ? 'contenteditable=true' : 'contenteditable=false';
 
-	$out = sprintf('%s data-component-type=%s data-unique=%s %s', $edit_state, $type, $unique, $options);
+	$out = sprintf('%s data-component-type=%s data-unique=%s %s ', $edit_state, $type, $unique, $options);
 
 	return $out;
 }
