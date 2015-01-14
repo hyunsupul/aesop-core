@@ -12,7 +12,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 		$defaults = array(
 			'img' 				=> '',
-			'height' 			=> 500,
+			'height' 			=> 500, // deprecated
 			'parallaxbg' 		=> 'on',
 			'floater' 			=> '',
 			'floatermedia' 		=> '',
@@ -30,10 +30,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$instance++;
 		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
-		$height = preg_replace('/[^0-9]/','',$atts['height']);
-
 		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
-		$style 		= sprintf('style="background-image:url(\'%s\');background-size:contain;"', esc_url( $atts['img'] ));
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'parallax', '' ) : null;
