@@ -33,7 +33,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$height = preg_replace('/[^0-9]/','',$atts['height']);
 
 		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
-		$style 		= sprintf('style="background-image:url(\'%s\');background-size:cover;"', esc_url( $atts['img'] ));
+		$style 		= sprintf('style="background-image:url(\'%s\');background-size:contain;"', esc_url( $atts['img'] ));
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'parallax', '' ) : null;
@@ -54,8 +54,13 @@ if (!function_exists('aesop_parallax_shortcode')){
 							<?php if ( 'on' == $atts['parallaxbg'] ) { ?>
 					   		jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-img').parallax({speed: 0.1});
 					        var viewport = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?>').outerHeight();
-		        			jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1.5});
+		        			jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1});
 		        			<?php } ?>
+
+		        			jQuery(window).resize(function(){
+		        				var viewport = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?>').outerHeight();
+		        				jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1});
+		        			})
 
 		        			<?php if ( 'on' == $atts['floater'] ) {?>
 								var obj = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-floater');
@@ -94,7 +99,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 						});
 					</script>
 				<?php } ?>
-					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>" style="height:<?php echo absint( $height );?>px;">
+					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>">
 
 						<?php do_action('aesop_parallax_inner_inside_top'); //action ?>
 
