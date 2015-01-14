@@ -23,20 +23,21 @@ if (!function_exists('aesop_parallax_shortcode')){
 			'lightbox' 			=> false
 		);
 
-		$atts = apply_filters('aesop_parallax_defaults',shortcode_atts($defaults, $atts));
+		$atts = apply_filters('aesop_parallax_defaults',shortcode_atts( $defaults, $atts ) );
 
 		// let this be used multiple times
 		static $instance = 0;
 		$instance++;
 		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
+		// add a css class if parallax bg is set to on
 		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
 
-		// custom classes
-		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'parallax', '' ) : null;
+		// add custom css classes through our utility function
+		$classes = aesop_component_classes( 'parallax', '' );
 
-		// auto alt tag from image name
-		$auto_alt 	= $atts['img'] ? basename($atts['img']) : null;
+		// automatically provide an alt tag for the image based on the name of the image file
+		$auto_alt 	= $atts['img'] ? basename( $atts['img'] ) : null;
 
 		ob_start();
 
