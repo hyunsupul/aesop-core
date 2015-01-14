@@ -44,16 +44,15 @@
 }
 
 // parallax item
+.aesop-parallax-component {
+    overflow:hidden;
+}
 .aesop-parallax-sc {
     position: relative;
     overflow: hidden;
     -webkit-transform: translate3d(0px, 0px, 0px);
-    height: 0;
-    padding-bottom:45%;
 
     .aesop-parallax-sc-img {
-        height: 0;
-        padding-bottom: 74%;
         background-position: center center;
         background-repeat: no-repeat;
         position: absolute;
@@ -63,8 +62,11 @@
         &.is-parallax {
             top:-150px; // CHEATING
 
-            @media(max-width:550px) {
-                top:-90px;
+           @media(max-width:800px) {
+                top:-100px;
+            }
+            @media(max-width:600px) {
+                top:-80px;
             }
         }
 
