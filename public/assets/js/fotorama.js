@@ -1864,6 +1864,12 @@ fotoramaVersion = "4.6.2",
                 d = (tc.escape, Array.prototype.join);
             return c += '<div class="fotorama__video"><iframe src="', b(("youtube" == a.type ? a.p + "youtube.com/embed/" + a.id + "?autoplay=1" : "vimeo" == a.type ? a.p + "player.vimeo.com/video/" + a.id + "?autoplay=1&badge=0" : a.id) + (a.s && "custom" != a.type ? "&" + a.s : "")), c += '" frameborder="0" allowfullscreen></iframe></div>\n'
         }, d(function() {
-            d("." + ib + ':not([data-auto="false"])').fotorama(), "http://" === y() && c.host.match(/\./) && !a.blockFotoramaData && d("body").append('<iframe src="http://data.fotorama.io/?version=' + fotoramaVersion + '" style="display: none;"></iframe>')
+            d("." + ib + ':not([data-auto="false"])').fotorama();
         })
     }(window, document, location, "undefined" != typeof jQuery && jQuery);
+
+
+
+
+
+

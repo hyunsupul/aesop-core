@@ -140,6 +140,9 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.4.1 =
+* FIXED - Yandex in Fotorama : A few updates back we attempted to block Fotorama from inserting its Yandex tracker. Since we noticed that this sometimes fails to block, we've modified their source code and have removed it completely. It's also worth noting that they've gotten a lot of heat from this, and have since removed it all together from their script. This should no longer be an issue, and we apologize for any inconviences that we may have inadvertantly caused.
+
 = 1.4 =
 * NEW - Redesigned gallery admin - makes creating and managing galleries easier than ever before
 * NEW - Chapter component slideout - fully compatible with all WordPress themes ( with extended css support snippet ).
