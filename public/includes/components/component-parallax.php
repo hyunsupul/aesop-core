@@ -30,10 +30,18 @@ if (!function_exists('aesop_parallax_shortcode')){
 		$instance++;
 		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
+<<<<<<< HEAD
 		$height = preg_replace('/[^0-9]/','',$atts['height']);
 
 		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
 		$style 		= sprintf('style="background-image:url(\'%s\');background-size:cover;"', esc_url( $atts['img'] ));
+=======
+		$placeholder = sprintf('%s', AI_CORE_URL.'/public/assets/img/grey.gif');
+		$height = preg_replace('/[^0-9]/','',$atts['height']);
+
+		$laxclass 	= 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
+		$style 		= sprintf('style="background-image:url(\'%s\');background-size:cover;"',$atts['img']);
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'parallax', '' ) : null;
@@ -52,9 +60,15 @@ if (!function_exists('aesop_parallax_shortcode')){
 						jQuery(document).ready(function(){
 
 							<?php if ( 'on' == $atts['parallaxbg'] ) { ?>
+<<<<<<< HEAD
 					   		jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-img').parallax({speed: 0.1});
 					        var viewport = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?>').outerHeight();
 		        			jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1.5});
+=======
+					   		jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?> .aesop-parallax-sc-img').parallax({speed: 0.1});
+					        var viewport = jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?>').outerHeight();
+		        			jQuery('.aesop-parallax-sc.aesop-parallax-sc-<?php echo $unique;?> .aesop-parallax-sc-img.is-parallax').css({'height': viewport * 1.5});
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 		        			<?php } ?>
 
 		        			<?php if ( 'on' == $atts['floater'] ) {?>

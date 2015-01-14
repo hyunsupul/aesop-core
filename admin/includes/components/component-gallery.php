@@ -8,6 +8,7 @@ class AesopGalleryComponentAdmin {
 
 	public function __construct(){
 
+<<<<<<< HEAD
     	add_action('init',										array($this,'do_type'));
     	add_filter('manage_ai_galleries_posts_columns', 		array($this,'col_head'));
 		add_action('manage_ai_galleries_posts_custom_column', 	array($this,'col_content'), 10, 2);
@@ -21,6 +22,14 @@ class AesopGalleryComponentAdmin {
 		add_action( 'admin_notices', 							array($this, 'upgrade_galleries_notice' ) );
 		add_action( 'wp_ajax_upgrade_galleries', 				array($this, 'upgrade_galleries' ));
 		add_action( 'admin_head',								array($this, 'upgrade_click_handle'));
+=======
+		add_action('print_media_templates',  					array($this,'aesop_gallery_opts'));
+       	add_action('init',										array($this,'do_type'));
+       	add_action('admin_init',								array($this,'sc_helper'));
+       	add_filter('manage_ai_galleries_posts_columns', 		array($this,'col_head'));
+		add_action('manage_ai_galleries_posts_custom_column', 	array($this,'col_content'), 10, 2);
+		add_filter('cmb_meta_boxes', 							array($this,'aesop_gallery_meta' ));
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 	}
 	/**
 	 	* Creates an Aesop Galleries custom post type to manage all psot galleries
@@ -65,6 +74,22 @@ class AesopGalleryComponentAdmin {
 	}
 
 	/**
+<<<<<<< HEAD
+=======
+	 	* Adds meta box to gallery post type in admin that displays the shortcode 
+	 	*
+	 	* @since    1.0.0
+	*/
+	function sc_helper(){
+		add_meta_box('ai_gallery_sc',__('Gallery Instructions','aesop-core'),array($this,'sc_helper_cb'),'ai_galleries','side', 'low');
+	}
+	function sc_helper_cb(){
+		_e('1. Click the Add Gallery button<br />2. Click Create Gallery to create a gallery<br />3. Insert gallery and publish.<br /><br /> Once you\'ve created the gallery, copy the code below, and paste it into your story where you want the gallery to be shown.<br />','aesop-core');
+		printf('<pre>[aesop_gallery id="%s"]</pre>',get_the_ID());
+	}
+
+	/**
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 	 	* Adds columns to the Aesop Galleries custom post type
 	 	* Adds the shortcode for easy copy and past
 	 	* Adds the posts that the shortcode is used in
@@ -100,10 +125,16 @@ class AesopGalleryComponentAdmin {
 				foreach ($pages as $page ) {
 
 					$count ++;
+<<<<<<< HEAD
 
 					if ( has_shortcode( $page->post_content ,'aesop_gallery' ) ){
 
 						echo '<a href="'.get_edit_post_link($page->ID).'" title="Edit" >'.$page->post_title.'</a>';
+=======
+					$id = $page->ID;
+					if( has_shortcode($page->post_content,'aesop_gallery') ){
+						echo ucfirst($this->the_slug($id));
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
 						if( $count != count($pages) ){
 							echo  ', ';

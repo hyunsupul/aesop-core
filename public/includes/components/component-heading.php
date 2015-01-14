@@ -26,13 +26,20 @@ if (!function_exists('aesop_chapter_shortcode')){
 		ob_start();
 
 		$inline_styles 		= 'background-size:cover;background-position:center center;';
+<<<<<<< HEAD
 		$styles 			= apply_filters( 'aesop_chapter_img_styles_'.esc_attr( $unique ), esc_attr( $inline_styles ) );
 
 		$img_style 		 	= 'img' == $atts['bgtype'] && $atts['img'] ? sprintf('style="background:url(\'%s\');%s"', esc_url( $atts['img'] ), $styles) : 'style="height:auto;" ';
+=======
+		$styles 			= apply_filters( 'aesop_chapter_img_styles_'.$unique, $inline_styles );
+
+		$img_style 		 	= 'img' == $atts['bgtype'] && $atts['img'] ? sprintf('style="background:url(\'%s\');%s"', $atts['img'], $styles) : 'style="height:auto;" ';
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 		$img_style_class 	= 'img' == $atts['bgtype'] && $atts['img'] ? 'has-chapter-image' : 'no-chapter-image';
 
 		$video_chapter_class = 'video' == $atts['bgtype'] ? 'aesop-video-chapter' : null;
 
+<<<<<<< HEAD
 		$full_class = 'on' == $atts['full'] ? 'aesop-chapter-full' : false;
 
 		do_action('aesop_chapter_before'); //action
@@ -49,12 +56,49 @@ if (!function_exists('aesop_chapter_shortcode')){
 
 						if ( $atts['subtitle'] ) { ?>
 							<small><?php echo esc_html( $atts['subtitle'] );?></small>
+=======
+		do_action('aesop_chapter_before'); //action
+		?>
+
+			<div id="chapter-unique-<?php echo $unique;?>" class="aesop-article-chapter-wrap default-cover <?php echo $video_chapter_class;?> aesop-component <?php echo $img_style_class;?>" >
+
+				<?php do_action('aesop_chapter_inside_top'); //action ?>
+
+				<?php if ( 'on' == $atts['full'] ) { ?>
+				<script>
+					jQuery(document).ready(function(){
+
+						var coverSizer = function(){
+							jQuery('.aesop-article-chapter').css({'height':(jQuery(window).height())+'px'});
+						}
+
+						coverSizer();
+
+					    jQuery(window).resize(function(){
+	        				coverSizer();
+	    				});
+					});
+				</script>
+				<?php } ?>
+
+				<div class="aesop-article-chapter clearfix" <?php echo $img_style;?> >
+
+					<h2 class="aesop-cover-title" itemprop="title" >
+						<?php echo $atts['title'];
+
+						if ( $atts['subtitle'] ) { ?>
+							<small><?php echo $atts['subtitle'];?></small>
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 						<?php } ?>
 					</h2>
 
 					<?php if ( 'video' == $atts['bgtype'] ) { ?>
 					<div class="video-container">
+<<<<<<< HEAD
 						<?php echo do_shortcode('[video src="'.esc_url( $atts['img'] ).'" loop="on" autoplay="on"]'); ?>
+=======
+						<?php echo do_shortcode('[video src="'.$atts['img'].'" loop="on" autoplay="on"]'); ?>
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 					</div>
 					<?php } ?>
 
@@ -112,7 +156,11 @@ class AesopChapterHeadingComponent {
 			<script>
 				jQuery(document).ready(function(){
 
+<<<<<<< HEAD
 					jQuery('<?php echo esc_attr( $contentClass );?>').scrollNav({
+=======
+					jQuery('<?php echo $contentClass;?>').scrollNav({
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 					    sections: '.aesop-article-chapter-wrap',
 					    arrowKeys: true,
 					    insertTarget: '<?php echo esc_attr( $contentHeaderClass );?>',

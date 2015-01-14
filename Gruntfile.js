@@ -9,7 +9,11 @@ module.exports = function(grunt) {
         watch: {
             less: {
 				files: ['public/assets/less/*/**','admin/assets/less/*/**'],
+<<<<<<< HEAD
                 tasks: ['less:adminLess','less:publicLess']
+=======
+                tasks: ['less:publicLess']
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
             },
             livereload: {
                 options: { livereload: true },
@@ -101,6 +105,7 @@ module.exports = function(grunt) {
                     'admin/assets/js/generator.min.js': [
                      	'admin/assets/js/generator.js',
                      	'admin/assets/js/transition.js',
+<<<<<<< HEAD
                         'admin/assets/js/tooltip.js',
                         'admin/assets/js/gallery-conditionals.js',
                         'admin/assets/js/gallery-images.js',
@@ -117,6 +122,10 @@ module.exports = function(grunt) {
                 files: {
                     'admin/assets/js/tinymce/aiview/plugin.min.js': [
                         'admin/assets/js/tinymce/aiview/plugin.js'
+=======
+                     	'admin/assets/js/tooltip.js',
+                     	'admin/assets/js/jquery.cookie.js'
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
                     ]
                 }
             },

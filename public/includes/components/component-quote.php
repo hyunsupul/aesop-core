@@ -17,8 +17,13 @@ if (!function_exists('aesop_quote_shortcode')){
 			'height'	=> 'auto',
 			'align'		=> 'left',
 			'size'		=> '4',
+<<<<<<< HEAD
 			'parallax'	=> '',
 			'direction'	=> '',
+=======
+			'parallax'  => '',
+			'direction' => '',
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 			'quote'		=> '',
 			'cite'		=> '',
 
@@ -34,8 +39,12 @@ if (!function_exists('aesop_quote_shortcode')){
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 
 		// set size
+<<<<<<< HEAD
 		$size_unit 	= apply_filters( 'aesop_quote_size_unit', 'em', $unique );
 		$size 		= $atts['size'] ? sprintf( '%s%s', $atts['size'], $size_unit ) : false;
+=======
+		$size = $atts['size'] ? sprintf('%sem', $atts['size']) : false;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
 		//bg img
 		$bgimg = $atts['img'] ? sprintf('background-image:url(%s);background-size:cover;background-position:center center',esc_url( $atts['img'] )) : false;
@@ -65,8 +74,13 @@ if (!function_exists('aesop_quote_shortcode')){
 				<script>
 					jQuery(document).ready(function(){
 
+<<<<<<< HEAD
 						var moving 		= jQuery('#aesop-quote-component-<?php echo esc_attr( $unique );?> blockquote'),
 							component   = jQuery('#aesop-quote-component-<?php echo esc_attr( $unique );?>');
+=======
+						var moving 		= jQuery('#aesop-quote-component-<?php echo $unique;?> blockquote'),
+							component   = jQuery('#aesop-quote-component-<?php echo $unique;?>');
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
 						// if parallax is on and we're not on mobile
 						<?php if ( 'on' == $atts['parallax'] && !wp_is_mobile() ) { ?>
@@ -105,7 +119,11 @@ if (!function_exists('aesop_quote_shortcode')){
 						<?php } else { ?>
 
 							jQuery(moving).waypoint({
+<<<<<<< HEAD
 								offset: '90%',
+=======
+								offset: 'bottom-in-view',
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 								handler: function(direction){
 							   		jQuery(this).toggleClass('aesop-quote-faded');
 

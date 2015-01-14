@@ -58,6 +58,7 @@ class Aesop_Core_Admin {
 		*  Define custom functionality.
 		*
 		*/
+<<<<<<< HEAD
 		add_action( 'media_buttons', 			array($this,'generator_button'), 100 );
 		add_action( 'admin_footer', 			array($this,'generator_popup'));
 		add_action( 'admin_enqueue_scripts', 	array($this,'admin_scripts'));
@@ -66,6 +67,14 @@ class Aesop_Core_Admin {
 		add_filter( 'mce_external_plugins', 	array($this,'tinymce_plugin'));
 		add_action( 'after_wp_tiny_mce', 		array($this,'ase_after_wp_tiny_mce'));
 		add_filter( 'plugin_row_meta', 			array( $this, 'plugin_meta' ), 10, 2 );
+=======
+		add_action( 'media_buttons', [$this,'generator_button'], 100 );
+		add_action( 'admin_footer', [$this,'generator_popup'] );
+		add_action( 'admin_enqueue_scripts', [$this,'admin_scripts'] );
+		add_filter( 'mce_css', [$this, 'aesop_editor_styles'] );
+		add_filter( 'wp_fullscreen_buttons', [$this,'fs_generator_button'] );
+		add_filter( 'mce_external_plugins', [$this, 'tinymce_plugin'] );
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 	}
 
 	/**
@@ -185,10 +194,16 @@ class Aesop_Core_Admin {
 
 		global $pagenow;
 
+<<<<<<< HEAD
 		$aesop_generator_includes_pages = apply_filters('aesop_generator_loads_on', array( 'post.php', 'edit.php', 'post-new.php', 'index.php' ) );
 
 		if ( in_array( $pagenow, $aesop_generator_includes_pages ) ) { ?>
 
+=======
+			// Load styles and scripts for bad ass generator only on these pages
+		$aesop_generator_includes_pages = array( 'post.php', 'edit.php', 'post-new.php', 'index.php' );
+		if ( in_array( $pagenow, $aesop_generator_includes_pages ) ) { ?>
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 		<div id="aesop-generator-wrap">
 			<div id="aesop-generator" class="aesop-generator-inner-wrap">
 				<a class="media-modal-close aesop-close-modal" href="#"><span class="media-modal-icon"><span class="screen-reader-text">Close media panel</span></span></a>
@@ -229,6 +244,7 @@ class Aesop_Core_Admin {
 			</div>
 		</div>
 		<?php }
+<<<<<<< HEAD
 	}
 
 	/**
@@ -310,5 +326,7 @@ class Aesop_Core_Admin {
 		}
 
 		return $links;
+=======
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 	}
 }

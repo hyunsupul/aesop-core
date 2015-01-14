@@ -14,6 +14,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		// let's pull out the shortcode type, options and content
 		var re_full = /\[aesop_([a-zA-Z_]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z_]+]/g;
 		var re_short = /\[aesop_([a-zA-Z_]+)\s?([^\[\]]*)]/g;
+<<<<<<< HEAD
 		// let's clear the line break we added on items that were already parsed as p
 		var re_cleaner = /(<\/p>[\s]*<p><\/p>\s<p>)[\s]*$/;
 		// let's fix the closing tag on those items without a forced line break
@@ -32,6 +33,17 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			parsed[3] = parsed[3].replace( re_cleaner, '');
 			parsed[3] = parsed[3].replace( re_cleaner_short, '');
 			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem aesop-component-long ' + cls + '"><div class="aesop-component-mask mceNonEditable unselectable" contenteditable="false"></div><div class="aesop-component-bar" contenteditable="false"><div class="aesop-component-controls"><div title="Delete Component" class="aesop-button aesop-button-delete">&nbsp;</div><div title="Clone Component" class="aesop-button aesop-button-clone">&nbsp;</div><div title="Edit Component" class="aesop-button aesop-button-edit aesop-scope-' + parsed[1] + '">&nbsp;</div><div title="Cut Component / CTRL + ALT + ENTER to Paste" class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parsed[1] + '-title">' + parsed[1].replace(/_/g, " ") + componentTitle + '</span></div><div class="aesop-component-content aesop-' + parsed[1] + '"><p>' + parsed[3] + '</p></div></div>';
+=======
+
+		var parse = re_full.exec(data);
+
+		if ( !parse ){
+			parse = re_short.exec(data);
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem aesop-component-short ' + cls + '"><div class="aesop-component-mask"></div><div class="aesop-component-bar" contenteditable="false"><div class="aesop-component-controls"><div title="Delete Component" class="aesop-button aesop-button-delete">&nbsp;</div><div title="Edit Component" class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div title="Cut/Paste Component" class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1].replace(/_/g, " ") + '</span></div><div class="aesop-end">WcMgcq</div></div>';
+		} else {
+			var st = '<div data-mce-resize="false" data-mce-placeholder="1" data-aesop-sc="' + window.encodeURIComponent( data ) + '" class="mceItem aesop-component-long ' + cls + '"><div class="aesop-component-mask"></div><div class="aesop-component-bar"  contenteditable="false"><div class="aesop-component-controls"><div title="Delete Component" class="aesop-button aesop-button-delete">&nbsp;</div><div title="Edit Component" class="aesop-button aesop-button-edit aesop-scope-' + parse[1] + '">&nbsp;</div><div title="Cut/Paste Component" class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parse[1] + '-title">' + parse[1].replace(/_/g, " ") + '</span></div><div class="aesop-component-content aesop-' + parse[1] + '"><p>' + parse[3] + '</p></div></div>';
+			console.log(st);
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 		}
 
 		return st;
@@ -72,10 +84,15 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			var sc_filter = /\[[^\]]*\]([^\[]*)[^\]]*\]/;
 			var sc_filtered = sc_filter.exec(sc);
 			if( sc_filtered != null ){
+<<<<<<< HEAD
 				parse[2] = parse[2].replace(/^<p>\W<\/p>/,'');
 				sc = sc.replace(sc_filtered[1], parse[2]);
 			}
 
+=======
+				sc = sc.replace(sc_filtered[1], parse[2]);
+			}
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 			return '<p>' + sc + '</p>';
 		}
 	}
@@ -112,7 +129,11 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		// split based on equal sign
 		attrs.forEach(function(attr) {
 			attr = attr.split('=');
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 			var attr_key = attr[0];
 			var attr_value = attr[1];
 
@@ -177,6 +198,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		removeClipboardControl();
 	}
 
+<<<<<<< HEAD
 	function cloneComponent( p ) {
 		var ed = tinymce.activeEditor;
 		//jQuery(p).focusEnd();
@@ -212,6 +234,8 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 	            return this;
 	}
 
+=======
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 	// handle the click events
 	editor.onClick.add(function(ed, e) {
 
@@ -250,7 +274,10 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 			if ( scope ) {
 				$('body').toggleClass('modal-open');
+<<<<<<< HEAD
 				$('body').addClass('modal-updating');
+=======
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 				$('#aesop-generator-wrap').toggleClass('aesop-generator-open');
 
 				// open up the option based on scope
@@ -267,7 +294,10 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 					}
 				}
 			}
+<<<<<<< HEAD
 			ed.selection.collapse(false);
+=======
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 		}
 
 		// let's handle the clipboard button
@@ -277,6 +307,7 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 
 			hideComponent(ai_parent);
 			addClipboardControl(ai_parent);
+<<<<<<< HEAD
 			ed.selection.collapse(false);
 		}
 
@@ -285,6 +316,8 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 			var ai_parent = e.target.parentNode.parentNode.parentNode;
 			cloneComponent( ai_parent );
 			ed.selection.collapse(false);
+=======
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 		}
   });
 
@@ -338,4 +371,8 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 		}
 	});
 });
+<<<<<<< HEAD
 })( window.jQuery );
+=======
+})( window.jQuery );
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f

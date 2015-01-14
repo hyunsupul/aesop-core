@@ -140,6 +140,7 @@ Full documentation can be found below.
 
 == Changelog ==
 
+<<<<<<< HEAD
 = 1.4 =
 * NEW - Redesigned gallery admin - makes creating and managing galleries easier than ever before
 * NEW - Chapter component slideout - fully compatible with all WordPress themes ( with extended css support snippet ).
@@ -197,6 +198,9 @@ Full documentation can be found below.
 * TWEAK - Added additional checks to ensure $post is set before loading map components
 
 = 1.1 =
+=======
+= 1.1 = This update took 2 people an estimated 50 hours + approximately $3000 for new editable feature
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 * NEW - Complete compatibilty with WordPress 4.0
 * NEW - New user interface
 * NEW - Components are now editable
@@ -205,6 +209,7 @@ Full documentation can be found below.
 * ADDED - Filters for Audio and Video component waypoints
 * ADDED - Filters for timeline and location offsets
 * ADDED - Filter to let Map component run on pages
+<<<<<<< HEAD
 * ADDED - Gallery Component: added to the component generator with a dropdown to select gallery to insert
 * ADDED - Gallery Component: added captions to grid gallery items if a caption is set
 * ADDED - Content Component: added Floater Position option for parallax floater
@@ -222,6 +227,18 @@ Full documentation can be found below.
 * FIXED - Quote Component: parallax floater options fixed (could not move up or down so two options are now left and right)
 * FIXED - Map Component:  warn users if no markers are set
 * FIXED - Map Component:  fixed empty bubbles appearing on markers with no text set
+=======
+* ADDED - Gallery component to the component generator with a dropdown to select gallery to insert
+* TWEAK - No longer have to input collection ID they are now automatically fed into a dropdown to select
+* TWEAK - Parallax floater item offset now automatically calculated - this means offset and speed options no longer necessary and have been removed
+* TWEAK - Parallax optimizations and performance enhancements
+* TWEAK - Gallery performance optimizations
+* TWEAK - Cleaned up user interface for creating Galleries in admin
+* TWEAK - Audio/Video waypoint filters now targets individual components
+* FIXED - Better support for Aesop Lazy Loader
+* FIXED - Video icon
+* FIXED - Quote parallax floater options fixed (could not move up or down so two options are now left and right)
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
 = 1.0.9 =
 * FIXED - Various generator fixes for WordPress 4.0

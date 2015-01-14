@@ -72,7 +72,11 @@ foreach( $codes as $slug => $shortcode ) {
 		$return .= '<p><label>' . __( 'Content', 'aesop-core' ) . '</label><textarea type="text" name="aesop-generator-content" id="aesop-generator-content" value="' . $shortcode['content'] . '" /></p>';
 	}
 
+<<<<<<< HEAD
 	$return .= '<p class="aesop-buttoninsert-wrap"><a href="#" id="aesop-generator-insert"><span class="aesop-generator-button-insert">' . __( 'Insert Component', 'aesop-core' ) . '</span><span class="aesop-generator-button-update">' . __( 'Update Component', 'aesop-core' ) . '</span></a></p> ';
+=======
+	$return .= '<p class="aesop-buttoninsert-wrap"><a href="#" id="aesop-generator-insert">' . __( 'Insert Component', 'aesop-shortcodes' ) . '</a></p> ';
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
 	$return .= '<input type="hidden" name="aesop-generator-result" id="aesop-generator-result" value="" />';
 

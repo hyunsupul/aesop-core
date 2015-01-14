@@ -53,14 +53,19 @@ if (!function_exists('aesop_video_shortcode')){
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'video', '' ) : null;
 
 		// waypoint filter
+<<<<<<< HEAD
 		$point 		= 'bottom-in-view';
 		$waypoint 	= apply_filters('aesop_video_component_waypoint', $point, $unique);
+=======
+		$waypoint = apply_filters('aesop_video_component_waypoint-'.$unique, 'bottom-in-view');
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
 	    ob_start();
 
 	    if ( 'on' == $atts['viewstart'] && 'self' == $atts['src'] ) { ?>
 	    	<script>
 		    	jQuery(document).ready(function(){
+<<<<<<< HEAD
 		    		jQuery('#aesop-video-<?php echo esc_attr( $unique );?>').arrive('.mejs-video', function(){
 						jQuery('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 							offset: '<?php echo esc_attr( $waypoint );?>',
@@ -75,6 +80,13 @@ if (!function_exists('aesop_video_shortcode')){
 						   	}
 						});
 						<?php } ?>
+=======
+					jQuery('#aesop-video-<?php echo $unique;?>').waypoint({
+						offset: '<?php echo $waypoint;?>',
+						handler: function(direction){
+					   		jQuery('#aesop-video-<?php echo $unique;?> .mejs-playpause-button button').trigger('click');
+					   	}
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 					});
 		    	});
 	    	</script>

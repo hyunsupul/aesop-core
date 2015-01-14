@@ -11,11 +11,19 @@
 *
 * 	@wordpress-plugin
 * 	Plugin Name:       Aesop Story Engine
+<<<<<<< HEAD
 * 	Plugin URI:        http://aesopstoryengine.com
 * 	Description:       Open-sourced suite of components that empower interactive storytelling.
 * 	Version:           1.4
 * 	Author:            Aesopinteractive LLC
 * 	Author URI:        http://aesopstoryengine.com
+=======
+* 	Plugin URI:        http://aesopstories.com/story-engine
+* 	Description:       Aesop Story Engine is an open-sourced suite of tools that empowers developers to build feature-rich, interactive, long-form storytelling themes for Wordpress.
+* 	Version:           1.0.93
+* 	Author:            Nick "Bearded Avenger" Haskins
+* 	Author URI:        http://nickhaskins.com
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 * 	Text Domain:       aesop-core
 * 	License:           GPL-2.0+
 * 	License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -30,7 +38,11 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set some constants
+<<<<<<< HEAD
 define('AI_CORE_VERSION', '1.4');
+=======
+define('AI_CORE_VERSION', '1.0.93');
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 define('AI_CORE_DIR', plugin_dir_path( __FILE__ ));
 define('AI_CORE_URL', plugins_url( '', __FILE__ ));
 

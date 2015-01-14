@@ -37,6 +37,10 @@ if (!function_exists('aesop_character_shortcode')){
 		$auto_alt 	= $atts['img'] ? basename($atts['img']) : null;
 		$alt 		= $auto_alt ? preg_replace('/\\.[^.\\s]{3,4}$/', '', $auto_alt) : null;
 
+		// automatic alt tag
+		$auto_alt 	= $atts['img'] ? basename($atts['img']) : null;
+		$alt 		= $auto_alt ? preg_replace('/\\.[^.\\s]{3,4}$/', '', $auto_alt) : null;
+
 		// character wrap
 		ob_start();
 
@@ -55,8 +59,13 @@ if (!function_exists('aesop_character_shortcode')){
 								<span class="aesop-character-title"><?php echo esc_html( $atts['name'] );?></span>
 							<?php } ?>
 
+<<<<<<< HEAD
 							<?php if ( $atts['img'] ) {?>
 								<img class="aesop-character-avatar" src="<?php echo esc_url( $atts['img'] );?>" alt="<?php echo esc_attr( $alt );?>">
+=======
+							<?php if ($atts['img']) {?>
+								<img class="aesop-character-avatar" src="<?php echo $atts['img'];?>" alt="<?php echo $alt;?>">
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 							<?php } ?>
 
 							<?php if ( $content ) {?>

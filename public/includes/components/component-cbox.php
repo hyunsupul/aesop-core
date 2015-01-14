@@ -25,8 +25,12 @@ if (!function_exists('aesop_content_shortcode')){
 			'imgposition'		=> 'center center',
 			'imgsize'			=> 'cover',
 			'floatermedia' 		=> '',
+<<<<<<< HEAD
 			'floaterdirection'	=> 'down',
 			'floaterposition'	=> 'left',
+=======
+			'floaterdirection'	=> 'up',
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 			'color' 			=> '#FFFFFF',
 			'background'		=> '#333333'
 		);
@@ -99,10 +103,18 @@ if (!function_exists('aesop_content_shortcode')){
 						       	    windowHeight 	= jQuery(window).height(),
 						       	    floater 		= Math.round( (offset - scrollTop) * 0.1);
 
+<<<<<<< HEAD
 						    	// only run parallax if in view
 					       		if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
 									return;
 								}
+=======
+						       	    var height 			= jQuery('#aesop-content-component-<?php echo $unique;?>').height(),
+	        	        				offset 			= jQuery('#aesop-content-component-<?php echo $unique;?>').offset().top,
+							       	    scrollTop 		= jQuery(window).scrollTop(),
+							       	    windowHeight 	= jQuery(window).height(),
+							       	    floater 		= Math.round( scrollTop * 0.1 );
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
 					       	    <?php if ('up' == $atts['floaterdirection']){ ?>
 					            	jQuery(obj).css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
