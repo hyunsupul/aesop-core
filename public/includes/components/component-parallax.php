@@ -127,19 +127,20 @@ if (!function_exists('aesop_parallax_shortcode')){
 							</div>
 						<?php } ?>
 
+						<?php if ( 'on' == $atts['lightbox']){?>
+							<a class="aesop-lb-link aesop-lightbox" rel="lightbox" title="<?php echo esc_attr( $atts['caption'] );?>" href="<?php echo esc_url( $atts['img'] );?>"><i class="aesopicon aesopicon-search-plus"></i></a>
+						<?php } ?>
+
+						<img class="aesop-parallax-sc-img <?php echo $laxclass;?>" src="<?php echo esc_url( $atts['img'] );?>" alt="<?php echo esc_attr( $auto_alt );?>" >
+
 						<?php if ( $atts['caption'] ){ ?>
 							<figcaption class="aesop-parallax-sc-caption-wrap <?php echo sanitize_html_class( $atts['captionposition'] );?>">
 								<?php echo aesop_component_media_filter( trim( $atts['caption'] ) );?>
 							</figcaption>
 						<?php } ?>
 
-						<?php if ( 'on' == $atts['lightbox']){?>
-							<a class="aesop-lb-link aesop-lightbox" rel="lightbox" title="<?php echo esc_attr( $atts['caption'] );?>" href="<?php echo esc_url( $atts['img'] );?>"><i class="aesopicon aesopicon-search-plus"></i></a>
-						<?php } ?>
-
 						<?php do_action('aesop_parallax_inner_inside_bottom'); //action ?>
 
-						<img class="aesop-parallax-sc-img <?php echo $laxclass;?>" src="<?php echo esc_url( $atts['img'] );?>" alt="<?php echo esc_attr( $auto_alt );?>" >
 					</figure>
 
 					<?php do_action('aesop_parallax_inside_bottom'); //action ?>
