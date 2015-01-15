@@ -189,6 +189,10 @@ function aesop_component_data_atts( $type, $unique, $defaults, $editable = false
 	if ( empty( $type ) || empty( $defaults ) || !current_user_can('edit_posts') )
 		return;
 
+	// if aesop story editor isn't activated then dont even bother
+	if ( !class_exists('Aesop_Editor') )
+		return;
+
 	// we're looping through the default attributes that are fed to us and outputting them as data-attributes
 	$options = '';
 	foreach ( $defaults as $default => $value ) {
