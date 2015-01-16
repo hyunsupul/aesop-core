@@ -46,8 +46,6 @@ class Aesop_Core {
 
 		// load component array
 
-		require_once( AI_CORE_DIR . '/admin/includes/generator_blob.php' );
-
 		require_once( AI_CORE_DIR.'admin/includes/available.php');
 
 		// load component helpers
