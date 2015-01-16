@@ -34,7 +34,8 @@ if (!function_exists('aesop_image_shortcode')){
 		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
 		// lazy loader class
-        $lazy   = class_exists('AesopLazyLoader') ? sprintf( 'data-original="%s" class="aesop-lazy-img"',esc_url( $atts['img'] ) ) : sprintf( 'src="%s"', esc_url( $atts['img'] ) );
+		$lazy_holder = AI_CORE_URL.'/public/assets/img/aesop-lazy-holder.png';
+        $lazy   = class_exists('AesopLazyLoader') && !is_user_logged_in() ? sprintf( 'src="%s" data-src="%s" class="aesop-lazy-img"',$lazy_holder, esc_url( $atts['img'] ) ) : sprintf( 'src="%s"', esc_url( $atts['img'] ) );
 
         // automatic alt tag fallback if none specified
 		$auto_alt 	= $atts['img'] ? basename($atts['img']) : null;
