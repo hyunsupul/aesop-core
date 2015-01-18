@@ -251,6 +251,7 @@ function aesop_gallery_component_data_atts( $postid = '' ){
 
 	// get the meta and store into an array
 	$meta = array(
+		'id'				=> $postid,
 		'gallery-type' 			=> sanitize_text_field( trim( $type ) ),
 		'gallery-width' 		=> (int) trim( $width ),
 		'gallery-caption' 		=> sanitize_text_field( trim( $caption ) ),
