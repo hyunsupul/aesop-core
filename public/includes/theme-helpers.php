@@ -177,12 +177,12 @@ function aesop_map_tile_provider( $postid = 0 ) {
 *	Return data attributes for use with Aesop Story Editor
 *
 *	@param $type the type of component
-*	@param $unique string unique identifier for this component
+*	@param $gallery_id int the id of the gallery component if being used
 *	@param $defaults array the components attributes including users set merged
 *	@param $editable bool is this component editable directly inline
 *	@since 1.4.2
 */
-function aesop_component_data_atts( $type, $unique, $defaults, $editable = false ) {
+function aesop_component_data_atts( $type, $gallery_id, $defaults, $editable = false ) {
 
 	// bail if we dont have a type or if the current user can't do anything
 	// may just need to back out to is user logged in like we had before
@@ -198,7 +198,8 @@ function aesop_component_data_atts( $type, $unique, $defaults, $editable = false
 
 	if ( 'gallery' == $type ) {
 
-		$options .= sprintf('%s', aesop_gallery_component_data_atts( $unique ) );
+		$options .= sprintf('%s', aesop_gallery_component_data_atts( $gallery_id ) );
+		$gallery_id = sprintf('data-id=%s', $gallery_id );
 
 	} else {
 
@@ -206,11 +207,13 @@ function aesop_component_data_atts( $type, $unique, $defaults, $editable = false
 
 			$options .= !empty( $value ) ? 'data-'.$default.'="'.htmlentities($value).'" '  : false;
 		}
+
+		$gallery_id = false;
 	}
 
 	$edit_state = true == $editable ? 'contenteditable=true' : 'contenteditable=false';
 
-	$out = sprintf('%s data-component-type=%s data-unique=%s %s ', $edit_state, $type, $unique, $options);
+	$out = sprintf('%s data-component-type=%s %s %s ', $edit_state, $type, $gallery_id, $options);
 
 	return $out;
 }
