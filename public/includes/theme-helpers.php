@@ -251,15 +251,15 @@ function aesop_gallery_component_data_atts( $postid = '' ){
 
 	// get the meta and store into an array
 	$meta = array(
-		'id'				=> $postid,
-		'gallery-type' 			=> sanitize_text_field( trim( $type ) ),
-		'gallery-width' 		=> (int) trim( $width ),
-		'gallery-caption' 		=> sanitize_text_field( trim( $caption ) ),
-		'gallery-item-width' 	=> (int) trim( $grid_item_width ),
-		'gallery-thumb-trans' 	=> sanitize_text_field( trim( $thumb_trans ) ),
-		'gallery-thumb-speed' 	=> $thumb_speed,
-		'gallery-ps-layout' 	=> (int) trim( $photoset_layout ),
-		'gallery-ps-lb'		 	=> sanitize_text_field( trim( $photoset_lb ) )
+		'id'			=> $postid,
+		'type' 			=> sanitize_text_field( trim( $type ) ),
+		'width' 		=> (int) trim( $width ),
+		'caption' 		=> sanitize_text_field( trim( $caption ) ),
+		'item-width' 	=> (int) trim( $grid_item_width ),
+		'transition' 	=> sanitize_text_field( trim( $thumb_trans ) ),
+		'speed' 		=> $thumb_speed,
+		'ps-layout' 	=> (int) trim( $photoset_layout ),
+		'ps-lightbox'	=> sanitize_text_field( trim( $photoset_lb ) )
 	);
 
 	// map the meta to att values
