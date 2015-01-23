@@ -28,7 +28,7 @@ if (!function_exists('aesop_content_shortcode')){
 			'floaterdirection'	=> 'down',
 			'floaterposition'	=> 'left',
 			'color' 			=> '#FFFFFF',
-			'background'		=> '#333333'
+			'background'		=> '#222222'
 		);
 
 		$atts = apply_filters('aesop_cbox_defaults',shortcode_atts($defaults, $atts));
@@ -82,7 +82,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 		do_action('aesop_cbox_before'); //action
 			?>
-				<div class="aesop-component aesop-content-component <?php echo sanitize_html_class($classes).' '.$has_img. ' '.$has_floater;?>" style="<?php echo $height;?>" >
+				<div <?php echo aesop_component_data_atts( 'content', $unique, $atts, true );?> class="aesop-component aesop-content-component <?php echo sanitize_html_class($classes).' '.$has_img. ' '.$has_floater;?>" style="<?php echo $height;?>" >
 
 					<?php if ( $atts['floatermedia'] && !wp_is_mobile() ) { ?>
 						<!-- Aesop Content Component -->
@@ -130,7 +130,7 @@ if (!function_exists('aesop_content_shortcode')){
 
 						<?php } ?>
 
-						<div class="aesop-content-comp-inner <?php echo $contentwidth;?>" <?php echo $innerstyle;?>>
+						<div class="aesop-component-content-data aesop-content-comp-inner <?php echo $contentwidth;?>" <?php echo $innerstyle;?>>
 
 							<?php echo do_action('aesop_cbox_content_inner_inside_top'); //action ?>
 
