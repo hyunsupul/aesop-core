@@ -15,12 +15,12 @@ if (!function_exists('aesop_quote_shortcode')){
 			'img'		=> '',
 			'text' 		=> '#FFFFFF',
 			'height'	=> 'auto',
-			'align'		=> 'left',
-			'size'		=> '4',
+			'align'		=> 'center',
+			'size'		=> '1',
 			'parallax'  => '',
 			'direction' => '',
-			'quote'		=> '',
-			'cite'		=> '',
+			'quote'		=> 'Quote',
+			'cite'		=> 'Cite',
 
 		);
 		$atts = apply_filters('aesop_quote_defaults',shortcode_atts($defaults, $atts));
@@ -59,8 +59,7 @@ if (!function_exists('aesop_quote_shortcode')){
 
 		do_action('aesop_quote_before'); //action
 		?>
-			<div id="aesop-quote-component-<?php echo esc_attr( $unique );?>" class="aesop-component aesop-quote-component <?php echo sanitize_html_class( $classes ).' '.sanitize_html_class( $align ).' '.sanitize_html_class( $contentwidth ).' '.sanitize_html_class( $isparallax ).' '.sanitize_html_class( $lrclass ).' ';?>" <?php echo $style;?>>
-
+			<div id="aesop-quote-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'quote', $unique, $atts );?> class="aesop-component aesop-quote-component <?php echo sanitize_html_class( $classes ).' '.sanitize_html_class( $align ).' '.sanitize_html_class( $contentwidth ).' '.sanitize_html_class( $isparallax ).' '.sanitize_html_class( $lrclass ).' ';?>" <?php echo $style;?>>
 				<!-- Aesop Core | Quote -->
 				<script>
 					jQuery(document).ready(function(){
@@ -119,7 +118,7 @@ if (!function_exists('aesop_quote_shortcode')){
 				<?php do_action('aesop_quote_inside_top'); //action ?>
 
 				<blockquote class="<?php echo sanitize_html_class( $align );?>" style="font-size:<?php echo esc_attr( $size);?>;">
-					<?php echo esc_html( $atts['quote'] );?>
+					<span><?php echo esc_html( $atts['quote'] );?></span>
 
 					<?php echo $cite;?>
 				</blockquote>

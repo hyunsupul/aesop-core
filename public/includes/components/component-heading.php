@@ -38,16 +38,16 @@ if (!function_exists('aesop_chapter_shortcode')){
 		do_action('aesop_chapter_before'); //action
 
 			?>
-			<div id="chapter-unique-<?php echo $unique;?>" class="aesop-article-chapter-wrap default-cover <?php echo $video_chapter_class;?> aesop-component <?php echo $img_style_class;?> <?php echo $full_class;?> " >
+			<div id="chapter-unique-<?php echo $unique;?>" <?php echo aesop_component_data_atts( 'chapter', $unique, $atts );?> class="aesop-article-chapter-wrap default-cover <?php echo $video_chapter_class;?> aesop-component <?php echo $img_style_class;?> <?php echo $full_class;?> " >
 
 				<?php do_action('aesop_chapter_inside_top'); //action ?>
 
 				<div class="aesop-article-chapter clearfix" <?php echo $img_style;?> >
 
 					<h2 class="aesop-cover-title" itemprop="title" data-title="<?php echo esc_attr( $atts['title'] );?>">
-						<?php echo esc_html( $atts['title'] );
+						<span><?php echo esc_html( $atts['title'] );?></span>
 
-						if ( $atts['subtitle'] ) { ?>
+						<?php if ( $atts['subtitle'] ) { ?>
 							<small><?php echo esc_html( $atts['subtitle'] );?></small>
 						<?php } ?>
 					</h2>
