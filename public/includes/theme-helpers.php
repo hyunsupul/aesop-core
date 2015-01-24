@@ -190,7 +190,7 @@ function aesop_component_data_atts( $type, $gallery_id, $defaults, $editable = f
 		return;
 
 	// if aesop story editor isn't activated then dont even bother
-	if ( !class_exists('Aesop_Editor') )
+	if ( !class_exists('Lasso') )
 		return;
 
 	// we're looping through the default attributes that are fed to us and outputting them as data-attributes
@@ -227,7 +227,7 @@ function aesop_component_data_atts( $type, $gallery_id, $defaults, $editable = f
 function aesop_gallery_component_data_atts( $postid = '' ){
 
 	// bail out if aesop story editor isn't activated or if there's no gallery id passed
-	if ( empty ( $postid ) || !class_exists('Aesop_Editor') )
+	if ( empty ( $postid ) || !class_exists('Lasso') )
 		return;
 
 	// type
