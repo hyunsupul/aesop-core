@@ -75,7 +75,7 @@ if (!function_exists('aesop_audio_shortcode')){
 					do_action('aesop_audio_inside_top'); //action
 
 						if ( $title ) {
-							echo sanitize_title( $title );
+							echo esc_html( $title );
 						}
 
 						echo wp_audio_shortcode(  array( 'src' => $atts['src'], 'loop' => $loop ) );
