@@ -142,6 +142,7 @@ Full documentation can be found below.
 
 = 1.4.2 =
 * NEW - Compatibility with the upcoming Aesop Story Editor add-on
+* FIX - Fixed improper audio title formatting
 * TWEAK - Prevent "Upgrade Galleries" notice from showing if you've already upgraded galleries
 * TWEAK - The Parallax component has gotten a significant overhaul. The most important being that the height attribute is no longer used. Instead, the height of the parallax component is not only fluid and responsive, but it's automatically calculated based on the height of the image that you upload. In this regard it should always be sized perfectly. In addition, image widths are now respected, which means there's no more clipping on left and right. Although we hate to remove the "fixed height" option, we hope you'll enjoy these significant but necessary improvements.
 
