@@ -39,13 +39,6 @@ if (!function_exists('aesop_parallax_shortcode')){
 		// automatically provide an alt tag for the image based on the name of the image file
 		$auto_alt 	= $atts['img'] ? basename( $atts['img'] ) : null;
 
-		// lazy loader class
-		$lazy_holder = AI_CORE_URL.'/public/assets/img/aesop-lazy-holder.png';
-        $lazy   = class_exists('AesopLazyLoader') && !is_user_logged_in() ? sprintf( 'src="%s" data-src="%s"', $lazy_holder, esc_url( $atts['img'] ) ) : sprintf( 'src="%s"', esc_url( $atts['img'] ) );
-
-		// add a css class if parallax bg is set to on
-		$lazy_class	= class_exists('AesopLazyLoader') && !is_user_logged_in() ? 'aesop-lazy-img' : false;
-
 		ob_start();
 
 		do_action('aesop_parallax_before'); //action
@@ -136,7 +129,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 							<a class="aesop-lb-link aesop-lightbox" rel="lightbox" title="<?php echo esc_attr( $atts['caption'] );?>" href="<?php echo esc_url( $atts['img'] );?>"><i class="aesopicon aesopicon-search-plus"></i></a>
 						<?php } ?>
 
-						<img class="aesop-parallax-sc-img <?php echo $laxclass;?> <?php echo $lazy_class;?>" <?php echo $lazy;?> alt="<?php echo esc_attr( $auto_alt );?>" >
+						<img class="aesop-parallax-sc-img <?php echo $laxclass;?>" src="<?php echo esc_url( $atts['img'] );?>" alt="<?php echo esc_attr( $auto_alt );?>" >
 
 						<?php if ( $atts['caption'] ){ ?>
 							<figcaption class="aesop-parallax-sc-caption-wrap <?php echo sanitize_html_class( $atts['captionposition'] );?>">
