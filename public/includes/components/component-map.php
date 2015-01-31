@@ -89,8 +89,8 @@ if (!function_exists('aesop_map_shortcode')) {
 
 				if ( class_exists('Lasso') ) {
 
-					?><div class="lasso--empty-component"><?php
-						_e('Setup this map by clicking the <span class="lasso-icon-gear"></span> icon above.', 'aesop-core');
+					?><div contenteditable="false" class="lasso--empty-component"><?php
+						_e('Setup this map by clicking the <span class="lasso-icon-gear"></span> icon below.', 'aesop-core');
 					?></div><?php
 
 				} else {
