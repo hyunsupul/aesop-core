@@ -94,7 +94,7 @@ class AesopCoreGallery {
 
 					if ( class_exists('Lasso') ) {
 
-						?><div class="lasso--empty-gallery"><?php
+						?><div class="lasso--empty-component"><?php
 							_e('Setup a gallery by clicking the <span class="lasso-icon-gear"></span> icon above.', 'aesop-core');
 						?></div><?php
 
