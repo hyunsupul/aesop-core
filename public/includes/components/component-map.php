@@ -85,21 +85,11 @@ if (!function_exists('aesop_map_shortcode')) {
 			$edit_map 		= __('Add Map Markers', 'aesop-core');
 			$add_markers 	= sprintf('<a href="%s" target="_blank" title="%s">(%s)</a>',$url, $edit_map, $edit_map );
 
-			if ( empty( $markers ) && is_user_logged_in() && current_user_can('edit_posts') ) {
+			if ( empty( $markers ) && is_user_logged_in() && current_user_can('edit_posts') && !class_exists('Lasso') ) {
 
-				if ( class_exists('Lasso') ) {
-
-					?><div contenteditable="false" class="lasso--empty-component"><?php
-						_e('Setup this map by clicking the <span class="lasso-icon-gear"></span> icon below.', 'aesop-core');
-					?></div><?php
-
-				} else {
-
-					?><div class="aesop-error aesop-content"><?php
-						_e('Add some markers '.$add_markers.' to activate the map.', 'aesop-core');
-					?></div><?php
-
-				}
+				?><div class="aesop-error aesop-content"><?php
+					_e('Add some markers '.$add_markers.' to activate the map.', 'aesop-core');
+				?></div><?php
 
 			} ?>
 
