@@ -93,7 +93,7 @@ if (!function_exists('aesop_map_shortcode')) {
 
 			} ?>
 
-			<div id="aesop-map-component" <?php echo aesop_map_component_data_atts( get_the_ID() );?> class="aesop-component aesop-map-component <?php echo sanitize_html_class($classes);?> " <?php echo $height;?>></div><?php
+			<div id="aesop-map-component" <?php echo aesop_component_data_atts('map', $unique, $atts );?> class="aesop-component aesop-map-component <?php echo sanitize_html_class($classes);?> " <?php echo $height;?>></div><?php
 		do_action('aesop_map_before');
 
 		return ob_get_clean();
