@@ -138,7 +138,7 @@ class Aesop_Core_Admin {
 	*/
 	public function generator_button() {
 
-		$getbutton = sprintf('<a href="#aesop-generator-wrap" class="button aesop-add-story-component" title="Add Story Component"><span class="aesop-admin-button-icon dashicons dashicons-plus"></span> %s</a>', __('Add Component', 'aesop-core'));
+		$getbutton = sprintf('<a href="#aesop-generator-wrap" class="button aesop-add-story-component" title="Add Story Component"><span class="aesop-admin-button-icon ase-component"></span> %s</a>', __('Add Component', 'aesop-core'));
 
 		$button = apply_filters('aesop_generator_button', $getbutton);
 
@@ -239,9 +239,8 @@ class Aesop_Core_Admin {
 	private function messages() {
 
 		$message = array(
-			__('Product of <span><a href="http://aesopstoryengine.com">AESOP INTERACTIVE LLC</a></span>', 'aesop-core'),
-			__('<span><a href="http://aesopstoryengine.com/donate">Support new features and bug fixes</a></span> of Aesop Story Engine', 'aesop-core'),
-			__('Story Beautiful? <span><a href="http://aesopstoryengine.com/donate">Thank the developer</a></span>.', 'aesop-core')
+			__('<a href="http://twitter.com/aesopinteractiv"><span class="dashicons dashicons-twitter" target="_new"></span></a>  <a href="https://www.facebook.com/aesopinteractive" target="_new"><span class="dashicons dashicons-facebook"></span></a>  <a href="http://aesopstoryengine.com/donate/" target="_new"><span class="ase-donate"></span></a><br /><a href="http://aesopstoryengine.com" target="_new">SHARE & SUPPORT AESOP</a>', 'aesop-core'),
+			__('<a href="https://github.com/bearded-avenger/aesop-core" target="_new"><span class="ase-git"></span></a> <a href="https://wordpress.org/plugins/aesop-story-engine/" target="_new"><span class="dashicons dashicons-wordpress"></a></span><br /><a href="http://aesopstoryengine.com/donate" target="_new"><em>Help Fuel The Engine</em></a>', 'aesop-core')
 		);
 
 		return '<p class="aesop-generator-mark">'.$message[array_rand($message)].'</p>';
