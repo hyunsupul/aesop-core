@@ -399,7 +399,7 @@ class AesopGalleryComponentAdmin {
 	function upgrade_galleries_notice(){
 
 		// only run if we have markers and have never upgraded
-		if ( empty( get_option('ase_galleries_upgraded_to') ) && 'true' == self::aesop_check_for_galleries() ) {
+		if ( !get_option('ase_galleries_upgraded_to') && 'true' == self::aesop_check_for_galleries() ) {
 
 			$out = '<div class="error"><p>';
 
