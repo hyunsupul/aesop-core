@@ -1,0 +1,8 @@
+[main]
+host = https://www.transifex.com
+
+[aesop-story-engine.aesop-core]
+file_filter = languages/aesop-core-<lang>.po
+source_file = languages/aesop-core.pot
+source_lang = en_US
+type = PO
