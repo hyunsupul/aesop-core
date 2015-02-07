@@ -142,10 +142,14 @@ Full documentation can be found below.
 
 = 1.4.2 =
 * NEW - Compatibility with the upcoming Aesop Story Editor add-on
+* NEW - Now available in 14 languages - props wp-translations.org
 * FIX - Fixed improper audio title formatting
+* FIX - Fixed audio component attributes filter name
+* FIX - Fixed an error within the Gallery admin affecting PHP 5.4
+* FIX - Fixed bug with TinyMCE load dependency
 * TWEAK - Prevent "Upgrade Galleries" notice from showing if you've already upgraded galleries
 * TWEAK - Better compatibility with the Aesop Lazy Loader add-on
-* TWEAK - The Parallax component has gotten a significant overhaul. The most important being that the height attribute is no longer used. Instead, the height of the parallax component is not only fluid and responsive, but it's automatically calculated based on the height of the image that you upload. In this regard it should always be sized perfectly. In addition, image widths are now respected, which means there's no more clipping on left and right. Although we hate to remove the "fixed height" option, we hope you'll enjoy these significant but necessary improvements.
+* TWEAK - The Parallax component has gotten a significant overhaul. The most important being that the height attribute is no longer used. Instead, the height of the parallax component is not only fluid and responsive, but it's automatically calculated based on the height of the image that you upload. In this regard it should always be sized perfectly. In addition, image widths are now respected, which means there's no more clipping on left and right. Although we hate to remove the "fixed height" option, and although we realize this might be seen as a jarrying change, we hope you'll enjoy this significant but necessary improvement.
 
 = 1.4.1 =
 * FIXED - Yandex in Fotorama : A few updates back we attempted to block Fotorama from inserting its Yandex tracker. Since we noticed that this sometimes fails to block, we've modified their source code and have removed it completely. It's also worth noting that they've gotten a lot of heat from this, and have since removed it all together from their script. This should no longer be an issue, and we apologize for any inconviences that we may have inadvertantly caused.

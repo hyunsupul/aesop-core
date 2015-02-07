@@ -12,7 +12,7 @@ if (!function_exists('aesop_parallax_shortcode')){
 
 		$defaults = array(
 			'img' 				=> '',
-			'height' 			=> 500, // deprecated
+			'height' 			=> 500, // deprecated 1.4.2
 			'parallaxbg' 		=> 'on',
 			'floater' 			=> '',
 			'floatermedia' 		=> '',
