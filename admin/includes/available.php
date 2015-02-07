@@ -219,13 +219,13 @@ if(!function_exists('aesop_shortcodes')){
 					),
 					'quote' 		=> array(
 						'type'		=> 'text_area',
-						'default' 	=> '',
+						'default' 	=> 'Stories are made of atoms, not people.',
 						'desc' 		=> __('Quote Text', 'aesop-core' ),
 						'tip'		=> __('The actual quote text that will be displayed.','aesop-core')
 					),
 					'cite' 		=> array(
 						'type'		=> 'text_area',
-						'default' 	=> '',
+						'default' 	=> 'Great person',
 						'desc' 		=> __('Cite', 'aesop-core' ),
 						'tip'		=> __('Provide an optional cite or source for the quote.','aesop-core')
 					),
@@ -483,12 +483,14 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Parallax Image', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
+					/*
 					'height' 		=> array(
 						'type'		=> 'text_small',
 						'default' 	=> '500',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
 						'tip'		=> __('The height of the viewable image area. Enter a value such as <code>500px</code>. Avoid using percentages with this option.','aesop-core')
 					),
+					*/
 					'img' 			=> array(
 						'type'		=> 'media_upload',
 						'default' 	=> '',
@@ -889,6 +891,8 @@ if(!function_exists('aesop_shortcodes')){
 			'map' 				=> array(
 				'name' 				=> __('Map', 'aesop-core'),
 				'type' 				=> 'single',
+				'front'				=> true,
+				'front_type'		=> 'map',
 				'atts' 				=> array(
 					'height' 			=> array(
 						'type'		=> 'text_small',
@@ -1034,6 +1038,8 @@ if(!function_exists('aesop_shortcodes')){
 			'gallery' 				=> array(
 				'name' 				=> __('Gallery', 'aesop-core'),
 				'type' 				=> 'single',
+				'front'				=> true,
+				'front_type'		=> 'gallery',
 				'atts' 				=> array(
 					'id' 			=> array(
 						'type'		=> 'select',

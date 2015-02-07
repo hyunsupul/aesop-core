@@ -34,7 +34,8 @@ if (!function_exists('aesop_image_shortcode')){
 		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
 		// lazy loader class
-        $lazy   = class_exists('AesopLazyLoader') ? sprintf( 'data-original="%s" class="aesop-lazy-img"',esc_url( $atts['img'] ) ) : sprintf( 'src="%s"', esc_url( $atts['img'] ) );
+		$lazy_holder = AI_CORE_URL.'/public/assets/img/aesop-lazy-holder.png';
+        $lazy   = class_exists('AesopLazyLoader') && !is_user_logged_in() ? sprintf( 'src="%s" data-src="%s" class="aesop-lazy-img"',$lazy_holder, esc_url( $atts['img'] ) ) : sprintf( 'src="%s"', esc_url( $atts['img'] ) );
 
         // automatic alt tag fallback if none specified
 		$auto_alt 	= $atts['img'] ? basename($atts['img']) : null;
@@ -45,7 +46,7 @@ if (!function_exists('aesop_image_shortcode')){
 
 		do_action('aesop_image_before'); //action
 		?>
-		<div id="aesop-image-component-<?php echo esc_html( $unique );?>" class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes );?>" >
+		<div id="aesop-image-component-<?php echo esc_html( $unique );?>" <?php echo aesop_component_data_atts( 'image', $unique, $atts );?> class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes );?>" >
 
 			<?php do_action('aesop_image_inside_top'); //action ?>
 

@@ -92,11 +92,28 @@ Aesop Story Engine 1.0.9 now features full theme compatibility with a simple cod
 We recommend placing this in a WordPress themes functions.php, or use a plugin like [Code Snippets](https://wordpress.org/plugins/code-snippets/) and put it there.
 
 = Developers =
-This story engine was in beta for over 4 months, and every attempt has been made to ensure that 1.0 is as stable as can be. No breaking changes will be made until the next major version, which at the moment isn’t even a speckle in my daddies eye. All components are pluggable, and there are ample filters and actions to manipulate just about everything you can imagine. Refer to the documentation below for more.
+All components are pluggable, and there are ample filters and actions to manipulate just about everything you can imagine. Refer to the documentation below for more.
 
 [http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers)
 
 If you think something is missing, we want to hear from you. Post your request and bugs on [Github](https://github.com/bearded-avenger/aesop-core).
+
+= Languages =
+Aesop Story Engine is currently available in 14 languages. We work closely with the folks over at WP Translations, and it's becuase of them that these translations are available.  
+* German
+* Greek
+* Spanish
+* French
+* Japanese
+* Dutch
+* Polish
+* Breton
+* Romanian
+* Russian
+* Slovakian
+* Serbian
+* Turkish
+* Chinese
 
 == Installation ==
 
@@ -139,6 +156,18 @@ Full documentation can be found below.
 * Initial Release
 
 == Changelog ==
+
+= 1.4.2 =
+* NEW - Compatibility with Lasso - our soon to be released front-end editor add-on
+* NEW - Now available in 14 languages - props wp-translations.org
+* FIX - Numerous i18n fixes - props wp-translations.org
+* FIX - Fixed improper audio title formatting
+* FIX - Fixed audio component attributes filter name
+* FIX - Fixed an error within the Gallery admin affecting PHP 5.4
+* FIX - Fixed bug with TinyMCE load dependency
+* TWEAK - Better compatibility with the Aesop Lazy Loader add-on
+* TWEAK - Prevent "Upgrade Galleries" notice from showing if you've already upgraded galleries
+* TWEAK - The Parallax component has gotten a significant overhaul. The most important being that the height attribute is no longer used. Instead, the height of the parallax component is not only fluid and responsive, but it's automatically calculated based on the height of the image that you upload. In this regard it should always be sized perfectly. It's best to use an image at least 800px tall. In addition, the parallax image width is now respected, which means there's no more clipping on left and right. Although we hate to remove the "fixed height" option, and although we realize this might be seen as a jarrying change, we hope you'll enjoy this significant but necessary improvement.
 
 = 1.4.1 =
 * FIXED - Yandex in Fotorama : A few updates back we attempted to block Fotorama from inserting its Yandex tracker. Since we noticed that this sometimes fails to block, we've modified their source code and have removed it completely. It's also worth noting that they've gotten a lot of heat from this, and have since removed it all together from their script. This should no longer be an issue, and we apologize for any inconviences that we may have inadvertantly caused.
