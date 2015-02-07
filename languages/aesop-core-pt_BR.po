@@ -8,12 +8,12 @@ msgstr ""
 "POT-Creation-Date: 2015-02-06 15:17:40+00:00\n"
 "PO-Revision-Date: 2015-02-06 15:17+0000\n"
 "Last-Translator: FxB <fxb@wp-translations.org>\n"
-"Language-Team: Spanish (Spain) (http://www.transifex.com/projects/p/aesop-story-engine/language/es_ES/)\n"
+"Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/aesop-story-engine/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_ES\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
@@ -52,11 +52,11 @@ msgstr ""
 #: admin/includes/available.php:13 admin/includes/available.php:446
 #: admin/includes/available.php:963
 msgid "Image"
-msgstr "Imagen"
+msgstr "Imagem"
 
 #: admin/includes/available.php:19
 msgid "Image Width"
-msgstr "Ancho de la imagen"
+msgstr ""
 
 #: admin/includes/available.php:20
 msgid ""
@@ -66,7 +66,7 @@ msgstr ""
 
 #: admin/includes/available.php:25
 msgid "Image URL"
-msgstr "URL de la imagen"
+msgstr "URL da imagem"
 
 #: admin/includes/available.php:26 admin/includes/available.php:120
 #: admin/includes/available.php:332 admin/includes/available.php:496
@@ -77,7 +77,7 @@ msgstr ""
 
 #: admin/includes/available.php:31
 msgid "Image Offset"
-msgstr "Offset de la imagen"
+msgstr ""
 
 #: admin/includes/available.php:32
 msgid ""
@@ -87,7 +87,7 @@ msgstr ""
 
 #: admin/includes/available.php:37
 msgid "Image Credit"
-msgstr "Crédito de la imagen"
+msgstr ""
 
 #: admin/includes/available.php:38
 msgid ""
@@ -97,7 +97,7 @@ msgstr ""
 
 #: admin/includes/available.php:43
 msgid "Image ALT"
-msgstr "Texto alternativo"
+msgstr ""
 
 #: admin/includes/available.php:44
 msgid "ALT tag used for the image. Primarily used for SEO purposes."
@@ -110,7 +110,7 @@ msgstr ""
 #: admin/includes/available.php:587 admin/includes/available.php:615
 #: admin/includes/available.php:728
 msgid "Left"
-msgstr "Izquierda"
+msgstr "Esquerda"
 
 #: admin/includes/available.php:55 admin/includes/available.php:97
 #: admin/includes/available.php:143 admin/includes/available.php:196
@@ -119,17 +119,17 @@ msgstr "Izquierda"
 #: admin/includes/available.php:591 admin/includes/available.php:619
 #: admin/includes/available.php:732
 msgid "Right"
-msgstr "Derecha"
+msgstr "Direita"
 
 #: admin/includes/available.php:59 admin/includes/available.php:101
 #: admin/includes/available.php:200 admin/includes/available.php:389
 #: admin/includes/available.php:595 admin/includes/available.php:736
 msgid "Center"
-msgstr "Centrar"
+msgstr "Centro"
 
 #: admin/includes/available.php:63
 msgid "Image Alignment"
-msgstr "Alineación de la imagen"
+msgstr ""
 
 #: admin/includes/available.php:64
 msgid ""
@@ -147,7 +147,7 @@ msgstr ""
 #: admin/includes/available.php:875 admin/includes/available.php:1020
 #: admin/includes/components/component-map.php:77
 msgid "On"
-msgstr "Encendido"
+msgstr "ligado"
 
 #: admin/includes/available.php:75 admin/includes/available.php:241
 #: admin/includes/available.php:466 admin/includes/available.php:507
@@ -160,11 +160,11 @@ msgstr "Encendido"
 #: admin/includes/available.php:1024
 #: admin/includes/components/component-map.php:73
 msgid "Off"
-msgstr "Apagado"
+msgstr "desligado"
 
 #: admin/includes/available.php:79
 msgid "Lightbox"
-msgstr "Lightbox"
+msgstr ""
 
 #: admin/includes/available.php:80
 msgid ""
@@ -175,7 +175,7 @@ msgstr ""
 #: admin/includes/available.php:85 admin/includes/available.php:131
 #: admin/includes/available.php:517 admin/includes/available.php:797
 msgid "Caption"
-msgstr "Subtítulo"
+msgstr "Legenda"
 
 #: admin/includes/available.php:86
 msgid ""
@@ -185,7 +185,7 @@ msgstr ""
 
 #: admin/includes/available.php:105 admin/includes/available.php:541
 msgid "Caption Position"
-msgstr "Posición del subtítulo"
+msgstr ""
 
 #: admin/includes/available.php:106
 msgid "Use this to override the alignment as inherited from the image."
@@ -194,19 +194,19 @@ msgstr ""
 #: admin/includes/available.php:110
 msgid ""
 "Creates an image component with caption, alignment, and lightbox options."
-msgstr "Crea un componente de imagen con subtítulo, alineación y lightbox"
+msgstr ""
 
 #: admin/includes/available.php:113
 msgid "Character"
-msgstr "Personaje"
+msgstr ""
 
 #: admin/includes/available.php:119
 msgid "Character Image"
-msgstr "Imagen del personaje"
+msgstr ""
 
 #: admin/includes/available.php:125
 msgid "Character Name"
-msgstr "Nombre del personaje"
+msgstr ""
 
 #: admin/includes/available.php:126
 msgid ""
@@ -223,7 +223,7 @@ msgstr ""
 #: admin/includes/available.php:147 admin/includes/available.php:204
 #: admin/includes/available.php:740
 msgid "Alignment"
-msgstr "Alineación"
+msgstr "Alinhamento"
 
 #: admin/includes/available.php:148
 msgid ""
@@ -233,7 +233,7 @@ msgstr ""
 
 #: admin/includes/available.php:153
 msgid "Width"
-msgstr "Ancho"
+msgstr "Largura"
 
 #: admin/includes/available.php:154
 msgid ""
@@ -245,15 +245,15 @@ msgstr ""
 msgid ""
 "Creates a character that can be positioned to the left or right of your "
 "story."
-msgstr "Crea un personaje que puede ser posicionado a la izquierda o derecha de tu historia."
+msgstr ""
 
 #: admin/includes/available.php:160
 msgid "Aesop Quote Section"
-msgstr "Aesop Sección Cita"
+msgstr ""
 
 #: admin/includes/available.php:166 admin/includes/available.php:280
 msgid "Background Color"
-msgstr "Color del fondo"
+msgstr "Cor de fundo"
 
 #: admin/includes/available.php:167
 msgid "Select a background color to be used as the quote background."
@@ -261,7 +261,7 @@ msgstr ""
 
 #: admin/includes/available.php:172
 msgid "Text Color"
-msgstr "Color del texto"
+msgstr "Cor do texto"
 
 #: admin/includes/available.php:173
 msgid "Select a color for the quote text."
@@ -269,7 +269,7 @@ msgstr ""
 
 #: admin/includes/available.php:178 admin/includes/available.php:720
 msgid "Component Width"
-msgstr "Ancho del componente"
+msgstr ""
 
 #: admin/includes/available.php:179 admin/includes/available.php:287
 #: admin/includes/available.php:721
@@ -305,7 +305,7 @@ msgstr ""
 
 #: admin/includes/available.php:217 admin/includes/available.php:331
 msgid "Background Image"
-msgstr "Imagen de fondo"
+msgstr "Imagem de fundo"
 
 #: admin/includes/available.php:218
 msgid ""
@@ -348,15 +348,15 @@ msgstr ""
 
 #: admin/includes/available.php:265
 msgid "Section quote area with background and color controls."
-msgstr "Aréa del área de la cita con fondo y controles de color"
+msgstr ""
 
 #: admin/includes/available.php:268 admin/includes/generator_blob.php:72
 msgid "Content"
-msgstr "Contenido"
+msgstr "Conteúdo"
 
 #: admin/includes/available.php:274
 msgid "Color of Text"
-msgstr "Color del texto"
+msgstr ""
 
 #: admin/includes/available.php:275
 msgid "Set a color to be used for the main text."
@@ -368,7 +368,7 @@ msgstr ""
 
 #: admin/includes/available.php:286
 msgid "Width of Component"
-msgstr "Ancho del componente\t\t"
+msgstr ""
 
 #: admin/includes/available.php:292
 msgid "Height of Component"
@@ -384,7 +384,7 @@ msgstr ""
 
 #: admin/includes/available.php:299
 msgid "Number of Columns"
-msgstr "Número de columnas"
+msgstr ""
 
 #: admin/includes/available.php:300
 msgid ""
@@ -394,11 +394,11 @@ msgstr ""
 
 #: admin/includes/available.php:307
 msgid "None"
-msgstr "Ninguno"
+msgstr "Nenhum"
 
 #: admin/includes/available.php:319
 msgid "Text Block Alignment"
-msgstr "Alineación del bloque de texto"
+msgstr ""
 
 #: admin/includes/available.php:320
 msgid ""
@@ -420,7 +420,7 @@ msgstr ""
 
 #: admin/includes/available.php:339
 msgid "No Repeat"
-msgstr "Sin repetición"
+msgstr "Sem Repetição"
 
 #: admin/includes/available.php:343
 msgid "Repeat"
@@ -436,7 +436,7 @@ msgstr ""
 
 #: admin/includes/available.php:355
 msgid "Image Repeat"
-msgstr "Repetir imagen"
+msgstr ""
 
 #: admin/includes/available.php:356
 msgid ""
@@ -485,11 +485,11 @@ msgstr ""
 
 #: admin/includes/available.php:401 admin/includes/available.php:607
 msgid "Up"
-msgstr ""
+msgstr "Acima"
 
 #: admin/includes/available.php:405 admin/includes/available.php:611
 msgid "Down"
-msgstr ""
+msgstr "Abaixo"
 
 #: admin/includes/available.php:417 admin/includes/available.php:623
 msgid "Movement Direction of Floater Element"
@@ -501,13 +501,13 @@ msgstr ""
 
 #: admin/includes/available.php:421
 msgid "All your normal text goes here."
-msgstr "Todo el texto normal va aquí."
+msgstr ""
 
 #: admin/includes/available.php:422
 msgid ""
 "Multiple use content area with options for background image, background "
 "color, and magazine style columns."
-msgstr "Área de uso multiple con opciones de imagen de fondo, color de fondo y columnas estilo revista (magazine)"
+msgstr ""
 
 #: admin/includes/available.php:423
 msgid "The actual content text that will be displayed."
@@ -515,11 +515,11 @@ msgstr ""
 
 #: admin/includes/available.php:426
 msgid "Chapter Block"
-msgstr "Bloque de capitulo"
+msgstr ""
 
 #: admin/includes/available.php:432
 msgid "Chapter Title"
-msgstr "Título del capítulo"
+msgstr ""
 
 #: admin/includes/available.php:433
 msgid "The title of the chapter."
@@ -539,7 +539,7 @@ msgstr "Vídeo"
 
 #: admin/includes/available.php:454
 msgid "Background Type"
-msgstr "Tipo de fondo"
+msgstr ""
 
 #: admin/includes/available.php:455
 msgid "Choose from an image or a looping video background."
@@ -571,11 +571,11 @@ msgstr ""
 
 #: admin/includes/available.php:483 admin/includes/available.php:495
 msgid "Parallax Image"
-msgstr "Imagen tipo Parallax"
+msgstr ""
 
 #: admin/includes/available.php:489
 msgid "Height of Image Area"
-msgstr "Altura del área de la imagen"
+msgstr ""
 
 #: admin/includes/available.php:490
 msgid ""
@@ -600,19 +600,19 @@ msgstr ""
 
 #: admin/includes/available.php:525
 msgid "Bottom Left"
-msgstr ""
+msgstr "Embaixo à esquerda"
 
 #: admin/includes/available.php:529
 msgid "Bottom Right"
-msgstr ""
+msgstr "Embaixo à direita"
 
 #: admin/includes/available.php:533
 msgid "Top Left"
-msgstr ""
+msgstr "Em cima à esquerda"
 
 #: admin/includes/available.php:537
 msgid "Top Right"
-msgstr ""
+msgstr "Em cima à direita"
 
 #: admin/includes/available.php:542
 msgid ""
@@ -622,7 +622,7 @@ msgstr ""
 
 #: admin/includes/available.php:557
 msgid "Image Lightbox"
-msgstr "Imagen Lightbox"
+msgstr ""
 
 #: admin/includes/available.php:558
 msgid ""
@@ -651,7 +651,7 @@ msgstr ""
 
 #: admin/includes/available.php:627
 msgid "Optional Caption"
-msgstr "Subtítulo opcional"
+msgstr ""
 
 #: admin/includes/available.php:628
 msgid "Parallax styled image component with caption and optional lightbox."
@@ -659,7 +659,7 @@ msgstr ""
 
 #: admin/includes/available.php:631
 msgid "Audio"
-msgstr "Audio"
+msgstr "Áudio"
 
 #: admin/includes/available.php:637 admin/includes/available.php:992
 #: admin/includes/components/component-map.php:65
@@ -672,7 +672,7 @@ msgstr ""
 
 #: admin/includes/available.php:643
 msgid "Audio URL"
-msgstr "URL del Audio"
+msgstr ""
 
 #: admin/includes/available.php:644
 msgid ""
@@ -720,11 +720,11 @@ msgstr ""
 
 #: admin/includes/available.php:711
 msgid "Creates an audio player with your own audio."
-msgstr "Crea un reproductor de audio con tu propio audio."
+msgstr ""
 
 #: admin/includes/available.php:714
 msgid "Video Section"
-msgstr "Sección de Video"
+msgstr ""
 
 #: admin/includes/available.php:741
 msgid "Should the video be floated to the left, right, or centered?"
@@ -756,7 +756,7 @@ msgstr ""
 
 #: admin/includes/available.php:773
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #: admin/includes/available.php:777
 msgid "Dailymotion"
@@ -768,7 +768,7 @@ msgstr ""
 
 #: admin/includes/available.php:785
 msgid "Video Source"
-msgstr "Origen del video"
+msgstr ""
 
 #: admin/includes/available.php:786
 msgid "Choose an available source for the video."
@@ -776,7 +776,7 @@ msgstr ""
 
 #: admin/includes/available.php:791
 msgid "Video ID"
-msgstr "Video ID"
+msgstr ""
 
 #: admin/includes/available.php:792
 msgid ""
@@ -846,11 +846,11 @@ msgstr ""
 
 #: admin/includes/available.php:887
 msgid "Responsive video component with alignment and optional caption."
-msgstr "Componente de video responsivo con alineación y subtítulo opcional."
+msgstr ""
 
 #: admin/includes/available.php:890
 msgid "Map"
-msgstr "Mapa"
+msgstr ""
 
 #: admin/includes/available.php:896
 msgid "Height"
@@ -895,11 +895,11 @@ msgstr ""
 msgid ""
 "Creates the basic map component. Use the Map Locations edit boxes when "
 "writing your story to add locations."
-msgstr "Crea un componente de mapa básico. Usa la caja de edición de ubicaciones de mapas cuando estés escribiendo la historia."
+msgstr ""
 
 #: admin/includes/available.php:932
 msgid "Timeline Stop"
-msgstr "Parar linea de tiempo"
+msgstr ""
 
 #: admin/includes/available.php:938
 msgid "Navigation Menu Item Label"
@@ -923,11 +923,11 @@ msgstr ""
 msgid ""
 "Enter a number such as 2007, and a small timeline will be displayed with "
 "scroll to points. This works similar to the chapter heading."
-msgstr "Ingresa un numero por ejemplo 2007 y una pequeña linea de tiempo se mostrara con puntos de scroll. Esto funciona de una forma similar al título de un capitulo."
+msgstr ""
 
 #: admin/includes/available.php:951
 msgid "Document"
-msgstr "Documento"
+msgstr ""
 
 #: admin/includes/available.php:959
 msgid "PDF"
@@ -935,7 +935,7 @@ msgstr ""
 
 #: admin/includes/available.php:967
 msgid "Document Type"
-msgstr "Tipo de documento"
+msgstr ""
 
 #: admin/includes/available.php:968
 msgid "The type of document. Choose image or PDF."
@@ -961,11 +961,11 @@ msgstr ""
 
 #: admin/includes/available.php:983
 msgid "Show a document that is revealed with a click."
-msgstr "Muestra un documento y es revelado con un clic."
+msgstr ""
 
 #: admin/includes/available.php:986
 msgid "Collections"
-msgstr "Colecciones"
+msgstr ""
 
 #: admin/includes/available.php:993
 msgid ""
@@ -974,7 +974,7 @@ msgstr ""
 
 #: admin/includes/available.php:999
 msgid "Category"
-msgstr "Categoría"
+msgstr "Categoria"
 
 #: admin/includes/available.php:1000
 msgid "Select the category that you want stories to be displayed from."
@@ -990,7 +990,7 @@ msgstr ""
 
 #: admin/includes/available.php:1012
 msgid "Columns"
-msgstr "Columnas"
+msgstr "Colunas"
 
 #: admin/includes/available.php:1013
 msgid "Stories are displayed in a grid. How many columns should the grid be?"
@@ -1009,11 +1009,11 @@ msgstr ""
 #: admin/includes/available.php:1032
 msgid ""
 "Show a collection of stories. Typically used on a page like the home page."
-msgstr "Muestra una colección de historias. Típicamente es usado un una página como la página hogar. "
+msgstr ""
 
 #: admin/includes/available.php:1035
 msgid "Gallery"
-msgstr "Galería"
+msgstr "Galeria"
 
 #: admin/includes/available.php:1042
 msgid "Choose Gallery"
@@ -1030,47 +1030,47 @@ msgstr ""
 #: admin/includes/components/component-gallery.php:35
 #: admin/includes/components/component-gallery.php:48
 msgid "Galleries"
-msgstr "Galerías"
+msgstr "Galleries"
 
 #: admin/includes/components/component-gallery.php:36
 msgid "Parent Gallery:"
-msgstr "Galería padre:"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:37
 msgid "All Galleries"
-msgstr "Todas las galerías"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:38
 msgid "View Gallery"
-msgstr "Ver galería"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:39
 msgid "Add New Gallery"
-msgstr "Agrega nueva galería"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:40
 msgid "New Gallery"
-msgstr "Nueva galería"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:41
 msgid "Edit Gallery"
-msgstr "Edita galería"
+msgstr "Editar galeria"
 
 #: admin/includes/components/component-gallery.php:42
 msgid "Update Gallery"
-msgstr "Actualiza galería"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:43
 msgid "Search Galleries"
-msgstr "Buscar galerías"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:44
 msgid "No Galleries found"
-msgstr "No se encontraron galerías"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:45
 msgid "No Galleries found in Trash"
-msgstr "No se encontraron galerías en la basura"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:49
 msgid "Create responsive galleries."
@@ -1078,15 +1078,15 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:75
 msgid "Gallery Code"
-msgstr "Código de la galería"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:76
 msgid "Used In"
-msgstr "Usado en"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:141
 msgid "Add Images"
-msgstr "Agregar Imágenes"
+msgstr "Adicionar Imagens"
 
 #: admin/includes/components/component-gallery.php:144
 msgid "Select Layout"
@@ -1159,11 +1159,11 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:284
 msgid "Fade"
-msgstr "Desvanecer"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:285
 msgid "Slide"
-msgstr "Deslizar"
+msgstr "Slide"
 
 #: admin/includes/components/component-gallery.php:286
 msgid "Dissolve"
@@ -1199,7 +1199,7 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:313
 msgid "Enable Lightbox"
-msgstr ""
+msgstr "Habilitar Lightbox"
 
 #: admin/includes/components/component-gallery.php:406
 msgid ""
@@ -1210,7 +1210,7 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:444
 msgid "All done!"
-msgstr "¡Todo hecho!"
+msgstr "Concluído!"
 
 #: admin/includes/components/component-map.php:59
 msgid "Aesop Map Marker"
@@ -1245,7 +1245,7 @@ msgstr ""
 
 #: admin/includes/generator_blob.php:75
 msgid "Insert Component"
-msgstr "Insertar componente"
+msgstr ""
 
 #: admin/includes/generator_blob.php:75
 msgid "Update Component"

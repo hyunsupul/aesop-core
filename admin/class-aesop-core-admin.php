@@ -161,9 +161,8 @@ class Aesop_Core_Admin {
 	 	*
 	 	* @since     1.1.0
 	*/
-	public function tinymce_plugin(){
+	public function tinymce_plugin($plugins_array){
 		$plugins = array('aiview','noneditable');
-		$plugins_array = array();
 
 		foreach ($plugins as $plugin) {
 			$plugins_array[ $plugin ] = plugins_url('assets/js/tinymce/', __FILE__) . $plugin . '/plugin.min.js';

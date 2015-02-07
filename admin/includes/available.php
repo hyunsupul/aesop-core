@@ -483,12 +483,14 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Parallax Image', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
+					/*
 					'height' 		=> array(
 						'type'		=> 'text_small',
 						'default' 	=> '500',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
 						'tip'		=> __('The height of the viewable image area. Enter a value such as <code>500px</code>. Avoid using percentages with this option.','aesop-core')
 					),
+					*/
 					'img' 			=> array(
 						'type'		=> 'media_upload',
 						'default' 	=> '',

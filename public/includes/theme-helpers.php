@@ -272,5 +272,3 @@ function aesop_gallery_component_data_atts( $postid = '' ){
 
 	return $options;
 }
-
-

@@ -17,7 +17,7 @@ if (!function_exists('aesop_audio_shortcode')){
 			'loop'    	=> 'off',
 			'hidden'  	=> ''
 		);
-		$atts     = apply_filters('aesop_video_defaults',shortcode_atts($defaults, $atts));
+		$atts     = apply_filters('aesop_audio_defaults',shortcode_atts($defaults, $atts));
 
 		// let this be used multiple times
 		static $instance = 0;
@@ -75,7 +75,7 @@ if (!function_exists('aesop_audio_shortcode')){
 					do_action('aesop_audio_inside_top'); //action
 
 						if ( $title ) {
-							echo sanitize_title( $title );
+							echo esc_html( $title );
 						}
 
 						echo wp_audio_shortcode(  array( 'src' => $atts['src'], 'loop' => $loop ) );

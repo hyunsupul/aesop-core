@@ -29,6 +29,8 @@ class AesopCoreGallery {
 		// gallery ID
 		$gallery_id = isset( $atts['id'] ) ? (int) $atts['id'] : false;
 
+		// alias to new atts type
+
 		// let this be used multiple times
 		static $instance = 0;
 		$instance++;
@@ -43,7 +45,6 @@ class AesopCoreGallery {
 
 		//gallery caption
 		$gallery_caption = get_post_meta( $gallery_id, 'aesop_gallery_caption', true);
-
 
 		ob_start();
 
@@ -81,7 +82,7 @@ class AesopCoreGallery {
 					}
 
 					// provide the edit link to the backend edit if Aesop Editor is not active
-					if ( !class_exists('Aesop_Editor') && is_user_logged_in() && current_user_can('edit_posts') ) {
+					if ( !class_exists('Lasso') && is_user_logged_in() && current_user_can('edit_posts') ) {
 						$url = admin_url( 'post.php?post='.$gallery_id.'&action=edit' );
 						$edit_gallery = __('edit gallery', 'aesop-core');
 						printf('<a class="aesop-gallery-edit aesop-content" href="%s" target="_blank" title="%s">(%s)</a>',$url, $edit_gallery, $edit_gallery );
@@ -91,10 +92,10 @@ class AesopCoreGallery {
 
 				if ( empty( $gallery_id ) && is_user_logged_in() && current_user_can('edit_posts') ) {
 
-					if ( class_exists('Aesop_Editor') ) {
+					if ( class_exists('Lasso') ) {
 
-						?><div class="aesop-editor--empty-gallery"><?php
-							_e('Setup a gallery by clicking the <span class="aesop-icon-gear"></span> icon above.', 'aesop-core');
+						?><div contenteditable="false" class="lasso--empty-component"><?php
+							_e('Setup a gallery by clicking the <span class="lasso-icon-gear"></span> icon above.', 'aesop-core');
 						?></div><?php
 
 					} else {
@@ -264,23 +265,22 @@ class AesopCoreGallery {
 		// image size
 		$size    = apply_filters('aesop_sequence_gallery_size', 'large');
 
+		// lazy loader class
+		$lazy_holder =  AI_CORE_URL.'/public/assets/img/aesop-lazy-holder.png';
+
+
 		foreach ( $image_ids as $image_id ):
 
             $img     =  wp_get_attachment_image_src($image_id, $size, false,'');
             $alt     =  get_post_meta($image_id, '_wp_attachment_image_alt', true);
             $caption 	= get_post($image_id)->post_excerpt;
 
+            $lazy   = class_exists('AesopLazyLoader') && !is_user_logged_in() ? sprintf( 'src="%s" data-src="%s" class="aesop-sequence-img aesop-lazy-img"',$lazy_holder, esc_url( $img[0] ) ) : sprintf( 'src="%s" class="aesop-sequence-img" ', esc_url( $img[0] ) );
+
            	?>
            	<figure class="aesop-sequence-img-wrap">
 
-           		<?php
-
-           		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-           		if ( is_plugin_active('aesop-lazy-loader/aesop-lazy-loader.php') ) {?>
-					<img class="aesop-sequence-img" data-original="<?php echo esc_url($img[0]);?>" alt="<?php echo esc_attr($alt);?>">
-           		<?php } else { ?>
-           			<img class="aesop-sequence-img" src="<?php echo esc_url($img[0]);?>" alt="<?php echo esc_attr($alt);?>">
-           		<?php } ?>
+           		<img <?php echo $lazy;?> alt="<?php echo esc_attr($alt);?>">
 
            		<?php if ( $caption ) { ?>
            			<figcaption class="aesop-content aesop-component-caption aesop-sequence-caption"><?php echo esc_html($caption);?></figcaption>
