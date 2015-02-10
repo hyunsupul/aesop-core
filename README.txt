@@ -5,7 +5,7 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -99,7 +99,7 @@ All components are pluggable, and there are ample filters and actions to manipul
 If you think something is missing, we want to hear from you. Post your request and bugs on [Github](https://github.com/bearded-avenger/aesop-core).
 
 = Languages =
-Aesop Story Engine is currently available in 14 languages. We work closely with the folks over at WP Translations, and it's becuase of them that these translations are available.  
+Aesop Story Engine is currently available in 14 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.  
 * German
 * Greek
 * Spanish
