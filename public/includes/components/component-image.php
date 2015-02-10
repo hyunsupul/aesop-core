@@ -34,11 +34,8 @@ if (!function_exists('aesop_image_shortcode')){
 		$unique = sprintf('%s-%s',get_the_ID(), $instance);
 
 		// lazy loader class
-<<<<<<< HEAD
-        $lazy   = class_exists('AesopLazyLoader') ? sprintf( 'data-original="%s" class="aesop-lazy-img"',esc_url( $atts['img'] ) ) : sprintf( 'src="%s"', esc_url( $atts['img'] ) );
-=======
-        $lazy   = class_exists('AesopLazyLoader') ? sprintf( 'data-original="%s" class="aesop-lazy-img"',$atts['img'] ) : sprintf( 'src="%s"', $atts['img'] );
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
+		$lazy_holder = AI_CORE_URL.'/public/assets/img/aesop-lazy-holder.png';
+        $lazy   = class_exists('AesopLazyLoader') && !is_user_logged_in() ? sprintf( 'src="%s" data-src="%s" class="aesop-lazy-img"',$lazy_holder, esc_url( $atts['img'] ) ) : sprintf( 'src="%s"', esc_url( $atts['img'] ) );
 
         // automatic alt tag fallback if none specified
 		$auto_alt 	= $atts['img'] ? basename($atts['img']) : null;
@@ -49,7 +46,7 @@ if (!function_exists('aesop_image_shortcode')){
 
 		do_action('aesop_image_before'); //action
 		?>
-		<div id="aesop-image-component-<?php echo esc_html( $unique );?>" class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes );?>" >
+		<div id="aesop-image-component-<?php echo esc_html( $unique );?>" <?php echo aesop_component_data_atts( 'image', $unique, $atts );?> class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes );?>" >
 
 			<?php do_action('aesop_image_inside_top'); //action ?>
 
@@ -63,20 +60,12 @@ if (!function_exists('aesop_image_shortcode')){
 
 						<a class="aesop-lightbox" href="<?php echo $atts['img'];?>" title="<?php echo $atts['caption'];?>">
 							<p class="aesop-img-enlarge"><i class="aesopicon aesopicon-search-plus"></i> <?php _e('Enlarge','aesop-core');?></p>
-<<<<<<< HEAD
 							<img <?php echo $lazy;?> alt="<?php echo esc_attr( $alt );?>">
-=======
-							<img <?php echo $lazy;?> alt="<?php echo $alt;?>">
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 						</a>
 
 					<?php } else { ?>
 
-<<<<<<< HEAD
 						<img <?php echo $lazy;?> alt="<?php echo esc_attr( $alt );?>">
-=======
-						<img <?php echo $lazy;?> alt="<?php echo $alt;?>">
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
 					<?php }
 

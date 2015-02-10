@@ -170,3 +170,105 @@ function aesop_map_tile_provider( $postid = 0 ) {
 
 	return $out;
 }
+
+/**
+*
+*
+*	Return data attributes for use with Aesop Story Editor
+*
+*	@param $type the type of component
+*	@param $gallery_id int the id of the gallery component if being used
+*	@param $defaults array the components attributes including users set merged
+*	@param $editable bool is this component editable directly inline
+*	@since 1.4.2
+*/
+function aesop_component_data_atts( $type, $gallery_id, $defaults, $editable = false ) {
+
+	// bail if we dont have a type or if the current user can't do anything
+	// may just need to back out to is user logged in like we had before
+	if ( empty( $type ) || empty( $defaults ) || !current_user_can('edit_posts') )
+		return;
+
+	// if aesop story editor isn't activated then dont even bother
+	if ( !class_exists('Lasso') )
+		return;
+
+	// we're looping through the default attributes that are fed to us and outputting them as data-attributes
+	$options = '';
+
+	if ( 'gallery' == $type ) {
+
+		$options .= sprintf('%s', aesop_gallery_component_data_atts( $gallery_id ) );
+		$gallery_id = sprintf('data-id=%s', $gallery_id );
+
+	} else {
+
+		foreach ( $defaults as $default => $value ) {
+
+			$options .= !empty( $value ) ? 'data-'.$default.'="'.htmlentities($value).'" '  : false;
+		}
+
+		$gallery_id = false;
+	}
+
+	$edit_state = true == $editable ? 'contenteditable=true' : 'contenteditable=false';
+
+	$out = sprintf('%s data-component-type=%s %s %s ', $edit_state, $type, $gallery_id, $options);
+
+	return $out;
+}
+/**
+*
+*	Return data attribtues for teh gallery component
+*	 This one is different as teh attribute are stored in post meta and not as a shortcode attribute
+*	@return an array of gallery component info
+*	@since 1.4.2
+*/
+function aesop_gallery_component_data_atts( $postid = '' ){
+
+	// bail out if aesop story editor isn't activated or if there's no gallery id passed
+	if ( empty ( $postid ) || !class_exists('Lasso') )
+		return;
+
+	// type
+	$type 			= get_post_meta( $postid, 'aesop_gallery_type', true);
+
+	// global
+	$width 			= get_post_meta( $postid, 'aesop_gallery_width', true );
+	$caption 		= get_post_meta( $postid, 'aesop_gallery_caption', true );
+
+	// grid
+	$grid_item_width = get_post_meta( $postid, 'aesop_grid_gallery_width', true );
+
+	// thumbnail
+	$thumb_trans 	= get_post_meta( $postid, 'aesop_thumb_gallery_transition', true );
+	$thumb_speed 	= get_post_meta( $postid, 'aesop_thumb_gallery_transition_speed', true );
+	$thumb_hide 	= get_post_meta( $postid, 'aesop_thumb_gallery_hide_thumbs', true );
+
+	// photoset
+	$photoset_layout = get_post_meta( $postid, 'aesop_photoset_gallery_layout', true );
+	$photoset_lb 	 = get_post_meta( $postid, 'aesop_photoset_gallery_lightbox', true );
+
+	// get the meta and store into an array
+	$meta = array(
+		'id'			=> $postid,
+		'gallery-type' 	=> sanitize_text_field( trim( $type ) ),
+		'width' 		=> sanitize_text_field( trim( $width ) ),
+		'caption' 		=> sanitize_text_field( trim( $caption ) ),
+		'item-width' 	=> (int) trim( $grid_item_width ),
+		'transition' 	=> sanitize_text_field( trim( $thumb_trans ) ),
+		'speed' 		=> $thumb_speed,
+		'ps-layout' 	=> (int) trim( $photoset_layout ),
+		'ps-lightbox'	=> sanitize_text_field( trim( $photoset_lb ) )
+	);
+
+	// map the meta to att values
+	$options = '';
+
+	foreach ( $meta as $item => $value ) {
+
+		$options .= !empty( $value ) ? 'data-'.$item.'="'.htmlentities($value).'" '  : false;
+	}
+
+	return $options;
+}

@@ -11,21 +11,16 @@ if (!function_exists('aesop_quote_shortcode')){
 
 		$defaults = array(
 			'width'		=> '100%',
-			'background'	=> '#222222',
+			'background' => '#222222',
 			'img'		=> '',
 			'text' 		=> '#FFFFFF',
 			'height'	=> 'auto',
-			'align'		=> 'left',
-			'size'		=> '4',
-<<<<<<< HEAD
-			'parallax'	=> '',
-			'direction'	=> '',
-=======
+			'align'		=> 'center',
+			'size'		=> '1',
 			'parallax'  => '',
 			'direction' => '',
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
-			'quote'		=> '',
-			'cite'		=> '',
+			'quote'		=> 'Quote',
+			'cite'		=> 'Cite',
 
 		);
 		$atts = apply_filters('aesop_quote_defaults',shortcode_atts($defaults, $atts));
@@ -39,12 +34,8 @@ if (!function_exists('aesop_quote_shortcode')){
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 
 		// set size
-<<<<<<< HEAD
 		$size_unit 	= apply_filters( 'aesop_quote_size_unit', 'em', $unique );
 		$size 		= $atts['size'] ? sprintf( '%s%s', $atts['size'], $size_unit ) : false;
-=======
-		$size = $atts['size'] ? sprintf('%sem', $atts['size']) : false;
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
 		//bg img
 		$bgimg = $atts['img'] ? sprintf('background-image:url(%s);background-size:cover;background-position:center center',esc_url( $atts['img'] )) : false;
@@ -68,19 +59,13 @@ if (!function_exists('aesop_quote_shortcode')){
 
 		do_action('aesop_quote_before'); //action
 		?>
-			<div id="aesop-quote-component-<?php echo esc_attr( $unique );?>" class="aesop-component aesop-quote-component <?php echo sanitize_html_class( $classes ).' '.sanitize_html_class( $align ).' '.sanitize_html_class( $contentwidth ).' '.sanitize_html_class( $isparallax ).' '.sanitize_html_class( $lrclass ).' ';?>" <?php echo $style;?>>
-
+			<div id="aesop-quote-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'quote', $unique, $atts );?> class="aesop-component aesop-quote-component <?php echo sanitize_html_class( $classes ).' '.sanitize_html_class( $align ).' '.sanitize_html_class( $contentwidth ).' '.sanitize_html_class( $isparallax ).' '.sanitize_html_class( $lrclass ).' ';?>" <?php echo $style;?>>
 				<!-- Aesop Core | Quote -->
 				<script>
 					jQuery(document).ready(function(){
 
-<<<<<<< HEAD
 						var moving 		= jQuery('#aesop-quote-component-<?php echo esc_attr( $unique );?> blockquote'),
 							component   = jQuery('#aesop-quote-component-<?php echo esc_attr( $unique );?>');
-=======
-						var moving 		= jQuery('#aesop-quote-component-<?php echo $unique;?> blockquote'),
-							component   = jQuery('#aesop-quote-component-<?php echo $unique;?>');
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
 						// if parallax is on and we're not on mobile
 						<?php if ( 'on' == $atts['parallax'] && !wp_is_mobile() ) { ?>
@@ -119,11 +104,7 @@ if (!function_exists('aesop_quote_shortcode')){
 						<?php } else { ?>
 
 							jQuery(moving).waypoint({
-<<<<<<< HEAD
 								offset: '90%',
-=======
-								offset: 'bottom-in-view',
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 								handler: function(direction){
 							   		jQuery(this).toggleClass('aesop-quote-faded');
 
@@ -137,7 +118,7 @@ if (!function_exists('aesop_quote_shortcode')){
 				<?php do_action('aesop_quote_inside_top'); //action ?>
 
 				<blockquote class="<?php echo sanitize_html_class( $align );?>" style="font-size:<?php echo esc_attr( $size);?>;">
-					<?php echo esc_html( $atts['quote'] );?>
+					<span><?php echo esc_html( $atts['quote'] );?></span>
 
 					<?php echo $cite;?>
 				</blockquote>

@@ -164,11 +164,7 @@ if(!function_exists('aesop_shortcodes')){
 						'type'		=> 'color',
 						'default' 	=> '#282828',
 						'desc' 		=> __( 'Background Color', 'aesop-core' ),
-<<<<<<< HEAD
 						'tip'		=> __('Select a background color to be used as the quote background.','aesop-core')
-=======
-						'tip'		=> __('Select a background color to be used as the background.','aesop-core')
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 					),
 					'text'			 => array(
 						'type'		=> 'color',
@@ -185,14 +181,8 @@ if(!function_exists('aesop_shortcodes')){
 					'height' 		=> array(
 						'type'		=> 'text_small',
 						'default' 	=> 'auto',
-<<<<<<< HEAD
 						'desc' 		=> __('Height of Quote Area', 'aesop-core' ),
 						'tip'		=> __('Enter a quote area height like <code>400px</code>. The quote will automatically center itself vertically. By default this is set to <code>auto</code>.','aesop-core')
-=======
-						'prefix'	=> 'px',
-						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
-						'tip'		=> __('Choose a height for the component. The quote will automatically center itself vertically. By default this is set to <code>auto</code>.','aesop-core')
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 					),
 					'align' 			=> array(
 						'type'		=> 'select',
@@ -224,33 +214,19 @@ if(!function_exists('aesop_shortcodes')){
 					'img' 	=> array(
 						'type'		=> 'media_upload',
 						'default' 	=> '',
-<<<<<<< HEAD
 						'desc' 		=> __( 'Background Image', 'aesop-core' ),
 						'tip'		=> __('Optionally add a background image to the quote area. Enter the image URL or click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
-=======
-						'desc' 		=> __( 'Optional Background Image', 'aesop-core' ),
-						'tip'		=> __('URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.','aesop-core')
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 					),
 					'quote' 		=> array(
 						'type'		=> 'text_area',
-						'default' 	=> '',
-<<<<<<< HEAD
+						'default' 	=> 'Stories are made of atoms, not people.',
 						'desc' 		=> __('Quote Text', 'aesop-core' ),
 						'tip'		=> __('The actual quote text that will be displayed.','aesop-core')
-=======
-						'desc' 		=> __('The quote', 'aesop-core' ),
-						'tip'		=> __('The actual quote that will be displayed.','aesop-core')
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 					),
 					'cite' 		=> array(
 						'type'		=> 'text_area',
-						'default' 	=> '',
-<<<<<<< HEAD
+						'default' 	=> 'Great person',
 						'desc' 		=> __('Cite', 'aesop-core' ),
-=======
-						'desc' 		=> __('Cite (optional)', 'aesop-core' ),
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 						'tip'		=> __('Provide an optional cite or source for the quote.','aesop-core')
 					),
 					'parallax' 		=> array(
@@ -313,14 +289,8 @@ if(!function_exists('aesop_shortcodes')){
 					'height'			=> array(
 						'type'		=> 'text_small',
 						'default' 	=> '',
-<<<<<<< HEAD
 						'desc' 		=> __( 'Height of Component', 'aesop-core' ),
 						'tip'		=> __('Enter an optional height for the component. ou can enter the size as <code>40%</code> or <code>500px</code>. By default it\'s set to <code>auto</code>. Use a large height like <code>1200px</code> to have a large blank area with small text.','aesop-core')
-=======
-						'prefix'	=> 'px',
-						'desc' 		=> __( 'Height of Component (optional)', 'aesop-core' ),
-						'tip'		=> __('Enter an optional height for the component. By default it\'s set to <code>auto</code>. Use a large height like <code>1200px</code> to have a large blank area with small text.','aesop-core')
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 					),
 					'columns' 			=> array(
 						'type'		=> 'select',
@@ -420,13 +390,8 @@ if(!function_exists('aesop_shortcodes')){
 							)
 						),
 						'default' 	=> 'right',
-<<<<<<< HEAD
 						'desc' 		=> __('Position of Floater Element', 'aesop-core' ),
 						'tip'		=> __('If using the Floater Element option, where should it be positioned?','aesop-core')
-=======
-						'desc' 		=> __('Position of Floater', 'aesop-core' ),
-						'tip'		=> __('If you are using the Floater option, where should the floater be positioned?','aesop-core')
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 					),
 					'floaterdirection' => array(
 						'type'		=> 'select',
@@ -505,22 +470,6 @@ if(!function_exists('aesop_shortcodes')){
 						'desc'		=> __('Full-size Background Image','aesop-core'),
 						'tip'		=> __('If set to on, the background image of the chapter will be as large as the browser window.','aesop-core')
 					),
-					'full'			=> array(
-						'type'		=> 'select',
-						'values' 	=> array(
-							array(
-								'value' => 'on',
-								'name'	=> __('On','aesop-core')
-							),
-							array(
-								'value' => 'off',
-								'name'	=> __('Off','aesop-core')
-							)
-						),
-						'default'	=> '',
-						'desc'		=> __('Full-size Background Image','aesop-core'),
-						'tip'		=> __('If set to on, background image of the chapter will be as large as the browser.','aesop-core')
-					),
 					'img' 			=> array(
 						'type'		=> 'media_upload',
 						'default' 	=> ' ',
@@ -534,18 +483,14 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Parallax Image', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
+					/*
 					'height' 		=> array(
 						'type'		=> 'text_small',
 						'default' 	=> '500',
-<<<<<<< HEAD
 						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
 						'tip'		=> __('The height of the viewable image area. Enter a value such as <code>500px</code>. Avoid using percentages with this option.','aesop-core')
-=======
-						'prefix'	=> 'px',
-						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
-						'tip'		=> __('The height of the viewable image area. Enter a value such as <em>500</em>. Avoid using percentages as heights here.','aesop-core')
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 					),
+					*/
 					'img' 			=> array(
 						'type'		=> 'media_upload',
 						'default' 	=> '',
@@ -571,13 +516,8 @@ if(!function_exists('aesop_shortcodes')){
 					'caption' 	=> array(
 						'type'		=> 'text_area',
 						'default' 	=> 'false',
-<<<<<<< HEAD
 						'desc' 		=> __('Caption', 'aesop-core' ),
 						'tip'		=> __('Display an optional caption that will appear where set in the next option.','aesop-core')
-=======
-						'desc' 		=> __('Caption (optional)', 'aesop-core' ),
-						'tip'		=> __('Provide an optional caption that will be displayed using the position below.','aesop-core')
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 					),
 					'captionposition' => array(
 						'type'		=> 'select',
@@ -617,11 +557,7 @@ if(!function_exists('aesop_shortcodes')){
 						),
 						'default' 	=> 'off',
 						'desc' 		=> __('Image Lightbox', 'aesop-core' ),
-<<<<<<< HEAD
 						'tip'		=> __('Enable an optional lightbox. When a user clicks the image, it will display the full size version of the parallax image in a lightbox.','aesop-core')
-=======
-						'tip'		=> __('Enable an optional lightbox, that when clicked, will show the full size version of the parallax image.','aesop-core')
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 					),
 					'floater' 		=> array(
 						'type'		=> 'select',
@@ -948,15 +884,6 @@ if(!function_exists('aesop_shortcodes')){
 						'default' 	=> 'off',
 						'desc' 		=> __( 'Stop Video When Out of View (only if using <em>self</em> as video source)', 'aesop-core' ),
 						'tip'		=> __('Used together with the option above, this option when set to <em>on</em> will stop the video player from playing once scrolled out of view.','aesop-core')
-<<<<<<< HEAD
-=======
-					),
-					'caption' 			=> array(
-						'type'		=> 'text_area',
-						'default' 	=> '',
-						'desc' 		=> __( 'Caption (optional)', 'aesop-core' ),
-						'tip'		=> __('Optionally display a caption below the video.','aesop-core')
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 					)
 				),
 				'desc' 				=> __( 'Responsive video component with alignment and optional caption.','aesop-core' ),
@@ -964,11 +891,12 @@ if(!function_exists('aesop_shortcodes')){
 			'map' 				=> array(
 				'name' 				=> __('Map', 'aesop-core'),
 				'type' 				=> 'single',
+				'front'				=> true,
+				'front_type'		=> 'map',
 				'atts' 				=> array(
 					'height' 			=> array(
 						'type'		=> 'text_small',
 						'default' 	=> '',
-						'prefix'	=> 'px',
 						'desc' 		=> __( 'Height', 'aesop-core' ),
 						'tip'		=> __('The height of the map component. By default this is set to <em>500px</em>. Avoid using percentages with this option.','aesop-core')
 					),
@@ -1110,6 +1038,8 @@ if(!function_exists('aesop_shortcodes')){
 			'gallery' 				=> array(
 				'name' 				=> __('Gallery', 'aesop-core'),
 				'type' 				=> 'single',
+				'front'				=> true,
+				'front_type'		=> 'gallery',
 				'atts' 				=> array(
 					'id' 			=> array(
 						'type'		=> 'select',
@@ -1218,8 +1148,4 @@ function aesop_option_counter( $count = 10 ) {
 	return $array;
 }
 
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
