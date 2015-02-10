@@ -57,6 +57,16 @@ see [https://github.com/bearded-avenger/aesop-core/releases](https://github.com/
 * German
 * Polish
 * Serbian
+* Greek
+* French
+* Japanese
+* Dutch
+* Portuguese
+* Romanian
+* Russian
+* Slovak
+* Turkish
+* Chinese
 
 ---
 
