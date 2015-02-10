@@ -53,18 +53,19 @@ see [https://github.com/bearded-avenger/aesop-core/releases](https://github.com/
 ---
 
 ### Translations
-* Spanish
+Aesop Story Engine is currently available in 14 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
 * German
-* Polish
-* Serbian
 * Greek
+* Spanish
 * French
 * Japanese
 * Dutch
-* Portuguese
+* Polish
+* Breton
 * Romanian
 * Russian
-* Slovak
+* Slovakian
+* Serbian
 * Turkish
 * Chinese
 
