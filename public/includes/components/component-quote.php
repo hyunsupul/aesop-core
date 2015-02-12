@@ -20,7 +20,7 @@ if (!function_exists('aesop_quote_shortcode')){
 			'parallax'  => '',
 			'direction' => '',
 			'quote'		=> 'Quote',
-			'cite'		=> 'Cite',
+			'cite'		=> '',
 
 		);
 		$atts = apply_filters('aesop_quote_defaults',shortcode_atts($defaults, $atts));
