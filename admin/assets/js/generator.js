@@ -7,17 +7,18 @@ jQuery(document).ready(function($) {
 		e.preventDefault();
 
 		if ( typeof window.aiactive !== 'undefined' ) {
-      alert('Nesting components within the visual interface is not supported.');
-    } else if ( typeof window.ailocked !== 'undefined' ) {
-      alert('Please click on the editor and set your cursor location first.');
-    } else {
-      jQuery('body').toggleClass('modal-open');
-      jQuery(modal).toggleClass('aesop-generator-open');
-    }
+	      alert('Nesting components within the visual interface is not supported.');
+	    } else if ( typeof window.ailocked !== 'undefined' ) {
+	      alert('Please click on the editor and set your cursor location first.');
+	    } else {
+	      jQuery('body').toggleClass('modal-open');
+	      jQuery(modal).toggleClass('aesop-generator-open');
+	    }
+
 	});
 
 	var settingsHeight = function(){
-		var height  = $(window).height() - 90;
+		var height  = $(window).height() - 60;
 		var width = $(window).width();
 
 		if ( width < 782 ) {
@@ -74,6 +75,20 @@ jQuery(document).ready(function($) {
 
     		var queried_shortcode = $('#aesop-generator-select').find(':selected').val();
 			$('#aesop-generator-settings').html(aesopshortcodes[queried_shortcode]);
+
+			// conditionally load the map marker shortcode
+			// since 1.3
+			$('.aesop-map-sticky #aesop-generator-attr-sticky').on('change',function(){
+				var selectedValue = $(this).val();
+
+				if( 'off' == selectedValue ) {
+					$('#aesop-generator-wrap li.map_marker').fadeOut();
+
+				} else {
+					$('#aesop-generator-wrap li.map_marker').fadeIn().css('display','inline-block');
+				}
+
+			});
 
 			////
 			// conditional loading
@@ -200,10 +215,13 @@ jQuery(document).ready(function($) {
 
 // media uploader
 var file_frame;
+var className;
 
-jQuery('#aesop-upload-img').live('click', function( event ){
+jQuery(document).on('click', '#aesop-upload-img', function( e ){
 
-    event.preventDefault();
+    e.preventDefault();
+
+    className = e.currentTarget.parentElement.className;
 
     // If the media frame already exists, reopen it.
     if ( file_frame ) {
@@ -222,8 +240,8 @@ jQuery('#aesop-upload-img').live('click', function( event ){
 
     // When an image is selected, run a callback.
     file_frame.on( 'select', function() {
-      	attachment = file_frame.state().get('selection').first().toJSON();
-  		jQuery('.aesop-generator-attr-media_upload').val(attachment.url);
+      var attachment = file_frame.state().get('selection').first().toJSON();
+      jQuery('.' + className + ' .aesop-generator-attr-media_upload').val(attachment.url);
     });
 
     // Finally, open the modal

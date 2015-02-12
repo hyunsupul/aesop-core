@@ -1,5 +1,5 @@
 # Description
-Aesop Story Engine is an open-sourced suite of tools that empowers developers to build feature-rich, interactive, long-form storytelling themes for Wordpress. ASE is the same engine that drives the storytelling experience through our hosted platform.
+Aesop Story Engine is an open-sourced suite of tools that empower developers to build feature-rich, interactive, long-form stories within Wordpress. ASE is the same engine that drives the storytelling experience through our hosted platform at https://story.am
 
 ---
 
@@ -22,7 +22,7 @@ Aesop Story Engine is an open-sourced suite of tools that empowers developers to
 ---
 
 ##### Documentation
-[http://developers.aesopstories.com/](http://developers.aesopstories.com/)  
+[http://aesopstoryengine.com/developers/](http://aesopstoryengine.com/developers/)  
 
 ---
 
@@ -48,15 +48,18 @@ Interactive elements are created while crafting stories, with the Story Componen
 ---
 
 ### Changelog
+see [https://github.com/bearded-avenger/aesop-core/releases](https://github.com/bearded-avenger/aesop-core/releases)
 
 ---
 
 ### Translations
-* Spanish - via [@tmeister](https://twitter.com/tmeister)  
-* German - via [@kuenstlerich](https://twitter.com/kuenstlerich)  
+* Spanish
+* German
+* Polish
+* Serbian
 
 ---
 
 ### Demo Theme  
-Here is a very, very basic sample WordPress theme showing implementation of the story engine component design. This demo theme ONLY includes styles for the single story as an example: 
-[https://github.com/bearded-avenger/aesop-sample-theme](https://github.com/bearded-avenger/aesop-sample-theme)  
+Here is a basic sample WordPress theme showing implementation of the story engine component design.
+[https://github.com/AesopInteractive/aesop-story-theme](https://github.com/AesopInteractive/aesop-story-theme)  

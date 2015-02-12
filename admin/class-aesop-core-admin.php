@@ -46,11 +46,6 @@ class Aesop_Core_Admin {
 		require_once( AI_CORE_DIR.'admin/includes/notify.php' );
 		require_once( AI_CORE_DIR.'admin/includes/components/component-map.php' );
         require_once( AI_CORE_DIR.'admin/includes/components/component-gallery.php' );
-
-        if( !class_exists( 'CMB_Meta_Box' ) ) {
-    		require_once( AI_CORE_DIR.'/admin/includes/custom-meta-boxes/custom-meta-boxes.php' );
-    	}
-
 		/*
 		 	* Call $plugin_slug from public plugin class.
 		 	*
@@ -69,6 +64,8 @@ class Aesop_Core_Admin {
 		add_filter( 'mce_css', 					array($this,'aesop_editor_styles'));
 		add_filter( 'wp_fullscreen_buttons', 	array($this,'fs_generator_button'));
 		add_filter( 'mce_external_plugins', 	array($this,'tinymce_plugin'));
+		add_action( 'after_wp_tiny_mce', 		array($this,'ase_after_wp_tiny_mce'));
+		add_filter( 'plugin_row_meta', 			array( $this, 'plugin_meta' ), 10, 2 );
 	}
 
 	/**
@@ -164,9 +161,8 @@ class Aesop_Core_Admin {
 	 	*
 	 	* @since     1.1.0
 	*/
-	public function tinymce_plugin(){
+	public function tinymce_plugin($plugins_array){
 		$plugins = array('aiview','noneditable');
-		$plugins_array = array();
 
 		foreach ($plugins as $plugin) {
 			$plugins_array[ $plugin ] = plugins_url('assets/js/tinymce/', __FILE__) . $plugin . '/plugin.min.js';
@@ -243,11 +239,75 @@ class Aesop_Core_Admin {
 	private function messages() {
 
 		$message = array(
-			__('Brought to you by Aesopinteractive LLC - <a href="http://aesopstoryengine.com">http://aesopstoryengine.com</a>', 'aesop-core'),
-			__('Donate to further development of Aesop Story Engine at <a href="http://aesopstoryengine.com/donate">http://aesopstoryengine.com/donate</a>', 'aesop-core')
+			__('Product of <span><a href="http://aesopstoryengine.com">AESOP INTERACTIVE LLC</a></span>', 'aesop-core'),
+			__('<span><a href="http://aesopstoryengine.com/donate">Support new features and bug fixes</a></span> of Aesop Story Engine', 'aesop-core'),
+			__('Story Beautiful? <span><a href="http://aesopstoryengine.com/donate">Thank the developer</a></span>.', 'aesop-core')
 		);
 
 		return '<p class="aesop-generator-mark">'.$message[array_rand($message)].'</p>';
 
+	}
+
+	/**
+	*
+	*	@since 1.3
+	*	@return handle some stuff after tiny mce is loaded
+	*
+	*/
+	public function ase_after_wp_tiny_mce() {
+
+		?>
+
+		<script type="text/javascript">
+			function mceAlive() {
+		  	if ( typeof tinymce !== 'undefined' && tinymce.activeEditor ) {
+		  		var ed = tinymce.activeEditor;
+			    var sc_attr = jQuery(ed.contentDocument).find('.aesop-component').data('aesop-sc');
+			    sc_attr = window.decodeURIComponent(sc_attr);
+			    // let's check to see if sticky is on
+			    if( sc_attr.match(/sticky=['"](top|left|right|bottom)['"]/) ) {
+			    	var sticky_location = sc_attr.match(/sticky=['"](top|left|right|bottom)['"]/)[1];
+			    	//console.log( 'The chosen sticky location is: ' + sticky_location );
+
+					if( 'off' !== sticky_location ) {
+						jQuery('#aesop-generator-wrap li.map_marker').fadeIn().css('display','inline-block');
+					}
+
+			    }
+
+			  } else {
+			    setTimeout(mceAlive, 15);
+			  }
+			}
+			mceAlive();
+		</script>
+
+		<?php
+
+	}
+
+	/**
+	*
+	*	Add some custom links to the plugins.php page for Aesop
+	*
+	*	@since 1.3
+	*	@param $links array array of new links
+	*	@param $file
+	*
+	*	@return array new array of links for our plugin listing on plugins.php
+	*/
+	function plugin_meta( $links, $file ) {
+
+		if ( strpos( $file, 'aesop-core.php' ) !== false ) {
+
+		 	$new_links = array(
+		 		'<a href="http://aesopstoryengine/help" target="_blank">Documentation</a>',
+				'<a href="http://aesopstoryengine/donate" target="_blank">Donate</a>'
+			);
+
+			$links = array_merge( $links, $new_links );
+		}
+
+		return $links;
 	}
 }

@@ -1,0 +1,93 @@
+#ase_map_component {
+
+    #aesop-map-address {
+        margin:5px 5px 0 0;
+    }
+
+}
+
+#aesop-map {
+
+    margin-top: 10px;
+
+    // marker wrap
+    .leaflet-popup-content-wrapper, 
+    .leaflet-popup-tip {
+        border-radius:4px;
+    }
+
+    // inner marker content
+    .leaflet-popup-content {
+        margin:10px;
+    }
+
+    // hide the close button because teh update button closes
+    .leaflet-popup-close-button {
+        position: absolute;
+        left:-10000px;
+        height:0;
+    }
+
+    //marker buttons
+    .marker-update-button,
+    .marker-delete-button {
+        border-radius:0;
+        color:white;
+        box-shadow:none;
+        border:none;
+        border-radius:3px;
+        display: inline-block;
+        height:25px;
+        width:25px;
+        vertical-align: top;
+        .box-sizing(border-box);
+        text-align: center;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            outline:none;
+            focus:none;
+            box-shadow: none;
+        }
+
+        &:before {
+            position: relative;
+            text-align: center;
+        }
+    }
+    .marker-update-button {
+        background:@green;
+
+        &:hover {
+            background:darken(@green,6);
+        }
+        &:active {
+            background:darken(@green,10);
+        }
+
+        &:before {
+            top:1px;
+            left:-1px;
+            font-size:24px;
+        }
+    }
+    .marker-delete-button {
+        background:@red;
+
+        &:hover {
+            background:darken(@red,6);
+        }
+        &:active {
+            background:darken(@red,10);
+        }
+
+        &:before {
+            font-size:17px;
+            top:1px;
+            left:1px;
+        }
+    }
+}

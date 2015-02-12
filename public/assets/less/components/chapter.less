@@ -41,8 +41,129 @@
     }
 }
 
+
+/////////////////////////////
+// new cahpter menu as of 1.4
+
+@chapter-menu-width: 250px;
+@chapter-toggle-width: 44px;
+
+// toggle chapter menu open
+.aesop-toggle-chapter-menu {
+    position:fixed;
+    right:-1px; // covers border right
+    bottom:57px; // matches up with the chapter line from the title
+    height:@chapter-toggle-width;
+    width:@chapter-toggle-width;
+    background:@baseContrast;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    z-index: 150;
+    .transition(right .25s ease);
+
+    &:hover {
+        background:#007aac;
+        text-decoration: none;
+
+        i {
+            color:white;
+        }
+    }
+
+    i {
+        color:#007aac;
+    }
+
+}
+
+// body class chapter
+.aesop-chapter-menu-open {
+    .aesop-chapter-menu {
+        right:0;
+    }
+    .aesop-toggle-chapter-menu {
+        right:@chapter-menu-width;
+    }
+}
+
+// chapter close button
+.aesop-close-chapter-menu {
+    position: absolute;
+    top:12px;
+    right:12px;
+    z-index: 1;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+// main chapter menu
+.aesop-chapter-menu {
+    right:-@chapter-menu-width;
+    width:@chapter-menu-width;
+    top:0;
+    position:fixed;
+    bottom:0;
+    background:@baseContrast;
+    .transition(right .25s ease);
+    z-index: 500;
+    counter-reset: sequence-counter;
+    color:#777;
+
+    .scroll-nav__list {
+        margin:0;
+        padding:0;
+    }
+
+    * {
+        box-sizing: border-box;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+    }
+
+    li {
+        display: block;
+        margin-bottom: 0;
+        position: relative;
+        padding-left:15px;
+        font:normal 14px/28px Arial, Helvetica, sans-serif;
+
+        &:before {
+            content: counter(sequence-counter, upper-roman);
+            counter-increment: sequence-counter;
+            position: absolute;
+            left:0;
+        }
+    }
+
+    a:link,
+    .scroll-nav__link {
+        color:#777;
+        padding-top:5px;
+        padding-bottom:5px;
+    }
+}
+
+// account for admin menu
+.admin-bar {
+    .aesop-chapter-menu {
+        top:32px;
+    }
+}
+
+// chapter menu inner
+.aesop-chapter-menu--inner {
+    padding:15px;
+}
+
+// end new chapter menu
+///////////////////////
+
+
 // deprecated
 .aesop-chapter-title {
     position: absolute;
     left:-10000px;
 }
+

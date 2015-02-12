@@ -45,6 +45,7 @@ class Aesop_Core {
 	private function __construct() {
 
 		// load component array
+
 		require_once( AI_CORE_DIR.'admin/includes/available.php');
 
 		// load component helpers
@@ -292,6 +293,8 @@ class Aesop_Core {
 
 		// core script
 		wp_enqueue_script('ai-core', AI_CORE_URL.'/public/assets/js/ai-core.min.js', array('jquery'), AI_CORE_VERSION, true);
+
+
 	}
 
 	/**
@@ -317,14 +320,19 @@ class Aesop_Core {
 	 	* @since    1.0.0
 	*/
     function shortcode_empty_paragraph_fix($content) {
-        $array = array (
+
+        $array = array(
             '<p>[' => '[',
             ']</p>' => ']',
             ']<br />' => ']'
         );
 
+        // remove empty paragraphs and break tags next to shortcodes
         $content = strtr($content, $array);
 
-		return $content;
+        // remove paragraphs with empty spaces
+        $clean_content = str_replace('<p>&nbsp;</p>', '', $content);
+
+		return $clean_content;
     }
 }

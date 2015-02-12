@@ -11,7 +11,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
-Suite of components that enables the creation of interactive storytelling themes for WordPress.
+Suite of components that enables the creation of interactive longform stories WordPress.
 
 == Description ==
 
@@ -19,16 +19,19 @@ The Aesop Story Engine is a suite of open-sourced tools and components that empo
 
 [http://aesopstoryengine.com](http://aesopstoryengine.com)
 
-[youtube http://www.youtube.com/watch?v=BndId0gvMlA]
+[youtube http://www.youtube.com/watch?v=84BFGxkHby0]
+
+**Try Aesop for Free**
+[http://tryaesop.com](http://tryaesop.com)
 
 Utilizing these components, writers can can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. Here’s a demo theme incorporating these story components.
 [http://playground.aesopstories.com](http://playground.aesopstories.com)
 
 **Audio**
-Display an audio player with support for MP3. This is great for showcasing audio interviews.
+Display an audio player with support for MP3 that can be optionally hidden. This is great for showcasing audio interviews.
 
 **Video**
-Showcase a fullscreen video with support for Kickstarter, Viddler, YouTube, Vimeo, Daily Motion, and Blip.TV.
+Showcase a fullscreen video with support for Kickstarter, Viddler, YouTube, Vimeo, Daily Motion, and Blip.TV with support for captions and alignment.
 
 **Content**
 The content component is a multi-purpose component that can display a background image, background color, or can split the content into multiple magazine type columns.
@@ -40,13 +43,13 @@ Display a character avatar, title, and small bio to help readers be reminded of 
 The ASE Gallery component allows you to create and manage unlimited story galleries. Each gallery can be displayed as a grid, a thumbnail gallery, stacked, or sequential type gallery, all with caption support.
 
 **Chapter Headings**
-Creates scroll-to points with headings.
+Creates scroll-to points with large full-screen images as headings.
 
 **Image**
 The image component displays an image and caption, with optional lightbox. Also allows you to align the image, as well as offset the image so it hangs outside of the content column.
 
 **Locations**
-This component allows you to create a map for your story. You can add markers to the map with custom messages. This is a great component for showcasing a characters travels.
+This component allows you to create a map for your story. You can add markers to the map with custom messages, and even have the map scroll to points as you scroll through the story.
 
 **Parallax**
 A fullwidth image component with caption and lightbox. As you scroll, the image moves slightly to provide a parallax effect. Includes optional floater parallax item to use for multiple levels of parallax engagement.
@@ -66,8 +69,11 @@ This component allows you to upload a PDF or image, that is shown to the user on
 Here’s a demo theme incorporating these story components.
 [http://playground.aesopstories.com](http://playground.aesopstories.com)
 
+Here’s a real story.
+[http://aesopstoryseri.es/the-quiet-day/](http://aesopstoryseri.es/the-quiet-day/)
+
 Here’s documentation on the Story Engine.
-[http://aesopstoryengine.com/documentation](http://aesopstoryengine.com/documentation)
+[http://aesopstoryengine.com/help](http://aesopstoryengine.com/help)
 
 
 = Theme Implementation =
@@ -83,14 +89,31 @@ Aesop Story Engine 1.0.9 now features full theme compatibility with a simple cod
 
 `add_theme_support("aesop-component-styles", array("parallax", "image", "quote", "gallery", "content", "video", "audio", "collection", "chapter", "document", "character", "map", "timeline") );`
 
-We reccommend placing this in a WordPress themes functions.php, or use a plugin like [Code Snippets](https://wordpress.org/plugins/code-snippets/) and put it there.
+We recommend placing this in a WordPress themes functions.php, or use a plugin like [Code Snippets](https://wordpress.org/plugins/code-snippets/) and put it there.
 
 = Developers =
-This story engine was in beta for over 4 months, and every attempt has been made to ensure that 1.0 is as stable as can be. No breaking changes will be made until the next major version, which at the moment isn’t even a speckle in my daddies eye. All components are pluggable, and there are ample filters and actions to manipulate just about everything you can imagine. Refer to the documentation below for more.
+All components are pluggable, and there are ample filters and actions to manipulate just about everything you can imagine. Refer to the documentation below for more.
 
 [http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers)
 
 If you think something is missing, we want to hear from you. Post your request and bugs on [Github](https://github.com/bearded-avenger/aesop-core).
+
+= Languages =
+Aesop Story Engine is currently available in 14 languages. We work closely with the folks over at WP Translations, and it's becuase of them that these translations are available.  
+* German
+* Greek
+* Spanish
+* French
+* Japanese
+* Dutch
+* Polish
+* Breton
+* Romanian
+* Russian
+* Slovakian
+* Serbian
+* Turkish
+* Chinese
 
 == Installation ==
 
@@ -126,13 +149,68 @@ Full documentation can be found below.
 1. The component generator triggered within the edit post screen.
 2. Story Engine components and their descriptions
 /Users/Nick/Sites/wp-aesop/wp-content/plugins/aesop-core/README.txt
+
 == Upgrade Notice ==
 
 = 1.0 =
 * Initial Release
 
-
 == Changelog ==
+
+= 1.4.2 =
+* NEW - Compatibility with Lasso - our soon to be released front-end editor add-on
+* NEW - Now available in 14 languages - props wp-translations.org
+* FIX - Numerous i18n fixes - props wp-translations.org
+* FIX - Fixed improper audio title formatting
+* FIX - Fixed audio component attributes filter name
+* FIX - Fixed an error within the Gallery admin affecting PHP 5.4
+* FIX - Fixed bug with TinyMCE load dependency
+* TWEAK - Better compatibility with the Aesop Lazy Loader add-on
+* TWEAK - Prevent "Upgrade Galleries" notice from showing if you've already upgraded galleries
+* TWEAK - The Parallax component has gotten a significant overhaul. The most important being that the height attribute is no longer used. Instead, the height of the parallax component is not only fluid and responsive, but it's automatically calculated based on the height of the image that you upload. In this regard it should always be sized perfectly. It's best to use an image at least 800px tall. In addition, the parallax image width is now respected, which means there's no more clipping on left and right. Although we hate to remove the "fixed height" option, and although we realize this might be seen as a jarrying change, we hope you'll enjoy this significant but necessary improvement.
+
+= 1.4.1 =
+* FIXED - Yandex in Fotorama : A few updates back we attempted to block Fotorama from inserting its Yandex tracker. Since we noticed that this sometimes fails to block, we've modified their source code and have removed it completely. It's also worth noting that they've gotten a lot of heat from this, and have since removed it all together from their script. This should no longer be an issue, and we apologize for any inconviences that we may have inadvertantly caused.
+
+= 1.4 =
+* NEW - Redesigned gallery admin - makes creating and managing galleries easier than ever before
+* NEW - Chapter component slideout - fully compatible with all WordPress themes ( with extended css support snippet ).
+* NEW - Chapter component placeholders now show Chapter titles in the editor - props @crowjonah
+* NEW - Map markers (used with Sticky Maps) now shows Marker textin the placeholder in the editor - propes @crowjonah
+* FIXED - Bug with maps not correctly displaying in admin in Firefox
+* FIXED - Sticky map styles bleeding out of single posts
+* FIXED - Image upload bug when using multiple image fields (only affects 3rd party plugins)
+* FIXED - Transparent issue with YouTube video player in IE 11 - props @artjosimon
+* FIXED - Stacked Parallax gallery bug
+* NOTE - With the new Galleries in 1.4, the metabox library has been removed from Aesop Story Engine, saving space and reducing the size of the code base. This will only affect 3rd party developers who are relying on our library. Visit Github repo for more details on fixes.
+
+= 1.3.2 =
+* FIXED - Code showing in Chapter Component
+* FIXED - Parallax floater markup
+* FIXED - Sequence gallery images not showing
+
+= 1.3.1 =
+* HOTFIX - Fix syntax not supported by PHP older than 5.4
+
+= 1.3 =
+* NEW - Freshly designed user interface with light color scheme to match WordPress design patterns
+* NEW - Map component admin with ability to click the map to add markers instead of manually adding GPS coordinates
+* NEW - Map component "sticky" mode that changes map markers as you scroll down the story
+* NEW - Map component tile filter aesop_map_tile_provider that allow you to specify a different tile provider per post (or globally) [ref](https://github.com/bearded-avenger/aesop-core/pull/172#issuecomment-63518448)
+* NEW - Components can now be cloned
+* NEW - New filter aesop_quote_component_unit to change unit size of blockquote 
+* FIXED - All variables now properly escaped within components
+* FIXED - The "used in" column of the Galleries edit screen
+* FIXED - Additional spaces being added on the front end after saving components 
+* FIXED - Timeline scrollnav build failing on certain occassions
+* FIXED - Some parts of the component placeholder highlighting after clicking the edit button
+* FIXED - JS error that shows if the visual editor is turned off in options (props @wavetree)
+* FIXED - Self hosted videos not stretching to 100% width
+* FIXED - Zero height on an aligned video component
+* FIXED - Only show grid caption markup if captions present (props @artjomsimon)
+* TWEAK - Related videos at the end of YouTube videos now off by default (props @artjomsimon)
+* TWEAK - Improved video markup
+* UPDATED - Fotorama, fitvids, scrollnav, and images loaded to their respective current versions
 
 = 1.2.1 ==
 * FIXED - lightbox gallery images not opening in grid gallery
@@ -149,7 +227,6 @@ Full documentation can be found below.
 * ADDED - New filter aesop_generator_loads_on which accepts an array of admin pages to load the generator
 * TWEAK - Cleaned up the gallery creation process including removing core options from the gallery settings modal that Aesop doesn't use, along with only running our modifications on Aesop Galleries
 * TWEAK - Added additional checks to ensure $post is set before loading map components
-
 
 = 1.1 =
 * NEW - Complete compatibilty with WordPress 4.0
