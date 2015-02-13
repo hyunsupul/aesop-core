@@ -72,4 +72,4 @@ Aesop Story Engine is currently available in 14 languages. We work closely with 
 ---
 
 ### Demo Theme  
-Here is a basic sample WordPress theme showing implementation of the story engine component design: [Aesop Story Theme](https://github.com/AesopInteractive/aesop-story-theme)  
+Here is a basic sample WordPress theme showing implementation of the story engine component design: [Aesop Story Theme](https://github.com/AesopInteractive/aesop-story-theme).
