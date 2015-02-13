@@ -25,7 +25,7 @@ if (!function_exists('aesop_timeline_stop_shortcode')){
 		$actiontop = do_action('aesop_timeline_before'); //action
 		$actionbottom = do_action('aesop_timeline_after'); //action
 
-		$out = sprintf('%s<h2 class="aesop-timeline-stop aesop-component" %s %s>%s</h2>%s',$actiontop, $datatitle, aesop_component_data_atts( 'timeline', $unique, $atts ), esc_html($atts['num']), $actionbottom );
+		$out = sprintf('%s<h2 class="aesop-timeline-stop aesop-component" %s %s>%s</h2>%s',$actiontop, $datatitle, aesop_component_data_atts( 'timeline_stop', $unique, $atts ), esc_html($atts['num']), $actionbottom );
 
 		return apply_filters('aesop_timeline_output', $out);
 	}
