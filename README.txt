@@ -157,6 +157,10 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.5 =
+* NEW - Welcome screen on plugin activation
+* FIX - Blank map tiles with new Mapbox IDs. Mapbox changed things and now requires a public key for the map tiles. We're using our public key, but have introduced a filter should you need to change this. On this update, we've changed our mapbox id, and have written an upgrade script that will ensure you have a smooth transition in this update
+
 = 1.4.2 =
 * NEW - Compatibility with Lasso - our soon to be released front-end editor add-on
 * NEW - Now available in 14 languages - props wp-translations.org
