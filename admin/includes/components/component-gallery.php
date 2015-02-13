@@ -422,6 +422,9 @@ class AesopGalleryComponentAdmin {
 
 		check_ajax_referer( 'aesop-galleries-upgrade', 'security' );
 
+		if ( !current_user_can('manage_options') )
+			return;
+
 		// get the posts with the maps shortode
 		$posts = get_posts( array( 'post_type' => array('ai_galleries'), 'posts_per_page' => -1 ) );
 
