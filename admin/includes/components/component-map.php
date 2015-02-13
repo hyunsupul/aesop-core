@@ -572,7 +572,7 @@ class AesopMapComponentAdmin {
 		$mapbox_upgrade_option = get_option('ase_mapbox_upgraded');
 
 		// only run if we haven't previously updated the mapbox id and its less than 1.5
-		if ( empty( $mapbox_upgrade_option ) && AI_CORE_VERSION <= '1.5' ) {
+		if ( empty( $mapbox_upgrade_option ) ) {
 
 			$out = '<div class="error"><p>';
 
@@ -597,7 +597,7 @@ class AesopMapComponentAdmin {
 		$nonce = wp_create_nonce('aesop-mapbox-upgrade');
 
 		// only run if we have markers and have never upgraded
-		if ( empty( $mapbox_upgrade_option ) && AI_CORE_VERSION <= '1.5' ) { ?>
+		if ( empty( $mapbox_upgrade_option ) ) { ?>
 			<!-- Aesop Upgrade Map Meta -->
 			<script>
 				jQuery(document).ready(function($){

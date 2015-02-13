@@ -138,12 +138,15 @@ function aesop_map_tile_provider( $postid = 0 ) {
 	// default provider - changed as of 1.5
 	$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.l74n2fi6');
 
+	// mapbox v4 api now requires a public token
+	$token     = apply_filters('aesop_map_token', 'pk.eyJ1IjoiYWVzb3BpbnRlcmFjdGl2ZSIsImEiOiJ3TjJ4M0hJIn0.LwbGC9U8iKT_saX8c6v_4Q');
+
 	// setup a filter to change the provider
 	$provider = apply_filters('aesop_map_tile_provider', 'mapbox', $postid);
 
 	// mapbox map path
 	$mapbox_upgraded = get_option('ase_mapbox_upgraded');
-	$path = empty( $mapbox_upgraded ) ? sprintf('//{s}.tiles.mapbox.com/v3/%s/{z}/{x}/{y}.png', esc_attr( $mapboxid ) ) : sprintf('https://api.tiles.mapbox.com/v4/%s/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiYWVzb3BpbnRlcmFjdGl2ZSIsImEiOiJ3TjJ4M0hJIn0.LwbGC9U8iKT_saX8c6v_4Q', $mapboxid);
+	$path = empty( $mapbox_upgraded ) ? sprintf('//{s}.tiles.mapbox.com/v3/%s/{z}/{x}/{y}.png', esc_attr( $mapboxid ) ) : sprintf('https://api.tiles.mapbox.com/v4/%s/{z}/{x}/{y}.png?access_token=%s', esc_attr( $mapboxid ), esc_attr( $token ) );
 
 	switch ($provider) {
 		case 'mapbox':
