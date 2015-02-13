@@ -5,13 +5,13 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
-Suite of components that enables the creation of interactive longform stories WordPress.
+Suite of components that enables the creation of interactive longform stories in WordPress.
 
 == Description ==
 
@@ -99,7 +99,7 @@ All components are pluggable, and there are ample filters and actions to manipul
 If you think something is missing, we want to hear from you. Post your request and bugs on [Github](https://github.com/bearded-avenger/aesop-core).
 
 = Languages =
-Aesop Story Engine is currently available in 14 languages. We work closely with the folks over at WP Translations, and it's becuase of them that these translations are available.  
+Aesop Story Engine is currently available in 14 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
 * German
 * Greek
 * Spanish
@@ -198,10 +198,10 @@ Full documentation can be found below.
 * NEW - Map component "sticky" mode that changes map markers as you scroll down the story
 * NEW - Map component tile filter aesop_map_tile_provider that allow you to specify a different tile provider per post (or globally) [ref](https://github.com/bearded-avenger/aesop-core/pull/172#issuecomment-63518448)
 * NEW - Components can now be cloned
-* NEW - New filter aesop_quote_component_unit to change unit size of blockquote 
+* NEW - New filter aesop_quote_component_unit to change unit size of blockquote
 * FIXED - All variables now properly escaped within components
 * FIXED - The "used in" column of the Galleries edit screen
-* FIXED - Additional spaces being added on the front end after saving components 
+* FIXED - Additional spaces being added on the front end after saving components
 * FIXED - Timeline scrollnav build failing on certain occassions
 * FIXED - Some parts of the component placeholder highlighting after clicking the edit button
 * FIXED - JS error that shows if the visual editor is turned off in options (props @wavetree)
