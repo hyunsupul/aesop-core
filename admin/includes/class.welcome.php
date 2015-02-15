@@ -10,7 +10,7 @@ class aesopCoreWelcome {
 
 		add_action( 'admin_init', 		array($this,'redirect' ));
 		add_action( 'admin_menu', 		array($this,'welcome'));
-		//add_action( 'admin_head', 		array($this,'remove_menu' ));
+		add_action( 'admin_head', 		array($this,'remove_menu' ));
 
 	}
 
