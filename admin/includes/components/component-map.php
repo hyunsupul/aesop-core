@@ -570,9 +570,10 @@ class AesopMapComponentAdmin {
 	function upgrade_mapboxid_notice(){
 
 		$mapbox_upgrade_option = get_option('ase_mapbox_upgraded');
+		$old_option = get_option('ase_mapbox_id');
 
-		// only run if we haven't previously updated the mapbox id and its less than 1.5
-		if ( empty( $mapbox_upgrade_option ) ) {
+		// only run if we haven't previously updated the mapbox id and it's still the default value
+		if ( empty( $mapbox_upgrade_option ) && 'aesopinteractive.hkoag9o3' == $old_option ) {
 
 			$out = '<div class="error"><p>';
 
@@ -595,9 +596,10 @@ class AesopMapComponentAdmin {
 
 		$mapbox_upgrade_option = get_option('ase_mapbox_upgraded');
 		$nonce = wp_create_nonce('aesop-mapbox-upgrade');
+		$old_option = get_option('ase_mapbox_id');
 
-		// only run if we have markers and have never upgraded
-		if ( empty( $mapbox_upgrade_option ) ) { ?>
+		// only run if we haven't previously updated the mapbox id and it's still the default value
+		if ( empty( $mapbox_upgrade_option ) && 'aesopinteractive.hkoag9o3' == $old_option ) { ?>
 			<!-- Aesop Upgrade Map Meta -->
 			<script>
 				jQuery(document).ready(function($){
@@ -647,13 +649,22 @@ class AesopMapComponentAdmin {
 		// update old mapbox optoin to new
 		$new_id = 'aesopinteractive.l74n2fi6';
 
-		update_option( 'ase_mapbox_id', $new_id );
+		$old_option = get_option('ase_mapbox_id');
 
-		// set an option that we've upgraded
-		add_option( 'ase_mapbox_upgraded', true );
+		if ( 'aesopinteractive.hkoag9o3' == $old_option ) {
 
-		wp_send_json_success();
+			update_option( 'ase_mapbox_id', $new_id );
 
+			// set an option that we've upgraded
+			add_option( 'ase_mapbox_upgraded', true );
+
+			wp_send_json_success();
+
+		} else {
+
+			wp_send_json_error();
+
+		}
 	}
 }
 new AesopMapComponentAdmin;
