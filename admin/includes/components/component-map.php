@@ -414,7 +414,7 @@ class AesopMapComponentAdmin {
 		// only run if we have markers and have never upgraded
 		if ( get_option('ase_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_old_markers() ) {
 
-			$out = '<div class="error"><p>';
+			$out = '<div class="error aesop-notice"><p>';
 
 			$out .= __( 'Welcome to Aesop Story Engine 1.3. We need to upgrade any map markers that you might have. Click <a id="aesop-upgrade-map-meta" href="#">here</a> to start the upgrade process.', 'aesop-core' );
 
@@ -575,7 +575,7 @@ class AesopMapComponentAdmin {
 		// only run if we haven't previously updated the mapbox id and it's still the default value
 		if ( empty( $mapbox_upgrade_option ) && 'aesopinteractive.hkoag9o3' == $old_option ) {
 
-			$out = '<div class="error"><p>';
+			$out = '<div class="error aesop-notice"><p>';
 
 				$out .= __( 'Welcome to Aesop Story Engine 1.5. We need to upgrade your Mapbox Map ID. Click <a id="aesop-upgrade-mapbox" href="#">here</a> to start the upgrade process.', 'aesop-core' );
 
