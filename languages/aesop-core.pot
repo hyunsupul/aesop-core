@@ -2,9 +2,9 @@
 # This file is distributed under the GPL-2.0+.
 msgid ""
 msgstr ""
-"Project-Id-Version: Aesop Story Engine 1.4.2\n"
+"Project-Id-Version: Aesop Story Engine 1.5\n"
 "Report-Msgid-Bugs-To: http://aesopinteractive.com/\n"
-"POT-Creation-Date: 2015-02-18 10:41:22+00:00\n"
+"POT-Creation-Date: 2015-02-18 10:59:58+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,27 +24,27 @@ msgstr ""
 "X-Poedit-Bookmarks: \n"
 "X-Textdomain-Support: yes\n"
 
-#: admin/class-aesop-core-admin.php:141
+#: admin/class-aesop-core-admin.php:142
 msgid "Add Component"
 msgstr ""
 
-#: admin/class-aesop-core-admin.php:218
+#: admin/class-aesop-core-admin.php:219
 msgid "Select a story component."
 msgstr ""
 
-#: admin/class-aesop-core-admin.php:242
+#: admin/class-aesop-core-admin.php:243
 msgid ""
 "Product of <span><a href=\"http://aesopstoryengine.com\">AESOP INTERACTIVE "
 "LLC</a></span>"
 msgstr ""
 
-#: admin/class-aesop-core-admin.php:243
+#: admin/class-aesop-core-admin.php:244
 msgid ""
 "<span><a href=\"http://aesopstoryengine.com/donate\">Support new features "
 "and bug fixes</a></span> of Aesop Story Engine"
 msgstr ""
 
-#: admin/class-aesop-core-admin.php:244
+#: admin/class-aesop-core-admin.php:245
 msgid ""
 "Story Beautiful? <span><a href=\"http://aesopstoryengine.com/donate\">Thank "
 "the developer</a></span>."
@@ -146,7 +146,7 @@ msgstr ""
 #: admin/includes/available.php:813 admin/includes/available.php:829
 #: admin/includes/available.php:845 admin/includes/available.php:861
 #: admin/includes/available.php:877 admin/includes/available.php:1024
-#: admin/includes/components/component-map.php:77
+#: admin/includes/components/component-map.php:83
 msgid "On"
 msgstr ""
 
@@ -159,7 +159,7 @@ msgstr ""
 #: admin/includes/available.php:849 admin/includes/available.php:865
 #: admin/includes/available.php:881 admin/includes/available.php:911
 #: admin/includes/available.php:1028
-#: admin/includes/components/component-map.php:73
+#: admin/includes/components/component-map.php:79
 msgid "Off"
 msgstr ""
 
@@ -649,7 +649,7 @@ msgid "Audio"
 msgstr ""
 
 #: admin/includes/available.php:639 admin/includes/available.php:996
-#: admin/includes/components/component-map.php:65
+#: admin/includes/components/component-map.php:71
 msgid "Title"
 msgstr ""
 
@@ -1012,6 +1012,85 @@ msgstr ""
 msgid " "
 msgstr ""
 
+#: admin/includes/class.welcome.php:48 admin/includes/class.welcome.php:63
+#: admin/includes/help.php:25
+msgid "Welcome to Aesop Story Engine"
+msgstr ""
+
+#: admin/includes/class.welcome.php:64
+msgid "Get started in a snap with our quick start guide"
+msgstr ""
+
+#: admin/includes/class.welcome.php:66
+msgid "Twitter"
+msgstr ""
+
+#: admin/includes/class.welcome.php:67
+msgid "Facebook"
+msgstr ""
+
+#: admin/includes/class.welcome.php:72
+msgid "Quick Start"
+msgstr ""
+
+#: admin/includes/class.welcome.php:73
+msgid ""
+"It's easy to get Aesop Story Engine implemented into your theme. Just "
+"follow these short steps below and you'll be on your way!"
+msgstr ""
+
+#: admin/includes/class.welcome.php:76
+msgid "Enable Theme Support"
+msgstr ""
+
+#: admin/includes/class.welcome.php:77
+msgid ""
+"If your theme does not natively support Aesop Story Engine, add the code "
+"snippet below to your functions.php file, or add using"
+msgstr ""
+
+#: admin/includes/class.welcome.php:77
+msgid "Code Snippets"
+msgstr ""
+
+#: admin/includes/class.welcome.php:77
+msgid ""
+"plugin to enable Extended Style Support. This will load one CSS file for "
+"any of the items that you include in the snippet below."
+msgstr ""
+
+#: admin/includes/class.welcome.php:81
+msgid "Build your Story"
+msgstr ""
+
+#: admin/includes/class.welcome.php:82
+msgid ""
+"Go to any post, and locate the \"Add Component\" button. It sits right "
+"above the post editor. Once you toggle this, you'll be able to select the "
+"component, adjust any options, and insert it anywhere within your story. "
+"Galleries are managed with the \"Galleries\" tab within WordPress."
+msgstr ""
+
+#: admin/includes/class.welcome.php:88
+msgid "Themes & Addons"
+msgstr ""
+
+#: admin/includes/class.welcome.php:89
+msgid "Browse our growing library of"
+msgstr ""
+
+#: admin/includes/class.welcome.php:89
+msgid "themes"
+msgstr ""
+
+#: admin/includes/class.welcome.php:89
+msgid "addons"
+msgstr ""
+
+#: admin/includes/class.welcome.php:89
+msgid "built specifically for Aesop Story Engine."
+msgstr ""
+
 #: admin/includes/components/component-gallery.php:35
 #: admin/includes/components/component-gallery.php:48
 msgid "Galleries"
@@ -1191,39 +1270,46 @@ msgid ""
 "to start the upgrade process."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:444
+#: admin/includes/components/component-gallery.php:447
 msgid "All done!"
 msgstr ""
 
-#: admin/includes/components/component-map.php:59
+#: admin/includes/components/component-map.php:65
 msgid "Aesop Map Marker"
 msgstr ""
 
-#: admin/includes/components/component-map.php:66
+#: admin/includes/components/component-map.php:72
 msgid "By default we'll display an H2 heading with the text you specify here."
 msgstr ""
 
-#: admin/includes/components/component-map.php:81
+#: admin/includes/components/component-map.php:87
 msgid "Hide this marker"
 msgstr ""
 
-#: admin/includes/components/component-map.php:82
+#: admin/includes/components/component-map.php:88
 msgid "Optionally hide this marker but retain the scroll to point in the map."
 msgstr ""
 
-#: admin/includes/components/component-map.php:120
+#: admin/includes/components/component-map.php:126
 msgid "Map Locations"
 msgstr ""
 
-#: admin/includes/components/component-map.php:139
+#: admin/includes/components/component-map.php:145
 msgid "<em>Hint: Type to search for locations</em>"
 msgstr ""
 
-#: admin/includes/components/component-map.php:413
+#: admin/includes/components/component-map.php:419
 msgid ""
 "Welcome to Aesop Story Engine 1.3. We need to upgrade any map markers that "
 "you might have. Click <a id=\"aesop-upgrade-map-meta\" href=\"#\">here</a> "
 "to start the upgrade process."
+msgstr ""
+
+#: admin/includes/components/component-map.php:580
+msgid ""
+"Welcome to Aesop Story Engine 1.5. We need to upgrade your Mapbox Map ID. "
+"Click <a id=\"aesop-upgrade-mapbox\" href=\"#\">here</a> to start the "
+"upgrade process."
 msgstr ""
 
 #: admin/includes/generator_blob.php:75
@@ -1232,10 +1318,6 @@ msgstr ""
 
 #: admin/includes/generator_blob.php:75
 msgid "Update Component"
-msgstr ""
-
-#: admin/includes/help.php:25
-msgid "Welcome to Aesop Story Engine"
 msgstr ""
 
 #: admin/includes/help.php:26
