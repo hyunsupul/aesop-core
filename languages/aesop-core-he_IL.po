@@ -8,12 +8,12 @@ msgstr ""
 "POT-Creation-Date: 2015-02-18 00:11:04+00:00\n"
 "PO-Revision-Date: 2015-02-18 00:33+0000\n"
 "Last-Translator: Aesopinteractive\n"
-"Language-Team: Serbian (Serbia) (http://www.transifex.com/projects/p/aesop-story-engine/language/sr_RS/)\n"
+"Language-Team: Hebrew (Israel) (http://www.transifex.com/projects/p/aesop-story-engine/language/he_IL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sr_RS\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: he_IL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
@@ -52,11 +52,11 @@ msgstr ""
 #: admin/includes/available.php:13 admin/includes/available.php:446
 #: admin/includes/available.php:967
 msgid "Image"
-msgstr "Slika"
+msgstr "תמונה"
 
 #: admin/includes/available.php:19
 msgid "Image Width"
-msgstr "Širina slike"
+msgstr ""
 
 #: admin/includes/available.php:20
 msgid ""
@@ -66,7 +66,7 @@ msgstr ""
 
 #: admin/includes/available.php:25
 msgid "Image URL"
-msgstr "URL slike"
+msgstr "כתובת URL לתמונה"
 
 #: admin/includes/available.php:26 admin/includes/available.php:120
 #: admin/includes/available.php:332 admin/includes/available.php:498
@@ -77,7 +77,7 @@ msgstr ""
 
 #: admin/includes/available.php:31
 msgid "Image Offset"
-msgstr "Offset slike"
+msgstr ""
 
 #: admin/includes/available.php:32
 msgid ""
@@ -87,7 +87,7 @@ msgstr ""
 
 #: admin/includes/available.php:37
 msgid "Image Credit"
-msgstr "Zahvalnice slike"
+msgstr ""
 
 #: admin/includes/available.php:38
 msgid ""
@@ -97,7 +97,7 @@ msgstr ""
 
 #: admin/includes/available.php:43
 msgid "Image ALT"
-msgstr "ALT slike"
+msgstr ""
 
 #: admin/includes/available.php:44
 msgid "ALT tag used for the image. Primarily used for SEO purposes."
@@ -110,7 +110,7 @@ msgstr ""
 #: admin/includes/available.php:589 admin/includes/available.php:617
 #: admin/includes/available.php:730
 msgid "Left"
-msgstr "Лево"
+msgstr "לשמאל"
 
 #: admin/includes/available.php:55 admin/includes/available.php:97
 #: admin/includes/available.php:143 admin/includes/available.php:196
@@ -119,17 +119,17 @@ msgstr "Лево"
 #: admin/includes/available.php:593 admin/includes/available.php:621
 #: admin/includes/available.php:734
 msgid "Right"
-msgstr "Десно"
+msgstr "ימין"
 
 #: admin/includes/available.php:59 admin/includes/available.php:101
 #: admin/includes/available.php:200 admin/includes/available.php:389
 #: admin/includes/available.php:597 admin/includes/available.php:738
 msgid "Center"
-msgstr "Центрирано"
+msgstr "למרכז"
 
 #: admin/includes/available.php:63
 msgid "Image Alignment"
-msgstr "Poravnavanje slike"
+msgstr ""
 
 #: admin/includes/available.php:64
 msgid ""
@@ -147,7 +147,7 @@ msgstr ""
 #: admin/includes/available.php:877 admin/includes/available.php:1024
 #: admin/includes/components/component-map.php:83
 msgid "On"
-msgstr ""
+msgstr "פועל"
 
 #: admin/includes/available.php:75 admin/includes/available.php:241
 #: admin/includes/available.php:466 admin/includes/available.php:509
@@ -160,11 +160,11 @@ msgstr ""
 #: admin/includes/available.php:1028
 #: admin/includes/components/component-map.php:79
 msgid "Off"
-msgstr ""
+msgstr "כבוי"
 
 #: admin/includes/available.php:79
 msgid "Lightbox"
-msgstr "Lightbox"
+msgstr ""
 
 #: admin/includes/available.php:80
 msgid ""
@@ -175,7 +175,7 @@ msgstr ""
 #: admin/includes/available.php:85 admin/includes/available.php:131
 #: admin/includes/available.php:519 admin/includes/available.php:799
 msgid "Caption"
-msgstr "Kadar"
+msgstr "כיתוב"
 
 #: admin/includes/available.php:86
 msgid ""
@@ -185,7 +185,7 @@ msgstr ""
 
 #: admin/includes/available.php:105 admin/includes/available.php:543
 msgid "Caption Position"
-msgstr "Pozicija kadra"
+msgstr ""
 
 #: admin/includes/available.php:106
 msgid "Use this to override the alignment as inherited from the image."
@@ -194,19 +194,19 @@ msgstr ""
 #: admin/includes/available.php:110
 msgid ""
 "Creates an image component with caption, alignment, and lightbox options."
-msgstr "Stvara komponente slike sa kadrom, poravnanjem i lighbox opcijama"
+msgstr ""
 
 #: admin/includes/available.php:113
 msgid "Character"
-msgstr "Lik"
+msgstr ""
 
 #: admin/includes/available.php:119
 msgid "Character Image"
-msgstr "Slika lika"
+msgstr ""
 
 #: admin/includes/available.php:125
 msgid "Character Name"
-msgstr "Ime lika"
+msgstr ""
 
 #: admin/includes/available.php:126
 msgid ""
@@ -223,7 +223,7 @@ msgstr ""
 #: admin/includes/available.php:147 admin/includes/available.php:204
 #: admin/includes/available.php:742
 msgid "Alignment"
-msgstr "Poravnavanje"
+msgstr "יישור"
 
 #: admin/includes/available.php:148
 msgid ""
@@ -233,7 +233,7 @@ msgstr ""
 
 #: admin/includes/available.php:153
 msgid "Width"
-msgstr "Ширина"
+msgstr "רוחב"
 
 #: admin/includes/available.php:154
 msgid ""
@@ -245,15 +245,15 @@ msgstr ""
 msgid ""
 "Creates a character that can be positioned to the left or right of your "
 "story."
-msgstr "Stvara lik koji će biti pozicioniran levo ili desno od vaše priče."
+msgstr ""
 
 #: admin/includes/available.php:160
 msgid "Aesop Quote Section"
-msgstr "Aesop Quote Section"
+msgstr ""
 
 #: admin/includes/available.php:166 admin/includes/available.php:280
 msgid "Background Color"
-msgstr "Boja pozadine"
+msgstr "צבע רקע"
 
 #: admin/includes/available.php:167
 msgid "Select a background color to be used as the quote background."
@@ -261,7 +261,7 @@ msgstr ""
 
 #: admin/includes/available.php:172
 msgid "Text Color"
-msgstr "Боја текста"
+msgstr "צבע הטקסט"
 
 #: admin/includes/available.php:173
 msgid "Select a color for the quote text."
@@ -269,7 +269,7 @@ msgstr ""
 
 #: admin/includes/available.php:178 admin/includes/available.php:722
 msgid "Component Width"
-msgstr "Širina komponente"
+msgstr ""
 
 #: admin/includes/available.php:179 admin/includes/available.php:287
 #: admin/includes/available.php:723
@@ -305,7 +305,7 @@ msgstr ""
 
 #: admin/includes/available.php:217 admin/includes/available.php:331
 msgid "Background Image"
-msgstr "Slika pozadine"
+msgstr "תמונת רקע"
 
 #: admin/includes/available.php:218
 msgid ""
@@ -348,15 +348,15 @@ msgstr ""
 
 #: admin/includes/available.php:265
 msgid "Section quote area with background and color controls."
-msgstr "Sekcija područja citata sa pozadinom i kontrolom boja."
+msgstr ""
 
 #: admin/includes/available.php:268 admin/includes/generator_blob.php:72
 msgid "Content"
-msgstr "Sadržaj"
+msgstr "תוכן"
 
 #: admin/includes/available.php:274
 msgid "Color of Text"
-msgstr "Boja teksta"
+msgstr ""
 
 #: admin/includes/available.php:275
 msgid "Set a color to be used for the main text."
@@ -368,7 +368,7 @@ msgstr ""
 
 #: admin/includes/available.php:286
 msgid "Width of Component"
-msgstr "Širina komponenti"
+msgstr ""
 
 #: admin/includes/available.php:292
 msgid "Height of Component"
@@ -384,7 +384,7 @@ msgstr ""
 
 #: admin/includes/available.php:299
 msgid "Number of Columns"
-msgstr "Broj kolona"
+msgstr "מספר הטורים"
 
 #: admin/includes/available.php:300
 msgid ""
@@ -394,11 +394,11 @@ msgstr ""
 
 #: admin/includes/available.php:307
 msgid "None"
-msgstr "Нема"
+msgstr "ללא"
 
 #: admin/includes/available.php:319
 msgid "Text Block Alignment"
-msgstr "Blokiranje poravnavanja teksta"
+msgstr ""
 
 #: admin/includes/available.php:320
 msgid ""
@@ -420,11 +420,11 @@ msgstr ""
 
 #: admin/includes/available.php:339
 msgid "No Repeat"
-msgstr "Без понављања"
+msgstr "ללא חזרה"
 
 #: admin/includes/available.php:343
 msgid "Repeat"
-msgstr "Понављање"
+msgstr "חזרה"
 
 #: admin/includes/available.php:347
 msgid "Repeat Vertical"
@@ -436,7 +436,7 @@ msgstr ""
 
 #: admin/includes/available.php:355
 msgid "Image Repeat"
-msgstr "Ponavljanje slike"
+msgstr ""
 
 #: admin/includes/available.php:356
 msgid ""
@@ -501,13 +501,13 @@ msgstr ""
 
 #: admin/includes/available.php:421
 msgid "All your normal text goes here."
-msgstr "Sav normalan tekst ide ovde."
+msgstr ""
 
 #: admin/includes/available.php:422
 msgid ""
 "Multiple use content area with options for background image, background "
 "color, and magazine style columns."
-msgstr "Multiple use content area with options for background image, background color, and magazine style columns."
+msgstr ""
 
 #: admin/includes/available.php:423
 msgid "The actual content text that will be displayed."
@@ -515,11 +515,11 @@ msgstr ""
 
 #: admin/includes/available.php:426
 msgid "Chapter Block"
-msgstr "Blokirati poglavlje"
+msgstr ""
 
 #: admin/includes/available.php:432
 msgid "Chapter Title"
-msgstr "Naslov poglavlja"
+msgstr ""
 
 #: admin/includes/available.php:433
 msgid "The title of the chapter."
@@ -535,11 +535,11 @@ msgstr ""
 
 #: admin/includes/available.php:450
 msgid "Video"
-msgstr "Видео запис"
+msgstr "וידאו"
 
 #: admin/includes/available.php:454
 msgid "Background Type"
-msgstr "Tip pozadine"
+msgstr ""
 
 #: admin/includes/available.php:455
 msgid "Choose from an image or a looping video background."
@@ -567,11 +567,11 @@ msgstr ""
 
 #: admin/includes/available.php:480
 msgid "Creates the scroll to point, as a chapter heading."
-msgstr "Stvara skrolovanje, kao heading poglavlja"
+msgstr ""
 
 #: admin/includes/available.php:483 admin/includes/available.php:497
 msgid "Parallax Image"
-msgstr "Parallax slika"
+msgstr ""
 
 #: admin/includes/available.php:513
 msgid "Image Movement"
@@ -612,7 +612,7 @@ msgstr ""
 
 #: admin/includes/available.php:559
 msgid "Image Lightbox"
-msgstr " Lightbox slika"
+msgstr ""
 
 #: admin/includes/available.php:560
 msgid ""
@@ -641,20 +641,20 @@ msgstr ""
 
 #: admin/includes/available.php:629
 msgid "Optional Caption"
-msgstr "Opcionalni kadar"
+msgstr ""
 
 #: admin/includes/available.php:630
 msgid "Parallax styled image component with caption and optional lightbox."
-msgstr "Parallax stilizovana slika komponenta sa kadrom i opcionalnim lightboxom"
+msgstr ""
 
 #: admin/includes/available.php:633
 msgid "Audio"
-msgstr "Audio"
+msgstr "אודיו"
 
 #: admin/includes/available.php:639 admin/includes/available.php:996
 #: admin/includes/components/component-map.php:71
 msgid "Title"
-msgstr "Наслов"
+msgstr "כותרת"
 
 #: admin/includes/available.php:640
 msgid "Provide an optional heading for the audio player."
@@ -662,7 +662,7 @@ msgstr ""
 
 #: admin/includes/available.php:645
 msgid "Audio URL"
-msgstr "Audio URL"
+msgstr ""
 
 #: admin/includes/available.php:646
 msgid ""
@@ -710,11 +710,11 @@ msgstr ""
 
 #: admin/includes/available.php:713
 msgid "Creates an audio player with your own audio."
-msgstr "Stvara audio player sa svojim audiom."
+msgstr ""
 
 #: admin/includes/available.php:716
 msgid "Video Section"
-msgstr "Video Sekcija"
+msgstr ""
 
 #: admin/includes/available.php:743
 msgid "Should the video be floated to the left, right, or centered?"
@@ -746,7 +746,7 @@ msgstr ""
 
 #: admin/includes/available.php:775
 msgid "Instagram"
-msgstr ""
+msgstr "אינסטגרם"
 
 #: admin/includes/available.php:779
 msgid "Dailymotion"
@@ -758,7 +758,7 @@ msgstr ""
 
 #: admin/includes/available.php:787
 msgid "Video Source"
-msgstr "Izvor videa"
+msgstr ""
 
 #: admin/includes/available.php:788
 msgid "Choose an available source for the video."
@@ -766,7 +766,7 @@ msgstr ""
 
 #: admin/includes/available.php:793
 msgid "Video ID"
-msgstr "Video ID"
+msgstr ""
 
 #: admin/includes/available.php:794
 msgid ""
@@ -836,15 +836,15 @@ msgstr ""
 
 #: admin/includes/available.php:889
 msgid "Responsive video component with alignment and optional caption."
-msgstr "Odgovarajuća video komponenta sa poravnavanjem i opcionalnim kadrom."
+msgstr ""
 
 #: admin/includes/available.php:892
 msgid "Map"
-msgstr "Mapa"
+msgstr ""
 
 #: admin/includes/available.php:900
 msgid "Height"
-msgstr "Visina"
+msgstr "גובה"
 
 #: admin/includes/available.php:901
 msgid ""
@@ -885,11 +885,11 @@ msgstr ""
 msgid ""
 "Creates the basic map component. Use the Map Locations edit boxes when "
 "writing your story to add locations."
-msgstr "Stvara osnovne komponenete mapa. Koristi Map Lokacije koje edituju pravougaonike kada pišete vašu priču da dodate lokacije."
+msgstr ""
 
 #: admin/includes/available.php:936
 msgid "Timeline Stop"
-msgstr "Timeline Stop"
+msgstr ""
 
 #: admin/includes/available.php:942
 msgid "Navigation Menu Item Label"
@@ -913,11 +913,11 @@ msgstr ""
 msgid ""
 "Enter a number such as 2007, and a small timeline will be displayed with "
 "scroll to points. This works similar to the chapter heading."
-msgstr "Unesite broj ka što je 2007 i mala timeline će biti prikazana sa skrolovanjem do poena Ovo radi slično kao heading poglavlja.."
+msgstr ""
 
 #: admin/includes/available.php:955
 msgid "Document"
-msgstr "Dokument"
+msgstr ""
 
 #: admin/includes/available.php:963
 msgid "PDF"
@@ -925,7 +925,7 @@ msgstr ""
 
 #: admin/includes/available.php:971
 msgid "Document Type"
-msgstr "Tip dokumenta"
+msgstr ""
 
 #: admin/includes/available.php:972
 msgid "The type of document. Choose image or PDF."
@@ -951,11 +951,11 @@ msgstr ""
 
 #: admin/includes/available.php:987
 msgid "Show a document that is revealed with a click."
-msgstr "Prikazati dokument koji je bitan klikom."
+msgstr ""
 
 #: admin/includes/available.php:990
 msgid "Collections"
-msgstr "Kolekcije"
+msgstr ""
 
 #: admin/includes/available.php:997
 msgid ""
@@ -964,7 +964,7 @@ msgstr ""
 
 #: admin/includes/available.php:1003
 msgid "Category"
-msgstr "Категорија"
+msgstr "קטגוריה"
 
 #: admin/includes/available.php:1004
 msgid "Select the category that you want stories to be displayed from."
@@ -980,7 +980,7 @@ msgstr ""
 
 #: admin/includes/available.php:1016
 msgid "Columns"
-msgstr "Ступци"
+msgstr "טורים"
 
 #: admin/includes/available.php:1017
 msgid "Stories are displayed in a grid. How many columns should the grid be?"
@@ -999,11 +999,11 @@ msgstr ""
 #: admin/includes/available.php:1036
 msgid ""
 "Show a collection of stories. Typically used on a page like the home page."
-msgstr "Prikazati priče kolekcija. Tipično se koristi na stranicama kao što je početna."
+msgstr ""
 
 #: admin/includes/available.php:1039
 msgid "Gallery"
-msgstr "Галерија"
+msgstr "גלריה"
 
 #: admin/includes/available.php:1048
 msgid "Choose Gallery"
@@ -1028,11 +1028,11 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:66
 msgid "Twitter"
-msgstr "Twitter"
+msgstr "טוויטר"
 
 #: admin/includes/class.welcome.php:67
 msgid "Facebook"
-msgstr "Facebook"
+msgstr "פייסבוק"
 
 #: admin/includes/class.welcome.php:72
 msgid "Quick Start"
@@ -1099,47 +1099,47 @@ msgstr ""
 #: admin/includes/components/component-gallery.php:35
 #: admin/includes/components/component-gallery.php:48
 msgid "Galleries"
-msgstr "Galerje"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:36
 msgid "Parent Gallery:"
-msgstr "Galerija roditelja:"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:37
 msgid "All Galleries"
-msgstr "Sve galerije"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:38
 msgid "View Gallery"
-msgstr "Pregled galerije"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:39
 msgid "Add New Gallery"
-msgstr "Dodati novu galeriju"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:40
 msgid "New Gallery"
-msgstr "Nova galerija"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:41
 msgid "Edit Gallery"
-msgstr "Edituj galeriju"
+msgstr "הגדרות גלריה"
 
 #: admin/includes/components/component-gallery.php:42
 msgid "Update Gallery"
-msgstr "Update galerija"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:43
 msgid "Search Galleries"
-msgstr "Pretraga galerija"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:44
 msgid "No Galleries found"
-msgstr "Nijedna galerija nije pronadjena"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:45
 msgid "No Galleries found in Trash"
-msgstr "Nijedna galerija nije pronadjena u otpadu"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:49
 msgid "Create responsive galleries."
@@ -1147,11 +1147,11 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:75
 msgid "Gallery Code"
-msgstr "Kod galerije"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:76
 msgid "Used In"
-msgstr "Koristi se u"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:141
 msgid "Add Images"
@@ -1171,7 +1171,7 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:216
 msgid "Thumbnail"
-msgstr "Умањена слика"
+msgstr "תמונה מוקטנת"
 
 #: admin/includes/components/component-gallery.php:218
 msgid "Photoset"
@@ -1279,7 +1279,7 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:447
 msgid "All done!"
-msgstr "Све је завшрено!"
+msgstr "סיימתי!"
 
 #: admin/includes/components/component-map.php:65
 msgid "Aesop Map Marker"
@@ -1321,7 +1321,7 @@ msgstr ""
 
 #: admin/includes/generator_blob.php:75
 msgid "Insert Component"
-msgstr "Uneti komponentu"
+msgstr ""
 
 #: admin/includes/generator_blob.php:75
 msgid "Update Component"
@@ -1399,7 +1399,7 @@ msgstr ""
 
 #: admin/includes/help.php:37 admin/includes/help.php:63
 msgid "Documentation"
-msgstr "Dokumentacija"
+msgstr "תיעוד"
 
 #: admin/includes/help.php:38
 msgid ""
@@ -1547,9 +1547,9 @@ msgstr ""
 #: admin/includes/components/component-gallery.php:33
 msgctxt "aesop-core"
 msgid "Galleries"
-msgstr "Galerje"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:34
 msgctxt "aesop-core"
 msgid "Gallery"
-msgstr "Галерија"
+msgstr "גלריה"
