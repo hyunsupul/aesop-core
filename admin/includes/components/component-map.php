@@ -666,5 +666,7 @@ class AesopMapComponentAdmin {
 
 		}
 	}
+
+
 }
 new AesopMapComponentAdmin;
