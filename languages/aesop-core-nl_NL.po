@@ -5,9 +5,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopinteractive.com/\n"
-"POT-Creation-Date: 2015-02-18 00:11:04+00:00\n"
-"PO-Revision-Date: 2015-02-18 00:33+0000\n"
-"Last-Translator: Aesopinteractive\n"
+"POT-Creation-Date: 2015-02-18 10:59:58+00:00\n"
+"PO-Revision-Date: 2015-02-18 11:00+0000\n"
+"Last-Translator: FxB <fxb@wp-translations.org>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/projects/p/aesop-story-engine/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1028,11 +1028,11 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:66
 msgid "Twitter"
-msgstr "Twitter"
+msgstr ""
 
 #: admin/includes/class.welcome.php:67
 msgid "Facebook"
-msgstr "Facebook"
+msgstr ""
 
 #: admin/includes/class.welcome.php:72
 msgid "Quick Start"
@@ -1327,10 +1327,6 @@ msgstr ""
 msgid "Update Component"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-msgid "Aesop Story Engine"
-msgstr ""
-
 #: admin/includes/help.php:26
 msgid ""
 "Add story components by clicking the \"Add Component\" button below. This "
@@ -1531,17 +1527,9 @@ msgstr ""
 msgid "Mapbox Map ID"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "http://aesopstoryengine.com"
-msgstr ""
-
 #. Description of the plugin/theme
 msgid ""
 "Open-sourced suite of components that empower interactive storytelling."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Aesopinteractive LLC"
 msgstr ""
 
 #: admin/includes/components/component-gallery.php:33
