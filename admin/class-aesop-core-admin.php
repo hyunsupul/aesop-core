@@ -42,6 +42,7 @@ class Aesop_Core_Admin {
 	*/
 	private function __construct() {
 
+		require_once( AI_CORE_DIR.'admin/includes/class.welcome.php' );
 		require_once( AI_CORE_DIR.'admin/includes/help.php' );
 		require_once( AI_CORE_DIR.'admin/includes/notify.php' );
 		require_once( AI_CORE_DIR.'admin/includes/components/component-map.php' );
@@ -301,8 +302,8 @@ class Aesop_Core_Admin {
 		if ( strpos( $file, 'aesop-core.php' ) !== false ) {
 
 		 	$new_links = array(
-		 		'<a href="http://aesopstoryengine/help" target="_blank">Documentation</a>',
-				'<a href="http://aesopstoryengine/donate" target="_blank">Donate</a>'
+		 		'<a href="http://aesopstoryengine.com/help" target="_blank">Documentation</a>',
+				'<a href="http://aesopstoryengine.com/donate" target="_blank">Donate</a>'
 			);
 
 			$links = array_merge( $links, $new_links );

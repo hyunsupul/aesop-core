@@ -401,7 +401,7 @@ class AesopGalleryComponentAdmin {
 		// only run if we have markers and have never upgraded
 		if ( !get_option('ase_galleries_upgraded_to') && 'true' == self::aesop_check_for_galleries() ) {
 
-			$out = '<div class="error"><p>';
+			$out = '<div class="error aesop-notice"><p>';
 
 			$out .= __( 'Welcome to Aesop Story Engine 1.4. We need to upgrade any galleries that you might have. Click <a id="aesop-upgrade-galleries" href="#">here</a> to start the upgrade process.', 'aesop-core' );
 
