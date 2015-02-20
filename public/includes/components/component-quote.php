@@ -39,13 +39,13 @@ if (!function_exists('aesop_quote_shortcode')){
 		$size 		= $atts['size'] ? sprintf( '%s%s', $atts['size'], $size_unit ) : false;
 
 		//bg img
-		$bgimg = $atts['img'] ? sprintf('background-image:url(%s);background-size:cover;background-position:center center',esc_url( $atts['img'] )) : false;
+		$bgimg = $atts['img'] ? sprintf('background-image:url(%s);background-size:cover;background-position:center center;',esc_url( $atts['img'] )) : false;
 
 		// bg color only if not block style
-		$bgcolor = $atts['block'] ? $atts['background'] : false;
+		$bgcolor = 'block' == $atts['type'] ? sprintf('background-color:%s;', $atts['background'] ) : false;
 
 		// set styles
-		$style = $atts['background'] || $atts['text'] || $atts['height'] || $atts['width'] ? sprintf('style="background-color:%s;%s;color:%s;height:%s;width:%s;"',esc_attr( $bgcolor ), $bgimg, esc_attr( $atts['text'] ), esc_attr( $atts['height'] ), esc_attr( $atts['width'] )) : false;
+		$style = $atts['background'] || $atts['text'] || $atts['height'] || $atts['width'] ? sprintf('style="%s%scolor:%s;height:%s;width:%s;"',esc_attr( $bgcolor ), $bgimg, esc_attr( $atts['text'] ), esc_attr( $atts['height'] ), esc_attr( $atts['width'] )) : false;
 
 		$isparallax = 'on' == $atts['parallax'] ? 'quote-is-parallax' : false;
 		$lrclass	= 'left' == $atts['direction'] || 'right' == $atts['direction'] ? 'quote-left-right' : false;
