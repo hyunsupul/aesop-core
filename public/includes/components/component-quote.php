@@ -41,14 +41,20 @@ if (!function_exists('aesop_quote_shortcode')){
 		//bg img
 		$bgimg = $atts['img'] ? sprintf('background-image:url(%s);background-size:cover;background-position:center center',esc_url( $atts['img'] )) : false;
 
+		// bg color only if not block style
+		$bgcolor = $atts['block'] ? $atts['background'] : false;
+
 		// set styles
-		$style = $atts['background'] || $atts['text'] || $atts['height'] || $atts['width'] ? sprintf('style="background-color:%s;%s;color:%s;height:%s;width:%s;"',esc_attr( $atts['background'] ), $bgimg, esc_attr( $atts['text'] ), esc_attr( $atts['height'] ), esc_attr( $atts['width'] )) : false;
+		$style = $atts['background'] || $atts['text'] || $atts['height'] || $atts['width'] ? sprintf('style="background-color:%s;%s;color:%s;height:%s;width:%s;"',esc_attr( $bgcolor ), $bgimg, esc_attr( $atts['text'] ), esc_attr( $atts['height'] ), esc_attr( $atts['width'] )) : false;
 
 		$isparallax = 'on' == $atts['parallax'] ? 'quote-is-parallax' : false;
 		$lrclass	= 'left' == $atts['direction'] || 'right' == $atts['direction'] ? 'quote-left-right' : false;
 
 		// type
-		$type  = $atts['type'] ? sprintf('aesop-quote-type-%s',trim( $atts['type'] ) ) : false;
+		$type  = $atts['type'] ? sprintf(' aesop-quote-type-%s',trim( $atts['type'] ) ) : false;
+
+		//align
+		$align = $atts['align'] ? sprintf('aesop-component-align-%s', esc_attr($atts['align'])) : null;
 
 		// style/consolidated classes
 		$css_class_array = array(
@@ -72,9 +78,6 @@ if (!function_exists('aesop_quote_shortcode')){
 
 		// cite
 		$cite = $atts['cite'] ? apply_filters('aesop_quote_component_cite',sprintf('<cite class="aesop-quote-component-cite">%s</cite>',esc_html( $atts['cite'] ))) : null;
-
-		//align
-		$align = $atts['align'] ? sprintf('aesop-component-align-%s', esc_attr($atts['align'])) : null;
 
 		ob_start();
 
