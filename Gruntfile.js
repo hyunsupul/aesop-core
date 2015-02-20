@@ -8,8 +8,8 @@ module.exports = function(grunt) {
 		// watch our project for changes
 		watch: {
 			less: {
-				files: ['public/assets/less/*/**','admin/assets/less/*/**'],
-				tasks: ['less:adminLess','less:publicLess']
+				files: ['public/assets/less/**/*','admin/assets/less/**/*'],
+				tasks: ['less:coreLess']
 			},
 			livereload: {
 				options: { livereload: true },
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 
 			adminLess: {
 				options: {
-					paths: ["admin/assets/less/*/**"],
+					paths: ["admin/assets/less/**/*"],
 					cleancss:true
 				},
 				files: {
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 			},
 			coreLess: {
 				options: {
-					paths: ["public/assets/less/*"],
+					paths: ["public/assets/less/**/*"],
 					cleancss:true
 				},
 				files: {
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
 			},
 			publicLess: {
 				options: {
-					paths: ["public/assets/less/*/**"],
+					paths: ["public/assets/less/**/*"],
 					cleancss:true
 				},
 				files: {
