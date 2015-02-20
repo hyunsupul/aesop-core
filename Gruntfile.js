@@ -183,7 +183,7 @@ module.exports = function(grunt) {
 					updateTimestamp: true,    // Whether the POT-Creation-Date should be updated without other changes.
 					updatePoFiles: false,    // Whether to update PO files in the same directory as the POT file.
 					processPot: function( pot, options ) {
-						pot.headers['report-msgid-bugs-to'] = 'http://aesopinteractive.com/';
+						pot.headers['report-msgid-bugs-to'] = 'http://aesopstoryengine.com/';
 						pot.headers['last-translator'] = 'WP-Translations (http://wp-translations.org/)\n';
 						pot.headers['language-team'] = 'WP-Translations  <fxb@wp-translations.org>\n';
 						pot.headers['language'] = 'en_US';

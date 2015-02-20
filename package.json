@@ -1,6 +1,6 @@
 {
   "name": "aesop-core",
-  "version": "1.4.2",
+  "version": "1.5",
   "dependencies": {
     "load-grunt-tasks": "~0.2.1"
   },
