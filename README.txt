@@ -162,6 +162,7 @@ Full documentation can be found below.
 
 = 1.5 =
 * NEW - Welcome screen on plugin activation
+* NEW - New "Type" option for Quote Component which allows the quote to be displayed as a standard pull quote
 * FIX - Blank map tiles with new Mapbox IDs. Mapbox changed things and now requires a public key for the map tiles. We're using our public key, but have introduced a filter should you need to change this. On this update, we've changed our mapbox id, and have written an upgrade script that will ensure you have a smooth transition in this update
 * FIX - The document component css class has been renamed! This was inevitable. It was mis-labeled as docmument component from day one, so we've fixed it to the proper spelling, of "document" component
 
