@@ -19,7 +19,7 @@ if (!function_exists('aesop_quote_shortcode')){
 			'size'		=> '1',
 			'parallax'  => '',
 			'direction' => '',
-			'quote'		=> 'Quote',
+			'quote'		=> __('People are made of stories, not atoms.','aesop-core'),
 			'cite'		=> '',
 			'type'		=> 'block'
 
