@@ -227,7 +227,8 @@ class Aesop_Core {
 	 * @since    1.0.0
 	 */
 	private static function single_activate() {
-		// @TODO: Define activation functionality here
+		// set transietn for activation welcome
+		set_transient( '_aesop_welcome_redirect', true, 30 );
 	}
 
 	/**
