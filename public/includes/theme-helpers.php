@@ -262,11 +262,11 @@ function aesop_gallery_component_data_atts( $postid = '' ){
 		'gallery-type' 	=> sanitize_text_field( trim( $type ) ),
 		'width' 		=> sanitize_text_field( trim( $width ) ),
 		'caption' 		=> sanitize_text_field( trim( $caption ) ),
-		'item-width' 	=> (int) trim( $grid_item_width ),
+		'itemwidth' 	=> trim( $grid_item_width ),
 		'transition' 	=> sanitize_text_field( trim( $thumb_trans ) ),
 		'speed' 		=> $thumb_speed,
-		'ps-layout' 	=> (int) trim( $photoset_layout ),
-		'ps-lightbox'	=> sanitize_text_field( trim( $photoset_lb ) )
+		'pslayout' 	=> (int) trim( $photoset_layout ),
+		'pslightbox'	=> sanitize_text_field( trim( $photoset_lb ) )
 	);
 
 	// map the meta to att values
