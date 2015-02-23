@@ -106,7 +106,7 @@ Aesop Story Engine is currently available in 17 languages. We work closely with 
 * Español (Spanish (Spain))  
 * Français (French (France))  
 * עִבְרִית (Hebrew)  
-* Italiano (Italian) 
+* Italiano (Italian)  
 * 日本語 (Japanese)  
 * Nederlands (Dutch)  
 * Polski (Polish)  
