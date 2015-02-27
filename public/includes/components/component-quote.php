@@ -58,7 +58,6 @@ if (!function_exists('aesop_quote_shortcode')){
 
 		// style/consolidated classes
 		$css_class_array = array(
-			$classes,
 			$align,
 			$type,
 			$contentwidth,
