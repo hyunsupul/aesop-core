@@ -599,7 +599,7 @@ class AesopMapComponentAdmin {
 		$old_option = get_option('ase_mapbox_id');
 
 		// only run if we haven't previously updated the mapbox id and it's still the default value
-		if ( empty( $mapbox_upgrade_option ) && 'aesopinteractive.hkoag9o3' == $old_option ) { ?>
+		if ( empty( $mapbox_upgrade_option ) && ('aesopinteractive.hkoag9o3' == $old_option || empty( $old_option ) ) ) { ?>
 			<!-- Aesop Upgrade Map Meta -->
 			<script>
 				jQuery(document).ready(function($){
@@ -651,7 +651,7 @@ class AesopMapComponentAdmin {
 
 		$old_option = get_option('ase_mapbox_id');
 
-		if ( 'aesopinteractive.hkoag9o3' == $old_option ) {
+		if ( 'aesopinteractive.hkoag9o3' == $old_option || empty( $old_option ) ) {
 
 			update_option( 'ase_mapbox_id', $new_id );
 
