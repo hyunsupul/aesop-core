@@ -23,7 +23,7 @@ if (!function_exists('aesop_image_shortcode')){
 		$atts = apply_filters('aesop_image_defaults',shortcode_atts($defaults, $atts));
 
 		// offset styles
-		$offsetstyle = $atts['offset'] && ('left' == $atts['align'] || 'right' == $atts['align'] ) ? sprintf('style=margin-%s:%s;width:%s;',$atts['align'], $atts['offset'], $atts['imgwidth']) : 'style=width:'.$atts['imgwidth'].';max-width:100%;';
+		$offsetstyle = $atts['offset'] && ('left' == $atts['align'] || 'right' == $atts['align'] ) ? sprintf('style=margin-%s:%s;width:%s;',$atts['align'], $atts['offset'], $atts['imgwidth']) : 'style=max-width:'.$atts['imgwidth'].';';
 
 		// custom classes
 		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'image', '' ) : null;
@@ -74,7 +74,7 @@ if (!function_exists('aesop_image_shortcode')){
 						<figcaption class="aesop-image-component-caption">
 							<?php
 
-							echo esc_html( $atts['caption'] );
+							echo aesop_component_media_filter( $atts['caption'] );
 
 							if ( $atts['credit'] ){ ?>
 								<p class="aesop-cap-cred"><?php echo esc_html( $atts['credit'] );?></p>

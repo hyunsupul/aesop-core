@@ -21,6 +21,12 @@ class AesopMapComponentAdmin {
 		add_filter( 'aesop_avail_components',			array($this, 'options'));
 		add_action( 'aesop_admin_styles', 				array($this, 'icon'));
 
+		// 1.5 - upgrading maps
+		add_action( 'admin_notices', 					array($this, 'upgrade_mapboxid_notice' ) );
+		add_action( 'admin_head',						array($this, 'upgrade_mapbox_click_handle'));
+		add_action( 'wp_ajax_upgrade_mapbox', 			array($this, 'upgrade_mapbox' ));
+
+
 	}
 
 	/**
@@ -408,7 +414,7 @@ class AesopMapComponentAdmin {
 		// only run if we have markers and have never upgraded
 		if ( get_option('ase_upgraded_to') < AI_CORE_VERSION && 'true' == self::aesop_check_for_old_markers() ) {
 
-			$out = '<div class="error"><p>';
+			$out = '<div class="error aesop-notice"><p>';
 
 			$out .= __( 'Welcome to Aesop Story Engine 1.3. We need to upgrade any map markers that you might have. Click <a id="aesop-upgrade-map-meta" href="#">here</a> to start the upgrade process.', 'aesop-core' );
 
@@ -460,6 +466,13 @@ class AesopMapComponentAdmin {
 	function upgrade_marker_meta(){
 
 		check_ajax_referer( 'aesop-map-upgrade', 'security' );
+
+		if ( !current_user_can('manage_options') )
+			return;
+
+		// ok security passes so let's process some data
+		if ( isset( $_POST['action'] ) && $_POST['action'] !== 'upgrade_marker_meta' )
+			return;
 
 		// get the posts with the maps shortode
 		$posts = get_posts( array( 'post_type' => array('page', 'post'), 'posts_per_page' => -1 ) );
@@ -551,5 +564,107 @@ class AesopMapComponentAdmin {
 		<?php }
 	}
 
+	/////////////
+	//// MAPBOX ID UPGRADE
+	/////////////
+	function upgrade_mapboxid_notice(){
+
+		$mapbox_upgrade_option = get_option('ase_mapbox_upgraded');
+		$old_option = get_option('ase_mapbox_id');
+
+		// only run if we haven't previously updated the mapbox id and it's still the default value
+		if ( empty( $mapbox_upgrade_option ) && 'aesopinteractive.hkoag9o3' == $old_option ) {
+
+			$out = '<div class="error aesop-notice"><p>';
+
+				$out .= __( 'Welcome to Aesop Story Engine 1.5. We need to upgrade your Mapbox Map ID. Click <a id="aesop-upgrade-mapbox" href="#">here</a> to start the upgrade process.', 'aesop-core' );
+
+			$out .= '</p></div>';
+
+			echo $out;
+
+		}
+	}
+
+	/**
+	*
+	*	Handles the click function for upgrading mapbox id
+	*
+	*	@since 1.5
+	*/
+	function upgrade_mapbox_click_handle(){
+
+		$mapbox_upgrade_option = get_option('ase_mapbox_upgraded');
+		$nonce = wp_create_nonce('aesop-mapbox-upgrade');
+		$old_option = get_option('ase_mapbox_id');
+
+		// only run if we haven't previously updated the mapbox id and it's still the default value
+		if ( empty( $mapbox_upgrade_option ) && 'aesopinteractive.hkoag9o3' == $old_option ) { ?>
+			<!-- Aesop Upgrade Map Meta -->
+			<script>
+				jQuery(document).ready(function($){
+				  	$('#aesop-upgrade-mapbox').click(function(e){
+
+				  		e.preventDefault();
+
+				  		var data = {
+				            action: 'upgrade_mapbox',
+				            security: '<?php echo $nonce;?>'
+				        };
+
+					  	$.post(ajaxurl, data, function(response) {
+
+					  		if ( true == response.success ) {
+					  			alert('All done!');
+					  			location.reload();
+					  		}
+
+					    });
+
+				    });
+				});
+			</script>
+		<?php }
+	}
+
+	/**
+	*
+	*	When the user starts the upgrade process let's update their aesop mapbox id to the new one
+	*
+	*	@since 1.5
+	*/
+	function upgrade_mapbox(){
+
+		// check nonce
+		check_ajax_referer( 'aesop-mapbox-upgrade', 'security' );
+
+		// check capabilities
+		if ( !current_user_can('manage_options') )
+			return;
+
+		// verify action
+		if ( isset( $_POST['action'] ) && $_POST['action'] !== 'upgrade_mapbox' )
+			return;
+
+		// update old mapbox optoin to new
+		$new_id = 'aesopinteractive.l74n2fi6';
+
+		$old_option = get_option('ase_mapbox_id');
+
+		if ( 'aesopinteractive.hkoag9o3' == $old_option ) {
+
+			update_option( 'ase_mapbox_id', $new_id );
+
+			// set an option that we've upgraded
+			add_option( 'ase_mapbox_upgraded', true );
+
+			wp_send_json_success();
+
+		} else {
+
+			wp_send_json_error();
+
+		}
+	}
 }
 new AesopMapComponentAdmin;

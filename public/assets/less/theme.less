@@ -119,13 +119,48 @@
         }
     }
 
-        &.aesop-quote-faded blockquote{
-            .opacity(1);
+    &.aesop-quote-faded blockquote{
+        .opacity(1);
+    }
+
+    // pull quote as of 1.5
+    &.aesop-quote-type-pull {
+
+        padding:0;
+        @color:   #007aac;
+
+        &.aesop-component-align-left { // blockquote
+            float:left;
+            border-left:5px solid @color;
+            margin-left:1.5rem;
+            padding-left:1.5rem;
         }
+
+        &.aesop-component-align-right { // blockquote
+            float:right;
+            border-right:5px solid @color;
+            margin-right:1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        &.aesop-component-align-center { // blockquote
+            border-top:5px solid @color;
+            padding-top:1rem;
+        }
+
+        @media(max-width:600px) {
+            float:none;
+            width: 100% !important; //overriding inline js
+            margin-left:1rem;
+            margin-right:1rem;
+            padding:1rem;
+        }
+
+    }
 }
 
 // document
-.aesop-documument-component {
+.aesop-document-component {
     margin:1rem auto;
     a {
         font-size: 12px;

@@ -18,7 +18,7 @@ class AesopNotifyonActivation {
 
 		if( AI_CORE_VERSION > get_option('ai_core_version')) {
 
-			$out = '<div class="updated"><p>';
+			$out = '<div class="updated aesop-notice"><p>';
 
 			$out .= __( 'Thanks for checking out Aesop! Get started by going to any post and clicking the "Add Component" button. Refer to the Help tab while editing a post for more information.', 'aesop-core' );
 

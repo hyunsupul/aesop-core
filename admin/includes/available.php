@@ -160,6 +160,22 @@ if(!function_exists('aesop_shortcodes')){
 				'name' 				=> __('Aesop Quote Section', 'aesop-core'),
 				'type' 				=> 'single',
 				'atts' 				=> array(
+					'type' 			=> array(
+						'type'		=> 'select',
+						'values' 	=> array(
+							array(
+								'value' => 'pull',
+								'name'	=> __('Pull Quote', 'aesop-core' ),
+							),
+							array(
+								'value' => 'block',
+								'name'	=> __('Full Width', 'aesop-core' ),
+							)
+						),
+						'default' 	=> 'block',
+						'desc' 		=> __( 'Quote Styles', 'aesop-core' ),
+						'tip'		=> __('By default the quote is full width, but you can change that here.','aesop-core')
+					),
 					'background' 	=> array(
 						'type'		=> 'color',
 						'default' 	=> '#282828',

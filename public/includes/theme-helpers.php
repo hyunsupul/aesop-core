@@ -135,15 +135,22 @@ function aesop_component_media_filter( $input = '' ) {
 */
 function aesop_map_tile_provider( $postid = 0 ) {
 
-	// default provider
-	$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.hkoag9o3');
+	// default provider - changed as of 1.5
+	$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.l74n2fi6');
+
+	// mapbox v4 api now requires a public token
+	$token     = apply_filters('aesop_map_token', 'pk.eyJ1IjoiYWVzb3BpbnRlcmFjdGl2ZSIsImEiOiJ3TjJ4M0hJIn0.LwbGC9U8iKT_saX8c6v_4Q');
 
 	// setup a filter to change the provider
 	$provider = apply_filters('aesop_map_tile_provider', 'mapbox', $postid);
 
+	// mapbox map path
+	$mapbox_upgraded = get_option('ase_mapbox_upgraded');
+	$path = empty( $mapbox_upgraded ) ? sprintf('//{s}.tiles.mapbox.com/v3/%s/{z}/{x}/{y}.png', esc_attr( $mapboxid ) ) : sprintf('https://api.tiles.mapbox.com/v4/%s/{z}/{x}/{y}.png?access_token=%s', esc_attr( $mapboxid ), esc_attr( $token ) );
+
 	switch ($provider) {
 		case 'mapbox':
-			$out = sprintf('//{s}.tiles.mapbox.com/v3/%s/{z}/{x}/{y}.png', esc_attr( $mapboxid ) );
+			$out = sprintf('%s', $path );
 			break;
 		case 'stamen-toner-lite':
 			$out = '//{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png';
@@ -255,11 +262,11 @@ function aesop_gallery_component_data_atts( $postid = '' ){
 		'gallery-type' 	=> sanitize_text_field( trim( $type ) ),
 		'width' 		=> sanitize_text_field( trim( $width ) ),
 		'caption' 		=> sanitize_text_field( trim( $caption ) ),
-		'item-width' 	=> (int) trim( $grid_item_width ),
+		'itemwidth' 	=> trim( $grid_item_width ),
 		'transition' 	=> sanitize_text_field( trim( $thumb_trans ) ),
 		'speed' 		=> $thumb_speed,
-		'ps-layout' 	=> (int) trim( $photoset_layout ),
-		'ps-lightbox'	=> sanitize_text_field( trim( $photoset_lb ) )
+		'pslayout' 	=> (int) trim( $photoset_layout ),
+		'pslightbox'	=> sanitize_text_field( trim( $photoset_lb ) )
 	);
 
 	// map the meta to att values
