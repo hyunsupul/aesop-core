@@ -18,7 +18,6 @@ module.exports = function(grunt) {
 		},
 		// less compiling
 		less: {
-
 			adminLess: {
 				options: {
 					paths: ["admin/assets/less/**/*"],
@@ -168,6 +167,39 @@ module.exports = function(grunt) {
 			}
 		},
 
+		checktextdomain: {
+			options:{
+				text_domain: 'aesop-core',
+				keywords: [
+					'__:1,2d',
+					'_e:1,2d',
+					'_x:1,2c,3d',
+					'esc_html__:1,2d',
+					'esc_html_e:1,2d',
+					'esc_html_x:1,2c,3d',
+					'esc_attr__:1,2d',
+					'esc_attr_e:1,2d',
+					'esc_attr_x:1,2c,3d',
+					'_ex:1,2c,3d',
+					'_n:1,2,3d',
+					'_nx:1,2,4c,5d',
+					'_n_noop:1,2,3d',
+					'_nx_noop:1,2,3c,4d',
+					' __ngettext:1,2,3d',
+					'__ngettext_noop:1,2,3d',
+					'_c:1,2d',
+					'_nc:1,2,4c,5d'
+					]
+				},
+				files: {
+					src: [
+						'**/*.php', // Include all files
+						'!node_modules/**', // Exclude node_modules/
+						],
+					expand: true
+				}
+			},
+
 		makepot: {
 			target: {
 				options: {
@@ -181,7 +213,7 @@ module.exports = function(grunt) {
 					},
 					type: 'wp-plugin',    // Type of project (wp-plugin or wp-theme).
 					updateTimestamp: true,    // Whether the POT-Creation-Date should be updated without other changes.
-					updatePoFiles: false,    // Whether to update PO files in the same directory as the POT file.
+					updatePoFiles: true,    // Whether to update PO files in the same directory as the POT file.
 					processPot: function( pot, options ) {
 						pot.headers['report-msgid-bugs-to'] = 'http://aesopstoryengine.com/';
 						pot.headers['last-translator'] = 'WP-Translations (http://wp-translations.org/)\n';
@@ -241,10 +273,13 @@ module.exports = function(grunt) {
 	// register task
 	grunt.registerTask('default', ['watch']);
 
+	//  Checktextdomain and makepot task(s)
+	 grunt.registerTask('go-pot', ['checktextdomain', 'makepot', 'potomo']);
+
 	// Makepot and push it on Transifex task(s).
-	grunt.registerTask( 'makandpush', [ 'makepot', 'exec:txpush_s' ] );
+	grunt.registerTask('tx-push', ['makepot', 'exec:txpush_s']);
 
 	// Pull from Transifex and create .mo task(s).
-	grunt.registerTask( 'tx', [ 'exec:txpull', 'potomo' ] );
+	grunt.registerTask('tx-pull', ['exec:txpull', 'potomo']);
 
 };
