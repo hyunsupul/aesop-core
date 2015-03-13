@@ -173,8 +173,7 @@ function aesop_map_tile_provider( $postid = 0 ) {
 		default:
 			$out = sprintf( '//{s}.tiles.mapbox.com/v3/%s/{z}/{x}/{y}.png', esc_attr( $mapboxid ) );
 			break;
-	}//end switch
-
+	}
 	return $out;
 }
 
