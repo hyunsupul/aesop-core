@@ -6,7 +6,7 @@
  *
  * @since 1.0.4
  *
- * @param  array $atts Attributes of the shortcode.
+ * @param  array  $atts    Attributes of the shortcode.
  * @param  string $content Shortcode content.
  *
  * @return string
@@ -14,10 +14,10 @@
 function aesop_center_content( $atts, $content ) {
 	global $content_width;
 
-	if ( ! isset( $content_width ) )
-		$content_width = 960;
+	if ( ! isset( $content_width ) ) {
+		$content_width = 960; }
 
-	return "<div class='aesop-content-center' style='max-width: {$content_width}px; margin-left: auto; margin-right: auto;'>". do_shortcode( $content ) ."</div>";
+	return "<div class='aesop-content-center' style='max-width: {$content_width}px; margin-left: auto; margin-right: auto;'>". do_shortcode( $content ) .'</div>';
 }
 add_shortcode( 'aesop_center', 'aesop_center_content' );
 
@@ -28,30 +28,30 @@ add_shortcode( 'aesop_center', 'aesop_center_content' );
  * @since 1.0.4
  *
  * @param  string $component name of component being passed
- * @param  string $classes class or multiple classes separated with a space
+ * @param  string $classes   class or multiple classes separated with a space
  *
  * @return filter
  */
 function aesop_component_classes( $component = '', $classes = '' ) {
 
-	return apply_filters('aesop_'.$component.'_component_classes', $classes );
+	return apply_filters( 'aesop_'.$component.'_component_classes', $classes );
 }
 
 /**
-* Checks to see if an aesop component is present in the post
-*
-* @since 1.0.6
-*
-* @param string $component name of component being passed
-* @return bool
-*
-**/
+ * Checks to see if an aesop component is present in the post
+ *
+ * @since 1.0.6
+ *
+ * @param string $component name of component being passed
+ * @return boolean
+ *
+ **/
 function aesop_component_exists( $component = '' ) {
 
 	global $post;
 
 	// bail if has_shortcode isn't present (pre wp 3.6)
-	if ( !function_exists('has_shortcode') ) {
+	if ( ! function_exists( 'has_shortcode' ) ) {
 		return;
 	}
 
@@ -74,12 +74,12 @@ function aesop_component_exists( $component = '' ) {
 * 	uses body_class
 *
 */
-add_filter('body_class', 'aesop_check_theme');
+add_filter( 'body_class', 'aesop_check_theme' );
 function aesop_check_theme($classes){
 
 	$theme 		= wp_get_theme();
-	$get_name  	=  strtolower( $theme->get( 'Name' ) );
-	$name 		= str_replace(' ', '-', $get_name );
+	$get_name  	= strtolower( $theme->get( 'Name' ) );
+	$name 		= str_replace( ' ', '-', $get_name );
 
 	$classes[] = 'aesop-on-'.$name;
 
@@ -88,17 +88,17 @@ function aesop_check_theme($classes){
 }
 
 /**
-*	Used on the front end to properly escape attributes where users have control over what input is entered
-*	Currently used in content component floater and maps marker content
-*	
-*	@since 1.3
-*	@return a sanitized string
-*/
+ *	Used on the front end to properly escape attributes where users have control over what input is entered
+ *	Currently used in content component floater and maps marker content
+ *
+ * @since 1.3
+ * @return a sanitized string
+ */
 function aesop_component_media_filter( $input = '' ) {
 
 	// bail if no input
-	if ( empty( $input ) )
-		return;
+	if ( empty( $input ) ) {
+		return; }
 
 	// setup our array of allowed content to pass
 	$allowed_html = array(
@@ -120,37 +120,37 @@ function aesop_component_media_filter( $input = '' ) {
 		'strong' 		=> array()
 	);
 
-	$out = wp_kses( $input, apply_filters('aesop_content_allowed_html', $allowed_html ) );
+	$out = wp_kses( $input, apply_filters( 'aesop_content_allowed_html', $allowed_html ) );
 
 	return $out;
 }
 
 /**
-*
-*	Used to filter the map tile provider per post
-*
-*	@param $postid int id of the post for the map tile provider to change on
-*	@return a filtered map tile url based on provider
-*	@since 1.3
-*/
+ *
+ *	Used to filter the map tile provider per post
+ *
+ * @param $postid int id of the post for the map tile provider to change on
+ * @return a filtered map tile url based on provider
+ * @since 1.3
+ */
 function aesop_map_tile_provider( $postid = 0 ) {
 
 	// default provider - changed as of 1.5
-	$mapboxid 	= get_option('ase_mapbox_id','aesopinteractive.l74n2fi6');
+	$mapboxid 	= get_option( 'ase_mapbox_id','aesopinteractive.l74n2fi6' );
 
 	// mapbox v4 api now requires a public token
-	$token     = apply_filters('aesop_map_token', 'pk.eyJ1IjoiYWVzb3BpbnRlcmFjdGl2ZSIsImEiOiJ3TjJ4M0hJIn0.LwbGC9U8iKT_saX8c6v_4Q');
+	$token     = apply_filters( 'aesop_map_token', 'pk.eyJ1IjoiYWVzb3BpbnRlcmFjdGl2ZSIsImEiOiJ3TjJ4M0hJIn0.LwbGC9U8iKT_saX8c6v_4Q' );
 
 	// setup a filter to change the provider
-	$provider = apply_filters('aesop_map_tile_provider', 'mapbox', $postid);
+	$provider = apply_filters( 'aesop_map_tile_provider', 'mapbox', $postid );
 
 	// mapbox map path
-	$mapbox_upgraded = get_option('ase_mapbox_upgraded');
-	$path = empty( $mapbox_upgraded ) ? sprintf('//{s}.tiles.mapbox.com/v3/%s/{z}/{x}/{y}.png', esc_attr( $mapboxid ) ) : sprintf('https://api.tiles.mapbox.com/v4/%s/{z}/{x}/{y}.png?access_token=%s', esc_attr( $mapboxid ), esc_attr( $token ) );
+	$mapbox_upgraded = get_option( 'ase_mapbox_upgraded' );
+	$path = empty( $mapbox_upgraded ) ? sprintf( '//{s}.tiles.mapbox.com/v3/%s/{z}/{x}/{y}.png', esc_attr( $mapboxid ) ) : sprintf( 'https://api.tiles.mapbox.com/v4/%s/{z}/{x}/{y}.png?access_token=%s', esc_attr( $mapboxid ), esc_attr( $token ) );
 
-	switch ($provider) {
+	switch ( $provider ) {
 		case 'mapbox':
-			$out = sprintf('%s', $path );
+			$out = sprintf( '%s', $path );
 			break;
 		case 'stamen-toner-lite':
 			$out = '//{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png';
@@ -171,48 +171,48 @@ function aesop_map_tile_provider( $postid = 0 ) {
 			$out = '//{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png';
 			break;
 		default:
-			$out = sprintf('//{s}.tiles.mapbox.com/v3/%s/{z}/{x}/{y}.png', esc_attr( $mapboxid ) );
+			$out = sprintf( '//{s}.tiles.mapbox.com/v3/%s/{z}/{x}/{y}.png', esc_attr( $mapboxid ) );
 			break;
-	}
+	}//end switch
 
 	return $out;
 }
 
 /**
-*
-*
-*	Return data attributes for use with Aesop Story Editor
-*
-*	@param $type the type of component
-*	@param $gallery_id int the id of the gallery component if being used
-*	@param $defaults array the components attributes including users set merged
-*	@param $editable bool is this component editable directly inline
-*	@since 1.4.2
-*/
+ *
+ *
+ *	Return data attributes for use with Aesop Story Editor
+ *
+ * @param $type the type of component
+ * @param $gallery_id int the id of the gallery component if being used
+ * @param $defaults array the components attributes including users set merged
+ * @param $editable bool is this component editable directly inline
+ * @since 1.4.2
+ */
 function aesop_component_data_atts( $type, $gallery_id, $defaults, $editable = false ) {
 
 	// bail if we dont have a type or if the current user can't do anything
 	// may just need to back out to is user logged in like we had before
-	if ( empty( $type ) || empty( $defaults ) || !current_user_can('edit_posts') )
-		return;
+	if ( empty( $type ) || empty( $defaults ) || ! current_user_can( 'edit_posts' ) ) {
+		return; }
 
 	// if aesop story editor isn't activated then dont even bother
-	if ( !class_exists('Lasso') )
-		return;
+	if ( ! class_exists( 'Lasso' ) ) {
+		return; }
 
 	// we're looping through the default attributes that are fed to us and outputting them as data-attributes
 	$options = '';
 
 	if ( 'gallery' == $type ) {
 
-		$options .= sprintf('%s', aesop_gallery_component_data_atts( $gallery_id ) );
-		$gallery_id = sprintf('data-id=%s', $gallery_id );
+		$options .= sprintf( '%s', aesop_gallery_component_data_atts( $gallery_id ) );
+		$gallery_id = sprintf( 'data-id=%s', $gallery_id );
 
 	} else {
 
 		foreach ( $defaults as $default => $value ) {
 
-			$options .= !empty( $value ) ? 'data-'.$default.'="'.htmlentities($value).'" '  : false;
+			$options .= ! empty( $value ) ? 'data-'.$default.'="'.htmlentities( $value ).'" '  : false;
 		}
 
 		$gallery_id = false;
@@ -220,25 +220,25 @@ function aesop_component_data_atts( $type, $gallery_id, $defaults, $editable = f
 
 	$edit_state = true == $editable ? 'contenteditable=true' : 'contenteditable=false';
 
-	$out = sprintf('%s data-component-type=%s %s %s ', $edit_state, $type, $gallery_id, $options);
+	$out = sprintf( '%s data-component-type=%s %s %s ', $edit_state, $type, $gallery_id, $options );
 
 	return $out;
 }
 /**
-*
-*	Return data attribtues for teh gallery component
-*	 This one is different as teh attribute are stored in post meta and not as a shortcode attribute
-*	@return an array of gallery component info
-*	@since 1.4.2
-*/
+ *
+ *	Return data attribtues for teh gallery component
+ *	 This one is different as teh attribute are stored in post meta and not as a shortcode attribute
+ * @return an array of gallery component info
+ * @since 1.4.2
+ */
 function aesop_gallery_component_data_atts( $postid = '' ){
 
 	// bail out if aesop story editor isn't activated or if there's no gallery id passed
-	if ( empty ( $postid ) || !class_exists('Lasso') )
-		return;
+	if ( empty ( $postid ) || ! class_exists( 'Lasso' ) ) {
+		return; }
 
 	// type
-	$type 			= get_post_meta( $postid, 'aesop_gallery_type', true);
+	$type 			= get_post_meta( $postid, 'aesop_gallery_type', true );
 
 	// global
 	$width 			= get_post_meta( $postid, 'aesop_gallery_width', true );
@@ -274,7 +274,7 @@ function aesop_gallery_component_data_atts( $postid = '' ){
 
 	foreach ( $meta as $item => $value ) {
 
-		$options .= !empty( $value ) ? 'data-'.$item.'="'.htmlentities($value).'" '  : false;
+		$options .= ! empty( $value ) ? 'data-'.$item.'="'.htmlentities( $value ).'" '  : false;
 	}
 
 	return $options;

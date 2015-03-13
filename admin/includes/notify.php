@@ -1,22 +1,22 @@
 <?php
 
 /**
- 	* Creates a notification when plugin is activated
- 	*
- 	* @since    0.9.9
-*/
+ * Creates a notification when plugin is activated
+ *
+ * @since    0.9.9
+ */
 
 class AesopNotifyonActivation {
 
 	function __construct() {
 
-		add_action( 'admin_notices', array( $this, 'notify' ) ) ;
+		add_action( 'admin_notices', array( $this, 'notify' ) );
 
 	}
 
 	function notify() {
 
-		if( AI_CORE_VERSION > get_option('ai_core_version')) {
+		if ( AI_CORE_VERSION > get_option( 'ai_core_version' ) ) {
 
 			$out = '<div class="updated aesop-notice"><p>';
 
@@ -24,9 +24,9 @@ class AesopNotifyonActivation {
 
 			$out .= '</p></div>';
 
-			update_option('ai_core_version', AI_CORE_VERSION );
+			update_option( 'ai_core_version', AI_CORE_VERSION );
 
-			echo apply_filters('ai_activation_notification',$out);
+			echo apply_filters( 'ai_activation_notification',$out );
 
 		} else {
 

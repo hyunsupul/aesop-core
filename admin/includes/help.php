@@ -1,16 +1,16 @@
 <?php
 
 /**
- 	* Creates a help tab within the posts screen
- 	*
- 	* @since    0.9.94
-*/
+ * Creates a help tab within the posts screen
+ *
+ * @since    0.9.94
+ */
 
 class AesopContextualHelp {
 
 	function __construct() {
 
-		add_filter('contextual_help', array($this,'aesop_help'), 10, 3);
+		add_filter( 'contextual_help', array($this,'aesop_help'), 10, 3 );
 
 	}
 
@@ -20,10 +20,10 @@ class AesopContextualHelp {
 
 			$screen->add_help_tab( array(
 	      		'id'      => 'ai-story-help',
-	      		'title'   => __('Aesop Story Engine', 'aesop-core'),
+	      		'title'   => __( 'Aesop Story Engine', 'aesop-core' ),
 	      		'content' =>
-	      		'<h3>' .__('Welcome to Aesop Story Engine', 'aesop-core'). '</h3>'.
-	      		'<p>'.__('Add story components by clicking the "Add Component" button below. This opens the Story Engine and allows you to select the component that you\'d like to insert, after setting up a few options.', 'aesop-core'). '</p>'.
+	      		'<h3>' .__( 'Welcome to Aesop Story Engine', 'aesop-core' ). '</h3>'.
+	      		'<p>'.__( 'Add story components by clicking the "Add Component" button below. This opens the Story Engine and allows you to select the component that you\'d like to insert, after setting up a few options.', 'aesop-core' ). '</p>'.
 	      		 '<h4 style="margin-bottom:0;">'. __( 'How to Edit Components', 'aesop-core' ).'</h4>'.
 	      		'<p>'. __( 'While in the <em>Visual</em> tab below, and after adding inserting a story component, each component will turn into a sort of placeholder. You can either edit the components options by clicking on the pencil icon, or delete the component with the trash can icon.', 'aesop-core' ).'</p>'.
 	      		'<h4 style="margin-bottom:0;">'.__( 'Working with Components', 'aesop-core' ).'</h4>'.
@@ -41,13 +41,13 @@ class AesopContextualHelp {
 
 	      	));
 
-		}
+		}//end if
 
 		if ( 'ai_galleries' == $screen->id ){
 
 			$screen->add_help_tab( array(
 	      		'id'      => 'ai-gallery-help',
-	      		'title'   => __('Aesop Galleries', 'aesop-core'),
+	      		'title'   => __( 'Aesop Galleries', 'aesop-core' ),
 	      		'content' =>
 	      		'<h3>'. __( 'Aesop Gallery Component', 'aesop-core' ). '</h3>'.
 	      		'<p>'.__( 'Gallery components for Aesop are created and managed here with the Galleries post type. Each post is a different gallery, and each gallery has it\'s own shortcode that you\'ll use to display the gallery with.', 'aesop-core' ).'</p>'.
@@ -58,12 +58,12 @@ class AesopContextualHelp {
 					'<li>'.__( 'Adjust any available options for your specified gallery type.', 'aesop-core' ).'</li>'.
 					'<li>'.__( 'Publish the gallery.', 'aesop-core' ).'</li>'.
 					'<li>'.__( 'Go to any post, open the Component generator, select the Gallery component, and choose the gallery that you just created from the list.', 'aesop-core' ).'</li>'.
-			'</ol>'.
+				'</ol>'.
 					'<p>'.__( 'Tips: Clicking the "x" icon over the image will delete the image from this gallery (but not from your site). Clicking the "pencil" icon will let you edit any information for the image such as a caption or title used by some galleries.', 'aesop-core' ).'</p>'.
 					'<h4>'.__( 'Documentation', 'aesop-core' ).'</h4>'.
 				'<p>'.__( 'All components, options, and hooks are fully documented at <a href="http://developers.aesopstories.com">http://developers.aesopstories.com</a>', 'aesop-core' ).'</p>'
 	      	));
-		}
+		}//end if
 	}
 
 }

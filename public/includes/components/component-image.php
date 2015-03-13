@@ -1,10 +1,10 @@
 <?php
 /**
- 	* Provides an image and caption
- 	*
- 	* @since    1.0.0
-*/
-if (!function_exists('aesop_image_shortcode')){
+ * Provides an image and caption
+ *
+ * @since    1.0.0
+ */
+if ( ! function_exists( 'aesop_image_shortcode' ) ){
 
 	function aesop_image_shortcode($atts, $content = null) {
 
@@ -20,46 +20,46 @@ if (!function_exists('aesop_image_shortcode')){
 			'lightbox' 			=> 'off'
 		);
 
-		$atts = apply_filters('aesop_image_defaults',shortcode_atts($defaults, $atts));
+		$atts = apply_filters( 'aesop_image_defaults',shortcode_atts( $defaults, $atts ) );
 
 		// offset styles
-		$offsetstyle = $atts['offset'] && ('left' == $atts['align'] || 'right' == $atts['align'] ) ? sprintf('style=margin-%s:%s;width:%s;',$atts['align'], $atts['offset'], $atts['imgwidth']) : 'style=max-width:'.$atts['imgwidth'].';';
+		$offsetstyle = $atts['offset'] && ('left' == $atts['align'] || 'right' == $atts['align'] ) ? sprintf( 'style=margin-%s:%s;width:%s;',$atts['align'], $atts['offset'], $atts['imgwidth'] ) : 'style=max-width:'.$atts['imgwidth'].';';
 
 		// custom classes
-		$classes = function_exists('aesop_component_classes') ? aesop_component_classes( 'image', '' ) : null;
+		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'image', '' ) : null;
 
 		// let this be used multiple times
 		static $instance = 0;
 		$instance++;
-		$unique = sprintf('%s-%s',get_the_ID(), $instance);
+		$unique = sprintf( '%s-%s',get_the_ID(), $instance );
 
 		// lazy loader class
 		$lazy_holder = AI_CORE_URL.'/public/assets/img/aesop-lazy-holder.png';
-        $lazy   = class_exists('AesopLazyLoader') && !is_user_logged_in() ? sprintf( 'src="%s" data-src="%s" class="aesop-lazy-img"',$lazy_holder, esc_url( $atts['img'] ) ) : sprintf( 'src="%s"', esc_url( $atts['img'] ) );
+		$lazy   = class_exists( 'AesopLazyLoader' ) && ! is_user_logged_in() ? sprintf( 'src="%s" data-src="%s" class="aesop-lazy-img"',$lazy_holder, esc_url( $atts['img'] ) ) : sprintf( 'src="%s"', esc_url( $atts['img'] ) );
 
-        // automatic alt tag fallback if none specified
-		$auto_alt 	= $atts['img'] ? basename($atts['img']) : null;
-		$alt 		= $atts['alt'] ? $atts['alt'] : preg_replace('/\\.[^.\\s]{3,4}$/', '', $auto_alt);
+		// automatic alt tag fallback if none specified
+		$auto_alt 	= $atts['img'] ? basename( $atts['img'] ) : null;
+		$alt 		= $atts['alt'] ? $atts['alt'] : preg_replace( '/\\.[^.\\s]{3,4}$/', '', $auto_alt );
 
 		// combine into component shell
 		ob_start();
 
-		do_action('aesop_image_before'); //action
+		do_action( 'aesop_image_before' ); // action
 		?>
 		<div id="aesop-image-component-<?php echo esc_html( $unique );?>" <?php echo aesop_component_data_atts( 'image', $unique, $atts );?> class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes );?>" >
 
-			<?php do_action('aesop_image_inside_top'); //action ?>
+			<?php do_action( 'aesop_image_inside_top' ); // action ?>
 
 			<figure class="aesop-content">
 				<div class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> aesop-image-component-caption-<?php echo sanitize_html_class( $atts['captionposition'] );?>" <?php echo esc_attr( $offsetstyle );?>>
 					<?php
 
-					do_action('aesop_image_inner_inside_top'); //action 
+					do_action( 'aesop_image_inner_inside_top' ); // action
 
-					if('on' == $atts['lightbox']) { ?>
+					if ( 'on' == $atts['lightbox'] ) { ?>
 
 						<a class="aesop-lightbox" href="<?php echo $atts['img'];?>" title="<?php echo $atts['caption'];?>">
-							<p class="aesop-img-enlarge"><i class="aesopicon aesopicon-search-plus"></i> <?php _e('Enlarge','aesop-core');?></p>
+							<p class="aesop-img-enlarge"><i class="aesopicon aesopicon-search-plus"></i> <?php _e( 'Enlarge','aesop-core' );?></p>
 							<img <?php echo $lazy;?> alt="<?php echo esc_attr( $alt );?>">
 						</a>
 
@@ -69,7 +69,7 @@ if (!function_exists('aesop_image_shortcode')){
 
 					<?php }
 
-					if ($atts['caption']) { ?>
+if ( $atts['caption'] ) { ?>
 
 						<figcaption class="aesop-image-component-caption">
 							<?php
@@ -84,17 +84,17 @@ if (!function_exists('aesop_image_shortcode')){
 
 					<?php } ?>
 
-					<?php do_action('aesop_image_inner_inside_bottom'); //action ?>
+					<?php do_action( 'aesop_image_inner_inside_bottom' ); // action ?>
 
 				</div>
 			</figure>
 
-			<?php do_action('aesop_image_inside_bottom'); //action ?>
+			<?php do_action( 'aesop_image_inside_bottom' ); // action ?>
 
 		</div>
 		<?php
-		do_action('aesop_image_after'); //action
+		do_action( 'aesop_image_after' ); // action
 
 		return ob_get_clean();
 	}
-}
+}//end if
