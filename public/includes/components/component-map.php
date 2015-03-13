@@ -188,7 +188,7 @@ class AesopMapComponent {
 	/**
 	 * Retrieve meta settings for map component
 	 *
-	 * @param unknown $post_id int
+	 * @param integer $post_id int
 	 * @param unknown $key     string -meta key
 	 * @return starting coordinate
 	 * @since 1.1
@@ -210,7 +210,7 @@ class AesopMapComponent {
 	 * then fallback to the first coordinate entered if present.
 	 *
 	 * @param unknown $markers - array - gps coordinates entered aspost meta within respective post
-	 * @return first gps marker found
+	 * @return null|string gps marker found
 	 * @since 1.1
 	 *
 	 */
