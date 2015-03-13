@@ -1,9 +1,9 @@
 <?php
 /**
- 	* Creates a section of options in theme customizer
- 	*
- 	* @since    1.0.3
-*/
+ * Creates a section of options in theme customizer
+ *
+ * @since    1.0.3
+ */
 class AesopStoryEngineOptions {
 
 	// add new options to new section
@@ -11,7 +11,7 @@ class AesopStoryEngineOptions {
 
 		$wp_customize->add_section( 'aesop_story_engine', array(
 			'title' 		=> __( 'Aesop Story Engine', 'aesop-core' ),
-			'description'	=> __('Refer to the documentation located <a href="http://aesopstoryengine.com/help" target="_blank">here</a> for full option descriptions.', 'aesop-core')
+			'description'	=> __( 'Refer to the documentation located <a href="http://aesopstoryengine.com/help" target="_blank">here</a> for full option descriptions.', 'aesop-core' )
 		) );
 
 		// Enable Google Analytics
@@ -21,7 +21,7 @@ class AesopStoryEngineOptions {
 			'sanitize_callback' => self::sanitize_text_field()
 		) );
 		$wp_customize->add_control( 'ase_mapbox_id', array(
-			'label' 		=> __('Mapbox Map ID','aesop-core'),
+			'label' 		=> __( 'Mapbox Map ID','aesop-core' ),
 			'section' 		=> 'aesop_story_engine',
 			'settings' 		=> 'ase_mapbox_id',
 			'type' 			=> 'text'
