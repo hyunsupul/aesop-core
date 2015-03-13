@@ -22,7 +22,7 @@ class aiCoreCSSMerger {
 	 * @since 1.0.9
 	 *
 	 */
-	function merger() {
+	public function merger() {
 
 		$css = '';
 
