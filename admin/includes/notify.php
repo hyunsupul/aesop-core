@@ -26,7 +26,7 @@ class AesopNotifyonActivation {
 
 			update_option( 'ai_core_version', AI_CORE_VERSION );
 
-			echo apply_filters( 'ai_activation_notification',$out );
+			echo apply_filters( 'ai_activation_notification', $out );
 
 		} else {
 

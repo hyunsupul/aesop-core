@@ -10,6 +10,7 @@
  */
 /**
  *
+ *
  * @package Aesop_Core_Admin
  * @author  Nick Haskins <nick@aesopinteractive.com>
  */
@@ -42,11 +43,11 @@ class Aesop_Core_Admin {
 	 */
 	private function __construct() {
 
-		require_once( AI_CORE_DIR.'admin/includes/class.welcome.php' );
-		require_once( AI_CORE_DIR.'admin/includes/help.php' );
-		require_once( AI_CORE_DIR.'admin/includes/notify.php' );
-		require_once( AI_CORE_DIR.'admin/includes/components/component-map.php' );
-		require_once( AI_CORE_DIR.'admin/includes/components/component-gallery.php' );
+		require_once AI_CORE_DIR.'admin/includes/class.welcome.php';
+		require_once AI_CORE_DIR.'admin/includes/help.php';
+		require_once AI_CORE_DIR.'admin/includes/notify.php';
+		require_once AI_CORE_DIR.'admin/includes/components/component-map.php';
+		require_once AI_CORE_DIR.'admin/includes/components/component-gallery.php';
 		/*
 		 	* Call $plugin_slug from public plugin class.
 		 	*
@@ -58,14 +59,14 @@ class Aesop_Core_Admin {
 		*  Define custom functionality.
 		*
 		*/
-		add_action( 'media_buttons', 			array($this,'generator_button'), 100 );
-		add_action( 'admin_footer', 			array($this,'generator_popup') );
-		add_action( 'admin_enqueue_scripts', 	array($this,'admin_scripts') );
-		add_filter( 'mce_css', 					array($this,'aesop_editor_styles') );
-		add_filter( 'wp_fullscreen_buttons', 	array($this,'fs_generator_button') );
-		add_filter( 'mce_external_plugins', 	array($this,'tinymce_plugin') );
-		add_action( 'after_wp_tiny_mce', 		array($this,'ase_after_wp_tiny_mce') );
-		add_filter( 'plugin_row_meta', 			array( $this, 'plugin_meta' ), 10, 2 );
+		add_action( 'media_buttons',    array( $this, 'generator_button' ), 100 );
+		add_action( 'admin_footer',    array( $this, 'generator_popup' ) );
+		add_action( 'admin_enqueue_scripts',  array( $this, 'admin_scripts' ) );
+		add_filter( 'mce_css',      array( $this, 'aesop_editor_styles' ) );
+		add_filter( 'wp_fullscreen_buttons',  array( $this, 'fs_generator_button' ) );
+		add_filter( 'mce_external_plugins',  array( $this, 'tinymce_plugin' ) );
+		add_action( 'after_wp_tiny_mce',   array( $this, 'ase_after_wp_tiny_mce' ) );
+		add_filter( 'plugin_row_meta',    array( $this, 'plugin_meta' ), 10, 2 );
 	}
 
 	/**
@@ -90,7 +91,7 @@ class Aesop_Core_Admin {
 	 *
 	 * @since     1.0.0
 	 */
-	public function admin_scripts(){
+	public function admin_scripts() {
 
 		// Register Scripts
 		wp_register_script( 'ai-core-script', AI_CORE_URL. '/admin/assets/js/generator.min.js', AI_CORE_VERSION, true );
@@ -110,7 +111,7 @@ class Aesop_Core_Admin {
 				// Enqueue scripts
 				wp_enqueue_script( 'ai-core-script' );
 
-				include( AI_CORE_DIR . '/admin/includes/generator_blob.php' );
+				include AI_CORE_DIR . '/admin/includes/generator_blob.php';
 
 				wp_localize_script( 'ai-core-script', 'aesopshortcodes', aesop_shortcodes_blob() );
 				wp_enqueue_script( 'aesop-shortcodes-selectbox' );
@@ -151,7 +152,7 @@ class Aesop_Core_Admin {
 	 *
 	 * @since     0.9.96
 	 */
-	public function fs_generator_button($buttons){
+	public function fs_generator_button( $buttons ) {
 		$buttons[] = self::generator_button();
 		return $buttons;
 	}
@@ -161,8 +162,8 @@ class Aesop_Core_Admin {
 	 *
 	 * @since     1.1.0
 	 */
-	public function tinymce_plugin($plugins_array){
-		$plugins = array('aiview','noneditable');
+	public function tinymce_plugin( $plugins_array ) {
+		$plugins = array( 'aiview', 'noneditable' );
 
 		foreach ( $plugins as $plugin ) {
 			$plugins_array[ $plugin ] = plugins_url( 'assets/js/tinymce/', __FILE__ ) . $plugin . '/plugin.min.js';
@@ -198,24 +199,24 @@ class Aesop_Core_Admin {
 						<select name="aesop-select" class="aesop-generator" id="aesop-generator-select">
 
 							<?php
-							foreach ( aesop_shortcodes() as $name => $shortcode ) {
-							?>
+			foreach ( aesop_shortcodes() as $name => $shortcode ) {
+?>
 							<option value="<?php echo $name; ?>"><?php echo str_replace( '_', ' ', strtoupper( $name ) ); ?></option>
 							<?php
-							}
-							?>
+			}
+?>
 						</select>
 
 						<?php if ( ! defined( 'AI_CORE_WATERMARK' ) ) {
-							echo self::messages();
-} ?>
+				echo self::messages();
+			} ?>
 					</div>
 
 					<div id="aesop-generator-settings-outer" class="aesop-generator-right">
 						<div id="aesop-generator-settings">
 
 							<div class="aesop-generator-empty">
-								<h2><?php _e( 'Select a story component.','aesop-core' );?></h2>
+								<h2><?php _e( 'Select a story component.', 'aesop-core' );?></h2>
 							</div>
 
 						</div>
@@ -231,6 +232,7 @@ class Aesop_Core_Admin {
 	}
 
 	/**
+	 *
 	 *
 	 * @since 1.1
 	 * @return array of random messages used for watermark
@@ -250,13 +252,14 @@ class Aesop_Core_Admin {
 
 	/**
 	 *
+	 *
 	 * @since 1.3
 	 * @return handle some stuff after tiny mce is loaded
 	 *
 	 */
 	public function ase_after_wp_tiny_mce() {
 
-		?>
+?>
 
 		<script type="text/javascript">
 			function mceAlive() {
@@ -287,12 +290,11 @@ class Aesop_Core_Admin {
 	}
 
 	/**
-	 *
-	 *	Add some custom links to the plugins.php page for Aesop
+	 * Add some custom links to the plugins.php page for Aesop
 	 *
 	 * @since 1.3
-	 * @param $links array array of new links
-	 * @param $file
+	 * @param unknown $links array array of new links
+	 * @param unknown $file
 	 *
 	 * @return array new array of links for our plugin listing on plugins.php
 	 */
@@ -300,8 +302,8 @@ class Aesop_Core_Admin {
 
 		if ( strpos( $file, 'aesop-core.php' ) !== false ) {
 
-		 	$new_links = array(
-		 		'<a href="http://aesopstoryengine.com/help" target="_blank">Documentation</a>',
+			$new_links = array(
+				'<a href="http://aesopstoryengine.com/help" target="_blank">Documentation</a>',
 				'<a href="http://aesopstoryengine.com/donate" target="_blank">Donate</a>'
 			);
 

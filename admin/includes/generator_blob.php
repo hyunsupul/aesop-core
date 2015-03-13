@@ -12,13 +12,13 @@ function aesop_shortcodes_blob() {
 
 			foreach ( $shortcode['atts'] as $attr_name => $attr_info ) {
 
-				$prefix = isset($attr_info['prefix']) ? sprintf( '<span class="aesop-option-prefix">%s</span>',$attr_info['prefix'] ) : null;
+				$prefix = isset( $attr_info['prefix'] ) ? sprintf( '<span class="aesop-option-prefix">%s</span>', $attr_info['prefix'] ) : null;
 
 				$return .= '<p class="aesop-'.$slug.'-'.$attr_name.'">';
 				$return .= '<label for="aesop-generator-attr-' . $attr_name . '">' . $attr_info['desc'] . '</label>';
 				$return .= '<small class="aesop-option-desc">'.$attr_info['tip'].'</small>';
 				// Select
-				if ( isset($attr_info['values']) ) {
+				if ( isset( $attr_info['values'] ) ) {
 
 					$return .= '<select name="' . $attr_name . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr">';
 
@@ -36,7 +36,7 @@ function aesop_shortcodes_blob() {
 
 				} else {
 
-					$attr_field_type = isset($attr_info['type']) ? $attr_info['type'] : 'text';
+					$attr_field_type = isset( $attr_info['type'] ) ? $attr_info['type'] : 'text';
 
 					// image upload
 					if ( 'media_upload' == $attr_info['type'] ) {
