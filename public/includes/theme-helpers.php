@@ -117,7 +117,22 @@ function aesop_component_media_filter( $input = '' ) {
 		'p'				=> array(),
 		'br' 			=> array(),
 		'em' 			=> array(),
-		'strong' 		=> array()
+		'strong' 		=> array(),
+        'h2' 			=> array(
+           'align' => true,
+        ),
+        'h3' 			=> array(
+           	'align' => true,
+        ),
+        'h4' 			=> array(
+            'align' => true,
+        ),
+        'h5' 			=> array(
+            'align' => true,
+        ),
+        'h6' 			=> array(
+           	'align' => true,
+        ),
 	);
 
 	$out = wp_kses( $input, apply_filters( 'aesop_content_allowed_html', $allowed_html ) );
