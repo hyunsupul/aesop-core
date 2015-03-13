@@ -80,23 +80,23 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ){
 
 		ob_start();
 
-		do_action( 'aesop_cbox_before' ); // action
+			do_action( 'aesop_cbox_before' ); // action
 			?>
 				<div <?php echo aesop_component_data_atts( 'content', $unique, $atts, true );?> class="aesop-component aesop-content-component <?php echo sanitize_html_class( $classes ).' '.$has_img. ' '.$has_floater;?>" style="<?php echo $height;?>" >
 
 					<?php if ( $atts['floatermedia'] && ! wp_is_mobile() ) { ?>
 						<!-- Aesop Content Component -->
 						<script>
-						jQuery(document).ready(function(){
+						jQuery(document).ready(function($){
 
-							var obj = jQuery('#aesop-content-component-<?php echo esc_attr( $unique );?> .aesop-content-component-floater');
+							var obj = $('#aesop-content-component-<?php echo esc_attr( $unique );?> .aesop-content-component-floater');
 
 					       	function scrollParallax(){
 
-					       	    var height 			= jQuery(obj).height(),
-        	        				offset 			= jQuery(obj).offset().top,
-						       	    scrollTop 		= jQuery(window).scrollTop(),
-						       	    windowHeight 	= jQuery(window).height(),
+					       	    var height 			= $(obj).height(),
+	    	        				offset 			= $(obj).offset().top,
+						       	    scrollTop 		= $(window).scrollTop(),
+						       	    windowHeight 	= $(window).height(),
 						       	    floater 		= Math.round( (offset - scrollTop) * 0.1);
 
 						    	// only run parallax if in view
@@ -105,14 +105,14 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ){
 								}
 
 					       	    <?php if ( 'up' == $atts['floaterdirection'] ){ ?>
-					            	jQuery(obj).css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
+					            	$(obj).css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
 								<?php } else { ?>
-									jQuery(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
+									$(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
 								<?php } ?>
 					       	}
 					      	scrollParallax();
 
-					        jQuery(window).scroll(function() {scrollParallax();});
+					        $(window).scroll(function() {scrollParallax();});
 						});
 						</script>
 
@@ -151,6 +151,6 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ){
 
 			do_action( 'aesop_cbox_after' ); // action
 
-			return ob_get_clean();
+		return ob_get_clean();
 	}
 }//end if

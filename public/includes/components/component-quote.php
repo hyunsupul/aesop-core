@@ -87,19 +87,19 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ){
 				<?php if ( 'block' == $atts['type'] ): ?>
 					<!-- Aesop Core | Quote -->
 					<script>
-						jQuery(document).ready(function(){
+						jQuery(document).ready(function($){
 
-							var moving 		= jQuery('#aesop-quote-component-<?php echo esc_attr( $unique );?> blockquote'),
-								component   = jQuery('#aesop-quote-component-<?php echo esc_attr( $unique );?>');
+							var moving 		= $('#aesop-quote-component-<?php echo esc_attr( $unique );?> blockquote'),
+								component   = $('#aesop-quote-component-<?php echo esc_attr( $unique );?>');
 
 							// if parallax is on and we're not on mobile
 							<?php if ( 'on' == $atts['parallax'] && ! wp_is_mobile() ) { ?>
 
 						       	function scrollParallax(){
-						       	    var height 			= jQuery(component).height(),
-	        	        				offset 			= jQuery(component).offset().top,
-							       	    scrollTop 		= jQuery(window).scrollTop(),
-							       	    windowHeight 	= jQuery(window).height(),
+						       	    var height 			= $(component).height(),
+	        	        				offset 			= $(component).offset().top,
+							       	    scrollTop 		= $(window).scrollTop(),
+							       	    windowHeight 	= $(window).height(),
 							       	    position 		= Math.round( scrollTop * 0.1 );
 
 							       	// only run parallax if in view
@@ -107,36 +107,36 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ){
 										return;
 									}
 
-						            jQuery(moving).css({'transform':'translate3d(0px,-' + position + 'px, 0px)'});
+						            moving.css({'transform':'translate3d(0px,-' + position + 'px, 0px)'});
 
 						       	    <?php if ( 'left' == $atts['direction'] ){ ?>
-						            	jQuery(moving).css({'transform':'translate3d(-' + position + 'px, 0px, 0px)'});
+						            	moving.css({'transform':'translate3d(-' + position + 'px, 0px, 0px)'});
 						            <?php } elseif ( 'right' == $atts['direction'] ) { ?>
-										jQuery(moving).css({'transform':'translate3d(' + position + 'px, 0px, 0px)'});
+										moving.css({'transform':'translate3d(' + position + 'px, 0px, 0px)'});
 						            <?php } ?>
 						       	}
-						       	jQuery(component).waypoint({
+						       	component.waypoint({
 									offset: '100%',
 									handler: function(direction){
-							   			jQuery(this).toggleClass('aesop-quote-faded');
+							   			$(this).toggleClass('aesop-quote-faded');
 
 							   			// fire parallax
 							   			scrollParallax();
-										jQuery(window).scroll(function() {scrollParallax();});
+										$(window).scroll(function() {scrollParallax();});
 								   	}
 								});
 
 							<?php } else { ?>
 
-								jQuery(moving).waypoint({
+								moving.waypoint({
 									offset: '90%',
 									handler: function(direction){
-								   		jQuery(this).toggleClass('aesop-quote-faded');
+								   		$(this).toggleClass('aesop-quote-faded');
 
 								   	}
 								});
-							<?php }//end if
-	?>
+
+							<?php }//end if ?>
 
 						});
 					</script>
@@ -148,7 +148,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ){
 				<blockquote class="<?php echo sanitize_html_class( $align );?>" style="font-size:<?php echo esc_attr( $size );?>;">
 					<span><?php echo esc_html( $atts['quote'] );?></span>
 
-					<?php echo $cite;?>
+					<?php echo aesop_component_media_filter( $cite );?>
 				</blockquote>
 
 				<?php do_action( 'aesop_quote_inside_bottom' ); // action ?>

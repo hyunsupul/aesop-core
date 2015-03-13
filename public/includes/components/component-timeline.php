@@ -76,11 +76,11 @@ class AesopTimelineComponent {
 		?>
 			<!-- Aesop Timeline -->
 			<script>
-			jQuery(document).ready(function(){
+			jQuery(document).ready(function($){
 
-				jQuery('body').append('<div class="aesop-timeline"></div>');
+				$('body').append('<div class="aesop-timeline"></div>');
 
-				jQuery('<?php echo esc_attr( $contentClass );?>').scrollNav({
+				$('<?php echo esc_attr( $contentClass );?>').scrollNav({
 				    sections: '.aesop-timeline-stop',
 				    arrowKeys: true,
 				    insertTarget: '<?php echo esc_attr( $appendTo );?>',
@@ -90,9 +90,9 @@ class AesopTimelineComponent {
 				    scrollOffset: <?php echo (int) $timelineOffset;?>,
 				});
 
-				jQuery('.aesop-timeline-stop').each(function(){
-					var label = jQuery(this).attr('data-title');
-					jQuery(this).text(label);
+				$('.aesop-timeline-stop').each(function(){
+					var label = $(this).attr('data-title');
+					$(this).text(label);
 				});
 
 			});

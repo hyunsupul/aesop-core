@@ -69,7 +69,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ){
 
 					<?php }
 
-if ( $atts['caption'] ) { ?>
+					if ( $atts['caption'] ) { ?>
 
 						<figcaption class="aesop-image-component-caption">
 							<?php

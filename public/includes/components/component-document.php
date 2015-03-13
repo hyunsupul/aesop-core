@@ -44,10 +44,10 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ){
 
 		$out = sprintf('
 			<script>
-			jQuery(document).ready(function(){
-				jQuery(\'.aesop-doc-reveal-%s\').click(function(e){
+			jQuery(document).ready(function($){
+				$(\'.aesop-doc-reveal-%s\').click(function(e){
 					e.preventDefault;
-					jQuery( "#aesop-doc-collapse-%s" ).slideToggle();
+					$( "#aesop-doc-collapse-%s" ).slideToggle();
 					return false;
 				});
 			});

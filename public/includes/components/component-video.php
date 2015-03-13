@@ -60,18 +60,18 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ){
 
 	    if ( 'on' == $atts['viewstart'] && 'self' == $atts['src'] ) { ?>
 	    	<script>
-		    	jQuery(document).ready(function(){
-		    		jQuery('#aesop-video-<?php echo esc_attr( $unique );?>').arrive('.mejs-video', function(){
-						jQuery('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+		    	jQuery(document).ready(function($){
+		    		$('#aesop-video-<?php echo esc_attr( $unique );?>').arrive('.mejs-video', function(){
+						$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 							offset: '<?php echo esc_attr( $waypoint );?>',
 							handler: function(direction){
-						   		jQuery('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
+						   		$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
 						   	}
 						});
 						<?php if ( 'on' == $atts['viewend'] ) { ?>
-						jQuery('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+						$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 							handler: function(direction){
-						   		jQuery('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
+						   		$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
 						   	}
 						});
 						<?php } ?>
@@ -123,7 +123,8 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ){
 		        ?>
 		    </div>
 
-	   	 	<?php echo $caption;
+	   	 	<?php echo aesop_component_media_filter( $caption );
+
 	    	do_action( 'aesop_video_inside_bottom' ); // action ?>
 		</div>
 
