@@ -1,14 +1,14 @@
 <?php
 /**
- 	* 	Add image sizes for various components
- 	*
- 	* 	@since    1.0.0
+ * 	Add image sizes for various components
+ *
+ * @since    1.0.0
  */
 class AesopComponentImageSizes {
 
 	function __construct() {
 
-		add_filter('init',		array($this,'img_sizes'));
+		add_filter( 'init',		array($this,'img_sizes') );
 	}
 
 	function img_sizes(){
@@ -18,7 +18,7 @@ class AesopComponentImageSizes {
 		add_image_size( 'aesop-component',  1250, 9999 );      // Parallax & Image Components
 		add_image_size( 'aesop-character', 	200,  200, true ); // Character Component
 		add_image_size( 'aesop-collection', 300,  300, true ); // Collection Component
-		add_image_size( 'aesop-grid-image', 400,  9999); // Collection Component
+		add_image_size( 'aesop-grid-image', 400,  9999 ); // Collection Component
 	}
 }
 
