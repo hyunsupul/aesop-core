@@ -477,7 +477,7 @@ class AesopGalleryComponentAdmin {
 	 * Check to see if any galleries exist
 	 *
 	 * @since 1.4
-	 * @return bool true if galleries exist, false if not
+	 * @return string true if galleries exist, false if not
 	 */
 	function aesop_check_for_galleries() {
 

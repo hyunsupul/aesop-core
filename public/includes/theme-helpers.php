@@ -43,7 +43,7 @@ function aesop_component_classes( $component = '', $classes = '' ) {
  * @since 1.0.6
  *
  * @param string  $component name of component being passed
- * @return boolean
+ * @return null|boolean
  *
  * */
 function aesop_component_exists( $component = '' ) {
@@ -142,8 +142,8 @@ function aesop_component_media_filter( $input = '' ) {
 /**
  * Used to filter the map tile provider per post
  *
- * @param unknown $postid int id of the post for the map tile provider to change on
- * @return a filtered map tile url based on provider
+ * @param integer $postid int id of the post for the map tile provider to change on
+ * @return string filtered map tile url based on provider
  * @since 1.3
  */
 function aesop_map_tile_provider( $postid = 0 ) {
@@ -193,7 +193,7 @@ function aesop_map_tile_provider( $postid = 0 ) {
 /**
  * Return data attributes for use with Aesop Story Editor
  *
- * @param unknown $type       the type of component
+ * @param string $type       the type of component
  * @param unknown $gallery_id int the id of the gallery component if being used
  * @param unknown $defaults   array the components attributes including users set merged
  * @param unknown $editable   bool is this component editable directly inline
@@ -238,7 +238,7 @@ function aesop_component_data_atts( $type, $gallery_id, $defaults, $editable = f
  * Return data attribtues for teh gallery component
  *  This one is different as teh attribute are stored in post meta and not as a shortcode attribute
  *
- * @return an array of gallery component info
+ * @return null|string array of gallery component info
  * @since 1.4.2
  */
 function aesop_gallery_component_data_atts( $postid = '' ) {

@@ -1143,7 +1143,7 @@ function aesop_option_get_categories( $type = 'post' ) {
  * Helper function to build a dropdown with integers
  *
  * @since 1.1
- * @param unknown $count - int
+ * @param integer $count - int
  */
 function aesop_option_counter( $count = 10 ) {
 
