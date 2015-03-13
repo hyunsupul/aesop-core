@@ -10,20 +10,19 @@
 
 class aiCoreCSSMerger {
 
-	function __construct(){
+	function __construct() {
 
-		add_action( 'wp_enqueue_scripts', array($this,'merger'),11 );
+		add_action( 'wp_enqueue_scripts', array( $this, 'merger' ), 11 );
 	}
 
 	/**
-	 *
-	 *	conditionally load css depending on the component being called in add_theme_support
+	 * conditionally load css depending on the component being called in add_theme_support
 	 *   wp_add_inline_styles used to load css in head
 	 *
 	 * @since 1.0.9
 	 *
 	 */
-	function merger(){
+	function merger() {
 
 		$css = '';
 
@@ -122,13 +121,12 @@ class aiCoreCSSMerger {
 	}
 
 	/**
-	 *
-	 *	Helper function used in seeing if a particular theme has added extended styles support
+	 * Helper function used in seeing if a particular theme has added extended styles support
 	 *   For example, say a theme has add_theme_support('whatever', array('thing_one', 'thing_two'))
 	 *
 	 *   aesop_theme_supports( $component ) is used to see if the particular arg within an array exists
 	 *
-	 * @param $component - array of components
+	 * @param unknown $component - array of components
 	 * @since 1.0.9
 	 */
 

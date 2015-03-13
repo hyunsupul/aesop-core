@@ -5,43 +5,43 @@
  *
  * @since    1.0.0
  */
-if ( ! function_exists( 'aesop_character_shortcode' ) ){
+if ( ! function_exists( 'aesop_character_shortcode' ) ) {
 
-	function aesop_character_shortcode($atts, $content = null) {
+	function aesop_character_shortcode( $atts, $content = null ) {
 
 		$defaults = array(
-			'img' 				=> '',
-			'name' 				=> '',
-			'caption'			=> '',
-			'align' 			=> 'left',
-			'width'				=> ''
+			'img'     => '',
+			'name'     => '',
+			'caption'   => '',
+			'align'    => 'left',
+			'width'    => ''
 		);
 
 		// let this be used multiple times
 		static $instance = 0;
 		$instance++;
-		$unique = sprintf( '%s-%s',get_the_ID(), $instance );
+		$unique = sprintf( '%s-%s', get_the_ID(), $instance );
 
-		$atts = apply_filters( 'aesop_character_defaults',shortcode_atts( $defaults, $atts ) );
+		$atts = apply_filters( 'aesop_character_defaults', shortcode_atts( $defaults, $atts ) );
 
 		// custom classes
 		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'character', '' ) : null;
 
 		// width styles
-		$styles = $atts['width'] ? sprintf( 'style="width:%s;"',esc_attr( $atts['width'] ) ) : null;
+		$styles = $atts['width'] ? sprintf( 'style="width:%s;"', esc_attr( $atts['width'] ) ) : null;
 
 		// wrapper float class
 		$float = $atts['align'] ? sprintf( 'aesop-component-align-%s', esc_attr( $atts['align'] ) ) : null;
 
 		// automatic alt tag
-		$auto_alt 	= $atts['img'] ? basename( $atts['img'] ) : null;
-		$alt 		= $auto_alt ? preg_replace( '/\\.[^.\\s]{3,4}$/', '', $auto_alt ) : null;
+		$auto_alt  = $atts['img'] ? basename( $atts['img'] ) : null;
+		$alt   = $auto_alt ? preg_replace( '/\\.[^.\\s]{3,4}$/', '', $auto_alt ) : null;
 
 		// character wrap
 		ob_start();
 
-			do_action( 'aesop_character_before' ); // action
-			?>
+		do_action( 'aesop_character_before' ); // action
+?>
 				<aside id="aesop-character-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'character', $unique, $atts );?> class="aesop-character-component aesop-component <?php echo sanitize_html_class( $classes ).''.sanitize_html_class( $float );?> ">
 
 					<?php do_action( 'aesop_character_inside_top' ); // action ?>
@@ -77,7 +77,7 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ){
 				</aside>
 			<?php
 
-			do_action( 'aesop_character_after' ); // action
+		do_action( 'aesop_character_after' ); // action
 
 		return ob_get_clean();
 	}
