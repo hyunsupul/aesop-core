@@ -53,57 +53,57 @@ class AesopCoreGallery {
 
 				do_action( 'aesop_gallery_inside_top', $type, $gallery_id ); // action
 
-if ( ! empty($image_ids) ) {
+		if ( ! empty($image_ids) ) {
 
-	switch ( $type ) { :
-		case 'thumbnail':
-			$this->aesop_thumb_gallery( $gallery_id, $image_ids, $width );
-		break };
-	case 'grid':
-		$this->aesop_grid_gallery( $gallery_id, $image_ids, $width );
-		break;
-	case 'stacked':
-		$this->aesop_stacked_gallery( $gallery_id, $image_ids, $width, $unique );
-		break;
-	case 'sequence':
-		$this->aesop_sequence_gallery( $gallery_id, $image_ids, $width );
-		break;
-	case 'photoset':
-		$this->aesop_photoset_gallery( $gallery_id, $image_ids, $width );
-		break;
-	default:
-		$this->aesop_grid_gallery( $gallery_id, $image_ids, $width );
-		break;
-	endswitch;
+			switch ( $type ) {
+				case 'thumbnail':
+					$this->aesop_thumb_gallery( $gallery_id, $image_ids, $width );
+				break;
+				case 'grid':
+					$this->aesop_grid_gallery( $gallery_id, $image_ids, $width );
+					break;
+				case 'stacked':
+					$this->aesop_stacked_gallery( $gallery_id, $image_ids, $width, $unique );
+					break;
+				case 'sequence':
+					$this->aesop_sequence_gallery( $gallery_id, $image_ids, $width );
+					break;
+				case 'photoset':
+					$this->aesop_photoset_gallery( $gallery_id, $image_ids, $width );
+					break;
+				default:
+					$this->aesop_grid_gallery( $gallery_id, $image_ids, $width );
+					break;
+			}
 
-	if ( $gallery_caption ) {
-		printf( '<p class="aesop-component-caption">%s</p>', esc_html( $gallery_caption ) );
-	}
+			if ( $gallery_caption ) {
+				printf( '<p class="aesop-component-caption">%s</p>', esc_html( $gallery_caption ) );
+			}
 
-	// provide the edit link to the backend edit if Aesop Editor is not active
-	if ( ! class_exists( 'Lasso' ) && is_user_logged_in() && current_user_can( 'edit_posts' ) ) {
-		$url = admin_url( 'post.php?post='.$gallery_id.'&action=edit' );
-		$edit_gallery = __( 'edit gallery', 'aesop-core' );
-		printf( '<a class="aesop-gallery-edit aesop-content" href="%s" target="_blank" title="%s">(%s)</a>',$url, $edit_gallery, $edit_gallery );
-	}
-}//end if
+			// provide the edit link to the backend edit if Aesop Editor is not active
+			if ( ! class_exists( 'Lasso' ) && is_user_logged_in() && current_user_can( 'edit_posts' ) ) {
+				$url = admin_url( 'post.php?post='.$gallery_id.'&action=edit' );
+				$edit_gallery = __( 'edit gallery', 'aesop-core' );
+				printf( '<a class="aesop-gallery-edit aesop-content" href="%s" target="_blank" title="%s">(%s)</a>',$url, $edit_gallery, $edit_gallery );
+			}
+		}//end if
 
-if ( empty( $gallery_id ) && is_user_logged_in() && current_user_can( 'edit_posts' ) ) {
+		if ( empty( $gallery_id ) && is_user_logged_in() && current_user_can( 'edit_posts' ) ) {
 
-	if ( class_exists( 'Lasso' ) ) {
+			if ( class_exists( 'Lasso' ) ) {
 
-		?><div contenteditable="false" class="lasso--empty-component"><?php
-			_e( 'Setup a gallery by clicking the <span class="lasso-icon-gear"></span> icon above.', 'aesop-core' );
-		?></div><?php
+				?><div contenteditable="false" class="lasso--empty-component"><?php
+					_e( 'Setup a gallery by clicking the <span class="lasso-icon-gear"></span> icon above.', 'aesop-core' );
+				?></div><?php
 
-	} else {
+			} else {
 
-		?><div class="aesop-error aesop-content"><?php
-			_e( 'This gallery is empty! It\'s also possible that you simply have the wrong gallery ID.', 'aesop-core' );
-		?></div><?php
+				?><div class="aesop-error aesop-content"><?php
+					_e( 'This gallery is empty! It\'s also possible that you simply have the wrong gallery ID.', 'aesop-core' );
+				?></div><?php
 
-	}
-}
+			}
+		}
 
 				do_action( 'aesop_gallery_inside_bottom', $type, $gallery_id ); // action
 
