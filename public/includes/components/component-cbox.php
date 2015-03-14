@@ -64,7 +64,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 		$widthContentStyle = 'content' == $atts['width'] ? false : sprintf( 'max-width:%s;', esc_attr( $atts['width'] ) );
 		$innerstyle = $atts['width'] || $position || $atts['innerposition'] ? sprintf( 'style="%s%s%s"', $widthContentStyle, $position, $innerposition ) : false;
 		$txtcolor  = $atts['color'] ? sprintf( 'color:%s;', $atts['color'] ) : false;
-		$itemstyle = $imgstyle || $txtcolor || $height ? sprintf( 'style="%s%s%s%s"', $imgstyle, $txtcolor, $bgcolor, $height ) : false;
+		$itemstyle = $imgstyle !== false || $txtcolor !== false || $height !== false ? sprintf( 'style="%s%s%s%s"', $imgstyle, $txtcolor, $bgcolor, $height ) : false;
 
 		// custom classes
 		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'content', '' ) : false;
