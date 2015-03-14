@@ -133,6 +133,16 @@ class Aesop_Core_Admin {
 	}
 
 	/**
+	 * Add the generator button in distraction free writing mode
+	 *
+	 * @since     0.9.96
+	 */
+	public function fs_generator_button( $buttons ) {
+		$buttons[] = self::generator_button();
+		return $buttons;
+	}
+
+	/**
 	 * Add the generator button next to the media upload button
 	 *
 	 * @since     1.0.0
@@ -145,16 +155,6 @@ class Aesop_Core_Admin {
 
 		echo $button;
 
-	}
-
-	/**
-	 * Add the generator button in distraction free writing mode
-	 *
-	 * @since     0.9.96
-	 */
-	public function fs_generator_button( $buttons ) {
-		$buttons[] = self::generator_button();
-		return $buttons;
 	}
 
 	/**
@@ -298,7 +298,7 @@ class Aesop_Core_Admin {
 	 *
 	 * @return array new array of links for our plugin listing on plugins.php
 	 */
-	function plugin_meta( $links, $file ) {
+	public function plugin_meta( $links, $file ) {
 
 		if ( strpos( $file, 'aesop-core.php' ) !== false ) {
 
