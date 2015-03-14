@@ -18,7 +18,7 @@ class AesopCoreGallery {
 	 *
 	 * @since    1.0.0
 	 */
-	function aesop_post_gallery( $atts, $content = null ) {
+	public function aesop_post_gallery( $atts, $content = null ) {
 
 		global $post;
 
@@ -120,7 +120,7 @@ class AesopCoreGallery {
 	 *
 	 * @since    1.0.0
 	 */
-	function aesop_thumb_gallery( $gallery_id, $image_ids, $width ) {
+	public function aesop_thumb_gallery( $gallery_id, $image_ids, $width ) {
 
 		$thumbs  = get_post_meta( $gallery_id, 'aesop_thumb_gallery_hide_thumbs', true ) ? sprintf( 'data-nav=false' ) : sprintf( 'data-nav=thumbs' );
 		$autoplay  = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ) ? sprintf( 'data-autoplay="%s"', get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ) ) : null;
@@ -155,7 +155,7 @@ class AesopCoreGallery {
 	 *
 	 * @since    1.0.0
 	 */
-	function aesop_grid_gallery( $gallery_id, $image_ids, $width ) {
+	public function aesop_grid_gallery( $gallery_id, $image_ids, $width ) {
 
 		$gridwidth  = get_post_meta( $gallery_id, 'aesop_grid_gallery_width', true ) ? get_post_meta( $gallery_id, 'aesop_grid_gallery_width', true ) : 400;
 
@@ -214,7 +214,7 @@ class AesopCoreGallery {
 	 * @since    1.0.0
 	 * @param string $unique
 	 */
-	function aesop_stacked_gallery( $gallery_id, $image_ids, $width, $unique ) {
+	public function aesop_stacked_gallery( $gallery_id, $image_ids, $width, $unique ) {
 
 ?>
 		<!-- Aesop Stacked Gallery -->
@@ -261,7 +261,7 @@ class AesopCoreGallery {
 	 *
 	 * @since    1.0.0
 	 */
-	function aesop_sequence_gallery( $gallery_id, $image_ids, $width ) {
+	public function aesop_sequence_gallery( $gallery_id, $image_ids, $width ) {
 
 		// image size
 		$size    = apply_filters( 'aesop_sequence_gallery_size', 'large' );
@@ -298,7 +298,7 @@ class AesopCoreGallery {
 	 *
 	 * @since    1.0.9
 	 */
-	function aesop_photoset_gallery( $gallery_id, $image_ids, $width ) {
+	public function aesop_photoset_gallery( $gallery_id, $image_ids, $width ) {
 
 		// allow theme developers to determine the spacing between grid items
 		$space  = apply_filters( 'aesop_grid_gallery_spacing', 5 );

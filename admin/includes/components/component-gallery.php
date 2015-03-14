@@ -15,7 +15,7 @@ class AesopGalleryComponentAdmin {
 		// new
 		add_action( 'admin_head',        array( $this, 'gallery_box_assets' ) );
 		add_action( 'add_meta_boxes',        array( $this, 'new_gallery_box' ) );
-		add_action( 'save_post',        array( $this, 'save_gallery_box' ), 10, 3 );
+		add_action( 'save_post',        array( $this, 'save_gallery_box' ), 10, 2 );
 
 		// admin notice for upgrading
 		add_action( 'admin_notices',        array( $this, 'upgrade_galleries_notice' ) );
@@ -130,7 +130,7 @@ class AesopGalleryComponentAdmin {
 	 *
 	 * @since 1.4
 	 */
-	function new_gallery_box() {
+	public function new_gallery_box() {
 
 		// images
 		add_meta_box( 'ase_gallery_component', __( 'Add Images', 'aesop-core' ), array( $this, 'render_gallery_box' ), 'ai_galleries', 'normal', 'core' );
@@ -150,7 +150,7 @@ class AesopGalleryComponentAdmin {
 	 * @since 1.4
 	 *
 	 */
-	function render_gallery_box( $post ) {
+	public function render_gallery_box( $post ) {
 
 		$ajax_nonce = wp_create_nonce( 'ase-update-gallery' );
 
@@ -200,7 +200,7 @@ class AesopGalleryComponentAdmin {
 	 * @param WP_Post $post The post object.
 	 * @since 1.4
 	 */
-	function render_layout_box( $post ) {
+	public function render_layout_box( $post ) {
 
 		$type = get_post_meta( $post->ID, 'aesop_gallery_type', true );
 
@@ -222,7 +222,7 @@ class AesopGalleryComponentAdmin {
 	 * @param WP_Post $post The post object.
 	 * @since 1.4
 	 */
-	function render_options_box( $post ) {
+	public function render_options_box( $post ) {
 
 		$id    = $post->ID;
 
@@ -319,7 +319,7 @@ class AesopGalleryComponentAdmin {
 	 * @since 1.4
 	 *
 	 */
-	function save_gallery_box( $post_id, $post, $update ) {
+	public function save_gallery_box( $post_id, $post ) {
 
 		// if nonce not set bail
 		if ( ! isset( $_POST['ase_gallery_meta_nonce'] ) ) {
@@ -385,7 +385,7 @@ class AesopGalleryComponentAdmin {
 	 *
 	 * @since 1.4
 	 */
-	function upgrade_galleries_notice() {
+	public function upgrade_galleries_notice() {
 
 		// only run if we have markers and have never upgraded
 		if ( ! get_option( 'ase_galleries_upgraded_to' ) && 'true' == self::aesop_check_for_galleries() ) {
@@ -406,7 +406,7 @@ class AesopGalleryComponentAdmin {
 	 *
 	 * @since 1.4
 	 */
-	function upgrade_galleries() {
+	public function upgrade_galleries() {
 
 		check_ajax_referer( 'aesop-galleries-upgrade', 'security' );
 
@@ -442,7 +442,7 @@ class AesopGalleryComponentAdmin {
 	 *
 	 * @since 1.3
 	 */
-	function upgrade_click_handle() {
+	public function upgrade_click_handle() {
 
 		$nonce = wp_create_nonce( 'aesop-galleries-upgrade' );
 
@@ -479,7 +479,7 @@ class AesopGalleryComponentAdmin {
 	 * @since 1.4
 	 * @return string true if galleries exist, false if not
 	 */
-	function aesop_check_for_galleries() {
+	public function aesop_check_for_galleries() {
 
 		$galleries = get_posts( array( 'post_type' => array( 'ai_galleries' ), 'posts_per_page' => -1 ) );
 
