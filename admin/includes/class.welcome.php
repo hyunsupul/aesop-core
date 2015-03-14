@@ -44,7 +44,7 @@ class aesopCoreWelcome {
 	 *
 	 * @since 1.5
 	 */
-	function welcome() {
+	public function welcome() {
 		add_dashboard_page( __( 'Welcome to Aesop Story Engine', 'aesop-core' ), __( 'Welcome to Aesop Story Engine', 'aesop-core' ), 'read', 'aesop-welcome-screen', array( $this, 'content' ) );
 	}
 
@@ -53,7 +53,7 @@ class aesopCoreWelcome {
 	 *
 	 * @since 1.5
 	 */
-	function content() {
+	public function content() {
 
 ?>
 		  	<div class="wrap aesop--welcome">
@@ -98,7 +98,7 @@ class aesopCoreWelcome {
 	 *
 	 * @since 1.5
 	 */
-	function remove_menu() {
+	public function remove_menu() {
 		remove_submenu_page( 'index.php', 'aesop-welcome-screen' );
 	}
 }

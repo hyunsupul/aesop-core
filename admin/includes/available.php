@@ -1160,5 +1160,3 @@ function aesop_option_counter( $count = 10 ) {
 
 	return $array;
 }
-
-?>

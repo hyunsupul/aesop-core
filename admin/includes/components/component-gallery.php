@@ -27,7 +27,7 @@ class AesopGalleryComponentAdmin {
 	 *
 	 * @since    1.0.0
 	 */
-	function do_type() {
+	public function do_type() {
 
 		$labels = array(
 			'name'                  => _x( 'Galleries', 'aesop-core' ),
@@ -57,7 +57,7 @@ class AesopGalleryComponentAdmin {
 			'exclude_from_search'  => true,
 			'query_var'     => true,
 			'can_export'     => true,
-			'capability_type'    => 'post'
+			'capability_type'    => 'post',
 		);
 
 		register_post_type( 'ai_galleries', apply_filters( 'ai_gallery_args', $args ) );
@@ -71,7 +71,7 @@ class AesopGalleryComponentAdmin {
 	 *
 	 * @since    1.0.0
 	 */
-	function col_head( $defaults ) {
+	public function col_head( $defaults ) {
 		$defaults['aesop_gallery'] = __( 'Gallery Code', 'aesop-core' );
 		$defaults['used_in'] = __( 'Used In', 'aesop-core' );
 		return $defaults;
@@ -83,7 +83,7 @@ class AesopGalleryComponentAdmin {
 	 *
 	 * @since    1.
 	 */
-	function col_content( $column_name, $post_ID ) {
+	public function col_content( $column_name, $post_ID ) {
 
 		if ( 'aesop_gallery' == $column_name ) {
 			printf( '[aesop_gallery id="%s"]', $post_ID );
@@ -119,7 +119,7 @@ class AesopGalleryComponentAdmin {
 	 *
 	 * @since 1.4
 	 */
-	function gallery_box_assets() {
+	public function gallery_box_assets() {
 
 		if ( 'ai_galleries' == get_current_screen()->id ) {
 			wp_enqueue_script( 'jquery-ui-sortable' );
