@@ -2,8 +2,8 @@
 /**
  *  Apply body classes based on device
  *
- * @since    1.0.0
- * @return    $classes
+ * 	@since    1.0.0
+ * 	@return   string classname
  */
 class AesopBrowserClasses {
 
