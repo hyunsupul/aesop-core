@@ -8,13 +8,13 @@
 
 class AesopContextualHelp {
 
-	function __construct() {
+	public function __construct() {
 
 		add_filter( 'contextual_help', array( $this, 'aesop_help' ), 10, 3 );
 
 	}
 
-	function aesop_help( $contextual_help, $screen_id, $screen ) {
+	public function aesop_help( $contextual_help, $screen_id, $screen ) {
 
 		if ( 'edit-post' == $screen->id || 'post' == $screen->id ) {
 

@@ -33,7 +33,7 @@ class AesopMapComponentAdmin {
 	 *
 	 * @since 1.3
 	 */
-	function new_map_assets( $hook ) {
+	public function new_map_assets( $hook ) {
 
 		if ( $hook == 'post.php' || $hook == 'post-new.php' ) {
 
@@ -55,7 +55,7 @@ class AesopMapComponentAdmin {
 	 * @param unknown $shortcodes array array of shortcodes to return
 	 * @return return our own options merged into the aesop availabel optoins array
 	 */
-	function options( $shortcodes ) {
+	public function options( $shortcodes ) {
 
 		$custom = array(
 			'map_marker'     => array(
@@ -98,7 +98,7 @@ class AesopMapComponentAdmin {
 	 * @subpackage Component API
 	 * @since 1.3
 	 */
-	function icon() {
+	public function icon() {
 
 		$icon = '\f230'; // css code for dashicon
 		$slug = 'map_marker'; // name of component
@@ -112,7 +112,7 @@ class AesopMapComponentAdmin {
 	 *
 	 * @since 1.3
 	 */
-	function new_map_box() {
+	public function new_map_box() {
 
 		$screens = apply_filters( 'aesop_map_meta_location', array( 'post' ) );
 
@@ -129,7 +129,7 @@ class AesopMapComponentAdmin {
 	 * @since 1.3
 	 *
 	 */
-	function render_map_box( $post ) {
+	public function render_map_box( $post ) {
 
 		echo '<div class="aesop-map-data" style="display: hidden;">';
 		wp_nonce_field( 'ase_map_meta', 'ase_map_meta_nonce' );
@@ -354,7 +354,7 @@ class AesopMapComponentAdmin {
 	 * @since 1.3
 	 *
 	 */
-	function save_map_box( $post_id ) {
+	public function save_map_box( $post_id ) {
 
 		// if nonce not set bail
 		if ( ! isset( $_POST['ase_map_meta_nonce'] ) ) {
@@ -400,7 +400,7 @@ class AesopMapComponentAdmin {
 	 *
 	 * @since 1.3
 	 */
-	function upgrade_map_notice() {
+	public function upgrade_map_notice() {
 
 		// only run if we have markers and have never upgraded
 		if ( get_option( 'ase_upgraded_to' ) < AI_CORE_VERSION && 'true' == self::aesop_check_for_old_markers() ) {
@@ -423,7 +423,7 @@ class AesopMapComponentAdmin {
 	 * @since 1.3
 	 * @return bool true if old meta exists, false if not
 	 */
-	function aesop_check_for_old_markers() {
+	public function aesop_check_for_old_markers() {
 
 		$posts = get_posts( array( 'post_type' => array( 'page', 'post' ), 'posts_per_page' => -1 ) );
 
@@ -452,7 +452,7 @@ class AesopMapComponentAdmin {
 	 *
 	 * @since 1.3
 	 */
-	function upgrade_marker_meta() {
+	public function upgrade_marker_meta() {
 
 		check_ajax_referer( 'aesop-map-upgrade', 'security' );
 
@@ -521,7 +521,7 @@ class AesopMapComponentAdmin {
 	 *
 	 * @since 1.3
 	 */
-	function upgrade_click_handle() {
+	public function upgrade_click_handle() {
 
 		$nonce = wp_create_nonce( 'aesop-map-upgrade' );
 
@@ -554,7 +554,7 @@ class AesopMapComponentAdmin {
 	//
 	// MAPBOX ID UPGRADE
 	//
-	function upgrade_mapboxid_notice() {
+	public function upgrade_mapboxid_notice() {
 
 		$mapbox_upgrade_option = get_option( 'ase_mapbox_upgraded' );
 		$old_option = get_option( 'ase_mapbox_id' );
@@ -578,7 +578,7 @@ class AesopMapComponentAdmin {
 	 *
 	 * @since 1.5
 	 */
-	function upgrade_mapbox_click_handle() {
+	public function upgrade_mapbox_click_handle() {
 
 		$mapbox_upgrade_option = get_option( 'ase_mapbox_upgraded' );
 		$nonce = wp_create_nonce( 'aesop-mapbox-upgrade' );
@@ -618,7 +618,7 @@ class AesopMapComponentAdmin {
 	 *
 	 * @since 1.5
 	 */
-	function upgrade_mapbox() {
+	public function upgrade_mapbox() {
 
 		// check nonce
 		check_ajax_referer( 'aesop-mapbox-upgrade', 'security' );

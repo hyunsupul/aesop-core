@@ -8,13 +8,13 @@
 
 class AesopNotifyonActivation {
 
-	function __construct() {
+	public function __construct() {
 
 		add_action( 'admin_notices', array( $this, 'notify' ) );
 
 	}
 
-	function notify() {
+	public function notify() {
 
 		if ( AI_CORE_VERSION > get_option( 'ai_core_version' ) ) {
 
