@@ -56,24 +56,24 @@ class AesopCoreGallery {
 		if ( ! empty( $image_ids ) ) {
 
 			switch ( $type ) {
-			case 'thumbnail':
-				$this->aesop_thumb_gallery( $gallery_id, $image_ids, $width );
-				break;
-			case 'grid':
-				$this->aesop_grid_gallery( $gallery_id, $image_ids, $width );
-				break;
-			case 'stacked':
-				$this->aesop_stacked_gallery( $gallery_id, $image_ids, $width, $unique );
-				break;
-			case 'sequence':
-				$this->aesop_sequence_gallery( $gallery_id, $image_ids, $width );
-				break;
-			case 'photoset':
-				$this->aesop_photoset_gallery( $gallery_id, $image_ids, $width );
-				break;
-			default:
-				$this->aesop_grid_gallery( $gallery_id, $image_ids, $width );
-				break;
+				case 'thumbnail':
+					$this->aesop_thumb_gallery( $gallery_id, $image_ids, $width );
+					break;
+				case 'grid':
+					$this->aesop_grid_gallery( $gallery_id, $image_ids, $width );
+					break;
+				case 'stacked':
+					$this->aesop_stacked_gallery( $image_ids, $unique );
+					break;
+				case 'sequence':
+					$this->aesop_sequence_gallery( $image_ids );
+					break;
+				case 'photoset':
+					$this->aesop_photoset_gallery( $gallery_id, $image_ids, $width );
+					break;
+				default:
+					$this->aesop_grid_gallery( $gallery_id, $image_ids, $width );
+					break;
 			}
 
 			if ( $gallery_caption ) {
@@ -211,7 +211,7 @@ class AesopCoreGallery {
 	 * @since    1.0.0
 	 * @param string $unique
 	 */
-	public function aesop_stacked_gallery( $gallery_id, $image_ids, $width, $unique ) {
+	public function aesop_stacked_gallery( $image_ids, $unique ) {
 
 ?>
 		<!-- Aesop Stacked Gallery -->
@@ -258,7 +258,7 @@ class AesopCoreGallery {
 	 *
 	 * @since    1.0.0
 	 */
-	public function aesop_sequence_gallery( $gallery_id, $image_ids, $width ) {
+	public function aesop_sequence_gallery( $image_ids ) {
 
 		// image size
 		$size    = apply_filters( 'aesop_sequence_gallery_size', 'large' );

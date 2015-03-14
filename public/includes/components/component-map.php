@@ -244,7 +244,7 @@ class AesopMapComponent {
 	 *
 	 *
 	 */
-	public function aesop_map_marker_sc( $atts, $content = null ) {
+	public function aesop_map_marker_sc( $atts ) {
 
 		$defaults = array( 'title' => '', 'hidden' => '' );
 

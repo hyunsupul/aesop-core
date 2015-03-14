@@ -11,7 +11,7 @@
  *
  * @return string
  */
-function aesop_center_content( $atts, $content ) {
+function aesop_center_content( $content ) {
 	global $content_width;
 
 	if ( ! isset( $content_width ) ) {
