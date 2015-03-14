@@ -264,6 +264,7 @@ class Aesop_Core {
 
 		$out = load_textdomain( $domain, trailingslashit( AI_CORE_DIR ). 'languages/' . $domain . '-' . $locale . '.mo' );
 
+		return $out;
 	}
 
 	/**
