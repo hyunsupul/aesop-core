@@ -234,7 +234,7 @@ class AesopMapComponent {
 
 		}
 
-		return $mark;
+		return !empty( $mark ) ? $mark : false;
 
 	}
 

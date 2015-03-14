@@ -32,7 +32,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		$widthstyle = $atts['width'] && 'center' !== $atts['align'] ? sprintf( 'style=width:%s;', $atts['width'] ) : sprintf( 'style=max-width:%s;', $atts['width'] );
 
 		// width constraint class if
-		$caption = $atts['caption'] ? sprintf( '<div class="aesop-video-component-caption aesop-component-align-%s" %s>%s</div>', $atts['align'], $widthstyle, $atts['caption'] ) : false;
+		$caption = !empty( $atts['caption'] ) ? sprintf( '<div class="aesop-video-component-caption aesop-component-align-%s" %s>%s</div>', $atts['align'], $widthstyle, $atts['caption'] ) : false;
 
 		if ( 'vine' == $atts['src'] || 'instagram' == $atts['src'] ) {
 			$vineStagramClass = 'aesop-vine-stagram-container';
