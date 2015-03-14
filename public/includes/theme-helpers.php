@@ -6,7 +6,6 @@
  *
  * @since 1.0.4
  *
- * @param array   $atts    Attributes of the shortcode.
  * @param string  $content Shortcode content.
  *
  * @return string
