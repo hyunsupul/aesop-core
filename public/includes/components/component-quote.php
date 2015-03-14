@@ -66,7 +66,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 		);
 
 		$css_classes = '';
-		if ( $css_class_array ) {
+		if ( !empty( $css_class_array ) ) {
 			foreach ( $css_class_array as $class ) {
 				$css_classes .= $class;
 			}
