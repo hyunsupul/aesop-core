@@ -10,7 +10,7 @@
 
 class aiCoreCSSMerger {
 
-	function __construct() {
+	public function __construct() {
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'merger' ), 11 );
 	}

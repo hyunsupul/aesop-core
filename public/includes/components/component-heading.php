@@ -93,11 +93,11 @@ if ( ! function_exists( 'aesop_chapter_heading_loader' ) ) {
 // @TODO - this needs to be moved to theme level because not all will use the offset and setup here
 class AesopChapterHeadingComponent {
 
-	function __construct() {
+	public function __construct() {
 		add_action( 'wp_footer', array( $this, 'aesop_chapter_loader' ), 21 );
 	}
 
-	function aesop_chapter_loader() {
+	public function aesop_chapter_loader() {
 
 		// allow theme developers to determine the offset amount
 		$chapterOffset = apply_filters( 'aesop_chapter_scroll_offset', 0 );
@@ -160,7 +160,7 @@ class AesopChapterHeadingComponent {
 	 *
 	 * @since 1.3.2
 	 */
-	function aesop_chapter_menu() {
+	public function aesop_chapter_menu() {
 
 		$out = '<a id="aesop-toggle-chapter-menu" class="aesop-toggle-chapter-menu" href="#aesop-chapter-menu"><i class="dashicons dashicons-tag aesop-close-chapter-menu"></i></a>';
 		$out .= '<div id="aesop-chapter-menu" class="aesop-chapter-menu">

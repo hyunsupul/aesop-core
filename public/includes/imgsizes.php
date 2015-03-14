@@ -6,12 +6,12 @@
  */
 class AesopComponentImageSizes {
 
-	function __construct() {
+	public function __construct() {
 
 		add_filter( 'init',  array( $this, 'img_sizes' ) );
 	}
 
-	function img_sizes() {
+	public function img_sizes() {
 
 		add_image_size( 'aesop-cover-img',  1250, 9999 );      // Cover & Chapter Components
 		add_image_size( 'aesop-tiny-cover',  400, 9999 );      // Index Covers
