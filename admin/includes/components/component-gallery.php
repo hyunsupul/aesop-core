@@ -479,7 +479,7 @@ class AesopGalleryComponentAdmin {
 	 */
 	public function aesop_check_for_galleries() {
 
-		$galleries = get_posts( array( 'post_type' => array( 'ai_galleries' ), 'posts_per_page' => -1 ) );
+		$galleries = get_posts( array( 'post_type' => array( 'ai_galleries' ) ) );
 
 		if ( $galleries ) :
 			$return = 'true';
