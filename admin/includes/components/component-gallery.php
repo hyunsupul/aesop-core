@@ -152,8 +152,6 @@ class AesopGalleryComponentAdmin {
 	 */
 	public function render_gallery_box( $post ) {
 
-		$ajax_nonce = wp_create_nonce( 'ase-update-gallery' );
-
 		echo '<div class="aesop-gallery-data" style="display: hidden;">';
 		wp_nonce_field( 'ase_gallery_meta', 'ase_gallery_meta_nonce' );
 		echo '</div>';

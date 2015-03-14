@@ -466,8 +466,6 @@ class AesopMapComponentAdmin {
 		// get the posts with the maps shortode
 		$posts = get_posts( array( 'post_type' => array( 'page', 'post' ), 'posts_per_page' => -1 ) );
 
-		$count = 0;
-
 		if ( $posts ) :
 			foreach ( $posts as $post ) {
 				$id = $post->ID;

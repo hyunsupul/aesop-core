@@ -275,6 +275,7 @@ function aesop_gallery_component_data_atts( $postid = '' ) {
 		'itemwidth'  => trim( $grid_item_width ),
 		'transition'  => sanitize_text_field( trim( $thumb_trans ) ),
 		'speed'   => $thumb_speed,
+		'thumbhide' => $thumb_hide,
 		'pslayout'  => (int) trim( $photoset_layout ),
 		'pslightbox' => sanitize_text_field( trim( $photoset_lb ) )
 	);
