@@ -11,68 +11,68 @@ class AesopBrowserClasses {
 
 		add_filter( 'body_class',  array( $this, 'browser_body_class' ) );
 	}
-	function is_silk_kindle() {
+	public function is_silk_kindle() {
 		$user_agent = trim( strtolower( $_SERVER['HTTP_USER_AGENT'] ) );
 		if ( strrpos( $user_agent, 'silk/' ) != false && strrpos( $user_agent, 'silk-accelerated=' ) != false ) {
 			return true; }
 		else { return false; }
 	}
-	function is_iphone() {
+	public function is_iphone() {
 		$cn_is_iphone = (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'iPhone' );
 		if ( $cn_is_iphone ) {
 			return true; }
 		else { return false; }
 	}
-	function is_ipod() {
+	public function is_ipod() {
 		$cn_is_iphone = (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'iPod' );
 		if ( $cn_is_iphone ) {
 			return true; }
 		else { return false; }
 	}
-	function is_ios() {
+	public function is_ios() {
 		if ( $this->is_iphone() || $this->is_ipad() || $this->is_ipod() ) {
 			return true; }
 		else { return false; }
 	}
 
-	function is_android() { // detect ALL android devices
+	public function is_android() { // detect ALL android devices
 		$is_android = (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'Android' );
 		if ( $is_android ) {
 			return true; }
 		else { return false; }
 	}
-	function is_android_mobile() { // detect ALL android devices
+	public function is_android_mobile() { // detect ALL android devices
 		$is_android   = (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'Android' );
 		$is_android_m = (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'Mobile' );
 		if ( $is_android && $is_android_m ) {
 			return true; }
 		else { return false; }
 	}
-	function is_android_tablet() { // detect android tablets
+	public function is_android_tablet() { // detect android tablets
 		if ( self::is_android() && ! self::is_android_mobile() ) {
 			return true; }
 		else { return false; }
 	}
 
-	function is_mobile_device() { // detect ALL mobile devices
+	public function is_mobile_device() { // detect ALL mobile devices
 		if ( self::is_iphone() || self::is_ipod() ) {
 			return true; }
 		else { return false; }
 	}
 	// add conditional statements for mobile devices
-	function is_ipad() {
+	public function is_ipad() {
 		$is_ipad = (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'iPad' );
 		if ( $is_ipad ) {
 			return true; }
 		else { return false; }
 	}
 
-	function is_tablet() { // detect ALL tablets
+	public function is_tablet() { // detect ALL tablets
 		if ( self::is_ipad() || self::is_silk_kindle() ) {
 			return true; }
 		else { return false; }
 	}
-	function browser_body_class( $classes ) {
+	public function browser_body_class( $classes ) {
 
 		global $is_gecko, $is_IE, $is_opera, $is_safari, $is_chrome, $is_iphone;
 		if ( ! wp_is_mobile() ) {
