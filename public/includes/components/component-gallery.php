@@ -162,9 +162,6 @@ class AesopCoreGallery {
 		// allow theme developers to determine the spacing between grid items
 		$space = apply_filters( 'aesop_grid_gallery_spacing', 5 );
 
-		// image size
-		$size    = apply_filters( 'aesop_grid_gallery_size', 'large' );
-
 ?>
 		<!-- Aesop Grid Gallery -->
 		<script>
@@ -242,7 +239,7 @@ class AesopCoreGallery {
 		foreach ( $image_ids as $image_id ):
 
 			$full      = wp_get_attachment_image_src( $image_id, $size, false );
-		$caption   = get_post( $image_id )->post_excerpt;
+			$caption   = get_post( $image_id )->post_excerpt;
 
 ?>
            	<div class="aesop-stacked-img" style="background-image:url('<?php echo esc_url( $full[0] );?>');<?php echo $styles;?>">
@@ -348,7 +345,7 @@ class AesopCoreGallery {
 			});
 		</script>
 
-		<?php if ( $style ) { echo '<div class="aesop-gallery-photoset-width" '.$style.' >'; }
+		<?php if ( $style !== null ) { echo '<div class="aesop-gallery-photoset-width" '.$style.' >'; }
 
 		?><div class="aesop-gallery-photoset" data-layout="<?php echo absint( $layout );?>" ><?php
 
@@ -367,7 +364,7 @@ class AesopCoreGallery {
 
 		?></div><?php
 
-		if ( $style ) { echo '</div>'; }
+		if ( $style !== null ) { echo '</div>'; }
 
 	}
 
