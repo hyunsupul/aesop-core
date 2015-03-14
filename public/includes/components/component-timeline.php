@@ -52,7 +52,7 @@ if ( ! function_exists( 'aesop_timeline_class_loader' ) ) {
 
 class AesopTimelineComponent {
 
-	function __construct() {
+	public function __construct() {
 
 		// call our method in the footer
 		add_action( 'wp_footer', array( $this, 'aesop_timeline_loader' ), 21 );
@@ -62,7 +62,7 @@ class AesopTimelineComponent {
 
 	}
 
-	function aesop_timeline_loader() {
+	public function aesop_timeline_loader() {
 
 		// allow theme developers to determine the offset amount
 		$timelineOffset = apply_filters( 'aesop_timeline_scroll_offset', 0 );
@@ -103,7 +103,7 @@ class AesopTimelineComponent {
 	}
 
 
-	function body_class( $classes ) {
+	public function body_class( $classes ) {
 
 		$classes[] = 'has-timeline';
 

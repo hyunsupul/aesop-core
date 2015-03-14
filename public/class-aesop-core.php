@@ -322,7 +322,7 @@ class Aesop_Core {
 	 *
 	 * @since    1.0.0
 	 */
-	function shortcode_empty_paragraph_fix( $content ) {
+	public function shortcode_empty_paragraph_fix( $content ) {
 
 		$array = array(
 			'<p>[' => '[',

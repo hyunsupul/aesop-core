@@ -105,7 +105,7 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 
 class AesopMapComponent {
 
-	function __construct() {
+	public function __construct() {
 		add_action( 'wp_footer', array( $this, 'aesop_map_loader' ), 20 );
 
 		// map marker shortcode
@@ -244,7 +244,7 @@ class AesopMapComponent {
 	 *
 	 *
 	 */
-	function aesop_map_marker_sc( $atts, $content = null ) {
+	public function aesop_map_marker_sc( $atts, $content = null ) {
 
 		$defaults = array( 'title' => '', 'hidden' => '' );
 
