@@ -16,6 +16,7 @@
  */
 class Aesop_Core_Admin {
 
+
 	/**
 	 * Instance of this class.
 	 *
@@ -34,7 +35,6 @@ class Aesop_Core_Admin {
 	 */
 	protected $plugin_screen_hook_suffix = null;
 
-
 	/**
 	 * Initialize the plugin by loading admin scripts & styles and adding a
 	 * settings page and menu.
@@ -48,12 +48,7 @@ class Aesop_Core_Admin {
 		require_once AI_CORE_DIR.'admin/includes/notify.php';
 		require_once AI_CORE_DIR.'admin/includes/components/component-map.php';
 		require_once AI_CORE_DIR.'admin/includes/components/component-gallery.php';
-		/*
-		 	* Call $plugin_slug from public plugin class.
-		 	*
-		*/
-		$plugin = Aesop_Core::get_instance();
-		$this->plugin_slug = $plugin->get_plugin_slug();
+
 
 		/*
 		*  Define custom functionality.
