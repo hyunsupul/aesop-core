@@ -10,12 +10,12 @@ if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
 	function aesop_audio_shortcode( $atts ) {
 
 		$defaults   = array(
-			'title'    => '',
-			'src'      => '',
+			'title'    	=> '',
+			'src'      	=> '',
 			'viewstart' => 'off',
-			'viewend'  => 'off',
-			'loop'     => 'off',
-			'hidden'   => ''
+			'viewend'  	=> 'off',
+			'loop'     	=> 'off',
+			'hidden'   	=> ''
 		);
 		$atts     = apply_filters( 'aesop_audio_defaults', shortcode_atts( $defaults, $atts ) );
 

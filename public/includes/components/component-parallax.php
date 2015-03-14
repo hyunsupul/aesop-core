@@ -11,16 +11,16 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 	function aesop_parallax_shortcode( $atts ) {
 
 		$defaults = array(
-			'img'     => '',
-			'height'    => 500, // deprecated 1.4.2
-			'parallaxbg'   => 'on',
-			'floater'    => '',
-			'floatermedia'   => '',
-			'floaterposition'  => 'right',
-			'floaterdirection' => 'up',
-			'caption'   => '',
-			'captionposition'  => 'bottom-left',
-			'lightbox'    => false
+			'img'     			=> '',
+			'height'    		=> 500, // deprecated 1.4.2
+			'parallaxbg'   		=> 'on',
+			'floater'    		=> '',
+			'floatermedia'   	=> '',
+			'floaterposition'  	=> 'right',
+			'floaterdirection' 	=> 'up',
+			'caption'  			=> '',
+			'captionposition' 	=> 'bottom-left',
+			'lightbox'    		=> false
 		);
 
 		$atts = apply_filters( 'aesop_parallax_defaults', shortcode_atts( $defaults, $atts ) );

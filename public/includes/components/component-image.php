@@ -9,15 +9,15 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 	function aesop_image_shortcode( $atts ) {
 
 		$defaults = array(
-			'img'     => '',
-			'imgwidth'   => '300px',
-			'offset'   => '',
-			'alt'    => '',
-			'align'    => 'left',
-			'caption'   => '',
-			'credit'   => '',
-			'captionposition' => 'left',
-			'lightbox'    => 'off'
+			'img'     			=> '',
+			'imgwidth'   		=> '300px',
+			'offset'   			=> '',
+			'alt'    			=> '',
+			'align'    			=> 'left',
+			'caption'   		=> '',
+			'credit'   			=> '',
+			'captionposition' 	=> 'left',
+			'lightbox'    		=> 'off'
 		);
 
 		$atts = apply_filters( 'aesop_image_defaults', shortcode_atts( $defaults, $atts ) );

@@ -10,11 +10,11 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 	function aesop_collection_shortcode( $atts ) {
 
 		$defaults = array(
-			'collection'  => 1,
-			'title'   => '',
-			'columns'   => 2,
-			'limit'   => -1,
-			'splash'  => ''
+			'collection'    => 1,
+			'title'   		=> '',
+			'columns'   	=> 2,
+			'limit'   		=> -1,
+			'splash'  		=> ''
 		);
 		$atts = apply_filters( 'aesop_collection_defaults', shortcode_atts( $defaults, $atts ) );
 
@@ -56,8 +56,8 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 
 				// cat query args
 				$cat_args = array(
-					'orderby'  => 'name',
-					'order'  => 'ASC'
+					'orderby'  	=> 'name',
+					'order'  	=> 'ASC'
 				);
 
 				// get cached query

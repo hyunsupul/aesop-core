@@ -15,20 +15,20 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 		$unique = sprintf( '%s-%s', get_the_ID(), $instance );
 
 		$defaults = array(
-			'height'   => '',
-			'width'    => '100%',
-			'columns'   => '',
-			'position'   => 'center',
-			'innerposition'  => '',
-			'img'     => '',
-			'imgrepeat'   => 'no-repeat',
-			'imgposition'  => 'center center',
-			'imgsize'   => 'cover',
-			'floatermedia'   => '',
-			'floaterdirection' => 'down',
-			'floaterposition' => 'left',
-			'color'    => '#FFFFFF',
-			'background'  => '#222222'
+			'height'   			=> '',
+			'width'    			=> '100%',
+			'columns'   		=> '',
+			'position'   		=> 'center',
+			'innerposition'  	=> '',
+			'img'     			=> '',
+			'imgrepeat'   		=> 'no-repeat',
+			'imgposition'  		=> 'center center',
+			'imgsize'   		=> 'cover',
+			'floatermedia'   	=> '',
+			'floaterdirection' 	=> 'down',
+			'floaterposition'	=> 'left',
+			'color'    			=> '#FFFFFF',
+			'background'  		=> '#222222'
 		);
 
 		$atts = apply_filters( 'aesop_cbox_defaults', shortcode_atts( $defaults, $atts ) );
@@ -43,9 +43,9 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 		$getinnerposition = $atts['innerposition'] ? preg_split( '/[\s,]+/', $atts['innerposition'] ) : false;
 
 		$positionArray = array(
-			'top'   => $getinnerposition[0],
+			'top'    => $getinnerposition[0],
 			'right'  => $getinnerposition[1],
-			'bottom'  => $getinnerposition[2],
+			'bottom' => $getinnerposition[2],
 			'left'   => $getinnerposition[3]
 		);
 

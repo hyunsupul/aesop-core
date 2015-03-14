@@ -4,8 +4,8 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 	function aesop_map_shortcode( $atts ) {
 
 		$defaults = array(
-			'height'  => 500,
-			'sticky' => 'off'
+			'height'  	=> 500,
+			'sticky' 	=> 'off'
 		);
 
 		wp_enqueue_script( 'aesop-map-script', AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js' );

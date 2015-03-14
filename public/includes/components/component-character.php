@@ -10,9 +10,9 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
 	function aesop_character_shortcode( $atts, $content = null ) {
 
 		$defaults = array(
-			'img'     => '',
+			'img'      => '',
 			'name'     => '',
-			'caption'   => '',
+			'caption'  => '',
 			'align'    => 'left',
 			'width'    => ''
 		);

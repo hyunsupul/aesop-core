@@ -12,17 +12,17 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		$instance++;
 		$unique = sprintf( '%s-%s', get_the_ID(), $instance );
 		$defaults = array(
-			'width'  => '100%',
-			'align'  => 'center',
-			'src'   => 'vimeo',
-			'hosted'  => '',
-			'id'  => '',
-			'loop'  => 'on',
-			'autoplay' => 'on',
-			'controls' => 'off',
+			'width'  	=> '100%',
+			'align'  	=> 'center',
+			'src'   	=> 'vimeo',
+			'hosted'  	=> '',
+			'id'  		=> '',
+			'loop'  	=> 'on',
+			'autoplay' 	=> 'on',
+			'controls' 	=> 'off',
 			'viewstart' => 'off',
 			'viewend'   => 'off',
-			'caption'  => '',
+			'caption'  	=> '',
 			'vidwidth'  => '',
 			'vidheight' => ''
 		);

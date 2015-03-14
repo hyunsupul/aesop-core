@@ -10,9 +10,9 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 	function aesop_document_shortcode( $atts ) {
 
 		$defaults = array(
-			'type'  => 'pdf',
-			'src'  => '',
-			'caption' => ''
+			'type'  	=> 'pdf',
+			'src'  		=> '',
+			'caption' 	=> ''
 		);
 		$atts = apply_filters( 'aesop_document_defaults', shortcode_atts( $defaults, $atts ) );
 

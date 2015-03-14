@@ -9,11 +9,11 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 
 	function aesop_chapter_shortcode( $atts ) {
 		$defaults = array(
-			'title'  => '',
+			'title'  	=> '',
 			'subtitle'  => '',
-			'bgtype'  => 'img',
-			'img'   => '',
-			'full'  => ''
+			'bgtype'  	=> 'img',
+			'img'   	=> '',
+			'full'  	=> ''
 		);
 
 		$atts = apply_filters( 'aesop_chapter_defaults', shortcode_atts( $defaults, $atts ) );

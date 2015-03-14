@@ -10,7 +10,7 @@ if ( ! function_exists( 'aesop_timeline_stop_shortcode' ) ) {
 	function aesop_timeline_stop_shortcode( $atts ) {
 
 		$defaults = array(
-			'num' => '2007',
+			'num' 	=> '2007',
 			'title' => ''
 		);
 		$atts = apply_filters( 'aesop_timeline_defaults', shortcode_atts( $defaults, $atts ) );

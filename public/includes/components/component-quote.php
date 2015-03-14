@@ -10,18 +10,18 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 	function aesop_quote_shortcode( $atts ) {
 
 		$defaults = array(
-			'width'  => '100%',
+			'width'  	=> '100%',
 			'background' => '#222222',
-			'img'  => '',
-			'text'   => '#FFFFFF',
-			'height' => 'auto',
-			'align'  => 'center',
-			'size'  => '1',
+			'img'  		=> '',
+			'text'   	=> '#FFFFFF',
+			'height' 	=> 'auto',
+			'align'  	=> 'center',
+			'size'  	=> '1',
 			'parallax'  => '',
 			'direction' => '',
-			'quote'  => __( 'People are made of stories, not atoms.', 'aesop-core' ),
-			'cite'  => '',
-			'type'  => 'block'
+			'quote'  	=> __( 'People are made of stories, not atoms.', 'aesop-core' ),
+			'cite'  	=> '',
+			'type'  	=> 'block'
 
 		);
 		$atts = apply_filters( 'aesop_quote_defaults', shortcode_atts( $defaults, $atts ) );
