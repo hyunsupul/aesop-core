@@ -7,7 +7,7 @@
  */
 if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 
-	function aesop_chapter_shortcode( $atts, $content = null ) {
+	function aesop_chapter_shortcode( $atts ) {
 		$defaults = array(
 			'title'  => '',
 			'subtitle'  => '',

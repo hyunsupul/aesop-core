@@ -7,7 +7,7 @@
  */
 if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 
-	function aesop_document_shortcode( $atts, $content = null ) {
+	function aesop_document_shortcode( $atts ) {
 
 		$defaults = array(
 			'type'  => 'pdf',

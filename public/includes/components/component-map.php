@@ -1,7 +1,7 @@
 <?php
 
 if ( ! function_exists( 'aesop_map_shortcode' ) ) {
-	function aesop_map_shortcode( $atts, $content = null ) {
+	function aesop_map_shortcode( $atts ) {
 
 		$defaults = array(
 			'height'  => 500,

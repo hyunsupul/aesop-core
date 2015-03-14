@@ -18,7 +18,7 @@ class AesopCoreGallery {
 	 *
 	 * @since    1.0.0
 	 */
-	public function aesop_post_gallery( $atts, $content = null ) {
+	public function aesop_post_gallery( $atts ) {
 
 		global $post;
 

@@ -7,7 +7,7 @@
  */
 if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
 
-	function aesop_audio_shortcode( $atts, $content = null ) {
+	function aesop_audio_shortcode( $atts ) {
 
 		$defaults   = array(
 			'title'    => '',

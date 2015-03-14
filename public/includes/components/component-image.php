@@ -6,7 +6,7 @@
  */
 if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
-	function aesop_image_shortcode( $atts, $content = null ) {
+	function aesop_image_shortcode( $atts ) {
 
 		$defaults = array(
 			'img'     => '',

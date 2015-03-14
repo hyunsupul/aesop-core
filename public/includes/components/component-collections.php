@@ -7,7 +7,7 @@
  */
 if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 
-	function aesop_collection_shortcode( $atts, $content = null ) {
+	function aesop_collection_shortcode( $atts ) {
 
 		$defaults = array(
 			'collection'  => 1,

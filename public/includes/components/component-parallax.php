@@ -8,7 +8,7 @@
 
 if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
-	function aesop_parallax_shortcode( $atts, $content = null ) {
+	function aesop_parallax_shortcode( $atts ) {
 
 		$defaults = array(
 			'img'     => '',

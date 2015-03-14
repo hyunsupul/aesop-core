@@ -7,7 +7,7 @@
  */
 if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 
-	function aesop_quote_shortcode( $atts, $content = null ) {
+	function aesop_quote_shortcode( $atts ) {
 
 		$defaults = array(
 			'width'  => '100%',

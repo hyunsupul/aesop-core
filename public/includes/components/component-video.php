@@ -5,7 +5,8 @@
  * @since    1.0.0
  */
 if ( ! function_exists( 'aesop_video_shortcode' ) ) {
-	function aesop_video_shortcode( $atts, $content = null ) {
+	function aesop_video_shortcode( $atts ) {
+
 		// let this be used multiple times
 		static $instance = 0;
 		$instance++;
