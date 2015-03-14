@@ -212,6 +212,7 @@ class AesopCoreGallery {
 	 	* Draws a stacked parallax style gallery
 	 	*
 	 	* @since    1.0.0
+	* @param string $unique
 	*/
 	function aesop_stacked_gallery( $gallery_id, $image_ids, $width, $unique){
 

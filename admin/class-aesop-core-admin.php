@@ -234,7 +234,7 @@ class Aesop_Core_Admin {
 	/**
 	*
 	*	@since 1.1
-	*	@return array of random messages used for watermark
+	*	@return string of random messages used for watermark
 	*
 	*/
 	private function messages() {

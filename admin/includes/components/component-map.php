@@ -431,7 +431,7 @@ class AesopMapComponentAdmin {
 	*	if it does exist then proceed with the upgrade
 	*
 	*	@since 1.3
-	*	@return bool true if old meta exists, false if not
+	*	@return string true if old meta exists, false if not
 	*/
 	function aesop_check_for_old_markers(){
 

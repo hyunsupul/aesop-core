@@ -213,7 +213,7 @@ class AesopMapComponent {
 	*	then fallback to the first coordinate entered if present.
 	*
 	*	@param $markers - array - gps coordinates entered aspost meta within respective post
-	*	@return first gps marker found
+	*	@return null|string gps marker found
 	* 	@since 1.1
 	*
 	*/
