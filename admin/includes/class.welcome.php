@@ -6,7 +6,7 @@
  */
 class aesopCoreWelcome {
 
-	function __construct() {
+	public function __construct() {
 
 		add_action( 'admin_init',   array( $this, 'redirect' ) );
 		add_action( 'admin_menu',   array( $this, 'welcome' ) );
@@ -19,7 +19,7 @@ class aesopCoreWelcome {
 	 *
 	 * @since 1.5
 	 */
-	function redirect() {
+	public function redirect() {
 
 		// Bail if no activation redirect
 		if ( ! get_transient( '_aesop_welcome_redirect' ) ) {

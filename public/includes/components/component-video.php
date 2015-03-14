@@ -123,7 +123,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 ?>
 		    </div>
 
-	   	 	<?php echo aesop_component_media_filter( $caption );
+	   	 	<?php echo $caption;
 
 		do_action( 'aesop_video_inside_bottom' ); // action ?>
 		</div>

@@ -7,7 +7,7 @@
  */
 class AesopBrowserClasses {
 
-	function __construct() {
+	public function __construct() {
 
 		add_filter( 'body_class',  array( $this, 'browser_body_class' ) );
 	}
@@ -105,7 +105,6 @@ class AesopBrowserClasses {
 		elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Linux' ) !== false ) $classes[] = 'os-linux';
 		elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Kindle' ) !== false ) $classes[] = 'os-kindle';
 		elseif ( strpos( $_SERVER['HTTP_USER_AGENT'], 'BlackBerry' ) !== false ) $classes[] = 'os-blackberry';
-		return $classes;
 
 		$classes[] = 'aesop-core';
 

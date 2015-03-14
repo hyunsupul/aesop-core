@@ -121,10 +121,13 @@ class Aesop_Core {
 				// Get all blog ids
 				$blog_ids = self::get_blog_ids();
 
-				foreach ( $blog_ids as $blog_id ) {
+				if ( is_array( $blog_ids ) ) {
 
-					switch_to_blog( $blog_id );
-					self::single_activate();
+					foreach ( $blog_ids as $blog_id ) {
+
+						switch_to_blog( $blog_id );
+						self::single_activate();
+					}
 				}
 
 				restore_current_blog();
