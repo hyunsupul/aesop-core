@@ -6,8 +6,9 @@
  */
 class AesopGalleryComponentAdmin {
 
-	public function __construct(){
+	public function __construct() {
 
+<<<<<<< HEAD
 		add_action( 'init',										array($this,'do_type') );
 		add_filter( 'manage_ai_galleries_posts_columns', 		array($this,'col_head') );
 		add_action( 'manage_ai_galleries_posts_custom_column', 	array($this,'col_content'), 10, 2 );
@@ -21,30 +22,50 @@ class AesopGalleryComponentAdmin {
 		add_action( 'admin_notices', 							array($this, 'upgrade_galleries_notice' ) );
 		add_action( 'wp_ajax_upgrade_galleries', 				array($this, 'upgrade_galleries' ) );
 		add_action( 'admin_head',								array($this, 'upgrade_click_handle') );
+=======
+		add_action( 'init',          array( $this, 'do_type' ) );
+		add_filter( 'manage_ai_galleries_posts_columns',   array( $this, 'col_head' ) );
+		add_action( 'manage_ai_galleries_posts_custom_column',  array( $this, 'col_content' ), 10, 2 );
+
+		// new
+		add_action( 'admin_head',        array( $this, 'gallery_box_assets' ) );
+		add_action( 'add_meta_boxes',        array( $this, 'new_gallery_box' ) );
+		add_action( 'save_post',        array( $this, 'save_gallery_box' ), 10, 2 );
+
+		// admin notice for upgrading
+		add_action( 'admin_notices',        array( $this, 'upgrade_galleries_notice' ) );
+		add_action( 'wp_ajax_upgrade_galleries',     array( $this, 'upgrade_galleries' ) );
+		add_action( 'admin_head',        array( $this, 'upgrade_click_handle' ) );
+>>>>>>> release/1.5.1
 	}
 	/**
 	 * Creates an Aesop Galleries custom post type to manage all psot galleries
 	 *
 	 * @since    1.0.0
 	 */
+<<<<<<< HEAD
 	function do_type() {
+=======
+	public function do_type() {
+>>>>>>> release/1.5.1
 
 		$labels = array(
-			'name'                		=> _x( 'Galleries','aesop-core' ),
-			'singular_name'       		=> _x( 'Gallery','aesop-core' ),
-			'menu_name'           		=> __( 'Galleries', 'aesop-core' ),
-			'parent_item_colon'   		=> __( 'Parent Gallery:', 'aesop-core' ),
-			'all_items'           		=> __( 'All Galleries', 'aesop-core' ),
-			'view_item'           		=> __( 'View Gallery', 'aesop-core' ),
-			'add_new_item'        		=> __( 'Add New Gallery', 'aesop-core' ),
-			'add_new'             		=> __( 'New Gallery', 'aesop-core' ),
-			'edit_item'           		=> __( 'Edit Gallery', 'aesop-core' ),
-			'update_item'         		=> __( 'Update Gallery', 'aesop-core' ),
-			'search_items'        		=> __( 'Search Galleries', 'aesop-core' ),
-			'not_found'           		=> __( 'No Galleries found', 'aesop-core' ),
-			'not_found_in_trash'  		=> __( 'No Galleries found in Trash', 'aesop-core' ),
+			'name'                  => _x( 'Galleries', 'aesop-core' ),
+			'singular_name'         => _x( 'Gallery', 'aesop-core' ),
+			'menu_name'             => __( 'Galleries', 'aesop-core' ),
+			'parent_item_colon'     => __( 'Parent Gallery:', 'aesop-core' ),
+			'all_items'             => __( 'All Galleries', 'aesop-core' ),
+			'view_item'             => __( 'View Gallery', 'aesop-core' ),
+			'add_new_item'          => __( 'Add New Gallery', 'aesop-core' ),
+			'add_new'               => __( 'New Gallery', 'aesop-core' ),
+			'edit_item'             => __( 'Edit Gallery', 'aesop-core' ),
+			'update_item'           => __( 'Update Gallery', 'aesop-core' ),
+			'search_items'          => __( 'Search Galleries', 'aesop-core' ),
+			'not_found'             => __( 'No Galleries found', 'aesop-core' ),
+			'not_found_in_trash'    => __( 'No Galleries found in Trash', 'aesop-core' ),
 		);
 		$args = array(
+<<<<<<< HEAD
 			'label'               		=> __( 'Galleries', 'aesop-core' ),
 			'description'         		=> __( 'Create responsive galleries.', 'aesop-core' ),
 			'menu_icon' 		  		=> AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
@@ -58,6 +79,21 @@ class AesopGalleryComponentAdmin {
 			'query_var' 				=> true,
 			'can_export' 				=> true,
 			'capability_type' 			=> 'post'
+=======
+			'label'                 => __( 'Galleries', 'aesop-core' ),
+			'description'           => __( 'Create responsive galleries.', 'aesop-core' ),
+			'menu_icon'       => AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
+			'menu_position'    => 15,
+			'labels'                => $labels,
+			'supports'              => array( 'title' ),
+			'hierarchical'          => false,
+			'public'                => false,
+			'show_ui'      => true,
+			'exclude_from_search'  => true,
+			'query_var'     => true,
+			'can_export'     => true,
+			'capability_type'    => 'post',
+>>>>>>> release/1.5.1
 		);
 
 		register_post_type( 'ai_galleries', apply_filters( 'ai_gallery_args', $args ) );
@@ -71,10 +107,17 @@ class AesopGalleryComponentAdmin {
 	 *
 	 * @since    1.0.0
 	 */
+<<<<<<< HEAD
 	function col_head($defaults) {
 	    $defaults['aesop_gallery'] = __( 'Gallery Code','aesop-core' );
 	    $defaults['used_in'] = __( 'Used In','aesop-core' );
 	    return $defaults;
+=======
+	public function col_head( $defaults ) {
+		$defaults['aesop_gallery'] = __( 'Gallery Code', 'aesop-core' );
+		$defaults['used_in'] = __( 'Used In', 'aesop-core' );
+		return $defaults;
+>>>>>>> release/1.5.1
 	}
 
 	/**
@@ -83,6 +126,7 @@ class AesopGalleryComponentAdmin {
 	 *
 	 * @since    1.
 	 */
+<<<<<<< HEAD
 	function col_content($column_name, $post_ID) {
 
 	    if ( 'aesop_gallery' == $column_name ) {
@@ -92,6 +136,17 @@ class AesopGalleryComponentAdmin {
 	   	if ( 'used_in' == $column_name ) {
 
 			$pages = get_posts( array ('s' => '[aesop_gallery id="'.$post_ID.'"','post_type' => array ( 'page', 'post' ) ) );
+=======
+	public function col_content( $column_name, $post_ID ) {
+
+		if ( 'aesop_gallery' == $column_name ) {
+			printf( '[aesop_gallery id="%s"]', $post_ID );
+		}
+
+		if ( 'used_in' == $column_name ) {
+
+			$pages = get_posts( array ( 's' => '[aesop_gallery id="'.$post_ID.'"', 'post_type' => array ( 'page', 'post' ) ) );
+>>>>>>> release/1.5.1
 
 			$count = 0;
 
@@ -100,17 +155,22 @@ class AesopGalleryComponentAdmin {
 
 					$count ++;
 
-					if ( has_shortcode( $page->post_content ,'aesop_gallery' ) ){
+					if ( has_shortcode( $page->post_content , 'aesop_gallery' ) ) {
 
 						echo '<a href="'.get_edit_post_link( $page->ID ).'" title="Edit" >'.$page->post_title.'</a>';
 
+<<<<<<< HEAD
 						if ( $count != count( $pages ) ){
+=======
+						if ( $count != count( $pages ) ) {
+>>>>>>> release/1.5.1
 							echo  ', ';
 						}
 					}
 				}
 			endif;
 
+<<<<<<< HEAD
 	    }//end if
 	}
 
@@ -122,12 +182,24 @@ class AesopGalleryComponentAdmin {
 	 * @since 1.4
 	 */
 	function gallery_box_assets(){
+=======
+		}//end if
+	}
+
+	/**
+	 * Load the assets that we need for the gallery meta
+	 *
+	 * @since 1.4
+	 */
+	public function gallery_box_assets() {
+>>>>>>> release/1.5.1
 
 		if ( 'ai_galleries' == get_current_screen()->id ) {
 			wp_enqueue_script( 'jquery-ui-sortable' );
 		}
 	}
 	/**
+<<<<<<< HEAD
 	 *
 	 *
 	 *	New metabox to better manage images within galleries
@@ -144,31 +216,63 @@ class AesopGalleryComponentAdmin {
 
 		// global options
 		add_meta_box( 'ase_gallery_options',__( 'Set Options', 'aesop-core' ),array($this,'render_options_box'), 'ai_galleries','normal','core' );
+=======
+	 * New metabox to better manage images within galleries
+	 *
+	 * @since 1.4
+	 */
+	public function new_gallery_box() {
+
+		// images
+		add_meta_box( 'ase_gallery_component', __( 'Add Images', 'aesop-core' ), array( $this, 'render_gallery_box' ), 'ai_galleries', 'normal', 'core' );
+
+		// layout
+		add_meta_box( 'ase_gallery_layout', __( 'Select Layout', 'aesop-core' ), array( $this, 'render_layout_box' ), 'ai_galleries', 'normal', 'core' );
+
+		// global options
+		add_meta_box( 'ase_gallery_options', __( 'Set Options', 'aesop-core' ), array( $this, 'render_options_box' ), 'ai_galleries', 'normal', 'core' );
+>>>>>>> release/1.5.1
 
 	}
 
 	/**
+<<<<<<< HEAD
 	 * 	Render meta box used for the gallery
+=======
+	 *  Render meta box used for the gallery
+>>>>>>> release/1.5.1
 	 *
 	 * @param WP_Post $post The post object.
 	 * @since 1.4
 	 *
 	 */
+<<<<<<< HEAD
 	function render_gallery_box( $post ){
 
 		$ajax_nonce = wp_create_nonce( 'ase-update-gallery' );
+=======
+	public function render_gallery_box( $post ) {
+>>>>>>> release/1.5.1
 
 		echo '<div class="aesop-gallery-data" style="display: hidden;">';
-			wp_nonce_field( 'ase_gallery_meta', 'ase_gallery_meta_nonce' );
+		wp_nonce_field( 'ase_gallery_meta', 'ase_gallery_meta_nonce' );
 		echo '</div>';
 
 		// get the existing images for this post prior to 1.4, else get the id's set into post meta for 1.4
 		if ( AI_CORE_VERSION < 1.4 ) {
+<<<<<<< HEAD
 			$get_image_ids 	= get_post_gallery( $post->ID, false );
 			$image_ids 		= explode( ',', $get_image_ids['ids'] );
 		} else {
 			$get_image_ids 	= get_post_meta( $post->ID,'_ase_gallery_images', true );
 			$image_ids 		= explode( ',', $get_image_ids );
+=======
+			$get_image_ids  = get_post_gallery( $post->ID, false );
+			$image_ids   = explode( ',', $get_image_ids['ids'] );
+		} else {
+			$get_image_ids  = get_post_meta( $post->ID, '_ase_gallery_images', true );
+			$image_ids   = explode( ',', $get_image_ids );
+>>>>>>> release/1.5.1
 		}
 
 		echo '<a id="ase-gallery-add-image" class="ase-gallery-image-placeholder button-primary"><i class="dashicons dashicons-plus">Add Images</i></a>';
@@ -180,7 +284,11 @@ class AesopGalleryComponentAdmin {
 
 				$image    = wp_get_attachment_image_src( $image_id, 'thumbnail', false );
 
+<<<<<<< HEAD
 				?>
+=======
+?>
+>>>>>>> release/1.5.1
 				<li id="<?php echo $image_id;?>" class="ase-gallery-image">
 					<i class="dashicons dashicons-no-alt" title="Delete From Gallery"></i>
 					<i class='dashicons dashicons-edit' title="Edit Image Caption"></i>
@@ -188,9 +296,9 @@ class AesopGalleryComponentAdmin {
 		          </li>
 					<?php
 
-				endforeach;
+		endforeach;
 
-			endif;
+		endif;
 
 		echo '</ul>';
 
@@ -199,12 +307,17 @@ class AesopGalleryComponentAdmin {
 	}
 
 	/**
+<<<<<<< HEAD
 	 *
 	 *	Draw the metabox used to pick the layout of the gallery
+=======
+	 * Draw the metabox used to pick the layout of the gallery
+>>>>>>> release/1.5.1
 	 *
 	 * @param WP_Post $post The post object.
 	 * @since 1.4
 	 */
+<<<<<<< HEAD
 	function render_layout_box( $post ) {
 
 		$type = get_post_meta( $post->ID,'aesop_gallery_type', true );
@@ -216,42 +329,64 @@ class AesopGalleryComponentAdmin {
 		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="sequence" <?php checked( $type, 'sequence' ); ?> >Sequence</label>
 		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="photoset" <?php checked( $type, 'photoset' ); ?> ><?php _e( 'Photoset','aesop-core' );?></label>
 		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="stacked" <?php checked( $type, 'stacked' ); ?> ><?php _e( 'Parallax','aesop-core' );?></label>
+=======
+	public function render_layout_box( $post ) {
+
+		$type = get_post_meta( $post->ID, 'aesop_gallery_type', true );
+
+?>
+
+      	<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="grid" <?php checked( $type, 'grid' ); ?> ><?php _e( 'Grid', 'aesop-core' );?></label>
+        <label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="thumbnail" <?php checked( $type, 'thumbnail' ); ?> ><?php _e( 'Thumbnail', 'aesop-core' );?></label>
+		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="sequence" <?php checked( $type, 'sequence' ); ?> >Sequence</label>
+		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="photoset" <?php checked( $type, 'photoset' ); ?> ><?php _e( 'Photoset', 'aesop-core' );?></label>
+		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="stacked" <?php checked( $type, 'stacked' ); ?> ><?php _e( 'Parallax', 'aesop-core' );?></label>
+>>>>>>> release/1.5.1
 
         <?php do_action( 'aesop_add_gallery_type' );
 
 	}
 
 	/**
+<<<<<<< HEAD
 	 *
 	 *	Draw the metabox used to pick the layout of the gallery
+=======
+	 * Draw the metabox used to pick the layout of the gallery
+>>>>>>> release/1.5.1
 	 *
 	 * @param WP_Post $post The post object.
 	 * @since 1.4
 	 */
+<<<<<<< HEAD
 	function render_options_box( $post ) {
+=======
+	public function render_options_box( $post ) {
+>>>>>>> release/1.5.1
 
-		$id 			= $post->ID;
+		$id    = $post->ID;
 
 		// global
-		$width 			= get_post_meta( $id, 'aesop_gallery_width', true );
-		$caption 		= get_post_meta( $id, 'aesop_gallery_caption', true );
+		$width    = get_post_meta( $id, 'aesop_gallery_width', true );
+		$caption   = get_post_meta( $id, 'aesop_gallery_caption', true );
 
 		// grid
 		$grid_item_width = get_post_meta( $id, 'aesop_grid_gallery_width', true );
 
 		// thumbnail
-		$thumb_trans 	= get_post_meta( $id, 'aesop_thumb_gallery_transition', true );
-		$thumb_speed 	= get_post_meta( $id, 'aesop_thumb_gallery_transition_speed', true );
-		$thumb_hide 	= get_post_meta( $id, 'aesop_thumb_gallery_hide_thumbs', true );
+		$thumb_trans  = get_post_meta( $id, 'aesop_thumb_gallery_transition', true );
+		$thumb_speed  = get_post_meta( $id, 'aesop_thumb_gallery_transition_speed', true );
+		$thumb_hide  = get_post_meta( $id, 'aesop_thumb_gallery_hide_thumbs', true );
 
 		// photoset
 		$photoset_layout = get_post_meta( $id, 'aesop_photoset_gallery_layout', true );
-		$photoset_lb 	 = get_post_meta( $id, 'aesop_photoset_gallery_lightbox', true );
+		$photoset_lb   = get_post_meta( $id, 'aesop_photoset_gallery_lightbox', true );
 
-		?>
+?>
 		<div class="ase-gallery-opts--global">
 
 			<div class="ase-gallery-opts--single">
+<<<<<<< HEAD
 				<label for="aesop_gallery_width"><?php _e( 'Main Gallery Width','aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Adjust the overall width of the grid/thumbnail gallery. Acceptable values include 500px or 50%.','aesop-core' );?></p>
 				<input type="text" name="aesop_gallery_width" value="<?php echo esc_html( $width );?>">
@@ -259,21 +394,39 @@ class AesopGalleryComponentAdmin {
 			<div class="ase-gallery-opts--single">
 				<label for="aesop_gallery_caption"><?php _e( 'Gallery Caption','aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Add an optional caption for the gallery.','aesop-core' );?></p>
+=======
+				<label for="aesop_gallery_width"><?php _e( 'Main Gallery Width', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Adjust the overall width of the grid/thumbnail gallery. Acceptable values include 500px or 50%.', 'aesop-core' );?></p>
+				<input type="text" name="aesop_gallery_width" value="<?php echo esc_html( $width );?>">
+			</div>
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_gallery_caption"><?php _e( 'Gallery Caption', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Add an optional caption for the gallery.', 'aesop-core' );?></p>
+>>>>>>> release/1.5.1
 				<textarea name="aesop_gallery_caption"><?php echo esc_html( $caption );?></textarea>
 			</div>
 
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--grid" style="display:none;">
+<<<<<<< HEAD
 			<h3><?php _e( 'Grid Options','aesop-core' );?></h3>
 
 			<div class="ase-gallery-opts--single">
 				<label for="aesop_grid_gallery_width"><?php _e( 'Grid Gallery Width','aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Adjust the width of the individual grid items, only if using Grid gallery style. Default is 400.','aesop-core' );?></p>
+=======
+			<h3><?php _e( 'Grid Options', 'aesop-core' );?></h3>
+
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_grid_gallery_width"><?php _e( 'Grid Gallery Width', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Adjust the width of the individual grid items, only if using Grid gallery style. Default is 400.', 'aesop-core' );?></p>
+>>>>>>> release/1.5.1
 				<input type="text" name="aesop_grid_gallery_width" value="<?php echo (int) $grid_item_width;?>">
 			</div>
 
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--thumb" style="display:none;">
+<<<<<<< HEAD
 			<h3><?php _e( 'Thumbnail Options','aesop-core' );?></h3>
 
 			<div class="ase-gallery-opts--single">
@@ -283,33 +436,65 @@ class AesopGalleryComponentAdmin {
 			      <option value="crossfade" <?php selected( $thumb_trans, 'fade' ); ?>><?php _e( 'Fade','aesop-core' );?></option>
 			      <option value="slide" <?php selected( $thumb_trans, 'slide' ); ?>><?php _e( 'Slide','aesop-core' );?></option>
 			      <option value="dissolve" <?php selected( $thumb_trans, 'dissolve' ); ?>><?php _e( 'Dissolve','aesop-core' );?></option>
+=======
+			<h3><?php _e( 'Thumbnail Options', 'aesop-core' );?></h3>
+
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_thumb_gallery_transition"><?php _e( 'Gallery Transition', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Adjust the transition effect for the Thumbnail gallery. Default is slide.', 'aesop-core' );?></p>
+			   	<select name="aesop_thumb_gallery_transition">
+			      <option value="crossfade" <?php selected( $thumb_trans, 'fade' ); ?>><?php _e( 'Fade', 'aesop-core' );?></option>
+			      <option value="slide" <?php selected( $thumb_trans, 'slide' ); ?>><?php _e( 'Slide', 'aesop-core' );?></option>
+			      <option value="dissolve" <?php selected( $thumb_trans, 'dissolve' ); ?>><?php _e( 'Dissolve', 'aesop-core' );?></option>
+>>>>>>> release/1.5.1
 			    </select>
 			</div>
 
 			<div class="ase-gallery-opts--single">
+<<<<<<< HEAD
 				<label for="aesop_thumb_gallery_transition_speed"><?php _e( 'Gallery Transition Speed','aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Activate slideshow by setting a speed for the transition.5000 = 5 seconds.','aesop-core' );?></p>
+=======
+				<label for="aesop_thumb_gallery_transition_speed"><?php _e( 'Gallery Transition Speed', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Activate slideshow by setting a speed for the transition.5000 = 5 seconds.', 'aesop-core' );?></p>
+>>>>>>> release/1.5.1
 				<input type="text" name="aesop_thumb_gallery_transition_speed" value="<?php echo (int) $thumb_speed;?>">
 			</div>
 
 			<div class="ase-gallery-opts--single">
 				<input type="checkbox" name="aesop_thumb_gallery_hide_thumbs" <?php if ( $thumb_hide == true ) { ?>checked="checked"<?php } ?>>
+<<<<<<< HEAD
 				<label for="aesop_thumb_gallery_hide_thumbs"><?php _e( 'Hide Gallery Thumbnails','aesop-core' );?></label>
+=======
+				<label for="aesop_thumb_gallery_hide_thumbs"><?php _e( 'Hide Gallery Thumbnails', 'aesop-core' );?></label>
+>>>>>>> release/1.5.1
 			</div>
 
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--photoset" style="display:none;">
+<<<<<<< HEAD
 			<h3><?php _e( 'Photoset Options','aesop-core' );?></h3>
 
 			<div class="ase-gallery-opts--single">
 				<label for="aesop-photoset-gallery-layout"><?php _e( 'Gallery Layout','aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Let\'s say you have 4 images in this gallery. If you enter 121 you will have one image on the top row, two images on the second row, and one image on the third row.','aesop-core' );?></p>
+=======
+			<h3><?php _e( 'Photoset Options', 'aesop-core' );?></h3>
+
+			<div class="ase-gallery-opts--single">
+				<label for="aesop-photoset-gallery-layout"><?php _e( 'Gallery Layout', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Let\'s say you have 4 images in this gallery. If you enter 121 you will have one image on the top row, two images on the second row, and one image on the third row.', 'aesop-core' );?></p>
+>>>>>>> release/1.5.1
 				<input type="text" name="aesop_photoset_gallery_layout" value="<?php echo (int) $photoset_layout;?>">
 			</div>
 
 			<div class="ase-gallery-opts--single">
 				<input type="checkbox" name="aesop_photoset_gallery_lightbox" <?php if ( $photoset_lb == true ) { ?>checked="checked"<?php } ?>>
+<<<<<<< HEAD
 				<label for="aesop_photoset_gallery_lightbox"><?php _e( 'Enable Lightbox','aesop-core' );?></label>
+=======
+				<label for="aesop_photoset_gallery_lightbox"><?php _e( 'Enable Lightbox', 'aesop-core' );?></label>
+>>>>>>> release/1.5.1
 			</div>
 
 		</div>
@@ -318,15 +503,23 @@ class AesopGalleryComponentAdmin {
 	}
 
 	/**
+<<<<<<< HEAD
 	 *
 	 * 	Save the meta when the post is saved.
+=======
+	 *  Save the meta when the post is saved.
+>>>>>>> release/1.5.1
 	 *
 	 * @param integer $post_id The ID of the post being saved.
 	 * @param post    $post    the post
 	 * @since 1.4
 	 *
 	 */
+<<<<<<< HEAD
 	function save_gallery_box( $post_id, $post, $update ) {
+=======
+	public function save_gallery_box( $post_id, $post ) {
+>>>>>>> release/1.5.1
 
 		// if nonce not set bail
 		if ( ! isset( $_POST['ase_gallery_meta_nonce'] ) ) {
@@ -342,23 +535,23 @@ class AesopGalleryComponentAdmin {
 		// gallery ids
 		$gallery_ids   = isset( $_POST['ase_gallery_ids'] ) ? urldecode( $_POST['ase_gallery_ids'] ) : false;
 
-		$type 			= isset( $_POST['aesop_gallery_type']) ? $_POST['aesop_gallery_type'] : 'grid';
+		$type    = isset( $_POST['aesop_gallery_type'] ) ? $_POST['aesop_gallery_type'] : 'grid';
 
 		// global
-		$width 			= isset( $_POST['aesop_gallery_width'] ) ? $_POST['aesop_gallery_width'] : false;
-		$caption 		= isset( $_POST['aesop_gallery_caption'] ) ? $_POST['aesop_gallery_caption'] : false;
+		$width    = isset( $_POST['aesop_gallery_width'] ) ? $_POST['aesop_gallery_width'] : false;
+		$caption   = isset( $_POST['aesop_gallery_caption'] ) ? $_POST['aesop_gallery_caption'] : false;
 
 		// grid
 		$grid_item_width = isset( $_POST['aesop_grid_gallery_width'] ) ? $_POST['aesop_grid_gallery_width'] : false;
 
 		// thumbnail
-		$thumb_trans 	= isset( $_POST['aesop_thumb_gallery_transition'] ) ? $_POST['aesop_thumb_gallery_transition'] : false;
-		$thumb_speed 	= isset( $_POST['aesop_thumb_gallery_transition_speed'] ) ? $_POST['aesop_thumb_gallery_transition_speed'] : false;
-		$thumb_hide 	= isset( $_POST['aesop_thumb_gallery_hide_thumbs'] ) ? $_POST['aesop_thumb_gallery_hide_thumbs'] : false;
+		$thumb_trans  = isset( $_POST['aesop_thumb_gallery_transition'] ) ? $_POST['aesop_thumb_gallery_transition'] : false;
+		$thumb_speed  = isset( $_POST['aesop_thumb_gallery_transition_speed'] ) ? $_POST['aesop_thumb_gallery_transition_speed'] : false;
+		$thumb_hide  = isset( $_POST['aesop_thumb_gallery_hide_thumbs'] ) ? $_POST['aesop_thumb_gallery_hide_thumbs'] : false;
 
 		// photoset
 		$photoset_layout = isset( $_POST['aesop_photoset_gallery_layout'] ) ? $_POST['aesop_photoset_gallery_layout'] : false;
-		$photoset_lb 	 = isset( $_POST['aesop_photoset_gallery_lightbox'] ) ? $_POST['aesop_photoset_gallery_lightbox'] : false;
+		$photoset_lb   = isset( $_POST['aesop_photoset_gallery_lightbox'] ) ? $_POST['aesop_photoset_gallery_lightbox'] : false;
 
 		// safe to proceed
 		delete_post_meta( $post_id, '_ase_gallery_images' );
@@ -367,7 +560,7 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, '_ase_gallery_images', $gallery_ids );
 
 		// update gallery type
-		update_post_meta( $post_id,'aesop_gallery_type',sanitize_text_field( trim( $type ) ) );
+		update_post_meta( $post_id, 'aesop_gallery_type', sanitize_text_field( trim( $type ) ) );
 
 		// global
 		update_post_meta( $post_id, 'aesop_gallery_width', sanitize_text_field( $width ) );
@@ -388,6 +581,7 @@ class AesopGalleryComponentAdmin {
 
 
 	/**
+<<<<<<< HEAD
 	 *
 	 *
 	 *	Map the old galleries to post meta
@@ -395,6 +589,13 @@ class AesopGalleryComponentAdmin {
 	 * @since 1.4
 	 */
 	function upgrade_galleries_notice(){
+=======
+	 * Map the old galleries to post meta
+	 *
+	 * @since 1.4
+	 */
+	public function upgrade_galleries_notice() {
+>>>>>>> release/1.5.1
 
 		// only run if we have markers and have never upgraded
 		if ( ! get_option( 'ase_galleries_upgraded_to' ) && 'true' == self::aesop_check_for_galleries() ) {
@@ -411,12 +612,20 @@ class AesopGalleryComponentAdmin {
 	}
 
 	/**
+<<<<<<< HEAD
 	 *
 	 *	When the user starts the upgrade process let's run a function to map the old gallery ids to psot meta
 	 *
 	 * @since 1.4
 	 */
 	function upgrade_galleries(){
+=======
+	 * When the user starts the upgrade process let's run a function to map the old gallery ids to psot meta
+	 *
+	 * @since 1.4
+	 */
+	public function upgrade_galleries() {
+>>>>>>> release/1.5.1
 
 		check_ajax_referer( 'aesop-galleries-upgrade', 'security' );
 
@@ -424,15 +633,20 @@ class AesopGalleryComponentAdmin {
 			return; }
 
 		// get the posts with the maps shortode
-		$posts = get_posts( array( 'post_type' => array('ai_galleries'), 'posts_per_page' => -1 ) );
+		$posts = get_posts( array( 'post_type' => array( 'ai_galleries' ), 'posts_per_page' => -1 ) );
 
 		if ( $posts ) :
 			foreach ( $posts as $post ) {
 
 				$id = $post->ID;
 
+<<<<<<< HEAD
 				$old_image_ids 		= get_post_gallery( $id, false );
 				$old_image_ids 		= $old_image_ids['ids'];
+=======
+				$old_image_ids   = get_post_gallery( $id, false );
+				$old_image_ids   = $old_image_ids['ids'];
+>>>>>>> release/1.5.1
 
 				if ( ! empty ( $old_image_ids ) ) {
 					add_post_meta( $id, '_ase_gallery_images', $old_image_ids );
@@ -442,18 +656,30 @@ class AesopGalleryComponentAdmin {
 
 		update_option( 'ase_galleries_upgraded_to', AI_CORE_VERSION );
 
+<<<<<<< HEAD
 		echo __( 'All done!','aesop-core' );
+=======
+		echo __( 'All done!', 'aesop-core' );
+>>>>>>> release/1.5.1
 
 		exit;
 
 	}
 	/**
+<<<<<<< HEAD
 	 *
 	 *	Handles the click function for upgrading the old gallery ids to post meta
 	 *
 	 * @since 1.3
 	 */
 	function upgrade_click_handle(){
+=======
+	 * Handles the click function for upgrading the old gallery ids to post meta
+	 *
+	 * @since 1.3
+	 */
+	public function upgrade_click_handle() {
+>>>>>>> release/1.5.1
 
 		$nonce = wp_create_nonce( 'aesop-galleries-upgrade' );
 
@@ -485,6 +711,7 @@ class AesopGalleryComponentAdmin {
 	}
 
 	/**
+<<<<<<< HEAD
 	 *
 	 *	Check to see if any galleries exist
 	 *
@@ -492,8 +719,16 @@ class AesopGalleryComponentAdmin {
 	 * @return bool true if galleries exist, false if not
 	 */
 	function aesop_check_for_galleries(){
+=======
+	 * Check to see if any galleries exist
+	 *
+	 * @since 1.4
+	 * @return string true if galleries exist, false if not
+	 */
+	public function aesop_check_for_galleries() {
+>>>>>>> release/1.5.1
 
-		$galleries = get_posts( array( 'post_type' => array('ai_galleries'), 'posts_per_page' => -1 ) );
+		$galleries = get_posts( array( 'post_type' => array( 'ai_galleries' ) ) );
 
 		if ( $galleries ) :
 			$return = 'true';

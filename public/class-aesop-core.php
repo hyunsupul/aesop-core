@@ -18,7 +18,6 @@
 class Aesop_Core {
 
 	/**
-	 *
 	 * Unique identifier
 	 *
 	 * @since    1.0.0
@@ -45,18 +44,22 @@ class Aesop_Core {
 	private function __construct() {
 
 		// load component array
+<<<<<<< HEAD
 		require_once( AI_CORE_DIR.'admin/includes/available.php');
+=======
+		require_once AI_CORE_DIR.'admin/includes/available.php';
+>>>>>>> release/1.5.1
 
 		// load component helpers
-		require_once( AI_CORE_DIR.'public/includes/browserclasses.php');
-		require_once( AI_CORE_DIR.'public/includes/imgsizes.php');
-		require_once( AI_CORE_DIR.'public/includes/theme-helpers.php');
+		require_once AI_CORE_DIR.'public/includes/browserclasses.php';
+		require_once AI_CORE_DIR.'public/includes/imgsizes.php';
+		require_once AI_CORE_DIR.'public/includes/theme-helpers.php';
 
 		// load optoins
-		require_once( AI_CORE_DIR.'public/includes/options.php');
+		require_once AI_CORE_DIR.'public/includes/options.php';
 
 		// additinoal css support
-		require_once( AI_CORE_DIR.'public/includes/css.php');
+		require_once AI_CORE_DIR.'public/includes/css.php';
 
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
@@ -65,6 +68,7 @@ class Aesop_Core {
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
 		// we are loading this super late so that themes can override shortcode fucntions
+<<<<<<< HEAD
 		add_action( 'wp', array($this,'register_shortcodes'),10 );
 
 		// enqueue scripts
@@ -72,6 +76,15 @@ class Aesop_Core {
 
 		// remove strap br and p tags beore and after shortcodes
 		add_filter( 'the_content', array($this,'shortcode_empty_paragraph_fix') );
+=======
+		add_action( 'wp', array( $this, 'register_shortcodes' ), 10 );
+
+		// enqueue scripts
+		add_action( 'wp_enqueue_scripts', array( $this, 'scripts' ) );
+
+		// remove strap br and p tags beore and after shortcodes
+		add_filter( 'the_content', array( $this, 'shortcode_empty_paragraph_fix' ) );
+>>>>>>> release/1.5.1
 
 	}
 
@@ -80,7 +93,11 @@ class Aesop_Core {
 	 *
 	 * @since    1.0.0
 	 *
+<<<<<<< HEAD
 	 * @return    Plugin slug variable.
+=======
+	 * @return    string slug variable.
+>>>>>>> release/1.5.1
 	 */
 	public function get_plugin_slug() {
 		return $this->plugin_slug;
@@ -108,7 +125,11 @@ class Aesop_Core {
 	 *
 	 * @since    1.0.0
 	 *
+<<<<<<< HEAD
 	 * @param    boolean $network_wide True if WPMU superadmin uses
+=======
+	 * @param boolean $network_wide True if WPMU superadmin uses
+>>>>>>> release/1.5.1
 	 *                                 "Network Activate" action, false if
 	 *                                 WPMU is disabled or plugin is
 	 *                                 activated on an individual blog.
@@ -122,10 +143,13 @@ class Aesop_Core {
 				// Get all blog ids
 				$blog_ids = self::get_blog_ids();
 
-				foreach ( $blog_ids as $blog_id ) {
+				if ( is_array( $blog_ids ) ) {
 
-					switch_to_blog( $blog_id );
-					self::single_activate();
+					foreach ( $blog_ids as $blog_id ) {
+
+						switch_to_blog( $blog_id );
+						self::single_activate();
+					}
 				}
 
 				restore_current_blog();
@@ -144,7 +168,11 @@ class Aesop_Core {
 	 *
 	 * @since    1.0.0
 	 *
+<<<<<<< HEAD
 	 * @param    boolean $network_wide True if WPMU superadmin uses
+=======
+	 * @param boolean $network_wide True if WPMU superadmin uses
+>>>>>>> release/1.5.1
 	 *                                 "Network Deactivate" action, false if
 	 *                                 WPMU is disabled or plugin is
 	 *                                 deactivated on an individual blog.
@@ -158,11 +186,14 @@ class Aesop_Core {
 				// Get all blog ids
 				$blog_ids = self::get_blog_ids();
 
-				foreach ( $blog_ids as $blog_id ) {
+				if ( is_array( $blog_ids ) ) {
 
-					switch_to_blog( $blog_id );
-					self::single_deactivate();
+					foreach ( $blog_ids as $blog_id ) {
 
+						switch_to_blog( $blog_id );
+						self::single_deactivate();
+
+					}
 				}
 
 				restore_current_blog();
@@ -181,7 +212,11 @@ class Aesop_Core {
 	 *
 	 * @since    1.0.0
 	 *
+<<<<<<< HEAD
 	 * @param    integer $blog_id ID of the new blog.
+=======
+	 * @param integer $blog_id ID of the new blog.
+>>>>>>> release/1.5.1
 	 */
 	public function activate_new_site( $blog_id ) {
 
@@ -224,7 +259,8 @@ class Aesop_Core {
 	 * @since    1.0.0
 	 */
 	private static function single_activate() {
-		// @TODO: Define activation functionality here
+		// set transietn for activation welcome
+		set_transient( '_aesop_welcome_redirect', true, 30 );
 	}
 
 	/**
@@ -241,7 +277,11 @@ class Aesop_Core {
 			$out .= __( 'Doh! There was an issue deactivating Aesop. Try again perhaps?.', 'aesop-core' );
 			$out .= '</p></div>';
 
+<<<<<<< HEAD
 			echo apply_filters( 'ai_deactivation_error_message',$out );
+=======
+			echo apply_filters( 'ai_deactivation_error_message', $out );
+>>>>>>> release/1.5.1
 
 		}
 	}
@@ -257,20 +297,35 @@ class Aesop_Core {
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
 
 		$out = load_textdomain( $domain, trailingslashit( AI_CORE_DIR ). 'languages/' . $domain . '-' . $locale . '.mo' );
+
+		return $out;
 	}
 
 	/**
+<<<<<<< HEAD
 	 *
 	 *	enqueue plugin files
 	 * @since 1.0
 	 *
 	 *	add_theme_support('aesop-component-styles');
 	 *	added to a themes functions.php will enqueue an additional css file with extended css support for all aesop components
+=======
+	 * enqueue plugin files
+	 *
+	 * @since 1.0
+	 *
+	 * add_theme_support('aesop-component-styles');
+	 * added to a themes functions.php will enqueue an additional css file with extended css support for all aesop components
+>>>>>>> release/1.5.1
 	 *
 	 * @since 1.0.9
 	 *
 	 */
+<<<<<<< HEAD
 	public function scripts(){
+=======
+	public function scripts() {
+>>>>>>> release/1.5.1
 
 		wp_enqueue_script( 'jquery' );
 
@@ -288,7 +343,11 @@ class Aesop_Core {
 		}
 
 		// core script
+<<<<<<< HEAD
 		wp_enqueue_script( 'ai-core', AI_CORE_URL.'/public/assets/js/ai-core.min.js', array('jquery'), AI_CORE_VERSION, true );
+=======
+		wp_enqueue_script( 'ai-core', AI_CORE_URL.'/public/assets/js/ai-core.min.js', array( 'jquery' ), AI_CORE_VERSION, true );
+>>>>>>> release/1.5.1
 
 	}
 
@@ -297,7 +356,7 @@ class Aesop_Core {
 	 *
 	 * @since    1.0.0
 	 */
-	public function register_shortcodes(){
+	public function register_shortcodes() {
 
 		foreach ( glob( AI_CORE_DIR.'public/includes/components/*.php' ) as $component ) {
 			require_once $component;
@@ -314,7 +373,11 @@ class Aesop_Core {
 	 *
 	 * @since    1.0.0
 	 */
+<<<<<<< HEAD
 	function shortcode_empty_paragraph_fix($content) {
+=======
+	public function shortcode_empty_paragraph_fix( $content ) {
+>>>>>>> release/1.5.1
 
 		$array = array(
 			'<p>[' => '[',

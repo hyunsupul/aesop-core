@@ -1,6 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * 	Open-sourced suite of components that empower interactive storytelling.
+=======
+ *  Open-sourced suite of components that empower interactive storytelling.
+>>>>>>> release/1.5.1
  *
  *
  * @package   Aesop_Core
@@ -10,6 +14,7 @@
  * @copyright 2014 Nick Haskins
  *
  * @wordpress-plugin
+<<<<<<< HEAD
  * 	Plugin Name:       Aesop Story Engine
  * 	Plugin URI:        http://aesopstoryengine.com
  * 	Description:       Open-sourced suite of components that empower interactive storytelling.
@@ -21,6 +26,19 @@
  * 	License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * 	Domain Path:       /languages
  * 	GitHub Plugin URI: https://github.com/bearded-avenger/aesop-core
+=======
+ *  Plugin Name:       Aesop Story Engine
+ *  Plugin URI:        http://aesopstoryengine.com
+ *  Description:       Open-sourced suite of components that empower interactive storytelling.
+ *  Version:           1.5.1
+ *  Author:            Aesopinteractive LLC
+ *  Author URI:        http://aesopstoryengine.com
+ *  Text Domain:       aesop-core
+ *  License:           GPL-2.0+
+ *  License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ *  Domain Path:       /languages
+ *  GitHub Plugin URI: https://github.com/bearded-avenger/aesop-core
+>>>>>>> release/1.5.1
  *   Github Branch:     dev
  */
 
@@ -30,7 +48,11 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set some constants
+<<<<<<< HEAD
 define( 'AI_CORE_VERSION', '1.5' );
+=======
+define( 'AI_CORE_VERSION', '1.5.1' );
+>>>>>>> release/1.5.1
 define( 'AI_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AI_CORE_URL', plugins_url( '', __FILE__ ) );
 
@@ -39,7 +61,7 @@ define( 'AI_CORE_URL', plugins_url( '', __FILE__ ) );
 * 	Public-Facing Functionality
 *----------------------------------------------------------------------------*/
 
-require_once( AI_CORE_DIR.'public/class-aesop-core.php' );
+require_once AI_CORE_DIR.'public/class-aesop-core.php';
 
 /*
 * 	Register hooks that are fired when the plugin is activated or deactivated.
@@ -61,7 +83,7 @@ add_action( 'plugins_loaded', array( 'Aesop_Core', 'get_instance' ) );
 */
 if ( is_admin() ) {
 
-	require_once( AI_CORE_DIR.'admin/class-aesop-core-admin.php' );
+	require_once AI_CORE_DIR.'admin/class-aesop-core-admin.php';
 
 	add_action( 'plugins_loaded', array( 'Aesop_Core_Admin', 'get_instance' ) );
 

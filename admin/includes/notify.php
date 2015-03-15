@@ -8,13 +8,13 @@
 
 class AesopNotifyonActivation {
 
-	function __construct() {
+	public function __construct() {
 
 		add_action( 'admin_notices', array( $this, 'notify' ) );
 
 	}
 
-	function notify() {
+	public function notify() {
 
 		if ( AI_CORE_VERSION > get_option( 'ai_core_version' ) ) {
 
@@ -26,7 +26,11 @@ class AesopNotifyonActivation {
 
 			update_option( 'ai_core_version', AI_CORE_VERSION );
 
+<<<<<<< HEAD
 			echo apply_filters( 'ai_activation_notification',$out );
+=======
+			echo apply_filters( 'ai_activation_notification', $out );
+>>>>>>> release/1.5.1
 
 		} else {
 
