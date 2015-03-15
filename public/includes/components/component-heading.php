@@ -5,11 +5,7 @@
  *
  * @since    1.0.0
  */
-<<<<<<< HEAD
-if ( ! function_exists( 'aesop_chapter_shortcode' ) ){
-=======
 if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
->>>>>>> release/1.5.1
 
 	function aesop_chapter_shortcode( $atts ) {
 		$defaults = array(
@@ -20,33 +16,20 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 			'full'  	=> ''
 		);
 
-<<<<<<< HEAD
-		$atts = apply_filters( 'aesop_chapter_defaults',shortcode_atts( $defaults, $atts ) );
-=======
 		$atts = apply_filters( 'aesop_chapter_defaults', shortcode_atts( $defaults, $atts ) );
->>>>>>> release/1.5.1
 
 		// let this be used multiple times
 		static $instance = 0;
 		$instance++;
-<<<<<<< HEAD
-		$unique = sprintf( '%s-%s',get_the_ID(), $instance );
-=======
 		$unique = sprintf( '%s-%s', get_the_ID(), $instance );
->>>>>>> release/1.5.1
 
 		ob_start();
 
 		$inline_styles   = 'background-size:cover;background-position:center center;';
 		$styles    = apply_filters( 'aesop_chapter_img_styles_'.esc_attr( $unique ), esc_attr( $inline_styles ) );
 
-<<<<<<< HEAD
-		$img_style 		 	= 'img' == $atts['bgtype'] && $atts['img'] ? sprintf( 'style="background:url(\'%s\');%s"', esc_url( $atts['img'] ), $styles ) : 'style="height:auto;" ';
-		$img_style_class 	= 'img' == $atts['bgtype'] && $atts['img'] ? 'has-chapter-image' : 'no-chapter-image';
-=======
 		$img_style     = 'img' == $atts['bgtype'] && $atts['img'] ? sprintf( 'style="background:url(\'%s\');%s"', esc_url( $atts['img'] ), $styles ) : 'style="height:auto;" ';
 		$img_style_class  = 'img' == $atts['bgtype'] && $atts['img'] ? 'has-chapter-image' : 'no-chapter-image';
->>>>>>> release/1.5.1
 
 		$video_chapter_class = 'video' == $atts['bgtype'] ? 'aesop-video-chapter' : null;
 
@@ -88,15 +71,9 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 	}
 }//end if
 
-<<<<<<< HEAD
-if ( ! function_exists( 'aesop_chapter_heading_loader' ) ){
-
-	add_action( 'wp','aesop_chapter_heading_loader',11 );
-=======
 if ( ! function_exists( 'aesop_chapter_heading_loader' ) ) {
 
 	add_action( 'wp', 'aesop_chapter_heading_loader', 11 );
->>>>>>> release/1.5.1
 	function aesop_chapter_heading_loader() {
 
 		global $post;
@@ -104,11 +81,7 @@ if ( ! function_exists( 'aesop_chapter_heading_loader' ) ) {
 		$default_location  = is_single();
 		$location    = apply_filters( 'aesop_chapter_component_appears', $default_location );
 
-<<<<<<< HEAD
-		if ( isset($post->post_content) && ( $location ) && has_shortcode( $post->post_content, 'aesop_chapter' ) )  {
-=======
 		if ( isset( $post->post_content ) && ( $location ) && has_shortcode( $post->post_content, 'aesop_chapter' ) ) {
->>>>>>> release/1.5.1
 
 			new AesopChapterHeadingComponent;
 
@@ -120,13 +93,8 @@ if ( ! function_exists( 'aesop_chapter_heading_loader' ) ) {
 // @TODO - this needs to be moved to theme level because not all will use the offset and setup here
 class AesopChapterHeadingComponent {
 
-<<<<<<< HEAD
-	function __construct(){
-		add_action( 'wp_footer', array($this,'aesop_chapter_loader'),21 );
-=======
 	public function __construct() {
 		add_action( 'wp_footer', array( $this, 'aesop_chapter_loader' ), 21 );
->>>>>>> release/1.5.1
 	}
 
 	public function aesop_chapter_loader() {
@@ -139,11 +107,7 @@ class AesopChapterHeadingComponent {
 
 		// filterabl content header class
 		$contentHeaderClass = apply_filters( 'aesop_chapter_scroll_nav', '.aesop-entry-header' );
-<<<<<<< HEAD
-		?>
-=======
 ?>
->>>>>>> release/1.5.1
 			<!-- Chapter Loader -->
 			<script>
 				jQuery(document).ready(function(){
@@ -192,20 +156,11 @@ class AesopChapterHeadingComponent {
 	}
 
 	/**
-<<<<<<< HEAD
-	 *
-	 *	Draws the off canvas menu and close button
-	 *
-	 * @since 1.3.2
-	 */
-	function aesop_chapter_menu(){
-=======
 	 * Draws the off canvas menu and close button
 	 *
 	 * @since 1.3.2
 	 */
 	public function aesop_chapter_menu() {
->>>>>>> release/1.5.1
 
 		$out = '<a id="aesop-toggle-chapter-menu" class="aesop-toggle-chapter-menu" href="#aesop-chapter-menu"><i class="dashicons dashicons-tag aesop-close-chapter-menu"></i></a>';
 		$out .= '<div id="aesop-chapter-menu" class="aesop-chapter-menu">

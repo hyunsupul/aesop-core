@@ -14,19 +14,6 @@ class AesopMapComponentAdmin {
 		add_action( 'save_post',      array( $this, 'save_map_box' ) );
 
 		// admin notice for upgrading
-<<<<<<< HEAD
-		add_action( 'admin_notices', 					array($this, 'upgrade_map_notice' ) );
-		add_action( 'wp_ajax_upgrade_marker_meta', 		array($this, 'upgrade_marker_meta' ) );
-		add_action( 'admin_head',						array($this, 'upgrade_click_handle') );
-
-		add_filter( 'aesop_avail_components',			array($this, 'options') );
-		add_action( 'aesop_admin_styles', 				array($this, 'icon') );
-
-		// 1.5 - upgrading maps
-		add_action( 'admin_notices', 					array($this, 'upgrade_mapboxid_notice' ) );
-		add_action( 'admin_head',						array($this, 'upgrade_mapbox_click_handle') );
-		add_action( 'wp_ajax_upgrade_mapbox', 			array($this, 'upgrade_mapbox' ) );
-=======
 		add_action( 'admin_notices',      array( $this, 'upgrade_map_notice' ) );
 		add_action( 'wp_ajax_upgrade_marker_meta',   array( $this, 'upgrade_marker_meta' ) );
 		add_action( 'admin_head',      array( $this, 'upgrade_click_handle' ) );
@@ -38,27 +25,10 @@ class AesopMapComponentAdmin {
 		add_action( 'admin_notices',      array( $this, 'upgrade_mapboxid_notice' ) );
 		add_action( 'admin_head',      array( $this, 'upgrade_mapbox_click_handle' ) );
 		add_action( 'wp_ajax_upgrade_mapbox',    array( $this, 'upgrade_mapbox' ) );
->>>>>>> release/1.5.1
 
 	}
 
 	/**
-<<<<<<< HEAD
-	 *
-	 *
-	 *	Enqueue assets used for map but only on post pages
-	 *
-	 * @since 1.3
-	 */
-	function new_map_assets($hook){
-
-		if ( $hook == 'post.php' || $hook == 'post-new.php' ) {
-
-			wp_enqueue_script( 'google-maps','//maps.googleapis.com/maps/api/js?libraries=places&sensor=false' );
-			wp_enqueue_script( 'aesop-map-script',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js' );
-			wp_enqueue_script( 'jquery-geocomplete',AI_CORE_URL.'/admin/assets/js/vendor/jquery.geocomplete.min.js' );
-			wp_enqueue_style( 'aesop-map-style',AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.css', AI_CORE_VERSION, true );
-=======
 	 * Enqueue assets used for map but only on post pages
 	 *
 	 * @since 1.3
@@ -71,35 +41,12 @@ class AesopMapComponentAdmin {
 			wp_enqueue_script( 'aesop-map-script', AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js' );
 			wp_enqueue_script( 'jquery-geocomplete', AI_CORE_URL.'/admin/assets/js/vendor/jquery.geocomplete.min.js' );
 			wp_enqueue_style( 'aesop-map-style', AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.css', AI_CORE_VERSION, true );
->>>>>>> release/1.5.1
 		}
 
 	}
 
 
 	/**
-<<<<<<< HEAD
-	 *	Create the options for the shortcode that gets created when stickky maps is activated
-	 *	This lets the user use the user interface to add teh specific points in the story that the map should jump markers
-	 *
-	 * @since 1.3
-	 * @subpackage Component API
-	 * @param $shortcodes array array of shortcodes to return
-	 * @return return our own options merged into the aesop availabel optoins array
-	 */
-	function options($shortcodes) {
-
-		$custom = array(
-			'map_marker' 				=> array(
-				'name' 					=> __( 'Aesop Map Marker', 'aesop-core' ), // name of the component
-				'type' 					=> 'single', // single - wrap
-				'atts' 					=> array(
-					'title' 			=> array(
-						'type'			=> 'text', // a small text field
-						'default' 		=> '',
-						'desc' 			=> __( 'Title', 'aesop-core' ),
-						'tip'			=> __( 'By default we\'ll display an H2 heading with the text you specify here.','aesop-core' )
-=======
 	 * Create the options for the shortcode that gets created when stickky maps is activated
 	 * This lets the user use the user interface to add teh specific points in the story that the map should jump markers
 	 *
@@ -120,25 +67,12 @@ class AesopMapComponentAdmin {
 						'default'   => '',
 						'desc'    => __( 'Title', 'aesop-core' ),
 						'tip'   => __( 'By default we\'ll display an H2 heading with the text you specify here.', 'aesop-core' )
->>>>>>> release/1.5.1
 					),
 					'hidden'     => array(
 						'type'   => 'select', // a select dropdown
 						'values'   => array(
 							array(
 								'value' => 'off',
-<<<<<<< HEAD
-								'name'	=> __( 'Off','aesop-core' )
-							),
-							array(
-								'value' => 'on',
-								'name'	=> __( 'On','aesop-core' )
-							)
-						),
-						'default' 		=> '',
-						'desc' 			=> __( 'Hide this marker', 'aesop-core' ),
-						'tip'			=> __( 'Optionally hide this marker but retain the scroll to point in the map.','aesop-core' )
-=======
 								'name' => __( 'Off', 'aesop-core' )
 							),
 							array(
@@ -149,7 +83,6 @@ class AesopMapComponentAdmin {
 						'default'   => '',
 						'desc'    => __( 'Hide this marker', 'aesop-core' ),
 						'tip'   => __( 'Optionally hide this marker but retain the scroll to point in the map.', 'aesop-core' )
->>>>>>> release/1.5.1
 					)
 				)
 			)
@@ -160,21 +93,12 @@ class AesopMapComponentAdmin {
 	}
 
 	/**
-<<<<<<< HEAD
-	 *
-	 *	Add an icon to our placeholder
-	 * @subpackage Component API
-	 * @since 1.3
-	 */
-	function icon(){
-=======
 	 * Add an icon to our placeholder
 	 *
 	 * @subpackage Component API
 	 * @since 1.3
 	 */
 	public function icon() {
->>>>>>> release/1.5.1
 
 		$icon = '\f230'; // css code for dashicon
 		$slug = 'map_marker'; // name of component
@@ -184,86 +108,48 @@ class AesopMapComponentAdmin {
 	}
 
 	/**
-<<<<<<< HEAD
-	 *
-	 *
-	 *	New metabox to select map markers on the map
-	 *
-	 * @since 1.3
-	 */
-	function new_map_box(){
-=======
 	 * New metabox to select map markers on the map
 	 *
 	 * @since 1.3
 	 */
 	public function new_map_box() {
->>>>>>> release/1.5.1
 
 		$screens = apply_filters( 'aesop_map_meta_location', array( 'post' ) );
 
 		foreach ( $screens as $screen ) {
-<<<<<<< HEAD
-			add_meta_box( 'ase_map_component',__( 'Map Locations', 'aesop-core' ),array($this,'render_map_box'), $screen );
-=======
 			add_meta_box( 'ase_map_component', __( 'Map Locations', 'aesop-core' ), array( $this, 'render_map_box' ), $screen );
->>>>>>> release/1.5.1
 
 		}
 	}
 
 	/**
-<<<<<<< HEAD
-	 * 	Render Meta Box content.
-=======
 	 *  Render Meta Box content.
->>>>>>> release/1.5.1
 	 *
 	 * @param WP_Post $post The post object.
 	 * @since 1.3
 	 *
 	 */
-<<<<<<< HEAD
-	function render_map_box( $post ){
-=======
 	public function render_map_box( $post ) {
->>>>>>> release/1.5.1
 
 		echo '<div class="aesop-map-data" style="display: hidden;">';
 		wp_nonce_field( 'ase_map_meta', 'ase_map_meta_nonce' );
 		echo '</div>';
 
 		echo "Starting location: <input type='text' id='aesop-map-address'/>";
-<<<<<<< HEAD
-		echo __( '<em>Hint: Type to search for locations</em>','aesop-core' );
-		echo '<div id="aesop-map" style="height:350px;"></div>';
-
-		$ase_map_locations 		= get_post_meta( $post->ID, 'ase_map_component_locations' );
-		$ase_map_start_point 	= get_post_meta( $post->ID, 'ase_map_component_start_point', true );
-		$get_map_zoom 			= get_post_meta( $post->ID, 'ase_map_component_zoom', true );
-=======
 		echo __( '<em>Hint: Type to search for locations</em>', 'aesop-core' );
 		echo '<div id="aesop-map" style="height:350px;"></div>';
 
 		$ase_map_locations   = get_post_meta( $post->ID, 'ase_map_component_locations' );
 		$ase_map_start_point  = get_post_meta( $post->ID, 'ase_map_component_start_point', true );
 		$get_map_zoom    = get_post_meta( $post->ID, 'ase_map_component_zoom', true );
->>>>>>> release/1.5.1
 
 		$ase_map_start_point  = empty ( $ase_map_start_point ) ? array( 29.76, -95.38 ) : array( $ase_map_start_point['lat'], $ase_map_start_point['lng'] );
 		$ase_map_zoom    = empty ( $get_map_zoom ) ? 12 : $get_map_zoom;
 
-<<<<<<< HEAD
-		$ase_map_start_point 	= json_encode( $ase_map_start_point );
-		$ase_map_locations 		= json_encode( $ase_map_locations );
-
-		$tiles 					= aesop_map_tile_provider( $post->ID );
-=======
 		$ase_map_start_point  = json_encode( $ase_map_start_point );
 		$ase_map_locations   = json_encode( $ase_map_locations );
 
 		$tiles      = aesop_map_tile_provider( $post->ID );
->>>>>>> release/1.5.1
 
 ?>
 			<!-- Aesop Maps -->
@@ -462,22 +348,13 @@ class AesopMapComponentAdmin {
 
 	}
 	/**
-<<<<<<< HEAD
-	 *
-	 * 	Save the meta when the post is saved.
-=======
 	 *  Save the meta when the post is saved.
->>>>>>> release/1.5.1
 	 *
 	 * @param integer $post_id The ID of the post being saved.
 	 * @since 1.3
 	 *
 	 */
-<<<<<<< HEAD
-	function save_map_box( $post_id ) {
-=======
 	public function save_map_box( $post_id ) {
->>>>>>> release/1.5.1
 
 		// if nonce not set bail
 		if ( ! isset( $_POST['ase_map_meta_nonce'] ) ) {
@@ -496,11 +373,7 @@ class AesopMapComponentAdmin {
 		delete_post_meta( $post_id, 'ase_map_component_start_point' );
 
 		if ( isset( $_POST['ase-map-component-locations'] ) ) {
-<<<<<<< HEAD
-			foreach ( $_POST['ase-map-component-locations'] as $location ){
-=======
 			foreach ( $_POST['ase-map-component-locations'] as $location ) {
->>>>>>> release/1.5.1
 				// let's decode and convert the data into an array
 				$location_data = json_decode( urldecode( $location ), true );
 				add_post_meta( $post_id, 'ase_map_component_locations', $location_data );
@@ -522,23 +395,12 @@ class AesopMapComponentAdmin {
 	}
 
 	/**
-<<<<<<< HEAD
-	 *
-	 *
-	 *	Map the old map post meta keys to the new map post meta keys to preserve backwards compatibility
-	 *	when the user updates to 1.3
-	 *
-	 * @since 1.3
-	 */
-	function upgrade_map_notice(){
-=======
 	 * Map the old map post meta keys to the new map post meta keys to preserve backwards compatibility
 	 * when the user updates to 1.3
 	 *
 	 * @since 1.3
 	 */
 	public function upgrade_map_notice() {
->>>>>>> release/1.5.1
 
 		// only run if we have markers and have never upgraded
 		if ( get_option( 'ase_upgraded_to' ) < AI_CORE_VERSION && 'true' == self::aesop_check_for_old_markers() ) {
@@ -555,16 +417,6 @@ class AesopMapComponentAdmin {
 	}
 
 	/**
-<<<<<<< HEAD
-	 *
-	 *	Check to see if our old post meta exists
-	 *	if it does exist then proceed with the upgrade
-	 *
-	 * @since 1.3
-	 * @return bool true if old meta exists, false if not
-	 */
-	function aesop_check_for_old_markers(){
-=======
 	 * Check to see if our old post meta exists
 	 * if it does exist then proceed with the upgrade
 	 *
@@ -572,7 +424,6 @@ class AesopMapComponentAdmin {
 	 * @return string true if old meta exists, false if not
 	 */
 	public function aesop_check_for_old_markers() {
->>>>>>> release/1.5.1
 
 		$posts = get_posts( array( 'post_type' => array( 'page', 'post' ), 'posts_per_page' => -1 ) );
 
@@ -597,20 +448,11 @@ class AesopMapComponentAdmin {
 	}
 
 	/**
-<<<<<<< HEAD
-	 *
-	 *	When the user starts the upgrade process let's run a function to map the old meta to the new meta
-	 *
-	 * @since 1.3
-	 */
-	function upgrade_marker_meta(){
-=======
 	 * When the user starts the upgrade process let's run a function to map the old meta to the new meta
 	 *
 	 * @since 1.3
 	 */
 	public function upgrade_marker_meta() {
->>>>>>> release/1.5.1
 
 		check_ajax_referer( 'aesop-map-upgrade', 'security' );
 
@@ -632,11 +474,7 @@ class AesopMapComponentAdmin {
 				// now let's loop through the map meta in this post and map to the new meta
 				$old_locations = get_post_meta( $id, 'aesop_map_component_locations' );
 				if ( ! empty ( $old_locations ) ) {
-<<<<<<< HEAD
-					foreach ( $old_locations as $location ){
-=======
 					foreach ( $old_locations as $location ) {
->>>>>>> release/1.5.1
 						$translated = array();
 						$translated['lat'] = $location['lat'];
 						$translated['lng'] = $location['long'];
@@ -677,20 +515,11 @@ class AesopMapComponentAdmin {
 	}
 
 	/**
-<<<<<<< HEAD
-	 *
-	 *	Handles the click function for upgrading the old map meta to the new map meta
-	 *
-	 * @since 1.3
-	 */
-	function upgrade_click_handle(){
-=======
 	 * Handles the click function for upgrading the old map meta to the new map meta
 	 *
 	 * @since 1.3
 	 */
 	public function upgrade_click_handle() {
->>>>>>> release/1.5.1
 
 		$nonce = wp_create_nonce( 'aesop-map-upgrade' );
 
@@ -723,11 +552,7 @@ class AesopMapComponentAdmin {
 	//
 	// MAPBOX ID UPGRADE
 	//
-<<<<<<< HEAD
-	function upgrade_mapboxid_notice(){
-=======
 	public function upgrade_mapboxid_notice() {
->>>>>>> release/1.5.1
 
 		$mapbox_upgrade_option = get_option( 'ase_mapbox_upgraded' );
 		$old_option = get_option( 'ase_mapbox_id' );
@@ -747,20 +572,11 @@ class AesopMapComponentAdmin {
 	}
 
 	/**
-<<<<<<< HEAD
-	 *
-	 *	Handles the click function for upgrading mapbox id
-	 *
-	 * @since 1.5
-	 */
-	function upgrade_mapbox_click_handle(){
-=======
 	 * Handles the click function for upgrading mapbox id
 	 *
 	 * @since 1.5
 	 */
 	public function upgrade_mapbox_click_handle() {
->>>>>>> release/1.5.1
 
 		$mapbox_upgrade_option = get_option( 'ase_mapbox_upgraded' );
 		$nonce = wp_create_nonce( 'aesop-mapbox-upgrade' );
@@ -796,20 +612,11 @@ class AesopMapComponentAdmin {
 	}
 
 	/**
-<<<<<<< HEAD
-	 *
-	 *	When the user starts the upgrade process let's update their aesop mapbox id to the new one
-	 *
-	 * @since 1.5
-	 */
-	function upgrade_mapbox(){
-=======
 	 * When the user starts the upgrade process let's update their aesop mapbox id to the new one
 	 *
 	 * @since 1.5
 	 */
 	public function upgrade_mapbox() {
->>>>>>> release/1.5.1
 
 		// check nonce
 		check_ajax_referer( 'aesop-mapbox-upgrade', 'security' );

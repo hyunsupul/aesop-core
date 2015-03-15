@@ -5,11 +5,7 @@
  *
  * @since    1.0.0
  */
-<<<<<<< HEAD
-if ( ! function_exists( 'aesop_quote_shortcode' ) ){
-=======
 if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
->>>>>>> release/1.5.1
 
 	function aesop_quote_shortcode( $atts ) {
 
@@ -23,30 +19,17 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 			'size'  	=> '1',
 			'parallax'  => '',
 			'direction' => '',
-<<<<<<< HEAD
-			'quote'		=> __( 'People are made of stories, not atoms.','aesop-core' ),
-			'cite'		=> '',
-			'type'		=> 'block'
-
-		);
-		$atts = apply_filters( 'aesop_quote_defaults',shortcode_atts( $defaults, $atts ) );
-=======
 			'quote'  	=> __( 'People are made of stories, not atoms.', 'aesop-core' ),
 			'cite'  	=> '',
 			'type'  	=> 'block'
 
 		);
 		$atts = apply_filters( 'aesop_quote_defaults', shortcode_atts( $defaults, $atts ) );
->>>>>>> release/1.5.1
 
 		// let this be used multiple times
 		static $instance = 0;
 		$instance++;
-<<<<<<< HEAD
-		$unique = sprintf( '%s-%s',get_the_ID(), $instance );
-=======
 		$unique = sprintf( '%s-%s', get_the_ID(), $instance );
->>>>>>> release/1.5.1
 
 		// set component to content width
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
@@ -56,31 +39,19 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 		$size   = $atts['size'] ? sprintf( '%s%s', $atts['size'], $size_unit ) : false;
 
 		// bg img
-<<<<<<< HEAD
-		$bgimg = $atts['img'] ? sprintf( 'background-image:url(%s);background-size:cover;background-position:center center;',esc_url( $atts['img'] ) ) : false;
-=======
 		$bgimg = $atts['img'] ? sprintf( 'background-image:url(%s);background-size:cover;background-position:center center;', esc_url( $atts['img'] ) ) : false;
->>>>>>> release/1.5.1
 
 		// bg color only if not block style
 		$bgcolor = 'block' == $atts['type'] ? sprintf( 'background-color:%s;', $atts['background'] ) : false;
 
 		// set styles
-<<<<<<< HEAD
-		$style = $atts['background'] || $atts['text'] || $atts['height'] || $atts['width'] ? sprintf( 'style="%s%scolor:%s;height:%s;width:%s;"',esc_attr( $bgcolor ), $bgimg, esc_attr( $atts['text'] ), esc_attr( $atts['height'] ), esc_attr( $atts['width'] ) ) : false;
-=======
 		$style = $atts['background'] || $atts['text'] || $atts['height'] || $atts['width'] ? sprintf( 'style="%s%scolor:%s;height:%s;width:%s;"', esc_attr( $bgcolor ), $bgimg, esc_attr( $atts['text'] ), esc_attr( $atts['height'] ), esc_attr( $atts['width'] ) ) : false;
->>>>>>> release/1.5.1
 
 		$isparallax = 'on' == $atts['parallax'] ? 'quote-is-parallax' : false;
 		$lrclass = 'left' == $atts['direction'] || 'right' == $atts['direction'] ? 'quote-left-right' : false;
 
 		// type
-<<<<<<< HEAD
-		$type  = $atts['type'] ? sprintf( ' aesop-quote-type-%s',trim( $atts['type'] ) ) : false;
-=======
 		$type  = $atts['type'] ? sprintf( ' aesop-quote-type-%s', trim( $atts['type'] ) ) : false;
->>>>>>> release/1.5.1
 
 		// align
 		$align = $atts['align'] ? sprintf( 'aesop-component-align-%s', esc_attr( $atts['align'] ) ) : null;
@@ -95,11 +66,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 		);
 
 		$css_classes = '';
-<<<<<<< HEAD
-		if ( $css_class_array ) {
-=======
 		if ( !empty( $css_class_array ) ) {
->>>>>>> release/1.5.1
 			foreach ( $css_class_array as $class ) {
 				$css_classes .= $class;
 			}
@@ -109,20 +76,12 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 		$core_classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'quote' ) : null;
 
 		// cite
-<<<<<<< HEAD
-		$cite = $atts['cite'] ? apply_filters( 'aesop_quote_component_cite',sprintf( '<cite class="aesop-quote-component-cite">%s</cite>',esc_html( $atts['cite'] ) ) ) : null;
-=======
 		$cite = $atts['cite'] ? apply_filters( 'aesop_quote_component_cite', sprintf( '<cite class="aesop-quote-component-cite">%s</cite>', esc_html( $atts['cite'] ) ) ) : null;
->>>>>>> release/1.5.1
 
 		ob_start();
 
 		do_action( 'aesop_quote_before' ); // action
-<<<<<<< HEAD
-		?>
-=======
 ?>
->>>>>>> release/1.5.1
 			<div id="aesop-quote-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'quote', $unique, $atts );?> class="aesop-component aesop-quote-component <?php echo $core_classes.' '.$css_classes;?>" <?php echo $style;?>>
 
 				<?php if ( 'block' == $atts['type'] ): ?>
@@ -150,13 +109,8 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 
 						            moving.css({'transform':'translate3d(0px,-' + position + 'px, 0px)'});
 
-<<<<<<< HEAD
-						       	    <?php if ( 'left' == $atts['direction'] ){ ?>
-						            	jQuery(moving).css({'transform':'translate3d(-' + position + 'px, 0px, 0px)'});
-=======
 						       	    <?php if ( 'left' == $atts['direction'] ) { ?>
 						            	moving.css({'transform':'translate3d(-' + position + 'px, 0px, 0px)'});
->>>>>>> release/1.5.1
 						            <?php } elseif ( 'right' == $atts['direction'] ) { ?>
 										moving.css({'transform':'translate3d(' + position + 'px, 0px, 0px)'});
 						            <?php } ?>
@@ -181,24 +135,15 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 
 								   	}
 								});
-<<<<<<< HEAD
-							<?php }//end if
-	?>
-=======
 
 							<?php }//end if ?>
->>>>>>> release/1.5.1
 
 						});
 					</script>
 
 				<?php endif;
 
-<<<<<<< HEAD
-				do_action( 'aesop_quote_inside_top' ); // action ?>
-=======
 		do_action( 'aesop_quote_inside_top' ); // action ?>
->>>>>>> release/1.5.1
 
 				<blockquote class="<?php echo sanitize_html_class( $align );?>" style="font-size:<?php echo esc_attr( $size );?>;">
 					<span><?php echo esc_html( $atts['quote'] );?></span>

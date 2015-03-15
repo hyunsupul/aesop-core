@@ -10,10 +10,7 @@
  */
 /**
  *
-<<<<<<< HEAD
-=======
  *
->>>>>>> release/1.5.1
  * @package Aesop_Core_Admin
  * @author  Nick Haskins <nick@aesopinteractive.com>
  */
@@ -46,40 +43,17 @@ class Aesop_Core_Admin {
 	 */
 	private function __construct() {
 
-<<<<<<< HEAD
-		require_once( AI_CORE_DIR.'admin/includes/class.welcome.php' );
-		require_once( AI_CORE_DIR.'admin/includes/help.php' );
-		require_once( AI_CORE_DIR.'admin/includes/notify.php' );
-		require_once( AI_CORE_DIR.'admin/includes/components/component-map.php' );
-		require_once( AI_CORE_DIR.'admin/includes/components/component-gallery.php' );
-		/*
-		 	* Call $plugin_slug from public plugin class.
-		 	*
-		*/
-		$plugin = Aesop_Core::get_instance();
-		$this->plugin_slug = $plugin->get_plugin_slug();
-=======
 		require_once AI_CORE_DIR.'admin/includes/class.welcome.php';
 		require_once AI_CORE_DIR.'admin/includes/help.php';
 		require_once AI_CORE_DIR.'admin/includes/notify.php';
 		require_once AI_CORE_DIR.'admin/includes/components/component-map.php';
 		require_once AI_CORE_DIR.'admin/includes/components/component-gallery.php';
->>>>>>> release/1.5.1
+
 
 		/*
 		*  Define custom functionality.
 		*
 		*/
-<<<<<<< HEAD
-		add_action( 'media_buttons', 			array($this,'generator_button'), 100 );
-		add_action( 'admin_footer', 			array($this,'generator_popup') );
-		add_action( 'admin_enqueue_scripts', 	array($this,'admin_scripts') );
-		add_filter( 'mce_css', 					array($this,'aesop_editor_styles') );
-		add_filter( 'wp_fullscreen_buttons', 	array($this,'fs_generator_button') );
-		add_filter( 'mce_external_plugins', 	array($this,'tinymce_plugin') );
-		add_action( 'after_wp_tiny_mce', 		array($this,'ase_after_wp_tiny_mce') );
-		add_filter( 'plugin_row_meta', 			array( $this, 'plugin_meta' ), 10, 2 );
-=======
 		add_action( 'media_buttons',    array( $this, 'generator_button' ), 100 );
 		add_action( 'admin_footer',    array( $this, 'generator_popup' ) );
 		add_action( 'admin_enqueue_scripts',  array( $this, 'admin_scripts' ) );
@@ -88,7 +62,6 @@ class Aesop_Core_Admin {
 		add_filter( 'mce_external_plugins',  array( $this, 'tinymce_plugin' ) );
 		add_action( 'after_wp_tiny_mce',   array( $this, 'ase_after_wp_tiny_mce' ) );
 		add_filter( 'plugin_row_meta',    array( $this, 'plugin_meta' ), 10, 2 );
->>>>>>> release/1.5.1
 	}
 
 	/**
@@ -113,11 +86,7 @@ class Aesop_Core_Admin {
 	 *
 	 * @since     1.0.0
 	 */
-<<<<<<< HEAD
-	public function admin_scripts(){
-=======
 	public function admin_scripts() {
->>>>>>> release/1.5.1
 
 		// Register Scripts
 		wp_register_script( 'ai-core-script', AI_CORE_URL. '/admin/assets/js/generator.min.js', AI_CORE_VERSION, true );
@@ -156,8 +125,6 @@ class Aesop_Core_Admin {
 				do_action( 'aesop_admin_styles' );
 			}//end if
 		}//end if
-<<<<<<< HEAD
-=======
 	}
 
 	/**
@@ -168,7 +135,6 @@ class Aesop_Core_Admin {
 	public function fs_generator_button( $buttons ) {
 		$buttons[] = self::generator_button();
 		return $buttons;
->>>>>>> release/1.5.1
 	}
 
 	/**
@@ -187,25 +153,6 @@ class Aesop_Core_Admin {
 	}
 
 	/**
-<<<<<<< HEAD
-	 * Add the generator button in distraction free writing mode
-	 *
-	 * @since     0.9.96
-	 */
-	public function fs_generator_button($buttons){
-		$buttons[] = self::generator_button();
-		return $buttons;
-	}
-
-	/**
-	 * Add the tinymce plugin recognize specific shortcodes
-	 *
-	 * @since     1.1.0
-	 */
-	public function tinymce_plugin($plugins_array){
-		$plugins = array('aiview','noneditable');
-
-=======
 	 * Add the tinymce plugin recognize specific shortcodes
 	 *
 	 * @since     1.1.0
@@ -213,7 +160,6 @@ class Aesop_Core_Admin {
 	public function tinymce_plugin( $plugins_array ) {
 		$plugins = array( 'aiview', 'noneditable' );
 
->>>>>>> release/1.5.1
 		foreach ( $plugins as $plugin ) {
 			$plugins_array[ $plugin ] = plugins_url( 'assets/js/tinymce/', __FILE__ ) . $plugin . '/plugin.min.js';
 		}
@@ -248,13 +194,8 @@ class Aesop_Core_Admin {
 						<select name="aesop-select" class="aesop-generator" id="aesop-generator-select">
 
 							<?php
-<<<<<<< HEAD
-							foreach ( aesop_shortcodes() as $name => $shortcode ) {
-							?>
-=======
 			foreach ( aesop_shortcodes() as $name => $shortcode ) {
 ?>
->>>>>>> release/1.5.1
 							<option value="<?php echo $name; ?>"><?php echo str_replace( '_', ' ', strtoupper( $name ) ); ?></option>
 							<?php
 			}
@@ -262,24 +203,15 @@ class Aesop_Core_Admin {
 						</select>
 
 						<?php if ( ! defined( 'AI_CORE_WATERMARK' ) ) {
-<<<<<<< HEAD
-							echo self::messages();
-} ?>
-=======
 				echo self::messages();
 			} ?>
->>>>>>> release/1.5.1
 					</div>
 
 					<div id="aesop-generator-settings-outer" class="aesop-generator-right">
 						<div id="aesop-generator-settings">
 
 							<div class="aesop-generator-empty">
-<<<<<<< HEAD
-								<h2><?php _e( 'Select a story component.','aesop-core' );?></h2>
-=======
 								<h2><?php _e( 'Select a story component.', 'aesop-core' );?></h2>
->>>>>>> release/1.5.1
 							</div>
 
 						</div>
@@ -296,14 +228,9 @@ class Aesop_Core_Admin {
 
 	/**
 	 *
-<<<<<<< HEAD
-	 * @since 1.1
-	 * @return array of random messages used for watermark
-=======
 	 *
 	 * @since 1.1
 	 * @return string of random messages used for watermark
->>>>>>> release/1.5.1
 	 *
 	 */
 	private function messages() {
@@ -320,10 +247,7 @@ class Aesop_Core_Admin {
 
 	/**
 	 *
-<<<<<<< HEAD
-=======
 	 *
->>>>>>> release/1.5.1
 	 * @since 1.3
 	 * @return handle some stuff after tiny mce is loaded
 	 *
@@ -361,18 +285,6 @@ class Aesop_Core_Admin {
 	}
 
 	/**
-<<<<<<< HEAD
-	 *
-	 *	Add some custom links to the plugins.php page for Aesop
-	 *
-	 * @since 1.3
-	 * @param $links array array of new links
-	 * @param $file
-	 *
-	 * @return array new array of links for our plugin listing on plugins.php
-	 */
-	function plugin_meta( $links, $file ) {
-=======
 	 * Add some custom links to the plugins.php page for Aesop
 	 *
 	 * @since 1.3
@@ -382,7 +294,6 @@ class Aesop_Core_Admin {
 	 * @return array new array of links for our plugin listing on plugins.php
 	 */
 	public function plugin_meta( $links, $file ) {
->>>>>>> release/1.5.1
 
 		if ( strpos( $file, 'aesop-core.php' ) !== false ) {
 

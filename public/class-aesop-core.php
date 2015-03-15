@@ -44,11 +44,7 @@ class Aesop_Core {
 	private function __construct() {
 
 		// load component array
-<<<<<<< HEAD
-		require_once( AI_CORE_DIR.'admin/includes/available.php');
-=======
 		require_once AI_CORE_DIR.'admin/includes/available.php';
->>>>>>> release/1.5.1
 
 		// load component helpers
 		require_once AI_CORE_DIR.'public/includes/browserclasses.php';
@@ -68,15 +64,6 @@ class Aesop_Core {
 		add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
 		// we are loading this super late so that themes can override shortcode fucntions
-<<<<<<< HEAD
-		add_action( 'wp', array($this,'register_shortcodes'),10 );
-
-		// enqueue scripts
-		add_action( 'wp_enqueue_scripts', array($this,'scripts') );
-
-		// remove strap br and p tags beore and after shortcodes
-		add_filter( 'the_content', array($this,'shortcode_empty_paragraph_fix') );
-=======
 		add_action( 'wp', array( $this, 'register_shortcodes' ), 10 );
 
 		// enqueue scripts
@@ -84,7 +71,6 @@ class Aesop_Core {
 
 		// remove strap br and p tags beore and after shortcodes
 		add_filter( 'the_content', array( $this, 'shortcode_empty_paragraph_fix' ) );
->>>>>>> release/1.5.1
 
 	}
 
@@ -93,11 +79,7 @@ class Aesop_Core {
 	 *
 	 * @since    1.0.0
 	 *
-<<<<<<< HEAD
-	 * @return    Plugin slug variable.
-=======
 	 * @return    string slug variable.
->>>>>>> release/1.5.1
 	 */
 	public function get_plugin_slug() {
 		return $this->plugin_slug;
@@ -125,11 +107,7 @@ class Aesop_Core {
 	 *
 	 * @since    1.0.0
 	 *
-<<<<<<< HEAD
-	 * @param    boolean $network_wide True if WPMU superadmin uses
-=======
 	 * @param boolean $network_wide True if WPMU superadmin uses
->>>>>>> release/1.5.1
 	 *                                 "Network Activate" action, false if
 	 *                                 WPMU is disabled or plugin is
 	 *                                 activated on an individual blog.
@@ -168,11 +146,7 @@ class Aesop_Core {
 	 *
 	 * @since    1.0.0
 	 *
-<<<<<<< HEAD
-	 * @param    boolean $network_wide True if WPMU superadmin uses
-=======
 	 * @param boolean $network_wide True if WPMU superadmin uses
->>>>>>> release/1.5.1
 	 *                                 "Network Deactivate" action, false if
 	 *                                 WPMU is disabled or plugin is
 	 *                                 deactivated on an individual blog.
@@ -212,11 +186,7 @@ class Aesop_Core {
 	 *
 	 * @since    1.0.0
 	 *
-<<<<<<< HEAD
-	 * @param    integer $blog_id ID of the new blog.
-=======
 	 * @param integer $blog_id ID of the new blog.
->>>>>>> release/1.5.1
 	 */
 	public function activate_new_site( $blog_id ) {
 
@@ -277,11 +247,7 @@ class Aesop_Core {
 			$out .= __( 'Doh! There was an issue deactivating Aesop. Try again perhaps?.', 'aesop-core' );
 			$out .= '</p></div>';
 
-<<<<<<< HEAD
-			echo apply_filters( 'ai_deactivation_error_message',$out );
-=======
 			echo apply_filters( 'ai_deactivation_error_message', $out );
->>>>>>> release/1.5.1
 
 		}
 	}
@@ -302,30 +268,17 @@ class Aesop_Core {
 	}
 
 	/**
-<<<<<<< HEAD
-	 *
-	 *	enqueue plugin files
-	 * @since 1.0
-	 *
-	 *	add_theme_support('aesop-component-styles');
-	 *	added to a themes functions.php will enqueue an additional css file with extended css support for all aesop components
-=======
 	 * enqueue plugin files
 	 *
 	 * @since 1.0
 	 *
 	 * add_theme_support('aesop-component-styles');
 	 * added to a themes functions.php will enqueue an additional css file with extended css support for all aesop components
->>>>>>> release/1.5.1
 	 *
 	 * @since 1.0.9
 	 *
 	 */
-<<<<<<< HEAD
-	public function scripts(){
-=======
 	public function scripts() {
->>>>>>> release/1.5.1
 
 		wp_enqueue_script( 'jquery' );
 
@@ -343,11 +296,7 @@ class Aesop_Core {
 		}
 
 		// core script
-<<<<<<< HEAD
-		wp_enqueue_script( 'ai-core', AI_CORE_URL.'/public/assets/js/ai-core.min.js', array('jquery'), AI_CORE_VERSION, true );
-=======
 		wp_enqueue_script( 'ai-core', AI_CORE_URL.'/public/assets/js/ai-core.min.js', array( 'jquery' ), AI_CORE_VERSION, true );
->>>>>>> release/1.5.1
 
 	}
 
@@ -373,11 +322,7 @@ class Aesop_Core {
 	 *
 	 * @since    1.0.0
 	 */
-<<<<<<< HEAD
-	function shortcode_empty_paragraph_fix($content) {
-=======
 	public function shortcode_empty_paragraph_fix( $content ) {
->>>>>>> release/1.5.1
 
 		$array = array(
 			'<p>[' => '[',

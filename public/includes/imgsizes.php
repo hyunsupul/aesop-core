@@ -1,10 +1,6 @@
 <?php
 /**
-<<<<<<< HEAD
- * 	Add image sizes for various components
-=======
  *  Add image sizes for various components
->>>>>>> release/1.5.1
  *
  * @since    1.0.0
  */
@@ -12,11 +8,7 @@ class AesopComponentImageSizes {
 
 	public function __construct() {
 
-<<<<<<< HEAD
-		add_filter( 'init',		array($this,'img_sizes') );
-=======
 		add_filter( 'init',  array( $this, 'img_sizes' ) );
->>>>>>> release/1.5.1
 	}
 
 	public function img_sizes() {

@@ -6,11 +6,7 @@
  * @since    1.0.0
  */
 
-<<<<<<< HEAD
-if ( ! function_exists( 'aesop_parallax_shortcode' ) ){
-=======
 if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
->>>>>>> release/1.5.1
 
 	function aesop_parallax_shortcode( $atts ) {
 
@@ -27,20 +23,12 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 			'lightbox'    		=> false
 		);
 
-<<<<<<< HEAD
-		$atts = apply_filters( 'aesop_parallax_defaults',shortcode_atts( $defaults, $atts ) );
-=======
 		$atts = apply_filters( 'aesop_parallax_defaults', shortcode_atts( $defaults, $atts ) );
->>>>>>> release/1.5.1
 
 		// let this be used multiple times
 		static $instance = 0;
 		$instance++;
-<<<<<<< HEAD
-		$unique = sprintf( '%s-%s',get_the_ID(), $instance );
-=======
 		$unique = sprintf( '%s-%s', get_the_ID(), $instance );
->>>>>>> release/1.5.1
 
 		// add a css class if parallax bg is set to on
 		$laxclass  = 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
@@ -57,21 +45,12 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 		?><div id="aesop-parallax-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'parallax', $unique, $atts );?> class="aesop-component aesop-parallax-component <?php echo sanitize_html_class( $classes );?>"><?php
 
-<<<<<<< HEAD
-				do_action( 'aesop_parallax_inside_top' ); // action
-
-				// only run parallax if not on mobile and parallax is on
-if ( ! wp_is_mobile() && ( 'on' == $atts['parallaxbg'] || 'on' == $atts['floater'] ) ) { ?>
-					<script>
-						jQuery(document).ready(function($){
-=======
 		do_action( 'aesop_parallax_inside_top' ); // action
 
 		// only run parallax if not on mobile and parallax is on
 		if ( ! wp_is_mobile() && ( 'on' == $atts['parallaxbg'] || 'on' == $atts['floater'] ) ) { ?>
 			<script>
 				jQuery(document).ready(function($){
->>>>>>> release/1.5.1
 
 					<?php if ( 'on' == $atts['parallaxbg'] ) { ?>
 
@@ -102,12 +81,7 @@ if ( ! wp_is_mobile() && ( 'on' == $atts['parallaxbg'] || 'on' == $atts['floater
 
 	        			<?php }//end if
 
-<<<<<<< HEAD
-	        			<?php }//end if
-	?>
-=======
 						if ( 'on' == $atts['floater'] ) { ?>
->>>>>>> release/1.5.1
 
 							var obj = $('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-floater');
 
@@ -123,45 +97,6 @@ if ( ! wp_is_mobile() && ( 'on' == $atts['parallaxbg'] || 'on' == $atts['floater
 									return;
 								}
 
-<<<<<<< HEAD
-					       	    <?php if ( 'left' == $atts['floaterdirection'] || 'right' == $atts['floaterdirection'] ){
-
-									if ( 'left' == $atts['floaterdirection'] ){ ?>
-					            		obj.css({'transform':'translate3d(' + floater + 'px, 0px, 0px)'});
-					            	<?php } else { ?>
-										obj.css({'transform':'translate3d(-' + floater + 'px, 0px, 0px)'});
-					            	<?php }
-} else {
-
-	if ( 'up' == $atts['floaterdirection'] ){ ?>
-					            		obj.css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
-									<?php } else { ?>
-										obj.css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
-									<?php }
-} ?>
-					       	}
-					      	scrollParallax();
-					        $(window).scroll(function() {scrollParallax();});
-					    <?php }//end if
-	?>
-					});
-					</script>
-				<?php }//end if
-	?>
-					<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>">
-
-						<?php do_action( 'aesop_parallax_inner_inside_top' ); // action ?>
-
-						<?php if ( 'on' == $atts['floater'] ){?>
-							<div class="aesop-parallax-sc-floater floater-<?php echo sanitize_html_class( $atts['floaterposition'] );?>" data-speed="10">
-								<?php echo aesop_component_media_filter( $atts['floatermedia'] );?>
-							</div>
-						<?php } ?>
-
-						<?php if ( 'on' == $atts['lightbox'] ){?>
-							<a class="aesop-lb-link aesop-lightbox" rel="lightbox" title="<?php echo esc_attr( $atts['caption'] );?>" href="<?php echo esc_url( $atts['img'] );?>"><i class="aesopicon aesopicon-search-plus"></i></a>
-						<?php } ?>
-=======
 					       	    <?php if ( 'left' == $atts['floaterdirection'] || 'right' == $atts['floaterdirection'] ) {
 
 							if ( 'left' == $atts['floaterdirection'] ) { ?>
@@ -187,7 +122,6 @@ if ( ! wp_is_mobile() && ( 'on' == $atts['parallaxbg'] || 'on' == $atts['floater
 				});
 			</script>
 		<?php }//end if ?>
->>>>>>> release/1.5.1
 
 			<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>">
 
@@ -211,19 +145,11 @@ if ( ! wp_is_mobile() && ( 'on' == $atts['parallaxbg'] || 'on' == $atts['floater
 					</figcaption>
 				<?php } ?>
 
-<<<<<<< HEAD
-						<?php do_action( 'aesop_parallax_inner_inside_bottom' ); // action ?>
-=======
 				<?php do_action( 'aesop_parallax_inner_inside_bottom' ); // action ?>
->>>>>>> release/1.5.1
 
 			</figure>
 
-<<<<<<< HEAD
-					<?php do_action( 'aesop_parallax_inside_bottom' ); // action ?>
-=======
 			<?php do_action( 'aesop_parallax_inside_bottom' ); // action ?>
->>>>>>> release/1.5.1
 
 		</div>
 
