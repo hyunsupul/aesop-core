@@ -41,13 +41,8 @@ function aesop_shortcodes_blob() {
 					// image upload
 					if ( 'media_upload' == $attr_info['type'] ) {
 
-<<<<<<< HEAD
-					$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
-					$return .= '<input id="aesop-upload-img" type="button" class="button button-primary button-large" value="'.__('Select Media', 'aesop-core').'"/>';
-=======
 						$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
 						$return .= '<input id="aesop-upload-img" type="button" class="button button-primary button-large" value="Select Media"/>';
->>>>>>> master
 
 					} elseif ( 'color' == $attr_info['type'] ) {
 
