@@ -48,7 +48,7 @@ Interactive elements are created while crafting stories, with the Story Componen
 ---
 
 ### Changelog
-See [https://github.com/bearded-avenger/aesop-core/releases](https://github.com/bearded-avenger/aesop-core/releases)
+See [https://github.com/bearded-avenger/aesop-core/releases](https://github.com/bearded-avenger/aesop-core/releases) for more.
 
 ---
 
