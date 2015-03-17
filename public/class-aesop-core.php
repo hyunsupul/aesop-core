@@ -36,9 +36,6 @@ class Aesop_Core {
 		// load optoins
 		require_once AI_CORE_DIR.'public/includes/options.php';
 
-		// additinoal css support
-		require_once AI_CORE_DIR.'public/includes/css.php';
-
 		// Load plugin text domain
 		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 
@@ -86,14 +83,10 @@ class Aesop_Core {
 		// if the define for unstyled all of aesop isn't set, continue
 		if ( ! defined( 'AI_CORE_UNSTYLED' ) ) {
 
-			// core css file
 			wp_enqueue_style( 'ai-core-style', AI_CORE_URL.'/public/assets/css/ai-core.css', AI_CORE_VERSION, true );
 			wp_style_add_data( 'ai-core-style', 'rtl', 'replace' );
+			wp_enqueue_style( 'dashicons' );
 
-			// load dashicons if extended support
-			if ( current_theme_supports( 'aesop-component-styles' ) ) {
-				wp_enqueue_style( 'dashicons' );
-			}
 		}
 
 		// core script
