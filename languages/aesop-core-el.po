@@ -1,13 +1,14 @@
 # Copyright (C) 2015 Aesopinteractive LLC
 # This file is distributed under the GPL-2.0+.
 # Translators:
+# evigiannakou <evigian@in.gr>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-03-06 15:34:29+00:00\n"
-"PO-Revision-Date: 2015-02-18 11:00+0000\n"
-"Last-Translator: FxB <fxb@wp-translations.org>\n"
+"POT-Creation-Date: 2015-03-16 21:25:42+00:00\n"
+"PO-Revision-Date: 2015-03-10 22:42+0000\n"
+"Last-Translator: evigiannakou <evigian@in.gr>\n"
 "Language-Team: Greek (http://www.transifex.com/projects/p/aesop-story-engine/"
 "language/el/)\n"
 "Language: el\n"
@@ -26,27 +27,27 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Textdomain-Support: yes\n"
 
-#: admin/class-aesop-core-admin.php:142
+#: admin/class-aesop-core-admin.php:147
 msgid "Add Component"
 msgstr ""
 
-#: admin/class-aesop-core-admin.php:219
+#: admin/class-aesop-core-admin.php:214
 msgid "Select a story component."
 msgstr ""
 
-#: admin/class-aesop-core-admin.php:243
+#: admin/class-aesop-core-admin.php:239
 msgid ""
 "Product of <span><a href=\"http://aesopstoryengine.com\">AESOP INTERACTIVE "
 "LLC</a></span>"
 msgstr ""
 
-#: admin/class-aesop-core-admin.php:244
+#: admin/class-aesop-core-admin.php:240
 msgid ""
 "<span><a href=\"http://aesopstoryengine.com/donate\">Support new features "
 "and bug fixes</a></span> of Aesop Story Engine"
 msgstr ""
 
-#: admin/class-aesop-core-admin.php:245
+#: admin/class-aesop-core-admin.php:241
 msgid ""
 "Story Beautiful? <span><a href=\"http://aesopstoryengine.com/donate\">Thank "
 "the developer</a></span>."
@@ -59,13 +60,15 @@ msgstr "Image"
 
 #: admin/includes/available.php:19
 msgid "Image Width"
-msgstr ""
+msgstr "Πλάτος Εικόνας"
 
 #: admin/includes/available.php:20
 msgid ""
 "Width of the image. You can enter the size as <code>40%</code> or "
 "<code>500px</code>."
 msgstr ""
+"Πλάτος της εικόνας. Μπορείτε να εισάγετε το μέγεθος ως <code>40%</code> ή "
+"<code>500px</code>."
 
 #: admin/includes/available.php:25
 msgid "Image URL"
@@ -77,34 +80,42 @@ msgid ""
 "URL for the image. Click <em>Select Media</em> to open the WordPress Media "
 "Library."
 msgstr ""
+"URL για την εικόνα. Πατήστε  <em>Επιλογή Πολυμέσων</em> για να ανοίξετε τη "
+"Βιβλιοθήκη Πολυμέσων του WordPress."
 
 #: admin/includes/available.php:31
 msgid "Image Offset"
-msgstr ""
+msgstr "Ρύθμιση Εικόνας"
 
 #: admin/includes/available.php:32
 msgid ""
 "Using this option you can <em>float</em> an image outside of the text. Enter "
 "a size like <code>-200px</code>."
 msgstr ""
+"Χρησιμοποιώντας αυτή την επιλογή μπορείτε να <em>κινείτε</em> μια εικόνα έξω "
+"από το κείμενο. Εισάγετε ένα μέγεθος όπως <code>-200px</code>."
 
 #: admin/includes/available.php:37
 msgid "Image Credit"
-msgstr ""
+msgstr "Ευχαριστίες Εικόνας"
 
 #: admin/includes/available.php:38
 msgid ""
 "This is typically used to credit the photographer. Enter a name and it will "
 "show as <em>Photo by: Name</em>."
 msgstr ""
+"Αυτό χρησιμοποιείται τυπικά για να ευχαριστήσουμε το φωτογράφο. Εισάγετε ένα "
+"όνομα και θα εμφανίζεται ως <em>Φωτογραφία από: Όνομα</em>."
 
 #: admin/includes/available.php:43
 msgid "Image ALT"
-msgstr ""
+msgstr "ALT Εικόνας"
 
 #: admin/includes/available.php:44
 msgid "ALT tag used for the image. Primarily used for SEO purposes."
 msgstr ""
+"ALT ετικέτα που χρησιμοποιείται για την εικόνα. Χρησιμοποιείται κυρίως για "
+"σκοπούς SEO."
 
 #: admin/includes/available.php:51 admin/includes/available.php:93
 #: admin/includes/available.php:139 admin/includes/available.php:208
@@ -132,13 +143,15 @@ msgstr "Κέντρο"
 
 #: admin/includes/available.php:63
 msgid "Image Alignment"
-msgstr ""
+msgstr "Στοίχιση Εικόνας"
 
 #: admin/includes/available.php:64
 msgid ""
 "How should the image be aligned? If using a caption, the caption will "
 "automatically align with this option."
 msgstr ""
+"Πως θα έπρεπε να στοιχηθεί η εικόνα; Αν χρησιμοποιείτε λεζάντα, η λεζάντα "
+"αυτόματα θα στοιχηθεί με αυτή την επιλογή."
 
 #: admin/includes/available.php:71 admin/includes/available.php:253
 #: admin/includes/available.php:478 admin/includes/available.php:521
@@ -148,7 +161,7 @@ msgstr ""
 #: admin/includes/available.php:829 admin/includes/available.php:845
 #: admin/includes/available.php:861 admin/includes/available.php:877
 #: admin/includes/available.php:893 admin/includes/available.php:1040
-#: admin/includes/components/component-map.php:83
+#: admin/includes/components/component-map.php:80
 msgid "On"
 msgstr "Άνοιγμα"
 
@@ -161,7 +174,7 @@ msgstr "Άνοιγμα"
 #: admin/includes/available.php:865 admin/includes/available.php:881
 #: admin/includes/available.php:897 admin/includes/available.php:927
 #: admin/includes/available.php:1044
-#: admin/includes/components/component-map.php:79
+#: admin/includes/components/component-map.php:76
 msgid "Off"
 msgstr "Κλείσιμο"
 
@@ -185,10 +198,12 @@ msgid ""
 "Optional caption for the image. If you do not enter a caption, it will not "
 "show."
 msgstr ""
+"Προαιρετική λεζάντα για την εικόνα. Αν δεν εισάγετε λεζάντα, δε θα "
+"εμφανίζεται."
 
 #: admin/includes/available.php:105 admin/includes/available.php:559
 msgid "Caption Position"
-msgstr ""
+msgstr "Θέση Λεζάντας"
 
 #: admin/includes/available.php:106
 msgid "Use this to override the alignment as inherited from the image."
@@ -201,26 +216,30 @@ msgstr ""
 
 #: admin/includes/available.php:113
 msgid "Character"
-msgstr ""
+msgstr "Χαρακτήρας"
 
 #: admin/includes/available.php:119
 msgid "Character Image"
-msgstr ""
+msgstr "Εικόνα Χαρακτήρα"
 
 #: admin/includes/available.php:125
 msgid "Character Name"
-msgstr ""
+msgstr "Όνομα Χαρακτήρα"
 
 #: admin/includes/available.php:126
 msgid ""
 "Enter a name for the character. If you do not enter a name, it will not show."
 msgstr ""
+"Εισάγετε ένα όνομα για το χαρακτήρα. Αν δεν εισάγετε όνομα, δε θα "
+"εμφανίζεται."
 
 #: admin/includes/available.php:132
 msgid ""
 "Optional caption for the character. If you do not enter a caption, it will "
 "not show."
 msgstr ""
+"Προαιρετική λεζάντα για το χαρακτήρα. Αν δεν εισάγετε λεζάντα, δε θα "
+"εμφανίζεται."
 
 #: admin/includes/available.php:147 admin/includes/available.php:220
 #: admin/includes/available.php:758
@@ -248,6 +267,8 @@ msgid ""
 "Creates a character that can be positioned to the left or right of your "
 "story."
 msgstr ""
+"Δημιουργεί ένα χαρακτήρα που μπορεί να τοποθετηθεί στα αριστερά ή τα δεξιά "
+"της ιστορίας σας."
 
 #: admin/includes/available.php:160
 msgid "Aesop Quote Section"
@@ -263,12 +284,16 @@ msgid "Full Width"
 msgstr "Πλάτος"
 
 #: admin/includes/available.php:176
+#, fuzzy
 msgid "Quote Styles"
-msgstr ""
+msgstr "Μέγεθος Παραθέματος"
 
 #: admin/includes/available.php:177
+#, fuzzy
 msgid "By default the quote is full width, but you can change that here."
 msgstr ""
+"Από προεπιλογή το παράθεμα είναι στο κέντρο αλλά μπορείτε επίσης να "
+"επιλέξετε να το στοιχίσετε αριστερά ή δεξιά."
 
 #: admin/includes/available.php:182 admin/includes/available.php:296
 msgid "Background Color"
@@ -284,7 +309,7 @@ msgstr "Χρώμα κειμένου"
 
 #: admin/includes/available.php:189
 msgid "Select a color for the quote text."
-msgstr ""
+msgstr "Επιλέξτε ένα χρώμα για το κείμενο παραθέματος."
 
 #: admin/includes/available.php:194 admin/includes/available.php:738
 msgid "Component Width"
@@ -299,7 +324,7 @@ msgstr ""
 
 #: admin/includes/available.php:200
 msgid "Height of Quote Area"
-msgstr ""
+msgstr "Ύψος Περιοχής Παραθέματος"
 
 #: admin/includes/available.php:201
 msgid ""
@@ -313,14 +338,16 @@ msgid ""
 "By default the quote is centered but you can choose to have it left or right "
 "aligned as well."
 msgstr ""
+"Από προεπιλογή το παράθεμα είναι στο κέντρο αλλά μπορείτε επίσης να "
+"επιλέξετε να το στοιχίσετε αριστερά ή δεξιά."
 
 #: admin/includes/available.php:227
 msgid "Quote Size"
-msgstr ""
+msgstr "Μέγεθος Παραθέματος"
 
 #: admin/includes/available.php:228
 msgid "Font size of the quote."
-msgstr ""
+msgstr "Μέγεθος γραμματοσειράς του παραθέματος."
 
 #: admin/includes/available.php:233 admin/includes/available.php:347
 msgid "Background Image"
@@ -331,14 +358,17 @@ msgid ""
 "Optionally add a background image to the quote area. Enter the image URL or "
 "click <em>Select Media</em> to open the WordPress Media Library."
 msgstr ""
+"Προαιρετικά προσθέστε μια εικόνα φόντου στην περιοχή παραθέματος. Εισάγετε "
+"το URL της εικόνας ή πατήστε <em>Επιλογή Πολυμέσων</em> για να ανοίξετε τη "
+"Βιβλιοθήκη Πολυμέσων του WordPress."
 
 #: admin/includes/available.php:239
 msgid "Quote Text"
-msgstr ""
+msgstr "Παράθεμα Κειμένου"
 
 #: admin/includes/available.php:240
 msgid "The actual quote text that will be displayed."
-msgstr ""
+msgstr "Το πραγματικό παράθεμα κειμένου που θα προβάλλεται."
 
 #: admin/includes/available.php:245
 msgid "Cite"
@@ -346,7 +376,7 @@ msgstr "Αναφορά"
 
 #: admin/includes/available.php:246
 msgid "Provide an optional cite or source for the quote."
-msgstr ""
+msgstr "Παρέχετε μια προαιρετική αναφορά ή πηγή για το παράθεμα."
 
 #: admin/includes/available.php:261
 msgid "Enable Quote Parallax"
@@ -369,17 +399,17 @@ msgstr ""
 msgid "Section quote area with background and color controls."
 msgstr ""
 
-#: admin/includes/available.php:284 admin/includes/generator_blob.php:72
+#: admin/includes/available.php:284 admin/includes/generator_blob.php:70
 msgid "Content"
 msgstr "Περιεχόμενο"
 
 #: admin/includes/available.php:290
 msgid "Color of Text"
-msgstr ""
+msgstr "Χρώμα Κειμένου"
 
 #: admin/includes/available.php:291
 msgid "Set a color to be used for the main text."
-msgstr ""
+msgstr "Ορίστε ένα χρώμα να χρησιμοποιείται για το κυρίως κείμενο."
 
 #: admin/includes/available.php:297
 msgid "Choose an optional background color for the content component."
@@ -403,13 +433,15 @@ msgstr ""
 
 #: admin/includes/available.php:315
 msgid "Number of Columns"
-msgstr ""
+msgstr "Αριθμός Στηλών"
 
 #: admin/includes/available.php:316
 msgid ""
 "Optionally set the number of columns that the text should be split into. For "
 "example, <code>2</code> will make 2 columns of text."
 msgstr ""
+"Προαιρετικά ορίστε τον αριθμό των στηλών στις οποίες θα πρέπει να χωρίζεται. "
+"Για παράδειγμα, <code>2</code> θα δημιουργήσει 2 στήλες κειμένου."
 
 #: admin/includes/available.php:323
 msgid "None"
@@ -447,15 +479,15 @@ msgstr "Επανάληψη"
 
 #: admin/includes/available.php:363
 msgid "Repeat Vertical"
-msgstr ""
+msgstr "Κάθετη Επανάληψη"
 
 #: admin/includes/available.php:367
 msgid "Repeat Horizontal"
-msgstr ""
+msgstr "Οριζόντια Επανάληψη"
 
 #: admin/includes/available.php:371
 msgid "Image Repeat"
-msgstr ""
+msgstr "Επανάληψη Εικόνας"
 
 #: admin/includes/available.php:372
 msgid ""
@@ -465,7 +497,7 @@ msgstr ""
 
 #: admin/includes/available.php:377
 msgid "Background Image Position"
-msgstr ""
+msgstr "Θέση Εικόνας Φόντου"
 
 #: admin/includes/available.php:378
 msgid ""
@@ -476,7 +508,7 @@ msgstr ""
 
 #: admin/includes/available.php:383
 msgid "Background Image Size"
-msgstr ""
+msgstr "Μέγεθος Εικόνας Φόντου"
 
 #: admin/includes/available.php:384
 msgid ""
@@ -520,7 +552,7 @@ msgstr ""
 
 #: admin/includes/available.php:437
 msgid "All your normal text goes here."
-msgstr ""
+msgstr "Όλο το κανονικό σας κείμενο μπαίνει εδώ."
 
 #: admin/includes/available.php:438
 msgid ""
@@ -530,7 +562,7 @@ msgstr ""
 
 #: admin/includes/available.php:439
 msgid "The actual content text that will be displayed."
-msgstr ""
+msgstr "Το πραγματικό περιεχόμενο κειμένου που θα προβάλλεται."
 
 #: admin/includes/available.php:442
 msgid "Chapter Block"
@@ -538,19 +570,21 @@ msgstr ""
 
 #: admin/includes/available.php:448
 msgid "Chapter Title"
-msgstr ""
+msgstr "Τίτλος Κεφαλαίου"
 
 #: admin/includes/available.php:449
 msgid "The title of the chapter."
-msgstr ""
+msgstr "Ο τίτλος του κεφαλαίου."
 
 #: admin/includes/available.php:454
 msgid "Chapter Subtitle"
-msgstr ""
+msgstr "Υπότιτλος Κεφαλαίου"
 
 #: admin/includes/available.php:455
 msgid "This will optionally display a subtitle after the Chapter Title text."
 msgstr ""
+"Αυτό θα προβάλλει προαιρετικά έναν υπότιτλο μετά το κείμενο του Τίτλου "
+"Κεφαλαίου."
 
 #: admin/includes/available.php:466
 msgid "Video"
@@ -558,7 +592,7 @@ msgstr "Video"
 
 #: admin/includes/available.php:470
 msgid "Background Type"
-msgstr ""
+msgstr "Τύπος Φόντου"
 
 #: admin/includes/available.php:471
 msgid "Choose from an image or a looping video background."
@@ -566,7 +600,7 @@ msgstr ""
 
 #: admin/includes/available.php:486
 msgid "Full-size Background Image"
-msgstr ""
+msgstr "Εικόνα φόντου πλήρους μεγέθους"
 
 #: admin/includes/available.php:487
 msgid ""
@@ -576,7 +610,7 @@ msgstr ""
 
 #: admin/includes/available.php:492
 msgid "Chapter Image or Video URL"
-msgstr ""
+msgstr "Εικόνα Κεφαλαίου ή URL Βίντεο"
 
 #: admin/includes/available.php:493
 msgid ""
@@ -594,7 +628,7 @@ msgstr ""
 
 #: admin/includes/available.php:529
 msgid "Image Movement"
-msgstr ""
+msgstr "Κίνησης Εικόνας"
 
 #: admin/includes/available.php:530
 msgid ""
@@ -631,7 +665,7 @@ msgstr ""
 
 #: admin/includes/available.php:575
 msgid "Image Lightbox"
-msgstr ""
+msgstr "Εικόνα Lightbox"
 
 #: admin/includes/available.php:576
 msgid ""
@@ -660,7 +694,7 @@ msgstr ""
 
 #: admin/includes/available.php:645
 msgid "Optional Caption"
-msgstr ""
+msgstr "Προαιρετική Λεζάντα"
 
 #: admin/includes/available.php:646
 msgid "Parallax styled image component with caption and optional lightbox."
@@ -671,23 +705,25 @@ msgid "Audio"
 msgstr "Audio"
 
 #: admin/includes/available.php:655 admin/includes/available.php:1012
-#: admin/includes/components/component-map.php:71
+#: admin/includes/components/component-map.php:68
 msgid "Title"
 msgstr "Τίτλος"
 
 #: admin/includes/available.php:656
 msgid "Provide an optional heading for the audio player."
-msgstr ""
+msgstr "Παρέχετε μια εναλλακτική κεφαλίδα για την αναπαραγωγή ήχου. "
 
 #: admin/includes/available.php:661
 msgid "Audio URL"
-msgstr ""
+msgstr "URL Ήχου"
 
 #: admin/includes/available.php:662
 msgid ""
 "URL to the mp3 file. Click <em>Select Media</em> to open the WordPress Media "
 "Library."
 msgstr ""
+"URL για το αρχείο mp3. Πατήστε <em>Επιλογή Πολυμέσων</em> για να ανοίξετε τη "
+"Βιβλιοθήκη Πολυμέσων του WordPress."
 
 #: admin/includes/available.php:677
 msgid "Loop Audio Player"
@@ -719,7 +755,7 @@ msgstr ""
 
 #: admin/includes/available.php:725
 msgid "Hide Audio Player"
-msgstr ""
+msgstr "Απόκρυψη Αναπαραγωγής Ήχου"
 
 #: admin/includes/available.php:726
 msgid ""
@@ -733,7 +769,7 @@ msgstr ""
 
 #: admin/includes/available.php:732
 msgid "Video Section"
-msgstr ""
+msgstr "Τμήμα Βίντεο"
 
 #: admin/includes/available.php:759
 msgid "Should the video be floated to the left, right, or centered?"
@@ -777,7 +813,7 @@ msgstr ""
 
 #: admin/includes/available.php:803
 msgid "Video Source"
-msgstr ""
+msgstr "Πηγή Βίντεο"
 
 #: admin/includes/available.php:804
 msgid "Choose an available source for the video."
@@ -785,7 +821,7 @@ msgstr ""
 
 #: admin/includes/available.php:809
 msgid "Video ID"
-msgstr ""
+msgstr "ID Βίντεο"
 
 #: admin/includes/available.php:810
 msgid ""
@@ -859,7 +895,7 @@ msgstr ""
 
 #: admin/includes/available.php:908
 msgid "Map"
-msgstr ""
+msgstr "Χάρτης"
 
 #: admin/includes/available.php:916
 msgid "Height"
@@ -873,7 +909,7 @@ msgstr ""
 
 #: admin/includes/available.php:922
 msgid "Sticky Maps"
-msgstr ""
+msgstr "Μόνιμοι Χάρτες"
 
 #: admin/includes/available.php:923
 msgid ""
@@ -940,29 +976,31 @@ msgstr "Document"
 
 #: admin/includes/available.php:979
 msgid "PDF"
-msgstr ""
+msgstr "PDF"
 
 #: admin/includes/available.php:987
 msgid "Document Type"
-msgstr ""
+msgstr "Τύπος εγγράφου"
 
 #: admin/includes/available.php:988
 msgid "The type of document. Choose image or PDF."
-msgstr ""
+msgstr "Ο τύπος εγγράφου. Επιλέξτε εικόνα ή PDF."
 
 #: admin/includes/available.php:993
 msgid "Document URL"
-msgstr ""
+msgstr "URL Εγγράφου"
 
 #: admin/includes/available.php:994
 msgid ""
 "URL to the document. Click <em>Select Media</em> to open the WordPress Media "
 "Library."
 msgstr ""
+"URL για το έγγραφο. Πατήστε <em>Επιλογή Πολυμέσων</em> για να ανοίξετε τη "
+"Βιβλιοθήκη Πολυμέσων του WordPress."
 
 #: admin/includes/available.php:999
 msgid "Document Caption"
-msgstr ""
+msgstr "Λεζάντα Εγγράφου"
 
 #: admin/includes/available.php:1000
 msgid "Provide an optional caption for the document component."
@@ -974,7 +1012,7 @@ msgstr ""
 
 #: admin/includes/available.php:1006
 msgid "Collections"
-msgstr ""
+msgstr "Συλλογές"
 
 #: admin/includes/available.php:1013
 msgid "Display an optional heading to be used within the Collection component."
@@ -986,11 +1024,11 @@ msgstr "Κατηγορία"
 
 #: admin/includes/available.php:1020
 msgid "Select the category that you want stories to be displayed from."
-msgstr ""
+msgstr "Επιλέξτε την κατηγορία από την οποία θέλετε να προβάλλονται ιστορίες."
 
 #: admin/includes/available.php:1025
 msgid "Number of Stories"
-msgstr ""
+msgstr "Αριθμός Ιστοριών"
 
 #: admin/includes/available.php:1026
 msgid "How many stories should be displayed in this collection?"
@@ -1018,6 +1056,8 @@ msgstr ""
 msgid ""
 "Show a collection of stories. Typically used on a page like the home page."
 msgstr ""
+"Προβολή μιας συλλογής ιστοριών. Τυπικά χρησιμοποιείται σε μια σελίδα όπως η "
+"αρχική σελίδα."
 
 #: admin/includes/available.php:1055
 msgid "Gallery"
@@ -1046,15 +1086,15 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:66
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: admin/includes/class.welcome.php:67
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: admin/includes/class.welcome.php:72
 msgid "Quick Start"
-msgstr ""
+msgstr "Γρήγορη Έναρξη"
 
 #: admin/includes/class.welcome.php:73
 msgid ""
@@ -1064,7 +1104,7 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:76
 msgid "Enable Theme Support"
-msgstr ""
+msgstr "Ενεργοποιήστε την Υποστήριξη Θέματος"
 
 #: admin/includes/class.welcome.php:77
 msgid ""
@@ -1084,7 +1124,7 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:81
 msgid "Build your Story"
-msgstr ""
+msgstr "Φτιάξτε την Ιστορία σας"
 
 #: admin/includes/class.welcome.php:82
 msgid ""
@@ -1096,7 +1136,7 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:88
 msgid "Themes & Addons"
-msgstr ""
+msgstr "Θέματα & Πρόσθετα"
 
 #: admin/includes/class.welcome.php:89
 msgid "Browse our growing library of"
@@ -1104,11 +1144,11 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:89
 msgid "themes"
-msgstr ""
+msgstr "θέματα"
 
 #: admin/includes/class.welcome.php:89
 msgid "addons"
-msgstr ""
+msgstr "πρόσθετα"
 
 #: admin/includes/class.welcome.php:89
 msgid "built specifically for Aesop Story Engine."
@@ -1117,27 +1157,27 @@ msgstr ""
 #: admin/includes/components/component-gallery.php:35
 #: admin/includes/components/component-gallery.php:48
 msgid "Galleries"
-msgstr ""
+msgstr "Συλλογές"
 
 #: admin/includes/components/component-gallery.php:36
 msgid "Parent Gallery:"
-msgstr ""
+msgstr "Γονική Συλλογή:"
 
 #: admin/includes/components/component-gallery.php:37
 msgid "All Galleries"
-msgstr ""
+msgstr "Όλες οι Συλλογές"
 
 #: admin/includes/components/component-gallery.php:38
 msgid "View Gallery"
-msgstr ""
+msgstr "Προβολή Συλλογής"
 
 #: admin/includes/components/component-gallery.php:39
 msgid "Add New Gallery"
-msgstr ""
+msgstr "Προσθήκη Νέας Συλλογής"
 
 #: admin/includes/components/component-gallery.php:40
 msgid "New Gallery"
-msgstr ""
+msgstr "Νέα Συλλογή"
 
 #: admin/includes/components/component-gallery.php:41
 msgid "Edit Gallery"
@@ -1145,19 +1185,19 @@ msgstr "Επεξεργασία συλλογής"
 
 #: admin/includes/components/component-gallery.php:42
 msgid "Update Gallery"
-msgstr ""
+msgstr "Ενημέρωση Συλλογής"
 
 #: admin/includes/components/component-gallery.php:43
 msgid "Search Galleries"
-msgstr ""
+msgstr "Αναζήτηση Συλλογών"
 
 #: admin/includes/components/component-gallery.php:44
 msgid "No Galleries found"
-msgstr ""
+msgstr "Δεν βρέθηκαν Συλλογές"
 
 #: admin/includes/components/component-gallery.php:45
 msgid "No Galleries found in Trash"
-msgstr ""
+msgstr "Δεν βρέθηκαν Συλλογές στον Κάδο"
 
 #: admin/includes/components/component-gallery.php:49
 msgid "Create responsive galleries."
@@ -1165,183 +1205,183 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:75
 msgid "Gallery Code"
-msgstr ""
+msgstr "Κώδικας Συλλογής"
 
 #: admin/includes/components/component-gallery.php:76
 msgid "Used In"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:141
+#: admin/includes/components/component-gallery.php:136
 msgid "Add Images"
 msgstr "Προσθήκη εικόνων"
 
-#: admin/includes/components/component-gallery.php:144
+#: admin/includes/components/component-gallery.php:139
 msgid "Select Layout"
-msgstr ""
+msgstr "Επιλογή Διάταξης"
 
-#: admin/includes/components/component-gallery.php:147
+#: admin/includes/components/component-gallery.php:142
 msgid "Set Options"
-msgstr ""
+msgstr "Ορισμός Επιλογών"
 
-#: admin/includes/components/component-gallery.php:215
+#: admin/includes/components/component-gallery.php:207
 msgid "Grid"
-msgstr ""
+msgstr "Πλέγμα"
 
-#: admin/includes/components/component-gallery.php:216
+#: admin/includes/components/component-gallery.php:208
 msgid "Thumbnail"
 msgstr "Μικρογραφία"
 
-#: admin/includes/components/component-gallery.php:218
+#: admin/includes/components/component-gallery.php:210
 msgid "Photoset"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:219
+#: admin/includes/components/component-gallery.php:211
 msgid "Parallax"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:256
+#: admin/includes/components/component-gallery.php:247
 msgid "Main Gallery Width"
-msgstr ""
+msgstr "Πλάτος Κύριας Συλλογής"
 
-#: admin/includes/components/component-gallery.php:257
+#: admin/includes/components/component-gallery.php:248
 msgid ""
 "Adjust the overall width of the grid/thumbnail gallery. Acceptable values "
 "include 500px or 50%."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:261
+#: admin/includes/components/component-gallery.php:252
 msgid "Gallery Caption"
-msgstr ""
+msgstr "Λεζάντα Συλλογής"
 
-#: admin/includes/components/component-gallery.php:262
+#: admin/includes/components/component-gallery.php:253
 msgid "Add an optional caption for the gallery."
-msgstr ""
+msgstr "Προσθήκη προαιρετικής λεζάντας για τη συλλογή."
 
-#: admin/includes/components/component-gallery.php:268
+#: admin/includes/components/component-gallery.php:259
 msgid "Grid Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:271
+#: admin/includes/components/component-gallery.php:262
 msgid "Grid Gallery Width"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:272
+#: admin/includes/components/component-gallery.php:263
 msgid ""
 "Adjust the width of the individual grid items, only if using Grid gallery "
 "style. Default is 400."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:278
+#: admin/includes/components/component-gallery.php:269
 msgid "Thumbnail Options"
-msgstr ""
+msgstr "Επιλογές Μικρογραφιών"
 
-#: admin/includes/components/component-gallery.php:281
+#: admin/includes/components/component-gallery.php:272
 msgid "Gallery Transition"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:282
+#: admin/includes/components/component-gallery.php:273
 msgid ""
 "Adjust the transition effect for the Thumbnail gallery. Default is slide."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:284
+#: admin/includes/components/component-gallery.php:275
 msgid "Fade"
 msgstr "Ξεθώριασμα"
 
-#: admin/includes/components/component-gallery.php:285
+#: admin/includes/components/component-gallery.php:276
 msgid "Slide"
 msgstr "Ολίσθηση"
 
-#: admin/includes/components/component-gallery.php:286
+#: admin/includes/components/component-gallery.php:277
 msgid "Dissolve"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:291
+#: admin/includes/components/component-gallery.php:282
 msgid "Gallery Transition Speed"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:292
+#: admin/includes/components/component-gallery.php:283
 msgid ""
 "Activate slideshow by setting a speed for the transition.5000 = 5 seconds."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:298
+#: admin/includes/components/component-gallery.php:289
 msgid "Hide Gallery Thumbnails"
-msgstr ""
+msgstr "Απόκρυψη Μικρογραφιών Συλλογής"
 
-#: admin/includes/components/component-gallery.php:303
+#: admin/includes/components/component-gallery.php:294
 msgid "Photoset Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:306
+#: admin/includes/components/component-gallery.php:297
 msgid "Gallery Layout"
-msgstr ""
+msgstr "Διάταξη Συλλογής"
 
-#: admin/includes/components/component-gallery.php:307
+#: admin/includes/components/component-gallery.php:298
 msgid ""
 "Let's say you have 4 images in this gallery. If you enter 121 you will have "
 "one image on the top row, two images on the second row, and one image on the "
 "third row."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:313
+#: admin/includes/components/component-gallery.php:304
 msgid "Enable Lightbox"
 msgstr "Ενεργοποίηση Lightbox"
 
-#: admin/includes/components/component-gallery.php:406
+#: admin/includes/components/component-gallery.php:393
 msgid ""
 "Welcome to Aesop Story Engine 1.4. We need to upgrade any galleries that you "
 "might have. Click <a id=\"aesop-upgrade-galleries\" href=\"#\">here</a> to "
 "start the upgrade process."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:447
+#: admin/includes/components/component-gallery.php:433
 msgid "All done!"
 msgstr "Έτοιμοι!"
 
-#: admin/includes/components/component-map.php:65
+#: admin/includes/components/component-map.php:62
 msgid "Aesop Map Marker"
 msgstr ""
 
-#: admin/includes/components/component-map.php:72
+#: admin/includes/components/component-map.php:69
 msgid "By default we'll display an H2 heading with the text you specify here."
 msgstr ""
 
-#: admin/includes/components/component-map.php:87
+#: admin/includes/components/component-map.php:84
 msgid "Hide this marker"
 msgstr ""
 
-#: admin/includes/components/component-map.php:88
+#: admin/includes/components/component-map.php:85
 msgid "Optionally hide this marker but retain the scroll to point in the map."
 msgstr ""
 
-#: admin/includes/components/component-map.php:126
+#: admin/includes/components/component-map.php:120
 msgid "Map Locations"
-msgstr ""
+msgstr "Τοποθεσίες Χάρτη"
 
-#: admin/includes/components/component-map.php:145
+#: admin/includes/components/component-map.php:139
 msgid "<em>Hint: Type to search for locations</em>"
 msgstr ""
 
-#: admin/includes/components/component-map.php:419
+#: admin/includes/components/component-map.php:410
 msgid ""
 "Welcome to Aesop Story Engine 1.3. We need to upgrade any map markers that "
 "you might have. Click <a id=\"aesop-upgrade-map-meta\" href=\"#\">here</a> "
 "to start the upgrade process."
 msgstr ""
 
-#: admin/includes/components/component-map.php:580
+#: admin/includes/components/component-map.php:565
 msgid ""
 "Welcome to Aesop Story Engine 1.5. We need to upgrade your Mapbox Map ID. "
 "Click <a id=\"aesop-upgrade-mapbox\" href=\"#\">here</a> to start the "
 "upgrade process."
 msgstr ""
 
-#: admin/includes/generator_blob.php:75
+#: admin/includes/generator_blob.php:73
 msgid "Insert Component"
 msgstr ""
 
-#: admin/includes/generator_blob.php:75
+#: admin/includes/generator_blob.php:73
 msgid "Update Component"
 msgstr ""
 
@@ -1377,7 +1417,7 @@ msgstr ""
 
 #: admin/includes/help.php:31
 msgid "Using Maps"
-msgstr ""
+msgstr "Χρήση Χαρτών"
 
 #: admin/includes/help.php:32
 msgid ""
@@ -1425,7 +1465,7 @@ msgstr ""
 
 #: admin/includes/help.php:39
 msgid "Donations"
-msgstr ""
+msgstr "Δωρεές"
 
 #: admin/includes/help.php:40
 msgid ""
@@ -1439,7 +1479,7 @@ msgstr ""
 
 #: admin/includes/help.php:50
 msgid "Aesop Galleries"
-msgstr ""
+msgstr "Συλλογές Aesop"
 
 #: admin/includes/help.php:52
 msgid "Aesop Gallery Component"
@@ -1464,15 +1504,16 @@ msgstr ""
 
 #: admin/includes/help.php:57
 msgid "Choose a layout by clicking a layout option."
-msgstr ""
+msgstr "Επιλέξτε μια διάταξη κλικάροντας μια επιλογή διάταξης."
 
 #: admin/includes/help.php:58
 msgid "Adjust any available options for your specified gallery type."
 msgstr ""
+"Προσαρμόστε κάθε διαθέσιμη επιλογή για τον καθορισμένο τύπο συλλογής σας."
 
 #: admin/includes/help.php:59
 msgid "Publish the gallery."
-msgstr ""
+msgstr "Δημοσίευση της συλλογής."
 
 #: admin/includes/help.php:60
 msgid ""
@@ -1501,7 +1542,7 @@ msgid ""
 "more information."
 msgstr ""
 
-#: public/class-aesop-core.php:245
+#: public/class-aesop-core.php:247
 msgid "Doh! There was an issue deactivating Aesop. Try again perhaps?."
 msgstr ""
 
@@ -1509,25 +1550,27 @@ msgstr ""
 msgid "Specify a category ID to display stories from."
 msgstr ""
 
-#: public/includes/components/component-gallery.php:87
+#: public/includes/components/component-gallery.php:86
 msgid "edit gallery"
-msgstr ""
+msgstr "επεξεργασία συλλογής"
 
-#: public/includes/components/component-gallery.php:98
+#: public/includes/components/component-gallery.php:96
 msgid ""
 "Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon "
 "above."
 msgstr ""
 
-#: public/includes/components/component-gallery.php:104
+#: public/includes/components/component-gallery.php:102
 msgid ""
 "This gallery is empty! It's also possible that you simply have the wrong "
 "gallery ID."
 msgstr ""
+"Αυτή η συλλογή είναι άδεια! Είναι επίσης πιθανόν ότι απλά έχετε το ID λάθος "
+"συλλογής."
 
 #: public/includes/components/component-image.php:62
 msgid "Enlarge"
-msgstr ""
+msgstr "Μεγέθυνση"
 
 #: public/includes/components/component-map.php:45
 msgid "Add Map Markers"
@@ -1554,7 +1597,7 @@ msgstr ""
 #: admin/includes/components/component-gallery.php:33
 msgctxt "aesop-core"
 msgid "Galleries"
-msgstr ""
+msgstr "Συλλογές"
 
 #: admin/includes/components/component-gallery.php:34
 msgctxt "aesop-core"
