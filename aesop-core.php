@@ -42,16 +42,6 @@ define( 'AI_CORE_URL', plugins_url( '', __FILE__ ) );
 require_once AI_CORE_DIR.'public/class-aesop-core.php';
 
 /*
-* 	Register hooks that are fired when the plugin is activated or deactivated.
-* 	When the plugin is deleted, the uninstall.php file is loaded.
-*/
-register_activation_hook( __FILE__, array( 'Aesop_Core', 'activate' ) );
-register_deactivation_hook( __FILE__, array( 'Aesop_Core', 'deactivate' ) );
-
-
-add_action( 'plugins_loaded', array( 'Aesop_Core', 'get_instance' ) );
-
-/*
  ----------------------------------------------------------------------------*
 * 	Dashboard and Administrative Functionality
 *----------------------------------------------------------------------------*/
@@ -62,7 +52,5 @@ add_action( 'plugins_loaded', array( 'Aesop_Core', 'get_instance' ) );
 if ( is_admin() ) {
 
 	require_once AI_CORE_DIR.'admin/class-aesop-core-admin.php';
-
-	add_action( 'plugins_loaded', array( 'Aesop_Core_Admin', 'get_instance' ) );
 
 }
