@@ -403,7 +403,7 @@ class AesopMapComponentAdmin {
 	public function upgrade_map_notice() {
 
 		// only run if we have markers and have never upgraded
-		if ( get_option( 'ase_upgraded_to' ) < AI_CORE_VERSION && 'true' == self::aesop_check_for_old_markers() ) {
+		if ( get_option( 'ase_upgraded_to' ) < AI_CORE_VERSION && 'true' == self::aesop_check_for_old_markers() && current_user_can('manage_options') ) {
 
 			$out = '<div class="error aesop-notice"><p>';
 
@@ -558,7 +558,7 @@ class AesopMapComponentAdmin {
 		$old_option = get_option( 'ase_mapbox_id' );
 
 		// only run if we haven't previously updated the mapbox id and it's still the default value
-		if ( empty( $mapbox_upgrade_option ) && 'aesopinteractive.hkoag9o3' == $old_option ) {
+		if ( empty( $mapbox_upgrade_option ) && 'aesopinteractive.hkoag9o3' == $old_option && current_user_can('manage_options') ) {
 
 			$out = '<div class="error aesop-notice"><p>';
 

@@ -386,7 +386,7 @@ class AesopGalleryComponentAdmin {
 	public function upgrade_galleries_notice() {
 
 		// only run if we have markers and have never upgraded
-		if ( ! get_option( 'ase_galleries_upgraded_to' ) && 'true' == self::aesop_check_for_galleries() ) {
+		if ( ! get_option( 'ase_galleries_upgraded_to' ) && 'true' == self::aesop_check_for_galleries() && current_user_can('manage_options') ) {
 
 			$out = '<div class="error aesop-notice"><p>';
 
@@ -409,7 +409,8 @@ class AesopGalleryComponentAdmin {
 		check_ajax_referer( 'aesop-galleries-upgrade', 'security' );
 
 		if ( ! current_user_can( 'manage_options' ) ) {
-			return; }
+			return;
+		}
 
 		// get the posts with the maps shortode
 		$posts = get_posts( array( 'post_type' => array( 'ai_galleries' ), 'posts_per_page' => -1 ) );
