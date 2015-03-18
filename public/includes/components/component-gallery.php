@@ -314,8 +314,8 @@ class AesopCoreGallery {
 ?>
 		<!-- Aesop Photoset Gallery -->
 		<script>
-			jQuery(window).load(function($){
-				$('.aesop-gallery-photoset').photosetGrid({
+			jQuery(window).load(function(){
+				jQuery('.aesop-gallery-photoset').photosetGrid({
 				  	gutter: "<?php echo absint( $space ).'px';?>",
 				  	<?php if ( $lightbox ) { ?>
 				  	highresLinks:true,
@@ -323,21 +323,21 @@ class AesopCoreGallery {
 				  	onComplete: function(){
 
 				  		<?php if ( $lightbox ) { ?>
-				  			$('.aesop-gallery-photoset a').addClass('aesop-lightbox').prepend('<i class="dashicons dashicons-search"></i>');
+				  			jQuery('.aesop-gallery-photoset a').addClass('aesop-lightbox').prepend('<i class="dashicons dashicons-search"></i>');
 
 				  		<?php } ?>
 
-					   	 	$('.aesop-gallery-photoset').attr('style', '');
-					    	$(".photoset-cell img").each(function(){
+					   	 	jQuery('.aesop-gallery-photoset').attr('style', '');
+					    	jQuery(".photoset-cell img").each(function(){
 
-							caption = $(this).attr('data-caption');
+							caption = jQuery(this).attr('data-caption');
 
 							if ( caption) {
-								title = $(this).attr('title');
-								$(this).after('<span class="aesop-photoset-caption"><span class="aesop-photoset-caption-title">' + title + '</span><span class="aesop-photoset-caption-caption">' + caption +'</span></span>');
-								$('.aesop-photoset-caption').hide().fadeIn();
+								title = jQuery(this).attr('title');
+								jQuery(this).after('<span class="aesop-photoset-caption"><span class="aesop-photoset-caption-title">' + title + '</span><span class="aesop-photoset-caption-caption">' + caption +'</span></span>');
+								jQuery('.aesop-photoset-caption').hide().fadeIn();
 
-								$(this).closest('a').attr('title',title);
+								jQuery(this).closest('a').attr('title',title);
 							}
 						});
 					}
