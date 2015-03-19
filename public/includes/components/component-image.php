@@ -44,17 +44,17 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 		// combine into component shell
 		ob_start();
 
-		do_action( 'aesop_image_before' ); // action
+		do_action( 'aesop_image_before', $atts, $unique ); // action
 ?>
 		<div id="aesop-image-component-<?php echo esc_html( $unique );?>" <?php echo aesop_component_data_atts( 'image', $unique, $atts );?> class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes );?>" >
 
-			<?php do_action( 'aesop_image_inside_top' ); // action ?>
+			<?php do_action( 'aesop_image_inside_top', $atts, $unique ); // action ?>
 
 			<figure class="aesop-content">
 				<div class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> aesop-image-component-caption-<?php echo sanitize_html_class( $atts['captionposition'] );?>" <?php echo esc_attr( $offsetstyle );?>>
 					<?php
 
-		do_action( 'aesop_image_inner_inside_top' ); // action
+		do_action( 'aesop_image_inner_inside_top', $atts, $unique ); // action
 
 		if ( 'on' == $atts['lightbox'] ) { ?>
 
@@ -84,16 +84,16 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
 					<?php } ?>
 
-					<?php do_action( 'aesop_image_inner_inside_bottom' ); // action ?>
+					<?php do_action( 'aesop_image_inner_inside_bottom', $atts, $unique ); // action ?>
 
 				</div>
 			</figure>
 
-			<?php do_action( 'aesop_image_inside_bottom' ); // action ?>
+			<?php do_action( 'aesop_image_inside_bottom', $atts, $unique ); // action ?>
 
 		</div>
 		<?php
-		do_action( 'aesop_image_after' ); // action
+		do_action( 'aesop_image_after', $atts, $unique ); // action
 
 		return ob_get_clean();
 	}

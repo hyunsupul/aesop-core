@@ -35,12 +35,12 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 
 		$full_class = 'on' == $atts['full'] ? 'aesop-chapter-full' : false;
 
-		do_action( 'aesop_chapter_before' ); // action
+		do_action( 'aesop_chapter_before', $atts, $unique ); // action
 
 ?>
 			<div id="chapter-unique-<?php echo $unique;?>" <?php echo aesop_component_data_atts( 'chapter', $unique, $atts );?> class="aesop-article-chapter-wrap default-cover <?php echo $video_chapter_class;?> aesop-component <?php echo $img_style_class;?> <?php echo $full_class;?> " >
 
-				<?php do_action( 'aesop_chapter_inside_top' ); // action ?>
+				<?php do_action( 'aesop_chapter_inside_top', $atts, $unique ); // action ?>
 
 				<div class="aesop-article-chapter clearfix" <?php echo $img_style;?> >
 
@@ -60,12 +60,12 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 
 				</div>
 
-				<?php do_action( 'aesop_chapter_inside_bottom' ); // action ?>
+				<?php do_action( 'aesop_chapter_inside_bottom', $atts, $unique ); // action ?>
 
 			</div>
 		<?php
 
-		do_action( 'aesop_chapter_after' ); // action
+		do_action( 'aesop_chapter_after', $atts, $uniquef ); // action
 
 		return ob_get_clean();
 	}
