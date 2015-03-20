@@ -80,7 +80,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 
 		ob_start();
 
-		do_action( 'aesop_cbox_before' ); // action
+		do_action( 'aesop_cbox_before', $atts, $unique ); // action
 ?>
 				<div <?php echo aesop_component_data_atts( 'content', $unique, $atts, true );?> class="aesop-component aesop-content-component <?php echo sanitize_html_class( $classes ).' '.$has_img. ' '.$has_floater;?>" style="<?php echo $height;?>" >
 
@@ -118,11 +118,11 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 
 					<?php }//end if
 
-		echo do_action( 'aesop_cbox_inside_top' ); // action ?>
+		echo do_action( 'aesop_cbox_inside_top', $atts, $unique ); // action ?>
 
 					<div id="aesop-content-component-<?php echo $unique;?>" class="aesop-content-comp-wrap <?php echo $typeclass;?>" <?php echo $itemstyle;?>>
 
-						<?php echo do_action( 'aesop_cbox_content_inside_top' ); // action
+						<?php echo do_action( 'aesop_cbox_content_inside_top', $atts, $unique ); // action
 
 		if ( $atts['floatermedia'] && ! wp_is_mobile() ) { ?>
 
@@ -132,24 +132,24 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 
 						<div class="aesop-component-content-data aesop-content-comp-inner <?php echo $contentwidth;?>" <?php echo $innerstyle;?>>
 
-							<?php echo do_action( 'aesop_cbox_content_inner_inside_top' ); // action ?>
+							<?php echo do_action( 'aesop_cbox_content_inner_inside_top', $atts, $unique ); // action ?>
 
 								<?php echo do_shortcode( wpautop( html_entity_decode( $content ) ) );?>
 
-							<?php echo do_action( 'aesop_cbox_content_inner_inside_bottom' ); // action ?>
+							<?php echo do_action( 'aesop_cbox_content_inner_inside_bottom' , $atts, $unique); // action ?>
 
 						</div>
 
-						<?php echo do_action( 'aesop_cbox_content_inside_bottom' ); // action ?>
+						<?php echo do_action( 'aesop_cbox_content_inside_bottom', $atts, $unique ); // action ?>
 
 					</div>
 
-					<?php echo do_action( 'aesop_cbox_inside_bottom' ); // action ?>
+					<?php echo do_action( 'aesop_cbox_inside_bottom', $atts, $unique ); // action ?>
 
 				</div>
 			<?php
 
-		do_action( 'aesop_cbox_after' ); // action
+		do_action( 'aesop_cbox_after', $atts, $unique ); // action
 
 		return ob_get_clean();
 	}

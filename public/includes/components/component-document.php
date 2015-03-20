@@ -22,10 +22,10 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 		$unique = sprintf( '%s-%s', get_the_ID(), $instance );
 
 		// actions
-		$actiontop = do_action( 'aesop_document_before' ); // action
-		$actionbottom = do_action( 'aesop_document_cafter' ); // action
-		$actioninsidetop = do_action( 'aesop_document_inside_top' ); // action
-		$actioninsidebottom = do_action( 'aesop_document_inside_bottom' ); // action
+		$actiontop = do_action( 'aesop_document_before', $atts, $unique ); // action
+		$actionbottom = do_action( 'aesop_document_cafter', $atts, $unique ); // action
+		$actioninsidetop = do_action( 'aesop_document_inside_top', $atts, $unique ); // action
+		$actioninsidebottom = do_action( 'aesop_document_inside_bottom', $atts, $unique ); // action
 
 		// custom classes
 		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'document', '' ) : null;

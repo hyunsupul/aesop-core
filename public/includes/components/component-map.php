@@ -39,7 +39,7 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 
 		ob_start();
 
-		do_action( 'aesop_map_before' );
+		do_action( 'aesop_map_before', $atts, $unique );
 
 		$url    = admin_url( 'post.php?post='.get_the_ID().'&action=edit' );
 		$edit_map   = __( 'Add Map Markers', 'aesop-core' );
@@ -96,7 +96,7 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 		endif;
 
 		?></div><?php
-		do_action( 'aesop_map_before' );
+		do_action( 'aesop_map_before', $atts, $unique );
 
 		return ob_get_clean();
 	}

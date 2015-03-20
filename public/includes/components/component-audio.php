@@ -42,7 +42,7 @@ if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
 
 		ob_start();
 
-		do_action( 'aesop_audio_before' ); // action
+		do_action( 'aesop_audio_before', $atts, $unique ); // action
 
 		?><aside id="aesop-audio-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'audio', $unique, $atts );?> class="aesop-component aesop-audio-component <?php echo sanitize_html_class( $classes );?>" <?php echo esc_attr( $hidden );?>>
 
@@ -71,7 +71,7 @@ if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
 						</script>
 					<?php }//end if
 
-		do_action( 'aesop_audio_inside_top' ); // action
+		do_action( 'aesop_audio_inside_top', $atts, $unique ); // action
 
 		if ( $title ) {
 			echo aesop_component_media_filter( $title );
@@ -79,11 +79,11 @@ if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
 
 		echo wp_audio_shortcode( array( 'src' => $atts['src'], 'loop' => $loop ) );
 
-		do_action( 'aesop_audio_inside_bottom' ); // action
+		do_action( 'aesop_audio_inside_bottom', $atts, $unique ); // action
 
 		?></aside><?php
 
-		do_action( 'aesop_audio_after' ); // action
+		do_action( 'aesop_audio_after', $atts, $unique ); // action
 
 		return ob_get_clean();
 	}
