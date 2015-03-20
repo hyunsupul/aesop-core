@@ -80,11 +80,11 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		    	});
 	    	</script>
     	<?php }//end if
-		do_action( 'aesop_video_before' ); // action
+		do_action( 'aesop_video_before', $atts, $unique ); // action
 ?>
 	    <div id="aesop-video-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'video', $unique, $atts );?> class="aesop-component aesop-video-component aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $classes );?> <?php echo sanitize_html_class( $controlstatus );?> <?php echo sanitize_html_class( $contentwidth );?> <?php echo sanitize_html_class( $vineStagramClass );?> <?php echo sanitize_html_class( $vineStagramAlign );?>">
 
-	    	<?php do_action( 'aesop_video_inside_top' ); // action ?>
+	    	<?php do_action( 'aesop_video_inside_top', $atts, $unique ); // action ?>
 
 	    	<div class="aesop-video-container aesop-video-container-<?php echo esc_attr( $unique );?> aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $atts['src'] );?>" <?php echo $widthstyle;?> >
 
@@ -126,10 +126,10 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 
 	   	 	<?php echo $caption;
 
-		do_action( 'aesop_video_inside_bottom' ); // action ?>
+		do_action( 'aesop_video_inside_bottom', $atts, $unique ); // action ?>
 		</div>
 
-		<?php do_action( 'aesop_video_after' ); // action
+		<?php do_action( 'aesop_video_after', $atts, $unique ); // action
 		return ob_get_clean();
 	}
 }//end if

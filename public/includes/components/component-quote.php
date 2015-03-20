@@ -80,7 +80,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 
 		ob_start();
 
-		do_action( 'aesop_quote_before' ); // action
+		do_action( 'aesop_quote_before', $atts, $unique ); // action
 ?>
 			<div id="aesop-quote-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'quote', $unique, $atts );?> class="aesop-component aesop-quote-component <?php echo $core_classes.' '.$css_classes;?>" <?php echo $style;?>>
 
@@ -143,7 +143,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 
 				<?php endif;
 
-		do_action( 'aesop_quote_inside_top' ); // action ?>
+		do_action( 'aesop_quote_inside_top', $atts, $unique ); // action ?>
 
 				<blockquote class="<?php echo sanitize_html_class( $align );?>" style="font-size:<?php echo esc_attr( $size );?>;">
 					<span><?php echo esc_html( $atts['quote'] );?></span>
@@ -151,11 +151,11 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 					<?php echo aesop_component_media_filter( $cite );?>
 				</blockquote>
 
-				<?php do_action( 'aesop_quote_inside_bottom' ); // action ?>
+				<?php do_action( 'aesop_quote_inside_bottom', $atts, $unique ); // action ?>
 
 			</div>
 		<?php
-		do_action( 'aesop_quote_after' ); // action
+		do_action( 'aesop_quote_after', $atts, $unique ); // action
 
 		return ob_get_clean();
 	}
