@@ -65,7 +65,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 			</div>
 		<?php
 
-		do_action( 'aesop_chapter_after', $atts, $uniquef ); // action
+		do_action( 'aesop_chapter_after', $atts, $unique ); // action
 
 		return ob_get_clean();
 	}

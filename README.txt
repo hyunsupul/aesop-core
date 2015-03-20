@@ -99,24 +99,38 @@ All components are pluggable, and there are ample filters and actions to manipul
 If you think something is missing, we want to hear from you. Post your request and bugs on [Github](https://github.com/bearded-avenger/aesop-core).
 
 = Languages =
-Aesop Story Engine is currently available in 17 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
-* Deutsch (German)
+Aesop Story Engine is currently available in 30 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
+
+* Български (Bulgarian)
 * čeština‎ (Czech)
-* Ελληνικά (Greek)
-* Español (Spanish (Spain))
+* 中文 (Chinese (China)
+* Dansk (Danish)
+* Nederlands (Dutch)
+* English (US)
+* Suomi (Finnish)
 * Français (French (France))
+* Deutsch (German)
+* Ελληνικά (Greek)
 * עִבְרִית (Hebrew)
+* Magyar (Hungarian)
 * Italiano (Italian)
 * 日本語 (Japanese)
-* Nederlands (Dutch)
+* ភាសាខ្មែរ (Khmer)
+* 한국어 (Korean)
+* Bokmål (Norwegian)
+* فارسی (Persian)
 * Polski (Polish)
 * Português do Brasil (Portuguese (Brazil))
 * Română (Romanian)
 * Русский (Russian)
-* Slovenčina (Slovak)
 * Српски језик (Serbian)
+* Slovenčina (Slovak)
+* slovenščina (Slovenian)
+* Español (Spanish (Argentina))
+* Español (Spanish (Spain))
+* ไทย (Thai)
 * Türkçe (Turkish)
-* 中文 (Chinese (China)
+* Tiếng Việt (Vietnamese)
 
 == Installation ==
 
