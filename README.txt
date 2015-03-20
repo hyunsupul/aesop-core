@@ -160,6 +160,10 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.5.2 =
+* FIX - Fixed an issue with the Photoset gallery breaking with the last update
+* FIX - Added a capability check so admin_notices aren't shown to non-admins
+
 = 1.5.1 =
 * FIX - Massive codebase overhaul bringing Aesop Story Engine close to WordPress VIP plugin standards
 * FIX - Combed through the codebase and removed all unused vars and updated php docs per Scrutinizer
