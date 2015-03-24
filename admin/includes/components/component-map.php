@@ -140,14 +140,11 @@ class AesopMapComponentAdmin {
 		echo '<div id="aesop-map" style="height:350px;"></div>';
 
 		$ase_map_locations   = get_post_meta( $post->ID, 'ase_map_component_locations' );
-		$ase_map_start_point  = get_post_meta( $post->ID, 'ase_map_component_start_point', true );
-		$get_map_zoom    = get_post_meta( $post->ID, 'ase_map_component_zoom', true );
+		$ase_map_start_point = get_post_meta( $post->ID, 'ase_map_component_start_point', true );
+		$get_map_zoom        = get_post_meta( $post->ID, 'ase_map_component_zoom', true );
 
-		$ase_map_start_point  = empty ( $ase_map_start_point ) ? array( 29.76, -95.38 ) : array( $ase_map_start_point['lat'], $ase_map_start_point['lng'] );
-		$ase_map_zoom    = empty ( $get_map_zoom ) ? 12 : $get_map_zoom;
-
-		$ase_map_start_point  = json_encode( $ase_map_start_point );
-		$ase_map_locations   = json_encode( $ase_map_locations );
+		$ase_map_start_point = empty ( $ase_map_start_point ) ? array( 29.76, -95.38 ) : array( $ase_map_start_point['lat'], $ase_map_start_point['lng'] );
+		$ase_map_zoom        = empty ( $get_map_zoom ) ? 12 : $get_map_zoom;
 
 		$tiles      = aesop_map_tile_provider( $post->ID );
 
@@ -157,7 +154,7 @@ class AesopMapComponentAdmin {
 
 				jQuery(document).ready(function(){
 
-					var start_point = <?php echo $ase_map_start_point; ?>;
+					var start_point = <?php echo json_encode( $ase_map_start_point ); ?>;
 					var start_zoom = <?php echo absint( $ase_map_zoom ); ?>;
 
 					var map = L.map('aesop-map',{
@@ -175,12 +172,12 @@ class AesopMapComponentAdmin {
 						setMapCenter(lat,lng);
   					});
 
-					L.tileLayer('<?php echo $tiles;?>', {
+					L.tileLayer('<?php echo json_encode( $tiles ); ?>', {
 						maxZoom: 20
 					}).addTo(map);
 
 					<?php if ( ! empty( $ase_map_locations ) ) : ?>
-						var ase_map_locations = <?php echo $ase_map_locations; ?>
+						var ase_map_locations = <?php echo json_encode( $ase_map_locations ); ?>
 					<?php endif; ?>
 
 					ase_map_locations.forEach(function(location) {
@@ -411,7 +408,7 @@ class AesopMapComponentAdmin {
 
 			$out .= '</p></div>';
 
-			echo $out;
+			echo esc_html( $out );
 
 		}
 	}
@@ -490,7 +487,7 @@ class AesopMapComponentAdmin {
 
 				$old_start_point = get_post_meta( $id, 'aesop_map_start', true );
 				if ( ! empty ( $old_start_point ) ) {
-					echo $old_start_point;
+					echo esc_html( $old_start_point );
 					$old_start_point = explode( ',', $old_start_point );
 					if ( count( $old_start_point ) == 2 ) {
 						$translated = array();
@@ -534,7 +531,7 @@ class AesopMapComponentAdmin {
 
 				  		var data = {
 				            action: 'upgrade_marker_meta',
-				            security: '<?php echo $nonce;?>'
+				            security: <?php echo json_encode( $nonce );?>
 				        };
 
 					  	jQuery.post(ajaxurl, data, function(response) {
@@ -566,7 +563,7 @@ class AesopMapComponentAdmin {
 
 			$out .= '</p></div>';
 
-			echo $out;
+			echo esc_html( $out );
 
 		}
 	}
@@ -593,7 +590,7 @@ class AesopMapComponentAdmin {
 
 				  		var data = {
 				            action: 'upgrade_mapbox',
-				            security: '<?php echo $nonce;?>'
+				            security: <?php echo json_encode( $nonce ); ?>
 				        };
 
 					  	$.post(ajaxurl, data, function(response) {

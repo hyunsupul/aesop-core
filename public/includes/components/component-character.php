@@ -47,7 +47,7 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
 					<?php do_action( 'aesop_character_inside_top' ); // action ?>
 
 					<div class="aesop-character-inner aesop-content">
-						<div class="aesop-character-float aesop-character-<?php echo esc_attr( $atts['align'] );?>" <?php echo $styles;?>>
+						<div class="aesop-character-float aesop-character-<?php echo esc_attr( $atts['align'] );?>" <?php echo esc_html( $styles ); ?>>
 
 							<?php do_action( 'aesop_character_inner_inside_top' ); // action ?>
 

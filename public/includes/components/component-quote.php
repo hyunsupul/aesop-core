@@ -82,7 +82,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 
 		do_action( 'aesop_quote_before' ); // action
 ?>
-			<div id="aesop-quote-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'quote', $unique, $atts );?> class="aesop-component aesop-quote-component <?php echo $core_classes.' '.$css_classes;?>" <?php echo $style;?>>
+			<div id="aesop-quote-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'quote', $unique, $atts );?> class="aesop-component aesop-quote-component <?php echo sanitize_html_class( $core_classes ) . ' ' . sanitize_html_class( $css_classes ); ?>" <?php echo esc_attr( $style ); ?>>
 
 				<?php if ( 'block' == $atts['type'] ): ?>
 					<!-- Aesop Core | Quote -->
