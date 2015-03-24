@@ -146,9 +146,6 @@ class AesopMapComponentAdmin {
 		$ase_map_start_point = empty ( $ase_map_start_point ) ? array( 29.76, -95.38 ) : array( $ase_map_start_point['lat'], $ase_map_start_point['lng'] );
 		$ase_map_zoom        = empty ( $get_map_zoom ) ? 12 : $get_map_zoom;
 
-		$ase_map_start_point = json_encode( $ase_map_start_point );
-		$ase_map_locations   = json_encode( $ase_map_locations );
-
 		$tiles      = aesop_map_tile_provider( $post->ID );
 
 ?>
