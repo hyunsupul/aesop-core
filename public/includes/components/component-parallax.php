@@ -137,7 +137,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 					<a class="aesop-lb-link aesop-lightbox" rel="lightbox" title="<?php echo esc_attr( $atts['caption'] );?>" href="<?php echo esc_url( $atts['img'] );?>"><i class="aesopicon aesopicon-search-plus"></i></a>
 				<?php } ?>
 
-				<img class="aesop-parallax-sc-img <?php echo $laxclass;?>" src="<?php echo esc_url( $atts['img'] );?>" alt="<?php echo esc_attr( $auto_alt );?>" >
+				<img class="aesop-parallax-sc-img <?php echo sanitize_html_class( $laxclass ); ?>" src="<?php echo esc_url( $atts['img'] );?>" alt="<?php echo esc_attr( $auto_alt );?>" >
 
 				<?php if ( $atts['caption'] ) { ?>
 					<figcaption class="aesop-parallax-sc-caption-wrap <?php echo sanitize_html_class( $atts['captionposition'] );?>">

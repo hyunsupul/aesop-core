@@ -172,14 +172,14 @@ class AesopGalleryComponentAdmin {
 		if ( ! empty( $get_image_ids ) ):
 			foreach ( $image_ids as $image_id ):
 
-				$image    = wp_get_attachment_image_src( $image_id, 'thumbnail', false );
+				$image = wp_get_attachment_image_src( $image_id, 'thumbnail', false );
 
 ?>
-				<li id="<?php echo $image_id;?>" class="ase-gallery-image">
+				<li id="<?php echo esc_attr( $image_id ); ?>" class="ase-gallery-image">
 					<i class="dashicons dashicons-no-alt" title="Delete From Gallery"></i>
 					<i class='dashicons dashicons-edit' title="Edit Image Caption"></i>
-		           	<img src="<?php echo $image[0];?>">
-		          </li>
+					<img src="<?php echo esc_url( $image[0] );?>">
+				</li>
 					<?php
 
 		endforeach;
@@ -394,7 +394,7 @@ class AesopGalleryComponentAdmin {
 
 			$out .= '</p></div>';
 
-			echo $out;
+			echo esc_html( $out );
 
 		}
 	}
@@ -456,7 +456,7 @@ class AesopGalleryComponentAdmin {
 
 				  		var data = {
 				            action: 'upgrade_galleries',
-				            security: '<?php echo $nonce;?>'
+				            security: <?php echo json_encode( $nonce ); ?>
 				        };
 
 					  	jQuery.post(ajaxurl, data, function(response) {

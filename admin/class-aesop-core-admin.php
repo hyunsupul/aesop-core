@@ -148,7 +148,7 @@ class Aesop_Core_Admin {
 
 		$button = apply_filters( 'aesop_generator_button', $getbutton );
 
-		echo $button;
+		echo esc_html( $button );
 
 	}
 
@@ -193,13 +193,9 @@ class Aesop_Core_Admin {
 					<div class="aesop-select-wrap fix aesop-generator-left">
 						<select name="aesop-select" class="aesop-generator" id="aesop-generator-select">
 
-							<?php
-			foreach ( aesop_shortcodes() as $name => $shortcode ) {
-?>
-							<option value="<?php echo $name; ?>"><?php echo str_replace( '_', ' ', strtoupper( $name ) ); ?></option>
-							<?php
-			}
-?>
+							<?php foreach ( aesop_shortcodes() as $name => $shortcode ) : ?>
+							<option value="<?php echo esc_attr( $name ); ?>"><?php echo str_replace( '_', ' ', strtoupper( esc_html( $name ) ) ); ?></option>
+							<?php endforeach; ?>
 						</select>
 
 						<?php if ( ! defined( 'AI_CORE_WATERMARK' ) ) {

@@ -53,7 +53,7 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 
 		} ?>
 
-			<div id="aesop-map-component" <?php echo aesop_component_data_atts( 'map', $unique, $atts );?> class="aesop-component aesop-map-component <?php echo sanitize_html_class( $classes );?> " <?php echo $height;?>>
+			<div id="aesop-map-component" <?php echo aesop_component_data_atts( 'map', $unique, $atts );?> class="aesop-component aesop-map-component <?php echo sanitize_html_class( $classes );?> " <?php echo esc_attr( $height ); ?>>
 
 				<?php
 		/**
@@ -139,10 +139,10 @@ class AesopMapComponent {
 					var map = L.map('aesop-map-component',{
 						scrollWheelZoom: false,
 						zoom: <?php echo wp_filter_nohtml_kses( round( $zoom ) );?>,
-						center: [<?php echo $start;?>]
+						center: [<?php echo json_encode( $start ); ?>]
 					});
 
-					L.tileLayer('<?php echo $tiles;?>', {
+					L.tileLayer('<?php echo json_encode( $tiles ); ?>', {
 						maxZoom: 20
 					}).addTo(map);
 
@@ -150,19 +150,19 @@ class AesopMapComponent {
 			foreach ( $markers as $marker ):
 
 				$lat  = $marker['lat'];
-			$long  = $marker['lng'];
-			$text  = $marker['title'] ? $marker['title'] : null;
+				$long = $marker['lng'];
+				$text = $marker['title'] ? $marker['title'] : null;
 
-			$loc  = sprintf( '%s,%s', esc_attr( $lat ), esc_attr( $long ) );
+				$loc  = sprintf( '%s,%s', esc_attr( $lat ), esc_attr( $long ) );
 
 			// if market content is set run a popup
 			if ( $text ) { ?>
 
-							L.marker([<?php echo $loc;?>]).addTo(map).bindPopup('<?php echo aesop_component_media_filter( $text );?>').openPopup();
+							L.marker([<?php echo json_encode( $loc );?>]).addTo(map).bindPopup('<?php echo aesop_component_media_filter( $text );?>').openPopup();
 
 						<?php } else { ?>
 
-							L.marker([<?php echo $loc;?>]).addTo(map);
+							L.marker([<?php echo json_encode( $loc );?>]).addTo(map);
 
 						<?php }
 
