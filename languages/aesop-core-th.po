@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-03-16 21:25:42+00:00\n"
+"POT-Creation-Date: 2015-03-29 22:35:57+00:00\n"
 "PO-Revision-Date: 2015-03-10 15:48+0000\n"
 "Last-Translator: FxB <fxb@wp-translations.org>\n"
 "Language-Team: Thai (http://www.transifex.com/projects/p/aesop-story-engine/"
@@ -1295,7 +1295,7 @@ msgid ""
 "start the upgrade process."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:433
+#: admin/includes/components/component-gallery.php:434
 msgid "All done!"
 msgstr "ทุกอย่างเสร็จแล้ว"
 

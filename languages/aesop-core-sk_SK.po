@@ -5,9 +5,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-03-16 21:25:42+00:00\n"
-"PO-Revision-Date: 2015-03-10 15:48+0000\n"
-"Last-Translator: FxB <fxb@wp-translations.org>\n"
+"POT-Creation-Date: 2015-03-29 22:37:01+00:00\n"
+"PO-Revision-Date: 2015-03-16 21:25+0000\n"
+"Last-Translator: Aesopinteractive\n"
 "Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/aesop-"
 "story-engine/language/sk_SK/)\n"
 "Language: sk_SK\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: grunt-wp-i18n 0.4.9\n"
+"X-Generator: grunt-wp-i18n 0.5.0\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
 "X-Poedit-Country: United States\n"
@@ -258,9 +258,8 @@ msgid "Pull Quote"
 msgstr ""
 
 #: admin/includes/available.php:172
-#, fuzzy
 msgid "Full Width"
-msgstr "Šírka"
+msgstr ""
 
 #: admin/includes/available.php:176
 msgid "Quote Styles"
@@ -1295,7 +1294,7 @@ msgid ""
 "start the upgrade process."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:433
+#: admin/includes/components/component-gallery.php:434
 msgid "All done!"
 msgstr "Hotovo!"
 

@@ -1,13 +1,14 @@
 # Copyright (C) 2015 Aesopinteractive LLC
 # This file is distributed under the GPL-2.0+.
 # Translators:
+# Inanc Yigit <inanc64@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-03-16 21:25:42+00:00\n"
-"PO-Revision-Date: 2015-03-10 15:48+0000\n"
-"Last-Translator: FxB <fxb@wp-translations.org>\n"
+"POT-Creation-Date: 2015-03-29 22:37:01+00:00\n"
+"PO-Revision-Date: 2015-03-26 22:41+0000\n"
+"Last-Translator: Inanc Yigit <inanc64@gmail.com>\n"
 "Language-Team: Dutch (Netherlands) (http://www.transifex.com/projects/p/"
 "aesop-story-engine/language/nl_NL/)\n"
 "Language: nl_NL\n"
@@ -15,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: grunt-wp-i18n 0.4.9\n"
+"X-Generator: grunt-wp-i18n 0.5.0\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
 "X-Poedit-Country: United States\n"
@@ -59,7 +60,7 @@ msgstr "Image"
 
 #: admin/includes/available.php:19
 msgid "Image Width"
-msgstr ""
+msgstr "image breedte"
 
 #: admin/includes/available.php:20
 msgid ""
@@ -80,7 +81,7 @@ msgstr ""
 
 #: admin/includes/available.php:31
 msgid "Image Offset"
-msgstr ""
+msgstr "Image Offset"
 
 #: admin/includes/available.php:32
 msgid ""
@@ -100,7 +101,7 @@ msgstr ""
 
 #: admin/includes/available.php:43
 msgid "Image ALT"
-msgstr ""
+msgstr "Image ALT"
 
 #: admin/includes/available.php:44
 msgid "ALT tag used for the image. Primarily used for SEO purposes."
@@ -258,9 +259,8 @@ msgid "Pull Quote"
 msgstr ""
 
 #: admin/includes/available.php:172
-#, fuzzy
 msgid "Full Width"
-msgstr "Breedte"
+msgstr ""
 
 #: admin/includes/available.php:176
 msgid "Quote Styles"
@@ -1295,7 +1295,7 @@ msgid ""
 "start the upgrade process."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:433
+#: admin/includes/components/component-gallery.php:434
 msgid "All done!"
 msgstr "Helemaal klaar!"
 

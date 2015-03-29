@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-03-16 21:25:42+00:00\n"
-"PO-Revision-Date: 2015-03-10 15:48+0000\n"
+"POT-Creation-Date: 2015-03-29 22:37:01+00:00\n"
+"PO-Revision-Date: 2015-03-21 14:08+0000\n"
 "Last-Translator: FxB <fxb@wp-translations.org>\n"
 "Language-Team: French (France) (http://www.transifex.com/projects/p/aesop-"
 "story-engine/language/fr_FR/)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: grunt-wp-i18n 0.4.9\n"
+"X-Generator: grunt-wp-i18n 0.5.0\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
 "X-Poedit-Country: United States\n"
@@ -292,24 +292,21 @@ msgstr "Section citations Aesop"
 
 #: admin/includes/available.php:168
 msgid "Pull Quote"
-msgstr ""
+msgstr "Citation"
 
 #: admin/includes/available.php:172
-#, fuzzy
 msgid "Full Width"
-msgstr "Largeur"
+msgstr "Pleine largeur"
 
 #: admin/includes/available.php:176
-#, fuzzy
 msgid "Quote Styles"
-msgstr "Taille de la citation"
+msgstr "Styles de la citation"
 
 #: admin/includes/available.php:177
-#, fuzzy
 msgid "By default the quote is full width, but you can change that here."
 msgstr ""
-"Par défaut, la citation est centrée mais vous pouvez aussi choisir de "
-"l'avoir aligné à gauche ou à droite."
+"Par défaut, la citation est affichée en pleine largeur mais vous pouvez "
+"modifier ce comportement ici."
 
 #: admin/includes/available.php:182 admin/includes/available.php:296
 msgid "Background Color"
@@ -1490,7 +1487,7 @@ msgstr ""
 "toutes les galeries que vous pourriez avoir. Cliquez <a id=\"aesop-upgrade-"
 "galleries\" href=\"#\">ici</a> pour lancer le processus de mise à jour."
 
-#: admin/includes/components/component-gallery.php:433
+#: admin/includes/components/component-gallery.php:434
 msgid "All done!"
 msgstr "Tout est fait !"
 
@@ -1813,7 +1810,7 @@ msgstr "Ajouter des marqueurs de carte"
 
 #: public/includes/components/component-quote.php:22
 msgid "People are made of stories, not atoms."
-msgstr ""
+msgstr "Les gens sont faits d'histoires, pas d'atomes."
 
 #: public/includes/options.php:14
 msgid ""

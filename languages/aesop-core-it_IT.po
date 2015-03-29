@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-03-16 21:25:42+00:00\n"
-"PO-Revision-Date: 2015-03-10 15:48+0000\n"
-"Last-Translator: FxB <fxb@wp-translations.org>\n"
+"POT-Creation-Date: 2015-03-29 22:37:01+00:00\n"
+"PO-Revision-Date: 2015-03-16 21:25+0000\n"
+"Last-Translator: Aesopinteractive\n"
 "Language-Team: Italian (Italy) (http://www.transifex.com/projects/p/aesop-"
 "story-engine/language/it_IT/)\n"
 "Language: it_IT\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: grunt-wp-i18n 0.4.9\n"
+"X-Generator: grunt-wp-i18n 0.5.0\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
 "X-Poedit-Country: United States\n"
@@ -289,21 +289,16 @@ msgid "Pull Quote"
 msgstr ""
 
 #: admin/includes/available.php:172
-#, fuzzy
 msgid "Full Width"
-msgstr "Larghezza"
+msgstr ""
 
 #: admin/includes/available.php:176
-#, fuzzy
 msgid "Quote Styles"
-msgstr "Dimensione citazione"
+msgstr ""
 
 #: admin/includes/available.php:177
-#, fuzzy
 msgid "By default the quote is full width, but you can change that here."
 msgstr ""
-"Per impostazione predefinita la citazione è centrata ma puoi scegliere di "
-"allinearla anche a sinistra o a destra."
 
 #: admin/includes/available.php:182 admin/includes/available.php:296
 msgid "Background Color"
@@ -1464,7 +1459,7 @@ msgstr ""
 "gallerie che potresti avere. Clicca <a id=\"aesop-upgrade-galleries\" href="
 "\"#\">qui</a> per avviare il processo di aggiornamento."
 
-#: admin/includes/components/component-gallery.php:433
+#: admin/includes/components/component-gallery.php:434
 msgid "All done!"
 msgstr "Operazione completata!"
 
