@@ -148,7 +148,7 @@ class Aesop_Core_Admin {
 
 		$button = apply_filters( 'aesop_generator_button', $getbutton );
 
-		echo esc_html( $button );
+		echo wp_kses( $button );
 
 	}
 
