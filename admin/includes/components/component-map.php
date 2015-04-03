@@ -408,7 +408,7 @@ class AesopMapComponentAdmin {
 
 			$out .= '</p></div>';
 
-			echo esc_html( $out );
+			echo wp_kses( $out );
 
 		}
 	}
@@ -563,7 +563,7 @@ class AesopMapComponentAdmin {
 
 			$out .= '</p></div>';
 
-			echo esc_html( $out );
+			echo wp_kses( $out );
 
 		}
 	}

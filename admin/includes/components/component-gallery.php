@@ -394,7 +394,7 @@ class AesopGalleryComponentAdmin {
 
 			$out .= '</p></div>';
 
-			echo esc_html( $out );
+			echo $out;
 
 		}
 	}

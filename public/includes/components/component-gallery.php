@@ -194,7 +194,7 @@ class AesopCoreGallery {
 						<?php if ( $caption ) { ?>
 							<span class="aesop-grid-gallery-caption"><?php echo aesop_component_media_filter( $caption );?></span>
 						<?php } ?>
-						<span class="clearfix"><?php echo esc_html( $getimage ); ?></span>
+						<span class="clearfix"><?php echo $getimage; ?></span>
 					</a>
 				</li>
 

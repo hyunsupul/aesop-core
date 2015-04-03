@@ -51,7 +51,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 			<?php do_action( 'aesop_image_inside_top' ); // action ?>
 
 			<figure class="aesop-content">
-				<div class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> aesop-image-component-caption-<?php echo sanitize_html_class( $atts['captionposition'] );?>" <?php echo esc_attr( $offsetstyle );?>>
+				<div class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> aesop-image-component-caption-<?php echo sanitize_html_class( $atts['captionposition'] );?>" <?php echo $offsetstyle;?>>
 					<?php
 
 		do_action( 'aesop_image_inner_inside_top' ); // action
@@ -60,12 +60,12 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
 						<a class="aesop-lightbox" href="<?php echo esc_url( $atts['img'] ); ?>" title="<?php echo esc_attr( $atts['caption'] ); ?>">
 							<p class="aesop-img-enlarge"><i class="aesopicon aesopicon-search-plus"></i> <?php _e( 'Enlarge', 'aesop-core' );?></p>
-							<img <?php echo esc_attr( $lazy ); ?> alt="<?php echo esc_attr( $alt );?>">
+							<img <?php echo $lazy; ?> alt="<?php echo esc_attr( $alt );?>">
 						</a>
 
 					<?php } else { ?>
 
-						<img <?php echo esc_attr( $lazy ); ?> alt="<?php echo esc_attr( $alt );?>">
+						<img <?php echo $lazy; ?> alt="<?php echo esc_attr( $alt );?>">
 
 					<?php }
 

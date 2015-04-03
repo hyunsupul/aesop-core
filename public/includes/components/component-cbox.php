@@ -120,7 +120,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 
 		echo do_action( 'aesop_cbox_inside_top' ); // action ?>
 
-					<div id="aesop-content-component-<?php echo esc_attr( $unique ); ?>" class="aesop-content-comp-wrap <?php echo sanitize_html_class( $typeclass ); ?>" <?php echo esc_html( $itemstyle ); ?>>
+					<div id="aesop-content-component-<?php echo esc_attr( $unique ); ?>" class="aesop-content-comp-wrap <?php echo sanitize_html_class( $typeclass ); ?>" <?php echo $itemstyle; ?>>
 
 						<?php echo do_action( 'aesop_cbox_content_inside_top' ); // action
 
@@ -130,7 +130,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 
 						<?php } ?>
 
-						<div class="aesop-component-content-data aesop-content-comp-inner <?php echo sanitize_html_class( $contentwidth ); ?>" <?php echo esc_html( $innerstyle ); ?>>
+						<div class="aesop-component-content-data aesop-content-comp-inner <?php echo sanitize_html_class( $contentwidth ); ?>" <?php echo $innerstyle; ?>>
 
 							<?php echo do_action( 'aesop_cbox_content_inner_inside_top' ); // action ?>
 
