@@ -86,7 +86,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 
 	    	<?php do_action( 'aesop_video_inside_top' ); // action ?>
 
-	    	<div class="aesop-video-container aesop-video-container-<?php echo esc_attr( $unique );?> aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $atts['src'] );?>" <?php echo $widthstyle;?> >
+	    	<div class="aesop-video-container aesop-video-container-<?php echo esc_attr( $unique );?> aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $atts['src'] );?>" <?php echo esc_attr( $widthstyle ); ?>>
 
 				<?php
 		switch ( $atts['src'] ) {
@@ -124,7 +124,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 ?>
 		    </div>
 
-	   	 	<?php echo $caption;
+	   	 	<?php echo esc_html( $caption );
 
 		do_action( 'aesop_video_inside_bottom' ); // action ?>
 		</div>

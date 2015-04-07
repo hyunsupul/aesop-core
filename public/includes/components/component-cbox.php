@@ -82,7 +82,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 
 		do_action( 'aesop_cbox_before' ); // action
 ?>
-				<div <?php echo aesop_component_data_atts( 'content', $unique, $atts, true );?> class="aesop-component aesop-content-component <?php echo sanitize_html_class( $classes ).' '.$has_img. ' '.$has_floater;?>" style="<?php echo $height;?>" >
+				<div <?php echo aesop_component_data_atts( 'content', $unique, $atts, true ); ?> class="aesop-component aesop-content-component <?php echo sanitize_html_class( $classes ) . ' ' . sanitize_html_class( $has_img ) . ' ' . sanitize_html_class( $has_floater ); ?>" style="<?php echo esc_attr( $height ); ?>" >
 
 					<?php if ( $atts['floatermedia'] && ! wp_is_mobile() ) { ?>
 						<!-- Aesop Content Component -->
@@ -120,17 +120,17 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 
 		echo do_action( 'aesop_cbox_inside_top' ); // action ?>
 
-					<div id="aesop-content-component-<?php echo $unique;?>" class="aesop-content-comp-wrap <?php echo $typeclass;?>" <?php echo $itemstyle;?>>
+					<div id="aesop-content-component-<?php echo esc_attr( $unique ); ?>" class="aesop-content-comp-wrap <?php echo sanitize_html_class( $typeclass ); ?>" <?php echo $itemstyle; ?>>
 
 						<?php echo do_action( 'aesop_cbox_content_inside_top' ); // action
 
 		if ( $atts['floatermedia'] && ! wp_is_mobile() ) { ?>
 
-							<div class="aesop-content-component-floater <?php echo $floaterposition;?>" data-speed="10"><?php echo aesop_component_media_filter( $atts['floatermedia'] );?></div>
+							<div class="aesop-content-component-floater <?php echo sanitize_html_class( $floaterposition ); ?>" data-speed="10"><?php echo aesop_component_media_filter( esc_html( $atts['floatermedia'] ) );?></div>
 
 						<?php } ?>
 
-						<div class="aesop-component-content-data aesop-content-comp-inner <?php echo $contentwidth;?>" <?php echo $innerstyle;?>>
+						<div class="aesop-component-content-data aesop-content-comp-inner <?php echo sanitize_html_class( $contentwidth ); ?>" <?php echo $innerstyle; ?>>
 
 							<?php echo do_action( 'aesop_cbox_content_inner_inside_top' ); // action ?>
 

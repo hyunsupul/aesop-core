@@ -44,7 +44,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 					<h4 class="aesop-story-collection-title"><span><?php echo esc_html( $atts['title'] );?></span></h4>
 				<?php } ?>
 
-					<div id="aesop-collection-<?php echo $unique;?>" class="aesop-collection-grid clearfix aesop-collection-grid-<?php echo absint( $col );?>col <?php echo sanitize_html_class( $splash_class );?>">
+					<div id="aesop-collection-<?php echo esc_attr( $unique ); ?>" class="aesop-collection-grid clearfix aesop-collection-grid-<?php echo absint( $col );?>col <?php echo sanitize_html_class( $splash_class );?>">
 
 						<?php
 
@@ -73,12 +73,12 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 
 					foreach ( $cats as $cat ) {
 
-						?><div class="aesop-collection-item aesop-collection-category-<?php echo $cat->slug;?>">
+						?><div class="aesop-collection-item aesop-collection-category-<?php echo esc_attr( $cat->slug ); ?>">
 											<?php do_action( 'aesop_collection_inside_category_item_top' ); // action ?>
 											<a class="aesop-collection-item-link" href="<?php echo get_category_link( $cat->term_id );?>">
 												<div class="aesop-collection-item-inner">
-													<h2 class="aesop-collection-entry-title" itemprop="title"><?php echo $cat->name;?></h2>
-													<div class="aesop-collection-item-excerpt"><?php echo $cat->category_description;?></div>
+													<h2 class="aesop-collection-entry-title" itemprop="title"><?php echo esc_html( $cat->name ); ?></h2>
+													<div class="aesop-collection-item-excerpt"><?php echo esc_html( $cat->category_description ); ?></div>
 												</div>
 												<div class="aesop-collection-item-img"></div>
 											</a>
@@ -121,7 +121,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 												<p class="aesop-collection-meta">Written by <?php echo get_the_author();?></p>
 												<div class="aesop-collection-item-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 22, '...' );?></div>
 											</div>
-											<div class="aesop-collection-item-img" style="background-image:url(<?php echo $coverimg[0];?>);background-repeat:no-repeat;background-size:cover;"></div>
+											<div class="aesop-collection-item-img" style="background-image:url(<?php echo esc_url( $coverimg[0] ); ?>);background-repeat:no-repeat;background-size:cover;"></div>
 										</a>
 										<?php do_action( 'aesop_collection_inside_item_bottom' ); // action ?>
 									</div>
