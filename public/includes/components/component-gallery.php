@@ -81,7 +81,8 @@ class AesopCoreGallery {
 			}
 
 			// provide the edit link to the backend edit if Aesop Editor is not active
-			if ( ! class_exists( 'Lasso' ) && is_user_logged_in() && current_user_can( 'edit_post', get_the_ID() ) ) {
+			if ( ! function_exists( 'lasso_editor_components' ) && is_user_logged_in() && current_user_can( 'edit_post', get_the_ID() ) ) {
+
 				$url = admin_url( 'post.php?post='.$gallery_id.'&action=edit' );
 				$edit_gallery = __( 'edit gallery', 'aesop-core' );
 				printf( '<a class="aesop-gallery-edit aesop-content" href="%s" target="_blank" title="%s">(%s)</a>', $url, $edit_gallery, $edit_gallery );
@@ -90,7 +91,7 @@ class AesopCoreGallery {
 
 		if ( empty( $gallery_id ) && is_user_logged_in() && current_user_can( 'edit_post', get_the_ID() ) ) {
 
-			if ( class_exists( 'Lasso' ) ) {
+			if ( function_exists( 'lasso_editor_components' ) ) {
 
 				?><div contenteditable="false" class="lasso--empty-component"><?php
 				_e( 'Setup a gallery by clicking the <span class="lasso-icon-gear"></span> icon above.', 'aesop-core' );
