@@ -47,11 +47,11 @@ class AesopCoreGallery {
 
 		ob_start();
 
-		do_action( 'aesop_gallery_before', $type, $gallery_id ); // action
+		do_action( 'aesop_gallery_before', $type, $gallery_id, $atts, $unique ); // action
 
 		?><div id="aesop-gallery-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'gallery', $gallery_id, $atts );?> class="aesop-component aesop-gallery-component aesop-<?php echo esc_attr( $type );?>-gallery-wrap <?php if ( empty( $gallery_id ) ) { echo 'empty-gallery'; }?> "><?php
 
-		do_action( 'aesop_gallery_inside_top', $type, $gallery_id ); // action
+		do_action( 'aesop_gallery_inside_top', $type, $gallery_id, $atts, $unique ); // action
 
 		if ( ! empty( $image_ids ) ) {
 
@@ -106,11 +106,11 @@ class AesopCoreGallery {
 			}
 		}
 
-		do_action( 'aesop_gallery_inside_bottom', $type, $gallery_id ); // action
+		do_action( 'aesop_gallery_inside_bottom', $type, $gallery_id, $atts, $unique ); // action
 
 		?></div><?php
 
-		do_action( 'aesop_gallery_after', $type, $gallery_id ); // action
+		do_action( 'aesop_gallery_after', $type, $gallery_id, $atts, $unique ); // action
 
 		return ob_get_clean();
 
