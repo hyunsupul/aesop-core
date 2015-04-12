@@ -214,24 +214,26 @@ class AesopCoreGallery {
 	 */
 	public function aesop_stacked_gallery( $image_ids, $unique ) {
 
-?>
-		<!-- Aesop Stacked Gallery -->
-		<script>
-		jQuery(document).ready(function($){
+		?>
+			<!-- Aesop Stacked Gallery -->
+			<script>
 
-			var stackedResizer = function(){
-				$('.aesop-stacked-img').css({'height':($(window).height())+'px'});
-			}
-			stackedResizer();
+				jQuery(document).ready(function($){
 
-			$(window).resize(function(){
-				stackedResizer();
-			});
-		});
-		</script>
+					var stackedResizer = function(){
+						$('.aesop-stacked-img').css({'height':($(window).height())+'px'});
+					}
+					stackedResizer();
+
+					$(window).resize(function(){
+						stackedResizer();
+					});
+				});
+
+			</script>
 		<?php
 
-		$stacked_styles = 'background-size:cover;';
+		$stacked_styles = 'background-size:cover;background-position:center center';
 		$styles = apply_filters( 'aesop_stacked_gallery_styles_'.$unique, $stacked_styles );
 
 		// image size
