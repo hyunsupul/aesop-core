@@ -39,13 +39,13 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 
 		ob_start();
 
-		do_action( 'aesop_map_before' );
+		do_action( 'aesop_map_before', $atts, $unique );
 
 		$url    = admin_url( 'post.php?post='.get_the_ID().'&action=edit' );
 		$edit_map   = __( 'Add Map Markers', 'aesop-core' );
 		$add_markers  = sprintf( '<a href="%s" target="_blank" title="%s">(%s)</a>', $url, $edit_map, $edit_map );
 
-		if ( empty( $markers ) && is_user_logged_in() && current_user_can( 'edit_posts' ) && ! function_exists( 'lasso_editor_components' ) ) {
+		if ( empty( $markers ) && is_user_logged_in() && current_user_can( 'edit_post', get_the_ID() ) && ! function_exists( 'lasso_editor_components' ) ) {
 
 			?><div class="aesop-error aesop-content"><?php
 			_e( 'Add some markers '.$add_markers.' to activate the map.', 'aesop-core' );
@@ -96,7 +96,7 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 		endif;
 
 		?></div><?php
-		do_action( 'aesop_map_before' );
+		do_action( 'aesop_map_before', $atts, $unique );
 
 		return ob_get_clean();
 	}

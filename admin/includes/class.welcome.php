@@ -89,6 +89,11 @@ class aesopCoreWelcome {
 			   		<p><?php _e( 'Browse our growing library of', 'aesop-core' );?> <a href="http://aesopstoryengine.com/library/category/themes" target="_blank"><?php _e( 'themes', 'aesop-core' );?></a> and <a href="http://aesopstoryengine.com/library/category/add-ons"><?php _e( 'addons', 'aesop-core' );?></a> <?php _e( 'built specifically for Aesop Story Engine.', 'aesop-core' );?></p>
 				</div>
 
+			   	<div class="aesop--welcome__section aesop--welcome__section--addons">
+			   		<h2><?php _e( 'Simpler, Faster, Easier Writing in WordPress', 'aesop-core' );?></h2>
+			   		<p><?php _e( 'Stop wasting time constantly previewing your post, and edit and create from the front-end of your site with Lasso, our front-end editor that goes perfectly with Aesop Story Engine. Visit the site and enter your email for a 25% discount!', 'aesop-core' );?> <a href="https://lasso.is/?utm_source=aesop-plugin&utm_medium=banner&utm_campaign=aesop-plugin" target="_blank"><?php _e( 'Read More...', 'aesop-core' );?></a></p>
+				</div>
+
 		  	</div>
 	 	<?php
 	}

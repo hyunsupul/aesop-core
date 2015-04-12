@@ -47,11 +47,11 @@ class AesopCoreGallery {
 
 		ob_start();
 
-		do_action( 'aesop_gallery_before', $type, $gallery_id ); // action
+		do_action( 'aesop_gallery_before', $type, $gallery_id, $atts, $unique ); // action
 
 		?><div id="aesop-gallery-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'gallery', $gallery_id, $atts );?> class="aesop-component aesop-gallery-component aesop-<?php echo esc_attr( $type );?>-gallery-wrap <?php if ( empty( $gallery_id ) ) { echo 'empty-gallery'; }?> "><?php
 
-		do_action( 'aesop_gallery_inside_top', $type, $gallery_id ); // action
+		do_action( 'aesop_gallery_inside_top', $type, $gallery_id, $atts, $unique ); // action
 
 		if ( ! empty( $image_ids ) ) {
 
@@ -82,7 +82,7 @@ class AesopCoreGallery {
 
 			// provide the edit link to the backend edit if Aesop Editor is not active
 
-			if ( ! function_exists( 'lasso_editor_components' ) && is_user_logged_in() && current_user_can( 'edit_post', $gallery_id ) ) {
+			if ( ! function_exists( 'lasso_editor_components' ) && is_user_logged_in() && current_user_can( 'edit_post', get_the_ID() ) ) {
 
 				$url = admin_url( 'post.php?post='.$gallery_id.'&action=edit' );
 				$edit_gallery = __( 'edit gallery', 'aesop-core' );
@@ -107,11 +107,11 @@ class AesopCoreGallery {
 			}
 		}
 
-		do_action( 'aesop_gallery_inside_bottom', $type, $gallery_id ); // action
+		do_action( 'aesop_gallery_inside_bottom', $type, $gallery_id, $atts, $unique ); // action
 
 		?></div><?php
 
-		do_action( 'aesop_gallery_after', $type, $gallery_id ); // action
+		do_action( 'aesop_gallery_after', $type, $gallery_id, $atts, $unique ); // action
 
 		return ob_get_clean();
 
@@ -215,24 +215,26 @@ class AesopCoreGallery {
 	 */
 	public function aesop_stacked_gallery( $image_ids, $unique ) {
 
-?>
-		<!-- Aesop Stacked Gallery -->
-		<script>
-		jQuery(document).ready(function($){
+		?>
+			<!-- Aesop Stacked Gallery -->
+			<script>
 
-			var stackedResizer = function(){
-				$('.aesop-stacked-img').css({'height':($(window).height())+'px'});
-			}
-			stackedResizer();
+				jQuery(document).ready(function($){
 
-			$(window).resize(function(){
-				stackedResizer();
-			});
-		});
-		</script>
+					var stackedResizer = function(){
+						$('.aesop-stacked-img').css({'height':($(window).height())+'px'});
+					}
+					stackedResizer();
+
+					$(window).resize(function(){
+						stackedResizer();
+					});
+				});
+
+			</script>
 		<?php
 
-		$stacked_styles = 'background-size:cover;';
+		$stacked_styles = 'background-size:cover;background-position:center center';
 		$styles = apply_filters( 'aesop_stacked_gallery_styles_'.$unique, $stacked_styles );
 
 		// image size

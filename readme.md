@@ -1,3 +1,4 @@
+[![Build Status](https://scrutinizer-ci.com/g/bearded-avenger/aesop-core/badges/build.png?b=release%2F1.5.1)](https://scrutinizer-ci.com/g/bearded-avenger/aesop-core/build-status/release/1.5.1)[![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg?style=flat-square)](http://www.gnu.org/licenses/gpl-2.0.html)[![Tool](https://img.shields.io/badge/wp--translations-used-brightgreen.svg?style=flat-square)](http://wp-translations.org)
 # Description
 Aesop Story Engine is an open-sourced suite of tools that empower developers to build feature-rich, interactive, long-form stories within Wordpress. ASE is the same engine that drives the storytelling experience through our hosted platform at [Story.AM](https://story.am).
 
@@ -48,29 +49,42 @@ Interactive elements are created while crafting stories, with the Story Componen
 ---
 
 ### Changelog
-See [https://github.com/bearded-avenger/aesop-core/releases](https://github.com/bearded-avenger/aesop-core/releases)
+See [https://github.com/bearded-avenger/aesop-core/releases](https://github.com/bearded-avenger/aesop-core/releases) for more.
 
 ---
 
 ### Translations
-Aesop Story Engine is currently available in 17 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
-* Deutsch (German)
+Aesop Story Engine is currently available in 30 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
+* Български (Bulgarian)
 * čeština‎ (Czech)
-* Ελληνικά (Greek)
-* Español (Spanish (Spain))
+* 中文 (Chinese (China))
+* Dansk (Danish)
+* Nederlands (Dutch)
+* English (US)
+* Suomi (Finnish)
 * Français (French (France))
+* Deutsch (German)
+* Ελληνικά (Greek)
 * עִבְרִית (Hebrew)
+* Magyar (Hungarian)
 * Italiano (Italian)
 * 日本語 (Japanese)
-* Nederlands (Dutch)
+* ភាសាខ្មែរ (Khmer)
+* 한국어 (Korean)
+* Bokmål (Norwegian)
+* فارسی (Persian)
 * Polski (Polish)
 * Português do Brasil (Portuguese (Brazil))
 * Română (Romanian)
 * Русский (Russian)
-* Slovenčina (Slovak)
 * Српски језик (Serbian)
+* Slovenčina (Slovak)
+* slovenščina (Slovenian)
+* Español (Spanish (Argentina))
+* Español (Spanish (Spain))
+* ไทย (Thai)
 * Türkçe (Turkish)
-* 中文 (Chinese (China)
+* Tiếng Việt (Vietnamese)
 
 ---
 

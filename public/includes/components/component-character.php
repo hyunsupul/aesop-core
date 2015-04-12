@@ -40,16 +40,17 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
 		// character wrap
 		ob_start();
 
-		do_action( 'aesop_character_before' ); // action
-?>
+		do_action( 'aesop_character_before', $atts, $unique ); // action
+
+			?>
 				<aside id="aesop-character-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'character', $unique, $atts );?> class="aesop-character-component aesop-component <?php echo sanitize_html_class( $classes ).''.sanitize_html_class( $float );?> ">
 
-					<?php do_action( 'aesop_character_inside_top' ); // action ?>
+					<?php do_action( 'aesop_character_inside_top', $atts, $unique ); // action ?>
 
 					<div class="aesop-character-inner aesop-content">
 						<div class="aesop-character-float aesop-character-<?php echo esc_attr( $atts['align'] );?>" <?php echo $styles;?>>
 
-							<?php do_action( 'aesop_character_inner_inside_top' ); // action ?>
+							<?php do_action( 'aesop_character_inner_inside_top', $atts, $unique ); // action ?>
 
 							<?php if ( $atts['name'] ) {?>
 								<span class="aesop-character-title"><?php echo aesop_component_media_filter( $atts['name'] );?></span>
@@ -67,17 +68,17 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
 								<p class="aesop-character-cap"><?php echo aesop_component_media_filter( $atts['caption'] );?></p>
 							<?php } ?>
 
-							<?php do_action( 'aesop_character_inner_inside_bottom' ); // action  ?>
+							<?php do_action( 'aesop_character_inner_inside_bottom', $atts, $unique ); // action  ?>
 
 						</div>
 					</div>
 
-					<?php do_action( 'aesop_character_inside_bottom' ); // action ?>
+					<?php do_action( 'aesop_character_inside_bottom', $atts, $unique ); // action ?>
 
 				</aside>
 			<?php
 
-		do_action( 'aesop_character_after' ); // action
+		do_action( 'aesop_character_after', $atts, $unique ); // action
 
 		return ob_get_clean();
 	}

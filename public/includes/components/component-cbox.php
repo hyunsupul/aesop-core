@@ -80,76 +80,76 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 
 		ob_start();
 
-		do_action( 'aesop_cbox_before' ); // action
+		do_action( 'aesop_cbox_before', $atts, $unique ); // action
 ?>
-				<div <?php echo aesop_component_data_atts( 'content', $unique, $atts, true );?> class="aesop-component aesop-content-component <?php echo sanitize_html_class( $classes ).' '.$has_img. ' '.$has_floater;?>" style="<?php echo $height;?>" >
+		<div <?php echo aesop_component_data_atts( 'content', $unique, $atts, true );?> class="aesop-component aesop-content-component <?php echo sanitize_html_class( $classes ).' '.$has_img. ' '.$has_floater;?>" style="<?php echo $height;?>" >
 
-					<?php if ( $atts['floatermedia'] && ! wp_is_mobile() ) { ?>
-						<!-- Aesop Content Component -->
-						<script>
-						jQuery(document).ready(function($){
+			<?php if ( $atts['floatermedia'] && ! wp_is_mobile() ) { ?>
+				<!-- Aesop Content Component -->
+				<script>
+				jQuery(document).ready(function($){
 
-							var obj = $('#aesop-content-component-<?php echo esc_attr( $unique );?> .aesop-content-component-floater');
+					var obj = $('#aesop-content-component-<?php echo esc_attr( $unique );?> .aesop-content-component-floater');
 
-					       	function scrollParallax(){
+			       	function scrollParallax(){
 
-					       	    var height 			= $(obj).height(),
-	    	        				offset 			= $(obj).offset().top,
-						       	    scrollTop 		= $(window).scrollTop(),
-						       	    windowHeight 	= $(window).height(),
-						       	    floater 		= Math.round( (offset - scrollTop) * 0.1);
+			       	    var height 			= $(obj).height(),
+	        				offset 			= $(obj).offset().top,
+				       	    scrollTop 		= $(window).scrollTop(),
+				       	    windowHeight 	= $(window).height(),
+				       	    floater 		= Math.round( (offset - scrollTop) * 0.1);
 
-						    	// only run parallax if in view
-					       		if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
-									return;
-								}
+				    	// only run parallax if in view
+			       		if (offset + height <= scrollTop || offset >= scrollTop + windowHeight) {
+							return;
+						}
 
-					       	    <?php if ( 'up' == $atts['floaterdirection'] ) { ?>
-					            	$(obj).css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
-								<?php } else { ?>
-									$(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
-								<?php } ?>
-					       	}
-					      	scrollParallax();
-
-					        $(window).scroll(function() {scrollParallax();});
-						});
-						</script>
-
-					<?php }//end if
-
-		echo do_action( 'aesop_cbox_inside_top' ); // action ?>
-
-					<div id="aesop-content-component-<?php echo $unique;?>" class="aesop-content-comp-wrap <?php echo $typeclass;?>" <?php echo $itemstyle;?>>
-
-						<?php echo do_action( 'aesop_cbox_content_inside_top' ); // action
-
-		if ( $atts['floatermedia'] && ! wp_is_mobile() ) { ?>
-
-							<div class="aesop-content-component-floater <?php echo $floaterposition;?>" data-speed="10"><?php echo aesop_component_media_filter( $atts['floatermedia'] );?></div>
-
+			       	    <?php if ( 'up' == $atts['floaterdirection'] ) { ?>
+			            	$(obj).css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
+						<?php } else { ?>
+							$(obj).css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
 						<?php } ?>
+			       	}
+			      	scrollParallax();
 
-						<div class="aesop-component-content-data aesop-content-comp-inner <?php echo $contentwidth;?>" <?php echo $innerstyle;?>>
+			        $(window).scroll(function() {scrollParallax();});
+				});
+				</script>
 
-							<?php echo do_action( 'aesop_cbox_content_inner_inside_top' ); // action ?>
+			<?php }//end if
 
-								<?php echo do_shortcode( wpautop( html_entity_decode( $content ) ) );?>
+			echo do_action( 'aesop_cbox_inside_top', $atts, $unique ); // action ?>
 
-							<?php echo do_action( 'aesop_cbox_content_inner_inside_bottom' ); // action ?>
+			<div id="aesop-content-component-<?php echo $unique;?>" class="aesop-content-comp-wrap <?php echo $typeclass;?>" <?php echo $itemstyle;?>>
 
-						</div>
+				<?php echo do_action( 'aesop_cbox_content_inside_top', $atts, $unique ); // action
 
-						<?php echo do_action( 'aesop_cbox_content_inside_bottom' ); // action ?>
+				if ( $atts['floatermedia'] && ! wp_is_mobile() ) { ?>
 
-					</div>
+					<div class="aesop-content-component-floater <?php echo $floaterposition;?>" data-speed="10"><?php echo aesop_component_media_filter( $atts['floatermedia'] );?></div>
 
-					<?php echo do_action( 'aesop_cbox_inside_bottom' ); // action ?>
+				<?php } ?>
+
+				<div class="aesop-component-content-data aesop-content-comp-inner <?php echo $contentwidth;?>" <?php echo $innerstyle;?>>
+
+					<?php echo do_action( 'aesop_cbox_content_inner_inside_top', $atts, $unique ); // action ?>
+
+						<?php echo do_shortcode( wpautop( html_entity_decode( $content ) ) );?>
+
+					<?php echo do_action( 'aesop_cbox_content_inner_inside_bottom' , $atts, $unique); // action ?>
+
+				</div>
+
+				<?php echo do_action( 'aesop_cbox_content_inside_bottom', $atts, $unique ); // action ?>
+
+			</div>
+
+			<?php echo do_action( 'aesop_cbox_inside_bottom', $atts, $unique ); // action ?>
 
 				</div>
 			<?php
 
-		do_action( 'aesop_cbox_after' ); // action
+		do_action( 'aesop_cbox_after', $atts, $unique ); // action
 
 		return ob_get_clean();
 	}

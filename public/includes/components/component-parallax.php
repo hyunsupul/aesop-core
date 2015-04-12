@@ -39,47 +39,57 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 		// automatically provide an alt tag for the image based on the name of the image file
 		$auto_alt  = $atts['img'] ? basename( $atts['img'] ) : null;
 
+		$floater_direction = $atts['floaterdirection'] ? $atts['floaterdirection'] : 'up';
+
 		ob_start();
 
-		do_action( 'aesop_parallax_before' ); // action
+		do_action( 'aesop_parallax_before', $atts, $unique ); // action
 
 		?><div id="aesop-parallax-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'parallax', $unique, $atts );?> class="aesop-component aesop-parallax-component <?php echo sanitize_html_class( $classes );?>"><?php
 
-		do_action( 'aesop_parallax_inside_top' ); // action
+			do_action( 'aesop_parallax_inside_top', $atts, $unique ); // action ?>
 
-		// only run parallax if not on mobile and parallax is on
-		if ( ! wp_is_mobile() && ( 'on' == $atts['parallaxbg'] || 'on' == $atts['floater'] ) ) { ?>
 			<script>
 				jQuery(document).ready(function($){
 
-					<?php if ( 'on' == $atts['parallaxbg'] ) { ?>
+					var img 	  = $('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-img')
+					, 	setHeight = function() {
 
-						var img 	  = $('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-img')
-						, 	setHeight = function() {
+							img.parent().imagesLoaded( function() {
 
-								img.parent().imagesLoaded( function() {
+								var imgHeight 		= img.height()
+								,	imgCont     	= img.parent()
 
-									var imgHeight 		= img.height()
-									,	imgCont     	= img.parent()
+								<?php if( 'off' == $atts['parallaxbg'] ) { ?>
+
+									imgCont.css('height', imgHeight)
+
+								<?php } else { ?>
 
 									imgCont.css('height',Math.round(imgHeight * 0.69))
 
 									if ( $(window).height < 760 ) {
 										imgCont.css('height',Math.round(imgHeight * 0.65))
 									}
-								});
 
-							}
+								<?php } ?>
+							});
 
+						}
+
+					setHeight();
+
+					$(window).resize(function(){
 						setHeight();
+					})
 
-						$(window).resize(function(){
-							setHeight();
-						})
+					<?php if ( ! wp_is_mobile() && ( 'on' == $atts['parallaxbg'] || 'on' == $atts['floater'] ) ) {
 
-			   			img.parallax({speed: 0.1});
+						if ( 'on' == $atts['parallaxbg'] ) { ?>
 
-	        			<?php }//end if
+				   			img.parallax({speed: 0.1});
+
+		        		<?php }//end if
 
 						if ( 'on' == $atts['floater'] ) { ?>
 
@@ -97,35 +107,47 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 									return;
 								}
 
-					       	    <?php if ( 'left' == $atts['floaterdirection'] || 'right' == $atts['floaterdirection'] ) {
+					       	<?php if ( 'left' == $floater_direction || 'right' == $floater_direction ) {
 
-							if ( 'left' == $atts['floaterdirection'] ) { ?>
-						            		obj.css({'transform':'translate3d(' + floater + 'px, 0px, 0px)'});
-						            	<?php } else { ?>
-											obj.css({'transform':'translate3d(-' + floater + 'px, 0px, 0px)'});
-						            	<?php }
+								if ( 'left' == $floater_direction ) { ?>
+
+				            		obj.css({'transform':'translate3d(' + floater + 'px, 0px, 0px)'});
+
+				            	<?php } else { ?>
+
+									obj.css({'transform':'translate3d(-' + floater + 'px, 0px, 0px)'});
+
+				            	<?php }
 
 							} else {
 
-							if ( 'up' == $atts['floaterdirection'] ) { ?>
-						            		obj.css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
-										<?php } else { ?>
-											obj.css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
-										<?php }
+								if ( 'up' == $floater_direction ) { ?>
+
+				            		obj.css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
+
+								<?php } else { ?>
+
+									obj.css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
+
+								<?php }
+
 							} ?>
-					   	}
+
+					   	} // end if on floater
 
 				    	scrollParallax();
-				    	$(window).scroll(function() {scrollParallax();});
+				    	$(window).scroll(function() { scrollParallax(); });
 
-				    <?php }//end if ?>
-				});
+					    <?php }//end on floater
+
+					} //end if is not mobile and parallax is on ?>
+
+				}); // end jquery doc ready
 			</script>
-		<?php }//end if ?>
 
 			<figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>">
 
-				<?php do_action( 'aesop_parallax_inner_inside_top' ); // action ?>
+				<?php do_action( 'aesop_parallax_inner_inside_top', $atts, $unique ); // action ?>
 
 				<?php if ( 'on' == $atts['floater'] ) {?>
 					<div class="aesop-parallax-sc-floater floater-<?php echo sanitize_html_class( $atts['floaterposition'] );?>" data-speed="10">
@@ -145,15 +167,15 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 					</figcaption>
 				<?php } ?>
 
-				<?php do_action( 'aesop_parallax_inner_inside_bottom' ); // action ?>
+				<?php do_action( 'aesop_parallax_inner_inside_bottom', $atts, $unique ); // action ?>
 
 			</figure>
 
-			<?php do_action( 'aesop_parallax_inside_bottom' ); // action ?>
+			<?php do_action( 'aesop_parallax_inside_bottom', $atts, $unique ); // action ?>
 
 		</div>
 
-		<?php do_action( 'aesop_parallax_after' ); // action
+		<?php do_action( 'aesop_parallax_after', $atts, $unique ); // action
 
 		return ob_get_clean();
 	}

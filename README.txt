@@ -5,7 +5,7 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.1.1
+Tested up to: 4.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -99,24 +99,38 @@ All components are pluggable, and there are ample filters and actions to manipul
 If you think something is missing, we want to hear from you. Post your request and bugs on [Github](https://github.com/bearded-avenger/aesop-core).
 
 = Languages =
-Aesop Story Engine is currently available in 17 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
-* Deutsch (German)
+Aesop Story Engine is currently available in 30 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
+
+* Български (Bulgarian)
 * čeština‎ (Czech)
-* Ελληνικά (Greek)
-* Español (Spanish (Spain))
+* 中文 (Chinese (China)) 
+* Dansk (Danish) 
+* Nederlands (Dutch) 
+* English (US) 
+* Suomi (Finnish)
 * Français (French (France))
+* Deutsch (German)
+* Ελληνικά (Greek)
 * עִבְרִית (Hebrew)
+* Magyar (Hungarian)
 * Italiano (Italian)
 * 日本語 (Japanese)
-* Nederlands (Dutch)
+* ភាសាខ្មែរ (Khmer)
+* 한국어 (Korean)
+* Bokmål (Norwegian)
+* فارسی (Persian)
 * Polski (Polish)
 * Português do Brasil (Portuguese (Brazil))
 * Română (Romanian)
 * Русский (Russian)
-* Slovenčina (Slovak)
 * Српски језик (Serbian)
+* Slovenčina (Slovak)
+* slovenščina (Slovenian)
+* Español (Spanish (Argentina))
+* Español (Spanish (Spain))
+* ไทย (Thai)
 * Türkçe (Turkish)
-* 中文 (Chinese (China)
+* Tiếng Việt (Vietnamese)
 
 == Installation ==
 
@@ -159,6 +173,16 @@ Full documentation can be found below.
 * Initial Release
 
 == Changelog ==
+
+= 1.6 =
+* FIX - PHP notice being triggered from not padding in an ID for current_user_can('edit_post')
+* FIX - Better detection of Lasso being activated due to autoloaders in Lasso
+* FIX - Fixed the quote cite markup being escaped, thus not being styled correctly
+* FIX - Height not triggering correctly on Parallax component if Parallax is set to off
+* TWEAK - Height of the parallax component now respects height of image if parallax is set to off
+* TWEAK - Improved the responsive nature of the stacked gallery component
+* TWEAK - All actions now have $atts and $unique attributes added for fine grain control over adding things to specific components
+* TRANSLATIONS - Added Bulgarian, China, Danish, Dutch, Finissh, German, Greek, Hungarian, Khmer, Korean, Norwegian, Persian, Slovak, Slovenian, Spanish Argentina, Spanish Spain, Thai, Vietnames - Aesop is now available in 29 languates thanks to WP Translations!
 
 = 1.5.2 =
 * FIX - Fixed an issue with the Photoset gallery breaking with the last update
