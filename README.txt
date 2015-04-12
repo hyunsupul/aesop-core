@@ -5,7 +5,7 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.1.1
+Tested up to: 4.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -173,6 +173,16 @@ Full documentation can be found below.
 * Initial Release
 
 == Changelog ==
+
+= 1.6 =
+* FIX - PHP notice being triggered from not padding in an ID for current_user_can('edit_post')
+* FIX - Better detection of Lasso being activated due to autoloaders in Lasso
+* FIX - Fixed the quote cite markup being escaped, thus not being styled correctly
+* FIX - Height not triggering correctly on Parallax component if Parallax is set to off
+* TWEAK - Height of the parallax component now respects height of image if parallax is set to off
+* TWEAK - Improved the responsive nature of the stacked gallery component
+* TWEAK - All actions now have $atts and $unique attributes added for fine grain control over adding things to specific components
+* TRANSLATIONS - Added Bulgarian, China, Danish, Dutch, Finissh, German, Greek, Hungarian, Khmer, Korean, Norwegian, Persian, Slovak, Slovenian, Spanish Argentina, Spanish Spain, Thai, Vietnames - Aesop is now available in 29 languates thanks to WP Translations!
 
 = 1.5.2 =
 * FIX - Fixed an issue with the Photoset gallery breaking with the last update
