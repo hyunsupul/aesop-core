@@ -46,40 +46,40 @@ if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
 
 		?><aside id="aesop-audio-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'audio', $unique, $atts );?> class="aesop-component aesop-audio-component <?php echo sanitize_html_class( $classes );?>" <?php echo esc_attr( $hidden );?>>
 
-					<?php if ( 'on' == $atts['viewstart'] ) { ?>
-						<script>
-						jQuery(document).ready(function($){
-							$('#aesop-audio-<?php echo esc_attr( $unique );?>').arrive('.mejs-audio', function(){
+			<?php if ( 'on' == $atts['viewstart'] ) { ?>
+				<script>
+				jQuery(document).ready(function($){
+					$('#aesop-audio-<?php echo esc_attr( $unique );?>').arrive('.mejs-audio', function(){
 
-								$('#aesop-audio-<?php echo esc_attr( $unique );?>').waypoint({
-									offset: '<?php echo esc_attr( $waypoint );?>',
-									handler: function(direction){
-										$('#aesop-audio-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
-									}
-								});
+						$('#aesop-audio-<?php echo esc_attr( $unique );?>').waypoint({
+							offset: '<?php echo esc_attr( $waypoint );?>',
+							handler: function(direction){
+								$('#aesop-audio-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
+							}
+						});
 
-								<?php if ( 'on' == $atts['viewend'] ) { ?>
-								$('#aesop-audio-<?php echo esc_attr( $unique );?>').waypoint({
-									handler: function(direction){
-										$('#aesop-audio-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
-									}
-								});
-								<?php } ?>
+						<?php if ( 'on' == $atts['viewend'] ) { ?>
+						$('#aesop-audio-<?php echo esc_attr( $unique );?>').waypoint({
+							handler: function(direction){
+								$('#aesop-audio-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').css({'cursor':'pointer'}).click();
+							}
+						});
+						<?php } ?>
 
-								});
-							});
-						</script>
-					<?php }//end if
+						});
+					});
+				</script>
+			<?php }//end if
 
-		do_action( 'aesop_audio_inside_top', $atts, $unique ); // action
+			do_action( 'aesop_audio_inside_top', $atts, $unique ); // action
 
-		if ( $title ) {
-			echo aesop_component_media_filter( $title );
-		}
+			if ( $title ) {
+				echo aesop_component_media_filter( $title );
+			}
 
-		echo wp_audio_shortcode( array( 'src' => $atts['src'], 'loop' => $loop ) );
+			echo wp_audio_shortcode( array( 'src' => $atts['src'], 'loop' => $loop ) );
 
-		do_action( 'aesop_audio_inside_bottom', $atts, $unique ); // action
+			do_action( 'aesop_audio_inside_bottom', $atts, $unique ); // action
 
 		?></aside><?php
 
