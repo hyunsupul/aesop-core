@@ -35,7 +35,7 @@ class aesopCoreWelcome {
 		}
 
 		// Redirect to bbPress about page
-		wp_safe_redirect( add_query_arg( array( 'page' => 'aesop-welcome-screen' ), admin_url( 'index.php' ) ) );
+		wp_safe_redirect( esc_url_raw( add_query_arg( array( 'page' => 'aesop-welcome-screen' ), admin_url( 'index.php' ) ) ) );
 
 	}
 
