@@ -174,6 +174,9 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.6.1 =
+* FIX - Patched XSS vulnerability with not properly escaping add_query_arg(). Only an attacker with admin priveledged would have been able to take advantage of this vulnerability.
+
 = 1.6 =
 * FIX - PHP notice being triggered from not padding in an ID for current_user_can('edit_post')
 * FIX - Better detection of Lasso being activated due to autoloaders in Lasso
