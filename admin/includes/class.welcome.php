@@ -74,7 +74,7 @@ class aesopCoreWelcome {
 					<ul class="aesop--welcome__steps">
 						<li>
 							<strong><?php _e( 'Enable Theme Support', 'aesop-core' );?></strong>
-							<p><?php _e( 'If your theme does not natively support Aesop Story Engine, add the code snippet below to your functions.php file, or add using', 'aesop-core' );?> <a href="https://wordpress.org/plugins/code-snippets/" target="_blank"><?php _e( 'Code Snippets', 'aesop-core' );?></a> <?php _e( 'plugin to enable Extended Style Support. This will load one CSS file for any of the items that you include in the snippet below.', 'aesop-core' );?></p>
+							<p><?php _e( 'If your theme does not natively support Aesop Story Engine, add the code snippet below to your functions.php file, or add using', 'aesop-core' );?> <a href="<?php echo admin_url( 'plugin-install.php?tab=search&s=code+snippets' ) ?>"><?php _e( 'Code Snippets', 'aesop-core’ ) ?></a> <?php _e( 'plugin to enable Extended Style Support. This will load one CSS file for any of the items that you include in the snippet below.', 'aesop-core' );?></p>
 							<pre>add_theme_support("aesop-component-styles", array("parallax", "image", "quote", "gallery", "content", "video", "audio", "collection", "chapter", "document", "character", "map", "timeline" ) );</pre>
 						</li>
 						<li>
