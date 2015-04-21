@@ -103,10 +103,10 @@ Aesop Story Engine is currently available in 30 languages. We work closely with 
 
 * Български (Bulgarian)
 * čeština‎ (Czech)
-* 中文 (Chinese (China)) 
-* Dansk (Danish) 
-* Nederlands (Dutch) 
-* English (US) 
+* 中文 (Chinese (China))
+* Dansk (Danish)
+* Nederlands (Dutch)
+* English (US)
 * Suomi (Finnish)
 * Français (French (France))
 * Deutsch (German)
@@ -185,7 +185,7 @@ Full documentation can be found below.
 * TWEAK - Height of the parallax component now respects height of image if parallax is set to off
 * TWEAK - Improved the responsive nature of the stacked gallery component
 * TWEAK - All actions now have $atts and $unique attributes added for fine grain control over adding things to specific components
-* TRANSLATIONS - Added Bulgarian, China, Danish, Dutch, Finissh, German, Greek, Hungarian, Khmer, Korean, Norwegian, Persian, Slovak, Slovenian, Spanish Argentina, Spanish Spain, Thai, Vietnames - Aesop is now available in 29 languates thanks to WP Translations!
+* TRANSLATIONS - Added Bulgarian, Chinese, Danish, Dutch, Finnish, German, Greek, Hungarian, Khmer, Korean, Norwegian, Persian, Slovak, Slovenian, Spanish (Argentina), Spanish (Spain), Thai, and Vietnamese. Aesop is now available in 29 languages thanks to WP Translations!
 
 = 1.5.2 =
 * FIX - Fixed an issue with the Photoset gallery breaking with the last update
