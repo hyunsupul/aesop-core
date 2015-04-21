@@ -15,7 +15,7 @@ Suite of components that enables the creation of interactive longform stories in
 
 == Description ==
 
-The Aesop Story Engine is a suite of open-sourced tools and components that empower developers and writers to build feature-rich, interactive, long-form storytelling themes for WordPress. At the heart of ASE are the suite of storytelling components, which are created on the fly while crafting posts within WordPress.
+Aesop Story Engine is a suite of open-sourced tools and components that empowers developers and writers to build feature-rich, interactive, long-form storytelling themes for WordPress. At the heart of ASE are the suite of storytelling components, which are created on the fly while crafting posts within WordPress.
 
 [http://aesopstoryengine.com](http://aesopstoryengine.com)
 
@@ -174,8 +174,14 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.6.2 =
+* NEW - Contributor guidelines
+* FIX - Master branch of ASE is linked correctly to Scrutinizer in readme.md
+* FIX - Typo in 1.6.1 changelog
+* TWEAK - Removed iframe border around Kickstarter videos
+
 = 1.6.1 =
-* FIX - Patched XSS vulnerability with not properly escaping add_query_arg(). Only an attacker with admin priveledged would have been able to take advantage of this vulnerability.
+* FIX - Patched XSS vulnerability with not properly escaping add_query_arg(). Only an attacker with admin privileges would have been able to take advantage of this vulnerability.
 
 = 1.6 =
 * FIX - PHP notice being triggered from not padding in an ID for current_user_can('edit_post')
