@@ -5,13 +5,13 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.0
+Tested up to: 4.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
-Suite of components that enables the creation of interactive longform stories WordPress.
+Suite of components that enables the creation of interactive longform stories in WordPress.
 
 == Description ==
 
@@ -55,7 +55,7 @@ This component allows you to create a map for your story. You can add markers to
 A fullwidth image component with caption and lightbox. As you scroll, the image moves slightly to provide a parallax effect. Includes optional floater parallax item to use for multiple levels of parallax engagement.
 
 **Quote**
-Show a fullwidth quote with large text. Control the color and background of the quote component.
+Show a fullwidth quote with large text, or a standard pull-quote. Control the color and background of the quote component, add parallax effects, and more.
 
 **Timeline**
 Create a story with a timeline that sticks to the bottom. The timeline works a bit like chapters.
@@ -99,21 +99,38 @@ All components are pluggable, and there are ample filters and actions to manipul
 If you think something is missing, we want to hear from you. Post your request and bugs on [Github](https://github.com/bearded-avenger/aesop-core).
 
 = Languages =
-Aesop Story Engine is currently available in 14 languages. We work closely with the folks over at WP Translations, and it's becuase of them that these translations are available.  
-* German
-* Greek
-* Spanish
-* French
-* Japanese
-* Dutch
-* Polish
-* Breton
-* Romanian
-* Russian
-* Slovakian
-* Serbian
-* Turkish
-* Chinese
+Aesop Story Engine is currently available in 30 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
+
+* Български (Bulgarian)
+* čeština‎ (Czech)
+* 中文 (Chinese (China)) 
+* Dansk (Danish) 
+* Nederlands (Dutch) 
+* English (US) 
+* Suomi (Finnish)
+* Français (French (France))
+* Deutsch (German)
+* Ελληνικά (Greek)
+* עִבְרִית (Hebrew)
+* Magyar (Hungarian)
+* Italiano (Italian)
+* 日本語 (Japanese)
+* ភាសាខ្មែរ (Khmer)
+* 한국어 (Korean)
+* Bokmål (Norwegian)
+* فارسی (Persian)
+* Polski (Polish)
+* Português do Brasil (Portuguese (Brazil))
+* Română (Romanian)
+* Русский (Russian)
+* Српски језик (Serbian)
+* Slovenčina (Slovak)
+* slovenščina (Slovenian)
+* Español (Spanish (Argentina))
+* Español (Spanish (Spain))
+* ไทย (Thai)
+* Türkçe (Turkish)
+* Tiếng Việt (Vietnamese)
 
 == Installation ==
 
@@ -157,6 +174,38 @@ Full documentation can be found below.
 
 == Changelog ==
 
+= 1.6.1 =
+* FIX - Patched XSS vulnerability with not properly escaping add_query_arg(). Only an attacker with admin priveledged would have been able to take advantage of this vulnerability.
+
+= 1.6 =
+* FIX - PHP notice being triggered from not padding in an ID for current_user_can('edit_post')
+* FIX - Better detection of Lasso being activated due to autoloaders in Lasso
+* FIX - Fixed the quote cite markup being escaped, thus not being styled correctly
+* FIX - Height not triggering correctly on Parallax component if Parallax is set to off
+* TWEAK - Height of the parallax component now respects height of image if parallax is set to off
+* TWEAK - Improved the responsive nature of the stacked gallery component
+* TWEAK - All actions now have $atts and $unique attributes added for fine grain control over adding things to specific components
+* TRANSLATIONS - Added Bulgarian, China, Danish, Dutch, Finissh, German, Greek, Hungarian, Khmer, Korean, Norwegian, Persian, Slovak, Slovenian, Spanish Argentina, Spanish Spain, Thai, Vietnames - Aesop is now available in 29 languates thanks to WP Translations!
+
+= 1.5.2 =
+* FIX - Fixed an issue with the Photoset gallery breaking with the last update
+* FIX - Added a capability check so admin_notices aren't shown to non-admins
+
+= 1.5.1 =
+* FIX - Massive codebase overhaul bringing Aesop Story Engine close to WordPress VIP plugin standards
+* FIX - Combed through the codebase and removed all unused vars and updated php docs per Scrutinizer
+* FIX - Undefined $classes variable in Quote component
+* FIX - Fixed an issue with the Parallax component where the height would sometimes not be calculated correctly
+* FIX - Added additional logic to the Mapbox upgrade process sent with 1.5 to check for an empty value to ensure better upgrade notifications
+* FIX - Fixed the welcome page on plugin activation not firing correctly
+* ADDED - Added headings to the aesop_component_media_filter
+
+= 1.5 =
+* NEW - Welcome screen on plugin activation
+* NEW - New "Type" option for Quote Component which allows the quote to be displayed as a standard pull quote
+* FIX - Blank map tiles with new Mapbox IDs. Mapbox changed things and now requires a public key for the map tiles. We're using our public key, but have introduced a filter should you need to change this. On this update, we've changed our mapbox id, and have written an upgrade script that will ensure you have a smooth transition in this update
+* FIX - The document component css class has been renamed! This was inevitable. It was mis-labeled as docmument component from day one, so we've fixed it to the proper spelling, of "document" component
+
 = 1.4.2 =
 * NEW - Compatibility with Lasso - our soon to be released front-end editor add-on
 * NEW - Now available in 14 languages - props wp-translations.org
@@ -198,10 +247,10 @@ Full documentation can be found below.
 * NEW - Map component "sticky" mode that changes map markers as you scroll down the story
 * NEW - Map component tile filter aesop_map_tile_provider that allow you to specify a different tile provider per post (or globally) [ref](https://github.com/bearded-avenger/aesop-core/pull/172#issuecomment-63518448)
 * NEW - Components can now be cloned
-* NEW - New filter aesop_quote_component_unit to change unit size of blockquote 
+* NEW - New filter aesop_quote_component_unit to change unit size of blockquote
 * FIXED - All variables now properly escaped within components
 * FIXED - The "used in" column of the Galleries edit screen
-* FIXED - Additional spaces being added on the front end after saving components 
+* FIXED - Additional spaces being added on the front end after saving components
 * FIXED - Timeline scrollnav build failing on certain occassions
 * FIXED - Some parts of the component placeholder highlighting after clicking the edit button
 * FIXED - JS error that shows if the visual editor is turned off in options (props @wavetree)

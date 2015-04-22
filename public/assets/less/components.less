@@ -51,6 +51,7 @@
     position: relative;
     overflow: hidden;
     -webkit-transform: translate3d(0px, 0px, 0px);
+    height:400px;
 
     .aesop-parallax-sc-img {
         background-position: center center;
@@ -263,6 +264,11 @@
             margin-top:25% !important; // overriding JS set by video shortcode
         }
 
+        .wp-video-shortcode {
+            width:100% !important;
+            height:100% !important; // overridin gjs
+        }
+
     }
 
 }
@@ -302,6 +308,7 @@
     .wp-video-shortcode,
     .wp-video {
         width:100% !important;
+        height:100% !important;
         max-width:100% !important;
 
         .mejs-overlay {
@@ -537,6 +544,15 @@
             height:0;
             padding-bottom:56.25%;
         }
+    }
+}
+
+@media(max-width:400px) {
+    .aesop-stacked-img {
+        background-position: bottom center;
+        background-attachment: scroll !important; //overriding inline JS
+        height: 0 !important; //overriding inline JS
+        padding-bottom: 58.25%;
     }
 }
 
