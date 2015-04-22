@@ -3,6 +3,7 @@
     padding:30px;
 
     h2 {
+<<<<<<< HEAD
         color:@text;
     }
 }
@@ -20,6 +21,12 @@
 }
 
 
+=======
+        color:#d6d6d6;
+    }
+}
+
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 #jpb_vscbuttons, #jpb_vscbutton {
     position:absolute;
     z-index:999998;
@@ -28,19 +35,31 @@
 }
 
 #jpb_vscbuttons img, #jpb_vscbutton img {
+<<<<<<< HEAD
     background-color : red;
     border: 1px solid red;
+=======
+    background-color : #eee;
+    border: 1px solid #999;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
     border-radius: 3px;
     margin: 2px;
     padding: 2px;
 }
 
 #jpb_vscbuttons img:hover, #jpb_vscbutton img:hover {
+<<<<<<< HEAD
     background-color: red;
     border-color: red;
 }
 
 
+=======
+    background-color: #ccc;
+    border-color: #555;
+}
+
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 // hide select
 .dk_toggle {
     display: none !important;
@@ -57,7 +76,11 @@
 
     li {
         margin:0;
+<<<<<<< HEAD
         width:25%;
+=======
+        width:33.333%;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
         display: inline-block;
         vertical-align: top;
 
@@ -71,11 +94,15 @@
             padding: 20px 10px;
             cursor: pointer;
             text-decoration: none;
+<<<<<<< HEAD
             font-weight:bold;
+=======
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
             &:before {
                 content:'';
                 font-family: Dashicons;
+<<<<<<< HEAD
                 font-size: 34px;
                 font-weight:normal;
                 position: relative;
@@ -83,6 +110,13 @@
                 display: block;
                 width: 100%;
                 color:lighten(@text,5);
+=======
+                font-size: 40px;
+                position: relative;
+                margin: 20px auto 30px;
+                display: block;
+                width: 100%;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
             }
 
             &.active {
@@ -92,10 +126,18 @@
 
         a:hover,
         &.dk_option_current a {
+<<<<<<< HEAD
             color:@link;
             transition:color .15s ease;
             &:before {
                 color:@link;
+=======
+            background: @link;
+            color:@text;
+            transition:background .15s ease-in-out;
+            &:before {
+                color:@text;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
             }
         }
 
@@ -135,10 +177,18 @@
     overflow: hidden;
     position: absolute;
     left: 30px;
+<<<<<<< HEAD
     top: 30px;
     right: 30px;
     bottom: 30px;
     background: @generator--background;
+=======
+    top: 60px;
+    right: 30px;
+    bottom: 30px;
+    background: @black;
+    border:1px solid #262626;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
     .box-shadow(0 0 12px rgba(0,0,0,0.6));
 
     #aesop-generator-shell {
@@ -153,13 +203,21 @@
     // left panel
     .aesop-generator-left {
         width:63%;
+<<<<<<< HEAD
         padding: 10px;
+=======
+        padding: 24px;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
         .box-sizing(border-box);
     }
 
     .aesop-generator-right {
         width:37%;
+<<<<<<< HEAD
         overflow-y: scroll;
+=======
+        overflow: scroll;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
     }
 
     #aesop-generator-insert {
@@ -170,7 +228,11 @@
         letter-spacing: 0.1em;
         text-transform: uppercase;
         font-size: 14px;
+<<<<<<< HEAD
         color:@white;
+=======
+        color:#fff;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
         text-decoration: none;
         padding: 6px 15px;
         height: auto;
@@ -183,6 +245,7 @@
         &:hover {
             background: darken(@link,5);
         }
+<<<<<<< HEAD
 
         &:active {
             background: darken(@link,8);
@@ -194,6 +257,13 @@
         right:12px;
         .media-modal-icon:before {
             background: @generator--bg-accent;
+=======
+    }
+
+    .aesop-close-modal {
+        .media-modal-icon:before {
+            background: @dark-gray;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
             border-radius: 100%;
         }
     }
@@ -204,6 +274,7 @@
 
 // settings view
 #aesop-generator-settings-outer {
+<<<<<<< HEAD
     background: @generator--bg-accent;
     border-left:1px solid @border;
     .box-sizing(border-box);
@@ -222,12 +293,23 @@
             border-top:1px solid darken(@generator--bg-accent,10);
             .box-sizing(border-box);
         }
+=======
+    background: @dark-gray;
+
+    #aesop-generator-settings {
+        padding: 0 24px 20px;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
         p {
             margin:0;
             position: relative;
             border-bottom:1px solid @border;
+<<<<<<< HEAD
             padding:15px 15px 22px;
+=======
+            //.box-shadow(0 1px 0 rgba(255,255,255,0.05));
+            padding:15px 0 22px;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
             &:first-child {
                 padding-top:24px;
@@ -258,7 +340,11 @@
             display: block;
             position: relative;
             font-size:18px;
+<<<<<<< HEAD
             color:darken(@desc,5);
+=======
+            color:@text;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
         }
         input[type="text"] {
@@ -268,14 +354,23 @@
 
         input,
         select {
+<<<<<<< HEAD
             //font-size:1.25em;
+=======
+            font-size:1.25em;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
             line-height: 1.4em;
             height:32px;
         }
 
         .aesop-generator-attr {
+<<<<<<< HEAD
             background:@generator--background;
             color: @desc;
+=======
+            background:@text;
+            color: @black;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
             &.aesop-generator-attr-text_small {
                 width:80px;
@@ -284,6 +379,7 @@
 
         input,
         textarea {
+<<<<<<< HEAD
             border: 1px solid fadeout(white,20);
             border-radius:3px;
             position: relative;
@@ -311,19 +407,43 @@
                 outline:none;
                 border:1px solid fadeout(@link,80);
             }
+=======
+            border: 1px solid @black;
+            border-radius:5px;
+            position: relative;
+
+            &:focus {
+                border-color:#31b6e3;
+                outline:none;
+            }
+        }
+        select {
+            background:@text;
+            color: @black;
+            border: 1px solid @black;
+            border-radius:2px;
+            width: 60%;
+            position: relative;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
         }
 
         textarea {
             width:100%;
         }
 
+<<<<<<< HEAD
         code {
             background:darken(@generator--bg-accent,3);
             font-size:12px;
+=======
+        #aesop-generator-attr-img {
+            width:65%;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
         }
 
         #aesop-upload-img {
             background:@link;
+<<<<<<< HEAD
             border-color:transparent;
             box-shadow:none;
             left: 5px;
@@ -337,6 +457,15 @@
 
             &:hover {
                 font-weight:400;
+=======
+            border:1px solid rgba(0,0,0,0.6);
+            box-shadow:none;
+            top: -1px;
+            left: 5px;
+            width:34%;
+
+            &:hover {
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
                 background:darken(@link,2);
             }
             &:focus {
@@ -344,16 +473,22 @@
             }
 
             &:active {
+<<<<<<< HEAD
                 border-color:transparent;
                 background: darken(@link,8);
                 vertical-align: baseline;
                 .box-shadow(inset 0 1px 1px rgba(0,0,0,0.15));
+=======
+                background:@link;
+                top:1px;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
             }
         }
 
     }
 }
 
+<<<<<<< HEAD
 .aesop-generator-mark {
     position: absolute;
     bottom:0;
@@ -385,6 +520,8 @@
 
 /*
 Don't need small height mod anymore due to making the icons smaller
+=======
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 .aesop-generator-left.aesop-generator-small-height {
     .dk_options_inner {
 
@@ -403,7 +540,10 @@ Don't need small height mod anymore due to making the icons smaller
         }
     }
 }
+<<<<<<< HEAD
 */
+=======
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
 // color like options until we get conditional option loading
 #aesop-generator #aesop-generator-settings {
@@ -426,7 +566,15 @@ Don't need small height mod anymore due to making the icons smaller
     .aesop-content-floaterposition,
     .aesop-content-floateroffset,
     .aesop-content-floaterdirection {
+<<<<<<< HEAD
         background:darken(@generator--bg-accent,3);
+=======
+        background:lighten(@dark-gray,3);
+        padding-left: 24px;
+        padding-right: 24px;
+        margin-left: -24px;
+        margin-right: -24px;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
     }
 
     // 1st
@@ -435,7 +583,11 @@ Don't need small height mod anymore due to making the icons smaller
     .aesop-video-hosted,
     .aesop-content-floatermedia {
         margin-top:-1px;
+<<<<<<< HEAD
         border-top:1px solid @generator--bg-accent;
+=======
+        border-top:1px solid @dark-gray;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
     }
 
@@ -445,6 +597,10 @@ Don't need small height mod anymore due to making the icons smaller
     .aesop-video-viewend,
     .aesop-content-floaterdirection {
         margin-bottom:-1px;
+<<<<<<< HEAD
         border-bottom:1px solid @generator--bg-accent;
+=======
+        border-bottom:1px solid @dark-gray;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
     }
 }

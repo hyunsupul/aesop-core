@@ -1,5 +1,6 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans);
 
+<<<<<<< HEAD
 .aesop-button-clipboard {
 	display: none;
 }
@@ -9,12 +10,22 @@
 	margin: 15px;
 	display: block;
 	color: #444;
+=======
+.aesop-component{
+	background-color: #555;
+	margin: 15px 0;
+	display: block;
+	color: rgb(214, 214, 214);
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 	position: relative;
 	font-family: "Open Sans", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
 	border:1px solid #CCC;
 
+=======
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 }
 
 .aesop-component-bar{
@@ -22,7 +33,11 @@
 	text-transform: uppercase;
 	display: block;
 	padding: 10px 15px;
+<<<<<<< HEAD
 	background-color: #f1f1f1;
+=======
+	background-color: #222;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 
 }
 
@@ -52,9 +67,14 @@
 .aesop-audio-title:before { content: "\f127"; }
 .aesop-video-title:before { content: "\f126"; }
 .aesop-map-title:before { content: "\f319"; }
+<<<<<<< HEAD
 	.aesop-map_marker-title:before {content:'\f230';}
 .aesop-character-title:before { content: "\f338"; }
 .aesop-timeline_stop-title:before { content: "\f469"; }
+=======
+.aesop-character-title:before { content: "\f338"; }
+.aesop-timeline-title:before { content: "\f469"; }
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 .aesop-parallax-title:before { content: "\f168"; }
 .aesop-quote-title:before { content: "\f122"; }
 .aesop-document-title:before { content: "\f123"; }
@@ -71,16 +91,25 @@
 	z-index: 2;
 	float: right;
 	margin:0 3px;
+<<<<<<< HEAD
 	font-size:16px;
 	-webkit-transition:.15s ease;
+=======
+	-webkit-transition:.15s ease-in-out;
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 }
 .aesop-button:first-child{
 	margin-right:0;
 }
 .aesop-button:active {background:transparent;}
+<<<<<<< HEAD
 .aesop-button:hover {cursor:pointer;color:#007aab;}
 
 .aesop-button-clone:before { content: "\f105"; }
+=======
+.aesop-button:hover {cursor:pointer;opacity:0.7;}
+
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 .aesop-button-edit:before { content: "\f464"; }
 .aesop-button-delete:before { content: "\f182"; }
 .aesop-button-clipboard:before { content: "\f481"; }
@@ -109,7 +138,10 @@
 	height:41px;
 	width:100%;
 	z-index: 1;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 }
 .aesop-component-mask:after {
 	position: absolute;
@@ -118,5 +150,8 @@
 	height:100%;
 	width:100%;
 	content:'';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 }

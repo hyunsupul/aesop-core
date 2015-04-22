@@ -7,6 +7,7 @@ jQuery(document).ready(function($) {
 		e.preventDefault();
 
 		if ( typeof window.aiactive !== 'undefined' ) {
+<<<<<<< HEAD
 	      alert('Nesting components within the visual interface is not supported.');
 	    } else if ( typeof window.ailocked !== 'undefined' ) {
 	      alert('Please click on the editor and set your cursor location first.');
@@ -31,6 +32,22 @@ jQuery(document).ready(function($) {
 		$('#aesop-generator-settings-outer').css({'height':height + genLeftHeight + buttonHeight});
 
 		if ( height < 700 && width > 782 ) {
+=======
+      alert('Nesting components within the visual interface is not supported.');
+    } else if ( typeof window.ailocked !== 'undefined' ) {
+      alert('Please click on the editor and set your cursor location first.');
+    } else {
+      jQuery('body').toggleClass('modal-open');
+      jQuery(modal).toggleClass('aesop-generator-open');
+    }
+	});
+
+	var settingsHeight = function(){
+		var height  = $(window).height() - 90;
+		$('#aesop-generator-settings-outer').css({'height':height});
+
+		if ( height < 700 ) {
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 			$('.aesop-generator-left').addClass('aesop-generator-small-height');
 		} else {
 			$('.aesop-generator-left').removeClass('aesop-generator-small-height');
@@ -38,7 +55,11 @@ jQuery(document).ready(function($) {
 	}
 
 	var destroyModal = function(){
+<<<<<<< HEAD
     if ( typeof tinyMCE !== 'undefined' && tinyMCE.activeEditor ) {
+=======
+    if ( tinyMCE.activeEditor ) {
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
       var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
       if(editing != ''){
         editing[0].removeAttribute('id');
@@ -46,7 +67,10 @@ jQuery(document).ready(function($) {
     }
 		$(modal).removeClass('aesop-generator-open');
 		$('body').removeClass('modal-open');
+<<<<<<< HEAD
     $('body').removeClass('modal-updating');
+=======
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 	}
 	settingsHeight();
 
@@ -76,6 +100,7 @@ jQuery(document).ready(function($) {
     		var queried_shortcode = $('#aesop-generator-select').find(':selected').val();
 			$('#aesop-generator-settings').html(aesopshortcodes[queried_shortcode]);
 
+<<<<<<< HEAD
 			// conditionally load the map marker shortcode
 			// since 1.3
 			$('.aesop-map-sticky #aesop-generator-attr-sticky').on('change',function(){
@@ -90,6 +115,8 @@ jQuery(document).ready(function($) {
 
 			});
 
+=======
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
 			////
 			// conditional loading
 			////
@@ -195,9 +222,15 @@ jQuery(document).ready(function($) {
 			$('#aesop-generator-result').val($('#aesop-generator-result').val() + $('#aesop-generator-content').val() + '[/' + aesop_compatibility_mode_prefix + queried_shortcode + ']');
 		}
 
+<<<<<<< HEAD
     if ( typeof tinyMCE !== 'undefined' && tinyMCE.activeEditor ) {
       var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
       $(editing).replaceWith('<p></p>');
+=======
+    if ( tinyMCE.activeEditor ) {
+      var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
+      tinyMCE.activeEditor.dom.remove(editing);
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
     }
 
 		window.send_to_editor(jQuery('#aesop-generator-result').val());
@@ -240,8 +273,13 @@ jQuery(document).on('click', '#aesop-upload-img', function( e ){
 
     // When an image is selected, run a callback.
     file_frame.on( 'select', function() {
+<<<<<<< HEAD
       var attachment = file_frame.state().get('selection').first().toJSON();
       jQuery('.' + className + ' .aesop-generator-attr-media_upload').val(attachment.url);
+=======
+      	attachment = file_frame.state().get('selection').first().toJSON();
+  		jQuery('.aesop-generator-attr-media_upload,#aesop-generator-attr-src, #aesop-generator-attr-hosted').val(attachment.url);
+>>>>>>> 007c992236cfb4b2f209edb4dd51c0c8b3d2804f
     });
 
     // Finally, open the modal
