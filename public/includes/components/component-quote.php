@@ -50,6 +50,9 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 		$isparallax = 'on' == $atts['parallax'] ? 'quote-is-parallax' : false;
 		$lrclass = 'left' == $atts['direction'] || 'right' == $atts['direction'] ? 'quote-left-right' : false;
 
+		// has img class
+		$imgclass = $atts['img'] ? 'quote-has-image' : false;
+
 		// type
 		$type  = $atts['type'] ? sprintf( ' aesop-quote-type-%s', trim( $atts['type'] ) ) : false;
 
@@ -62,13 +65,14 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 			$type,
 			$contentwidth,
 			$isparallax,
-			$lrclass
+			$lrclass,
+			$imgclass
 		);
 
 		$css_classes = '';
 		if ( !empty( $css_class_array ) ) {
 			foreach ( $css_class_array as $class ) {
-				$css_classes .= $class;
+				$css_classes .= ' '.$class;
 			}
 		}
 
