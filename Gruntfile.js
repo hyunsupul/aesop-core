@@ -120,15 +120,12 @@ module.exports = function(grunt) {
 				}
 			},
 			publicscripts: {
-				options: {
-					sourceMap: 'public/assets/js/ai-core.js.map',
-					sourceMappingURL: 'ai-core.js.map',
-					sourceMapPrefix: 10
-				},
 				files: {
-					'public/assets/js/ai-core.min.js': [
+					'public/assets/js/ai-core.js': [
 						'public/assets/js/fit-vids.js',
-						'public/assets/js/swipebox.js',
+						'public/assets/js/swipebox.js', // @since 2.0
+						'public/assets/js/transition.js', // @since 2.0
+						'public/assets/js/zoom.js', // @since 2.0
 						'public/assets/js/waypoints.js',
 						'public/assets/js/fotorama.js',
 						'public/assets/js/scroll-nav.js',

@@ -296,7 +296,7 @@ class Aesop_Core {
 		}
 
 		// core script
-		wp_enqueue_script( 'ai-core', AI_CORE_URL.'/public/assets/js/ai-core.min.js', array( 'jquery' ), AI_CORE_VERSION, true );
+		wp_enqueue_script( 'ai-core', AI_CORE_URL.'/public/assets/js/ai-core.js', array( 'jquery' ), AI_CORE_VERSION, true );
 
 	}
 
