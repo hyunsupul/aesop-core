@@ -167,6 +167,14 @@ module.exports = function(grunt) {
 			}
 		},
 
+		wp_readme_to_markdown: {
+			your_target: {
+				files: {
+					'README.md': 'readme.txt'
+				}
+			},
+		},
+
 		checktextdomain: {
 			options:{
 				text_domain: 'aesop-core',
@@ -281,5 +289,8 @@ module.exports = function(grunt) {
 
 	// Pull from Transifex and create .mo task(s).
 	grunt.registerTask('tx-pull', ['exec:txpull', 'potomo']);
+
+	// Create README.md from readme.txt
+	grunt.registerTask( 'readme', ['wp_readme_to_markdown']);
 
 };
