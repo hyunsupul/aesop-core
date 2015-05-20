@@ -1,6 +1,6 @@
 [![Code Coverage](https://scrutinizer-ci.com/g/easydigitaldownloads/Easy-Digital-Downloads/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/easydigitaldownloads/Easy-Digital-Downloads/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bearded-avenger/aesop-core/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bearded-avenger/aesop-core/?branch=master)  [![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg?style=flat-square)](http://www.gnu.org/licenses/gpl-2.0.html) [![Tool](https://img.shields.io/badge/wp--translations-used-brightgreen.svg?style=flat-square)](http://wp-translations.org)
 
-# Description
+# Aesop Story Engine
 Aesop Story Engine is an open-sourced suite of tools that empower developers to build feature-rich, interactive, long-form stories within Wordpress. ASE is the same engine that drives the storytelling experience through our hosted platform at [Story.AM](https://story.am).
 
 ---
