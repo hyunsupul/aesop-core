@@ -15,7 +15,7 @@ Suite of components that enables the creation of interactive longform stories in
 
 == Description ==
 
-Aesop Story Engine is a suite of open-sourced tools and components that empowers developers and writers to build feature-rich, interactive, long-form storytelling themes for WordPress. At the heart of ASE are the suite of storytelling components, which are created on the fly while crafting posts within WordPress.
+Aesop Story Engine is a suite of open-sourced tools and components that empower developers and writers to build feature-rich, interactive, long-form storytelling themes for WordPress. At the heart of ASE are the suite of storytelling components, which are created on the fly while crafting posts within WordPress.
 
 [http://aesopstoryengine.com](http://aesopstoryengine.com)
 
