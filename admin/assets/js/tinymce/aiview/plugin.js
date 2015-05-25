@@ -267,7 +267,9 @@ tinymce.PluginManager.add('aiview', function( editor ) {
 					}
 				}
 			}
-			ed.selection.collapse(false);
+            tiny_ai_parent = ed.dom.select('#aesop-generator-editing')[0];
+            ed.selection.select(tiny_ai_parent);
+            ed.selection.collapse(false);
 		}
 
 		// let's handle the clipboard button
