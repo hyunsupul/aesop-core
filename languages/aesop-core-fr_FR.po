@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-03-30 16:15:57+00:00\n"
-"PO-Revision-Date: 2015-03-21 14:08+0000\n"
-"Last-Translator: FxB <fxb@wp-translations.org>\n"
+"POT-Creation-Date: 2015-05-26 21:15:54+00:00\n"
+"PO-Revision-Date: 2015-04-25 21:00+0000\n"
+"Last-Translator: Franck\n"
 "Language-Team: French (France) (http://www.transifex.com/projects/p/aesop-story-engine/language/fr_FR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1115,6 +1115,22 @@ msgstr "modules"
 msgid "built specifically for Aesop Story Engine."
 msgstr "conçu spécialement pour Aesop Story Engine."
 
+#: admin/includes/class.welcome.php:93
+msgid "Simpler, Faster, Easier Writing in WordPress"
+msgstr "Plus simple, plus rapide, plus facile d'écrire dans WordPress"
+
+#: admin/includes/class.welcome.php:94
+msgid ""
+"Stop wasting time constantly previewing your post, and edit and create from "
+"the front-end of your site with Lasso, our front-end editor that goes "
+"perfectly with Aesop Story Engine. Visit the site and enter your email for a"
+" 25% discount!"
+msgstr "Arrêtez de perdre du temps en ayant constamment recours à l'aperçu de votre article, et éditer et créer à partir du front-office de votre site avec Lasso, notre éditeur frontal qui se marie parfaitement avec Aesop Story Engine. Visitez le site et entrez votre e-mail pour une réduction de 25%&nbsp;!"
+
+#: admin/includes/class.welcome.php:94
+msgid "Read More..."
+msgstr "Lire la suite&hellip;"
+
 #: admin/includes/components/component-gallery.php:35
 #: admin/includes/components/component-gallery.php:48
 msgid "Galleries"
@@ -1511,17 +1527,17 @@ msgstr "Toh&bnsp;! Il y a eu un problème de désactivation Aesop. Essayez une n
 msgid "Specify a category ID to display stories from."
 msgstr "Spécifiez un ID de catégorie pour afficher des histoires s'y rapportant."
 
-#: public/includes/components/component-gallery.php:86
+#: public/includes/components/component-gallery.php:88
 msgid "edit gallery"
 msgstr "éditer la galerie"
 
-#: public/includes/components/component-gallery.php:96
+#: public/includes/components/component-gallery.php:98
 msgid ""
 "Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon"
 " above."
 msgstr "Intégrer une galerie en cliquant <span class=\"lasso-icon-gear\"></span> l'icône ci-dessus ."
 
-#: public/includes/components/component-gallery.php:102
+#: public/includes/components/component-gallery.php:104
 msgid ""
 "This gallery is empty! It's also possible that you simply have the wrong "
 "gallery ID."
