@@ -128,7 +128,7 @@ jQuery(document).ready(function($){
 			    // iterate through selected elements
 			    selection.each(function(attachment) {
 			    	var id = attachment.id;
-			    	var url = attachment.attributes.sizes.thumbnail.url;
+			    	var url = undefined === attachment.attributes.sizes.thumbnail ? attachment.attributes.sizes.full.url : attachment.attributes.sizes.thumbnail.url;
 			    	ase_edit_gallery_item(id, url, clicked_button.parent());
 			    });
 			};
