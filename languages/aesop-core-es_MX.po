@@ -1,19 +1,18 @@
 # Copyright (C) 2015 Aesopinteractive LLC
 # This file is distributed under the GPL-2.0+.
 # Translators:
-# Damian Axel Xavier <dax@barrio-maritimo.com.ar>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
 "POT-Creation-Date: 2015-05-26 21:15:54+00:00\n"
-"PO-Revision-Date: 2015-04-22 15:28+0000\n"
+"PO-Revision-Date: 2015-05-14 16:23+0000\n"
 "Last-Translator: Aesopinteractive\n"
-"Language-Team: Spanish (Argentina) (http://www.transifex.com/projects/p/aesop-story-engine/language/es_AR/)\n"
+"Language-Team: Spanish (Mexico) (http://www.transifex.com/projects/p/aesop-story-engine/language/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_AR\n"
+"Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: grunt-wp-i18n 0.5.0\n"
 "X-Poedit-Basepath: ../\n"
@@ -26,7 +25,7 @@ msgstr ""
 
 #: admin/class-aesop-core-admin.php:147
 msgid "Add Component"
-msgstr "Añadir Componente"
+msgstr ""
 
 #: admin/class-aesop-core-admin.php:214
 msgid "Select a story component."
@@ -36,19 +35,19 @@ msgstr ""
 msgid ""
 "Product of <span><a href=\"http://aesopstoryengine.com\">AESOP INTERACTIVE "
 "LLC</a></span>"
-msgstr "Un Producto de <span><a href=\"http://aesopstoryengine.com\">AESOP INTERACTIVE LLC</a></span>"
+msgstr ""
 
 #: admin/class-aesop-core-admin.php:240
 msgid ""
 "<span><a href=\"http://aesopstoryengine.com/donate\">Support new features "
 "and bug fixes</a></span> of Aesop Story Engine"
-msgstr "<span><a href=\"http://aesopstoryengine.com/donate\">Apoyá nuevas características y corrección de errores fixes</a></span> de Aesop Story Engine"
+msgstr ""
 
 #: admin/class-aesop-core-admin.php:241
 msgid ""
 "Story Beautiful? <span><a href=\"http://aesopstoryengine.com/donate\">Thank "
 "the developer</a></span>."
-msgstr "¿Hermosa Historia? <span><a href=\"http://aesopstoryengine.com/donate\">Agradecé al desarrollador</a></span>."
+msgstr ""
 
 #: admin/includes/available.php:13 admin/includes/available.php:462
 #: admin/includes/available.php:983
@@ -57,13 +56,13 @@ msgstr "Imagen"
 
 #: admin/includes/available.php:19
 msgid "Image Width"
-msgstr "Ancho de la Imagen"
+msgstr ""
 
 #: admin/includes/available.php:20
 msgid ""
 "Width of the image. You can enter the size as <code>40%</code> or "
 "<code>500px</code>."
-msgstr "Ancho de la imagen. Podés ingresar el ancho como <code>40%</code> o <code>500px</code>."
+msgstr ""
 
 #: admin/includes/available.php:25
 msgid "Image URL"
@@ -78,31 +77,31 @@ msgstr ""
 
 #: admin/includes/available.php:31
 msgid "Image Offset"
-msgstr "Desplazamiento de la Imagen"
+msgstr ""
 
 #: admin/includes/available.php:32
 msgid ""
 "Using this option you can <em>float</em> an image outside of the text. Enter"
 " a size like <code>-200px</code>."
-msgstr "Usando esta opción podés <em>hacer flotar</em> una imagen fuera del texto. Ingresá un tamaño, como ser <code>-200px</code>."
+msgstr ""
 
 #: admin/includes/available.php:37
 msgid "Image Credit"
-msgstr "Créditos de la Imagen"
+msgstr ""
 
 #: admin/includes/available.php:38
 msgid ""
 "This is typically used to credit the photographer. Enter a name and it will "
 "show as <em>Photo by: Name</em>."
-msgstr "Esto se usa normalmente para reconocer los créditos del fotógrafo. Ingresá un nombre y éste será mostrado como <em>Foto de: Nombre</em>"
+msgstr ""
 
 #: admin/includes/available.php:43
 msgid "Image ALT"
-msgstr "ALT para Imagen"
+msgstr ""
 
 #: admin/includes/available.php:44
 msgid "ALT tag used for the image. Primarily used for SEO purposes."
-msgstr "Tag ALT usado para la imagen. Principalmente usado para SEO."
+msgstr ""
 
 #: admin/includes/available.php:51 admin/includes/available.php:93
 #: admin/includes/available.php:139 admin/includes/available.php:208
@@ -126,17 +125,17 @@ msgstr "Derecha"
 #: admin/includes/available.php:216 admin/includes/available.php:405
 #: admin/includes/available.php:613 admin/includes/available.php:754
 msgid "Center"
-msgstr "Centro"
+msgstr "Centrar"
 
 #: admin/includes/available.php:63
 msgid "Image Alignment"
-msgstr "Alineación de la imagen"
+msgstr ""
 
 #: admin/includes/available.php:64
 msgid ""
 "How should the image be aligned? If using a caption, the caption will "
 "automatically align with this option."
-msgstr "¿Cómo debe estar alineada la imagen? Si usa una leyenda, ésta será alineada automáticamente con esta opción."
+msgstr ""
 
 #: admin/includes/available.php:71 admin/includes/available.php:253
 #: admin/includes/available.php:478 admin/includes/available.php:521
@@ -278,7 +277,7 @@ msgstr ""
 
 #: admin/includes/available.php:188
 msgid "Text Color"
-msgstr ""
+msgstr "Color de texto"
 
 #: admin/includes/available.php:189
 msgid "Select a color for the quote text."
@@ -441,7 +440,7 @@ msgstr "Sin repetición"
 
 #: admin/includes/available.php:359
 msgid "Repeat"
-msgstr ""
+msgstr "Repetir"
 
 #: admin/includes/available.php:363
 msgid "Repeat Vertical"
@@ -552,7 +551,7 @@ msgstr ""
 
 #: admin/includes/available.php:466
 msgid "Video"
-msgstr "Video"
+msgstr "Vídeo"
 
 #: admin/includes/available.php:470
 msgid "Background Type"
@@ -671,7 +670,7 @@ msgstr "Audio"
 #: admin/includes/available.php:655 admin/includes/available.php:1012
 #: admin/includes/components/component-map.php:68
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #: admin/includes/available.php:656
 msgid "Provide an optional heading for the audio player."
@@ -763,7 +762,7 @@ msgstr ""
 
 #: admin/includes/available.php:791
 msgid "Instagram"
-msgstr ""
+msgstr "Instagram"
 
 #: admin/includes/available.php:795
 msgid "Dailymotion"
@@ -1045,11 +1044,11 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:66
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: admin/includes/class.welcome.php:67
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: admin/includes/class.welcome.php:72
 msgid "Quick Start"
@@ -1132,7 +1131,7 @@ msgstr ""
 #: admin/includes/components/component-gallery.php:35
 #: admin/includes/components/component-gallery.php:48
 msgid "Galleries"
-msgstr ""
+msgstr "Galerías"
 
 #: admin/includes/components/component-gallery.php:36
 msgid "Parent Gallery:"
@@ -1572,7 +1571,7 @@ msgstr ""
 #: admin/includes/components/component-gallery.php:33
 msgctxt "aesop-core"
 msgid "Galleries"
-msgstr ""
+msgstr "Galerías"
 
 #: admin/includes/components/component-gallery.php:34
 msgctxt "aesop-core"

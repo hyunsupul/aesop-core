@@ -182,6 +182,7 @@ Full documentation can be found below.
 * FIX - Added a fallback for gallery image thumbnails in admin if thumbnail size isn't available
 * TWEAK - Removed iframe border around Kickstarter videos - props @wavetree
 * TWEAK - Fixed image component failing validation - props @wavetree
+* TRANSLATIONS - Added English (United Kingdom), Indonesian, Spanish (Mexico), Burmese, and Arabic. Aesop is now available in 35 languages thanks to WP Translations!
 
 = 1.6.1 =
 * FIX - Patched XSS vulnerability with not properly escaping add_query_arg(). Only an attacker with admin privileges would have been able to take advantage of this vulnerability.
