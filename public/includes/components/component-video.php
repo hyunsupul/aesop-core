@@ -100,7 +100,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			printf( '<iframe src="//www.youtube.com/embed/%s?rel=0&wmode=transparent" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
 			break;
 		case 'kickstarter':
-			printf( '<iframe src="%s" %s scrolling="no"> </iframe>', esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
+			printf( '<iframe src="%s" %s scrolling="no" wmode="transparent" frameborder="0"> </iframe>', esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
 			break;
 		case 'viddler':
 			printf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" %s mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>', esc_attr( $atts['id'] ), esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );

@@ -1,12 +1,13 @@
 # Copyright (C) 2015 Aesopinteractive LLC
 # This file is distributed under the GPL-2.0+.
 # Translators:
+# Samet Köseoğlu <skoseoglu@kusurat.org>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-03-30 16:15:57+00:00\n"
-"PO-Revision-Date: 2015-03-16 21:25+0000\n"
+"POT-Creation-Date: 2015-05-26 21:15:54+00:00\n"
+"PO-Revision-Date: 2015-04-25 21:00+0000\n"
 "Last-Translator: Aesopinteractive\n"
 "Language-Team: Turkish (Turkey) (http://www.transifex.com/projects/p/aesop-story-engine/language/tr_TR/)\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +26,7 @@ msgstr ""
 
 #: admin/class-aesop-core-admin.php:147
 msgid "Add Component"
-msgstr ""
+msgstr "Bileşen Ekle"
 
 #: admin/class-aesop-core-admin.php:214
 msgid "Select a story component."
@@ -56,7 +57,7 @@ msgstr "Resim"
 
 #: admin/includes/available.php:19
 msgid "Image Width"
-msgstr ""
+msgstr "Resim Genişliği"
 
 #: admin/includes/available.php:20
 msgid ""
@@ -185,7 +186,7 @@ msgstr ""
 
 #: admin/includes/available.php:105 admin/includes/available.php:559
 msgid "Caption Position"
-msgstr ""
+msgstr "Altyazı Pozisyonu"
 
 #: admin/includes/available.php:106
 msgid "Use this to override the alignment as inherited from the image."
@@ -198,21 +199,21 @@ msgstr ""
 
 #: admin/includes/available.php:113
 msgid "Character"
-msgstr ""
+msgstr "Karakter"
 
 #: admin/includes/available.php:119
 msgid "Character Image"
-msgstr ""
+msgstr "Karakter Resmi"
 
 #: admin/includes/available.php:125
 msgid "Character Name"
-msgstr ""
+msgstr "Karakter İsmi"
 
 #: admin/includes/available.php:126
 msgid ""
 "Enter a name for the character. If you do not enter a name, it will not "
 "show."
-msgstr ""
+msgstr "Karakter için bir isim girin. Eğer isim girmezseniz gösterilmeyecektir."
 
 #: admin/includes/available.php:132
 msgid ""
@@ -273,7 +274,7 @@ msgstr "Arkaplan Rengi"
 
 #: admin/includes/available.php:183
 msgid "Select a background color to be used as the quote background."
-msgstr ""
+msgstr "Alıntı arka planı olarak kullanmak için bir arka plan rengi belirleyin."
 
 #: admin/includes/available.php:188
 msgid "Text Color"
@@ -281,7 +282,7 @@ msgstr "Metin Rengi"
 
 #: admin/includes/available.php:189
 msgid "Select a color for the quote text."
-msgstr ""
+msgstr "Alıntı yazısı için bir renk belirleyin."
 
 #: admin/includes/available.php:194 admin/includes/available.php:738
 msgid "Component Width"
@@ -372,7 +373,7 @@ msgstr "İçerik"
 
 #: admin/includes/available.php:290
 msgid "Color of Text"
-msgstr ""
+msgstr "Yazı Rengi"
 
 #: admin/includes/available.php:291
 msgid "Set a color to be used for the main text."
@@ -400,7 +401,7 @@ msgstr ""
 
 #: admin/includes/available.php:315
 msgid "Number of Columns"
-msgstr ""
+msgstr "Sütun Sayısı"
 
 #: admin/includes/available.php:316
 msgid ""
@@ -444,15 +445,15 @@ msgstr "Tekrarla"
 
 #: admin/includes/available.php:363
 msgid "Repeat Vertical"
-msgstr ""
+msgstr "Dikey Tekrarla"
 
 #: admin/includes/available.php:367
 msgid "Repeat Horizontal"
-msgstr ""
+msgstr "Yatay Tekrarla"
 
 #: admin/includes/available.php:371
 msgid "Image Repeat"
-msgstr ""
+msgstr "Resim Tekrarı"
 
 #: admin/includes/available.php:372
 msgid ""
@@ -462,7 +463,7 @@ msgstr ""
 
 #: admin/includes/available.php:377
 msgid "Background Image Position"
-msgstr ""
+msgstr "Arka plan görsel pozisyonu"
 
 #: admin/includes/available.php:378
 msgid ""
@@ -473,7 +474,7 @@ msgstr ""
 
 #: admin/includes/available.php:383
 msgid "Background Image Size"
-msgstr ""
+msgstr "Arka plan görsel boyutu"
 
 #: admin/includes/available.php:384
 msgid ""
@@ -1112,6 +1113,22 @@ msgstr ""
 msgid "built specifically for Aesop Story Engine."
 msgstr ""
 
+#: admin/includes/class.welcome.php:93
+msgid "Simpler, Faster, Easier Writing in WordPress"
+msgstr ""
+
+#: admin/includes/class.welcome.php:94
+msgid ""
+"Stop wasting time constantly previewing your post, and edit and create from "
+"the front-end of your site with Lasso, our front-end editor that goes "
+"perfectly with Aesop Story Engine. Visit the site and enter your email for a"
+" 25% discount!"
+msgstr ""
+
+#: admin/includes/class.welcome.php:94
+msgid "Read More..."
+msgstr "Devamı..."
+
 #: admin/includes/components/component-gallery.php:35
 #: admin/includes/components/component-gallery.php:48
 msgid "Galleries"
@@ -1508,17 +1525,17 @@ msgstr ""
 msgid "Specify a category ID to display stories from."
 msgstr ""
 
-#: public/includes/components/component-gallery.php:86
+#: public/includes/components/component-gallery.php:88
 msgid "edit gallery"
 msgstr ""
 
-#: public/includes/components/component-gallery.php:96
+#: public/includes/components/component-gallery.php:98
 msgid ""
 "Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon"
 " above."
 msgstr ""
 
-#: public/includes/components/component-gallery.php:102
+#: public/includes/components/component-gallery.php:104
 msgid ""
 "This gallery is empty! It's also possible that you simply have the wrong "
 "gallery ID."
