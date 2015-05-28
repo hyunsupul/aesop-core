@@ -178,7 +178,9 @@ Full documentation can be found below.
 * NEW - Contributor guidelines
 * FIX - Master branch of ASE is linked correctly to Scrutinizer in readme.md
 * FIX - Typo in 1.6.1 changelog
-* TWEAK - Removed iframe border around Kickstarter videos
+* FIX - Fixed a bug where updating a component would send it to the top of the post editor in Firefox - props @etc
+* TWEAK - Removed iframe border around Kickstarter videos - props @wavetree
+* TWEAK - Fixed image component failing validation - props @wavetree
 
 = 1.6.1 =
 * FIX - Patched XSS vulnerability with not properly escaping add_query_arg(). Only an attacker with admin privileges would have been able to take advantage of this vulnerability.
