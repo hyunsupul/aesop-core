@@ -178,6 +178,7 @@ Full documentation can be found below.
 * NEW - Contributor guidelines
 * FIX - Master branch of ASE is linked correctly to Scrutinizer in readme.md
 * FIX - Typo in 1.6.1 changelog
+* FIX - Fixed a bug with backward compatibilty function causing slow/crashing admin on sites with several thousand posts
 * FIX - Fixed a bug where updating a component would send it to the top of the post editor in Firefox - props @etc
 * FIX - Added a fallback for gallery image thumbnails in admin if thumbnail size isn't available
 * TWEAK - Removed iframe border around Kickstarter videos - props @wavetree
