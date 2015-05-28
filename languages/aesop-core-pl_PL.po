@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-03-30 16:15:57+00:00\n"
-"PO-Revision-Date: 2015-03-26 11:12+0000\n"
-"Last-Translator: Aesopinteractive\n"
+"POT-Creation-Date: 2015-05-26 21:15:54+00:00\n"
+"PO-Revision-Date: 2015-04-25 21:00+0000\n"
+"Last-Translator: Michał Matyjasik <mmatyjasik@gmail.com>\n"
 "Language-Team: Polish (Poland) (http://www.transifex.com/projects/p/aesop-story-engine/language/pl_PL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -332,7 +332,7 @@ msgstr ""
 
 #: admin/includes/available.php:239
 msgid "Quote Text"
-msgstr ""
+msgstr "Tekst cytatu"
 
 #: admin/includes/available.php:240
 msgid "The actual quote text that will be displayed."
@@ -340,7 +340,7 @@ msgstr ""
 
 #: admin/includes/available.php:245
 msgid "Cite"
-msgstr ""
+msgstr "Cytat"
 
 #: admin/includes/available.php:246
 msgid "Provide an optional cite or source for the quote."
@@ -389,7 +389,7 @@ msgstr "Szerokość komponentu"
 
 #: admin/includes/available.php:308
 msgid "Height of Component"
-msgstr ""
+msgstr "Wysokość komponentu"
 
 #: admin/includes/available.php:309
 msgid ""
@@ -445,11 +445,11 @@ msgstr "Powtarzanie"
 
 #: admin/includes/available.php:363
 msgid "Repeat Vertical"
-msgstr ""
+msgstr "Powtarzaj w pionie"
 
 #: admin/includes/available.php:367
 msgid "Repeat Horizontal"
-msgstr ""
+msgstr "Powtarzaj w poziomie"
 
 #: admin/includes/available.php:371
 msgid "Image Repeat"
@@ -463,7 +463,7 @@ msgstr "Jeśli używasz obrazka tła, czy powinien się powtarzać? Użyteczne d
 
 #: admin/includes/available.php:377
 msgid "Background Image Position"
-msgstr ""
+msgstr "Pozycja obrazu tła"
 
 #: admin/includes/available.php:378
 msgid ""
@@ -502,11 +502,11 @@ msgstr ""
 
 #: admin/includes/available.php:417 admin/includes/available.php:625
 msgid "Up"
-msgstr ""
+msgstr "Góra"
 
 #: admin/includes/available.php:421 admin/includes/available.php:629
 msgid "Down"
-msgstr ""
+msgstr "Dół"
 
 #: admin/includes/available.php:433 admin/includes/available.php:641
 msgid "Movement Direction of Floater Element"
@@ -1103,15 +1103,31 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:89
 msgid "themes"
-msgstr ""
+msgstr "motywy"
 
 #: admin/includes/class.welcome.php:89
 msgid "addons"
-msgstr ""
+msgstr "dodatki"
 
 #: admin/includes/class.welcome.php:89
 msgid "built specifically for Aesop Story Engine."
 msgstr ""
+
+#: admin/includes/class.welcome.php:93
+msgid "Simpler, Faster, Easier Writing in WordPress"
+msgstr ""
+
+#: admin/includes/class.welcome.php:94
+msgid ""
+"Stop wasting time constantly previewing your post, and edit and create from "
+"the front-end of your site with Lasso, our front-end editor that goes "
+"perfectly with Aesop Story Engine. Visit the site and enter your email for a"
+" 25% discount!"
+msgstr ""
+
+#: admin/includes/class.welcome.php:94
+msgid "Read More..."
+msgstr "Czytaj dalej..."
 
 #: admin/includes/components/component-gallery.php:35
 #: admin/includes/components/component-gallery.php:48
@@ -1160,7 +1176,7 @@ msgstr "Nie znaleziono galerii w śmietniku"
 
 #: admin/includes/components/component-gallery.php:49
 msgid "Create responsive galleries."
-msgstr ""
+msgstr "Utwórz responsywną galerię"
 
 #: admin/includes/components/component-gallery.php:75
 msgid "Gallery Code"
@@ -1180,7 +1196,7 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:142
 msgid "Set Options"
-msgstr ""
+msgstr "Ustaw opcje"
 
 #: admin/includes/components/component-gallery.php:207
 msgid "Grid"
@@ -1210,7 +1226,7 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:252
 msgid "Gallery Caption"
-msgstr ""
+msgstr "Etykieta galerii"
 
 #: admin/includes/components/component-gallery.php:253
 msgid "Add an optional caption for the gallery."
@@ -1285,7 +1301,7 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:304
 msgid "Enable Lightbox"
-msgstr ""
+msgstr "Włącz lightbox"
 
 #: admin/includes/components/component-gallery.php:393
 msgid ""
@@ -1316,7 +1332,7 @@ msgstr ""
 
 #: admin/includes/components/component-map.php:120
 msgid "Map Locations"
-msgstr ""
+msgstr "Lokacje map"
 
 #: admin/includes/components/component-map.php:139
 msgid "<em>Hint: Type to search for locations</em>"
@@ -1342,7 +1358,7 @@ msgstr "Wstaw komponent"
 
 #: admin/includes/generator_blob.php:73
 msgid "Update Component"
-msgstr ""
+msgstr "Aktualizuj komponent"
 
 #: admin/includes/help.php:26
 msgid ""
@@ -1365,7 +1381,7 @@ msgstr ""
 
 #: admin/includes/help.php:29
 msgid "Working with Components"
-msgstr ""
+msgstr "Praca z komponentami"
 
 #: admin/includes/help.php:30
 msgid ""
@@ -1376,7 +1392,7 @@ msgstr ""
 
 #: admin/includes/help.php:31
 msgid "Using Maps"
-msgstr ""
+msgstr "Wykorzystanie map"
 
 #: admin/includes/help.php:32
 msgid ""
@@ -1424,7 +1440,7 @@ msgstr ""
 
 #: admin/includes/help.php:39
 msgid "Donations"
-msgstr ""
+msgstr "Dotacje"
 
 #: admin/includes/help.php:40
 msgid ""
@@ -1454,7 +1470,7 @@ msgstr ""
 
 #: admin/includes/help.php:54
 msgid "Directions"
-msgstr ""
+msgstr "Kierunki"
 
 #: admin/includes/help.php:56
 msgid ""
@@ -1509,17 +1525,17 @@ msgstr "Podczas deaktywacji Aesop wystąpił problem. Spróbuj raz jeszcze."
 msgid "Specify a category ID to display stories from."
 msgstr "Wpisz ID kategorii, z której chcesz wyświetlić wpisy."
 
-#: public/includes/components/component-gallery.php:86
+#: public/includes/components/component-gallery.php:88
 msgid "edit gallery"
 msgstr "edytuj galerię"
 
-#: public/includes/components/component-gallery.php:96
+#: public/includes/components/component-gallery.php:98
 msgid ""
 "Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon"
 " above."
 msgstr ""
 
-#: public/includes/components/component-gallery.php:102
+#: public/includes/components/component-gallery.php:104
 msgid ""
 "This gallery is empty! It's also possible that you simply have the wrong "
 "gallery ID."
@@ -1535,7 +1551,7 @@ msgstr ""
 
 #: public/includes/components/component-quote.php:22
 msgid "People are made of stories, not atoms."
-msgstr ""
+msgstr "Ludzie są zbudowani z opowieści, nie atomów."
 
 #: public/includes/options.php:14
 msgid ""

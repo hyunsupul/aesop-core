@@ -70,12 +70,16 @@ See [https://github.com/bearded-avenger/aesop-core/releases](https://github.com/
 ---
 
 ### Translations
-Aesop Story Engine is currently available in 30 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
+Aesop Story Engine is currently available in 35 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
+
+* العربية (Arabic)
 * Български (Bulgarian)
+* Burmese (Myanmar)
 * čeština‎ (Czech)
 * 中文 (Chinese (China))
-* Dansk (Danish)
+* Dansk (Danish (Denmark))
 * Nederlands (Dutch)
+* English (United Kingdom)
 * English (US)
 * Suomi (Finnish)
 * Français (French (France))
@@ -83,6 +87,7 @@ Aesop Story Engine is currently available in 30 languages. We work closely with 
 * Ελληνικά (Greek)
 * עִבְרִית (Hebrew)
 * Magyar (Hungarian)
+* Indonesian (Indonesia)
 * Italiano (Italian)
 * 日本語 (Japanese)
 * ភាសាខ្មែរ (Khmer)
@@ -97,6 +102,7 @@ Aesop Story Engine is currently available in 30 languages. We work closely with 
 * Slovenčina (Slovak)
 * slovenščina (Slovenian)
 * Español (Spanish (Argentina))
+* Español (Spanish (Mexico))
 * Español (Spanish (Spain))
 * ไทย (Thai)
 * Türkçe (Turkish)

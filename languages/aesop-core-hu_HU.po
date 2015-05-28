@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-03-30 16:15:57+00:00\n"
-"PO-Revision-Date: 2015-03-16 21:25+0000\n"
+"POT-Creation-Date: 2015-05-26 21:15:54+00:00\n"
+"PO-Revision-Date: 2015-04-25 21:00+0000\n"
 "Last-Translator: Aesopinteractive\n"
 "Language-Team: Hungarian (Hungary) (http://www.transifex.com/projects/p/aesop-story-engine/language/hu_HU/)\n"
 "MIME-Version: 1.0\n"
@@ -1112,6 +1112,22 @@ msgstr ""
 msgid "built specifically for Aesop Story Engine."
 msgstr ""
 
+#: admin/includes/class.welcome.php:93
+msgid "Simpler, Faster, Easier Writing in WordPress"
+msgstr ""
+
+#: admin/includes/class.welcome.php:94
+msgid ""
+"Stop wasting time constantly previewing your post, and edit and create from "
+"the front-end of your site with Lasso, our front-end editor that goes "
+"perfectly with Aesop Story Engine. Visit the site and enter your email for a"
+" 25% discount!"
+msgstr ""
+
+#: admin/includes/class.welcome.php:94
+msgid "Read More..."
+msgstr ""
+
 #: admin/includes/components/component-gallery.php:35
 #: admin/includes/components/component-gallery.php:48
 msgid "Galleries"
@@ -1508,17 +1524,17 @@ msgstr ""
 msgid "Specify a category ID to display stories from."
 msgstr ""
 
-#: public/includes/components/component-gallery.php:86
+#: public/includes/components/component-gallery.php:88
 msgid "edit gallery"
 msgstr ""
 
-#: public/includes/components/component-gallery.php:96
+#: public/includes/components/component-gallery.php:98
 msgid ""
 "Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon"
 " above."
 msgstr ""
 
-#: public/includes/components/component-gallery.php:102
+#: public/includes/components/component-gallery.php:104
 msgid ""
 "This gallery is empty! It's also possible that you simply have the wrong "
 "gallery ID."

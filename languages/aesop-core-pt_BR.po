@@ -2,14 +2,17 @@
 # This file is distributed under the GPL-2.0+.
 # Translators:
 # Gabriel York Orfali da Silva <gabrielyjorkk@hotmail.com>, 2015
+# Jean Oliveira <jeanoliveirabr1@gmail.com>, 2015
 # Luiz Phelipe Ferreira da Silva <luizphelipess@hotmail.com>, 2015
+# Luzimar Carpinter <luzimar.carpinter@educaaovivo.com.br>, 2015
+# Wagner Marques Oliveira <wagnermarques00@hotmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-03-30 16:15:57+00:00\n"
-"PO-Revision-Date: 2015-03-22 13:12+0000\n"
-"Last-Translator: Aesopinteractive\n"
+"POT-Creation-Date: 2015-05-26 21:15:54+00:00\n"
+"PO-Revision-Date: 2015-05-22 22:11+0000\n"
+"Last-Translator: Wagner Marques Oliveira <wagnermarques00@hotmail.com>\n"
 "Language-Team: Portuguese (Brazil) (http://www.transifex.com/projects/p/aesop-story-engine/language/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,7 +30,7 @@ msgstr ""
 
 #: admin/class-aesop-core-admin.php:147
 msgid "Add Component"
-msgstr "Add Componente"
+msgstr "Adicionar um componente"
 
 #: admin/class-aesop-core-admin.php:214
 msgid "Select a story component."
@@ -37,19 +40,19 @@ msgstr "Selecione um componente da história."
 msgid ""
 "Product of <span><a href=\"http://aesopstoryengine.com\">AESOP INTERACTIVE "
 "LLC</a></span>"
-msgstr ""
+msgstr "Produto de <span><a href=\"http://aesopstoryengine.com\">AESOP INTERACTIVE LLC</a></span>"
 
 #: admin/class-aesop-core-admin.php:240
 msgid ""
 "<span><a href=\"http://aesopstoryengine.com/donate\">Support new features "
 "and bug fixes</a></span> of Aesop Story Engine"
-msgstr ""
+msgstr "<span><a href=\"http://aesopstoryengine.com/donate\">Suporta novos recursos e correção de bugs</a></span> do Aesop Story Engine"
 
 #: admin/class-aesop-core-admin.php:241
 msgid ""
 "Story Beautiful? <span><a href=\"http://aesopstoryengine.com/donate\">Thank "
 "the developer</a></span>."
-msgstr ""
+msgstr "História bonita? <span><a href=\"http://aesopstoryengine.com/donate\">Agradeça o desenvolvedor</a></span>."
 
 #: admin/includes/available.php:13 admin/includes/available.php:462
 #: admin/includes/available.php:983
@@ -64,7 +67,7 @@ msgstr "Largura da imagem"
 msgid ""
 "Width of the image. You can enter the size as <code>40%</code> or "
 "<code>500px</code>."
-msgstr ""
+msgstr "Largura da imagem. Você pode escrever o tamanho como <code>40%</code> ou <code>500px</code>."
 
 #: admin/includes/available.php:25
 msgid "Image URL"
@@ -89,7 +92,7 @@ msgstr ""
 
 #: admin/includes/available.php:37
 msgid "Image Credit"
-msgstr ""
+msgstr "Créditos da imagem"
 
 #: admin/includes/available.php:38
 msgid ""
@@ -131,7 +134,7 @@ msgstr "Centro"
 
 #: admin/includes/available.php:63
 msgid "Image Alignment"
-msgstr ""
+msgstr "Alinhamento da imagem"
 
 #: admin/includes/available.php:64
 msgid ""
@@ -183,7 +186,7 @@ msgstr "Legenda"
 msgid ""
 "Optional caption for the image. If you do not enter a caption, it will not "
 "show."
-msgstr ""
+msgstr "Legenda opcional para a imagem. Se você não inserir uma legenda, esta não irá aparecer."
 
 #: admin/includes/available.php:105 admin/includes/available.php:559
 msgid "Caption Position"
@@ -191,7 +194,7 @@ msgstr ""
 
 #: admin/includes/available.php:106
 msgid "Use this to override the alignment as inherited from the image."
-msgstr ""
+msgstr "Use-o para substituir o alinhamento como herdado da imagem"
 
 #: admin/includes/available.php:110
 msgid ""
@@ -259,15 +262,15 @@ msgstr ""
 
 #: admin/includes/available.php:172
 msgid "Full Width"
-msgstr ""
+msgstr "Largura Total"
 
 #: admin/includes/available.php:176
 msgid "Quote Styles"
-msgstr ""
+msgstr "Estilos de citação"
 
 #: admin/includes/available.php:177
 msgid "By default the quote is full width, but you can change that here."
-msgstr ""
+msgstr "Por padrão, a largura da citação é total, mas você pode mudar isso aqui."
 
 #: admin/includes/available.php:182 admin/includes/available.php:296
 msgid "Background Color"
@@ -341,7 +344,7 @@ msgstr ""
 
 #: admin/includes/available.php:245
 msgid "Cite"
-msgstr ""
+msgstr "Citar"
 
 #: admin/includes/available.php:246
 msgid "Provide an optional cite or source for the quote."
@@ -1114,6 +1117,22 @@ msgstr ""
 msgid "built specifically for Aesop Story Engine."
 msgstr ""
 
+#: admin/includes/class.welcome.php:93
+msgid "Simpler, Faster, Easier Writing in WordPress"
+msgstr ""
+
+#: admin/includes/class.welcome.php:94
+msgid ""
+"Stop wasting time constantly previewing your post, and edit and create from "
+"the front-end of your site with Lasso, our front-end editor that goes "
+"perfectly with Aesop Story Engine. Visit the site and enter your email for a"
+" 25% discount!"
+msgstr ""
+
+#: admin/includes/class.welcome.php:94
+msgid "Read More..."
+msgstr "Leia mais…"
+
 #: admin/includes/components/component-gallery.php:35
 #: admin/includes/components/component-gallery.php:48
 msgid "Galleries"
@@ -1510,17 +1529,17 @@ msgstr ""
 msgid "Specify a category ID to display stories from."
 msgstr ""
 
-#: public/includes/components/component-gallery.php:86
+#: public/includes/components/component-gallery.php:88
 msgid "edit gallery"
 msgstr "Editar galeria"
 
-#: public/includes/components/component-gallery.php:96
+#: public/includes/components/component-gallery.php:98
 msgid ""
 "Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon"
 " above."
 msgstr ""
 
-#: public/includes/components/component-gallery.php:102
+#: public/includes/components/component-gallery.php:104
 msgid ""
 "This gallery is empty! It's also possible that you simply have the wrong "
 "gallery ID."
