@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Core\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-05-26 21:15:49+00:00\n"
+"POT-Creation-Date: 2015-05-29 08:42:05+00:00\n"
 "PO-Revision-Date: 2014-12-15 18:40-0600\n"
 "Last-Translator: Team Aesop <support@aesopinteractive.com>\n"
 "Language-Team: Team Aesop <info@aesopinteractive.com>\n"
@@ -16,27 +16,27 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: admin/class-aesop-core-admin.php:147
+#: admin/class-aesop-core-admin.php:151
 msgid "Add Component"
 msgstr ""
 
-#: admin/class-aesop-core-admin.php:214
+#: admin/class-aesop-core-admin.php:224
 msgid "Select a story component."
 msgstr ""
 
-#: admin/class-aesop-core-admin.php:239
+#: admin/class-aesop-core-admin.php:251
 msgid ""
 "Product of <span><a href=\"http://aesopstoryengine.com\">AESOP INTERACTIVE "
 "LLC</a></span>"
 msgstr ""
 
-#: admin/class-aesop-core-admin.php:240
+#: admin/class-aesop-core-admin.php:253
 msgid ""
 "<span><a href=\"http://aesopstoryengine.com/donate\">Support new features "
 "and bug fixes</a></span> of Aesop Story Engine"
 msgstr ""
 
-#: admin/class-aesop-core-admin.php:241
+#: admin/class-aesop-core-admin.php:255
 msgid ""
 "Story Beautiful? <span><a href=\"http://aesopstoryengine.com/donate\">Thank "
 "the developer</a></span>."
@@ -1514,17 +1514,17 @@ msgstr ""
 msgid "Specify a category ID to display stories from."
 msgstr ""
 
-#: public/includes/components/component-gallery.php:88
+#: public/includes/components/component-gallery.php:91
 msgid "edit gallery"
 msgstr ""
 
-#: public/includes/components/component-gallery.php:98
+#: public/includes/components/component-gallery.php:101
 msgid ""
 "Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon "
 "above."
 msgstr ""
 
-#: public/includes/components/component-gallery.php:104
+#: public/includes/components/component-gallery.php:107
 msgid ""
 "This gallery is empty! It's also possible that you simply have the wrong "
 "gallery ID."
