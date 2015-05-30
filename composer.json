@@ -6,7 +6,7 @@
    "license": "GPL-2.0+",
    "keywords": ["plugin","wordpress","aesop","core", "storytelling"],
    "support": {
-   	"issues": "https://github.com/bearded-avenger/aesop-core/issues",
+   	"issues": "https://github.com/bearded-avenger/aesop-core/issues"
   },
    "require": {
      "composer/installers": "~1.0.6"
