@@ -306,7 +306,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'text_small',
 						'default'  => '',
 						'desc'   => __( 'Height of Component', 'aesop-core' ),
-						'tip'  => __( 'Enter an optional height for the component. ou can enter the size as <code>40%</code> or <code>500px</code>. By default it\'s set to <code>auto</code>. Use a large height like <code>1200px</code> to have a large blank area with small text.', 'aesop-core' )
+						'tip'  => __( 'Enter an optional height for the component. You can enter the size as <code>40%</code> or <code>500px</code>. By default it\'s set to <code>auto</code>. Use a large height like <code>1200px</code> to have a large blank area with small text.', 'aesop-core' )
 					),
 					'columns'    => array(
 						'type'  => 'select',
