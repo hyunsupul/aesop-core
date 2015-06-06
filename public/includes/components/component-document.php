@@ -55,7 +55,7 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 		', esc_attr( $unique ), esc_attr( $unique ) );
 
 		$slide = $atts['caption'] ? esc_html( $atts['caption'] ) : false;
-		$link = sprintf( '<a href="#" class="aesop-doc-reveal-%s"><span>document</span><br /> %s</a>', esc_attr( $unique ), $slide );
+		$link = sprintf( '<a href="#" class="aesop-doc-reveal-%s"><span class="aesop-document-component--label">document</span><br /> <div class="aesop-document-component--caption">%s</div></a>', esc_attr( $unique ), $slide );
 		$guts = sprintf( '<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>',esc_attr( $unique ), $source );
 
 		$out = sprintf( '%s<aside %s class="aesop-component aesop-document-component aesop-content %s">%s%s%s%s%s</aside>%s', $actiontop, aesop_component_data_atts( 'document', $unique, $atts ), $classes, $script, $actioninsidetop, $link, $guts, $actioninsidebottom, $actionbottom );
