@@ -11,7 +11,7 @@ class AesopStoryEngineOptions {
 
 		$wp_customize->add_section( 'aesop_story_engine', array(
 				'title'   => __( 'Aesop Story Engine', 'aesop-core' ),
-				'description' => __( 'Refer to the documentation located <a href="http://aesopstoryengine.com/help" target="_blank">here</a> for full option descriptions.', 'aesop-core' )
+				'description' => __( 'Refer to the documentation located <a href="http://aesopstoryengine.com/help/map-component" target="_blank">here</a> for full option descriptions.', 'aesop-core' )
 			) );
 
 		// Enable Google Analytics
