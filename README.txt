@@ -168,9 +168,11 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 
 == Changelog ==
 
+= 1.6.3 =
+* TWEAK - improved Document component markup which also fixes an issue with editing using Lasso
+* TWEAK - i18n updates
+
 = 1.6.2 =
-* NEW - Contributor guidelines
-* FIX - Master branch of ASE is linked correctly to Scrutinizer in readme.md
 * FIX - Typo in 1.6.1 changelog
 * FIX - Fixed a bug with backward compatibilty function causing slow/crashing admin on sites with several thousand posts
 * FIX - Fixed a bug where updating a component would send it to the top of the post editor in Firefox - props @etcook
