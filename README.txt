@@ -1,5 +1,9 @@
 === Aesop Story Engine ===
+<<<<<<< HEAD
 Contributors: nphaskins, wavetree, Tmeister, etcio
+=======
+Contributors: nphaskins, peiche, Tmeister, etcio, michaelbeil
+>>>>>>> 754ef5c6a636cba77c9083313ad7a1aa514d1a54
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
@@ -9,7 +13,6 @@ Tested up to: 4.2.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
 
 Suite of components that enables the creation of interactive longform stories in WordPress.
 
@@ -21,91 +24,90 @@ Aesop Story Engine is a suite of open-sourced tools and components that empower 
 
 [youtube http://www.youtube.com/watch?v=84BFGxkHby0]
 
-**Try Aesop for Free**
-[http://tryaesop.com](http://tryaesop.com)
+**Try Aesop for Free** - [http://tryaesop.com](http://tryaesop.com)
 
 Utilizing these components, writers can can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. Here’s a demo theme incorporating these story components.
 [http://playground.aesopstories.com](http://playground.aesopstories.com)
 
-**Audio**
+**Audio** - 
 Display an audio player with support for MP3 that can be optionally hidden. This is great for showcasing audio interviews.
 
-**Video**
+**Video** - 
 Showcase a fullscreen video with support for Kickstarter, Viddler, YouTube, Vimeo, Daily Motion, and Blip.TV with support for captions and alignment.
 
-**Content**
+**Content** - 
 The content component is a multi-purpose component that can display a background image, background color, or can split the content into multiple magazine type columns.
 
-**Character**
+**Character** - 
 Display a character avatar, title, and small bio to help readers be reminded of key story characters.
 
-**Galleries**
+**Gallery** - 
 The ASE Gallery component allows you to create and manage unlimited story galleries. Each gallery can be displayed as a grid, a thumbnail gallery, stacked, or sequential type gallery, all with caption support.
 
-**Chapter Headings**
+**Chapter** - 
 Creates scroll-to points with large full-screen images as headings.
 
-**Image**
+**Image** - 
 The image component displays an image and caption, with optional lightbox. Also allows you to align the image, as well as offset the image so it hangs outside of the content column.
 
-**Locations**
+**Map** - 
 This component allows you to create a map for your story. You can add markers to the map with custom messages, and even have the map scroll to points as you scroll through the story.
 
-**Parallax**
+**Parallax** - 
 A fullwidth image component with caption and lightbox. As you scroll, the image moves slightly to provide a parallax effect. Includes optional floater parallax item to use for multiple levels of parallax engagement.
 
-**Quote**
+**Quote** - 
 Show a fullwidth quote with large text, or a standard pull-quote. Control the color and background of the quote component, add parallax effects, and more.
 
-**Timeline**
+**Timeline** - 
 Create a story with a timeline that sticks to the bottom. The timeline works a bit like chapters.
 
-**Collections**
-The 13th component is meant to be used on a page of your site, and allows you to display stories from a specific collection (category).
-
-**Document Viewer**
+**Document** - 
 This component allows you to upload a PDF or image, that is shown to the user once they click the component.
 
-Here’s a demo theme incorporating these story components.
-[http://playground.aesopstories.com](http://playground.aesopstories.com)
+**Collection** - 
+The 13th component is meant to be used on a page of your site, and allows you to display stories from a specific collection (category).
 
-Here’s a real story.
-[http://aesopstoryseri.es/the-quiet-day/](http://aesopstoryseri.es/the-quiet-day/)
+Here’s a demo theme incorporating these story components: [http://playground.aesopstories.com](http://playground.aesopstories.com).
 
-Here’s documentation on the Story Engine.
-[http://aesopstoryengine.com/help](http://aesopstoryengine.com/help)
+Here’s a real story: [http://aesopstoryseri.es/the-quiet-day/](http://aesopstoryseri.es/the-quiet-day).
 
+Here’s documentation on Aesop Story Engine: [http://aesopstoryengine.com/help](http://aesopstoryengine.com/help).
 
 = Theme Implementation =
 
 It’s important to know that the plugin only produces very basic CSS for the components. The theme is responsible for making the components appear different ways. For this reason, the Timeline and Chapter components may not function as intended. Refer to your themes documentation to see if it fully supports Aesop.
 
-Theme authors and developers will find documentation covering everything from the markup that is generated, to actions, filters, and instructions for full Aesop integration.
-
-[http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers)
+Theme authors and developers will find documentation covering everything from the markup that is generated, to actions, filters, and instructions for full Aesop integration here: [http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers).
 
 ** Update 7.31.14 **
 Aesop Story Engine 1.0.9 now features full theme compatibility with a simple code snippet that will load styles based on the components that you decide. While a dedicated theme is required to run components full-width, this will at least load all of the additional styles to give a basic design. Simply remove the component that you do not want to load additional styles for.
 
 `add_theme_support("aesop-component-styles", array("parallax", "image", "quote", "gallery", "content", "video", "audio", "collection", "chapter", "document", "character", "map", "timeline") );`
 
-We recommend placing this in a WordPress themes functions.php, or use a plugin like [Code Snippets](https://wordpress.org/plugins/code-snippets/) and put it there.
+We recommend placing this in a WordPress theme's functions.php, or use a plugin like [Code Snippets](https://wordpress.org/plugins/code-snippets) and put the snippet in there.
 
 = Developers =
-All components are pluggable, and there are ample filters and actions to manipulate just about everything you can imagine. Refer to the documentation below for more.
-
-[http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers)
+All components are pluggable, and there are ample filters and actions to manipulate just about everything you can imagine. Refer to the documentation for more: [http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers).
 
 If you think something is missing, we want to hear from you. Post your request and bugs on [Github](https://github.com/bearded-avenger/aesop-core).
 
 = Languages =
-Aesop Story Engine is currently available in 30 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
+Aesop Story Engine is currently available in 35 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
 
+* العربية (Arabic)
 * Български (Bulgarian)
+* Burmese (Myanmar)
 * čeština‎ (Czech)
 * 中文 (Chinese (China))
+<<<<<<< HEAD
 * Dansk (Danish)
 * Nederlands (Dutch)
+=======
+* Dansk (Danish (Denmark))
+* Nederlands (Dutch)
+* English (United Kingdom)
+>>>>>>> 754ef5c6a636cba77c9083313ad7a1aa514d1a54
 * English (US)
 * Suomi (Finnish)
 * Français (French (France))
@@ -113,6 +115,7 @@ Aesop Story Engine is currently available in 30 languages. We work closely with 
 * Ελληνικά (Greek)
 * עִבְרִית (Hebrew)
 * Magyar (Hungarian)
+* Indonesian (Indonesia)
 * Italiano (Italian)
 * 日本語 (Japanese)
 * ភាសាខ្មែរ (Khmer)
@@ -127,6 +130,7 @@ Aesop Story Engine is currently available in 30 languages. We work closely with 
 * Slovenčina (Slovak)
 * slovenščina (Slovenian)
 * Español (Spanish (Argentina))
+* Español (Spanish (Mexico))
 * Español (Spanish (Spain))
 * ไทย (Thai)
 * Türkçe (Turkish)
@@ -152,14 +156,13 @@ Aesop Story Engine is currently available in 30 languages. We work closely with 
 == Frequently Asked Questions ==
 
 = Does this work with all themes? =
-Most of the components will work with most themes without any issues. It’s very important to know that this plugin only applies basic styles, and to take full advantage, a theme built for Aesop is probably a good idea.
+Most of the components will work with most themes without any issues. It’s very important to know that this plugin only applies basic styles, and to take full advantage, a theme built for Aesop Story Engine is probably a good idea.
 
-= Where can I find themes for Aesop? =
-Various theme shops in the industry are actively creating Aesop Themes, in addition to the official Aesop themes located at http [http://aesopstoryengine.com/library](http://aesopstoryengine.com/library)
+= Where can I find themes for Aesop Story Engine? =
+Various theme shops in the industry are actively creating Aesop Story Engine Themes, in addition to the official Aesop Story Engine themes located at [http://aesopstoryengine.com/library](http://aesopstoryengine.com/library).
 
 = Where can I find more information on making my theme fully compatible? =
-Full documentation can be found below.
-[http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers)
+Full documentation can be found here: [http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers).
 
 == Screenshots ==
 
@@ -174,6 +177,7 @@ Full documentation can be found below.
 
 == Changelog ==
 
+<<<<<<< HEAD
 = 1.6.2 =
 * NEW - Contributor guidelines
 * FIX - Master branch of ASE is linked correctly to Scrutinizer in readme.md
@@ -183,6 +187,19 @@ Full documentation can be found below.
 * FIX - Added a fallback for gallery image thumbnails in admin if thumbnail size isn't available
 * TWEAK - Removed iframe border around Kickstarter videos - props @wavetree
 * TWEAK - Fixed image component failing validation - props @wavetree
+=======
+= 1.6.3 =
+* TWEAK - improved Document component markup which also fixes an issue with editing using Lasso
+* TWEAK - i18n updates
+
+= 1.6.2 =
+* FIX - Typo in 1.6.1 changelog
+* FIX - Fixed a bug with backward compatibilty function causing slow/crashing admin on sites with several thousand posts
+* FIX - Fixed a bug where updating a component would send it to the top of the post editor in Firefox - props @etcook
+* FIX - Added a fallback for gallery image thumbnails in admin if thumbnail size isn't available
+* TWEAK - Removed iframe border around Kickstarter videos - props @dryanmedia
+* TWEAK - Fixed image component failing validation - props @peiche
+>>>>>>> 754ef5c6a636cba77c9083313ad7a1aa514d1a54
 * TRANSLATIONS - Added English (United Kingdom), Indonesian, Spanish (Mexico), Burmese, and Arabic. Aesop is now available in 35 languages thanks to WP Translations!
 
 = 1.6.1 =
