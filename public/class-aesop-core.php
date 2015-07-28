@@ -295,6 +295,9 @@ class Aesop_Core {
 			}
 		}
 
+		// masonry for collection
+		wp_enqueue_script( 'ase-masonry-lib', '//cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js' );
+
 		// core script
 		wp_enqueue_script( 'ai-core', AI_CORE_URL.'/public/assets/js/ai-core.min.js', array( 'jquery' ), AI_CORE_VERSION, true );
 
