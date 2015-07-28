@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Creates an interactive timeline component that works similar to chapter headings
+ * Creates a collection component that contains category posts
  *
  * @since    1.0.0
  */
