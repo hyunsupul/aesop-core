@@ -209,6 +209,7 @@ class AesopGalleryComponentAdmin {
 		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="sequence" <?php checked( $type, 'sequence' ); ?> >Sequence</label>
 		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="photoset" <?php checked( $type, 'photoset' ); ?> ><?php _e( 'Photoset', 'aesop-core' );?></label>
 		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="stacked" <?php checked( $type, 'stacked' ); ?> ><?php _e( 'Parallax', 'aesop-core' );?></label>
+		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="hero" <?php checked( $type, 'hero' ); ?> ><?php _e( 'Hero', 'aesop-core' );?></label>
 
         <?php do_action( 'aesop_add_gallery_type' );
 
@@ -239,6 +240,9 @@ class AesopGalleryComponentAdmin {
 		// photoset
 		$photoset_layout = get_post_meta( $id, 'aesop_photoset_gallery_layout', true );
 		$photoset_lb   = get_post_meta( $id, 'aesop_photoset_gallery_lightbox', true );
+
+		// hero
+		$hero_content = get_post_meta( $id, 'aesop_hero_gallery_content', true );
 
 ?>
 		<div class="ase-gallery-opts--global">
@@ -305,6 +309,33 @@ class AesopGalleryComponentAdmin {
 			</div>
 
 		</div>
+
+		<div class="ase-gallery-opts ase-gallery-opts--hero" style="display: none;">
+			<h3><?php _e( 'Hero Options', 'aesop-core' );?></h3>
+
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_thumb_gallery_transition"><?php _e( 'Gallery Transition', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Adjust the transition effect for the Hero gallery. Default is fade.', 'aesop-core' );?></p>
+			   	<select name="aesop_thumb_gallery_transition">
+			      <option value="crossfade" <?php selected( $thumb_trans, 'fade' ); ?>><?php _e( 'Fade', 'aesop-core' );?></option>
+			      <option value="slide" <?php selected( $thumb_trans, 'slide' ); ?>><?php _e( 'Slide', 'aesop-core' );?></option>
+			      <option value="dissolve" <?php selected( $thumb_trans, 'dissolve' ); ?>><?php _e( 'Dissolve', 'aesop-core' );?></option>
+			    </select>
+			</div>
+
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_thumb_gallery_transition_speed"><?php _e( 'Gallery Transition Speed', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Activate slideshow by setting a speed for the transition. 5000 = 5 seconds.', 'aesop-core' );?></p>
+				<input type="text" name="aesop_thumb_gallery_transition_speed" value="<?php echo (int) $thumb_speed;?>">
+			</div>
+
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_hero_gallery_content"><?php _e( 'Gallery Content', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Content displayed within the Hero gallery.', 'aesop-core' );?></p>
+				<textarea name="aesop_hero_gallery_content"><?php echo esc_html( $hero_content ); // don't escape html ?></textarea>
+			</div>
+		</div>
+
 		<?php
 
 	}
@@ -351,6 +382,9 @@ class AesopGalleryComponentAdmin {
 		$photoset_layout = isset( $_POST['aesop_photoset_gallery_layout'] ) ? $_POST['aesop_photoset_gallery_layout'] : false;
 		$photoset_lb   = isset( $_POST['aesop_photoset_gallery_lightbox'] ) ? $_POST['aesop_photoset_gallery_lightbox'] : false;
 
+		// hero
+		$hero_content = isset( $_POST['aesop_hero_gallery_content'] ) ? $_POST['aesop_hero_gallery_content'] : false;
+
 		// safe to proceed
 		delete_post_meta( $post_id, '_ase_gallery_images' );
 
@@ -375,6 +409,9 @@ class AesopGalleryComponentAdmin {
 		// photoset
 		update_post_meta( $post_id, 'aesop_photoset_gallery_layout', absint( $photoset_layout ) );
 		update_post_meta( $post_id, 'aesop_photoset_gallery_lightbox', $photoset_lb );
+
+		// hero
+		update_post_meta( $post_id, 'aesop_hero_gallery_content', $hero_content );
 	}
 
 

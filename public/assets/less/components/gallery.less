@@ -54,3 +54,34 @@
          display: block;
     }
 }
+
+// hero gallery
+.aesop-hero-gallery-wrapper {
+  // overlay?
+  position: relative;
+  padding-bottom: 55%;
+
+  .fotorama {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.aesop-hero-gallery-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+     -moz-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+
+  * {
+    // option to set color?
+    color: #fff; // total hack
+  }
+}
