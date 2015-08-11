@@ -280,7 +280,7 @@ function aesop_gallery_component_data_atts( $postid = '' ) {
 		'thumbhide' => $thumb_hide,
 		'pslayout'  => (int) trim( $photoset_layout ),
 		'pslightbox' => sanitize_text_field( trim( $photoset_lb ) ),
-		'content' => trim( $hero_content ), // sanitize strips html
+		'content' => sanitize_text_field( trim( $hero_content ) ),
 	);
 
 	// map the meta to att values
