@@ -401,11 +401,12 @@ class AesopCoreGallery {
 																			data-nav=false
 																			data-allow-full-screen="false"
 																			data-click="false"
-																			data-ratio="100/55"
+																			data-ratio="100/35"
 																			data-fit="cover"
 																			data-captions="false"
 																			data-arrows="false"
 																			data-swipe="false"
+																			data-transitionduration="1500"
 																			><?php
 
 		foreach ( $image_ids as $image_id ):
