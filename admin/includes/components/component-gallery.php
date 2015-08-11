@@ -332,7 +332,7 @@ class AesopGalleryComponentAdmin {
 			<div class="ase-gallery-opts--single">
 				<label for="aesop_hero_gallery_content"><?php _e( 'Gallery Content', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Content displayed within the Hero gallery.', 'aesop-core' );?></p>
-				<textarea name="aesop_hero_gallery_content"><?php echo esc_html( $hero_content ); // don't escape html ?></textarea>
+				<textarea name="aesop_hero_gallery_content"><?php echo esc_html( $hero_content ); ?></textarea>
 			</div>
 		</div>
 
@@ -411,7 +411,7 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, 'aesop_photoset_gallery_lightbox', $photoset_lb );
 
 		// hero
-		update_post_meta( $post_id, 'aesop_hero_gallery_content', $hero_content );
+		update_post_meta( $post_id, 'aesop_hero_gallery_content', sanitize_text_field( $hero_content ) );
 	}
 
 
