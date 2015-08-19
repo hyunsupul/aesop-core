@@ -1,5 +1,5 @@
 === Aesop Story Engine ===
-Contributors: nphaskins, peiche, Tmeister, etcio, michaelbeil
+Contributors: nphaskins, etcio, michaelbeil
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
@@ -89,7 +89,7 @@ All components are pluggable, and there are ample filters and actions to manipul
 If you think something is missing, we want to hear from you. Post your request and bugs on [Github](https://github.com/bearded-avenger/aesop-core).
 
 = Languages =
-Aesop Story Engine is currently available in 35 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
+Aesop Story Engine is currently available in 36 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
 
 * العربية (Arabic)
 * Български (Bulgarian)
@@ -121,6 +121,7 @@ Aesop Story Engine is currently available in 35 languages. We work closely with 
 * Slovenčina (Slovak)
 * slovenščina (Slovenian)
 * Español (Spanish (Argentina))
+* Español (Spanish (Chile))
 * Español (Spanish (Mexico))
 * Español (Spanish (Spain))
 * ไทย (Thai)
@@ -131,7 +132,7 @@ Aesop Story Engine is currently available in 35 languages. We work closely with 
 
 = Uploading in WordPress Dashboard =
 
-1. Navigate to 'Add New' in the plugins dashboard
+1. Navigate to 'Add New' in the Plugin dashboard
 2. Navigate to the 'Upload' area
 3. Select `aesop-core.zip` from your computer
 4. Click 'Install Now'
@@ -167,6 +168,11 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+
+= 1.6.4 =
+* FIX - Fixed the gallery shortcodes that were broken by WordPress 4.3
+* TWEAK - i18n updates
+* TWEAK - Renamed Lasso to Editus
 
 = 1.6.3 =
 * TWEAK - improved Document component markup which also fixes an issue with editing using Lasso
@@ -211,7 +217,7 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * NEW - Welcome screen on plugin activation
 * NEW - New "Type" option for Quote Component which allows the quote to be displayed as a standard pull quote
 * FIX - Blank map tiles with new Mapbox IDs. Mapbox changed things and now requires a public key for the map tiles. We're using our public key, but have introduced a filter should you need to change this. On this update, we've changed our mapbox id, and have written an upgrade script that will ensure you have a smooth transition in this update
-* FIX - The document component css class has been renamed! This was inevitable. It was mis-labeled as docmument component from day one, so we've fixed it to the proper spelling, of "document" component
+* FIX - The document component css class has been renamed! This was inevitable. It was mis-labeled as document component from day one, so we've fixed it to the proper spelling, of "document" component
 
 = 1.4.2 =
 * NEW - Compatibility with Lasso - our soon to be released front-end editor add-on
