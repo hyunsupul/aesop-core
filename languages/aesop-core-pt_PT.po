@@ -2,18 +2,15 @@
 # This file is distributed under the GPL-2.0+.
 # Translators:
 # alfalb.as, 2015
+# Lídia Martins <javasoficial1@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2015-05-26 21:15:54+00:00\n"
-=======
-"POT-Creation-Date: 2015-05-29 17:51:01+00:00\n"
->>>>>>> 754ef5c6a636cba77c9083313ad7a1aa514d1a54
-"PO-Revision-Date: 2015-04-25 21:00+0000\n"
-"Last-Translator: alfalb.as\n"
-"Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/aesop-story-engine/language/pt_PT/)\n"
+"POT-Creation-Date: 2015-08-19 15:55:12+00:00\n"
+"PO-Revision-Date: 2015-07-28 18:31+0000\n"
+"Last-Translator: Aesopinteractive\n"
+"Language-Team: Portuguese (Portugal) (http://www.transifex.com/wp-translations/aesop-story-engine/language/pt_PT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,7 +27,7 @@ msgstr ""
 
 #: admin/class-aesop-core-admin.php:151
 msgid "Add Component"
-msgstr "Adicionar Componente"
+msgstr "Adicionar componente"
 
 #: admin/class-aesop-core-admin.php:224
 msgid "Select a story component."
@@ -61,7 +58,7 @@ msgstr "Imagem"
 
 #: admin/includes/available.php:19
 msgid "Image Width"
-msgstr "Largura da Imagem"
+msgstr "Largura da umagem"
 
 #: admin/includes/available.php:20
 msgid ""
@@ -82,7 +79,7 @@ msgstr ""
 
 #: admin/includes/available.php:31
 msgid "Image Offset"
-msgstr "Offset da Imagem"
+msgstr "Offset da imagem"
 
 #: admin/includes/available.php:32
 msgid ""
@@ -92,7 +89,7 @@ msgstr ""
 
 #: admin/includes/available.php:37
 msgid "Image Credit"
-msgstr "Crédito da Imagem"
+msgstr "Créditos da imagem"
 
 #: admin/includes/available.php:38
 msgid ""
@@ -115,7 +112,7 @@ msgstr ""
 #: admin/includes/available.php:605 admin/includes/available.php:633
 #: admin/includes/available.php:746
 msgid "Left"
-msgstr "Links"
+msgstr "Esquerda"
 
 #: admin/includes/available.php:55 admin/includes/available.php:97
 #: admin/includes/available.php:143 admin/includes/available.php:212
@@ -130,11 +127,11 @@ msgstr "Direita"
 #: admin/includes/available.php:216 admin/includes/available.php:405
 #: admin/includes/available.php:613 admin/includes/available.php:754
 msgid "Center"
-msgstr "Center"
+msgstr "Centro"
 
 #: admin/includes/available.php:63
 msgid "Image Alignment"
-msgstr "Alinhamento da Imagem"
+msgstr "Alinhamento da imagem"
 
 #: admin/includes/available.php:64
 msgid ""
@@ -152,7 +149,7 @@ msgstr ""
 #: admin/includes/available.php:893 admin/includes/available.php:1040
 #: admin/includes/components/component-map.php:80
 msgid "On"
-msgstr "Ligado"
+msgstr "Sim"
 
 #: admin/includes/available.php:75 admin/includes/available.php:257
 #: admin/includes/available.php:482 admin/includes/available.php:525
@@ -165,7 +162,7 @@ msgstr "Ligado"
 #: admin/includes/available.php:1044
 #: admin/includes/components/component-map.php:76
 msgid "Off"
-msgstr "Desligado"
+msgstr "Não"
 
 #: admin/includes/available.php:79
 msgid "Lightbox"
@@ -190,7 +187,7 @@ msgstr ""
 
 #: admin/includes/available.php:105 admin/includes/available.php:559
 msgid "Caption Position"
-msgstr "Posição da Legenda"
+msgstr "Posição da legenda"
 
 #: admin/includes/available.php:106
 msgid "Use this to override the alignment as inherited from the image."
@@ -207,11 +204,11 @@ msgstr "Personagem"
 
 #: admin/includes/available.php:119
 msgid "Character Image"
-msgstr "Imagem da Personagem"
+msgstr "Imagem da personagem"
 
 #: admin/includes/available.php:125
 msgid "Character Name"
-msgstr "Nome da Personagem"
+msgstr "Nome da personagem"
 
 #: admin/includes/available.php:126
 msgid ""
@@ -397,7 +394,7 @@ msgstr "Altura do Componente"
 
 #: admin/includes/available.php:309
 msgid ""
-"Enter an optional height for the component. ou can enter the size as "
+"Enter an optional height for the component. You can enter the size as "
 "<code>40%</code> or <code>500px</code>. By default it's set to "
 "<code>auto</code>. Use a large height like <code>1200px</code> to have a "
 "large blank area with small text."
@@ -1529,29 +1526,17 @@ msgstr ""
 msgid "Specify a category ID to display stories from."
 msgstr "Especifique uma id. de categoria para exibir as histórias."
 
-<<<<<<< HEAD
-#: public/includes/components/component-gallery.php:88
-msgid "edit gallery"
-msgstr "editar galeria"
-
-#: public/includes/components/component-gallery.php:98
-=======
 #: public/includes/components/component-gallery.php:91
 msgid "edit gallery"
 msgstr "editar galeria"
 
 #: public/includes/components/component-gallery.php:101
->>>>>>> 754ef5c6a636cba77c9083313ad7a1aa514d1a54
 msgid ""
 "Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon"
 " above."
 msgstr ""
 
-<<<<<<< HEAD
-#: public/includes/components/component-gallery.php:104
-=======
 #: public/includes/components/component-gallery.php:107
->>>>>>> 754ef5c6a636cba77c9083313ad7a1aa514d1a54
 msgid ""
 "This gallery is empty! It's also possible that you simply have the wrong "
 "gallery ID."
@@ -1572,8 +1557,8 @@ msgstr "As pessoas são feitas de histórias, não de átomos."
 #: public/includes/options.php:14
 msgid ""
 "Refer to the documentation located <a "
-"href=\"http://aesopstoryengine.com/help\" target=\"_blank\">here</a> for "
-"full option descriptions."
+"href=\"http://aesopstoryengine.com/help/map-component\" "
+"target=\"_blank\">here</a> for full option descriptions."
 msgstr ""
 
 #: public/includes/options.php:24

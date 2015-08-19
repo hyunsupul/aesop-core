@@ -1,19 +1,20 @@
 # Copyright (C) 2015 Aesopinteractive LLC
 # This file is distributed under the GPL-2.0+.
 # Translators:
+# Jennifer C., 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
 "POT-Creation-Date: 2015-08-19 15:55:12+00:00\n"
-"PO-Revision-Date: 2015-08-14 08:08+0000\n"
+"PO-Revision-Date: 2015-07-28 18:31+0000\n"
 "Last-Translator: Aesopinteractive\n"
-"Language-Team: Vietnamese (http://www.transifex.com/wp-translations/aesop-story-engine/language/vi/)\n"
+"Language-Team: Spanish (Chile) (http://www.transifex.com/wp-translations/aesop-story-engine/language/es_CL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Language: es_CL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: grunt-wp-i18n 0.5.2\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
@@ -25,11 +26,11 @@ msgstr ""
 
 #: admin/class-aesop-core-admin.php:151
 msgid "Add Component"
-msgstr ""
+msgstr "Añadir componente"
 
 #: admin/class-aesop-core-admin.php:224
 msgid "Select a story component."
-msgstr ""
+msgstr "Seleccione un componente del relato"
 
 #: admin/class-aesop-core-admin.php:251
 msgid ""
@@ -52,56 +53,56 @@ msgstr ""
 #: admin/includes/available.php:13 admin/includes/available.php:462
 #: admin/includes/available.php:983
 msgid "Image"
-msgstr "Hình ảnh"
+msgstr "Imagen"
 
 #: admin/includes/available.php:19
 msgid "Image Width"
-msgstr ""
+msgstr "Ancho de imagen"
 
 #: admin/includes/available.php:20
 msgid ""
 "Width of the image. You can enter the size as <code>40%</code> or "
 "<code>500px</code>."
-msgstr ""
+msgstr "Ancho de la imagen. Puede introducir el tamaño como <code>40%</code> ó <code>500px</code>."
 
 #: admin/includes/available.php:25
 msgid "Image URL"
-msgstr "Đường dẫn của ảnh"
+msgstr "URL de imagen"
 
 #: admin/includes/available.php:26 admin/includes/available.php:120
 #: admin/includes/available.php:348 admin/includes/available.php:514
 msgid ""
 "URL for the image. Click <em>Select Media</em> to open the WordPress Media "
 "Library."
-msgstr ""
+msgstr "URL para la imagen. Haga clic en <em>Seleccionar formato</em> para abrir Media Library de Wordpress"
 
 #: admin/includes/available.php:31
 msgid "Image Offset"
-msgstr ""
+msgstr "Imagen de compensación"
 
 #: admin/includes/available.php:32
 msgid ""
 "Using this option you can <em>float</em> an image outside of the text. Enter"
 " a size like <code>-200px</code>."
-msgstr ""
+msgstr "Al usar esta opción puede <em>flotar</em> una imagen fuera del texto. Introduzca un tamaño como <code>-200px</code>."
 
 #: admin/includes/available.php:37
 msgid "Image Credit"
-msgstr ""
+msgstr "Crédito de la imagen"
 
 #: admin/includes/available.php:38
 msgid ""
 "This is typically used to credit the photographer. Enter a name and it will "
 "show as <em>Photo by: Name</em>."
-msgstr ""
+msgstr "Se utiliza para dar los créditos al fotógrafo. Introduzca un nombre y se mostrará como <em>Foto por: Nombre</em>."
 
 #: admin/includes/available.php:43
 msgid "Image ALT"
-msgstr ""
+msgstr "ALT de la imagen"
 
 #: admin/includes/available.php:44
 msgid "ALT tag used for the image. Primarily used for SEO purposes."
-msgstr ""
+msgstr "Etiqueta ALT usada para la imagen. Se utiliza principalmente para finalidades de SEO."
 
 #: admin/includes/available.php:51 admin/includes/available.php:93
 #: admin/includes/available.php:139 admin/includes/available.php:208
@@ -110,7 +111,7 @@ msgstr ""
 #: admin/includes/available.php:605 admin/includes/available.php:633
 #: admin/includes/available.php:746
 msgid "Left"
-msgstr "Trái"
+msgstr "Izquierda"
 
 #: admin/includes/available.php:55 admin/includes/available.php:97
 #: admin/includes/available.php:143 admin/includes/available.php:212
@@ -119,23 +120,23 @@ msgstr "Trái"
 #: admin/includes/available.php:609 admin/includes/available.php:637
 #: admin/includes/available.php:750
 msgid "Right"
-msgstr "Đúng"
+msgstr "Derecha"
 
 #: admin/includes/available.php:59 admin/includes/available.php:101
 #: admin/includes/available.php:216 admin/includes/available.php:405
 #: admin/includes/available.php:613 admin/includes/available.php:754
 msgid "Center"
-msgstr "Trung tâm"
+msgstr "Centrar"
 
 #: admin/includes/available.php:63
 msgid "Image Alignment"
-msgstr ""
+msgstr "Alineación de imagen"
 
 #: admin/includes/available.php:64
 msgid ""
 "How should the image be aligned? If using a caption, the caption will "
 "automatically align with this option."
-msgstr ""
+msgstr "¿Cómo se debería alinear la imagen? Con esta opción si la imagen lleva inserta una leyenda ésta se alineará de forma automática."
 
 #: admin/includes/available.php:71 admin/includes/available.php:253
 #: admin/includes/available.php:478 admin/includes/available.php:521
@@ -147,7 +148,7 @@ msgstr ""
 #: admin/includes/available.php:893 admin/includes/available.php:1040
 #: admin/includes/components/component-map.php:80
 msgid "On"
-msgstr "bật"
+msgstr "On"
 
 #: admin/includes/available.php:75 admin/includes/available.php:257
 #: admin/includes/available.php:482 admin/includes/available.php:525
@@ -160,7 +161,7 @@ msgstr "bật"
 #: admin/includes/available.php:1044
 #: admin/includes/components/component-map.php:76
 msgid "Off"
-msgstr "tắt"
+msgstr "Off"
 
 #: admin/includes/available.php:79
 msgid "Lightbox"
@@ -170,189 +171,189 @@ msgstr "Lightbox"
 msgid ""
 "Choose <em>on</em> and the image will open up the full-size version in a "
 "lightbox."
-msgstr ""
+msgstr "Si escoge <em>on</em> la imagen se mostrará en tamaño completo en una lightbox."
 
 #: admin/includes/available.php:85 admin/includes/available.php:131
 #: admin/includes/available.php:535 admin/includes/available.php:815
 msgid "Caption"
-msgstr "Chú thích"
+msgstr "Leyenda"
 
 #: admin/includes/available.php:86
 msgid ""
 "Optional caption for the image. If you do not enter a caption, it will not "
 "show."
-msgstr ""
+msgstr "Las leyendas para las imágenes son opcional. Si usted no introduce una leyenda no se notará."
 
 #: admin/includes/available.php:105 admin/includes/available.php:559
 msgid "Caption Position"
-msgstr ""
+msgstr "Posición de leyenda"
 
 #: admin/includes/available.php:106
 msgid "Use this to override the alignment as inherited from the image."
-msgstr ""
+msgstr "Utilice esto para anular la alineación original de la imagen."
 
 #: admin/includes/available.php:110
 msgid ""
 "Creates an image component with caption, alignment, and lightbox options."
-msgstr ""
+msgstr "Crea un componente de imagen con leyenda, alineación y opciones para lightbox."
 
 #: admin/includes/available.php:113
 msgid "Character"
-msgstr ""
+msgstr "Carácter"
 
 #: admin/includes/available.php:119
 msgid "Character Image"
-msgstr ""
+msgstr "Imagen del carácter"
 
 #: admin/includes/available.php:125
 msgid "Character Name"
-msgstr ""
+msgstr "Nombre del carácter"
 
 #: admin/includes/available.php:126
 msgid ""
 "Enter a name for the character. If you do not enter a name, it will not "
 "show."
-msgstr ""
+msgstr "Introduzca un nombre para el carácter. Si no lo introduce no se mostrará nombre."
 
 #: admin/includes/available.php:132
 msgid ""
 "Optional caption for the character. If you do not enter a caption, it will "
 "not show."
-msgstr ""
+msgstr "La leyenda para el carácter es opcional. Si usted no la introduce no se mostrará."
 
 #: admin/includes/available.php:147 admin/includes/available.php:220
 #: admin/includes/available.php:758
 msgid "Alignment"
-msgstr "Cân dòng"
+msgstr "Alineación"
 
 #: admin/includes/available.php:148
 msgid ""
 "Alignment of the character component. You can align it to the left or right "
 "of the main text."
-msgstr ""
+msgstr "Alineación del componente del carácter. Lo puede alinear hacia la derecha o izquierda del texto principal."
 
 #: admin/includes/available.php:153
 msgid "Width"
-msgstr "Chiều rộng"
+msgstr "Ancho"
 
 #: admin/includes/available.php:154
 msgid ""
 "Width of the character component. You can enter the size as <code>40%</code>"
 " or <code>500px</code>."
-msgstr ""
+msgstr "Ancho del componente del carácter. Puede introducir un tamaño como <code>40%</code> ó <code>500px</code>."
 
 #: admin/includes/available.php:157
 msgid ""
 "Creates a character that can be positioned to the left or right of your "
 "story."
-msgstr ""
+msgstr "Crea un carácter que puede ser posicionado a la izquierda o derecha de su relato."
 
 #: admin/includes/available.php:160
 msgid "Aesop Quote Section"
-msgstr ""
+msgstr "Sección de citas de Aesop"
 
 #: admin/includes/available.php:168
 msgid "Pull Quote"
-msgstr ""
+msgstr "Cita"
 
 #: admin/includes/available.php:172
 msgid "Full Width"
-msgstr ""
+msgstr "Ancho completo"
 
 #: admin/includes/available.php:176
 msgid "Quote Styles"
-msgstr ""
+msgstr "Formato de cita"
 
 #: admin/includes/available.php:177
 msgid "By default the quote is full width, but you can change that here."
-msgstr ""
+msgstr "La cita tiene tamaño completo por defecto, pero usted puede cambiar eso aquí."
 
 #: admin/includes/available.php:182 admin/includes/available.php:296
 msgid "Background Color"
-msgstr "Màu nền"
+msgstr "Color de fondo"
 
 #: admin/includes/available.php:183
 msgid "Select a background color to be used as the quote background."
-msgstr ""
+msgstr "Seleccione un color de fondo para usarlo en las citas."
 
 #: admin/includes/available.php:188
 msgid "Text Color"
-msgstr "Màu chữ"
+msgstr "Color del texto"
 
 #: admin/includes/available.php:189
 msgid "Select a color for the quote text."
-msgstr ""
+msgstr "Seleccione un color para el texto de la cita."
 
 #: admin/includes/available.php:194 admin/includes/available.php:738
 msgid "Component Width"
-msgstr ""
+msgstr "Ancho del componente"
 
 #: admin/includes/available.php:195 admin/includes/available.php:303
 #: admin/includes/available.php:739
 msgid ""
 "You can enter the size as <code>40%</code> or <code>500px</code>. Enter the "
 "word <code>content</code> to restrict the width to that of the main text."
-msgstr ""
+msgstr " Puede introducir el tamaño como <code>40%</code> ó <code>500px</code>. Introduzca la palabra <code>contenido</code> para restringir el ancho al mismo del texto principal."
 
 #: admin/includes/available.php:200
 msgid "Height of Quote Area"
-msgstr ""
+msgstr "Altura del área para las citas"
 
 #: admin/includes/available.php:201
 msgid ""
 "Enter a quote area height like <code>400px</code>. The quote will "
 "automatically center itself vertically. By default this is set to "
 "<code>auto</code>."
-msgstr ""
+msgstr " Introduzca una altura para el área de la cita, como por ejemplo <code>400px</code>. La cita se centrará de forma vertical automáticamente. Por defecto está configurado en <code>auto</code>."
 
 #: admin/includes/available.php:221
 msgid ""
 "By default the quote is centered but you can choose to have it left or right"
 " aligned as well."
-msgstr ""
+msgstr "La cita está de forma predeterminada en el centro, pero usted puede elegir su posición tanto a la izquierda como a la derecha."
 
 #: admin/includes/available.php:227
 msgid "Quote Size"
-msgstr ""
+msgstr "Tamaño de la cita"
 
 #: admin/includes/available.php:228
 msgid "Font size of the quote."
-msgstr ""
+msgstr "Tamaño de la fuente de la cita."
 
 #: admin/includes/available.php:233 admin/includes/available.php:347
 msgid "Background Image"
-msgstr "Ảnh nền"
+msgstr "Imagen de fondo"
 
 #: admin/includes/available.php:234
 msgid ""
 "Optionally add a background image to the quote area. Enter the image URL or "
 "click <em>Select Media</em> to open the WordPress Media Library."
-msgstr ""
+msgstr "Puede añadir una imagen de fondo para el área de la cita. Para esto introduzca la URL de la imagen o haga clic en <em>Seleccionar formato</em> para abrir Media Library de Wordpress."
 
 #: admin/includes/available.php:239
 msgid "Quote Text"
-msgstr ""
+msgstr "Texto de la cita"
 
 #: admin/includes/available.php:240
 msgid "The actual quote text that will be displayed."
-msgstr ""
+msgstr "Así se mostrará el texto de la cita."
 
 #: admin/includes/available.php:245
 msgid "Cite"
-msgstr "Trích dẫn"
+msgstr "Citar"
 
 #: admin/includes/available.php:246
 msgid "Provide an optional cite or source for the quote."
-msgstr ""
+msgstr "Proveer una cita o fuente opcional para la cita."
 
 #: admin/includes/available.php:261
 msgid "Enable Quote Parallax"
-msgstr ""
+msgstr "Habilitar parallax de cita"
 
 #: admin/includes/available.php:262
 msgid ""
 "Set to <em>on</em> to enable the quote text to animate across the component."
-msgstr ""
+msgstr "Configure en <em>on</em> para permitir que el texto de la cita se vivifique a través del componente."
 
 #: admin/includes/available.php:277
 msgid "Parallax Direction of Quote"
@@ -368,7 +369,7 @@ msgstr ""
 
 #: admin/includes/available.php:284 admin/includes/generator_blob.php:70
 msgid "Content"
-msgstr "Nội dung"
+msgstr "Contenido"
 
 #: admin/includes/available.php:290
 msgid "Color of Text"
@@ -410,7 +411,7 @@ msgstr ""
 
 #: admin/includes/available.php:323
 msgid "None"
-msgstr "Không có"
+msgstr "Ninguna"
 
 #: admin/includes/available.php:335
 msgid "Text Block Alignment"
@@ -436,11 +437,11 @@ msgstr ""
 
 #: admin/includes/available.php:355
 msgid "No Repeat"
-msgstr "Không lặp lại"
+msgstr "Sin repetición"
 
 #: admin/includes/available.php:359
 msgid "Repeat"
-msgstr "Lặp lại"
+msgstr "Repetir"
 
 #: admin/includes/available.php:363
 msgid "Repeat Vertical"
@@ -551,7 +552,7 @@ msgstr ""
 
 #: admin/includes/available.php:466
 msgid "Video"
-msgstr "Video"
+msgstr "Vídeo"
 
 #: admin/includes/available.php:470
 msgid "Background Type"
@@ -665,12 +666,12 @@ msgstr ""
 
 #: admin/includes/available.php:649
 msgid "Audio"
-msgstr "Âm thanh"
+msgstr "Audio"
 
 #: admin/includes/available.php:655 admin/includes/available.php:1012
 #: admin/includes/components/component-map.php:68
 msgid "Title"
-msgstr "Tiêu đề"
+msgstr "T&iacute;tulo"
 
 #: admin/includes/available.php:656
 msgid "Provide an optional heading for the audio player."
@@ -738,11 +739,11 @@ msgstr ""
 
 #: admin/includes/available.php:767
 msgid "Vimeo"
-msgstr "Vimeo"
+msgstr ""
 
 #: admin/includes/available.php:771
 msgid "YouTube"
-msgstr "YouTube"
+msgstr ""
 
 #: admin/includes/available.php:775
 msgid "Kickstarter"
@@ -766,7 +767,7 @@ msgstr ""
 
 #: admin/includes/available.php:795
 msgid "Dailymotion"
-msgstr "Dailymotion"
+msgstr ""
 
 #: admin/includes/available.php:799
 msgid "Self"
@@ -860,7 +861,7 @@ msgstr ""
 
 #: admin/includes/available.php:916
 msgid "Height"
-msgstr "Chiều cao"
+msgstr "Alto"
 
 #: admin/includes/available.php:917
 msgid ""
@@ -933,7 +934,7 @@ msgstr ""
 
 #: admin/includes/available.php:971
 msgid "Document"
-msgstr "Tài liệu"
+msgstr ""
 
 #: admin/includes/available.php:979
 msgid "PDF"
@@ -980,7 +981,7 @@ msgstr ""
 
 #: admin/includes/available.php:1019
 msgid "Category"
-msgstr "Thể loại"
+msgstr "Categor&iacute;a"
 
 #: admin/includes/available.php:1020
 msgid "Select the category that you want stories to be displayed from."
@@ -996,7 +997,7 @@ msgstr ""
 
 #: admin/includes/available.php:1032
 msgid "Columns"
-msgstr "Cột"
+msgstr "Columnas"
 
 #: admin/includes/available.php:1033
 msgid "Stories are displayed in a grid. How many columns should the grid be?"
@@ -1019,7 +1020,7 @@ msgstr ""
 
 #: admin/includes/available.php:1055
 msgid "Gallery"
-msgstr "Thư viện ảnh"
+msgstr "Galer&iacute;a"
 
 #: admin/includes/available.php:1064
 msgid "Choose Gallery"
@@ -1048,7 +1049,7 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:67
 msgid "Facebook"
-msgstr "Facebook"
+msgstr ""
 
 #: admin/includes/class.welcome.php:72
 msgid "Quick Start"
@@ -1131,7 +1132,7 @@ msgstr ""
 #: admin/includes/components/component-gallery.php:35
 #: admin/includes/components/component-gallery.php:48
 msgid "Galleries"
-msgstr "Thư viện ảnh"
+msgstr "Galerías"
 
 #: admin/includes/components/component-gallery.php:36
 msgid "Parent Gallery:"
@@ -1155,7 +1156,7 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:41
 msgid "Edit Gallery"
-msgstr "Sửa thư viện"
+msgstr "Editar galer&iacute;a"
 
 #: admin/includes/components/component-gallery.php:42
 msgid "Update Gallery"
@@ -1199,11 +1200,11 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:207
 msgid "Grid"
-msgstr "Dạng lưới"
+msgstr "Grilla"
 
 #: admin/includes/components/component-gallery.php:208
 msgid "Thumbnail"
-msgstr "Thu nhỏ"
+msgstr "Imagen en miniatura"
 
 #: admin/includes/components/component-gallery.php:210
 msgid "Photoset"
@@ -1264,7 +1265,7 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:276
 msgid "Slide"
-msgstr "Slide"
+msgstr ""
 
 #: admin/includes/components/component-gallery.php:277
 msgid "Dissolve"
@@ -1311,7 +1312,7 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:434
 msgid "All done!"
-msgstr "Hoàn tất!"
+msgstr "&iexcl;Todo hecho!"
 
 #: admin/includes/components/component-map.php:62
 msgid "Aesop Map Marker"
@@ -1427,7 +1428,7 @@ msgstr ""
 
 #: admin/includes/help.php:37 admin/includes/help.php:63
 msgid "Documentation"
-msgstr "Tài liệu"
+msgstr "Documentación"
 
 #: admin/includes/help.php:38
 msgid ""
@@ -1571,9 +1572,9 @@ msgstr ""
 #: admin/includes/components/component-gallery.php:33
 msgctxt "aesop-core"
 msgid "Galleries"
-msgstr "Thư viện ảnh"
+msgstr "Galerías"
 
 #: admin/includes/components/component-gallery.php:34
 msgctxt "aesop-core"
 msgid "Gallery"
-msgstr "Thư viện ảnh"
+msgstr "Galer&iacute;a"

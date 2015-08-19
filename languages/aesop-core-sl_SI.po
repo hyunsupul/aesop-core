@@ -5,14 +5,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-<<<<<<< HEAD
-"POT-Creation-Date: 2015-05-26 21:15:54+00:00\n"
-=======
-"POT-Creation-Date: 2015-05-29 17:51:01+00:00\n"
->>>>>>> 754ef5c6a636cba77c9083313ad7a1aa514d1a54
-"PO-Revision-Date: 2015-04-25 21:00+0000\n"
+"POT-Creation-Date: 2015-08-19 15:55:12+00:00\n"
+"PO-Revision-Date: 2015-07-28 18:31+0000\n"
 "Last-Translator: Aesopinteractive\n"
-"Language-Team: Slovenian (Slovenia) (http://www.transifex.com/projects/p/aesop-story-engine/language/sl_SI/)\n"
+"Language-Team: Slovenian (Slovenia) (http://www.transifex.com/wp-translations/aesop-story-engine/language/sl_SI/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -396,7 +392,7 @@ msgstr ""
 
 #: admin/includes/available.php:309
 msgid ""
-"Enter an optional height for the component. ou can enter the size as "
+"Enter an optional height for the component. You can enter the size as "
 "<code>40%</code> or <code>500px</code>. By default it's set to "
 "<code>auto</code>. Use a large height like <code>1200px</code> to have a "
 "large blank area with small text."
@@ -1528,29 +1524,17 @@ msgstr ""
 msgid "Specify a category ID to display stories from."
 msgstr ""
 
-<<<<<<< HEAD
-#: public/includes/components/component-gallery.php:88
-msgid "edit gallery"
-msgstr ""
-
-#: public/includes/components/component-gallery.php:98
-=======
 #: public/includes/components/component-gallery.php:91
 msgid "edit gallery"
 msgstr ""
 
 #: public/includes/components/component-gallery.php:101
->>>>>>> 754ef5c6a636cba77c9083313ad7a1aa514d1a54
 msgid ""
 "Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon"
 " above."
 msgstr ""
 
-<<<<<<< HEAD
-#: public/includes/components/component-gallery.php:104
-=======
 #: public/includes/components/component-gallery.php:107
->>>>>>> 754ef5c6a636cba77c9083313ad7a1aa514d1a54
 msgid ""
 "This gallery is empty! It's also possible that you simply have the wrong "
 "gallery ID."
@@ -1571,8 +1555,8 @@ msgstr ""
 #: public/includes/options.php:14
 msgid ""
 "Refer to the documentation located <a "
-"href=\"http://aesopstoryengine.com/help\" target=\"_blank\">here</a> for "
-"full option descriptions."
+"href=\"http://aesopstoryengine.com/help/map-component\" "
+"target=\"_blank\">here</a> for full option descriptions."
 msgstr ""
 
 #: public/includes/options.php:24
