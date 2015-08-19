@@ -20,15 +20,19 @@ jQuery(document).ready(function($) {
 	var settingsHeight = function(){
 		var height  = $(window).height() - 60;
 		var width = $(window).width();
+		var buttonHeight = 71; // .aesop-buttoninsert-wrap doesn't exist on initial function call
 
 		if ( width < 782 ) {
-			var genLeftHeight = $('.aesop-generator-left').height();
-			var buttonHeight = $('.aesop-buttoninsert-wrap').height();
+			var genLeftHeight = $('.aesop-generator-left').outerHeight();
 		} else {
-			var genLeftHeight = '';
-			var buttonHeight = '';
+			var genLeftHeight = 0;
 		}
-		$('#aesop-generator-settings-outer').css({'height':height + genLeftHeight + buttonHeight});
+
+		if ( width < 480 ) {
+			height = $(window).height() - 40; // 30 + 10, line 64 in responsive.less
+		}
+
+		$('#aesop-generator-settings-outer').css({'height':height - genLeftHeight - buttonHeight});
 
 		if ( height < 700 && width > 782 ) {
 			$('.aesop-generator-left').addClass('aesop-generator-small-height');

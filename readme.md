@@ -56,7 +56,7 @@ Interactive elements are created while crafting stories, with the Story Componen
 See [https://github.com/bearded-avenger/aesop-core/releases](https://github.com/bearded-avenger/aesop-core/releases) for more.
 
 ### Translations
-Aesop Story Engine is currently available in 35 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
+Aesop Story Engine is currently available in 36 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
 
 * العربية (Arabic)
 * Български (Bulgarian)
@@ -88,6 +88,7 @@ Aesop Story Engine is currently available in 35 languages. We work closely with 
 * Slovenčina (Slovak)
 * slovenščina (Slovenian)
 * Español (Spanish (Argentina))
+* Español (Spanish (Chile))
 * Español (Spanish (Mexico))
 * Español (Spanish (Spain))
 * ไทย (Thai)
