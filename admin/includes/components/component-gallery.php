@@ -1,6 +1,6 @@
 <?php
 /**
- * Filters custom meta box class to add cusotm meta to galelry component
+ * Filters custom meta box class to add cusotm meta to gallery component
  *
  * @since    1.0.0
  */
