@@ -1,16 +1,17 @@
 # Copyright (C) 2015 Aesopinteractive LLC
 # This file is distributed under the GPL-2.0+.
 # Translators:
+# esterb <esterb@gmail.com>, 2015
 # Inanc Yigit <inanc64@gmail.com>, 2015
 # Thom, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-05-29 17:51:01+00:00\n"
-"PO-Revision-Date: 2015-05-29 09:11+0000\n"
-"Last-Translator: Thom\n"
-"Language-Team: Dutch (Netherlands) (http://www.transifex.com/projects/p/aesop-story-engine/language/nl_NL/)\n"
+"POT-Creation-Date: 2015-08-19 15:55:12+00:00\n"
+"PO-Revision-Date: 2015-08-18 10:25+0000\n"
+"Last-Translator: Aesopinteractive\n"
+"Language-Team: Dutch (Netherlands) (http://www.transifex.com/wp-translations/aesop-story-engine/language/nl_NL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,7 +65,7 @@ msgstr "Breedte afbeelding"
 msgid ""
 "Width of the image. You can enter the size as <code>40%</code> or "
 "<code>500px</code>."
-msgstr ""
+msgstr "Breedte van de afbeelding. Je kan de grootte als <code>40%</code> of <code>500px</code> invoeren."
 
 #: admin/includes/available.php:25
 msgid "Image URL"
@@ -75,7 +76,7 @@ msgstr "URL afbeelding"
 msgid ""
 "URL for the image. Click <em>Select Media</em> to open the WordPress Media "
 "Library."
-msgstr ""
+msgstr "URL voor de afbeelding. "
 
 #: admin/includes/available.php:31
 msgid "Image Offset"
@@ -95,7 +96,7 @@ msgstr ""
 msgid ""
 "This is typically used to credit the photographer. Enter a name and it will "
 "show as <em>Photo by: Name</em>."
-msgstr ""
+msgstr "Dit wordt normaal gesproken gebruikt om de fotograaf credit te geven. Geef een naam in en het zal er uitzien als <em>Foto door: Naam</em>."
 
 #: admin/includes/available.php:43
 msgid "Image ALT"
@@ -103,7 +104,7 @@ msgstr "ALT afbeelding"
 
 #: admin/includes/available.php:44
 msgid "ALT tag used for the image. Primarily used for SEO purposes."
-msgstr ""
+msgstr "ALT tag dat gebruikt wordt voor de afbeelding. Voornamelijk gebruikt voor SEO doeleinden."
 
 #: admin/includes/available.php:51 admin/includes/available.php:93
 #: admin/includes/available.php:139 admin/includes/available.php:208
@@ -131,13 +132,13 @@ msgstr "Centreren"
 
 #: admin/includes/available.php:63
 msgid "Image Alignment"
-msgstr ""
+msgstr "Uitlijning afbeelding"
 
 #: admin/includes/available.php:64
 msgid ""
 "How should the image be aligned? If using a caption, the caption will "
 "automatically align with this option."
-msgstr ""
+msgstr "Hoe moet de afbeelding uitgelijnd worden? Als er een bijschrift toegevoegd is, zal dit bijschrift automatisch uitlijnen met deze optie."
 
 #: admin/includes/available.php:71 admin/includes/available.php:253
 #: admin/includes/available.php:478 admin/includes/available.php:521
@@ -172,7 +173,7 @@ msgstr "Lightbox"
 msgid ""
 "Choose <em>on</em> and the image will open up the full-size version in a "
 "lightbox."
-msgstr ""
+msgstr "Kies <em>aan</em> en de afbeelding wordt op volledige grootte in een lightbox geopend."
 
 #: admin/includes/available.php:85 admin/includes/available.php:131
 #: admin/includes/available.php:535 admin/includes/available.php:815
@@ -251,7 +252,7 @@ msgstr ""
 
 #: admin/includes/available.php:160
 msgid "Aesop Quote Section"
-msgstr ""
+msgstr "Aesop Citaat Sectie"
 
 #: admin/includes/available.php:168
 msgid "Pull Quote"
@@ -267,7 +268,7 @@ msgstr ""
 
 #: admin/includes/available.php:177
 msgid "By default the quote is full width, but you can change that here."
-msgstr ""
+msgstr "Als standaardinstelling is het citaat volle breedte, maar dat kan je hier veranderen."
 
 #: admin/includes/available.php:182 admin/includes/available.php:296
 msgid "Background Color"
@@ -283,7 +284,7 @@ msgstr "Tekstkleur"
 
 #: admin/includes/available.php:189
 msgid "Select a color for the quote text."
-msgstr ""
+msgstr "Kies een kleur voor de geciteerde tekst."
 
 #: admin/includes/available.php:194 admin/includes/available.php:738
 msgid "Component Width"
@@ -294,7 +295,7 @@ msgstr "Breedte component"
 msgid ""
 "You can enter the size as <code>40%</code> or <code>500px</code>. Enter the "
 "word <code>content</code> to restrict the width to that of the main text."
-msgstr ""
+msgstr "Je kan de grootte invoeren als <code>40%</code> of <code>500px</code>. Voer het woord <code>content</code> in om de weidte te beperken tot die van de hoofdtekst."
 
 #: admin/includes/available.php:200
 msgid "Height of Quote Area"
@@ -305,21 +306,21 @@ msgid ""
 "Enter a quote area height like <code>400px</code>. The quote will "
 "automatically center itself vertically. By default this is set to "
 "<code>auto</code>."
-msgstr ""
+msgstr "Voer bijvoorbeeld de grootte in als <code>400px</code>. Het citaat centreert vanzelf verticaal. De standaardinstelling is <code>auto</code>."
 
 #: admin/includes/available.php:221
 msgid ""
 "By default the quote is centered but you can choose to have it left or right"
 " aligned as well."
-msgstr ""
+msgstr "Standaard is het citaat gecentreerd, maar je kan er ook voor kiezen om het links of rechts uit te lijnen."
 
 #: admin/includes/available.php:227
 msgid "Quote Size"
-msgstr ""
+msgstr "Citaat grootte"
 
 #: admin/includes/available.php:228
 msgid "Font size of the quote."
-msgstr ""
+msgstr "Lettergrootte van het citaat."
 
 #: admin/includes/available.php:233 admin/includes/available.php:347
 msgid "Background Image"
@@ -333,7 +334,7 @@ msgstr ""
 
 #: admin/includes/available.php:239
 msgid "Quote Text"
-msgstr ""
+msgstr "Geciteerde tekst"
 
 #: admin/includes/available.php:240
 msgid "The actual quote text that will be displayed."
@@ -394,7 +395,7 @@ msgstr "Hoogte van component"
 
 #: admin/includes/available.php:309
 msgid ""
-"Enter an optional height for the component. ou can enter the size as "
+"Enter an optional height for the component. You can enter the size as "
 "<code>40%</code> or <code>500px</code>. By default it's set to "
 "<code>auto</code>. Use a large height like <code>1200px</code> to have a "
 "large blank area with small text."
@@ -529,11 +530,11 @@ msgstr ""
 
 #: admin/includes/available.php:439
 msgid "The actual content text that will be displayed."
-msgstr ""
+msgstr "De eigenlijke tekstinhoud die getoond wordt."
 
 #: admin/includes/available.php:442
 msgid "Chapter Block"
-msgstr ""
+msgstr "Hoofdstuk blok"
 
 #: admin/includes/available.php:448
 msgid "Chapter Title"
@@ -589,7 +590,7 @@ msgstr ""
 
 #: admin/includes/available.php:499 admin/includes/available.php:513
 msgid "Parallax Image"
-msgstr ""
+msgstr "Parallax afbeelding"
 
 #: admin/includes/available.php:529
 msgid "Image Movement"
@@ -1054,7 +1055,7 @@ msgstr "Facebook"
 
 #: admin/includes/class.welcome.php:72
 msgid "Quick Start"
-msgstr ""
+msgstr "Snel van start"
 
 #: admin/includes/class.welcome.php:73
 msgid ""
@@ -1544,7 +1545,7 @@ msgstr ""
 
 #: public/includes/components/component-image.php:62
 msgid "Enlarge"
-msgstr ""
+msgstr "Vergroot"
 
 #: public/includes/components/component-map.php:45
 msgid "Add Map Markers"
@@ -1557,8 +1558,8 @@ msgstr "Mensen zijn gemaakt van verhalen, niet atomen."
 #: public/includes/options.php:14
 msgid ""
 "Refer to the documentation located <a "
-"href=\"http://aesopstoryengine.com/help\" target=\"_blank\">here</a> for "
-"full option descriptions."
+"href=\"http://aesopstoryengine.com/help/map-component\" "
+"target=\"_blank\">here</a> for full option descriptions."
 msgstr ""
 
 #: public/includes/options.php:24
