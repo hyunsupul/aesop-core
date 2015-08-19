@@ -322,6 +322,7 @@ class Aesop_Core {
 		add_shortcode( 'aesop_quote', 		'aesop_quote_shortcode' );
 		add_shortcode( 'aesop_timeline', 	'aesop_timeline_shortcode' );
 		add_shortcode( 'aesop_map', 		'aesop_map_shortcode' );
+		add_shortcode( 'aesop_content', 	'aesop_content_shortcode' );
 	}
 
 	/**
