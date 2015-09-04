@@ -45,19 +45,19 @@ class AesopGalleryComponentAdmin {
 			'not_found_in_trash'    => __( 'No Galleries found in Trash', 'aesop-core' ),
 		);
 		$args = array(
-			'label'                 => __( 'Galleries', 'aesop-core' ),
-			'description'           => __( 'Create responsive galleries.', 'aesop-core' ),
-			'menu_icon'       => AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
-			'menu_position'    => 15,
-			'labels'                => $labels,
-			'supports'              => array( 'title' ),
-			'hierarchical'          => false,
-			'public'                => false,
-			'show_ui'      => true,
-			'exclude_from_search'  => true,
-			'query_var'     => true,
-			'can_export'     => true,
-			'capability_type'    => 'post',
+			'label'					=> __( 'Galleries', 'aesop-core' ),
+			'description'			=> __( 'Create responsive galleries.', 'aesop-core' ),
+			'menu_icon'				=> AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
+			'menu_position'			=> 15,
+			'labels'				=> $labels,
+			'supports'				=> array( 'title' ),
+			'hierarchical'			=> false,
+			'public'				=> false,
+			'show_ui'				=> true,
+			'exclude_from_search'	=> true,
+			'query_var'				=> true,
+			'can_export'			=> true,
+			'capability_type'		=> 'post',
 		);
 
 		register_post_type( 'ai_galleries', apply_filters( 'ai_gallery_args', $args ) );
