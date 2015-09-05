@@ -169,6 +169,10 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 
 == Changelog ==
 
+= 1.6.5 =
+* FIX - Fixed the timeline shortcode that was broken by our shortcode fix
+* TWEAK - i18n updates
+
 = 1.6.4 =
 * FIX - Fixed the gallery shortcodes that were broken by WordPress 4.3
 * TWEAK - i18n updates

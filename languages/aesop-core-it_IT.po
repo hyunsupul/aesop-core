@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-08-19 17:10:20+00:00\n"
-"PO-Revision-Date: 2015-08-19 17:08+0000\n"
-"Last-Translator: Aesopinteractive\n"
+"POT-Creation-Date: 2015-09-04 23:59:39+00:00\n"
+"PO-Revision-Date: 2015-09-02 16:54+0000\n"
+"Last-Translator: Alessandro Curci <hantarex@gmail.com>\n"
 "Language-Team: Italian (Italy) (http://www.transifex.com/wp-translations/"
 "aesop-story-engine/language/it_IT/)\n"
 "Language: it_IT\n"
@@ -447,6 +447,10 @@ msgid ""
 "code>. Use a large height like <code>1200px</code> to have a large blank "
 "area with small text."
 msgstr ""
+"Inserisci un'altezza opzionale per il componente. Puoi inserire la "
+"dimensione come <code>40%</code> o <code>500px</code>. Per impostazione "
+"predefinita è impostata su  <code>auto</code>. Usa un'altezza grande come "
+"<code>1200px</code> per avere una grande area vuota con poco testo."
 
 #: admin/includes/available.php:315
 msgid "Number of Columns"
@@ -1277,7 +1281,7 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:94
 msgid "Read More..."
-msgstr ""
+msgstr "Leggi tutto..."
 
 #: admin/includes/components/component-gallery.php:35
 #: admin/includes/components/component-gallery.php:48
@@ -1792,6 +1796,9 @@ msgid ""
 "Refer to the documentation located <a href=\"http://aesopstoryengine.com/"
 "help/map-component\" target=\"_blank\">here</a> for full option descriptions."
 msgstr ""
+"Fai riferimento alla documentazione disponibile <a href=\"http://"
+"aesopstoryengine.com/help/map-component\" target=\"_blank\">qui</a> per la "
+"descrizione completa delle opzioni."
 
 #: public/includes/options.php:24
 msgid "Mapbox Map ID"
