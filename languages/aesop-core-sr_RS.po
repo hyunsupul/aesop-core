@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-08-19 17:10:20+00:00\n"
-"PO-Revision-Date: 2015-08-19 17:08+0000\n"
+"POT-Creation-Date: 2015-09-04 23:59:39+00:00\n"
+"PO-Revision-Date: 2015-08-25 08:36+0000\n"
 "Last-Translator: Aesopinteractive\n"
 "Language-Team: Serbian (Serbia) (http://www.transifex.com/wp-translations/"
 "aesop-story-engine/language/sr_RS/)\n"
@@ -151,7 +151,7 @@ msgstr ""
 #: admin/includes/available.php:893 admin/includes/available.php:1040
 #: admin/includes/components/component-map.php:80
 msgid "On"
-msgstr ""
+msgstr "Uključeno"
 
 #: admin/includes/available.php:75 admin/includes/available.php:257
 #: admin/includes/available.php:482 admin/includes/available.php:525
@@ -164,7 +164,7 @@ msgstr ""
 #: admin/includes/available.php:1044
 #: admin/includes/components/component-map.php:76
 msgid "Off"
-msgstr ""
+msgstr "Isključeno"
 
 #: admin/includes/available.php:79
 msgid "Lightbox"

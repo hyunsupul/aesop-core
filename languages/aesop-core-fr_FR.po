@@ -3,14 +3,15 @@
 # Translators:
 # Franck, 2015
 # FX Bénard <fxb@wp-translations.org>, 2015
+# FX Bénard <fxb@wp-translations.org>, 2015
 # Geoffrey Crofte, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-08-19 17:10:20+00:00\n"
-"PO-Revision-Date: 2015-08-19 17:08+0000\n"
-"Last-Translator: Aesopinteractive\n"
+"POT-Creation-Date: 2015-09-04 23:59:39+00:00\n"
+"PO-Revision-Date: 2015-09-03 22:04+0000\n"
+"Last-Translator: FX Bénard <fxb@wp-translations.org>\n"
 "Language-Team: French (France) (http://www.transifex.com/wp-translations/"
 "aesop-story-engine/language/fr_FR/)\n"
 "Language: fr_FR\n"
@@ -75,7 +76,7 @@ msgid ""
 "Width of the image. You can enter the size as <code>40%</code> or "
 "<code>500px</code>."
 msgstr ""
-"Largeur de l'image. Vous pouvez entrer une taille comme <code>40%</code> ou "
+"Largeur de l'image. Vous pouvez saisir une taille comme <code>40%</code> ou "
 "<code>500px</code>."
 
 #: admin/includes/available.php:25
@@ -88,8 +89,8 @@ msgid ""
 "URL for the image. Click <em>Select Media</em> to open the WordPress Media "
 "Library."
 msgstr ""
-"URL de l'image. Cliquez sur <em>Sélectionner média </em> pour ouvrir la "
-"bibliothèque de médias WordPress."
+"URL de l'image. Cliquez sur <em>Sélectionner média</em> pour ouvrir la "
+"bibliothèque de médias de WordPress."
 
 #: admin/includes/available.php:31
 msgid "Image Offset"
@@ -1304,6 +1305,11 @@ msgid ""
 "perfectly with Aesop Story Engine. Visit the site and enter your email for a "
 "25% discount!"
 msgstr ""
+"Arrêtez de perdre du temps en ayant constamment recours à l'aperçu de votre "
+"article, et éditer et créer à partir du front-office de votre site avec "
+"Editus, notre éditeur front-end qui se marie parfaitement avec Aesop Story "
+"Engine. Visitez le site et entrez votre e-mail pour une réduction de "
+"25%&nbsp;!"
 
 #: admin/includes/class.welcome.php:94
 msgid "Read More..."
@@ -1782,9 +1788,10 @@ msgid ""
 "the \"Add Component\" button. Refer to the Help tab while editing a post for "
 "more information."
 msgstr ""
-"Merci de votre intérêt pour Aesop&nbsp;! Commencez par aller vers n'importe "
-"quel article et cliquer sur le bouton \"Ajouter un composant\". Reportez-"
-"vous à l'onglet Aide lors de l'édition d'un article pour plus d'informations."
+"Merci de votre intérêt pour Aesop&nbsp;! Commencez par vous rendre sur "
+"n'importe quel article et cliquez sur le bouton « Ajouter un composant ». "
+"Reportez-vous à l'onglet Aide lors de l'édition d'un article pour plus "
+"d'informations."
 
 #: public/class-aesop-core.php:247
 msgid "Doh! There was an issue deactivating Aesop. Try again perhaps?."
@@ -1806,6 +1813,8 @@ msgid ""
 "Setup a gallery by clicking the <span class=\"editus-icon-gear\"></span> "
 "icon above."
 msgstr ""
+"Configurer une galerie en cliquant <span class=\"editus-icon-gear\"></span> "
+"l'icône ci-dessus ."
 
 #: public/includes/components/component-gallery.php:107
 msgid ""
