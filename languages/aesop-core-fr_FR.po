@@ -2,17 +2,18 @@
 # This file is distributed under the GPL-2.0+.
 # Translators:
 # Franck, 2015
-# FxB <fxb@wp-translations.org>, 2015
+# FX Bénard <fxb@wp-translations.org>, 2015
+# FX Bénard <fxb@wp-translations.org>, 2015
 # Geoffrey Crofte, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-05-29 08:46:04+00:00\n"
-"PO-Revision-Date: 2015-04-25 21:00+0000\n"
-"Last-Translator: Franck\n"
-"Language-Team: French (France) (http://www.transifex.com/projects/p/aesop-"
-"story-engine/language/fr_FR/)\n"
+"POT-Creation-Date: 2015-09-04 23:59:39+00:00\n"
+"PO-Revision-Date: 2015-09-03 22:04+0000\n"
+"Last-Translator: FX Bénard <fxb@wp-translations.org>\n"
+"Language-Team: French (France) (http://www.transifex.com/wp-translations/"
+"aesop-story-engine/language/fr_FR/)\n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -75,7 +76,7 @@ msgid ""
 "Width of the image. You can enter the size as <code>40%</code> or "
 "<code>500px</code>."
 msgstr ""
-"Largeur de l'image. Vous pouvez entrer une taille comme <code>40%</code> ou "
+"Largeur de l'image. Vous pouvez saisir une taille comme <code>40%</code> ou "
 "<code>500px</code>."
 
 #: admin/includes/available.php:25
@@ -88,8 +89,8 @@ msgid ""
 "URL for the image. Click <em>Select Media</em> to open the WordPress Media "
 "Library."
 msgstr ""
-"URL de l'image. Cliquez sur <em>Sélectionner média </em> pour ouvrir la "
-"bibliothèque de médias WordPress."
+"URL de l'image. Cliquez sur <em>Sélectionner média</em> pour ouvrir la "
+"bibliothèque de médias de WordPress."
 
 #: admin/includes/available.php:31
 msgid "Image Offset"
@@ -288,7 +289,7 @@ msgstr ""
 
 #: admin/includes/available.php:160
 msgid "Aesop Quote Section"
-msgstr "Section citations Aesop"
+msgstr "Section citation Aesop"
 
 #: admin/includes/available.php:168
 msgid "Pull Quote"
@@ -451,13 +452,13 @@ msgstr "Hauteur du composant"
 
 #: admin/includes/available.php:309
 msgid ""
-"Enter an optional height for the component. ou can enter the size as "
+"Enter an optional height for the component. You can enter the size as "
 "<code>40%</code> or <code>500px</code>. By default it's set to <code>auto</"
 "code>. Use a large height like <code>1200px</code> to have a large blank "
 "area with small text."
 msgstr ""
-"Entrez une hauteur facultative pour le composant.  Vous pouvez entrer la "
-"taille comme <code>40%</code> or <code>500px</code>. Par défaut, il est "
+"Entrez une hauteur facultative pour le composant. Vous pouvez entrer la "
+"taille comme <code>40%</code> ou <code>500px</code>. Par défaut, il est "
 "configuré sur<code>auto</code>. Utilisez une grande hauteur comme "
 "<code>1200px</code> avoir un grand espace vide avec un petit texte."
 
@@ -804,28 +805,28 @@ msgstr "Active la lecture en boucle du lecteur audio."
 
 #: admin/includes/available.php:693
 msgid "Start Audio When in View"
-msgstr "Démarrer l'audio quand en vue"
+msgstr "Démarrer l'audio lorsque le lecteur est visible"
 
 #: admin/includes/available.php:694
 msgid ""
 "When set to <em>on</em> the audio will start playing automatically once "
 "scrolled into view."
 msgstr ""
-"Quand placé sur <em>on</em>, l'audio démarrera automatiquement lorsque le "
-"défilement le place à vue."
+"Lorsqu'il est configuré sur <em>on</em>, l'audio démarrera automatiquement "
+"une fois que le défilement fera apparaître le lecteur."
 
 #: admin/includes/available.php:709
 msgid "Stop Audio When Out of View"
-msgstr "Stopper l'audio quand hors de vue"
+msgstr "Stopper l'audio lorsque le lecteur n'est plus visible"
 
 #: admin/includes/available.php:710
 msgid ""
 "Used together with the option above, this option when set to <em>on</em> "
 "will stop the audio player from playing once scrolled out of view."
 msgstr ""
-"Utilisé conjointement à l'option précédente, cette option placée sur <em>on</"
-"em> stoppera la lecture de l'audio lorsque le défilement placera le lecteur "
-"hors vue."
+"Utilisé conjointement à l'option précédente, cette option configurée sur "
+"<em>on</em> stoppera la lecture de l'audio lorsque le défilement fera "
+"disparaître le lecteur."
 
 #: admin/includes/available.php:725
 msgid "Hide Audio Player"
@@ -939,7 +940,7 @@ msgstr ""
 
 #: admin/includes/available.php:838
 msgid "Enable the video to loop."
-msgstr "Autoriser la vidéo à boucler."
+msgstr "Activer la vidéo en boucle."
 
 #: admin/includes/available.php:853
 msgid "Autoplay (only if using <em>self</em> as video source)"
@@ -1009,8 +1010,8 @@ msgid ""
 "The height of the map component. By default this is set to <em>500px</em>. "
 "Avoid using percentages with this option."
 msgstr ""
-"Hauteur du composant carte. Par défaut, c'est configuré par défaut à  "
-"<em>500px</em>. Évitez d'utiliser les pourcentages avec cette option."
+"Hauteur du composant carte. Par défaut, c'est configuré à  <em>500px</em>. "
+"Évitez d'utiliser les pourcentages avec cette option."
 
 #: admin/includes/available.php:922
 msgid "Sticky Maps"
@@ -1154,7 +1155,8 @@ msgstr "Nombre d'histoires"
 
 #: admin/includes/available.php:1026
 msgid "How many stories should be displayed in this collection?"
-msgstr "Combien d'histoires doivent être affichés dans cette collection&nbsp;?"
+msgstr ""
+"Combien d'histoires doivent être affichées dans cette collection&nbsp;?"
 
 #: admin/includes/available.php:1032
 msgid "Columns"
@@ -1266,8 +1268,8 @@ msgid ""
 "component, adjust any options, and insert it anywhere within your story. "
 "Galleries are managed with the \"Galleries\" tab within WordPress."
 msgstr ""
-"Rendez-vous sur n'importe quel article et localiser le bouton \"Aouter un "
-"composant\". Il se situe juste au dessus de l'éditeur d'article. Une fois "
+"Rendez-vous sur n'importe quel article et localiser le bouton \"Ajouter un "
+"composant\". Il se situe juste au dessus de l'éditeur d'article. Après avoir "
 "appuyé dessus, vous pourrez sélectionner un composant, modifier ses options, "
 "et l'insérer où vous voudrez dans votre histoire. Les galeries sont gérées "
 "dans l'onglet \"Galeries\" de WordPress."
@@ -1299,13 +1301,13 @@ msgstr "Plus simple, plus rapide, plus facile d'écrire dans WordPress"
 #: admin/includes/class.welcome.php:94
 msgid ""
 "Stop wasting time constantly previewing your post, and edit and create from "
-"the front-end of your site with Lasso, our front-end editor that goes "
+"the front-end of your site with Editus, our front-end editor that goes "
 "perfectly with Aesop Story Engine. Visit the site and enter your email for a "
 "25% discount!"
 msgstr ""
 "Arrêtez de perdre du temps en ayant constamment recours à l'aperçu de votre "
 "article, et éditer et créer à partir du front-office de votre site avec "
-"Lasso, notre éditeur frontal qui se marie parfaitement avec Aesop Story "
+"Editus, notre éditeur front-end qui se marie parfaitement avec Aesop Story "
 "Engine. Visitez le site et entrez votre e-mail pour une réduction de "
 "25%&nbsp;!"
 
@@ -1388,7 +1390,7 @@ msgstr "Grille"
 
 #: admin/includes/components/component-gallery.php:208
 msgid "Thumbnail"
-msgstr "Vignette"
+msgstr "Miniature"
 
 #: admin/includes/components/component-gallery.php:210
 msgid "Photoset"
@@ -1681,7 +1683,7 @@ msgid ""
 msgstr ""
 "La documentation pour les options est disponible sur <a href=\"http://"
 "aesopstoryengine.com/help\">http://aesopstoryengine.com/help</a>, tandis que "
-"les développeurs peuvent être plus intéressé par <a href=\"http://"
+"les développeurs peuvent être plus intéressés par <a href=\"http://"
 "aesopstoryengine.com/developers\">http://aesopstoryengine.com/developers</a>."
 
 #: admin/includes/help.php:39
@@ -1699,11 +1701,11 @@ msgid ""
 msgstr ""
 "Aesop Story Engine est 100% gratuit et au code ouvert, mais nous comptons "
 "sur les dons et les achats de nos <a href=\"http://aesopstoryengine.com/"
-"library/category/themes/\">thèmes WordPress premium</a> et compléments "
-"d'extension pour faciliter la poursuite du développement de l'extension "
-"gratuite. Si Aesop Story Engine vous a bien servi, merci d'envisager de "
-"faire un don à l'adresse  <a href=\"http://aesopstoryengine.com/donate"
-"\">http://aesopstoryengine.com/donate</a>."
+"library/category/themes/\">thèmes WordPress premium</a> et modules pour "
+"faciliter la poursuite du développement de l'extension gratuite. Si Aesop "
+"Story Engine vous a bien servi, merci d'envisager de faire un don à "
+"l'adresse  <a href=\"http://aesopstoryengine.com/donate\">http://"
+"aesopstoryengine.com/donate</a>."
 
 #: admin/includes/help.php:50
 msgid "Aesop Galleries"
@@ -1766,8 +1768,8 @@ msgid ""
 "edit any information for the image such as a caption or title used by some "
 "galleries."
 msgstr ""
-"Conseils: cliquer sur l'icône \"x\" sur l'image supprimera l'image de cette "
-"galerie (mais pas de votre site). Cliquer sur l'icône \"crayon\" vous "
+"Astuce&nbsp;: cliquer sur l'icône \"x\" sur l'image supprimera l'image de "
+"cette galerie (mais pas de votre site). Cliquer sur l'icône \"crayon\" vous "
 "permettra de modifier toutes les informations de l'image comme une légende "
 "ou un titre utilisé par certaines galeries."
 
@@ -1786,9 +1788,10 @@ msgid ""
 "the \"Add Component\" button. Refer to the Help tab while editing a post for "
 "more information."
 msgstr ""
-"Merci de votre intérêt pour Aesop&nbsp;! Commencez par aller vers n'importe "
-"quel article et cliquer sur le bouton \"Ajouter un composant\". Reportez-"
-"vous à l'onglet Aide lors de l'édition d'un article pour plus d'informations."
+"Merci de votre intérêt pour Aesop&nbsp;! Commencez par vous rendre sur "
+"n'importe quel article et cliquez sur le bouton « Ajouter un composant ». "
+"Reportez-vous à l'onglet Aide lors de l'édition d'un article pour plus "
+"d'informations."
 
 #: public/class-aesop-core.php:247
 msgid "Doh! There was an issue deactivating Aesop. Try again perhaps?."
@@ -1807,10 +1810,10 @@ msgstr "éditer la galerie"
 
 #: public/includes/components/component-gallery.php:101
 msgid ""
-"Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon "
-"above."
+"Setup a gallery by clicking the <span class=\"editus-icon-gear\"></span> "
+"icon above."
 msgstr ""
-"Intégrer une galerie en cliquant <span class=\"lasso-icon-gear\"></span> "
+"Configurer une galerie en cliquant <span class=\"editus-icon-gear\"></span> "
 "l'icône ci-dessus ."
 
 #: public/includes/components/component-gallery.php:107
@@ -1835,12 +1838,12 @@ msgstr "Les gens sont faits d'histoires, pas d'atomes."
 
 #: public/includes/options.php:14
 msgid ""
-"Refer to the documentation located <a href=\"http://aesopstoryengine.com/help"
-"\" target=\"_blank\">here</a> for full option descriptions."
+"Refer to the documentation located <a href=\"http://aesopstoryengine.com/"
+"help/map-component\" target=\"_blank\">here</a> for full option descriptions."
 msgstr ""
 "Reportez-vous à la documentation située <a href=\"http://aesopstoryengine."
-"com/help\" target=\"_blank\">ici</a> pour une description complète des "
-"options."
+"com/help/map-component\" target=\"_blank\">ici</a> pour une description "
+"complète des options."
 
 #: public/includes/options.php:24
 msgid "Mapbox Map ID"

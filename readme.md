@@ -5,8 +5,8 @@ Aesop Story Engine is an open-sourced suite of tools that empower developers to 
 
 ---
 
-### Installation
-##### Uploading in WordPress Dashboard
+## Installation
+### Uploading in WordPress Dashboard
 
 1. Navigate to 'Add New' in the plugins dashboard  
 2. Navigate to the 'Upload' area  
@@ -14,26 +14,26 @@ Aesop Story Engine is an open-sourced suite of tools that empower developers to 
 4. Click 'Install Now'  
 5. Activate the plugin in the Plugin dashboard
 
-##### Using FTP  
+### Using FTP  
 
 1. Download `aesop-core.zip`  
 2. Extract the `aesop-core` directory to your computer  
 3. Upload the `aesop-core` directory to the `/wp-content/plugins/` directory  
 4. Activate the plugin in the Plugin dashboard
 
-##### Documentation
+### Documentation
 [http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers)  
 
-##### Bugs
+### Bugs
 If you find an issue, please let us know [here](https://github.com/bearded-avenger/aesop-core/issues?state=open)!
 
-##### Support
+### Support
 This is a developer's portal for Aesop Story Engine and should _not_ be used for support. Please visit our [support forums](https://wordpress.org/support/plugin/aesop-story-engine).
 
-##### Contributions
-Contributions are more than welcome. Please read our current [guidelines for contributing](https://github.com/bearded-avenger/aesop-core/blob/master/CONTRIBUTING.md) to this repository. Many thanks in advance!
+### Contributions
+Contributions are more than welcome. Please read our current [guidelines for contributing](CONTRIBUTING.md) to this repository. Many thanks in advance!
 
-### Story Components
+## Story Components
 At the heart of ASE are the storytelling components. They include:  
 * Audio  
 * Video  
@@ -56,7 +56,7 @@ Interactive elements are created while crafting stories, with the Story Componen
 See [https://github.com/bearded-avenger/aesop-core/releases](https://github.com/bearded-avenger/aesop-core/releases) for more.
 
 ### Translations
-Aesop Story Engine is currently available in 35 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
+Aesop Story Engine is currently available in 36 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
 
 * العربية (Arabic)
 * Български (Bulgarian)
@@ -88,6 +88,7 @@ Aesop Story Engine is currently available in 35 languages. We work closely with 
 * Slovenčina (Slovak)
 * slovenščina (Slovenian)
 * Español (Spanish (Argentina))
+* Español (Spanish (Chile))
 * Español (Spanish (Mexico))
 * Español (Spanish (Spain))
 * ไทย (Thai)

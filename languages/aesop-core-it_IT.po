@@ -3,16 +3,16 @@
 # Translators:
 # Alessandro Curci <hantarex@gmail.com>, 2015
 # Emanuele <e@emanuelebartolomucci.com>, 2015
-# FxB <fxb@wp-translations.org>, 2015
+# FX Bénard <fxb@wp-translations.org>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-05-29 08:46:04+00:00\n"
-"PO-Revision-Date: 2015-04-25 21:00+0000\n"
-"Last-Translator: Aesopinteractive\n"
-"Language-Team: Italian (Italy) (http://www.transifex.com/projects/p/aesop-"
-"story-engine/language/it_IT/)\n"
+"POT-Creation-Date: 2015-09-04 23:59:39+00:00\n"
+"PO-Revision-Date: 2015-09-02 16:54+0000\n"
+"Last-Translator: Alessandro Curci <hantarex@gmail.com>\n"
+"Language-Team: Italian (Italy) (http://www.transifex.com/wp-translations/"
+"aesop-story-engine/language/it_IT/)\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -442,7 +442,7 @@ msgstr "Altezza del componente"
 
 #: admin/includes/available.php:309
 msgid ""
-"Enter an optional height for the component. ou can enter the size as "
+"Enter an optional height for the component. You can enter the size as "
 "<code>40%</code> or <code>500px</code>. By default it's set to <code>auto</"
 "code>. Use a large height like <code>1200px</code> to have a large blank "
 "area with small text."
@@ -1274,14 +1274,14 @@ msgstr ""
 #: admin/includes/class.welcome.php:94
 msgid ""
 "Stop wasting time constantly previewing your post, and edit and create from "
-"the front-end of your site with Lasso, our front-end editor that goes "
+"the front-end of your site with Editus, our front-end editor that goes "
 "perfectly with Aesop Story Engine. Visit the site and enter your email for a "
 "25% discount!"
 msgstr ""
 
 #: admin/includes/class.welcome.php:94
 msgid "Read More..."
-msgstr ""
+msgstr "Leggi tutto..."
 
 #: admin/includes/components/component-gallery.php:35
 #: admin/includes/components/component-gallery.php:48
@@ -1767,11 +1767,9 @@ msgstr "modifica galleria"
 
 #: public/includes/components/component-gallery.php:101
 msgid ""
-"Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon "
-"above."
+"Setup a gallery by clicking the <span class=\"editus-icon-gear\"></span> "
+"icon above."
 msgstr ""
-"Imposta una galleria facendo click sull'icona <span class=\"lasso-icon-gear"
-"\"></span> qui sopra."
 
 #: public/includes/components/component-gallery.php:107
 msgid ""
@@ -1795,12 +1793,12 @@ msgstr "Le persone sono formate da storie, non da atomi."
 
 #: public/includes/options.php:14
 msgid ""
-"Refer to the documentation located <a href=\"http://aesopstoryengine.com/help"
-"\" target=\"_blank\">here</a> for full option descriptions."
+"Refer to the documentation located <a href=\"http://aesopstoryengine.com/"
+"help/map-component\" target=\"_blank\">here</a> for full option descriptions."
 msgstr ""
 "Fai riferimento alla documentazione disponibile <a href=\"http://"
-"aesopstoryengine.com/help\" target=\"_blank\">qui</a> per la descrizione "
-"completa delle opzioni."
+"aesopstoryengine.com/help/map-component\" target=\"_blank\">qui</a> per la "
+"descrizione completa delle opzioni."
 
 #: public/includes/options.php:24
 msgid "Mapbox Map ID"

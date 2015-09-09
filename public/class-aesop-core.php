@@ -311,10 +311,18 @@ class Aesop_Core {
 			require_once $component;
 		}
 
-		foreach ( aesop_shortcodes() as $shortcode => $params ) {
-			add_shortcode( 'aesop_'.$shortcode, 'aesop_'.$shortcode.'_shortcode' );
-		}
-
+		add_shortcode( 'aesop_chapter', 	'aesop_chapter_shortcode' );
+		add_shortcode( 'aesop_audio', 		'aesop_audio_shortcode' );
+		add_shortcode( 'aesop_video', 		'aesop_video_shortcode' );
+		add_shortcode( 'aesop_character', 	'aesop_character_shortcode' );
+		add_shortcode( 'aesop_collection', 	'aesop_collection_shortcode' );
+		add_shortcode( 'aesop_document', 	'aesop_document_shortcode' );
+		add_shortcode( 'aesop_image', 		'aesop_image_shortcode' );
+		add_shortcode( 'aesop_parallax', 	'aesop_parallax_shortcode' );
+		add_shortcode( 'aesop_quote', 		'aesop_quote_shortcode' );
+		add_shortcode( 'aesop_timeline_stop', 	'aesop_timeline_stop_shortcode' );
+		add_shortcode( 'aesop_map', 		'aesop_map_shortcode' );
+		add_shortcode( 'aesop_content', 	'aesop_content_shortcode' );
 	}
 
 	/**

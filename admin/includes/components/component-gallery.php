@@ -1,6 +1,6 @@
 <?php
 /**
- * Filters custom meta box class to add cusotm meta to galelry component
+ * Filters custom meta box class to add cusotm meta to gallery component
  *
  * @since    1.0.0
  */
@@ -45,19 +45,19 @@ class AesopGalleryComponentAdmin {
 			'not_found_in_trash'    => __( 'No Galleries found in Trash', 'aesop-core' ),
 		);
 		$args = array(
-			'label'                 => __( 'Galleries', 'aesop-core' ),
-			'description'           => __( 'Create responsive galleries.', 'aesop-core' ),
-			'menu_icon'       => AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
-			'menu_position'    => 15,
-			'labels'                => $labels,
-			'supports'              => array( 'title' ),
-			'hierarchical'          => false,
-			'public'                => false,
-			'show_ui'      => true,
-			'exclude_from_search'  => true,
-			'query_var'     => true,
-			'can_export'     => true,
-			'capability_type'    => 'post',
+			'label'					=> __( 'Galleries', 'aesop-core' ),
+			'description'			=> __( 'Create responsive galleries.', 'aesop-core' ),
+			'menu_icon'				=> AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
+			'menu_position'			=> 15,
+			'labels'				=> $labels,
+			'supports'				=> array( 'title' ),
+			'hierarchical'			=> false,
+			'public'				=> false,
+			'show_ui'				=> true,
+			'exclude_from_search'	=> true,
+			'query_var'				=> true,
+			'can_export'			=> true,
+			'capability_type'		=> 'post',
 		);
 
 		register_post_type( 'ai_galleries', apply_filters( 'ai_gallery_args', $args ) );
@@ -66,7 +66,7 @@ class AesopGalleryComponentAdmin {
 
 	/**
 	 * Adds columns to the Aesop Galleries custom post type
-	 * Adds the shortcode for easy copy and past
+	 * Adds the shortcode for easy copy and paste
 	 * Adds the posts that the shortcode is used in
 	 *
 	 * @since    1.0.0
@@ -144,7 +144,7 @@ class AesopGalleryComponentAdmin {
 	}
 
 	/**
-	 *  Render meta box used for the gallery
+	 * Render meta box used for the gallery
 	 *
 	 * @param WP_Post $post The post object.
 	 * @since 1.4
@@ -156,7 +156,7 @@ class AesopGalleryComponentAdmin {
 		wp_nonce_field( 'ase_gallery_meta', 'ase_gallery_meta_nonce' );
 		echo '</div>';
 
-		// get the existing images for this post prior to 1.4, else get the id's set into post meta for 1.4
+		// get the existing images for this post prior to 1.4, else get the IDs set into post meta for 1.4
 		if ( AI_CORE_VERSION < 1.4 ) {
 			$get_image_ids  = get_post_gallery( $post->ID, false );
 			$image_ids   = explode( ',', $get_image_ids['ids'] );

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Core\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-05-29 08:42:05+00:00\n"
+"POT-Creation-Date: 2015-08-19 17:07:43+00:00\n"
 "PO-Revision-Date: 2014-12-15 18:40-0600\n"
 "Last-Translator: Team Aesop <support@aesopinteractive.com>\n"
 "Language-Team: Team Aesop <info@aesopinteractive.com>\n"
@@ -384,7 +384,7 @@ msgstr ""
 
 #: admin/includes/available.php:309
 msgid ""
-"Enter an optional height for the component. ou can enter the size as "
+"Enter an optional height for the component. You can enter the size as "
 "<code>40%</code> or <code>500px</code>. By default it's set to <code>auto</"
 "code>. Use a large height like <code>1200px</code> to have a large blank "
 "area with small text."
@@ -1110,7 +1110,7 @@ msgstr ""
 #: admin/includes/class.welcome.php:94
 msgid ""
 "Stop wasting time constantly previewing your post, and edit and create from "
-"the front-end of your site with Lasso, our front-end editor that goes "
+"the front-end of your site with Editus, our front-end editor that goes "
 "perfectly with Aesop Story Engine. Visit the site and enter your email for a "
 "25% discount!"
 msgstr ""
@@ -1520,8 +1520,8 @@ msgstr ""
 
 #: public/includes/components/component-gallery.php:101
 msgid ""
-"Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon "
-"above."
+"Setup a gallery by clicking the <span class=\"editus-icon-gear\"></span> "
+"icon above."
 msgstr ""
 
 #: public/includes/components/component-gallery.php:107
@@ -1544,8 +1544,8 @@ msgstr ""
 
 #: public/includes/options.php:14
 msgid ""
-"Refer to the documentation located <a href=\"http://aesopstoryengine.com/help"
-"\" target=\"_blank\">here</a> for full option descriptions."
+"Refer to the documentation located <a href=\"http://aesopstoryengine.com/"
+"help/map-component\" target=\"_blank\">here</a> for full option descriptions."
 msgstr ""
 
 #: public/includes/options.php:24
