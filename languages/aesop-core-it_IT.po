@@ -8,23 +8,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2015-09-04 23:59:39+00:00\n"
+"POT-Creation-Date: 2015-09-09 15:50:00+00:00\n"
 "PO-Revision-Date: 2015-09-02 16:54+0000\n"
 "Last-Translator: Alessandro Curci <hantarex@gmail.com>\n"
-"Language-Team: Italian (Italy) (http://www.transifex.com/wp-translations/"
-"aesop-story-engine/language/it_IT/)\n"
-"Language: it_IT\n"
+"Language-Team: Italian (Italy) (http://www.transifex.com/wp-translations/aesop-story-engine/language/it_IT/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: it_IT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: grunt-wp-i18n 0.5.2\n"
+"X-Generator: grunt-wp-i18n 0.5.3\n"
 "X-Poedit-Basepath: ../\n"
 "X-Poedit-Bookmarks: \n"
 "X-Poedit-Country: United States\n"
-"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
-"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
-"esc_html_x:1,2c;\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Textdomain-Support: yes\n"
@@ -41,25 +38,19 @@ msgstr "Seleziona un componente storia."
 msgid ""
 "Product of <span><a href=\"http://aesopstoryengine.com\">AESOP INTERACTIVE "
 "LLC</a></span>"
-msgstr ""
-"Prodotto di <span><a href=\"http://aesopstoryengine.com\">AESOP INTERACTIVE "
-"LLC</a></span>"
+msgstr "Prodotto di <span><a href=\"http://aesopstoryengine.com\">AESOP INTERACTIVE LLC</a></span>"
 
 #: admin/class-aesop-core-admin.php:253
 msgid ""
 "<span><a href=\"http://aesopstoryengine.com/donate\">Support new features "
 "and bug fixes</a></span> of Aesop Story Engine"
-msgstr ""
-"<span><a href=\"http://aesopstoryengine.com/donate\">Supporta nuove funzioni "
-"e correzioni degli errori</a></span> di Aesop Story Engine"
+msgstr "<span><a href=\"http://aesopstoryengine.com/donate\">Supporta nuove funzioni e correzioni degli errori</a></span> di Aesop Story Engine"
 
 #: admin/class-aesop-core-admin.php:255
 msgid ""
 "Story Beautiful? <span><a href=\"http://aesopstoryengine.com/donate\">Thank "
 "the developer</a></span>."
-msgstr ""
-"Bella storia? <span><a href=\"http://aesopstoryengine.com/donate\">Ringrazia "
-"lo sviluppatore</a></span>."
+msgstr "Bella storia? <span><a href=\"http://aesopstoryengine.com/donate\">Ringrazia lo sviluppatore</a></span>."
 
 #: admin/includes/available.php:13 admin/includes/available.php:462
 #: admin/includes/available.php:983
@@ -74,9 +65,7 @@ msgstr "Larghezza immagine"
 msgid ""
 "Width of the image. You can enter the size as <code>40%</code> or "
 "<code>500px</code>."
-msgstr ""
-"Larghezza dell'immagine. Puoi inserire la dimensione come <code>40%</code> o "
-"<code>500px</code>."
+msgstr "Larghezza dell'immagine. Puoi inserire la dimensione come <code>40%</code> o <code>500px</code>."
 
 #: admin/includes/available.php:25
 msgid "Image URL"
@@ -87,9 +76,7 @@ msgstr "URL immagine"
 msgid ""
 "URL for the image. Click <em>Select Media</em> to open the WordPress Media "
 "Library."
-msgstr ""
-"URL dell'immagine. Clicca <em>Scegli media</em> per aprire la Media Library "
-"di WordPress."
+msgstr "URL dell'immagine. Clicca <em>Scegli media</em> per aprire la Media Library di WordPress."
 
 #: admin/includes/available.php:31
 msgid "Image Offset"
@@ -97,11 +84,9 @@ msgstr "Spostamento immagine"
 
 #: admin/includes/available.php:32
 msgid ""
-"Using this option you can <em>float</em> an image outside of the text. Enter "
-"a size like <code>-200px</code>."
-msgstr ""
-"Usando questa opzione puoi <em>spostare</em> un'immagine fuori dal testo. "
-"Inserisci una dimensione come <code>-200px</code>."
+"Using this option you can <em>float</em> an image outside of the text. Enter"
+" a size like <code>-200px</code>."
+msgstr "Usando questa opzione puoi <em>spostare</em> un'immagine fuori dal testo. Inserisci una dimensione come <code>-200px</code>."
 
 #: admin/includes/available.php:37
 msgid "Image Credit"
@@ -111,9 +96,7 @@ msgstr "Crediti immagine"
 msgid ""
 "This is typically used to credit the photographer. Enter a name and it will "
 "show as <em>Photo by: Name</em>."
-msgstr ""
-"Questo viene tipicamente usato per dare credito al fotografo. Inserisci un "
-"nome e sarà mostrato come <em>Foto di: Nome</em>."
+msgstr "Questo viene tipicamente usato per dare credito al fotografo. Inserisci un nome e sarà mostrato come <em>Foto di: Nome</em>."
 
 #: admin/includes/available.php:43
 msgid "Image ALT"
@@ -155,9 +138,7 @@ msgstr "Allineamento immagine"
 msgid ""
 "How should the image be aligned? If using a caption, the caption will "
 "automatically align with this option."
-msgstr ""
-"Come dovrebbe essere allineata l'immagine? Se si usa una didascalia, la "
-"didascalia sarà automaticamente allineata con questa opzione."
+msgstr "Come dovrebbe essere allineata l'immagine? Se si usa una didascalia, la didascalia sarà automaticamente allineata con questa opzione."
 
 #: admin/includes/available.php:71 admin/includes/available.php:253
 #: admin/includes/available.php:478 admin/includes/available.php:521
@@ -192,9 +173,7 @@ msgstr "Lightbox"
 msgid ""
 "Choose <em>on</em> and the image will open up the full-size version in a "
 "lightbox."
-msgstr ""
-"Scegli <em>on</em> e l'immagine si aprirà in versione a piena grandezza in "
-"una lightbox."
+msgstr "Scegli <em>on</em> e l'immagine si aprirà in versione a piena grandezza in una lightbox."
 
 #: admin/includes/available.php:85 admin/includes/available.php:131
 #: admin/includes/available.php:535 admin/includes/available.php:815
@@ -205,9 +184,7 @@ msgstr "Didascalia"
 msgid ""
 "Optional caption for the image. If you do not enter a caption, it will not "
 "show."
-msgstr ""
-"Didascalia opzionale per l'immagine. Se non inserisci una didascalia, non "
-"sarà mostrata."
+msgstr "Didascalia opzionale per l'immagine. Se non inserisci una didascalia, non sarà mostrata."
 
 #: admin/includes/available.php:105 admin/includes/available.php:559
 msgid "Caption Position"
@@ -236,17 +213,15 @@ msgstr "Nome del personaggio"
 
 #: admin/includes/available.php:126
 msgid ""
-"Enter a name for the character. If you do not enter a name, it will not show."
-msgstr ""
-"Inserisci un nome per il personaggio. Se non lo inserisci, non sarà mostrato."
+"Enter a name for the character. If you do not enter a name, it will not "
+"show."
+msgstr "Inserisci un nome per il personaggio. Se non lo inserisci, non sarà mostrato."
 
 #: admin/includes/available.php:132
 msgid ""
 "Optional caption for the character. If you do not enter a caption, it will "
 "not show."
-msgstr ""
-"Didascalia opzionale per il personaggio. Se non inserisci una didascalia, "
-"non sarà mostrata."
+msgstr "Didascalia opzionale per il personaggio. Se non inserisci una didascalia, non sarà mostrata."
 
 #: admin/includes/available.php:147 admin/includes/available.php:220
 #: admin/includes/available.php:758
@@ -257,9 +232,7 @@ msgstr "Allineamento"
 msgid ""
 "Alignment of the character component. You can align it to the left or right "
 "of the main text."
-msgstr ""
-"Allineamento del componente personaggio. Puoi allinearlo a sinistra o a "
-"destra del testo principale."
+msgstr "Allineamento del componente personaggio. Puoi allinearlo a sinistra o a destra del testo principale."
 
 #: admin/includes/available.php:153
 msgid "Width"
@@ -267,19 +240,15 @@ msgstr "Larghezza"
 
 #: admin/includes/available.php:154
 msgid ""
-"Width of the character component. You can enter the size as <code>40%</code> "
-"or <code>500px</code>."
-msgstr ""
-"Larghezza del componente personaggio. Puoi inserire la dimensione come "
-"<code>40%</code> o <code>500px</code>."
+"Width of the character component. You can enter the size as <code>40%</code>"
+" or <code>500px</code>."
+msgstr "Larghezza del componente personaggio. Puoi inserire la dimensione come <code>40%</code> o <code>500px</code>."
 
 #: admin/includes/available.php:157
 msgid ""
 "Creates a character that can be positioned to the left or right of your "
 "story."
-msgstr ""
-"Crea un personaggio che può essere posizionato a sinistra o a destra della "
-"tua storia."
+msgstr "Crea un personaggio che può essere posizionato a sinistra o a destra della tua storia."
 
 #: admin/includes/available.php:160
 msgid "Aesop Quote Section"
@@ -299,9 +268,7 @@ msgstr "Stili citazione"
 
 #: admin/includes/available.php:177
 msgid "By default the quote is full width, but you can change that here."
-msgstr ""
-"Per impostazione predefinita la citazione è a larghezza piena, ma puoi "
-"cambiarla qui."
+msgstr "Per impostazione predefinita la citazione è a larghezza piena, ma puoi cambiarla qui."
 
 #: admin/includes/available.php:182 admin/includes/available.php:296
 msgid "Background Color"
@@ -328,10 +295,7 @@ msgstr "Larghezza componente"
 msgid ""
 "You can enter the size as <code>40%</code> or <code>500px</code>. Enter the "
 "word <code>content</code> to restrict the width to that of the main text."
-msgstr ""
-"Puoi inserire la dimensione come <code>40%</code> o <code>500px</code>. "
-"Inserisci la parola <code>content</code> per restringere la larghezza a "
-"quella del testo principale."
+msgstr "Puoi inserire la dimensione come <code>40%</code> o <code>500px</code>. Inserisci la parola <code>content</code> per restringere la larghezza a quella del testo principale."
 
 #: admin/includes/available.php:200
 msgid "Height of Quote Area"
@@ -342,18 +306,13 @@ msgid ""
 "Enter a quote area height like <code>400px</code>. The quote will "
 "automatically center itself vertically. By default this is set to "
 "<code>auto</code>."
-msgstr ""
-"Inerisci un'altezza per la citazione come <code>400px</code>. La citazione "
-"sarà automaticamente centrata verticalmente. L'impostazione predefinita è "
-"<code>auto</code>."
+msgstr "Inerisci un'altezza per la citazione come <code>400px</code>. La citazione sarà automaticamente centrata verticalmente. L'impostazione predefinita è <code>auto</code>."
 
 #: admin/includes/available.php:221
 msgid ""
-"By default the quote is centered but you can choose to have it left or right "
-"aligned as well."
-msgstr ""
-"Per impostazione predefinita la citazione è centrata ma puoi scegliere di "
-"allinearla anche a sinistra o a destra."
+"By default the quote is centered but you can choose to have it left or right"
+" aligned as well."
+msgstr "Per impostazione predefinita la citazione è centrata ma puoi scegliere di allinearla anche a sinistra o a destra."
 
 #: admin/includes/available.php:227
 msgid "Quote Size"
@@ -371,10 +330,7 @@ msgstr "Immagine di sfondo"
 msgid ""
 "Optionally add a background image to the quote area. Enter the image URL or "
 "click <em>Select Media</em> to open the WordPress Media Library."
-msgstr ""
-"Aggiungi un'immagine di sfondo opzionale all'area citazione. Inserisci l'url "
-"dell'immagine o clicca <em>Select Media</em> per aprire la Media Library di "
-"WordPress."
+msgstr "Aggiungi un'immagine di sfondo opzionale all'area citazione. Inserisci l'url dell'immagine o clicca <em>Select Media</em> per aprire la Media Library di WordPress."
 
 #: admin/includes/available.php:239
 msgid "Quote Text"
@@ -399,9 +355,7 @@ msgstr "Abilita parallasse citazione"
 #: admin/includes/available.php:262
 msgid ""
 "Set to <em>on</em> to enable the quote text to animate across the component."
-msgstr ""
-"Imposta su <em>Attivato</em> per abilitare l'animazione del testo citato nel "
-"componente."
+msgstr "Imposta su <em>Attivato</em> per abilitare l'animazione del testo citato nel componente."
 
 #: admin/includes/available.php:277
 msgid "Parallax Direction of Quote"
@@ -409,8 +363,7 @@ msgstr "Direzione parallasse della citazione"
 
 #: admin/includes/available.php:278
 msgid "The direction that the quote should travel in, if using parallax."
-msgstr ""
-"La direzione in cui dovrebbe muoversi la citazione, se si usa la parallasse."
+msgstr "La direzione in cui dovrebbe muoversi la citazione, se si usa la parallasse."
 
 #: admin/includes/available.php:281
 msgid "Section quote area with background and color controls."
@@ -443,14 +396,10 @@ msgstr "Altezza del componente"
 #: admin/includes/available.php:309
 msgid ""
 "Enter an optional height for the component. You can enter the size as "
-"<code>40%</code> or <code>500px</code>. By default it's set to <code>auto</"
-"code>. Use a large height like <code>1200px</code> to have a large blank "
-"area with small text."
-msgstr ""
-"Inserisci un'altezza opzionale per il componente. Puoi inserire la "
-"dimensione come <code>40%</code> o <code>500px</code>. Per impostazione "
-"predefinita è impostata su  <code>auto</code>. Usa un'altezza grande come "
-"<code>1200px</code> per avere una grande area vuota con poco testo."
+"<code>40%</code> or <code>500px</code>. By default it's set to "
+"<code>auto</code>. Use a large height like <code>1200px</code> to have a "
+"large blank area with small text."
+msgstr "Inserisci un'altezza opzionale per il componente. Puoi inserire la dimensione come <code>40%</code> o <code>500px</code>. Per impostazione predefinita è impostata su  <code>auto</code>. Usa un'altezza grande come <code>1200px</code> per avere una grande area vuota con poco testo."
 
 #: admin/includes/available.php:315
 msgid "Number of Columns"
@@ -458,11 +407,9 @@ msgstr "Numero di colonne"
 
 #: admin/includes/available.php:316
 msgid ""
-"Optionally set the number of columns that the text should be split into. For "
-"example, <code>2</code> will make 2 columns of text."
-msgstr ""
-"Imposta opzionalmente il numero di colonne in cui dovrebbe essere diviso il "
-"testo. Per esempio <code>2</code> creerà 2 colonne di testo."
+"Optionally set the number of columns that the text should be split into. For"
+" example, <code>2</code> will make 2 columns of text."
+msgstr "Imposta opzionalmente il numero di colonne in cui dovrebbe essere diviso il testo. Per esempio <code>2</code> creerà 2 colonne di testo."
 
 #: admin/includes/available.php:323
 msgid "None"
@@ -474,11 +421,9 @@ msgstr "Allineamento blocco di testo"
 
 #: admin/includes/available.php:336
 msgid ""
-"This option allows you to float the text block to the left or right. This is "
-"useful when using a width like <code>300px</code>."
-msgstr ""
-"Questa opzione permette di allineare il blocco di testo a sinistra o a "
-"destra. Questo è utile quando si usa una larghezza come <code>300px</code>."
+"This option allows you to float the text block to the left or right. This is"
+" useful when using a width like <code>300px</code>."
+msgstr "Questa opzione permette di allineare il blocco di testo a sinistra o a destra. Questo è utile quando si usa una larghezza come <code>300px</code>."
 
 #: admin/includes/available.php:341
 msgid "Floating Text Position"
@@ -487,14 +432,10 @@ msgstr "Posizione testo allineato"
 #: admin/includes/available.php:342
 msgid ""
 "By setting this optional position, the text will be <em>floated</em> on the "
-"content component. For example, entering <code>10px, 20px, auto, auto</code> "
-"outputs the position as 10px from the top, 20px from the right, and "
+"content component. For example, entering <code>10px, 20px, auto, auto</code>"
+" outputs the position as 10px from the top, 20px from the right, and "
 "automatically positioned from the bottom and left."
-msgstr ""
-"Impostando questa posizione opzionale, il testo sarà <em>allineato</em> nel "
-"componente di contenuto. Per esempio, inserendo <code>10px, 20px, auto, "
-"auto</code> risulta nella posizione di 10px dall'alto, 20px dalla destra, "
-"con posizione aumatica in basso e a sinistra."
+msgstr "Impostando questa posizione opzionale, il testo sarà <em>allineato</em> nel componente di contenuto. Per esempio, inserendo <code>10px, 20px, auto, auto</code> risulta nella posizione di 10px dall'alto, 20px dalla destra, con posizione aumatica in basso e a sinistra."
 
 #: admin/includes/available.php:355
 msgid "No Repeat"
@@ -520,9 +461,7 @@ msgstr "Ripetizione immagine"
 msgid ""
 "If using a background image, should the background image repeat? Useful for "
 "using tiled images."
-msgstr ""
-"Se si usa un'immagine di sfondo, lo sfondo dovrebbe ripetersi? E' utile per "
-"usare immagini a tassello."
+msgstr "Se si usa un'immagine di sfondo, lo sfondo dovrebbe ripetersi? E' utile per usare immagini a tassello."
 
 #: admin/includes/available.php:377
 msgid "Background Image Position"
@@ -530,13 +469,10 @@ msgstr "Posizione immagine di sfondo"
 
 #: admin/includes/available.php:378
 msgid ""
-"If using a background image, this option sets the position of the background "
-"image. Default is <code>center center</code> which results in the image "
+"If using a background image, this option sets the position of the background"
+" image. Default is <code>center center</code> which results in the image "
 "being centered horizontally and vertically."
-msgstr ""
-"Se si usa un'immagine di sfondo, questa opzione ne imposta la posizione. Il "
-"predefinito è <code>center center</code> che risulta in un'immagine centrata "
-"orizontalmente e verticalmente."
+msgstr "Se si usa un'immagine di sfondo, questa opzione ne imposta la posizione. Il predefinito è <code>center center</code> che risulta in un'immagine centrata orizontalmente e verticalmente."
 
 #: admin/includes/available.php:383
 msgid "Background Image Size"
@@ -546,10 +482,7 @@ msgstr "Dimensioni immagine di sfondo"
 msgid ""
 "If using a background image, this option sets the size of the image. By "
 "default the image will be full width."
-msgstr ""
-"Se si usa un'immagine di sfondo, questa opzione imposta la dimensione "
-"dell'immagine. Per impostazione predefinita l'immagine sarà a piena "
-"larghezza."
+msgstr "Se si usa un'immagine di sfondo, questa opzione imposta la dimensione dell'immagine. Per impostazione predefinita l'immagine sarà a piena larghezza."
 
 #: admin/includes/available.php:389 admin/includes/available.php:597
 msgid "Floater Element Content"
@@ -559,9 +492,7 @@ msgstr "Contenuto componente flottante"
 msgid ""
 "You can use text and images here. To use an image, use the full HTML tag "
 "without quotes around the image path."
-msgstr ""
-"Puoi usare testo e immagini qui. Per usare un'immagine, usa il tag HTML "
-"completo senza virgolette attorno al percorso dell'immagine."
+msgstr "Puoi usare testo e immagini qui. Per usare un'immagine, usa il tag HTML completo senza virgolette attorno al percorso dell'immagine."
 
 #: admin/includes/available.php:409 admin/includes/available.php:617
 msgid "Position of Floater Element"
@@ -569,8 +500,7 @@ msgstr "Posizione componente flottante"
 
 #: admin/includes/available.php:410
 msgid "If using the Floater Element option, where should it be positioned?"
-msgstr ""
-"Se si usa l'opzione componente flottante, dove dovrebbe essere posizionato?"
+msgstr "Se si usa l'opzione componente flottante, dove dovrebbe essere posizionato?"
 
 #: admin/includes/available.php:417 admin/includes/available.php:625
 msgid "Up"
@@ -596,9 +526,7 @@ msgstr "Il tuo testo normale va qui."
 msgid ""
 "Multiple use content area with options for background image, background "
 "color, and magazine style columns."
-msgstr ""
-"Area di contenuto per uso generale con opzioni per immagine di sfondo, "
-"colore di sfondo, e stile colonne tipo magazine."
+msgstr "Area di contenuto per uso generale con opzioni per immagine di sfondo, colore di sfondo, e stile colonne tipo magazine."
 
 #: admin/includes/available.php:439
 msgid "The actual content text that will be displayed."
@@ -622,8 +550,7 @@ msgstr "Sottotitolo del capitolo"
 
 #: admin/includes/available.php:455
 msgid "This will optionally display a subtitle after the Chapter Title text."
-msgstr ""
-"Questo mostra opzionalmente un sottotitolo dopo il titolo del capitolo."
+msgstr "Questo mostra opzionalmente un sottotitolo dopo il titolo del capitolo."
 
 #: admin/includes/available.php:466
 msgid "Video"
@@ -635,8 +562,7 @@ msgstr "Tipo di sfondo"
 
 #: admin/includes/available.php:471
 msgid "Choose from an image or a looping video background."
-msgstr ""
-"Scegli un'immagine o un background video da riprodurre in continuazione."
+msgstr "Scegli un'immagine o un background video da riprodurre in continuazione."
 
 #: admin/includes/available.php:486
 msgid "Full-size Background Image"
@@ -646,9 +572,7 @@ msgstr "Immagine di sfondo a piena grandezza"
 msgid ""
 "If set to on, the background image of the chapter will be as large as the "
 "browser window."
-msgstr ""
-"Se impostato su on, l'immagine di sfondo del capitolo sarà larga quanto la "
-"finestra del browser."
+msgstr "Se impostato su on, l'immagine di sfondo del capitolo sarà larga quanto la finestra del browser."
 
 #: admin/includes/available.php:492
 msgid "Chapter Image or Video URL"
@@ -656,11 +580,9 @@ msgstr "Immagine o URL video del capitolo"
 
 #: admin/includes/available.php:493
 msgid ""
-"URL for the image or video background as set above. Click <em>Select Media</"
-"em> to open the WordPress Media Library."
-msgstr ""
-"URL dell'immagine o dello sfondo video. Clicca <em>Scegli media</em> per "
-"aprire la Media Library di WordPress."
+"URL for the image or video background as set above. Click <em>Select "
+"Media</em> to open the WordPress Media Library."
+msgstr "URL dell'immagine o dello sfondo video. Clicca <em>Scegli media</em> per aprire la Media Library di WordPress."
 
 #: admin/includes/available.php:496
 msgid "Creates the scroll to point, as a chapter heading."
@@ -678,16 +600,12 @@ msgstr "Movimento immagine"
 msgid ""
 "If set to <em>on</em>, the image will move slightly as you scroll down the "
 "page."
-msgstr ""
-"Se impostato su <em>on</em>, l'immagine si sposterà leggermente mentre "
-"scorri la pagina."
+msgstr "Se impostato su <em>on</em>, l'immagine si sposterà leggermente mentre scorri la pagina."
 
 #: admin/includes/available.php:536
 msgid ""
 "Display an optional caption that will appear where set in the next option."
-msgstr ""
-"Mostra una didascalia opzionale che apparirà dove impostato nella prossima "
-"opzione."
+msgstr "Mostra una didascalia opzionale che apparirà dove impostato nella prossima opzione."
 
 #: admin/includes/available.php:543
 msgid "Bottom Left"
@@ -709,9 +627,7 @@ msgstr "In alto a destra"
 msgid ""
 "If using a caption, where should it be positioned within the parallax "
 "component?"
-msgstr ""
-"Se usi una didascalia, dove dovrebbe essere posizionata nel componente "
-"parallasse?"
+msgstr "Se usi una didascalia, dove dovrebbe essere posizionata nel componente parallasse?"
 
 #: admin/includes/available.php:575
 msgid "Image Lightbox"
@@ -721,10 +637,7 @@ msgstr "Lighbox immagine"
 msgid ""
 "Enable an optional lightbox. When a user clicks the image, it will display "
 "the full size version of the parallax image in a lightbox."
-msgstr ""
-"Abilita un lightbox opzionale. Quando l'utente clicca l'immagine, sarà "
-"mostrata in un lightbox la versione a piena grandezza dell'immagine "
-"parallasse."
+msgstr "Abilita un lightbox opzionale. Quando l'utente clicca l'immagine, sarà mostrata in un lightbox la versione a piena grandezza dell'immagine parallasse."
 
 #: admin/includes/available.php:591
 msgid "Enable Floater Element"
@@ -732,18 +645,14 @@ msgstr "Abilita componente flottante"
 
 #: admin/includes/available.php:592
 msgid ""
-"This option will enable a second parallax media layer that will float on top "
-"of the background image."
-msgstr ""
-"Questa opzione abilita un secondo livello flottante in parallasse  sopra "
-"l'immagine di sfondo."
+"This option will enable a second parallax media layer that will float on top"
+" of the background image."
+msgstr "Questa opzione abilita un secondo livello flottante in parallasse  sopra l'immagine di sfondo."
 
 #: admin/includes/available.php:618
 msgid ""
 "If you are using the Floater option, where should the floater be positioned?"
-msgstr ""
-"Se stai usando l'opzione flottante, dove dovrebbe essere posizionato il "
-"componente flottante?"
+msgstr "Se stai usando l'opzione flottante, dove dovrebbe essere posizionato il componente flottante?"
 
 #: admin/includes/available.php:642
 msgid "What direction should the floater media travel in?"
@@ -755,8 +664,7 @@ msgstr "Didascalia opzionale"
 
 #: admin/includes/available.php:646
 msgid "Parallax styled image component with caption and optional lightbox."
-msgstr ""
-"Componente immagine con stile parallasse, didascalia e lightbox opzionale."
+msgstr "Componente immagine con stile parallasse, didascalia e lightbox opzionale."
 
 #: admin/includes/available.php:649
 msgid "Audio"
@@ -777,11 +685,9 @@ msgstr "URL audio"
 
 #: admin/includes/available.php:662
 msgid ""
-"URL to the mp3 file. Click <em>Select Media</em> to open the WordPress Media "
-"Library."
-msgstr ""
-"URL del file mp3. Clicca <em>Scegli media</em> per aprire la Media Library "
-"di WordPress."
+"URL to the mp3 file. Click <em>Select Media</em> to open the WordPress Media"
+" Library."
+msgstr "URL del file mp3. Clicca <em>Scegli media</em> per aprire la Media Library di WordPress."
 
 #: admin/includes/available.php:677
 msgid "Loop Audio Player"
@@ -799,9 +705,7 @@ msgstr "Avvia riproduzione quando nella vista."
 msgid ""
 "When set to <em>on</em> the audio will start playing automatically once "
 "scrolled into view."
-msgstr ""
-"Quando impostato su <em>on</em> la riproduzione dell'audio partirà "
-"automaticamente quando scorre nella vista."
+msgstr "Quando impostato su <em>on</em> la riproduzione dell'audio partirà automaticamente quando scorre nella vista."
 
 #: admin/includes/available.php:709
 msgid "Stop Audio When Out of View"
@@ -811,10 +715,7 @@ msgstr "Ferma l'audio quando è fuori dalla vista"
 msgid ""
 "Used together with the option above, this option when set to <em>on</em> "
 "will stop the audio player from playing once scrolled out of view."
-msgstr ""
-"Usato insieme all'opzione di sopra, quando è impostata su <em>on</em> questa "
-"opzione fermerà la riproduzione del player audio quando esce fuori dalla "
-"vista. "
+msgstr "Usato insieme all'opzione di sopra, quando è impostata su <em>on</em> questa opzione fermerà la riproduzione del player audio quando esce fuori dalla vista. "
 
 #: admin/includes/available.php:725
 msgid "Hide Audio Player"
@@ -824,10 +725,7 @@ msgstr "Nascondi player audio"
 msgid ""
 "Hide the audio player by setting this to <em>on</em>. This is useful for "
 "looping audio effects that do not need user controls."
-msgstr ""
-"Nascondi il player audio impostando questo su <em>on</em>. Questo è utile "
-"per riprodurre i continuazione effetti audio che non necessitano dei "
-"controlli per l'utente."
+msgstr "Nascondi il player audio impostando questo su <em>on</em>. Questo è utile per riprodurre i continuazione effetti audio che non necessitano dei controlli per l'utente."
 
 #: admin/includes/available.php:729
 msgid "Creates an audio player with your own audio."
@@ -891,12 +789,9 @@ msgstr "ID del video"
 
 #: admin/includes/available.php:810
 msgid ""
-"The video ID can be found within the video URL and typically looks something "
-"like <code>s8J2Ge4</code>. For Viddler videos, enter the full URL instead."
-msgstr ""
-"L'ID del video può essere trovata nella URL del video e tipicamente sembra "
-"qualcosa come <code>s8J2Ge4</code>. Per i video di Viddler, invece inserisci "
-"la URL completa."
+"The video ID can be found within the video URL and typically looks something"
+" like <code>s8J2Ge4</code>. For Viddler videos, enter the full URL instead."
+msgstr "L'ID del video può essere trovata nella URL del video e tipicamente sembra qualcosa come <code>s8J2Ge4</code>. Per i video di Viddler, invece inserisci la URL completa."
 
 #: admin/includes/available.php:816
 msgid "Optionally display a caption below the video."
@@ -911,15 +806,11 @@ msgid ""
 "This is only used if you are hosting the video yourself and have set the "
 "Video Source (above) to <em>self</em>. Click <em>Select Media</em> to open "
 "the WordPress Media Library."
-msgstr ""
-"Questo è usato solo se stai ospitando il video sul tuo sito e hai impostato "
-"la sorgente video (di sopra) su <em>Proprio</em>. Clicca <em>Scegli  Media</"
-"em> per aprire la Media Library di  WordPress."
+msgstr "Questo è usato solo se stai ospitando il video sul tuo sito e hai impostato la sorgente video (di sopra) su <em>Proprio</em>. Clicca <em>Scegli  Media</em> per aprire la Media Library di  WordPress."
 
 #: admin/includes/available.php:837
 msgid "Video Loop (only if using <em>self</em> as video source)"
-msgstr ""
-"Riproduzione continua (solo se si usa <em>Proprio</em> come sorgente video)"
+msgstr "Riproduzione continua (solo se si usa <em>Proprio</em> come sorgente video)"
 
 #: admin/includes/available.php:838
 msgid "Enable the video to loop."
@@ -927,8 +818,7 @@ msgstr "Abilita la riproduzione continua del video."
 
 #: admin/includes/available.php:853
 msgid "Autoplay (only if using <em>self</em> as video source)"
-msgstr ""
-"Riproduzione automatica (solo se si usa <em>Proprio</em> come sorgente video)"
+msgstr "Riproduzione automatica (solo se si usa <em>Proprio</em> come sorgente video)"
 
 #: admin/includes/available.php:854
 msgid "Should the video automatically start playing."
@@ -940,38 +830,28 @@ msgstr "Controlli video (solo se si usa <em>Proprio</em> come sorgente video)"
 
 #: admin/includes/available.php:870
 msgid "Hide or show the controls for the self-hosted video player."
-msgstr ""
-"Nasconde o mostra i controlli per il player di video ospitati sul tuo sito."
+msgstr "Nasconde o mostra i controlli per il player di video ospitati sul tuo sito."
 
 #: admin/includes/available.php:885
 msgid "Start Video When in View (only if using <em>self</em> as video source)"
-msgstr ""
-"Riproduci il video quando è nella vista (solo se si usa <em>Proprio</em> "
-"come sorgente video)"
+msgstr "Riproduci il video quando è nella vista (solo se si usa <em>Proprio</em> come sorgente video)"
 
 #: admin/includes/available.php:886
 msgid ""
 "When set to <em>on</em> the video will start playing automatically once "
 "scrolled into view."
-msgstr ""
-"Quando è impostato su <em>on</em> la riproduzione del video parte "
-"automaticamente quando entra nella vista."
+msgstr "Quando è impostato su <em>on</em> la riproduzione del video parte automaticamente quando entra nella vista."
 
 #: admin/includes/available.php:901
 msgid ""
 "Stop Video When Out of View (only if using <em>self</em> as video source)"
-msgstr ""
-"Ferma il video quando esce dalla vista (solo se si usa <em>Proprio</em> come "
-"sorgente video)"
+msgstr "Ferma il video quando esce dalla vista (solo se si usa <em>Proprio</em> come sorgente video)"
 
 #: admin/includes/available.php:902
 msgid ""
 "Used together with the option above, this option when set to <em>on</em> "
 "will stop the video player from playing once scrolled out of view."
-msgstr ""
-"Usato insieme all'opzione di sopra, quando si imposta questa opzione su "
-"<em>on</em> la riproduzione sarà fermata quando il player video esce dalla "
-"vista."
+msgstr "Usato insieme all'opzione di sopra, quando si imposta questa opzione su <em>on</em> la riproduzione sarà fermata quando il player video esce dalla vista."
 
 #: admin/includes/available.php:905
 msgid "Responsive video component with alignment and optional caption."
@@ -989,9 +869,7 @@ msgstr "Altezza"
 msgid ""
 "The height of the map component. By default this is set to <em>500px</em>. "
 "Avoid using percentages with this option."
-msgstr ""
-"L'altezza del componente mappa. Il valore predefinito è impostato a "
-"<em>500px</em>. Evita di usare percentuali per questa opzione."
+msgstr "L'altezza del componente mappa. Il valore predefinito è impostato a <em>500px</em>. Evita di usare percentuali per questa opzione."
 
 #: admin/includes/available.php:922
 msgid "Sticky Maps"
@@ -1004,13 +882,7 @@ msgid ""
 "new Map Marker component will show up. Add a marker for each stop in the "
 "story that you would ike the map to start at. Stops are made in the order "
 "that you added the markers in the map admin."
-msgstr ""
-"Scegliendo una posizione la mappa seguerà lo scorrimento della storia coni "
-"segnaposto che aggiungerai sotto.<br /><br />Dopo aver selezionato una "
-"posizione, verrà visualizzato un nuovo componente Segnaposto mappa. Aggiungi "
-"un segnaposto per ogni stop nella storia su cui vorresti che la mappa "
-"partisse. Gli stop sono fatti nell'ordine in cui hai aggiunto i segnaposto "
-"nell'amministrazione della mappa."
+msgstr "Scegliendo una posizione la mappa seguerà lo scorrimento della storia coni segnaposto che aggiungerai sotto.<br /><br />Dopo aver selezionato una posizione, verrà visualizzato un nuovo componente Segnaposto mappa. Aggiungi un segnaposto per ogni stop nella storia su cui vorresti che la mappa partisse. Gli stop sono fatti nell'ordine in cui hai aggiunto i segnaposto nell'amministrazione della mappa."
 
 #: admin/includes/available.php:931
 msgid "Sticky Left"
@@ -1032,9 +904,7 @@ msgstr "Posiziona in basso"
 msgid ""
 "Creates the basic map component. Use the Map Locations edit boxes when "
 "writing your story to add locations."
-msgstr ""
-"Crea un semplice componente mappa. Usa i riquadri di modifica delle "
-"posizioni mappa per aggiungere le posizioni mentre scrivi la tua storia."
+msgstr "Crea un semplice componente mappa. Usa i riquadri di modifica delle posizioni mappa per aggiungere le posizioni mentre scrivi la tua storia."
 
 #: admin/includes/available.php:952
 msgid "Timeline Stop"
@@ -1048,10 +918,7 @@ msgstr "Etichetta componente nel menu di navigazione"
 msgid ""
 "This is what is displayed for the timeline navigation menu item label. "
 "Example usage includes dates, years, colors, locations, and names."
-msgstr ""
-"Questo è ciò che viene mostrato come etichetta del componente nel menu di "
-"navigazione timeline. L'esempio di utilizzo comprende date, anni, posizioni "
-"e nomi."
+msgstr "Questo è ciò che viene mostrato come etichetta del componente nel menu di navigazione timeline. L'esempio di utilizzo comprende date, anni, posizioni e nomi."
 
 #: admin/includes/available.php:964
 msgid "Timeline Title"
@@ -1065,9 +932,7 @@ msgstr "Il titolo della timeline che dovrebbe essere mostrato nella storia."
 msgid ""
 "Enter a number such as 2007, and a small timeline will be displayed with "
 "scroll to points. This works similar to the chapter heading."
-msgstr ""
-"Inserisci un numero come 2007, e una piccola timeline sarà mostrata con i "
-"punti di scorrimento. Questo funziona in modo simile ai titoli dei capitoli."
+msgstr "Inserisci un numero come 2007, e una piccola timeline sarà mostrata con i punti di scorrimento. Questo funziona in modo simile ai titoli dei capitoli."
 
 #: admin/includes/available.php:971
 msgid "Document"
@@ -1091,11 +956,9 @@ msgstr "URL del documento"
 
 #: admin/includes/available.php:994
 msgid ""
-"URL to the document. Click <em>Select Media</em> to open the WordPress Media "
-"Library."
-msgstr ""
-"URL del documento. Clicca <em>Scegli media</em> per aprire la Media Library "
-"di WordPress."
+"URL to the document. Click <em>Select Media</em> to open the WordPress Media"
+" Library."
+msgstr "URL del documento. Clicca <em>Scegli media</em> per aprire la Media Library di WordPress."
 
 #: admin/includes/available.php:999
 msgid "Document Caption"
@@ -1114,7 +977,8 @@ msgid "Collections"
 msgstr "Collezioni"
 
 #: admin/includes/available.php:1013
-msgid "Display an optional heading to be used within the Collection component."
+msgid ""
+"Display an optional heading to be used within the Collection component."
 msgstr "Mostra un titolo opzionale da usare nel componente collezione."
 
 #: admin/includes/available.php:1019
@@ -1139,9 +1003,7 @@ msgstr "Colonne"
 
 #: admin/includes/available.php:1033
 msgid "Stories are displayed in a grid. How many columns should the grid be?"
-msgstr ""
-"Le storie sono mostrate in una griglia. Quante colonne dovrebbe avere la "
-"griglia?"
+msgstr "Le storie sono mostrate in una griglia. Quante colonne dovrebbe avere la griglia?"
 
 #: admin/includes/available.php:1048
 msgid "Splash Mode"
@@ -1151,16 +1013,12 @@ msgstr "Modalità splash"
 msgid ""
 "Setting this to on will display only the actual category titles (without "
 "images)."
-msgstr ""
-"Impostando questo su attivato mostrerà solo i correnti titoli di categoria "
-"(senza immagini)."
+msgstr "Impostando questo su attivato mostrerà solo i correnti titoli di categoria (senza immagini)."
 
 #: admin/includes/available.php:1052
 msgid ""
 "Show a collection of stories. Typically used on a page like the home page."
-msgstr ""
-"Mostra una collezione di storie. Tipicamente usato in una pagina come la "
-"home page."
+msgstr "Mostra una collezione di storie. Tipicamente usato in una pagina come la home page."
 
 #: admin/includes/available.php:1055
 msgid "Gallery"
@@ -1201,11 +1059,9 @@ msgstr "Avvio rapido"
 
 #: admin/includes/class.welcome.php:73
 msgid ""
-"It's easy to get Aesop Story Engine implemented into your theme. Just follow "
-"these short steps below and you'll be on your way!"
-msgstr ""
-"È facile implementare Aesop Story Engine nel tuo tema. Basta seguire questi "
-"brevi passi di sotto e sarete sulla buona strada!"
+"It's easy to get Aesop Story Engine implemented into your theme. Just follow"
+" these short steps below and you'll be on your way!"
+msgstr "È facile implementare Aesop Story Engine nel tuo tema. Basta seguire questi brevi passi di sotto e sarete sulla buona strada!"
 
 #: admin/includes/class.welcome.php:76
 msgid "Enable Theme Support"
@@ -1215,9 +1071,7 @@ msgstr "Abilita supporto tema"
 msgid ""
 "If your theme does not natively support Aesop Story Engine, add the code "
 "snippet below to your functions.php file, or add using"
-msgstr ""
-"Se il tuo tema non supporta nativamente Aesop Story Engine, aggiungi il "
-"frammento di codice qui sotto nel tuo file functions.php, o aggiungilo usando"
+msgstr "Se il tuo tema non supporta nativamente Aesop Story Engine, aggiungi il frammento di codice qui sotto nel tuo file functions.php, o aggiungilo usando"
 
 #: admin/includes/class.welcome.php:77
 msgid "Code Snippets"
@@ -1225,11 +1079,9 @@ msgstr "Frammenti di codice"
 
 #: admin/includes/class.welcome.php:77
 msgid ""
-"plugin to enable Extended Style Support. This will load one CSS file for any "
-"of the items that you include in the snippet below."
-msgstr ""
-"plugin per abilitare il supporto esteso degli stili. Questo caricherà un "
-"file CSS per ogni elemento che includi nel frammento qui sotto."
+"plugin to enable Extended Style Support. This will load one CSS file for any"
+" of the items that you include in the snippet below."
+msgstr "plugin per abilitare il supporto esteso degli stili. Questo caricherà un file CSS per ogni elemento che includi nel frammento qui sotto."
 
 #: admin/includes/class.welcome.php:81
 msgid "Build your Story"
@@ -1237,15 +1089,11 @@ msgstr "Costruisci la tua storia"
 
 #: admin/includes/class.welcome.php:82
 msgid ""
-"Go to any post, and locate the \"Add Component\" button. It sits right above "
-"the post editor. Once you toggle this, you'll be able to select the "
+"Go to any post, and locate the \"Add Component\" button. It sits right above"
+" the post editor. Once you toggle this, you'll be able to select the "
 "component, adjust any options, and insert it anywhere within your story. "
 "Galleries are managed with the \"Galleries\" tab within WordPress."
-msgstr ""
-"Vai in qualunque articolo, e individua il pulsante \"Aggiungi componente\". "
-"Si trova sopra l'editor di testo. Quando lo attivi, potrai selezionare il "
-"componente, modificare ogni opzione, ed inserirlo ovunque nella tua storia. "
-"Le gallerie sono gestite nella scheda \"Gallerie\" in Wordpress."
+msgstr "Vai in qualunque articolo, e individua il pulsante \"Aggiungi componente\". Si trova sopra l'editor di testo. Quando lo attivi, potrai selezionare il componente, modificare ogni opzione, ed inserirlo ovunque nella tua storia. Le gallerie sono gestite nella scheda \"Gallerie\" in Wordpress."
 
 #: admin/includes/class.welcome.php:88
 msgid "Themes & Addons"
@@ -1275,8 +1123,8 @@ msgstr ""
 msgid ""
 "Stop wasting time constantly previewing your post, and edit and create from "
 "the front-end of your site with Editus, our front-end editor that goes "
-"perfectly with Aesop Story Engine. Visit the site and enter your email for a "
-"25% discount!"
+"perfectly with Aesop Story Engine. Visit the site and enter your email for a"
+" 25% discount!"
 msgstr ""
 
 #: admin/includes/class.welcome.php:94
@@ -1376,9 +1224,7 @@ msgstr "Larghezza galleria principale"
 msgid ""
 "Adjust the overall width of the grid/thumbnail gallery. Acceptable values "
 "include 500px or 50%."
-msgstr ""
-"Aggiusta la larghezza complessiva per la galleria griglia/miniatura. I "
-"valori accettabili includono 500px o 50%."
+msgstr "Aggiusta la larghezza complessiva per la galleria griglia/miniatura. I valori accettabili includono 500px o 50%."
 
 #: admin/includes/components/component-gallery.php:252
 msgid "Gallery Caption"
@@ -1400,9 +1246,7 @@ msgstr "Larghezza griglia galleria"
 msgid ""
 "Adjust the width of the individual grid items, only if using Grid gallery "
 "style. Default is 400."
-msgstr ""
-"Aggiusta la larghezza dei singoli elementi della griglia, solo se si usa lo "
-"stile di galleria a griglia. Il valore predefinito è 400."
+msgstr "Aggiusta la larghezza dei singoli elementi della griglia, solo se si usa lo stile di galleria a griglia. Il valore predefinito è 400."
 
 #: admin/includes/components/component-gallery.php:269
 msgid "Thumbnail Options"
@@ -1415,9 +1259,7 @@ msgstr "Transizione galleria"
 #: admin/includes/components/component-gallery.php:273
 msgid ""
 "Adjust the transition effect for the Thumbnail gallery. Default is slide."
-msgstr ""
-"Aggiusta l'effetto di transizione per la galleria di miniature. Il valore "
-"predefinito è scorri."
+msgstr "Aggiusta l'effetto di transizione per la galleria di miniature. Il valore predefinito è scorri."
 
 #: admin/includes/components/component-gallery.php:275
 msgid "Fade"
@@ -1438,9 +1280,7 @@ msgstr "Velocità di transizione della galleria"
 #: admin/includes/components/component-gallery.php:283
 msgid ""
 "Activate slideshow by setting a speed for the transition.5000 = 5 seconds."
-msgstr ""
-"Attiva lo slideshow impostando una velocità per la transizione.5000 = 5 "
-"secondi."
+msgstr "Attiva lo slideshow impostando una velocità per la transizione.5000 = 5 secondi."
 
 #: admin/includes/components/component-gallery.php:289
 msgid "Hide Gallery Thumbnails"
@@ -1457,12 +1297,9 @@ msgstr "Layout galleria"
 #: admin/includes/components/component-gallery.php:298
 msgid ""
 "Let's say you have 4 images in this gallery. If you enter 121 you will have "
-"one image on the top row, two images on the second row, and one image on the "
-"third row."
-msgstr ""
-"Diciamo che tu abbia 4 immagini in questa galleria. Se inserisci 121 avrai "
-"un'immagine nella prima riga, due immagini sulla seconda riga, e un'immagine "
-"sulla terza riga."
+"one image on the top row, two images on the second row, and one image on the"
+" third row."
+msgstr "Diciamo che tu abbia 4 immagini in questa galleria. Se inserisci 121 avrai un'immagine nella prima riga, due immagini sulla seconda riga, e un'immagine sulla terza riga."
 
 #: admin/includes/components/component-gallery.php:304
 msgid "Enable Lightbox"
@@ -1470,13 +1307,10 @@ msgstr "Abilita Lightbox"
 
 #: admin/includes/components/component-gallery.php:393
 msgid ""
-"Welcome to Aesop Story Engine 1.4. We need to upgrade any galleries that you "
-"might have. Click <a id=\"aesop-upgrade-galleries\" href=\"#\">here</a> to "
+"Welcome to Aesop Story Engine 1.4. We need to upgrade any galleries that you"
+" might have. Click <a id=\"aesop-upgrade-galleries\" href=\"#\">here</a> to "
 "start the upgrade process."
-msgstr ""
-"Benvenuti in Aesop Story Engine 1.4. Abbiamo bisogno di aggiornare tutte le "
-"gallerie che potresti avere. Clicca <a id=\"aesop-upgrade-galleries\" href="
-"\"#\">qui</a> per avviare il processo di aggiornamento."
+msgstr "Benvenuti in Aesop Story Engine 1.4. Abbiamo bisogno di aggiornare tutte le gallerie che potresti avere. Clicca <a id=\"aesop-upgrade-galleries\" href=\"#\">qui</a> per avviare il processo di aggiornamento."
 
 #: admin/includes/components/component-gallery.php:434
 msgid "All done!"
@@ -1488,9 +1322,7 @@ msgstr "Segnaposto mappa Aesop"
 
 #: admin/includes/components/component-map.php:69
 msgid "By default we'll display an H2 heading with the text you specify here."
-msgstr ""
-"Per impostazione predefinita mostreremo un titolo H2 con il testo che "
-"specifichi qui."
+msgstr "Per impostazione predefinita mostreremo un titolo H2 con il testo che specifichi qui."
 
 #: admin/includes/components/component-map.php:84
 msgid "Hide this marker"
@@ -1498,9 +1330,7 @@ msgstr "Nascondi questo segnaposto"
 
 #: admin/includes/components/component-map.php:85
 msgid "Optionally hide this marker but retain the scroll to point in the map."
-msgstr ""
-"Nasconde opzionalmente questo segnaposto ma mantiene lo scorrimento al punto "
-"nella mappa."
+msgstr "Nasconde opzionalmente questo segnaposto ma mantiene lo scorrimento al punto nella mappa."
 
 #: admin/includes/components/component-map.php:120
 msgid "Map Locations"
@@ -1515,20 +1345,14 @@ msgid ""
 "Welcome to Aesop Story Engine 1.3. We need to upgrade any map markers that "
 "you might have. Click <a id=\"aesop-upgrade-map-meta\" href=\"#\">here</a> "
 "to start the upgrade process."
-msgstr ""
-"Benvenuti su Aesop Story Engine 1.3. Abbiamo bisogno di aggiornare tutti i "
-"segnaposto sulle mappe che postresti avere. Clicca <a id=\"aesop-upgrade-map-"
-"meta\" href=\"#\">qui</a> per avviare il processo di aggiornamento."
+msgstr "Benvenuti su Aesop Story Engine 1.3. Abbiamo bisogno di aggiornare tutti i segnaposto sulle mappe che postresti avere. Clicca <a id=\"aesop-upgrade-map-meta\" href=\"#\">qui</a> per avviare il processo di aggiornamento."
 
 #: admin/includes/components/component-map.php:565
 msgid ""
 "Welcome to Aesop Story Engine 1.5. We need to upgrade your Mapbox Map ID. "
 "Click <a id=\"aesop-upgrade-mapbox\" href=\"#\">here</a> to start the "
 "upgrade process."
-msgstr ""
-"Benvenuti in Aesop Story Engine 1.5. Abbiamo bisogno di aggiornare gli ID "
-"mappa di Mapbox. Clicca <a id=\"aesop-upgrade-mapbox\" href=\"#\">qui</a> "
-"per iniziare il processo di aggiornamento."
+msgstr "Benvenuti in Aesop Story Engine 1.5. Abbiamo bisogno di aggiornare gli ID mappa di Mapbox. Clicca <a id=\"aesop-upgrade-mapbox\" href=\"#\">qui</a> per iniziare il processo di aggiornamento."
 
 #: admin/includes/generator_blob.php:73
 msgid "Insert Component"
@@ -1543,10 +1367,7 @@ msgid ""
 "Add story components by clicking the \"Add Component\" button below. This "
 "opens the Story Engine and allows you to select the component that you'd "
 "like to insert, after setting up a few options."
-msgstr ""
-"Aggiungi elementi della storia facendo click sul bottone \"Aggiungi "
-"componente\" sotto. Questo apre lo Story Engine e ti permette di selezionare "
-"il componente che vorresti inserire, dopo aver impostato alcune opzioni."
+msgstr "Aggiungi elementi della storia facendo click sul bottone \"Aggiungi componente\" sotto. Questo apre lo Story Engine e ti permette di selezionare il componente che vorresti inserire, dopo aver impostato alcune opzioni."
 
 #: admin/includes/help.php:27
 msgid "How to Edit Components"
@@ -1556,13 +1377,9 @@ msgstr "Come modificare gli elementi"
 msgid ""
 "While in the <em>Visual</em> tab below, and after adding inserting a story "
 "component, each component will turn into a sort of placeholder. You can "
-"either edit the components options by clicking on the pencil icon, or delete "
-"the component with the trash can icon."
-msgstr ""
-"Mentre ci si trova nella scheda <em>Visuale</em> di sotto, e dopo aver "
-"aggiunto un componente storia, ciascun componente si trasformerà in una "
-"specie di segnaposto. Puoi modificare le opzioni degli elementi facendo "
-"click sull'icona matita, o cancellare il componente con l'icona cestino."
+"either edit the components options by clicking on the pencil icon, or delete"
+" the component with the trash can icon."
+msgstr "Mentre ci si trova nella scheda <em>Visuale</em> di sotto, e dopo aver aggiunto un componente storia, ciascun componente si trasformerà in una specie di segnaposto. Puoi modificare le opzioni degli elementi facendo click sull'icona matita, o cancellare il componente con l'icona cestino."
 
 #: admin/includes/help.php:29
 msgid "Working with Components"
@@ -1570,13 +1387,10 @@ msgstr "Lavorare con gli elementi"
 
 #: admin/includes/help.php:30
 msgid ""
-"After adding a component to the editor, simply press \"enter\" and that will "
-"get you to the next line in the editor. Nesting components inside each other "
-"isn't allowed within the visual editor at this time."
-msgstr ""
-"Dopo aver aggiunto un componente all'editor, premi semplicemente \"invio\" e "
-"ciò ti porterà alla prossima riga nell'editor. Al momento nell'editor "
-"visuale non è possibile inserire un componente dentro l'altro."
+"After adding a component to the editor, simply press \"enter\" and that will"
+" get you to the next line in the editor. Nesting components inside each "
+"other isn't allowed within the visual editor at this time."
+msgstr "Dopo aver aggiunto un componente all'editor, premi semplicemente \"invio\" e ciò ti porterà alla prossima riga nell'editor. Al momento nell'editor visuale non è possibile inserire un componente dentro l'altro."
 
 #: admin/includes/help.php:31
 msgid "Using Maps"
@@ -1584,20 +1398,13 @@ msgstr "Utilizzare le mappe"
 
 #: admin/includes/help.php:32
 msgid ""
-"At this time one map is allowed per post. Click into the map meta box to add "
-"a marker. Click the marker to add optional title and or content. Clicking "
-"update will update the marker text. You can drag around the markers. You can "
-"also drag around the map, and set the zoom. These will be saved and the map "
-"displayed on your post will reflect this. Map markers are shown in the order "
-"that they are added."
-msgstr ""
-"Al momento è permessa una mappa per post. Clicca nel riquadro meta della "
-"mappa per aggiungere un segnaposto. Clicca il segnaposto per aggiungere un "
-"titolo opzionale e/o contenuto. Cliccando aggiorna verrà aggiornato il testo "
-"del segnaposto. Puoi trascinare i segnaposto. Puoi anche trascinare la "
-"mappa, e impostare lo zoom. Questi saranno salvati e la mappa mostrata nel "
-"post rifletterà questo. I segnaposto sulla mappa sono mostrati nell'ordine "
-"in cui vengono aggiunti."
+"At this time one map is allowed per post. Click into the map meta box to add"
+" a marker. Click the marker to add optional title and or content. Clicking "
+"update will update the marker text. You can drag around the markers. You can"
+" also drag around the map, and set the zoom. These will be saved and the map"
+" displayed on your post will reflect this. Map markers are shown in the "
+"order that they are added."
+msgstr "Al momento è permessa una mappa per post. Clicca nel riquadro meta della mappa per aggiungere un segnaposto. Clicca il segnaposto per aggiungere un titolo opzionale e/o contenuto. Cliccando aggiorna verrà aggiornato il testo del segnaposto. Puoi trascinare i segnaposto. Puoi anche trascinare la mappa, e impostare lo zoom. Questi saranno salvati e la mappa mostrata nel post rifletterà questo. I segnaposto sulla mappa sono mostrati nell'ordine in cui vengono aggiunti."
 
 #: admin/includes/help.php:33
 msgid ""
@@ -1605,16 +1412,9 @@ msgid ""
 "grayed out, and the map tiles are 404, then the free Aesop account has "
 "reached its monthly quota. For this reason it's highly recommended to sign "
 "up for your own free <a href=\"http://mapbox.com\">Mapbox</a> account. "
-"Further documentation on this can be found <a href=\"http://aesopstoryengine."
-"com/help/maps-component/\">here</a>."
-msgstr ""
-"I tasselli delle mappe sono forniti dal nostro account gratuito su Mapbox. "
-"Se la mappa è grigia, e viene restituito un errore 404 per i tasselli, "
-"significa che l'account gratuito di Aesop ha raggiunto la sua quota mensile. "
-"Per questa ragione raccomandiamo vivamente di sottoscrivere il proprio "
-"account gratuito con <a href=\"http://mapbox.com\">Mapbox</a>. Ulteriore "
-"documentazione su questo può essere reperita <a href=\"http://"
-"aesopstoryengine.com/help/maps-component/\">qui</a>."
+"Further documentation on this can be found <a "
+"href=\"http://aesopstoryengine.com/help/maps-component/\">here</a>."
+msgstr "I tasselli delle mappe sono forniti dal nostro account gratuito su Mapbox. Se la mappa è grigia, e viene restituito un errore 404 per i tasselli, significa che l'account gratuito di Aesop ha raggiunto la sua quota mensile. Per questa ragione raccomandiamo vivamente di sottoscrivere il proprio account gratuito con <a href=\"http://mapbox.com\">Mapbox</a>. Ulteriore documentazione su questo può essere reperita <a href=\"http://aesopstoryengine.com/help/maps-component/\">qui</a>."
 
 #: admin/includes/help.php:34
 msgid "Theme Compatibility"
@@ -1626,12 +1426,7 @@ msgid ""
 "enable Extended CSS Support. The following code snippet can be entered with "
 "a plugin such as Code Snippets. If you're a developer you can selectively "
 "load additional styles based on the component that you define in the array."
-msgstr ""
-"Aesop funziona con la maggior parte dei temi di Wordpress aggiungendo un "
-"frammento di codice per abilitare il supporto CSS esteso. Il seguente "
-"frammento di codice può essere inserito con un plugin come Code Snippets. Se "
-"sei uno sviluppatore puoi selettivamente caricare stili addizionali basati "
-"sul componente che definisci nell'array."
+msgstr "Aesop funziona con la maggior parte dei temi di Wordpress aggiungendo un frammento di codice per abilitare il supporto CSS esteso. Il seguente frammento di codice può essere inserito con un plugin come Code Snippets. Se sei uno sviluppatore puoi selettivamente caricare stili addizionali basati sul componente che definisci nell'array."
 
 #: admin/includes/help.php:37 admin/includes/help.php:63
 msgid "Documentation"
@@ -1639,15 +1434,11 @@ msgstr "Documentazione"
 
 #: admin/includes/help.php:38
 msgid ""
-"Documentation for the options are listed at <a href=\"http://"
-"aesopstoryengine.com/help\">http://aesopstoryengine.com/help</a>, while "
-"developers may be more intereseted in <a href=\"http://aesopstoryengine.com/"
-"developers\">http://aesopstoryengine.com/developers</a>."
-msgstr ""
-"La documentazione per le opzioni è elencata su <a href=\"http://"
-"aesopstoryengine.com/help\">http://aesopstoryengine.com/help</a>, mentre gli "
-"sviluppatori potrebbero essere più interessati a <a href=\"http://"
-"aesopstoryengine.com/developers\">http://aesopstoryengine.com/developers</a>."
+"Documentation for the options are listed at <a "
+"href=\"http://aesopstoryengine.com/help\">http://aesopstoryengine.com/help</a>,"
+" while developers may be more intereseted in <a "
+"href=\"http://aesopstoryengine.com/developers\">http://aesopstoryengine.com/developers</a>."
+msgstr "La documentazione per le opzioni è elencata su <a href=\"http://aesopstoryengine.com/help\">http://aesopstoryengine.com/help</a>, mentre gli sviluppatori potrebbero essere più interessati a <a href=\"http://aesopstoryengine.com/developers\">http://aesopstoryengine.com/developers</a>."
 
 #: admin/includes/help.php:39
 msgid "Donations"
@@ -1656,19 +1447,13 @@ msgstr "Donazioni"
 #: admin/includes/help.php:40
 msgid ""
 "Aesop Story Engine is 100% free and open-sourced, but we do rely on "
-"donations and purchases of our <a href=\"http://aesopstoryengine.com/library/"
-"category/themes/\">premium WordPress themes</a> and add-ons to facilitate "
-"further development of the free plugin. If Aesop Story Engine has worked out "
-"for you well, please consider making a donation at <a href=\"http://"
-"aesopstoryengine.com/donate\">http://aesopstoryengine.com/donate</a>."
-msgstr ""
-"Aesop Story Engine è al 100% libero e open-source, ma noi contiamo sulle "
-"donazioni e gli acquisti dei nostri <a href=\"http://aesopstoryengine.com/"
-"library/category/themes/\">temi premium di WordPress</a> e moduli aggiuntivi "
-"per facilitare l'ulteriore sviluppo del plugin libero. Se Aesop Story Engine "
-"ha funzionato bene per te, per favore considera di fare una donazione su <a "
-"href=\"http://aesopstoryengine.com/donate\">http://aesopstoryengine.com/"
-"donate</a>."
+"donations and purchases of our <a "
+"href=\"http://aesopstoryengine.com/library/category/themes/\">premium "
+"WordPress themes</a> and add-ons to facilitate further development of the "
+"free plugin. If Aesop Story Engine has worked out for you well, please "
+"consider making a donation at <a "
+"href=\"http://aesopstoryengine.com/donate\">http://aesopstoryengine.com/donate</a>."
+msgstr "Aesop Story Engine è al 100% libero e open-source, ma noi contiamo sulle donazioni e gli acquisti dei nostri <a href=\"http://aesopstoryengine.com/library/category/themes/\">temi premium di WordPress</a> e moduli aggiuntivi per facilitare l'ulteriore sviluppo del plugin libero. Se Aesop Story Engine ha funzionato bene per te, per favore considera di fare una donazione su <a href=\"http://aesopstoryengine.com/donate\">http://aesopstoryengine.com/donate</a>."
 
 #: admin/includes/help.php:50
 msgid "Aesop Galleries"
@@ -1680,13 +1465,10 @@ msgstr "Componente galleria Aesop"
 
 #: admin/includes/help.php:53
 msgid ""
-"Gallery components for Aesop are created and managed here with the Galleries "
-"post type. Each post is a different gallery, and each gallery has it's own "
+"Gallery components for Aesop are created and managed here with the Galleries"
+" post type. Each post is a different gallery, and each gallery has it's own "
 "shortcode that you'll use to display the gallery with."
-msgstr ""
-"Gli elementi galleria di Aesop sono creati e gestiti qui con il tipo di post "
-"Gallerie. Ogni post è una diversa galleria, e ogni galleria ha il suo "
-"shortcode che puoi usare per mostrare la galleria."
+msgstr "Gli elementi galleria di Aesop sono creati e gestiti qui con il tipo di post Gallerie. Ogni post è una diversa galleria, e ogni galleria ha il suo shortcode che puoi usare per mostrare la galleria."
 
 #: admin/includes/help.php:54
 msgid "Directions"
@@ -1696,10 +1478,7 @@ msgstr "Direzioni"
 msgid ""
 "Add images by clicking the Add Images button. Select multiple by holding "
 "down CNTRL or COMMAND, then click \"Use Selected Images.\""
-msgstr ""
-"Aggiungi immagini facendo click sul pulsante Aggiungi immagini. Seleziona "
-"immagini multiple tenendo premuto il tasto CTRL o COMMAND, poi clicca \"Usa "
-"immagini selezionate\"."
+msgstr "Aggiungi immagini facendo click sul pulsante Aggiungi immagini. Seleziona immagini multiple tenendo premuto il tasto CTRL o COMMAND, poi clicca \"Usa immagini selezionate\"."
 
 #: admin/includes/help.php:57
 msgid "Choose a layout by clicking a layout option."
@@ -1707,8 +1486,7 @@ msgstr "Scegli un layout facendo click su un'opzione di layout."
 
 #: admin/includes/help.php:58
 msgid "Adjust any available options for your specified gallery type."
-msgstr ""
-"Aggiusta tutte le opzioni disponibili per il tipo di galleria che specifichi."
+msgstr "Aggiusta tutte le opzioni disponibili per il tipo di galleria che specifichi."
 
 #: admin/includes/help.php:59
 msgid "Publish the gallery."
@@ -1718,40 +1496,28 @@ msgstr "Pubblica la galleria."
 msgid ""
 "Go to any post, open the Component generator, select the Gallery component, "
 "and choose the gallery that you just created from the list."
-msgstr ""
-"Vai in qualunque articolo, apri il generatore di elementi, seleziona il "
-"componente galleria, e scegli la galleria che hai appena creato dalla lista."
+msgstr "Vai in qualunque articolo, apri il generatore di elementi, seleziona il componente galleria, e scegli la galleria che hai appena creato dalla lista."
 
 #: admin/includes/help.php:62
 msgid ""
-"Tips: Clicking the \"x\" icon over the image will delete the image from this "
-"gallery (but not from your site). Clicking the \"pencil\" icon will let you "
-"edit any information for the image such as a caption or title used by some "
+"Tips: Clicking the \"x\" icon over the image will delete the image from this"
+" gallery (but not from your site). Clicking the \"pencil\" icon will let you"
+" edit any information for the image such as a caption or title used by some "
 "galleries."
-msgstr ""
-"Suggerimenti: Facendo click sull'icona \"x\" sopra l'immagine cancellerà "
-"l'immagine da questa galleria (ma non dal tuo sito). Facendo click "
-"sull'icona \"matita\" ti permetterà di modificare ogni informazione "
-"dell'immagine come la didascalia o il titolo usati da alcune gallerie."
+msgstr "Suggerimenti: Facendo click sull'icona \"x\" sopra l'immagine cancellerà l'immagine da questa galleria (ma non dal tuo sito). Facendo click sull'icona \"matita\" ti permetterà di modificare ogni informazione dell'immagine come la didascalia o il titolo usati da alcune gallerie."
 
 #: admin/includes/help.php:64
 msgid ""
-"All components, options, and hooks are fully documented at <a href=\"http://"
-"developers.aesopstories.com\">http://developers.aesopstories.com</a>"
-msgstr ""
-"Tutti gli elementi, opzioni e hooks sono documentati in modo completo su <a "
-"href=\"http://developers.aesopstories.com\">http://developers.aesopstories."
-"com</a>"
+"All components, options, and hooks are fully documented at <a "
+"href=\"http://developers.aesopstories.com\">http://developers.aesopstories.com</a>"
+msgstr "Tutti gli elementi, opzioni e hooks sono documentati in modo completo su <a href=\"http://developers.aesopstories.com\">http://developers.aesopstories.com</a>"
 
 #: admin/includes/notify.php:23
 msgid ""
-"Thanks for checking out Aesop! Get started by going to any post and clicking "
-"the \"Add Component\" button. Refer to the Help tab while editing a post for "
-"more information."
-msgstr ""
-"Grazie per aver installato Aesop! Inizia andando in qualunque articolo e "
-"facendo click sul bottone \"Aggiungi componente\". Fai riferimento alla "
-"scheda Aiuto mentre modifichi un articolo per ulteriori informazioni."
+"Thanks for checking out Aesop! Get started by going to any post and clicking"
+" the \"Add Component\" button. Refer to the Help tab while editing a post "
+"for more information."
+msgstr "Grazie per aver installato Aesop! Inizia andando in qualunque articolo e facendo click sul bottone \"Aggiungi componente\". Fai riferimento alla scheda Aiuto mentre modifichi un articolo per ulteriori informazioni."
 
 #: public/class-aesop-core.php:247
 msgid "Doh! There was an issue deactivating Aesop. Try again perhaps?."
@@ -1775,9 +1541,7 @@ msgstr ""
 msgid ""
 "This gallery is empty! It's also possible that you simply have the wrong "
 "gallery ID."
-msgstr ""
-"Questa galleria è vuota! E' possibile anche che hai inserito un ID galleria "
-"errato."
+msgstr "Questa galleria è vuota! E' possibile anche che hai inserito un ID galleria errato."
 
 #: public/includes/components/component-image.php:62
 msgid "Enlarge"
@@ -1793,21 +1557,19 @@ msgstr "Le persone sono formate da storie, non da atomi."
 
 #: public/includes/options.php:14
 msgid ""
-"Refer to the documentation located <a href=\"http://aesopstoryengine.com/"
-"help/map-component\" target=\"_blank\">here</a> for full option descriptions."
-msgstr ""
-"Fai riferimento alla documentazione disponibile <a href=\"http://"
-"aesopstoryengine.com/help/map-component\" target=\"_blank\">qui</a> per la "
-"descrizione completa delle opzioni."
+"Refer to the documentation located <a "
+"href=\"http://aesopstoryengine.com/help/map-component\" "
+"target=\"_blank\">here</a> for full option descriptions."
+msgstr "Fai riferimento alla documentazione disponibile <a href=\"http://aesopstoryengine.com/help/map-component\" target=\"_blank\">qui</a> per la descrizione completa delle opzioni."
 
 #: public/includes/options.php:24
 msgid "Mapbox Map ID"
 msgstr "ID mappa di Mapbox"
 
 #. Description of the plugin/theme
-msgid "Open-sourced suite of components that empower interactive storytelling."
-msgstr ""
-"Un insieme Open-source di elementi che potenziano la narrazione interattiva."
+msgid ""
+"Open-sourced suite of components that empower interactive storytelling."
+msgstr "Un insieme Open-source di elementi che potenziano la narrazione interattiva."
 
 #: admin/includes/components/component-gallery.php:33
 msgctxt "aesop-core"
