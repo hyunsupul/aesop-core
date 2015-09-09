@@ -25,43 +25,43 @@ Aesop Story Engine is a suite of open-sourced tools and components that empower 
 Utilizing these components, writers can can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. Here’s a demo theme incorporating these story components.
 [http://playground.aesopstories.com](http://playground.aesopstories.com)
 
-**Audio** - 
+**Audio** -
 Display an audio player with support for MP3 that can be optionally hidden. This is great for showcasing audio interviews.
 
-**Video** - 
+**Video** -
 Showcase a fullscreen video with support for Kickstarter, Viddler, YouTube, Vimeo, Daily Motion, and Blip.TV with support for captions and alignment.
 
-**Content** - 
+**Content** -
 The content component is a multi-purpose component that can display a background image, background color, or can split the content into multiple magazine type columns.
 
-**Character** - 
+**Character** -
 Display a character avatar, title, and small bio to help readers be reminded of key story characters.
 
-**Gallery** - 
+**Gallery** -
 The ASE Gallery component allows you to create and manage unlimited story galleries. Each gallery can be displayed as a grid, a thumbnail gallery, stacked, or sequential type gallery, all with caption support.
 
-**Chapter** - 
+**Chapter** -
 Creates scroll-to points with large full-screen images as headings.
 
-**Image** - 
+**Image** -
 The image component displays an image and caption, with optional lightbox. Also allows you to align the image, as well as offset the image so it hangs outside of the content column.
 
-**Map** - 
+**Map** -
 This component allows you to create a map for your story. You can add markers to the map with custom messages, and even have the map scroll to points as you scroll through the story.
 
-**Parallax** - 
+**Parallax** -
 A fullwidth image component with caption and lightbox. As you scroll, the image moves slightly to provide a parallax effect. Includes optional floater parallax item to use for multiple levels of parallax engagement.
 
-**Quote** - 
+**Quote** -
 Show a fullwidth quote with large text, or a standard pull-quote. Control the color and background of the quote component, add parallax effects, and more.
 
-**Timeline** - 
+**Timeline** -
 Create a story with a timeline that sticks to the bottom. The timeline works a bit like chapters.
 
-**Document** - 
+**Document** -
 This component allows you to upload a PDF or image, that is shown to the user once they click the component.
 
-**Collection** - 
+**Collection** -
 The 13th component is meant to be used on a page of your site, and allows you to display stories from a specific collection (category).
 
 Here’s a demo theme incorporating these story components: [http://playground.aesopstories.com](http://playground.aesopstories.com).
@@ -89,7 +89,7 @@ All components are pluggable, and there are ample filters and actions to manipul
 If you think something is missing, we want to hear from you. Post your request and bugs on [Github](https://github.com/bearded-avenger/aesop-core).
 
 = Languages =
-Aesop Story Engine is currently available in 36 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
+Aesop Story Engine is currently available in 36 languages. We work closely with the folks over at [WP-Translations](https://www.transifex.com/wp-translations/aesop-story-engine/), and it's because of them that these translations are available. You're welcome to jump in.
 
 * العربية (Arabic)
 * Български (Bulgarian)
