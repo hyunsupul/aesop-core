@@ -8,21 +8,21 @@ Aesop Story Engine is an open-sourced suite of tools that empower developers to 
 ## Installation
 ### Uploading in WordPress Dashboard
 
-1. Navigate to 'Add New' in the plugins dashboard  
-2. Navigate to the 'Upload' area  
-3. Select `aesop-core.zip` from your computer  
-4. Click 'Install Now'  
+1. Navigate to 'Add New' in the plugins dashboard
+2. Navigate to the 'Upload' area
+3. Select `aesop-core.zip` from your computer
+4. Click 'Install Now'
 5. Activate the plugin in the Plugin dashboard
 
-### Using FTP  
+### Using FTP
 
-1. Download `aesop-core.zip`  
-2. Extract the `aesop-core` directory to your computer  
-3. Upload the `aesop-core` directory to the `/wp-content/plugins/` directory  
+1. Download `aesop-core.zip`
+2. Extract the `aesop-core` directory to your computer
+3. Upload the `aesop-core` directory to the `/wp-content/plugins/` directory
 4. Activate the plugin in the Plugin dashboard
 
 ### Documentation
-[http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers)  
+[http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers)
 
 ### Bugs
 If you find an issue, please let us know [here](https://github.com/bearded-avenger/aesop-core/issues?state=open)!
@@ -34,20 +34,20 @@ This is a developer's portal for Aesop Story Engine and should _not_ be used for
 Contributions are more than welcome. Please read our current [guidelines for contributing](CONTRIBUTING.md) to this repository. Many thanks in advance!
 
 ## Story Components
-At the heart of ASE are the storytelling components. They include:  
-* Audio  
-* Video  
-* Content  
-* Character  
+At the heart of ASE are the storytelling components. They include:
+* Audio
+* Video
+* Content
+* Character
 * Gallery
-* Chapter  
-* Image  
-* Location  
-* Parallax  
-* Quote  
-* Timeline  
-* Collection  
-* Document 
+* Chapter
+* Image
+* Location
+* Parallax
+* Quote
+* Timeline
+* Collection
+* Document
 
 Interactive elements are created while crafting stories, with the Story Component Creator.
 ![Image](https://dl.dropboxusercontent.com/u/5594632/ase-screenshot.png)
@@ -56,7 +56,7 @@ Interactive elements are created while crafting stories, with the Story Componen
 See [https://github.com/bearded-avenger/aesop-core/releases](https://github.com/bearded-avenger/aesop-core/releases) for more.
 
 ### Translations
-Aesop Story Engine is currently available in 36 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
+Aesop Story Engine is currently available in 36 languages. We work closely with the folks over at [WP-Translations](https://www.transifex.com/wp-translations/aesop-story-engine/), and it's because of them that these translations are available. You're welcome to jump in.
 
 * العربية (Arabic)
 * Български (Bulgarian)
@@ -97,5 +97,5 @@ Aesop Story Engine is currently available in 36 languages. We work closely with 
 
 ---
 
-### Demo Theme  
+### Demo Theme
 Here is a basic sample WordPress theme showing implementation of the story engine component design: [Aesop Story Theme](https://github.com/AesopInteractive/aesop-story-theme).
