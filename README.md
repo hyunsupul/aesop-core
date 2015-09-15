@@ -22,13 +22,13 @@ Aesop Story Engine is an open-sourced suite of tools that empower developers to 
 4. Activate the plugin in the Plugin dashboard
 
 ### Documentation
-[http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers)  
+See [http://aesopstoryengine.com/developers](http://aesopstoryengine.com/developers).
 
 ### Bugs
 If you find an issue, please let us know [here](https://github.com/bearded-avenger/aesop-core/issues?state=open)!
 
 ### Support
-This is a developer's portal for Aesop Story Engine and should _not_ be used for support. Please visit our [support forums](https://wordpress.org/support/plugin/aesop-story-engine).
+This is a developer's portal for Aesop Story Engine and should _not_ be used for support. Please visit our [support forums](https://wordpress.org/support/plugin/aesop-story-engine) if you have a question.
 
 ### Contributions
 Contributions are more than welcome. Please read our current [guidelines for contributing](CONTRIBUTING.md) to this repository. Many thanks in advance!
