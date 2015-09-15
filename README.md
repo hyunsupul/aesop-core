@@ -1,6 +1,23 @@
-[![Code Coverage](https://scrutinizer-ci.com/g/easydigitaldownloads/Easy-Digital-Downloads/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/easydigitaldownloads/Easy-Digital-Downloads/?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bearded-avenger/aesop-core/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bearded-avenger/aesop-core/?branch=master) [![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg?style=flat-square)](http://www.gnu.org/licenses/gpl-2.0.html) [![Tool](https://img.shields.io/badge/wp--translations-used-brightgreen.svg?style=flat-square)](http://wp-translations.org)
+<table width="100%">
+	<tr>
+		<td align="left" width="70">
+			<strong><a href="wordpress.org/plugins/aesop-story-engine">Aesop Story Engine</a></strong><br />
+			A collection of thirteen unique storytelling components wrapped in a plugin.
+		</td>
+		<td align="right" width="20%">
+			<a href="https://scrutinizer-ci.com/g/bearded-avenger/aesop-core/?branch=master">
+				<img src="https://scrutinizer-ci.com/g/bearded-avenger/aesop-core/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality">
+			</a>
+			<a href="http://www.gnu.org/licenses/gpl-2.0.html">
+				<img src="https://img.shields.io/badge/license-GPL--2.0%2B-red.svg?style=flat-square" alt="License" />
+			</a>
+			<a href="http://wp-translations.org">
+				<img src="https://img.shields.io/badge/wp--translations-used-brightgreen.svg?style=flat-square" alt="i18n">
+			</a>
+		</td>
+	</tr>
+</table>
 
-# Aesop Story Engine
 Aesop Story Engine is an open-sourced suite of tools that empower developers to build feature-rich, interactive, long-form stories within Wordpress. ASE is the same engine that drives the storytelling experience through our hosted platform at [Story.AM](https://story.am).
 
 ---
