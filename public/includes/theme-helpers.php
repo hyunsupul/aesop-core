@@ -243,7 +243,7 @@ function aesop_component_data_atts( $type, $gallery_id, $defaults, $editable = f
 function aesop_gallery_component_data_atts( $postid = '' ) {
 
 	// bail out if aesop story editor isn't activated or if there's no gallery id passed
-	if ( empty ( $postid ) || ! function_exists( 'editus_editor_components' ) ) {
+	if ( empty ( $postid ) || ! function_exists( 'lasso_editor_components' ) ) {
 		return; }
 
 	// type
