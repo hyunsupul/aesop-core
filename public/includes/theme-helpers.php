@@ -206,7 +206,7 @@ function aesop_component_data_atts( $type, $gallery_id, $defaults, $editable = f
 		return; }
 
 	// if aesop story editor isn't activated then dont even bother
-	if ( ! function_exists( 'editus_editor_components' ) ) {
+	if ( ! function_exists( 'lasso_editor_components' ) ) {
 		return; }
 
 	// we're looping through the default attributes that are fed to us and outputting them as data-attributes
