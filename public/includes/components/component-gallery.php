@@ -97,8 +97,8 @@ class AesopCoreGallery {
 
 			if ( function_exists( 'lasso_editor_components' ) ) {
 
-				?><div contenteditable="false" class="editus--empty-component"><?php
-				_e( 'Setup a gallery by clicking the <span class="editus-icon-gear"></span> icon above.', 'aesop-core' );
+				?><div contenteditable="false" class="lasso--empty-component"><?php
+				_e( 'Setup a gallery by clicking the <span class="lasso-icon-gear"></span> icon above.', 'aesop-core' );
 				?></div><?php
 
 			} else {

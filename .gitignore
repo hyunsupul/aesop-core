@@ -2,3 +2,4 @@
 node_modules
 .transifexrc
 npm-debug.log
+/.idea
