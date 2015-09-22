@@ -169,6 +169,9 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 
 == Changelog ==
 
+= 1.6.6 =
+* FIX - Fixed improper function name introduced with 1.6.4 which causes Editus to not be able to edit Aesop components
+
 = 1.6.5 =
 * FIX - Fixed the timeline shortcode that was broken by our shortcode fix
 * TWEAK - i18n updates
