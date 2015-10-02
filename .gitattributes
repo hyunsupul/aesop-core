@@ -1,3 +1,9 @@
 .gitattributes export-ignore
 .gitignore export-ignore
+.tx/ export-ignore
 composer.json export-ignore
+CONTRIBUTING.md export-ignore
+/node_modules/ export-ignore
+Gruntfile.js export-ignore
+package.json export-ignore
+README.md export-ignore
