@@ -1047,7 +1047,23 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => 'off',
 						'desc'   => __( 'Splash Mode', 'aesop-core' ),
 						'tip'  => __( 'Setting this to on will display only the actual category titles (without images).', 'aesop-core' )
-					)
+					),
+					'masonry'   => array(
+						'type'   => 'select',
+						'values' => array(
+							array(
+								'value' => 'yes',
+								'name'  => __( 'Yes', 'aesop-core' ),
+							),
+							array(
+								'value' => 'no',
+								'name'  => __( 'No', 'aesop-core' ),
+							),
+						),
+						'default' => 'no',
+						'desc' => __( 'Masonry', 'aesop-core' ),
+						'tip' => __( 'Automatic grid fill something something.', 'aesop-core' ),
+					),
 				),
 				'desc'     => __( 'Show a collection of stories. Typically used on a page like the home page.', 'aesop-core' )
 			),

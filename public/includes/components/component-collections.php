@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Creates an interactive timeline component that works similar to chapter headings
+ * Creates a collection component that contains category posts
  *
  * @since    1.0.0
  */
@@ -14,7 +14,8 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 			'title'   		=> '',
 			'columns'   	=> 2,
 			'limit'   		=> -1,
-			'splash'  		=> ''
+			'splash'  		=> '',
+			'masonry'     => '',
 		);
 		$atts = apply_filters( 'aesop_collection_defaults', shortcode_atts( $defaults, $atts ) );
 
@@ -44,7 +45,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 					<h4 class="aesop-story-collection-title"><span><?php echo esc_html( $atts['title'] );?></span></h4>
 				<?php } ?>
 
-					<div id="aesop-collection-<?php echo $unique;?>" class="aesop-collection-grid clearfix aesop-collection-grid-<?php echo absint( $col );?>col <?php echo sanitize_html_class( $splash_class );?>">
+					<div id="aesop-collection-<?php echo $unique;?>" class="aesop-collection-grid clearfix aesop-collection-grid-<?php echo absint( $col );?>col <?php echo sanitize_html_class( $splash_class );?> <?php if ( 'yes' == $atts['masonry'] ) { echo 'masonry-grid'; } ?>">
 
 						<?php
 
