@@ -169,8 +169,14 @@ class AesopMapComponentAdmin {
 					setMapCenter(start_point[0],start_point[1]);
 
 					jQuery('#aesop-map-address').geocomplete().bind('geocode:result', function(event, result){
-						var lat = result.geometry.location.k;
-						var lng = result.geometry.location.B;
+						var lat, lng;
+						if (result.geometry.location.hasOwnProperty('k')) {
+							lat = result.geometry.location.k;
+						    lng = result.geometry.location.B;
+						} else {
+							lat = result.geometry.location.lat();
+						    lng = result.geometry.location.lng();
+						}
 						map.panTo(new L.LatLng(lat,lng));
 						setMapCenter(lat,lng);
   					});
