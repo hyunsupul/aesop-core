@@ -169,6 +169,10 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 
 == Changelog ==
 
+= 1.6.8 =
+* FIX - Fixed the issue where component settings were not loaded correctly under WordPress 4.4
+* FIX - Fixed the map search box functionality
+
 = 1.6.6 =
 * FIX - Fixed improper function name introduced with 1.6.4 which causes Editus to not be able to edit Aesop components
 
