@@ -1,5 +1,5 @@
 === Aesop Story Engine ===
-Contributors: nphaskins, etcio, michaelbeil
+Contributors: hyunster, nphaskins, etcio, michaelbeil
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
