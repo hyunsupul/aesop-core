@@ -160,7 +160,6 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 
 1. The component generator triggered within the edit post screen.
 2. Story Engine components and their descriptions
-/Users/Nick/Sites/wp-aesop/wp-content/plugins/aesop-core/README.txt
 
 == Upgrade Notice ==
 
