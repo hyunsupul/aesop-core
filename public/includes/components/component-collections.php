@@ -118,7 +118,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 													<a class="aesop-fader aesop-collection-item-link" href="<?php the_permalink();?>">
 														<div class="aesop-collection-item-inner">
 															<h2 class="aesop-collection-entry-title" itemprop="title"><?php the_title();?></h2>
-															<p class="aesop-collection-meta">Written by <?php echo get_the_author();?></p>
+															<p class="aesop-collection-meta"><?php printf( __( 'Written by %s', 'aesop-core' ), apply_filters( 'aesop_collection_author', get_the_author(), get_the_ID() ) ); ?></p>
 															<div class="aesop-collection-item-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 22, '...' );?></div>
 														</div>
 														<div class="aesop-collection-item-img" style="background-image:url(<?php echo $coverimg[0];?>);background-repeat:no-repeat;background-size:cover;"></div>

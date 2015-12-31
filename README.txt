@@ -1,11 +1,11 @@
 === Aesop Story Engine ===
-Contributors: nphaskins, etcio, michaelbeil
+Contributors: hyunster, nphaskins, etcio, michaelbeil
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.3
+Tested up to: 4.4
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -160,7 +160,6 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 
 1. The component generator triggered within the edit post screen.
 2. Story Engine components and their descriptions
-/Users/Nick/Sites/wp-aesop/wp-content/plugins/aesop-core/README.txt
 
 == Upgrade Notice ==
 
