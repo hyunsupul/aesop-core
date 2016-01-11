@@ -247,7 +247,7 @@
                    sc = restoreAesopShortcodes(ai_parent.outerHTML);
 				} else {
 				   sc = window.decodeURIComponent(sc);
-				   c = '<p>'+sc+'</p>';
+				   sc = '<p>'+sc+'</p>';
 				}
 
                 ai_parent.setAttribute("id", 'aesop-generator-editing');
