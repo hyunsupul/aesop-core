@@ -27,97 +27,97 @@ class aiCoreCSSMerger {
 		$css = '';
 
 		// gallery
-		if ( self::aesop_theme_supports( 'gallery' ) ) {
-
+		if ( !self::aesop_theme_supports( 'gallery' ) ) 
+		{
 			$css .= file_get_contents( AI_CORE_DIR.'/public/assets/css/components/gallery.css' );
-
 		}
 
 		// parallax
-		if ( self::aesop_theme_supports( 'parallax' ) ) {
-
+		if ( !self::aesop_theme_supports( 'parallax' ) ) 
+		{
 			$css .= file_get_contents( AI_CORE_DIR.'/public/assets/css/components/parallax.css' );
-
 		}
 
 		// content
-		if ( self::aesop_theme_supports( 'content' ) ) {
-
+		if ( !self::aesop_theme_supports( 'content' ) ) 
+		{
 			$css .= file_get_contents( AI_CORE_DIR.'/public/assets/css/components/content.css' );
-
 		}
 
 		// image
-		if ( self::aesop_theme_supports( 'image' ) ) {
-
+		if ( !self::aesop_theme_supports( 'image' ) ) 
+		{
 			$css .= file_get_contents( AI_CORE_DIR.'/public/assets/css/components/image.css' );
-
 		}
 
 		// video
-		if ( self::aesop_theme_supports( 'video' ) ) {
-
+		if ( !self::aesop_theme_supports( 'video' ) ) 
+		{
 			$css .= file_get_contents( AI_CORE_DIR.'/public/assets/css/components/video.css' );
-
 		}
 
 		// audio
-		if ( self::aesop_theme_supports( 'audio' ) ) {
-
+		if ( !self::aesop_theme_supports( 'audio' ) ) 
+		{
 			$css .= file_get_contents( AI_CORE_DIR.'/public/assets/css/components/audio.css' );
-
 		}
 
 		// quote
-		if ( self::aesop_theme_supports( 'quote' ) ) {
-
+		if ( !self::aesop_theme_supports( 'quote' ) ) {
 			$css .= file_get_contents( AI_CORE_DIR.'/public/assets/css/components/quote.css' );
-
 		}
 
 		// collection
-		if ( self::aesop_theme_supports( 'collection' ) ) {
-
+		if ( !self::aesop_theme_supports( 'collection' ) ) {
 			$css .= file_get_contents( AI_CORE_DIR.'/public/assets/css/components/collection.css' );
-
 		}
 
+		
 		// chapter
-		if ( self::aesop_theme_supports( 'chapter' ) ) {
-
+		if ( !self::aesop_theme_supports( 'chapter' ) ) 
+		{
 			$css .= file_get_contents( AI_CORE_DIR.'/public/assets/css/components/chapter.css' );
-
 		}
 
 		// character
-		if ( self::aesop_theme_supports( 'character' ) ) {
-
+		if ( !self::aesop_theme_supports( 'character' ) ) 
+		{
 			$css .= file_get_contents( AI_CORE_DIR.'/public/assets/css/components/character.css' );
-
 		}
 
 		// document
-		if ( self::aesop_theme_supports( 'document' ) ) {
-
+		if ( !self::aesop_theme_supports( 'document' ) ) 
+		{
 			$css .= file_get_contents( AI_CORE_DIR.'/public/assets/css/components/document.css' );
-
 		}
 
 		// map
-		if ( self::aesop_theme_supports( 'map' ) ) {
-
+		if ( !self::aesop_theme_supports( 'map' ) ) 
+		{
 			$css .= file_get_contents( AI_CORE_DIR.'/public/assets/css/components/map.css' );
-
 		}
 
 		// timeline
-		if ( self::aesop_theme_supports( 'timeline' ) ) {
-
+		if ( !self::aesop_theme_supports( 'timeline' ) ) 
+		{
 			$css .= file_get_contents( AI_CORE_DIR.'/public/assets/css/components/timeline.css' );
 
 		}
 
 		wp_add_inline_style( 'ai-core-style', $css );
+	}
+	
+	/**
+	 * Helper function used to see if a theme is known to have ASE supports
+	 * @since 1.0.9
+	 */
+	
+	public function known_ase_theme() {
+		$name  	= wp_get_theme()->get('Name');
+		$slug  	= sanitize_text_field( strtolower( preg_replace('/[\s_]/', '-', $name ) ) );
+		$known_themes = array('jorgen', 'novella','genji','kerouac','fable','andersen','lore','zealot','worldview','canvas');
+
+		return in_array ( $slug , $known_themes );
 	}
 
 	/**
@@ -131,19 +131,21 @@ class aiCoreCSSMerger {
 	 */
 
 	public function aesop_theme_supports( $component = '' ) {
-
 		$supports = get_theme_support( 'aesop-component-styles' );
-
 		// bail if no support
+		
 		if ( empty( $supports ) || ! is_array( $supports ) ) {
-			return; }
+			return self::known_ase_theme(); 
+		}
 
-		if ( in_array( $component, $supports[0] ) ) {
+		if ( in_array( $component, $supports[0] ) ) {;
 			return true; }
 		else {
 			return false; }
 
 	}
+	
+	
 
 }
 new aiCoreCSSMerger;

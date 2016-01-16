@@ -742,16 +742,16 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'select',
 						'values'  => array(
 							array(
+								'value' => 'center',
+								'name' => __( 'Center', 'aesop-core' )
+							),
+							array(
 								'value' => 'left',
 								'name' => __( 'Left', 'aesop-core' )
 							),
 							array(
 								'value' => 'right',
 								'name' => __( 'Right', 'aesop-core' )
-							),
-							array(
-								'value' => 'center',
-								'name' => __( 'Center', 'aesop-core' )
 							)
 						),
 						'default'  => 'center',
@@ -762,13 +762,13 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'select',
 						'values'  => array(
 
+						    array(
+								'value' => 'youtube',
+								'name' => __( 'YouTube', 'aesop-core' )
+							),
 							array(
 								'value' => 'vimeo',
 								'name' => __( 'Vimeo', 'aesop-core' )
-							),
-							array(
-								'value' => 'youtube',
-								'name' => __( 'YouTube', 'aesop-core' )
 							),
 							array(
 								'value' => 'kickstarter',
@@ -799,7 +799,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 								'name' => __( 'Self', 'aesop-core' )
 							)
 						),
-						'default'  => 'vimeo',
+						'default'  => 'youtube',
 						'desc'   => __( 'Video Source', 'aesop-core' ),
 						'tip'  => __( 'Choose an available source for the video.', 'aesop-core' )
 					),

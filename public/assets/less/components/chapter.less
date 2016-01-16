@@ -6,23 +6,25 @@
 .aesop-article-chapter-wrap {
     position: relative;
 
-    .aesop-cover-title {
-        max-width: 100%;
-        margin: 0;
-        padding-bottom: 20px;
-        bottom: 100px;
-        border-bottom: 1px solid @body-bg;
-        font-size: @font-size-mega;
-        color: #fff;
-        width: 90%;
-        left: 10%;
-        position: absolute;
-        z-index: 1;
+	&.aesop-video-chapter {
+		.aesop-cover-title {
+			max-width: 100%;
+			margin: 0;
+			padding-bottom: 20px;
+			top: 150px;
+			border-bottom: 1px solid @body-bg;
+			font-size: @font-size-mega !important;
+			color: #fff;
+			width: 90%;
+			left: 10%;
+			position: absolute;
+			z-index: 1;
 
-        small {
-            font-size:40px;
-        }
-    }
+			small {
+				font-size:40px;
+			}
+		}
+	}
 
     @media (max-width:@mobile-large){
         .aesop-cover-title {
@@ -41,6 +43,23 @@
     }
 }
 
+.aesop-cover-title {
+        max-width: 100%;
+        margin: 0;
+        padding-bottom: 20px;
+        bottom: 100px;
+        border-bottom: 1px solid @body-bg;
+        font-size: @font-size-mega !important;
+        color: #fff;
+        width: 90%;
+        left: 10%;
+        position: absolute;
+        z-index: 1;
+
+        small {
+            font-size:40px;
+        }
+    }
 
 /////////////////////////////
 // new chapter menu as of 1.4

@@ -230,17 +230,32 @@
 .aesop-video-component.aesop-component-align-left,
 .aesop-video-component.aesop-component-align-right {
   position: relative;
+  float: none !important;
 }
-.aesop-video-component.aesop-component-align-left .aesop-video-container,
-.aesop-video-component.aesop-component-align-right .aesop-video-container {
-  margin-right: 0;
+.aesop-video-component.aesop-component-align-left .aesop-video-container.aesop-component-align-left,
+.aesop-video-component.aesop-component-align-right .aesop-video-container.aesop-component-align-left,
+.aesop-video-component.aesop-component-align-left .aesop-video-container.aesop-component-align-right,
+.aesop-video-component.aesop-component-align-right .aesop-video-container.aesop-component-align-right {
+  float: none !important;
+}
+.aesop-video-component.aesop-component-align-left .aesop-video-container.aesop-component-align-left,
+.aesop-video-component.aesop-component-align-right .aesop-video-container.aesop-component-align-left {
+  margin-right: auto;
   margin-left: 0;
 }
+.aesop-video-component.aesop-component-align-left .aesop-video-container.aesop-component-align-right,
+.aesop-video-component.aesop-component-align-right .aesop-video-container.aesop-component-align-right {
+  float: none !important;
+  margin-left: auto;
+  margin-right: 0;
+}
 .aesop-video-component.aesop-component-align-left {
-  margin: 0 15px 15px 15px;
+  margin-right: auto;
+  margin-left: 0;
 }
 .aesop-video-component.aesop-component-align-right {
-  margin: 0 15px 15px 15px;
+  margin-left: auto;
+  margin-right: 0;
 }
 .aesop-video-component .self .mejs-container,
 .aesop-video-component .self .wp-video {
@@ -296,8 +311,8 @@
 .aesop-article-chapter-wrap.aesop-chapter-full .aesop-article-chapter {
   height: 600px;
 }
-.aesop-video-chapter .aesop-article-chapter {
-  height: auto !important;
+.aesop-video-chapter .aesop-cover-title {
+  position: absolute;
 }
 .os-ios .aesop-stacked-img {
   background-attachment: scroll;
@@ -684,7 +699,7 @@
   margin: 0!important;
   padding: 0!important;
   overflow: hidden!important;
-  background: #000000;
+  background: #000;
 }
 .fotorama--fullscreen {
   position: absolute!important;
@@ -701,7 +716,7 @@
 }
 .fotorama--fullscreen .fotorama__nav,
 .fotorama--fullscreen .fotorama__stage {
-  background: #000000;
+  background: #000;
 }
 .fotorama__wrap {
   -webkit-text-size-adjust: 100%;
@@ -877,7 +892,7 @@
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-size: 14px;
   line-height: 1.5;
-  color: #000000;
+  color: #000;
 }
 .fotorama__caption a {
   text-decoration: none;

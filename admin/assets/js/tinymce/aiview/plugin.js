@@ -111,7 +111,7 @@
 
             // split based on equal sign
             attrs.forEach(function (attr) {
-                attr = attr.split('=');
+                attr = attr.split(/=(.+)?/);//split('=');
 
                 var attr_key = attr[0];
                 var attr_value = attr[1];
@@ -262,14 +262,12 @@
                     var selector = '.dk_options li.' + scope[1] + ' a';
                     $(selector).click();
 
-                    //var attrs = parse('[aesop_image imgwidth="40%" offset="dsadas" credit="dsadas" alt="dsadas" align="left" lightbox="on" captionposition="left"]');
 					var attrs = parse(sc);
 					
 
                     for (var key in attrs) {
 						
                         if (key === 'content') {
-							alert(""+key+" "+attrs[key]);
                             $('#aesop-generator-content').val(attrs[key]);
                         } else {
                             $('#aesop-generator-settings [name="' + key + '"]').val(attrs[key]);

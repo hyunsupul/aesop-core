@@ -1,12 +1,12 @@
 === Aesop Story Engine ===
-Contributors: hyunster, nphaskins, etcio, michaelbeil
+Contributors: nphaskins, etcio, michaelbeil
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.4
-Stable tag: trunk
+Tested up to: 4.4.1
+Stable tag: 1.6.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,7 @@ Aesop Story Engine is a suite of open-sourced tools and components that empower 
 
 **Try Aesop for Free** - [http://tryaesop.com](http://tryaesop.com)
 
-Utilizing these components, writers can can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. Here’s a demo theme incorporating these story components.
+Utilizing these components, writers can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. Here’s a demo theme incorporating these story components.
 [http://playground.aesopstories.com](http://playground.aesopstories.com)
 
 **Audio** -
@@ -160,6 +160,7 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 
 1. The component generator triggered within the edit post screen.
 2. Story Engine components and their descriptions
+/Users/Nick/Sites/wp-aesop/wp-content/plugins/aesop-core/README.txt
 
 == Upgrade Notice ==
 
@@ -168,8 +169,15 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 
 == Changelog ==
 
+= 1.6.10 =
+* FIX - Fixed the Video and Video Chapter visibility issues
+* FIX - Fixed the incorrect video source menu item. 
+
+= 1.6.9 =
+* FIX - Fixed a check in error in 1.6.8
+
 = 1.6.8 =
-* FIX - Fixed the issue where the component settings were not loaded correctly in WordPress 4.4
+* FIX - Fixed the issue where component settings were not loaded correctly under WordPress 4.4
 * FIX - Fixed the map search box functionality
 
 = 1.6.6 =
