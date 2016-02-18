@@ -11,18 +11,18 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 	function aesop_parallax_shortcode( $atts ) {
 
 		$defaults = array(
-			'img'     			=> '',
-			'parallaxspeed'     => 1,
-			'height'    		=> 500, // deprecated 1.4.2
-			'parallaxbg'   		=> 'on',
-			'floater'    		=> '',
-			'floatermedia'   	=> '',
-			'floaterposition'  	=> 'right',
-			'floaterdirection' 	=> 'up',
-			'caption'  			=> '',
-			'captionposition' 	=> 'bottom-left',
-			'lightbox'    		=> false,
-			'floaterspeed'     => 1 // not used
+			'img'				=> '',
+			'parallaxspeed'		=> 1,
+			'height'			=> 500, // deprecated 1.4.2
+			'parallaxbg'		=> 'on',
+			'floater'			=> '',
+			'floatermedia'		=> '',
+			'floaterposition'	=> 'right',
+			'floaterdirection'	=> 'up',
+			'caption'			=> '',
+			'captionposition'	=> 'bottom-left',
+			'lightbox'			=> false,
+			'floaterspeed'		=> 1 // not used
 		);
 
 		$atts = apply_filters( 'aesop_parallax_defaults', shortcode_atts( $defaults, $atts ) );
@@ -34,8 +34,11 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 		// add a css class if parallax bg is set to on
 		$laxclass  = 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
+		
+		// add parallax and floater speed options
 		$parallax_speed = $atts['parallaxspeed'];
 		$floater_speed = $atts['floaterspeed'];
+		
 		if ($parallax_speed <1) $parallax_speed =1;
 		else if ($parallax_speed >6) $parallax_speed =6;
 		
