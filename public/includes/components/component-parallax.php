@@ -22,7 +22,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 			'caption'  			=> '',
 			'captionposition' 	=> 'bottom-left',
 			'lightbox'    		=> false,
-			'floaterspeed'     => 1 // not used
+			'floaterspeed'		=> 1 // not used
 		);
 
 		$atts = apply_filters( 'aesop_parallax_defaults', shortcode_atts( $defaults, $atts ) );
@@ -34,13 +34,16 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 		// add a css class if parallax bg is set to on
 		$laxclass  = 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
+		
+		// add parallax and floater speed options
 		$parallax_speed = $atts['parallaxspeed'];
 		$floater_speed = $atts['floaterspeed'];
+		
 		if ($parallax_speed <1) $parallax_speed =1;
-		else if ($parallax_speed >6) $parallax_speed =6;
+			elseif ($parallax_speed >6) $parallax_speed =6;
 		
 		//if ($floater_speed <1) $floater_speed =1;
-		//else if ($floater_speed >10) $floater_speed =10;
+		//elseif ($floater_speed >10) $floater_speed =10;
 		
 
 		// add custom css classes through our utility function
