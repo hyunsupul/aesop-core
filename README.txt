@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.4.1
-Stable tag: 1.6.10
+Stable tag: 1.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -168,10 +168,27 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.7.0 =
+* FIX - Default color behavior for non-block quote is restored
+* FIX - Default mapbox url is set to v4
+* FIX - Fized the height for default Timeline bar
+* FIX - Aesop Lazy Loader compatability is added to more gallery types
+* FIX - Self target video doesn't play automatically if not visible and "start play when in view" is on
+
+= 1.6.12 =
+* FIX - Fixed the logic to load default component styles
+* FIX - Fixed the compatibility issue with themes that define aesop-entry-content class
+* FIX - Fixed the issue where the Quote text color is ignored
+
+= 1.6.11 =
+* FIX - Fixed the Chapter and Timeline navigation for non Aesop themes
+* FIX - Adjusted the Content Box
+* NEW - Added the background speed option for the Parallax component 
 
 = 1.6.10 =
 * FIX - Fixed the Video and Video Chapter visibility issues
-* FIX - Fixed the incorrect video source menu item. 
+* FIX - Fixed the incorrect video source menu item.
+* FIX - Use the Character default style if the theme doesn't supply custom styles.  
 
 = 1.6.9 =
 * FIX - Fixed a check in error in 1.6.8

@@ -13,7 +13,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 			'width'  	=> '100%',
 			'background' => '#222222',
 			'img'  		=> '',
-			'text'   	=> '#FFFFFF',
+			'text'   	=> '',
 			'height' 	=> 'auto',
 			'align'  	=> 'center',
 			'size'  	=> '1',
@@ -44,9 +44,23 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 		// bg color only if not block style
 		$bgcolor = 'block' == $atts['type'] ? sprintf( 'background-color:%s;', $atts['background'] ) : false;
 		
+		if ('block' == $atts['type'] ) {
+		    if ($atts['text'] == '') {
+			    $atts['text'] = '#FFFFFF';
+		    }
+		    $fgcolor = sprintf( 'color:%s;', esc_attr($atts['text']) );
+		} else {
+            // for non-block quote color is ignored unless it has been changed from the default value
+			if ($atts['text'] == '' || !strcasecmp(esc_attr($atts['text']),'#ffffff')) {
+		        $fgcolor = null;
+			} else {
+				$fgcolor = sprintf( 'color:%s;', esc_attr($atts['text']) );
+			}
+		}
+		
 
 		// set styles
-		$style = $atts['background'] || $atts['text'] || $atts['height'] || $atts['width'] ? sprintf( 'style="%s%scolor:%s;height:%s;width:%s;"', esc_attr( $bgcolor ), $bgimg, esc_attr( $atts['text'] ), esc_attr( $atts['height'] ), esc_attr( $atts['width'] ) ) : false;
+		$style = $bgcolor || $fgcolor || $atts['height'] || $atts['width'] ? sprintf( 'style="%s%s%sheight:%s;width:%s;"', esc_attr( $bgcolor ), $bgimg, $fgcolor, esc_attr( $atts['height'] ), esc_attr( $atts['width'] ) ) : false;
 
 		$isparallax = 'on' == $atts['parallax'] ? 'quote-is-parallax' : false;
 		$lrclass = 'left' == $atts['direction'] || 'right' == $atts['direction'] ? 'quote-left-right' : false;
@@ -150,7 +164,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 
 		do_action( 'aesop_quote_inside_top', $atts, $unique ); // action ?>
 
-				<blockquote class="<?php echo sanitize_html_class( $align );?>" style="font-size:<?php echo esc_attr( $size );?>;color:<?php echo esc_attr( $atts['text'] );?>">
+				<blockquote class="<?php echo sanitize_html_class( $align );?>" style="font-size:<?php echo esc_attr( $size );?>;<?php echo $fgcolor?>">
 					<span><?php echo esc_html( $atts['quote'] );?></span>
 
 					<?php echo $cite ;?>
