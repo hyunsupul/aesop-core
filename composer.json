@@ -1,5 +1,5 @@
 {
-   "name": "aesop/aesop-story-engine",
+   "name": "aesop/aesop-core",
    "type": "wordpress-plugin",
    "description": "Aesop Story Engine - Open-sourced suite of components that empower interactive storytelling in WordPress.",
    "homepage": "http://aesopstoryengine.com",
@@ -9,6 +9,7 @@
    	"issues": "https://github.com/hyunsupul/aesop-core/issues"
   },
    "require": {
+     "php": ">=5.3.3",
      "composer/installers": "~1.0.6"
    }
 }
