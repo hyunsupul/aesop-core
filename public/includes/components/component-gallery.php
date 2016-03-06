@@ -170,6 +170,8 @@ class AesopCoreGallery {
 ?>
 		<!-- Aesop Grid Gallery -->
 		<script>
+		
+		
 			jQuery(document).ready(function($){
 			    $('#aesop-grid-gallery-<?php echo esc_attr( $gallery_id );?>').imagesLoaded(function() {
 			        var options = {
@@ -180,18 +182,87 @@ class AesopCoreGallery {
 			        };
 			        var handler = $('#aesop-grid-gallery-<?php echo esc_attr( $gallery_id );?> li');
 			        handler.wookmark(options);
+					$('aesop-grid-gallery-<?php echo esc_attr( $gallery_id );?>').attr('id','the_new_id');
+					$(window).trigger("lookup2");
+					
 			    });
 			});
 		</script>
+		<?php
+		
+		if (class_exists( 'AesopLazyLoader' )) {
+			?>
+		<script>
+		    ;(function($) {
+
+			  $.fn.unveil2 = function(threshold) {
+
+				var $w = $(window),
+					th = threshold || 0,
+					images = this,
+					loaded;
+
+				this.one("unveil2", function() {
+					this.setAttribute("style", "opacity:1");
+
+				});
+
+				function unveil2() {
+				  var inview = images.filter(function() {
+					var $e = $(this);
+					if ($e.is(":hidden")) return;
+
+					var wt = $w.scrollTop(),
+						wb = wt + $w.height(),
+						et = $e.offset().top,
+						eb = et + $e.height();
+
+					return eb >= wt - th && et <= wb + th;
+				  });
+
+				  loaded = inview.trigger("unveil2");
+				  images = images.not(loaded);
+				}
+
+				$w.on("scroll.unveil2 resize.unveil2 lookup2.unveil2", unveil2);
+
+				unveil2();
+
+				return this;
+
+			  };
+
+			})(window.jQuery || window.Zepto);
+			
+			jQuery(document).ready(function($){
+				$('.aesop-lazy-img2').unveil2(0,function() {
+				  	$(this).load(function() {
+				    	this.style.opacity = 1;
+				  	});
+				});
+			});
+			
+		</script>
+		<?php
+		
+		}
+		?>
+		
 		<div id="aesop-grid-gallery-<?php echo esc_attr( $gallery_id );?>" class="aesop-grid-gallery aesop-grid-gallery" style="width:100%;max-width:<?php echo esc_attr( $width );?>;margin:0 auto;"><ul><?php
 
 		foreach ( $image_ids as $image_id ):
 
 			$getimage   = wp_get_attachment_image( $image_id, 'aesop-grid-image', false, array( 'class' => 'aesop-grid-image' ) );
-		$getimagesrc    = wp_get_attachment_image_src( $image_id, 'full' );
-		$img_title     = get_post( $image_id )->post_title;
-		$caption   = get_post( $image_id )->post_excerpt;
-
+			$caption   = get_post( $image_id )->post_excerpt;
+			$img_title     = get_post( $image_id )->post_title;
+			$getimagesrc    = wp_get_attachment_image_src( $image_id, 'full' );	
+			if (class_exists( 'AesopLazyLoader' )) {
+			    $getimagesrc2    = wp_get_attachment_image_src( $image_id, 'aesop-grid-image' );
+				$lazy_holder = AI_CORE_URL.'/public/assets/img/aesop-lazy-holder.png';
+				$getimage = sprintf( '<img src="%s" data-src="%s" class="aesop-grid-image aesop-lazy-img2" width="%s" height="%s" style="opacity:0;" >', 
+				                        esc_url( $getimagesrc2[0] ), esc_url( $getimagesrc2[0] ),
+									  $getimagesrc2[1],$getimagesrc2[2] );
+			}
 ?>
 
 				<li class="aesop-grid-gallery-item">
@@ -200,12 +271,14 @@ class AesopCoreGallery {
 							<span class="aesop-grid-gallery-caption"><?php echo aesop_component_media_filter( $caption );?></span>
 						<?php } ?>
 						<span class="clearfix"><?php echo $getimage;?></span>
+						
 					</a>
 				</li>
 
 				<?php
 
 		endforeach;
+		//exit(0);
 
 		?></ul></div><?php
 	}
@@ -276,10 +349,10 @@ class AesopCoreGallery {
 		foreach ( $image_ids as $image_id ):
 
 			$img     = wp_get_attachment_image_src( $image_id, $size, false, '' );
-		$alt     = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
-		$caption = get_post( $image_id )->post_excerpt;
+			$alt     = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+			$caption = get_post( $image_id )->post_excerpt;
 
-		$lazy   = class_exists( 'AesopLazyLoader' ) && ! is_user_logged_in() ? sprintf( 'src="%s" data-src="%s" class="aesop-sequence-img aesop-lazy-img"', $lazy_holder, esc_url( $img[0] ) ) : sprintf( 'src="%s" class="aesop-sequence-img" ', esc_url( $img[0] ) );
+			$lazy   = class_exists( 'AesopLazyLoader' ) ? sprintf( 'src="%s" data-src="%s" class="aesop-sequence-img aesop-lazy-img"', $lazy_holder, esc_url( $img[0] ) ) : sprintf( 'src="%s" class="aesop-sequence-img" ', esc_url( $img[0] ) );
 
 ?>
            	<figure class="aesop-sequence-img-wrap">
@@ -365,7 +438,13 @@ class AesopCoreGallery {
 
 			$lb_link    = $lightbox ? sprintf( 'data-highres="%s"', esc_url( $full[0] ) ) : null;
 
-			?><img src="<?php echo esc_url( $full[0] );?>" <?php echo $lb_link;?> data-caption="<?php echo esc_attr( $caption );?>" title="<?php echo esc_attr( $title );?>" alt="<?php echo esc_attr( $alt );?>"><?php
+			if (class_exists( 'AesopLazyLoader' )) {
+				$lazy_holder = AI_CORE_URL.'/public/assets/img/aesop-lazy-holder.png';
+				$lazy = sprintf( 'src="%s" data-src="%s" class="aesop-lazy-img"', $lazy_holder, esc_url( $full[0] ) );
+				?><img <?php echo $lazy;?> <?php echo $lb_link;?>  data-caption="<?php echo esc_attr( $caption );?>" title="<?php echo esc_attr( $title );?>" alt="<?php echo esc_attr( $alt );?>"><?php
+			} else {
+				?><img src="<?php echo esc_url( $full[0] );?>" <?php echo $lb_link;?> data-caption="<?php echo esc_attr( $caption );?>" title="<?php echo esc_attr( $title );?>" alt="<?php echo esc_attr( $alt );?>"><?php
+			}
 
 		}
 

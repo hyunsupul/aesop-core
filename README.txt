@@ -5,8 +5,8 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.4.1
-Stable tag: 1.7.0
+Tested up to: 4.4.2
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -168,6 +168,9 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.7.1 =
+* FIX - Fixed the chapter compatibility with Aesop themes
+
 = 1.7.0 =
 * FIX - Default color behavior for non-block quote is restored
 * FIX - Default mapbox url is set to v4
