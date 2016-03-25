@@ -49,7 +49,9 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 			'left'   => $getinnerposition[3]
 		);
 
-		$innerposition = is_array( $positionArray ) && $atts['innerposition'] ? sprintf( 'position:absolute;top:%s;right:%s;bottom:%s;left:%s;', $positionArray['top'], $positionArray['right'], $positionArray['bottom'], $positionArray['left'] ) : false;
+		//$innerposition = is_array( $positionArray ) && $atts['innerposition'] ? sprintf( 'position:absolute;top:%s;right:%s;bottom:%s;left:%s;', $positionArray['top'], $positionArray['right'], $positionArray['bottom'], $positionArray['left'] ) : false;
+		$innerposition = is_array( $positionArray ) && $atts['innerposition'] ? sprintf( 'top:%s;right:%s;bottom:%s;left:%s;', $positionArray['top'], $positionArray['right'], $positionArray['bottom'], $positionArray['left'] ) : false;
+
 
 		// are we doing columns or image and do a clas based on it
 		$columns = $atts['columns'] ? sprintf( 'aesop-content-comp-columns-%s', $atts['columns'] ) : false;

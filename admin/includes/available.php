@@ -164,13 +164,13 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'select',
 						'values'  => array(
 							array(
+								'value' => 'block',
+								'name' => __( 'Full Width', 'aesop-core' ),
+							),
+							array(
 								'value' => 'pull',
 								'name' => __( 'Pull Quote', 'aesop-core' ),
 							),
-							array(
-								'value' => 'block',
-								'name' => __( 'Full Width', 'aesop-core' ),
-							)
 						),
 						'default'  => 'block',
 						'desc'   => __( 'Quote Styles', 'aesop-core' ),
@@ -180,7 +180,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'color',
 						'default'  => '#282828',
 						'desc'   => __( 'Background Color', 'aesop-core' ),
-						'tip'  => __( 'Select a background color to be used as the quote background.', 'aesop-core' )
+						'tip'  => __( 'Select a background color to be used as the quote background. Used only for full width quotes', 'aesop-core' )
 					),
 					'text'    => array(
 						'type'  => 'color',
@@ -529,6 +529,12 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'desc'   => __( 'Image Movement', 'aesop-core' ),
 						'tip'  => __( 'If set to <em>on</em>, the image will move slightly as you scroll down the page.', 'aesop-core' )
 					),
+					'parallaxspeed' 		=> array(
+						'type'		=> 'text_small',
+						'default' 	=> '1',
+						'desc' 		=> __('Parallax Speed', 'aesop-core' ),
+						'tip'		=> __('The minimum and default value is 1. The maximum value is 6.','aesop-core')
+					),
 					'caption'  => array(
 						'type'  => 'text_area',
 						'default'  => 'false',
@@ -640,7 +646,13 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => 'up',
 						'desc'   => __( 'Movement Direction of Floater Element', 'aesop-core' ),
 						'tip'  => __( 'What direction should the floater media travel in?', 'aesop-core' )
-					)
+					)/*,
+					'floaterspeed' 		=> array(
+						'type'		=> 'text_small',
+						'default' 	=> '1',
+						'desc' 		=> __('Floater Speed', 'aesop-core' ),
+						'tip'		=> __('The minimum and default value is 1. The maximum value is 10.','aesop-core')
+					),*/
 				),
 				'content'    => __( 'Optional Caption', 'ba-shortcodes' ),
 				'desc'     => __( 'Parallax styled image component with caption and optional lightbox.', 'aesop-core' )
@@ -742,16 +754,16 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'select',
 						'values'  => array(
 							array(
+								'value' => 'center',
+								'name' => __( 'Center', 'aesop-core' )
+							),
+							array(
 								'value' => 'left',
 								'name' => __( 'Left', 'aesop-core' )
 							),
 							array(
 								'value' => 'right',
 								'name' => __( 'Right', 'aesop-core' )
-							),
-							array(
-								'value' => 'center',
-								'name' => __( 'Center', 'aesop-core' )
 							)
 						),
 						'default'  => 'center',
@@ -762,13 +774,13 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'select',
 						'values'  => array(
 
+						    array(
+								'value' => 'youtube',
+								'name' => __( 'YouTube', 'aesop-core' )
+							),
 							array(
 								'value' => 'vimeo',
 								'name' => __( 'Vimeo', 'aesop-core' )
-							),
-							array(
-								'value' => 'youtube',
-								'name' => __( 'YouTube', 'aesop-core' )
 							),
 							array(
 								'value' => 'kickstarter',
@@ -799,7 +811,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 								'name' => __( 'Self', 'aesop-core' )
 							)
 						),
-						'default'  => 'vimeo',
+						'default'  => 'youtube',
 						'desc'   => __( 'Video Source', 'aesop-core' ),
 						'tip'  => __( 'Choose an available source for the video.', 'aesop-core' )
 					),

@@ -11,16 +11,18 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 	function aesop_parallax_shortcode( $atts ) {
 
 		$defaults = array(
-			'img'     			=> '',
-			'height'    		=> 500, // deprecated 1.4.2
-			'parallaxbg'   		=> 'on',
-			'floater'    		=> '',
-			'floatermedia'   	=> '',
-			'floaterposition'  	=> 'right',
-			'floaterdirection' 	=> 'up',
-			'caption'  			=> '',
-			'captionposition' 	=> 'bottom-left',
-			'lightbox'    		=> false
+			'img'				=> '',
+			'parallaxspeed'		=> 1,
+			'height'			=> 500, // deprecated 1.4.2
+			'parallaxbg'		=> 'on',
+			'floater'			=> '',
+			'floatermedia'		=> '',
+			'floaterposition'	=> 'right',
+			'floaterdirection'	=> 'up',
+			'caption'			=> '',
+			'captionposition'	=> 'bottom-left',
+			'lightbox'			=> false,
+			'floaterspeed'		=> 1 // not used
 		);
 
 		$atts = apply_filters( 'aesop_parallax_defaults', shortcode_atts( $defaults, $atts ) );
@@ -32,6 +34,17 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 		// add a css class if parallax bg is set to on
 		$laxclass  = 'on' == $atts['parallaxbg'] ? 'is-parallax' : false;
+		
+		// add parallax and floater speed options
+		$parallax_speed = $atts['parallaxspeed'];
+		$floater_speed = $atts['floaterspeed'];
+		
+		if ($parallax_speed <1) $parallax_speed =1;
+		else if ($parallax_speed >6) $parallax_speed =6;
+		
+		//if ($floater_speed <1) $floater_speed =1;
+		//else if ($floater_speed >10) $floater_speed =10;
+		
 
 		// add custom css classes through our utility function
 		$classes = aesop_component_classes( 'parallax', '' );
@@ -66,10 +79,11 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 								<?php } else { ?>
 
-									imgCont.css('height',Math.round(imgHeight * 0.69))
+									//imgCont.css('height',Math.round(imgHeight * 0.69))
+									imgCont.css('height',Math.round(imgHeight * (0.85-0.06*<?php echo $parallax_speed ?>)))
 
 									if ( $(window).height < 760 ) {
-										imgCont.css('height',Math.round(imgHeight * 0.65))
+										imgCont.css('height',Math.round(imgHeight * (0.76-0.06*<?php echo $parallax_speed ?>)))
 									}
 
 								<?php } ?>
@@ -87,7 +101,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 						if ( 'on' == $atts['parallaxbg'] ) { ?>
 
-				   			img.parallax({speed: 0.1});
+				   			img.parallax({speed: <?php echo $parallax_speed*0.1 ?>});
 
 		        		<?php }//end if
 
@@ -95,6 +109,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 							var obj = $('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-floater');
 
+				
 					       	function scrollParallax(){
 					       	    var height 			= obj.height(),
 		        					offset 			= obj.offset().top,

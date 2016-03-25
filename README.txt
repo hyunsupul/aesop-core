@@ -1,12 +1,12 @@
 === Aesop Story Engine ===
-Contributors: nphaskins, peiche, Tmeister, etcio, michaelbeil
+Contributors: nphaskins, etcio, michaelbeil
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.2.2
-Stable tag: trunk
+Tested up to: 4.4.2
+Stable tag: 1.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,46 +22,46 @@ Aesop Story Engine is a suite of open-sourced tools and components that empower 
 
 **Try Aesop for Free** - [http://tryaesop.com](http://tryaesop.com)
 
-Utilizing these components, writers can can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. Here’s a demo theme incorporating these story components.
+Utilizing these components, writers can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. Here’s a demo theme incorporating these story components.
 [http://playground.aesopstories.com](http://playground.aesopstories.com)
 
-**Audio** - 
+**Audio** -
 Display an audio player with support for MP3 that can be optionally hidden. This is great for showcasing audio interviews.
 
-**Video** - 
+**Video** -
 Showcase a fullscreen video with support for Kickstarter, Viddler, YouTube, Vimeo, Daily Motion, and Blip.TV with support for captions and alignment.
 
-**Content** - 
+**Content** -
 The content component is a multi-purpose component that can display a background image, background color, or can split the content into multiple magazine type columns.
 
-**Character** - 
+**Character** -
 Display a character avatar, title, and small bio to help readers be reminded of key story characters.
 
-**Gallery** - 
+**Gallery** -
 The ASE Gallery component allows you to create and manage unlimited story galleries. Each gallery can be displayed as a grid, a thumbnail gallery, stacked, or sequential type gallery, all with caption support.
 
-**Chapter** - 
+**Chapter** -
 Creates scroll-to points with large full-screen images as headings.
 
-**Image** - 
+**Image** -
 The image component displays an image and caption, with optional lightbox. Also allows you to align the image, as well as offset the image so it hangs outside of the content column.
 
-**Map** - 
+**Map** -
 This component allows you to create a map for your story. You can add markers to the map with custom messages, and even have the map scroll to points as you scroll through the story.
 
-**Parallax** - 
+**Parallax** -
 A fullwidth image component with caption and lightbox. As you scroll, the image moves slightly to provide a parallax effect. Includes optional floater parallax item to use for multiple levels of parallax engagement.
 
-**Quote** - 
+**Quote** -
 Show a fullwidth quote with large text, or a standard pull-quote. Control the color and background of the quote component, add parallax effects, and more.
 
-**Timeline** - 
+**Timeline** -
 Create a story with a timeline that sticks to the bottom. The timeline works a bit like chapters.
 
-**Document** - 
+**Document** -
 This component allows you to upload a PDF or image, that is shown to the user once they click the component.
 
-**Collection** - 
+**Collection** -
 The 13th component is meant to be used on a page of your site, and allows you to display stories from a specific collection (category).
 
 Here’s a demo theme incorporating these story components: [http://playground.aesopstories.com](http://playground.aesopstories.com).
@@ -89,7 +89,7 @@ All components are pluggable, and there are ample filters and actions to manipul
 If you think something is missing, we want to hear from you. Post your request and bugs on [Github](https://github.com/bearded-avenger/aesop-core).
 
 = Languages =
-Aesop Story Engine is currently available in 35 languages. We work closely with the folks over at WP Translations, and it's because of them that these translations are available.
+Aesop Story Engine is currently available in 36 languages. We work closely with the folks over at [WP-Translations](https://www.transifex.com/wp-translations/aesop-story-engine), and it's because of them that these translations are available. You're welcome to jump in.
 
 * العربية (Arabic)
 * Български (Bulgarian)
@@ -121,6 +121,7 @@ Aesop Story Engine is currently available in 35 languages. We work closely with 
 * Slovenčina (Slovak)
 * slovenščina (Slovenian)
 * Español (Spanish (Argentina))
+* Español (Spanish (Chile))
 * Español (Spanish (Mexico))
 * Español (Spanish (Spain))
 * ไทย (Thai)
@@ -131,7 +132,7 @@ Aesop Story Engine is currently available in 35 languages. We work closely with 
 
 = Uploading in WordPress Dashboard =
 
-1. Navigate to 'Add New' in the plugins dashboard
+1. Navigate to 'Add New' in the Plugin dashboard
 2. Navigate to the 'Upload' area
 3. Select `aesop-core.zip` from your computer
 4. Click 'Install Now'
@@ -167,6 +168,49 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.7.1 =
+* FIX - Fixed the chapter compatibility with Aesop themes
+
+= 1.7.0 =
+* FIX - Default color behavior for non-block quote is restored
+* FIX - Default mapbox url is set to v4
+* FIX - Fized the height for default Timeline bar
+* FIX - Aesop Lazy Loader compatability is added to more gallery types
+* FIX - Self target video doesn't play automatically if not visible and "start play when in view" is on
+
+= 1.6.12 =
+* FIX - Fixed the logic to load default component styles
+* FIX - Fixed the compatibility issue with themes that define aesop-entry-content class
+* FIX - Fixed the issue where the Quote text color is ignored
+
+= 1.6.11 =
+* FIX - Fixed the Chapter and Timeline navigation for non Aesop themes
+* FIX - Adjusted the Content Box
+* NEW - Added the background speed option for the Parallax component 
+
+= 1.6.10 =
+* FIX - Fixed the Video and Video Chapter visibility issues
+* FIX - Fixed the incorrect video source menu item.
+* FIX - Use the Character default style if the theme doesn't supply custom styles.  
+
+= 1.6.9 =
+* FIX - Fixed a check in error in 1.6.8
+
+= 1.6.8 =
+* FIX - Fixed the issue where component settings were not loaded correctly under WordPress 4.4
+* FIX - Fixed the map search box functionality
+
+= 1.6.6 =
+* FIX - Fixed improper function name introduced with 1.6.4 which causes Editus to not be able to edit Aesop components
+
+= 1.6.5 =
+* FIX - Fixed the timeline shortcode that was broken by our shortcode fix
+* TWEAK - i18n updates
+
+= 1.6.4 =
+* FIX - Fixed the gallery shortcodes that were broken by WordPress 4.3
+* TWEAK - i18n updates
+* TWEAK - Renamed Lasso to Editus
 
 = 1.6.3 =
 * TWEAK - improved Document component markup which also fixes an issue with editing using Lasso
@@ -211,7 +255,7 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * NEW - Welcome screen on plugin activation
 * NEW - New "Type" option for Quote Component which allows the quote to be displayed as a standard pull quote
 * FIX - Blank map tiles with new Mapbox IDs. Mapbox changed things and now requires a public key for the map tiles. We're using our public key, but have introduced a filter should you need to change this. On this update, we've changed our mapbox id, and have written an upgrade script that will ensure you have a smooth transition in this update
-* FIX - The document component css class has been renamed! This was inevitable. It was mis-labeled as docmument component from day one, so we've fixed it to the proper spelling, of "document" component
+* FIX - The document component css class has been renamed! This was inevitable. It was mis-labeled as document component from day one, so we've fixed it to the proper spelling, of "document" component
 
 = 1.4.2 =
 * NEW - Compatibility with Lasso - our soon to be released front-end editor add-on

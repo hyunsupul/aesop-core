@@ -111,7 +111,7 @@
 
             // split based on equal sign
             attrs.forEach(function (attr) {
-                attr = attr.split('=');
+                attr = attr.split(/=(.+)?/);//split('=');
 
                 var attr_key = attr[0];
                 var attr_value = attr[1];
@@ -238,15 +238,20 @@
 
             // let's handle the edit button
             if (e.target.className.indexOf('aesop-button-edit') > -1) {
-
                 var re_scope = /aesop-scope-([a-z_]*)/;
                 var scope = re_scope.exec(e.target.className);
 
                 var ai_parent = e.target.parentNode.parentNode.parentNode;
-
-                var sc = restoreAesopShortcodes(ai_parent.outerHTML);
+				var sc= ai_parent.getAttribute("data-aesop-sc");
+				if (!sc) {
+                   sc = restoreAesopShortcodes(ai_parent.outerHTML);
+				} else {
+				   sc = window.decodeURIComponent(sc);
+				   sc = '<p>'+sc+'</p>';
+				}
 
                 ai_parent.setAttribute("id", 'aesop-generator-editing');
+				
 
                 if (scope) {
                     $('body').toggleClass('modal-open');
@@ -257,9 +262,11 @@
                     var selector = '.dk_options li.' + scope[1] + ' a';
                     $(selector).click();
 
-                    var attrs = parse(sc);
+					var attrs = parse(sc);
+					
 
                     for (var key in attrs) {
+						
                         if (key === 'content') {
                             $('#aesop-generator-content').val(attrs[key]);
                         } else {

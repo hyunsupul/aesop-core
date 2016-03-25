@@ -37,6 +37,8 @@
     float: left;
     margin-right:2rem;
 }
+
+
 .aesop-component-align-right {
     float: right;
     margin-left:2rem;
@@ -234,18 +236,36 @@
     &.aesop-component-align-left,
     &.aesop-component-align-right {
         position: relative;
+		float:none !important;
 
         .aesop-video-container {
-            margin-right:0;
-            margin-left:0;
+            //margin-right:0;
+            //margin-left:0;
+			&.aesop-component-align-left,
+			&.aesop-component-align-right {
+				float:none !important;
+			}
+			&.aesop-component-align-left {
+				margin-right: auto;
+				margin-left: 0;
+			}
+			&.aesop-component-align-right {
+				float:none !important;
+				margin-left: auto;
+				margin-right: 0;
+			}
         }
 
     }
     &.aesop-component-align-left {
-        margin:0 15px 15px 15px;
+        //margin:0 15px 15px 15px;
+		margin-right: auto;
+		margin-left: 0;
     }
     &.aesop-component-align-right {
-        margin:0 15px 15px 15px;
+        //margin:0 15px 15px 15px;
+		margin-left: auto;
+		margin-right: 0;
     }
 
     // self hosted
@@ -328,7 +348,10 @@
 // video
 .aesop-video-chapter {
     .aesop-article-chapter {
-        height: auto !important;
+     //   height: auto !important;
+    }
+	.aesop-cover-title {
+          position:absolute;
     }
 }
 // removed in 1.0.2

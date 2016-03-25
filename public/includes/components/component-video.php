@@ -59,27 +59,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 
 		ob_start();
 
-		if ( 'on' == $atts['viewstart'] && 'self' == $atts['src'] ) { ?>
-	    	<script>
-		    	jQuery(document).ready(function($){
-		    		$('#aesop-video-<?php echo esc_attr( $unique );?>').arrive('.mejs-video', function(){
-						$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
-							offset: '<?php echo esc_attr( $waypoint );?>',
-							handler: function(direction){
-						   		$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
-						   	}
-						});
-						<?php if ( 'on' == $atts['viewend'] ) { ?>
-						$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
-							handler: function(direction){
-						   		$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
-						   	}
-						});
-						<?php } ?>
-					});
-		    	});
-	    	</script>
-    	<?php }//end if
+
 		do_action( 'aesop_video_before', $atts, $unique ); // action
 ?>
 	    <div id="aesop-video-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'video', $unique, $atts );?> class="aesop-component aesop-video-component aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $classes );?> <?php echo sanitize_html_class( $controlstatus );?> <?php echo sanitize_html_class( $contentwidth );?> <?php echo sanitize_html_class( $vineStagramClass );?> <?php echo sanitize_html_class( $vineStagramAlign );?>">
@@ -89,6 +69,30 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 	    	<div class="aesop-video-container aesop-video-container-<?php echo esc_attr( $unique );?> aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $atts['src'] );?>" <?php echo $widthstyle;?> >
 
 				<?php
+				
+			if ( 'on' == $atts['viewstart'] && 'self' == $atts['src'] ) { 
+			     $autoplaystatus = false;
+				?>
+				<script>
+					jQuery(document).ready(function($){
+						$('#aesop-video-<?php echo esc_attr( $unique );?>').arrive('.mejs-video', function(){
+							$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+								offset: '<?php echo esc_attr( $waypoint );?>',
+								handler: function(direction){
+									$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
+								}
+							});
+							<?php if ( 'on' == $atts['viewend'] ) { ?>
+							$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+								handler: function(direction){
+									$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
+								}
+							});
+							<?php } ?>
+						});
+					});
+				</script>
+			<?php }//end if
 		switch ( $atts['src'] ) {
 		case 'vimeo':
 			printf( '<iframe src="//player.vimeo.com/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );

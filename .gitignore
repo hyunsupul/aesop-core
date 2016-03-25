@@ -1,4 +1,32 @@
-.DS_Store
-node_modules
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Language - i18n
 .transifexrc
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac crap
+.DS_Store
+
+# Sublime
+*.sublime-project
+*.sublime-workspace
+
+# PhpStorm
+.idea/
+
+# Eclipse
+*.pydevproject
+.project
+.metadata
+
+# Node
+/build/
+/node_modules/
 npm-debug.log
