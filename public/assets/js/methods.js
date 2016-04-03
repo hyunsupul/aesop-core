@@ -31,11 +31,13 @@ jQuery(document).ready(function(){
 		e.preventDefault();
 		closeChapter();
 	});
-	jQuery('.aesop-chapter-menu-open article').live('click',function(e){
+	//jQuery('.aesop-chapter-menu-open article').live('click',function(e){
+	jQuery(document).on('click', '.aesop-chapter-menu-open article', function(e){
 		e.preventDefault();
 		closeChapter();
 	});
-	jQuery('.scroll-nav__link').live('click',function(){
+	//jQuery('.scroll-nav__link').live('click',function(){
+	jQuery(document).on('click', '.scroll-nav__link', function(){
 		closeChapter();
 	});
 });

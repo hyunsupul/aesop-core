@@ -148,8 +148,8 @@ function aesop_component_media_filter( $input = '' ) {
 function aesop_map_tile_provider( $postid = 0 ) {
 
 	// default provider - changed as of 1.5
-	//$mapboxid  = get_option( 'ase_mapbox_id', 'mapbox.streets' );
-	$mapboxid  = get_option( 'ase_mapbox_id', 'aesopinteractive.l74n2fi6' );
+	$mapboxid  = get_option( 'ase_mapbox_id', 'mapbox.streets' );
+	//$mapboxid  = get_option( 'ase_mapbox_id', 'aesopinteractive.l74n2fi6' );
 
 	// mapbox v4 api now requires a public token
 	//$token     = apply_filters( 'aesop_map_token', 'pk.eyJ1IjoiYWVzb3BpbnRlcmFjdGl2ZSIsImEiOiJ3TjJ4M0hJIn0.LwbGC9U8iKT_saX8c6v_4Q' );

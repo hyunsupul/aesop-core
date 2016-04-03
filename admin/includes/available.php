@@ -152,7 +152,23 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => '',
 						'desc'   => __( 'Width', 'aesop-core' ),
 						'tip'  => __( 'Width of the character component. You can enter the size as <code>40%</code> or <code>500px</code>.', 'aesop-core' )
-					)
+					),
+					'force_circle'    => array(
+						'type'  => 'select',
+						'values'  => array(
+							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
+							)
+						),
+						'default'  => 'off',
+						'desc'   => __( 'Force Circle', 'aesop-core' ),
+						'tip'  => __( 'Force the display to be a circle instead of an oval.', 'aesop-core' )
+					),
 				),
 				'desc'     => __( 'Creates a character that can be positioned to the left or right of your story.', 'aesop-core' )
 			),
@@ -464,6 +480,10 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							array(
 								'value' => 'video',
 								'name' => __( 'Video', 'aesop-core' )
+							),
+							array(
+								'value' => 'color',
+								'name' => __( 'Solid Color', 'aesop-core' )
 							)
 						),
 						'default' => 'img',
@@ -491,7 +511,19 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => ' ',
 						'desc'   => __( 'Chapter Image or Video URL', 'aesop-core' ),
 						'tip'  => __( 'URL for the image or video background as set above. Click <em>Select Media</em> to open the WordPress Media Library.', 'aesop-core' )
-					)
+					),
+					'bgcolor'    => array(
+						'type'  => 'color',
+						'default'  => '#888888',
+						'desc'   => __( 'Background Color', 'aesop-core' ),
+						'tip'  => __( 'Select a color for the background. Used only if the Background Type is set to Solid Color', 'aesop-core' )
+					),
+					'minheight'    => array(
+						'type'  => 'text_small',
+						'default'  => '260px',
+						'desc'   => __( 'Minimum Height', 'aesop-core' ),
+						'tip'  => __( 'You can enter the minimum height in number of pixels like <code>300px</code>.', 'aesop-core' )
+					),
 				),
 				'desc'     => __( 'Creates the scroll to point, as a chapter heading.', 'aesop-core' )
 			),
@@ -912,6 +944,12 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => 'off',
 						'desc'   => __( 'Stop Video When Out of View (only if using <em>self</em> as video source)', 'aesop-core' ),
 						'tip'  => __( 'Used together with the option above, this option when set to <em>on</em> will stop the video player from playing once scrolled out of view.', 'aesop-core' )
+					),
+					'poster_frame'  => array(
+						'type'  => 'media_upload',
+						'default'  => '',
+						'desc'   => __( 'Poster Frame (only if using <em>self</em> as video source)', 'aesop-core' ),
+						'tip'  => __( 'Image to display before the video plays. Click <em>Select Media</em> to open the WordPress Media Library.', 'aesop-core' )
 					)
 				),
 				'desc'     => __( 'Responsive video component with alignment and optional caption.', 'aesop-core' ),

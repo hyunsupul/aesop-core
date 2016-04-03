@@ -84,9 +84,14 @@ class AesopTimelineComponent {
 			<script>
 			jQuery(document).ready(function($){
 
+				contentClass = '<?php echo esc_attr( $contentClass );?>';
+				if (jQuery(contentClass).length==0) {
+					contentClass = '.aesop-entry-content';
+				}
+				
 				$('body').append('<div class="aesop-timeline"></div>');
 
-				$('<?php echo esc_attr( $contentClass );?>').scrollNav({
+				$(contentClass).scrollNav({
 				    sections: '.aesop-timeline-stop',
 				    arrowKeys: true,
 				    insertTarget: '<?php echo esc_attr( $appendTo );?>',

@@ -24,7 +24,8 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			'viewend'   => 'off',
 			'caption'  	=> '',
 			'vidwidth'  => '',
-			'vidheight' => ''
+			'vidheight' => '',
+			'poster_frame' =>''
 		);
 		$atts = apply_filters( 'aesop_video_defaults', shortcode_atts( $defaults, $atts ) );
 
@@ -123,7 +124,11 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			printf( '<iframe class="instagram-embed" src="//instagram.com/p/%s/embed" width="612" height="710" frameborder="0"></iframe>', esc_attr( $atts['id'] ) );
 			break;
 		case 'self':
-			echo do_shortcode( '[video src="'.$atts['hosted'].'" loop="'.esc_attr( $loopstatus ).'" autoplay="'.esc_attr( $autoplaystatus ).'"]' );
+		    if ($atts['poster_frame']!=='') {
+				echo do_shortcode( '[video src="'.$atts['hosted'].'" loop="'.esc_attr( $loopstatus ).'" autoplay="'.esc_attr( $autoplaystatus ).'" poster="'.$atts['poster_frame'].'"]' );
+			} else {
+			    echo do_shortcode( '[video src="'.$atts['hosted'].'" loop="'.esc_attr( $loopstatus ).'" autoplay="'.esc_attr( $autoplaystatus ).'"]' );
+			}
 		}
 ?>
 		    </div>
