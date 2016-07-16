@@ -508,9 +508,15 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 					),
 					'img'    => array(
 						'type'  => 'media_upload',
-						'default'  => ' ',
+						'default'  => '',
 						'desc'   => __( 'Chapter Image or Video URL', 'aesop-core' ),
 						'tip'  => __( 'URL for the image or video background as set above. Click <em>Select Media</em> to open the WordPress Media Library.', 'aesop-core' )
+					),
+					'alternate_img'    => array(
+						'type'  => 'media_upload',
+						'default'  => '',
+						'desc'   => __( 'Alternate Image for Mobile', 'aesop-core' ),
+						'tip'  => __( 'Used only on a mobile device and if the Background Type is set to Video.', 'aesop-core' )
 					),
 					'bgcolor'    => array(
 						'type'  => 'color',
@@ -865,6 +871,28 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'desc'   => __( 'Video URL (only if using <em>self</em> as video source)', 'aesop-core' ),
 						'tip'  => __( 'This is only used if you are hosting the video yourself and have set the Video Source (above) to <em>self</em>. Click <em>Select Media</em> to open the WordPress Media Library.', 'aesop-core' )
 					),
+					'disable_for_mobile'    => array(
+						'type'  => 'select',
+						'values'  => array(
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
+							),
+							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							)
+						),
+						'default'  => 'on',
+						'desc'   => __( 'Disable video on Mobile Devices.  (only if using <em>self</em> as video source)', 'aesop-core' ),
+						'tip'  => __( 'Disable video on Mobile Devices. Will display the Poster Frame if it is set.', 'aesop-core' )
+					),
+					'poster_frame'  => array(
+						'type'  => 'media_upload',
+						'default'  => '',
+						'desc'   => __( 'Poster Frame (only if using <em>self</em> as video source)', 'aesop-core' ),
+						'tip'  => __( 'Image to display before the video plays. Click <em>Select Media</em> to open the WordPress Media Library.', 'aesop-core' )
+					),
 					'loop'    => array(
 						'type'  => 'select',
 						'values'  => array(
@@ -944,13 +972,8 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => 'off',
 						'desc'   => __( 'Stop Video When Out of View (only if using <em>self</em> as video source)', 'aesop-core' ),
 						'tip'  => __( 'Used together with the option above, this option when set to <em>on</em> will stop the video player from playing once scrolled out of view.', 'aesop-core' )
-					),
-					'poster_frame'  => array(
-						'type'  => 'media_upload',
-						'default'  => '',
-						'desc'   => __( 'Poster Frame (only if using <em>self</em> as video source)', 'aesop-core' ),
-						'tip'  => __( 'Image to display before the video plays. Click <em>Select Media</em> to open the WordPress Media Library.', 'aesop-core' )
 					)
+					
 				),
 				'desc'     => __( 'Responsive video component with alignment and optional caption.', 'aesop-core' ),
 			),

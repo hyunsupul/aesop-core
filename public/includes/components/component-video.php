@@ -14,9 +14,10 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		$defaults = array(
 			'width'  	=> '100%',
 			'align'  	=> 'center',
-			'src'   	=> 'vimeo',
+			'src'   	=> 'youtube',
 			'hosted'  	=> '',
 			'id'  		=> '',
+			'disable_for_mobile'  => 'on',
 			'loop'  	=> 'on',
 			'autoplay' 	=> 'on',
 			'controls' 	=> 'off',
@@ -46,10 +47,13 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 
 		$loopstatus  = 'on' == $atts['loop'] ? true : false;
 		$autoplaystatus = 'on' == $atts['autoplay'] ? true : false;
+		$disable_for_mobile = 'on' == $atts['disable_for_mobile'] ? true : false;
 		$controlstatus = 'on' == $atts['controls'] ? 'controls-visible' : 'controls-hidden';
 		$iframe_height = $atts['vidheight'] ? sprintf( 'height="%s"', preg_replace( '/[^0-9]/', '', $atts['vidheight'] ) ) : sprintf( 'height=""' );
 		$iframe_width = $atts['vidwidth'] ? sprintf( 'width="%s"', preg_replace( '/[^0-9]/', '', $atts['vidwidth'] ) ) : sprintf( 'width=""' );
 		$iframe_size = sprintf( '%s %s' , $iframe_height, $iframe_width );
+		
+		
 
 		// custom classes
 		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'video', '' ) : null;
@@ -73,7 +77,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			    
 				<?php
 				
-			if ( 'on' == $atts['viewstart'] && 'self' == $atts['src'] ) { 
+			if ( 'on' == $atts['viewstart'] && 'self' == $atts['src']  && !wp_is_mobile()) { 
 			     $autoplaystatus = false;
 				?>
 				<script>
@@ -129,22 +133,40 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			printf( '<iframe class="instagram-embed" src="//instagram.com/p/%s/embed" width="612" height="710" frameborder="0"></iframe>', esc_attr( $atts['id'] ) );
 			break;
 		case 'self':
-		    if ($atts['poster_frame']!=='') {
-				?>
-				<script>
-					jQuery(document).ready(function($){
-						$('#aesop-video-<?php echo esc_attr( $unique );?>').click( function(){
-							$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-poster' ).remove();
-							$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
-							$('#aesop-video-<?php echo esc_attr( $unique );?>').off('click');
-							//$('#aesop-video-<?php echo esc_attr( $unique );?>' ).hide();
+		    if (!$disable_for_mobile || !wp_is_mobile() ) {
+				
+				if ($atts['poster_frame']!=='') {
+					?>
+					<script>
+						jQuery(document).ready(function($){
+							$('#aesop-video-<?php echo esc_attr( $unique );?>').click( function(){
+								$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-poster' ).remove();
+								$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
+								$('#aesop-video-<?php echo esc_attr( $unique );?>').off('click');
+								//$('#aesop-video-<?php echo esc_attr( $unique );?>' ).hide();
+							});
 						});
-					});
-				</script>
-				<?php
-				echo do_shortcode( '[video src="'.$atts['hosted'].'" loop="'.esc_attr( $loopstatus ).'" autoplay="'.esc_attr( $autoplaystatus ).'" poster="'.$atts['poster_frame'].'"]' );
+					</script>
+					<?php
+					echo do_shortcode( '[video src="'.$atts['hosted'].'" loop="'.esc_attr( $loopstatus ).'" autoplay="'.esc_attr( $autoplaystatus ).'" poster="'.$atts['poster_frame'].'"]' );
+				} else {
+					echo do_shortcode( '[video src="'.$atts['hosted'].'" loop="'.esc_attr( $loopstatus ).'" autoplay="'.esc_attr( $autoplaystatus ).'"]' );
+				}
 			} else {
-			    echo do_shortcode( '[video src="'.$atts['hosted'].'" loop="'.esc_attr( $loopstatus ).'" autoplay="'.esc_attr( $autoplaystatus ).'"]' );
+				// disable video for mobile
+				if ($atts['poster_frame']!=='') {
+					$lazy   = class_exists( 'AesopLazyLoader' ) && ! is_user_logged_in() ? sprintf( 'src="%s" data-src="%s" class="aesop-lazy-img"', $lazy_holder, esc_url( $atts['poster_frame'] ) ) : sprintf( 'src="%s"',  $atts['poster_frame']  );
+					//
+					?>
+					 <div class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> ">
+					 <img <?php echo $lazy;?> >
+					 </div>
+					 
+					<?php
+					
+				} else {
+					
+				}
 			}
 		}
 ?>

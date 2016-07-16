@@ -1,12 +1,12 @@
 === Aesop Story Engine ===
-Contributors: nphaskins, etcio, michaelbeil
+Contributors: nphaskins, etcio, michaelbeil, hyunster
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.4.2
-Stable tag: 1.7.5
+Tested up to: 4.5.2
+Stable tag: 1.7.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -168,6 +168,18 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+
+= 1.7.8 =
+* NEW Added the option to disable Video playing when the viewer is a mobile device and the source is Self. 
+* NEW Added the alternate static image option for the Video Chapter components when the viewer is a mobile device.
+
+= 1.7.7 =
+* FIX Chapter navigation keys were changed from arrows keys to page up/page down.
+* Update Updated the lightbox swipe codes.
+
+= 1.7.6 =
+* FIX Lightboxes for  the Photoset gallery was disabled. Fixed.
+
 = 1.7.5 =
 * FIX The video didn't show when poster frame is on and the controls are off. Fixed.
 

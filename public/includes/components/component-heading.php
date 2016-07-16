@@ -13,6 +13,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 			'subtitle'  => '',
 			'bgtype'  	=> 'img',
 			'img'   	=> '',
+			'alternate_img'   	=> '',
 			'full'  	=> '',
 			'bgcolor'   => '',
 			'minheight' => '260px'
@@ -29,6 +30,14 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 
 		$inline_styles   = 'background-size:cover;background-position:center center;';
 		$styles    = apply_filters( 'aesop_chapter_img_styles_'.esc_attr( $unique ), esc_attr( $inline_styles ) );
+		if (wp_is_mobile() && 'video' == $atts['bgtype']) {
+			if (!empty($atts['alternate_img'])) {
+			    $atts['bgtype'] = 'img';
+			    $atts['img'] = $atts['alternate_img'];
+			} else {
+				$atts['bgtype'] = 'color';
+			}
+		}
 
 		if ('img' == $atts['bgtype'] && $atts['img']) {
 			$img_style     =  sprintf( 'style="background:url(\'%s\');%s min-height:%s"', esc_url( $atts['img'] ), $styles, $atts['minheight'] );		

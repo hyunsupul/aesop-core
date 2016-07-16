@@ -264,14 +264,15 @@
 
       if (S.settings.arrowKeys) {
         $(document).on('keydown.scrollNav', function(e) {
-          if (e.keyCode === 40 || e.keyCode === 38) {
+		   // 34 = page down 33 = page up
+		  if (e.keyCode === 34 || e.keyCode === 33) {
             var findSection = function(key) {
               var i = 0;
               var l = sections.length;
 
               for (i; i < l; i++) {
                 if (sections[i].id === S.sections.active[0].id) {
-                  var array_offset  = (key === 40) ? i + 1 : i -1;
+				  var array_offset  = (key === 34) ? i + 1 : i -1;
                   var id            = (sections[array_offset] === undefined) ? undefined : sections[array_offset].id;
 
                   return id;
