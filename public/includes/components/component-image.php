@@ -7,7 +7,7 @@
 if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
 	function aesop_image_shortcode( $atts ) {
-
+			    
 		$defaults = array(
 			'img'     			=> '',
 			'imgwidth'   		=> '300px',
@@ -17,7 +17,8 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 			'caption'   		=> '',
 			'credit'   			=> '',
 			'captionposition' 	=> 'left',
-			'lightbox'    		=> 'off'
+			'lightbox'    		=> 'off',
+			'force_fullwidth'   => 'off'
 		);
 
 		$atts = apply_filters( 'aesop_image_defaults', shortcode_atts( $defaults, $atts ) );
@@ -55,6 +56,8 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 					<?php
 
 		do_action( 'aesop_image_inner_inside_top', $atts, $unique ); // action
+		
+		
 
 		if ( 'on' == $atts['lightbox'] ) { ?>
 
@@ -69,27 +72,36 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
 					<?php }
 
-		if ( $atts['caption'] ) { ?>
+		if ( $atts['caption'] || $atts['credit']) { ?>
 
-						<figcaption class="aesop-image-component-caption">
+			<figcaption class="aesop-image-component-caption">
 							<?php
 
 			echo aesop_component_media_filter( $atts['caption'] );
 
 			if ( $atts['credit'] ) { ?>
 								<p class="aesop-cap-cred"><?php echo esc_html( $atts['credit'] );?></p>
-							<?php } ?>
+							<?php 
+            } ?>
 
-						</figcaption>
+			</figcaption>
 
-					<?php } ?>
+			<?php 
+		} 
+					
+		if ( $atts['credit'] ) { ?>
+							<p class="aesop-cap-cred"><?php echo esc_html( $atts['credit'] );?></p>
+							<?php 
+        } ?>			
+					
+					
 
-					<?php do_action( 'aesop_image_inner_inside_bottom', $atts, $unique ); // action ?>
+		<?php do_action( 'aesop_image_inner_inside_bottom', $atts, $unique ); // action ?>
 
-				</figure>
-			</div>
+		</figure>
+		</div>
 
-			<?php do_action( 'aesop_image_inside_bottom', $atts, $unique ); // action ?>
+		<?php do_action( 'aesop_image_inside_bottom', $atts, $unique ); // action ?>
 
 		</div>
 		<?php

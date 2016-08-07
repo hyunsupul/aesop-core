@@ -169,6 +169,10 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 
 == Changelog ==
 
+= 1.7.9 =
+* FIX Fixed the image credit for the Image Component was not visible when the caption was not set. Fixed.
+* FIX The lightbox controls were restored
+
 = 1.7.8 =
 * NEW Added the option to disable Video playing when the viewer is a mobile device and the source is Self. 
 * NEW Added the alternate static image option for the Video Chapter components when the viewer is a mobile device.

@@ -8,6 +8,8 @@
 if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 
 	function aesop_chapter_shortcode( $atts ) {
+		
+		
 		$defaults = array(
 			'title'  	=> '',
 			'subtitle'  => '',
@@ -16,7 +18,8 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 			'alternate_img'   	=> '',
 			'full'  	=> '',
 			'bgcolor'   => '',
-			'minheight' => '260px'
+			'minheight' => '260px',
+			'force_fullwidth' => 'off'
 		);
 
 		$atts = apply_filters( 'aesop_chapter_defaults', shortcode_atts( $defaults, $atts ) );
