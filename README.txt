@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.5.2
-Stable tag: 1.7.8
+Stable tag: 1.7.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -172,6 +172,7 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 = 1.7.9 =
 * FIX Fixed the image credit for the Image Component was not visible when the caption was not set. Fixed.
 * FIX The lightbox controls were restored
+* FIX A css fix for parallax galleries
 
 = 1.7.8 =
 * NEW Added the option to disable Video playing when the viewer is a mobile device and the source is Self. 
