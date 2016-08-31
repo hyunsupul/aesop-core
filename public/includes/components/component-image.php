@@ -88,12 +88,8 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
 			<?php 
 		} 
-					
-		if ( $atts['credit'] ) { ?>
-							<p class="aesop-cap-cred"><?php echo esc_html( $atts['credit'] );?></p>
-							<?php 
-        } ?>			
-					
+		?>			
+			
 					
 
 		<?php do_action( 'aesop_image_inner_inside_bottom', $atts, $unique ); // action ?>
