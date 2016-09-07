@@ -436,7 +436,7 @@ class AesopCoreGallery {
 			$caption    = get_post( $image_id )->post_excerpt;
 			$title     = get_post( $image_id )->post_title;
 
-			$lb_link    = $lightbox ? sprintf( 'data-highres="%s"', esc_url( $full[0] ) ) : null;
+			$lb_link = $lightbox ? sprintf('href="%s" title="%s"', esc_url( $full[0] ), $title) : null;
 
 			if (class_exists( 'AesopLazyLoader' )) {
 				$lazy_holder = AI_CORE_URL.'/public/assets/img/aesop-lazy-holder.png';

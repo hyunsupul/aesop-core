@@ -6,6 +6,15 @@
  * @since    1.0.0
  */
 if ( ! function_exists( 'aesop_character_shortcode' ) ) {
+	
+	function aesop_make_square($id) 
+	{
+		?>
+		<script>
+		document.getElementById("<?php echo $id;?>").style.height = document.getElementById("<?php echo $id;?>").clientWidth+"px";
+		</script>
+		<?php
+	}
 
 	function aesop_character_shortcode( $atts, $content = null ) {
 
@@ -14,7 +23,8 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
 			'name'     => '',
 			'caption'  => '',
 			'align'    => 'left',
-			'width'    => ''
+			'width'    => '',
+			'force_circle'    => 'off'
 		);
 
 		// let this be used multiple times
@@ -57,8 +67,10 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
 							<?php } ?>
 
 							<?php if ( $atts['img'] ) {?>
-								<img class="aesop-character-avatar" src="<?php echo esc_url( $atts['img'] );?>" alt="<?php echo esc_attr_e( $alt );?>">
+								<img class="aesop-character-avatar" id="aesop-character-avatar-<?php echo esc_attr( $unique );?>" src="<?php echo esc_url( $atts['img'] );?>" alt="<?php echo esc_attr_e( $alt );?>">
 							<?php } ?>
+
+                            <?php if ($atts['force_circle']!=='off' ) { aesop_make_square("aesop-character-avatar-".esc_attr( $unique )); } ?>							
 
 							<?php if ( $content ) {?>
 								<div class="aesop-character-text"><?php echo do_shortcode( $content );?></div>
@@ -82,4 +94,6 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
 
 		return ob_get_clean();
 	}
+	
+	
 }//end if

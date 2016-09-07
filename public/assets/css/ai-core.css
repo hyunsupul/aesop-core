@@ -489,7 +489,6 @@
   .aesop-stacked-img {
     background-position: bottom center;
     background-attachment: scroll !important;
-    height: 0 !important;
     padding-bottom: 58.25%;
   }
 }

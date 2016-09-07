@@ -8,12 +8,18 @@
 if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 
 	function aesop_chapter_shortcode( $atts ) {
+		
+		
 		$defaults = array(
 			'title'  	=> '',
 			'subtitle'  => '',
 			'bgtype'  	=> 'img',
 			'img'   	=> '',
-			'full'  	=> ''
+			'alternate_img'   	=> '',
+			'full'  	=> '',
+			'bgcolor'   => '',
+			'minheight' => '260px',
+			'force_fullwidth' => 'off'
 		);
 
 		$atts = apply_filters( 'aesop_chapter_defaults', shortcode_atts( $defaults, $atts ) );
@@ -27,13 +33,31 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 
 		$inline_styles   = 'background-size:cover;background-position:center center;';
 		$styles    = apply_filters( 'aesop_chapter_img_styles_'.esc_attr( $unique ), esc_attr( $inline_styles ) );
+		if (wp_is_mobile() && 'video' == $atts['bgtype']) {
+			if (!empty($atts['alternate_img'])) {
+			    $atts['bgtype'] = 'img';
+			    $atts['img'] = $atts['alternate_img'];
+			} else {
+				$atts['bgtype'] = 'color';
+			}
+		}
 
-		$img_style     = 'img' == $atts['bgtype'] && $atts['img'] ? sprintf( 'style="background:url(\'%s\');%s"', esc_url( $atts['img'] ), $styles ) : 'style="height:auto;" ';
+		if ('img' == $atts['bgtype'] && $atts['img']) {
+			$img_style     =  sprintf( 'style="background:url(\'%s\');%s min-height:%s"', esc_url( $atts['img'] ), $styles, $atts['minheight'] );		
+		} else {
+			$img_style     =  'style="height:auto;min-height:'.$atts['minheight'].';"';
+			if ('color' == $atts['bgtype'] && $atts['bgcolor']) {
+				$img_style = 'style="min-height:'.$atts['minheight'].';background-color: '.$atts['bgcolor'].';"';
+				$atts['full'] ='off';
+			} 
+		}
 		$img_style_class  = 'img' == $atts['bgtype'] && $atts['img'] ? 'has-chapter-image' : 'no-chapter-image';
+		
 
 		$video_chapter_class = 'video' == $atts['bgtype'] ? 'aesop-video-chapter' : null;
 
 		$full_class = 'on' == $atts['full'] ? 'aesop-chapter-full' : false;
+		
 
 		do_action( 'aesop_chapter_before', $atts, $unique ); // action
 

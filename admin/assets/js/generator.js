@@ -181,7 +181,8 @@ jQuery(document).ready(function($) {
 
 
 	// Insert shortcode
-	$('#aesop-generator-insert,.aesop-generator').live('click', function() {
+	//$('#aesop-generator-insert,.aesop-generator').live('click', function() {
+	jQuery(document).on('click', '#aesop-generator-insert,.aesop-generator', function(e){
 
 		$('.aesop-generator-empty').hide();
 		var queried_shortcode = $('.aesop-generator').find(':selected').val();
@@ -597,7 +598,8 @@ jQuery(document).on('click', '#aesop-upload-img', function( e ){
   $(function () {
 
     // Handle click events on the dropdown toggler
-    $('.dk_toggle').live('click', function (e) {
+    //$('.dk_toggle').live('click', function (e) {
+	jQuery(document).on('click', '.dk_toggle', function(e){
       var $dk  = $(this).parents('.dk_container').first();
 
       _openDropdown($dk);
@@ -612,7 +614,8 @@ jQuery(document).on('click', '#aesop-upload-img', function( e ){
     });
 
     // Handle click events on individual dropdown options
-    $('.dk_options a').live(($.browser.msie ? 'mousedown' : 'click'), function (e) {
+    //$('.dk_options a').live(($.browser.msie ? 'mousedown' : 'click'), function (e) {
+	jQuery(document).on(($.browser.msie ? 'mousedown' : 'click'), '.dk_options a', function(e){
       var
         $option = $(this),
         $dk     = $option.parents('.dk_container').first(),
