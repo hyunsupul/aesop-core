@@ -1,3 +1,5 @@
+
+
 jQuery(document).ready(function($) {
 
 	var modal = $('#aesop-generator-wrap');
@@ -76,10 +78,10 @@ jQuery(document).ready(function($) {
 
 	$('.aesop-generator').dropkick({
 		change: function () {
-
-    		var queried_shortcode = $('#aesop-generator-select').find(':selected').val();
+              
+    		var queried_shortcode = $('#aesop-generator-select').find(':selected').val();			
 			$('#aesop-generator-settings').html(aesopshortcodes[queried_shortcode]);
-
+			
 			// conditionally load the map marker shortcode
 			// since 1.3
 			$('.aesop-map-sticky #aesop-generator-attr-sticky').on('change',function(){
@@ -178,6 +180,10 @@ jQuery(document).ready(function($) {
         }
 	});
 
+	function SpecialCharEncode(s)
+	{
+	  return s.replace(/\[/g, "&#91;").replace(/\]/g, "&#93;");
+	}
 
 
 	// Insert shortcode
@@ -190,7 +196,8 @@ jQuery(document).ready(function($) {
 		$('#aesop-generator-result').val('[' + aesop_compatibility_mode_prefix + queried_shortcode);
 		$('#aesop-generator-settings .aesop-generator-attr').each(function() {
 			if ( $(this).val() !== '' ) {
-				$('#aesop-generator-result').val( $('#aesop-generator-result').val() + ' ' + $(this).attr('name') + '="' + $(this).val() + '"' );
+				var val = SpecialCharEncode($(this).val());
+				$('#aesop-generator-result').val( $('#aesop-generator-result').val() + ' ' + $(this).attr('name') + '="' + val + '"' );
 			}
 		});
 		$('#aesop-generator-result').val($('#aesop-generator-result').val() + ']');
@@ -200,10 +207,10 @@ jQuery(document).ready(function($) {
 			$('#aesop-generator-result').val($('#aesop-generator-result').val() + $('#aesop-generator-content').val() + '[/' + aesop_compatibility_mode_prefix + queried_shortcode + ']');
 		}
 
-    if ( typeof tinyMCE !== 'undefined' && tinyMCE.activeEditor ) {
-      var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
-      $(editing).replaceWith('<p></p>');
-    }
+        if ( typeof tinyMCE !== 'undefined' && tinyMCE.activeEditor ) {
+           var editing = tinyMCE.activeEditor.dom.select('#aesop-generator-editing');
+           $(editing).replaceWith('<p></p>');
+        }
 
 		window.send_to_editor(jQuery('#aesop-generator-result').val());
 
@@ -318,6 +325,7 @@ jQuery(document).on('click', '#aesop-upload-img', function( e ){
 
   // Called by using $('foo').dropkick();
   methods.init = function (settings) {
+	  
     settings = $.extend({}, defaults, settings);
 
     return this.each(function () {

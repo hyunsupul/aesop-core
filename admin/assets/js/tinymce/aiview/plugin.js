@@ -111,10 +111,14 @@
 
             // split based on equal sign
             attrs.forEach(function (attr) {
-                attr = attr.split(/=(.+)?/);//split('=');
+                var attr2 = attr.split(/=(.+)?/);//split('=');
+				if(attr2.length >2) {
+				  var i = attr.indexOf('=');
+                  attr2 = [attr.slice(0,i), attr.slice(i+1)];
+				}
 
-                var attr_key = attr[0];
-                var attr_value = attr[1];
+                var attr_key = attr2[0];
+                var attr_value = attr2[1];
 
                 // trim first and last character to get rid of the quotes
                 attr_value = attr_value.slice(0, -1);
@@ -211,6 +215,7 @@
             this.setCursorPosition(this.val().length);
             return this;
         }
+		
 
         // handle the click events
         editor.onClick.add(function (ed, e) {

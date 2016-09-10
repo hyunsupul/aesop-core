@@ -42,9 +42,6 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 		if ($parallax_speed <1) $parallax_speed =1;
 		else if ($parallax_speed >6) $parallax_speed =6;
 		
-		//if ($floater_speed <1) $floater_speed =1;
-		//else if ($floater_speed >10) $floater_speed =10;
-		
 
 		// add custom css classes through our utility function
 		$classes = aesop_component_classes( 'parallax', '' );
@@ -80,10 +77,10 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 								<?php } else { ?>
 
 									//imgCont.css('height',Math.round(imgHeight * 0.69))
-									imgCont.css('height',Math.round(imgHeight * (0.85-0.06*<?php echo $parallax_speed ?>)))
+									imgCont.css('height',Math.round(imgHeight * (0.80-0.06*<?php echo $parallax_speed ?>)))
 
 									if ( $(window).height < 760 ) {
-										imgCont.css('height',Math.round(imgHeight * (0.76-0.06*<?php echo $parallax_speed ?>)))
+										imgCont.css('height',Math.round(imgHeight * (0.70-0.06*<?php echo $parallax_speed ?>)))
 									}
 
 								<?php } ?>
@@ -115,44 +112,40 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 		        					offset 			= obj.offset().top,
 					       	    	scrollTop 		= $(window).scrollTop(),
 					       	    	windowHeight 	= $(window).height(),
-					       	    	floater 		= Math.round( (offset - scrollTop) * 0.1);
-
+					       	    	floater 		= Math.round( (offset - scrollTop) * 0.1),
+									floaterposition = '<?php echo $atts['floaterposition'];?>';
+									
 					       	    // only run parallax if in view
 					       	    if (offset >= scrollTop + windowHeight) {
 									return;
 								}
+								var xStart =15;
+								if (floaterposition=='center') {
+									xStart = (obj.parent().width()-obj.width())/2;
+								} else if (floaterposition=='right') {
+									xStart = (obj.parent().width()-obj.width())-15;
+									
+								}
 
 					       	<?php if ( 'left' == $floater_direction || 'right' == $floater_direction ) {
-
 								if ( 'left' == $floater_direction ) { ?>
-
-				            		obj.css({'transform':'translate3d(' + floater + 'px, 0px, 0px)'});
-
+				            		obj.css({'transform':'translate3d(' + floater + xStart +'px, 0px, 0px)'});
 				            	<?php } else { ?>
-
-									obj.css({'transform':'translate3d(-' + floater + 'px, 0px, 0px)'});
-
+									obj.css({'transform':'translate3d(-' + floater + xStart+'px, 0px, 0px)'});
 				            	<?php }
-
 							} else {
-
 								if ( 'up' == $floater_direction ) { ?>
-
-				            		obj.css({'transform':'translate3d(0px,' + floater + 'px, 0px)'});
-
+				            		obj.css({'transform':'translate3d('+xStart+'px,' + floater + 'px, 0px)'});
 								<?php } else { ?>
-
-									obj.css({'transform':'translate3d(0px,-' + floater + 'px, 0px)'});
-
+									obj.css({'transform':'translate3d('+xStart+'px,-' + floater + 'px, 0px)'});
 								<?php }
-
 							} ?>
 
 					   	} // end if on floater
 
 				    	scrollParallax();
 				    	$(window).scroll(function() { scrollParallax(); });
-
+						
 					    <?php }//end on floater
 
 					} //end if is not mobile and parallax is on ?>

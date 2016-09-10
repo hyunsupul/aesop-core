@@ -101,6 +101,8 @@ function aesop_component_media_filter( $input = '' ) {
 	// setup our array of allowed content to pass
 	$allowed_html = array(
 		'a'    => array(
+		    'class' => true,
+            'style' => true,
 			'href'   => array(),
 			'title'  => array(),
 			'rel'  => array(),
@@ -108,6 +110,8 @@ function aesop_component_media_filter( $input = '' ) {
 			'name'   => array()
 		),
 		'img'   => array(
+		    'class' => true,
+            'style' => true,
 			'src'   => array(),
 			'alt'  => array(),
 			'title'  => array()
@@ -118,18 +122,33 @@ function aesop_component_media_filter( $input = '' ) {
 		'strong'   => array(),
 		'h2'    => array(
 			'align' => true,
+			'class' => true,
+			'style' => true
 		),
 		'h3'    => array(
+		    'class' => true,
 			'align' => true,
+            'style' => true
 		),
 		'h4'    => array(
+		    'class' => true,
 			'align' => true,
+            'style' => true
 		),
 		'h5'    => array(
+		    'class' => true,
 			'align' => true,
+            'style' => true
 		),
 		'h6'    => array(
+		    'class' => true,
 			'align' => true,
+            'style' => true
+		),
+		'div'    => array(
+		    'class' => true,
+			'align' => true,
+            'style' => true
 		),
 	);
 

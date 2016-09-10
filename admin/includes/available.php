@@ -265,12 +265,12 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'select',
 						'values' => array(
 							array(
-								'value' => 'on',
-								'name' => __( 'On', 'aesop-core' )
-							),
-							array(
 								'value' => 'off',
 								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
 							)
 						),
 						'default'  => 'off',
@@ -403,7 +403,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'text_area',
 						'default'  => '',
 						'desc'   => __( 'Floater Element Content', 'aesop-core' ),
-						'tip'  => __( 'You can use text and images here. To use an image, use the full HTML tag without quotes around the image path.', 'aesop-core' )
+						'tip'  => __( 'You can use text and images here. To use an image, use the full HTML tag without quotes around the image path. Example: <code><span class="dashicons dashicons-arrow-left-alt2"></span>img src=image.jpg<span class="dashicons dashicons-arrow-right-alt2"></span></code> You can also use tags like <code><span class="dashicons dashicons-arrow-left-alt2"></span>h2<span class="dashicons dashicons-arrow-right-alt2"></span>Text<span class="dashicons dashicons-arrow-left-alt2"></span>/h2<span class="dashicons dashicons-arrow-right-alt2"></span></code>', 'aesop-core' )
 					),
 					'floaterposition' => array(
 						'type'  => 'select',
@@ -639,7 +639,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'text',
 						'default'  => '',
 						'desc'   => __( 'Floater Element Content', 'aesop-core' ),
-						'tip'  => __( 'You can use text and images here. To use an image, use the full HTML tag without quotes around the image path.', 'aesop-core' )
+						'tip'  => __( 'You can use text and images here. To use an image, use the full HTML tag without quotes around the image path. Example: <code><span class="dashicons dashicons-arrow-left-alt2"></span>img src=image.jpg<span class="dashicons dashicons-arrow-right-alt2"></span></code> You can also use tags like <code><span class="dashicons dashicons-arrow-left-alt2"></span>h2<span class="dashicons dashicons-arrow-right-alt2"></span>Text<span class="dashicons dashicons-arrow-left-alt2"></span>/h2<span class="dashicons dashicons-arrow-right-alt2"></span></code>', 'aesop-core' )
 					),
 					'floaterposition' => array(
 						'type'  => 'select',

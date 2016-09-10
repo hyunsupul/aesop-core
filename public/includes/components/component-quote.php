@@ -90,6 +90,14 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 				$css_classes .= ' '.$class;
 			}
 		}
+		// lets make sure scroll direction makes sense
+		if ($isparallax) {
+		   if ($atts['align']=="left") {
+			   $atts['direction'] = 'right';
+		   } else if ($atts['align']=="right"){
+			   $atts['direction'] = 'left';
+		   }
+		}
 
 		// core/custom classes
 		$core_classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'quote' ) : null;

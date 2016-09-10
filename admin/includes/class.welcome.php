@@ -73,9 +73,14 @@ class aesopCoreWelcome {
 			   		<p class="aesop--welcome__lead"><?php _e( 'It\'s easy to get Aesop Story Engine implemented into your theme. Just follow these short steps below and you\'ll be on your way!', 'aesop-core' );?></p>
 					<ul class="aesop--welcome__steps">
 						<li>
-							<strong><?php _e( 'Enable Theme Support', 'aesop-core' );?></strong>
-							<p><?php _e( 'If your theme does not natively support Aesop Story Engine, add the code snippet below to your functions.php file, or add using', 'aesop-core' );?> <a href="<?php echo admin_url( 'plugin-install.php?tab=search&s=code+snippets' ) ?>"><?php _e( 'Code Snippets', 'aesop-core' );?></a> <?php _e( 'plugin to enable Extended Style Support. This will load one CSS file for any of the items that you include in the snippet below.', 'aesop-core' );?></p>
+							<strong><?php _e( 'Load Extended Component CSS', 'aesop-core' );?></strong>
+							<p><?php _e( 'By default, ASE loads extended CSS files for each component. To explicitly load the files, add the code snippet below to your functions.php file, or add using', 'aesop-core' );?> 
+							<a href="<?php echo admin_url( 'plugin-install.php?tab=search&s=code+snippets' ) ?>"><?php _e( 'Code Snippets', 'aesop-core' );?></a> 
+							<?php _e( 'plugin to enable Extended Style Support. This will load one CSS file for any of the items that you include in the snippet below.', 'aesop-core' );?></p>
 							<pre>add_theme_support("aesop-component-styles", array("parallax", "image", "quote", "gallery", "content", "video", "audio", "collection", "chapter", "document", "character", "map", "timeline" ) );</pre>
+							<p><?php _e( 'If you want to provide your own style, you can pass in an empty array instead to disable loading of the extended CSS files. Or you can selectively load CSS style for each component.', 'aesop-core' );?> 
+							<a href=""><?php _e( 'Developer page ', 'aesop-core' );?></a> <?php _e(' for more information about theme development.', 'aesop-core' )?></p>
+	
 						</li>
 						<li>
 							<strong><?php _e( 'Build your Story', 'aesop-core' );?></strong>

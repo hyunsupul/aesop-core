@@ -1412,10 +1412,6 @@ html.swipebox {
   right: 20px;
   text-align: right;
 }
-.aesop-parallax-sc-caption-wrap.bottom-left {
-  bottom: 20px;
-  left: 20px;
-}
 .aesop-stacked-gallery-wrap.low-index {
   z-index: -1;
 }
