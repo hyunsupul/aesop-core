@@ -74,6 +74,9 @@ class AesopCoreGallery {
 				case 'photoset':
 					$this->aesop_photoset_gallery( $gallery_id, $image_ids, $width );
 					break;
+				case 'hero':
+					$this->aesop_hero_gallery( $gallery_id, $image_ids, $width );
+					break;
 				default:
 					$this->aesop_grid_gallery( $gallery_id, $image_ids, $width );
 					break;
@@ -373,6 +376,57 @@ class AesopCoreGallery {
 
 		if ( $style !== null ) { echo '</div>'; }
 
+	}
+
+	/**
+	 * Draws a thumbnail gallery using fotorama
+	 *
+	 * @since    1.0.0
+	 */
+	public function aesop_hero_gallery( $gallery_id, $image_ids, $width ) {
+
+		$autoplay  = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ) ? sprintf( 'data-autoplay="%s"', get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ) ) : null;
+		$transition = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true ) ? get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true ) : 'crossfade';
+		$content = get_post_meta( $gallery_id, 'aesop_hero_gallery_content', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_content', true) : '';
+
+		// image size
+		$size    = apply_filters( 'aesop_thumb_gallery_size', 'full' );
+
+		?>
+		<div class="aesop-hero-gallery-wrapper">
+		<div id="aesop-hero-gallery-<?php echo esc_attr( $gallery_id );?>" class="fotorama" 	data-transition="<?php echo esc_attr( $transition );?>"
+																			data-width="<?php echo esc_attr( $width );?>"
+																			<?php echo esc_attr( $autoplay );?>
+																			data-keyboard="false"
+																			data-nav=false
+																			data-allow-full-screen="false"
+																			data-click="false"
+																			data-ratio="100/35"
+																			data-fit="cover"
+																			data-captions="false"
+																			data-arrows="false"
+																			data-swipe="false"
+																			data-transitionduration="1500"
+																			><?php
+
+		foreach ( $image_ids as $image_id ):
+
+			$full    = wp_get_attachment_image_src( $image_id, $size, false );
+		$alt     = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+		$caption  = get_post( $image_id )->post_excerpt;
+
+		?><img src="<?php echo esc_url( $full[0] );?>" data-caption="<?php echo esc_attr( $caption );?>" alt="<?php echo esc_attr( $alt );?>"><?php
+
+		endforeach;
+
+		?>
+		</div>
+
+		<div class="aesop-hero-gallery-content">
+			<?php echo $content; ?>
+		</div>
+
+		</div><?php
 	}
 
 }
