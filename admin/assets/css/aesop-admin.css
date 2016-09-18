@@ -797,8 +797,11 @@ Don't need small height mod anymore due to making the icons smaller
 #ase_gallery_layout label:nth-of-type(4):after {
   background-position: 1px -263px;
 }
-#ase_gallery_layout label:last-of-type:after {
+#ase_gallery_layout label:nth-of-type(5):after {
   background-position: 0 -347px;
+}
+#ase_gallery_layout label:nth-of-type(6):after {
+  background-position: 0 -420px;
 }
 #ase_gallery_options .ase-gallery-opts {
   clear: left;

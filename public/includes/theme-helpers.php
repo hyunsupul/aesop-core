@@ -287,6 +287,10 @@ function aesop_gallery_component_data_atts( $postid = '' ) {
 	$photoset_layout = get_post_meta( $postid, 'aesop_photoset_gallery_layout', true );
 	$photoset_lb   = get_post_meta( $postid, 'aesop_photoset_gallery_lightbox', true );
 
+	// hero
+	$hero_content   = get_post_meta( $postid, 'aesop_hero_gallery_content', true );
+
+	
 	// get the meta and store into an array
 	$meta = array(
 		'id'   => $postid,
@@ -298,7 +302,8 @@ function aesop_gallery_component_data_atts( $postid = '' ) {
 		'speed'   => $thumb_speed,
 		'thumbhide' => $thumb_hide,
 		'pslayout'  => (int) trim( $photoset_layout ),
-		'pslightbox' => sanitize_text_field( trim( $photoset_lb ) )
+		'pslightbox' => sanitize_text_field( trim( $photoset_lb ) ),
+		'content' => sanitize_text_field( trim( $hero_content ) ),
 	);
 
 	// map the meta to att values

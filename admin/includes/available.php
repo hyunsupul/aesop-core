@@ -561,6 +561,10 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							array(
 								'value' => 'off',
 								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'fixed',
+								'name' => __( 'Fixed', 'aesop-core' )
 							)
 						),
 						'default'  => 'on',

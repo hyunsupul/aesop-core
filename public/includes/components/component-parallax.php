@@ -100,7 +100,8 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 				   			img.parallax({speed: <?php echo $parallax_speed*0.1 ?>});
 
-		        		<?php }//end if
+		        		<?php 
+						}//end if
 
 						if ( 'on' == $atts['floater'] ) { ?>
 
@@ -165,11 +166,22 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 				<?php if ( 'on' == $atts['lightbox'] ) {?>
 					<a class="aesop-lb-link aesop-lightbox" rel="lightbox" title="<?php echo esc_attr( $atts['caption'] );?>" href="<?php echo esc_url( $atts['img'] );?>"><i class="aesopicon aesopicon-search-plus"></i></a>
-				<?php } ?>
+				<?php } 
 
-				<img class="aesop-parallax-sc-img <?php echo $laxclass;?>" src="<?php echo esc_url( $atts['img'] );?>" alt="<?php echo esc_attr( $auto_alt );?>" >
+				if ('fixed' == $atts['parallaxbg']) {
+				?>
+					<div class="aesop-stacked-img" style="background-image:url('<?php echo esc_url( $atts['img'] );?>');background-size:cover;background-position:center center;?>">
+           	        </div>
+				<?php
+				} else {
+				?>
+				    <img class="aesop-parallax-sc-img <?php echo $laxclass;?>" src="<?php echo esc_url( $atts['img'] );?>" alt="<?php echo esc_attr( $auto_alt );?>" >
+				<?php
+				}
+				
+				
 
-				<?php if ( $atts['caption'] ) { ?>
+				if ( $atts['caption'] ) { ?>
 					<figcaption class="aesop-parallax-sc-caption-wrap <?php echo sanitize_html_class( $atts['captionposition'] );?>">
 						<?php echo aesop_component_media_filter( trim( $atts['caption'] ) );?>
 					</figcaption>
