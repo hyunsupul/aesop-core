@@ -491,7 +491,19 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => ' ',
 						'desc'   => __( 'Chapter Image or Video URL', 'aesop-core' ),
 						'tip'  => __( 'URL for the image or video background as set above. Click <em>Select Media</em> to open the WordPress Media Library.', 'aesop-core' )
-					)
+					),
+                    'overlay_color' => array(
+                        'type'  => 'color',
+						'default'  => '#282828',
+						'desc'   => __( 'Overlay Color', 'aesop-core' ),
+						'tip'  => __( 'Select an overlay color to be used between the image and the chapter text.', 'aesop-core' ),
+                    ),
+                    'overlay_opacity' => array(
+                        'type'		=> 'text_small',
+						'default' 	=> '0',
+						'desc' 		=> __('Opacity of the overlay color', 'aesop-core' ),
+						'tip'		=> __('Type an opacity level between 0 and 1 for the overlay color. 0 is transparent; 1 is opaque.','aesop-core'),
+                    ),
 				),
 				'desc'     => __( 'Creates the scroll to point, as a chapter heading.', 'aesop-core' )
 			),

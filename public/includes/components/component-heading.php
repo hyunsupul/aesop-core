@@ -13,7 +13,9 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 			'subtitle'  => '',
 			'bgtype'  	=> 'img',
 			'img'   	=> '',
-			'full'  	=> ''
+			'full'  	=> '',
+            'overlay_color' => '',
+            'overlay_opacity' => '0',
 		);
 
 		$atts = apply_filters( 'aesop_chapter_defaults', shortcode_atts( $defaults, $atts ) );
@@ -31,6 +33,8 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 		$img_style     = 'img' == $atts['bgtype'] && $atts['img'] ? sprintf( 'style="background:url(\'%s\');%s"', esc_url( $atts['img'] ), $styles ) : 'style="height:auto;" ';
 		$img_style_class  = 'img' == $atts['bgtype'] && $atts['img'] ? 'has-chapter-image' : 'no-chapter-image';
 
+        $overlay_style = sprintf( 'style="background-color: %s; opacity: %s;"', esc_attr( $atts['overlay_color'] ), esc_attr( '' != $atts['overlay_opacity'] ? $atts['overlay_opacity'] : '0' ) );
+
 		$video_chapter_class = 'video' == $atts['bgtype'] ? 'aesop-video-chapter' : null;
 
 		$full_class = 'on' == $atts['full'] ? 'aesop-chapter-full' : false;
@@ -43,7 +47,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 				<?php do_action( 'aesop_chapter_inside_top', $atts, $unique ); // action ?>
 
 				<div class="aesop-article-chapter clearfix" <?php echo $img_style;?> >
-
+                    <div class="aesop-article-chapter-overlay" <?php echo $overlay_style;?> ></div>
 					<h2 class="aesop-cover-title" itemprop="title" data-title="<?php echo esc_attr( $atts['title'] );?>">
 						<span><?php echo esc_html( $atts['title'] );?></span>
 
