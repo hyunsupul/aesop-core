@@ -170,8 +170,8 @@ class AesopCoreGallery {
 ?>
 		<!-- Aesop Grid Gallery -->
 		<script>
-		
-		
+
+
 			jQuery(document).ready(function($){
 			    $('#aesop-grid-gallery-<?php echo esc_attr( $gallery_id );?>').imagesLoaded(function() {
 			        var options = {
@@ -184,12 +184,12 @@ class AesopCoreGallery {
 			        handler.wookmark(options);
 					$('aesop-grid-gallery-<?php echo esc_attr( $gallery_id );?>').attr('id','the_new_id');
 					$(window).trigger("lookup2");
-					
+
 			    });
 			});
 		</script>
 		<?php
-		
+
 		if (class_exists( 'AesopLazyLoader' )) {
 			?>
 		<script>
@@ -233,7 +233,7 @@ class AesopCoreGallery {
 			  };
 
 			})(window.jQuery || window.Zepto);
-			
+
 			jQuery(document).ready(function($){
 				$('.aesop-lazy-img2').unveil2(0,function() {
 				  	$(this).load(function() {
@@ -241,13 +241,13 @@ class AesopCoreGallery {
 				  	});
 				});
 			});
-			
+
 		</script>
 		<?php
-		
+
 		}
 		?>
-		
+
 		<div id="aesop-grid-gallery-<?php echo esc_attr( $gallery_id );?>" class="aesop-grid-gallery aesop-grid-gallery" style="width:100%;max-width:<?php echo esc_attr( $width );?>;margin:0 auto;"><ul><?php
 
 		foreach ( $image_ids as $image_id ):
@@ -255,11 +255,11 @@ class AesopCoreGallery {
 			$getimage   = wp_get_attachment_image( $image_id, 'aesop-grid-image', false, array( 'class' => 'aesop-grid-image' ) );
 			$caption   = get_post( $image_id )->post_excerpt;
 			$img_title     = get_post( $image_id )->post_title;
-			$getimagesrc    = wp_get_attachment_image_src( $image_id, 'full' );	
+			$getimagesrc    = wp_get_attachment_image_src( $image_id, 'full' );
 			if (class_exists( 'AesopLazyLoader' )) {
 			    $getimagesrc2    = wp_get_attachment_image_src( $image_id, 'aesop-grid-image' );
 				$lazy_holder = AI_CORE_URL.'/public/assets/img/aesop-lazy-holder.png';
-				$getimage = sprintf( '<img src="%s" data-src="%s" class="aesop-grid-image aesop-lazy-img2" width="%s" height="%s" style="opacity:0;" >', 
+				$getimage = sprintf( '<img src="%s" data-src="%s" class="aesop-grid-image aesop-lazy-img2" width="%s" height="%s" style="opacity:0;" >',
 				                        esc_url( $getimagesrc2[0] ), esc_url( $getimagesrc2[0] ),
 									  $getimagesrc2[1],$getimagesrc2[2] );
 			}
@@ -271,7 +271,7 @@ class AesopCoreGallery {
 							<span class="aesop-grid-gallery-caption"><?php echo aesop_component_media_filter( $caption );?></span>
 						<?php } ?>
 						<span class="clearfix"><?php echo $getimage;?></span>
-						
+
 					</a>
 				</li>
 
@@ -291,7 +291,39 @@ class AesopCoreGallery {
 	 */
 	public function aesop_stacked_gallery( $image_ids, $unique ) {
 
-		?>
+		/**
+		 * AMP Plugin compatability. Checks to see if we're at an AMP
+		 * endpoint and, if so, output <img> instead of <div> with
+		 * `background-image`.
+		 * Note that the AMP spec calls for <amp-img> instead of <img>,
+		 * but output <img> here and rely on the AMP plugin to replace
+		 * the tags properly.
+		 * @link https://wordpress.org/plugins/amp/
+		 * @link https://www.ampproject.org/docs/reference/spec.html
+		 */
+		if ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) {
+
+			$size    = apply_filters( 'aesop_stacked_gallery_size', 'full' );
+
+			foreach ( $image_ids as $image_id ):
+				$full     = wp_get_attachment_image_src( $image_id, $size, false );
+				$caption	= get_post( $image_id )->post_excerpt;
+				$alt      = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+				?>
+
+				<div class="aesop-stacked-img">
+					<img src="<?php echo esc_url( $full[0] );?>" alt="<?php echo esc_attr( $alt );?>">
+					<?php if ( $caption ) { ?>
+						<div class="aesop-stacked-caption"><?php echo aesop_component_media_filter( $caption );?></div>
+					<?php } ?>
+				</div>
+
+				<?php
+			endforeach;
+
+		} else {
+			?>
+
 			<!-- Aesop Stacked Gallery -->
 			<script>
 
@@ -308,28 +340,30 @@ class AesopCoreGallery {
 				});
 
 			</script>
-		<?php
+			<?php
 
-		$stacked_styles = 'background-size:cover;background-position:center center';
-		$styles = apply_filters( 'aesop_stacked_gallery_styles_'.$unique, $stacked_styles );
+			$stacked_styles = 'background-size:cover;background-position:center center';
+			$styles = apply_filters( 'aesop_stacked_gallery_styles_'.$unique, $stacked_styles );
 
-		// image size
-		$size    = apply_filters( 'aesop_stacked_gallery_size', 'full' );
+			// image size
+			$size    = apply_filters( 'aesop_stacked_gallery_size', 'full' );
 
-		foreach ( $image_ids as $image_id ):
+			foreach ( $image_ids as $image_id ):
 
 			$full      = wp_get_attachment_image_src( $image_id, $size, false );
 			$caption   = get_post( $image_id )->post_excerpt;
 
-?>
-           	<div class="aesop-stacked-img" style="background-image:url('<?php echo esc_url( $full[0] );?>');<?php echo $styles;?>">
-           		<?php if ( $caption ) { ?>
-           			<div class="aesop-stacked-caption"><?php echo aesop_component_media_filter( $caption );?></div>
-           		<?php } ?>
-           	</div>
-           	<?php
+			?>
+						<div class="aesop-stacked-img" style="background-image:url('<?php echo esc_url( $full[0] );?>');<?php echo $styles;?>">
+							<?php if ( $caption ) { ?>
+								<div class="aesop-stacked-caption"><?php echo aesop_component_media_filter( $caption );?></div>
+							<?php } ?>
+						</div>
+						<?php
 
-		endforeach;
+			endforeach;
+
+		}
 
 	}
 
