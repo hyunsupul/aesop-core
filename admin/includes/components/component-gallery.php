@@ -327,13 +327,13 @@ class AesopGalleryComponentAdmin {
 			<div class="ase-gallery-opts--single">
 				<label for="aesop_thumb_gallery_transition_speed"><?php _e( 'Gallery Transition Speed', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Activate slideshow by setting a speed for the transition. 5000 = 5 seconds.', 'aesop-core' );?></p>
-				<input type="text" name="aesop_thumb_gallery_transition_speed" value="<?php echo (int) $thumb_speed;?>">
+				<input type="text" name="aesop_thumb_gallery_transition_speed" value="<?php echo (int) $thumb_speed ? $thumb_speed : 300;?>">
 			</div>
 
 			<div class="ase-gallery-opts--single">
 				<label for="aesop_hero_gallery_content"><?php _e( 'Gallery Content', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Content displayed within the Hero gallery.', 'aesop-core' );?></p>
-				<textarea name="aesop_hero_gallery_content"><?php echo esc_html( $hero_content ); ?></textarea>
+				<textarea name="aesop_hero_gallery_content"><?php echo $hero_content; ?></textarea>
 			</div>
 		</div>
 		<?php
@@ -411,7 +411,7 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, 'aesop_photoset_gallery_lightbox', $photoset_lb );
 		
 		// hero
-		update_post_meta( $post_id, 'aesop_hero_gallery_content', sanitize_text_field( $hero_content ) );
+		update_post_meta( $post_id, 'aesop_hero_gallery_content', aesop_component_media_filter( $hero_content ) );
 	}
 
 

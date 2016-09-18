@@ -537,20 +537,21 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 				'name'     => __( 'Parallax Image', 'aesop-core' ),
 				'type'     => 'single',
 				'atts'     => array(
-					/*
+					
 					'height' 		=> array(
 						'type'		=> 'text_small',
-						'default' 	=> '500',
+						'default' 	=> '',
 						'desc' 		=> __('Height of Image Area', 'aesop-core' ),
-						'tip'		=> __('The height of the viewable image area. Enter a value such as <code>500px</code>. Avoid using percentages with this option.','aesop-core')
+						'tip'		=> __('The height of the viewable image area. Enter a value such as <code>500px</code>. Avoid using percentages with this option. Leave blank for the default value.','aesop-core')
 					),
-					*/
+					
 					'img'    => array(
 						'type'  => 'media_upload',
 						'default'  => '',
 						'desc'   => __( 'Parallax Image', 'aesop-core' ),
 						'tip'  => __( 'URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.', 'aesop-core' )
 					),
+					
 					'parallaxbg'  => array(
 						'type'  => 'select',
 						'values'  => array(
@@ -683,6 +684,11 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							array(
 								'value' => 'right',
 								'name' => __( 'Right', 'aesop-core' )
+							)
+							,
+							array(
+								'value' => 'none',
+								'name' => __( 'None', 'aesop-core' )
 							)
 						),
 						'default'  => 'up',

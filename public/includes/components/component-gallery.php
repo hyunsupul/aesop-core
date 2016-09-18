@@ -351,10 +351,10 @@ class AesopCoreGallery {
 			// image size
 			$size    = apply_filters( 'aesop_stacked_gallery_size', 'full' );
 
-			foreach ( $image_ids as $image_id ):
+            foreach ( $image_ids as $image_id ):
 
-			$full      = wp_get_attachment_image_src( $image_id, $size, false );
-			$caption   = get_post( $image_id )->post_excerpt;
+                $full      = wp_get_attachment_image_src( $image_id, $size, false );
+                $caption   = get_post( $image_id )->post_excerpt;
 
 			?>
 						<div class="aesop-stacked-img" style="background-image:url('<?php echo esc_url( $full[0] );?>');<?php echo $styles;?>">
