@@ -23,12 +23,12 @@ jQuery(document).ready(function($) {
 
 		if ( width < 782 ) {
 			var genLeftHeight = $('.aesop-generator-left').height();
+			var buttonHeight = $('.aesop-buttoninsert-wrap').height();
 		} else {
 			var genLeftHeight = '';
+			var buttonHeight = '';
 		}
-
-		var buttonHeight = 70;
-		$('#aesop-generator-settings-outer').css({'height':height + genLeftHeight - buttonHeight});
+		$('#aesop-generator-settings-outer').css({'height':height + genLeftHeight + buttonHeight});
 
 		if ( height < 700 && width > 782 ) {
 			$('.aesop-generator-left').addClass('aesop-generator-small-height');
