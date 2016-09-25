@@ -73,18 +73,13 @@ class aesopCoreWelcome {
 			   		<p class="aesop--welcome__lead"><?php _e( 'It\'s easy to get Aesop Story Engine implemented into your theme. Just follow these short steps below and you\'ll be on your way!', 'aesop-core' );?></p>
 					<ul class="aesop--welcome__steps">
 						<li>
-							<strong><?php _e( 'Load Extended Component CSS', 'aesop-core' );?></strong>
-							<p><?php _e( 'By default, ASE loads extended CSS files for each component. To explicitly load the files, add the code snippet below to your functions.php file, or add using', 'aesop-core' );?> 
-							<a href="<?php echo admin_url( 'plugin-install.php?tab=search&s=code+snippets' ) ?>"><?php _e( 'Code Snippets', 'aesop-core' );?></a> 
-							<?php _e( 'plugin to enable Extended Style Support. This will load one CSS file for any of the items that you include in the snippet below.', 'aesop-core' );?></p>
-							<pre>add_theme_support("aesop-component-styles", array("parallax", "image", "quote", "gallery", "content", "video", "audio", "collection", "chapter", "document", "character", "map", "timeline" ) );</pre>
-							<p><?php _e( 'If you want to provide your own style, you can pass in an empty array instead to disable loading of the extended CSS files. Or you can selectively load CSS style for each component.', 'aesop-core' );?> 
-							<a href=""><?php _e( 'Developer page ', 'aesop-core' );?></a> <?php _e(' for more information about theme development.', 'aesop-core' )?></p>
-	
+							<strong><?php _e( 'Development Information', 'aesop-core' );?></strong>
+							<p>Check <a href="http://aesopstoryengine.com/developers/"><?php _e( 'Developer page ', 'aesop-core' );?></a> <?php _e(' for more information about theme development.', 'aesop-core' )?></p>
 						</li>
 						<li>
 							<strong><?php _e( 'Build your Story', 'aesop-core' );?></strong>
 							<p><?php _e( 'Go to any post, and locate the "Add Component" button. It sits right above the post editor. Once you toggle this, you\'ll be able to select the component, adjust any options, and insert it anywhere within your story. Galleries are managed with the "Galleries" tab within WordPress.', 'aesop-core' );?></p>
+							<p>Check <a href="http://aesopstoryengine.com/help/"><?php _e( 'User guide ', 'aesop-core' );?></a> <?php _e(' for more information.', 'aesop-core' )?></p>
 						</li>
 					</ul>
 				</div>

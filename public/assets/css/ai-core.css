@@ -375,6 +375,17 @@
   font-size: 14px;
   line-height: 18px;
 }
+.aesop-hero-gallery-wrapper {
+  position: relative;
+}
+.aesop-hero-gallery-content {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
 .aesop-map-component .leaflet-popup-content-wrapper,
 .aesop-map-component .leaflet-popup-tip {
   border-radius: 4px;

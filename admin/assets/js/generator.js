@@ -182,7 +182,7 @@ jQuery(document).ready(function($) {
 
 	function SpecialCharEncode(s)
 	{
-	  return s.replace(/\[/g, "&#91;").replace(/\]/g, "&#93;");
+	  return s.replace(/\[/g, "&#91;").replace(/\]/g, "&#93;").replace(/\"/g, "'");
 	}
 
 

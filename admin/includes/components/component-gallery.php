@@ -244,13 +244,14 @@ class AesopGalleryComponentAdmin {
 		
 		//hero
 		$hero_content = get_post_meta( $id, 'aesop_hero_gallery_content', true );
+		$hero_width_to_height_ratio = get_post_meta( $id, 'aesop_hero_gallery_height', true );
 
 ?>
 		<div class="ase-gallery-opts--global">
 
 			<div class="ase-gallery-opts--single">
 				<label for="aesop_gallery_width"><?php _e( 'Main Gallery Width', 'aesop-core' );?></label>
-				<p class="aesop-gallery-opts--desc"><?php _e( 'Adjust the overall width of the grid/thumbnail gallery. Acceptable values include 500px or 50%.', 'aesop-core' );?></p>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Adjust the overall width of the grid/thumbnail gallery. Acceptable values include 500px, 50%, 100% etc', 'aesop-core' );?></p>
 				<input type="text" name="aesop_gallery_width" value="<?php echo esc_html( $width );?>">
 			</div>
 			<div class="ase-gallery-opts--single">
@@ -314,7 +315,7 @@ class AesopGalleryComponentAdmin {
 	    <div class="ase-gallery-opts ase-gallery-opts--hero" style="display: none;">
 			<h3><?php _e( 'Hero Options', 'aesop-core' );?></h3>
 
-			<div class="ase-gallery-opts--single">
+			<div class="ase-gallery-opts--single" style="padding-top:20px">
 				<label for="aesop_thumb_gallery_transition"><?php _e( 'Gallery Transition', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Adjust the transition effect for the Hero gallery. Default is fade.', 'aesop-core' );?></p>
 			   	<select name="aesop_thumb_gallery_transition">
@@ -323,16 +324,22 @@ class AesopGalleryComponentAdmin {
 			      <option value="dissolve" <?php selected( $thumb_trans, 'dissolve' ); ?>><?php _e( 'Dissolve', 'aesop-core' );?></option>
 			    </select>
 			</div>
-
-			<div class="ase-gallery-opts--single">
+			
+			<div class="ase-gallery-opts--single" style="padding-top:20px">
 				<label for="aesop_thumb_gallery_transition_speed"><?php _e( 'Gallery Transition Speed', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Activate slideshow by setting a speed for the transition. 5000 = 5 seconds.', 'aesop-core' );?></p>
 				<input type="text" name="aesop_thumb_gallery_transition_speed" value="<?php echo (int) $thumb_speed ? $thumb_speed : 300;?>">
 			</div>
+			<div class="ase-gallery-opts--single" style="padding-top:20px">
+				<label for="aesop_hero_gallery_height"><?php _e( 'Main Gallery Height', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Specify this if you want to control the height of the gallery. Acceptable values include 500px, 50%, 100% etc.', 'aesop-core' );?></p>
+				<input type="text" name="aesop_hero_gallery_height" value="<?php echo $hero_width_to_height_ratio;?>">
+			</div>
 
-			<div class="ase-gallery-opts--single">
+			<br>
+			<div class="ase-gallery-opts--single" style="padding-top:20px">
 				<label for="aesop_hero_gallery_content"><?php _e( 'Gallery Content', 'aesop-core' );?></label>
-				<p class="aesop-gallery-opts--desc"><?php _e( 'Content displayed within the Hero gallery.', 'aesop-core' );?></p>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Content displayed within the Hero gallery. You can use HTML tags with classes and styles.', 'aesop-core' );?></p>
 				<textarea name="aesop_hero_gallery_content"><?php echo $hero_content; ?></textarea>
 			</div>
 		</div>
@@ -384,6 +391,7 @@ class AesopGalleryComponentAdmin {
 
 		// hero
 		$hero_content = isset( $_POST['aesop_hero_gallery_content'] ) ? $_POST['aesop_hero_gallery_content'] : false;
+		$hero_width_to_height_ratio = isset( $_POST['aesop_hero_gallery_height'] ) ? $_POST['aesop_hero_gallery_height'] : false;
 
 		// safe to proceed
 		delete_post_meta( $post_id, '_ase_gallery_images' );
@@ -410,8 +418,9 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, 'aesop_photoset_gallery_layout', absint( $photoset_layout ) );
 		update_post_meta( $post_id, 'aesop_photoset_gallery_lightbox', $photoset_lb );
 		
-		// hero
+		// hero width_to_height_ratio
 		update_post_meta( $post_id, 'aesop_hero_gallery_content', aesop_component_media_filter( $hero_content ) );
+		update_post_meta( $post_id, 'aesop_hero_gallery_height',  sanitize_text_field($hero_width_to_height_ratio) );
 	}
 
 

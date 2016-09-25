@@ -5,8 +5,8 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.5.2
-Stable tag: 1.7.11
+Tested up to: 4.6.1
+Stable tag: 1.9.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -168,6 +168,14 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.0 =
+* NEW Hero Gallery Type has been added. Great thanks to peiche.
+* NEW FIXED background type has been added to Parallax Component.
+* NEW Parallax Component has been overhauled and fixed many issues.
+* Update Many default options were changed to be more intuitive.
+* Update Documentation changes.
+
+
 = 1.7.11 =
 * FIX fixed the alignment option in Parallax component. Now center and right alignments work.
 * FIX If square brackets are put in as parameters, they get converted to html codes.

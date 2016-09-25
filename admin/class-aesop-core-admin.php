@@ -248,7 +248,7 @@ class Aesop_Core_Admin {
 	private function messages() {
 
 		$message = array(
-			__( 'Product of <span><a href="http://aesopstoryengine.com">AESOP INTERACTIVE LLC</a></span>',
+			__( 'Product of <span><a href="http://aesopstoryengine.com">AESOP INTERACTIVE</a></span>',
 				'aesop-core' ),
 			__( '<span><a href="http://aesopstoryengine.com/donate">Support new features and bug fixes</a></span> of Aesop Story Engine',
 				'aesop-core' ),

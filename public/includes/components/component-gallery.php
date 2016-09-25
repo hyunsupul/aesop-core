@@ -500,16 +500,23 @@ class AesopCoreGallery {
 		$autoplay  = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ) ? sprintf( 'data-autoplay="%s"', get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ) ) : null;
 		$transition = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true ) ? get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true ) : 'crossfade';
 		$content = get_post_meta( $gallery_id, 'aesop_hero_gallery_content', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_content', true) : '';
+		$height = get_post_meta( $gallery_id, 'aesop_hero_gallery_height', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_height', true) : '';
 
 		// image size
 		$size    = apply_filters( 'aesop_thumb_gallery_size', 'full' );
 
+		if (empty($width)) {
+			$width = "100%";
+		}
+		if (empty($height)) {
+			$height = "100%";
+		}
 		?>
 		<div class="aesop-hero-gallery-wrapper">
 		<div id="aesop-hero-gallery-<?php echo esc_attr( $gallery_id );?>" class="fotorama" 	data-transition="<?php echo esc_attr( $transition );?>"
 																			data-width="<?php echo esc_attr( $width );?>"
+																			data-height="<?php echo esc_attr( $height );?>"
 																			<?php echo esc_attr( $autoplay );?>
-																			data-ratio=""
 																			data-keyboard="false"
 																			data-nav=false
 																			data-allow-full-screen="false"

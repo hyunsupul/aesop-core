@@ -120,6 +120,11 @@ function aesop_component_media_filter( $input = '' ) {
 		'br'    => array(),
 		'em'    => array(),
 		'strong'   => array(),
+		'h1'    => array(
+			'align' => true,
+			'class' => true,
+			'style' => true
+		),
 		'h2'    => array(
 			'align' => true,
 			'class' => true,
