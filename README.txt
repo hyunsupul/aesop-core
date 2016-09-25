@@ -1,12 +1,12 @@
 === Aesop Story Engine ===
-Contributors: nphaskins, etcio, michaelbeil, hyunster
+Contributors: nphaskins, etcio, michaelbeil, hyunster, peiche
 Author URI:  http://nickhaskins.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.6.1
-Stable tag: 1.9.10
+Stable tag: 1.9.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,7 +169,7 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 
 == Changelog ==
 = 1.9.0 =
-* NEW Hero Gallery Type has been added. Great thanks to peiche.
+* NEW Hero Gallery Type has been added. Great thanks to peiche (peiche@gmail.com).
 * NEW FIXED background type has been added to Parallax Component.
 * NEW Parallax Component has been overhauled and fixed many issues.
 * Update Many default options were changed to be more intuitive.
