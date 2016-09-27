@@ -181,7 +181,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 			<?php if (!empty($atts['height'])) {?>
 			  <figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>" style="height:<?php echo esc_attr( $atts['height'] );?>;">
 			<?php } else {?>
-			  <figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>" ?>;">
+			  <figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>">
 			<?php } ?>
 
 				<?php do_action( 'aesop_parallax_inner_inside_top', $atts, $unique ); // action ?>

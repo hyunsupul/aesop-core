@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.6.1
-Stable tag: 1.9.0
+Stable tag: 1.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,16 +14,18 @@ Suite of components that enables the creation of interactive longform stories in
 
 == Description ==
 
-Aesop Story Engine is a suite of open-sourced tools and components that empower developers and writers to build feature-rich, interactive, long-form storytelling themes for WordPress. At the heart of ASE are the suite of storytelling components, which are created on the fly while crafting posts within WordPress.
+Aesop Story Engine is a suite of open-sourced tools and components that empower developers and writers to build feature-rich, interactive, long-form storytelling themes for WordPress. At the heart of ASE are the suite of storytelling multimedia components, which are created on the fly while crafting posts within WordPress.
 
 [http://aesopstoryengine.com](http://aesopstoryengine.com)
 
 [youtube http://www.youtube.com/watch?v=84BFGxkHby0]
 
-**Try Aesop for Free** - [http://tryaesop.com](http://tryaesop.com)
 
-Utilizing these components, writers can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. Here’s a demo theme incorporating these story components.
-[http://playground.aesopstories.com](http://playground.aesopstories.com)
+Utilizing these components, writers can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. 
+
+Check out the newest features of Aesop Story Engine (v 1.9)
+
+[http://aesopstoryengine.com/updates/aesop-1-9-new-features/](http://aesopstoryengine.com/updates/aesop-1-9-new-features/)
 
 **Audio** -
 Display an audio player with support for MP3 that can be optionally hidden. This is great for showcasing audio interviews.
@@ -64,9 +66,7 @@ This component allows you to upload a PDF or image, that is shown to the user on
 **Collection** -
 The 13th component is meant to be used on a page of your site, and allows you to display stories from a specific collection (category).
 
-Here’s a demo theme incorporating these story components: [http://playground.aesopstories.com](http://playground.aesopstories.com).
 
-Here’s a real story: [http://aesopstoryseri.es/the-quiet-day/](http://aesopstoryseri.es/the-quiet-day).
 
 Here’s documentation on Aesop Story Engine: [http://aesopstoryengine.com/help](http://aesopstoryengine.com/help).
 
@@ -168,6 +168,9 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.1 =
+* FIX Fixed a syntax error for Parallax component when the height is not set.
+
 = 1.9.0 =
 * NEW Hero Gallery Type has been added. Great thanks to peiche (peiche@gmail.com).
 * NEW FIXED background type has been added to Parallax Component.
