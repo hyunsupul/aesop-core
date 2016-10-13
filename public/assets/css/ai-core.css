@@ -277,6 +277,9 @@
 .aesop-quote-component.quote-left-right {
   overflow: hidden;
 }
+.aesop-collection-grid.aesop-collection-grid-1col .aesop-collection-item {
+  width: 100%;
+}
 .aesop-collection-grid.aesop-collection-grid-2col .aesop-collection-item {
   width: 50%;
 }

@@ -497,8 +497,13 @@ class AesopCoreGallery {
 	 */
 	public function aesop_hero_gallery( $gallery_id, $image_ids, $width ) {
 
-		$autoplay  = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ) ? sprintf( 'data-autoplay="%s"', get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ) ) : null;
-		$transition = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true ) ? get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true ) : 'crossfade';
+	    $trans = get_post_meta( $gallery_id, 'aesop_hero_gallery_transition', true );
+	    $trans_speed = get_post_meta( $gallery_id, 'aesop_hero_gallery_transition_speed', true );
+		// if hero option is not set use the thumb gallery option
+		$trans = $trans ? $trans : get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true );
+		$trans_speed = $trans_speed ? $trans_speed : get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true );
+		$autoplay  = $trans_speed ? sprintf( 'data-autoplay="%s"', $trans_speed, true ) : null;
+		$transition = $trans ? $trans : 'crossfade';
 		$content = get_post_meta( $gallery_id, 'aesop_hero_gallery_content', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_content', true) : '';
 		$height = get_post_meta( $gallery_id, 'aesop_hero_gallery_height', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_height', true) : '';
 

@@ -245,6 +245,11 @@ class AesopGalleryComponentAdmin {
 		//hero
 		$hero_content = get_post_meta( $id, 'aesop_hero_gallery_content', true );
 		$hero_width_to_height_ratio = get_post_meta( $id, 'aesop_hero_gallery_height', true );
+		$hero_trans  = get_post_meta( $id, 'aesop_hero_gallery_transition', true );
+		// if hero option is not set use the thumb gallery option
+		$hero_trans  = $hero_trans ? $hero_trans: $thumb_trans;
+		$hero_speed  = get_post_meta( $id, 'aesop_hero_gallery_transition_speed', true );
+		$hero_speed  = $hero_trans ? $hero_speed: $thumb_speed;
 
 ?>
 		<div class="ase-gallery-opts--global">
@@ -316,19 +321,19 @@ class AesopGalleryComponentAdmin {
 			<h3><?php _e( 'Hero Options', 'aesop-core' );?></h3>
 
 			<div class="ase-gallery-opts--single" style="padding-top:20px">
-				<label for="aesop_thumb_gallery_transition"><?php _e( 'Gallery Transition', 'aesop-core' );?></label>
+				<label for="aesop_hero_gallery_transition"><?php _e( 'Gallery Transition', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Adjust the transition effect for the Hero gallery. Default is fade.', 'aesop-core' );?></p>
-			   	<select name="aesop_thumb_gallery_transition">
-			      <option value="crossfade" <?php selected( $thumb_trans, 'fade' ); ?>><?php _e( 'Fade', 'aesop-core' );?></option>
-			      <option value="slide" <?php selected( $thumb_trans, 'slide' ); ?>><?php _e( 'Slide', 'aesop-core' );?></option>
-			      <option value="dissolve" <?php selected( $thumb_trans, 'dissolve' ); ?>><?php _e( 'Dissolve', 'aesop-core' );?></option>
+			   	<select name="aesop_hero_gallery_transition">
+			      <option value="crossfade" <?php selected( $hero_trans, 'fade' ); ?>><?php _e( 'Fade', 'aesop-core' );?></option>
+			      <option value="slide" <?php selected( $hero_trans, 'slide' ); ?>><?php _e( 'Slide', 'aesop-core' );?></option>
+			      <option value="dissolve" <?php selected( $hero_trans, 'dissolve' ); ?>><?php _e( 'Dissolve', 'aesop-core' );?></option>
 			    </select>
 			</div>
 			
 			<div class="ase-gallery-opts--single" style="padding-top:20px">
-				<label for="aesop_thumb_gallery_transition_speed"><?php _e( 'Gallery Transition Speed', 'aesop-core' );?></label>
+				<label for="aesop_hero_gallery_transition_speed"><?php _e( 'Gallery Transition Speed', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Activate slideshow by setting a speed for the transition. 5000 = 5 seconds.', 'aesop-core' );?></p>
-				<input type="text" name="aesop_thumb_gallery_transition_speed" value="<?php echo (int) $thumb_speed ? $thumb_speed : 300;?>">
+				<input type="text" name="aesop_hero_gallery_transition_speed" value="<?php echo (int) $hero_speed ? $hero_speed : 300;?>">
 			</div>
 			<div class="ase-gallery-opts--single" style="padding-top:20px">
 				<label for="aesop_hero_gallery_height"><?php _e( 'Main Gallery Height', 'aesop-core' );?></label>
@@ -392,6 +397,9 @@ class AesopGalleryComponentAdmin {
 		// hero
 		$hero_content = isset( $_POST['aesop_hero_gallery_content'] ) ? $_POST['aesop_hero_gallery_content'] : false;
 		$hero_width_to_height_ratio = isset( $_POST['aesop_hero_gallery_height'] ) ? $_POST['aesop_hero_gallery_height'] : false;
+        $hero_speed  = isset( $_POST['aesop_hero_gallery_transition_speed'] ) ? $_POST['aesop_hero_gallery_transition_speed'] : false;
+        $hero_trans  = isset( $_POST['aesop_hero_gallery_transition'] ) ? $_POST['aesop_hero_gallery_transition'] : false;
+	
 
 		// safe to proceed
 		delete_post_meta( $post_id, '_ase_gallery_images' );
@@ -421,6 +429,10 @@ class AesopGalleryComponentAdmin {
 		// hero width_to_height_ratio
 		update_post_meta( $post_id, 'aesop_hero_gallery_content', aesop_component_media_filter( $hero_content ) );
 		update_post_meta( $post_id, 'aesop_hero_gallery_height',  sanitize_text_field($hero_width_to_height_ratio) );
+        update_post_meta( $post_id, 'aesop_hero_gallery_transition_speed', absint( $thumb_speed ) );
+        update_post_meta( $post_id, 'aesop_hero_gallery_transition', sanitize_text_field( $hero_trans ) );
+	
+
 	}
 
 

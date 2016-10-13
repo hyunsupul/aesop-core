@@ -1,3 +1,6 @@
+.aesop-story-collection {
+  clear: both;
+}
 .aesop-story-collection .aesop-story-collection-title {
   text-align: center;
   background: #fff;
@@ -16,7 +19,8 @@
 .aesop-story-collection .aesop-collection-item {
   float: left;
   position: relative;
-  height: 200px;
+  height: 220px;
+  overflow: hidden;
 }
 .aesop-story-collection .aesop-collection-item .aesop-collection-item-link {
   display: table;
