@@ -103,5 +103,7 @@
   opacity: 0.65;
   filter: alpha(opacity=65);
   z-index: 1;
+  height: 70px;
+  line-height: 70px;
   color: white;
 }
