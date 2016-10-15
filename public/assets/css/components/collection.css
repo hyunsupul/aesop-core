@@ -4,7 +4,6 @@
 .aesop-story-collection .aesop-story-collection-title {
   text-align: center;
   background: #fff;
-  color: white;
   text-transform: uppercase;
   font-size: 1.75rem;
   line-height: 1.75rem;
@@ -98,4 +97,11 @@
 .aesop-story-collection .aesop-collection-splash .aesop-collection-item-inner .aesop-collection-entry-title {
   color: #333;
   text-shadow: none;
+}
+.aesop-story-collection .aesop-collection-load-more {
+  background: black;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  z-index: 1;
+  color: white;
 }

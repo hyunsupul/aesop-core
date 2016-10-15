@@ -1118,17 +1118,49 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'select',
 						'values'  => array(
 							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
 								'value' => 'on',
 								'name' => __( 'On', 'aesop-core' )
 							),
-							array(
-								'value' => 'off',
-								'name' => __( 'Off', 'aesop-core' )
-							)
 						),
 						'default'  => 'off',
 						'desc'   => __( 'Splash Mode', 'aesop-core' ),
 						'tip'  => __( 'Setting this to on will display only the actual category titles (without images).', 'aesop-core' )
+					),
+					'order'    => array(
+						'type'  => 'select',
+						'values'  => array(
+							array(
+								'value' => 'default',
+								'name' => __( 'Default', 'aesop-core' )
+							),
+							array(
+								'value' => 'reverse',
+								'name' => __( 'Reverse', 'aesop-core' )
+							),
+						),
+						'default'  => 'off',
+						'desc'   => __( 'Post Order', 'aesop-core' ),
+						'tip'  => __( 'Choose Default to show the newest post first.', 'aesop-core' )
+					),
+					'loadmore'    => array(
+						'type'  => 'select',
+						'values'  => array(
+							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
+							),
+						),
+						'default'  => 'off',
+						'desc'   => __( 'Load More', 'aesop-core' ),
+						'tip'  => __( 'Setting this to on will display Load More link to load more posts.', 'aesop-core' )
 					)
 				),
 				'desc'     => __( 'Show a collection of stories. Typically used on a page like the home page.', 'aesop-core' )

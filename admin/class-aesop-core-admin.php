@@ -49,6 +49,7 @@ class Aesop_Core_Admin {
 		require_once AI_CORE_DIR . 'admin/includes/notify.php';
 		require_once AI_CORE_DIR . 'admin/includes/components/component-map.php';
 		require_once AI_CORE_DIR . 'admin/includes/components/component-gallery.php';
+		require_once AI_CORE_DIR . 'admin/includes/components/component-collection.php';
 
 
 		/*

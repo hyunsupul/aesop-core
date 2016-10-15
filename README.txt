@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.6.1
-Stable tag: 1.9.2
+Stable tag: 1.9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -168,6 +168,11 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.3 =
+* NEW Collection Component has an option to add "Load More" using AJAX
+* NEW Collection item adds "aesop-has-image" class if the post has featured image. (An improvement for styling customization.)
+* NEW At the backend editor, Component graphics show caption or title for easier identification. This change improves the editing process.
+
 = 1.9.2 =
 * FIX Fixed setting conflicts between Thumbnail and Hero galleries.
 * FIX Fixed Collection Component grid style errors

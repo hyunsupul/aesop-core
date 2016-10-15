@@ -127,6 +127,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'public/assets/js/ai-core.min.js': [
+					    'public/assets/js/scrollreveal.js',
                         'public/assets/js/fit-vids.js',
                         'public/assets/js/swipebox.js',
                         'public/assets/js/waypoints.js',
