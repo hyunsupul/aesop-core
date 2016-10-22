@@ -141,7 +141,8 @@ module.exports = function (grunt) {
                         'public/assets/js/parallax.js',
                         'public/assets/js/photoset.js',
                         'public/assets/js/arrive-2.0.0.min.js',
-                        'public/assets/js/methods.js'
+                        'public/assets/js/methods.js',
+						'public/assets/js/scrollreveal.js'
                     ]
                 }
             }

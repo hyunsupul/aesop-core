@@ -454,7 +454,14 @@
 
 // new since 1.9.0: hero gallery
 .aesop-hero-gallery-wrapper {
-   position: relative;
+    position: relative;
+	// the following style keeps the images hidden until fotorama is done resizing them
+    .fotorama > * {
+	  visibility: hidden;
+	}
+	.fotorama > .fotorama__wrap {
+	  visibility: visible;
+	}
 }
 
 .aesop-hero-gallery-content {

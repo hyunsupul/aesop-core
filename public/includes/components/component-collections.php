@@ -103,14 +103,12 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 							'ignore_sticky' => true,
 							'paged' => 1
 						);
-						// get cached query
+						// do not use cache any more
 						//$query = wp_cache_get( 'aesop_collection_query_' . $atts['collection'] );
-
-						// if no cached query then cache the query
-						if ( false == $query ) {
-							$query = new wp_query( apply_filters( 'aesop_collection_query', $args ) );
-							wp_cache_set( 'aesop_collection_query_' . $atts['collection'] , $query );
-						}
+						
+						$query = new wp_query( apply_filters( 'aesop_collection_query', $args ) );
+						wp_cache_set( 'aesop_collection_query_' . $atts['collection'] , $query );
+						
 						
 						$maxpages = $query->max_num_pages;
 
@@ -153,17 +151,20 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 			    <?php 
 				if  ($atts['loadmore']=='on' && $atts['splash'] != 'on' && $maxpages>1) {
                 ?>			
-				<div class="aesop-collection-load-more" id="aesop-load-more-<?php echo $unique;?>"><span><?php echo __( 'Load More', 'aesop-core' );?></span></div>
+				<div class="aesop-collection-load-more" id="aesop-load-more-<?php echo $unique;?>"><span class="aesop-loadmore-text"><?php echo __( 'Load More', 'aesop-core' );?></span></div>
 				<script>
 				jQuery(document).ready(function($){
 					var pageindex = 2;
+					var loadMoreText = "<?php echo __( 'Load More', 'aesop-core' );?>";
+					var loadingText = "<?php echo __( 'Loading', 'aesop-core' );?>";
 				  	jQuery('#aesop-load-more-<?php echo $unique;?>').click(function(e){
 
 				  		e.preventDefault();
 
+						$(this).find(".aesop-loadmore-text").text(loadingText);
+						
 				  		var data = {
 				            action: 'aesop_get_more_posts',
-				            //security: '<?php echo $nonce;?>'
 							posts_per_page:'<?php echo $atts['limit']?>',
 							order : '<?php echo $order?>',
 							cat:  '<?php echo $atts['collection']?>',
@@ -171,17 +172,20 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 				        };
 						ajaxurl = '<?php echo admin_url( 'admin-ajax.php' );?>';
 
-					  	jQuery.post(ajaxurl, data, function(response) {
+					  	jQuery.post(ajaxurl, data).done(function(response) {
 					  		if( response ){
 								jQuery("#aesop-collection-<?php echo $unique;?>").append(response);
 								pageindex++;
 								if (pageindex > <?php echo $maxpages?>) {
 									jQuery("#aesop-load-more-<?php echo $unique;?>").remove();
+								} else {
+									$(this).find(".aesop-loadmore-text").text(loadMoreText);
 								}
 					  		} else {
 								jQuery("#aesop-load-more-<?php echo $unique;?>").remove();
 							}
-					    });
+					    })
+						.fail(function(xhr, status, error) {$(this).find(".aesop-loadmore-text").text("AJAX Error");});
 
 				    });
 				});
