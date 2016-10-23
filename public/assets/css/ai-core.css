@@ -283,6 +283,9 @@
 .aesop-collection-grid.aesop-collection-grid-1col .aesop-collection-item {
   width: 100%;
 }
+.aesop-collection-grid.aesop-collection-grid-1col .aesop-collection-item .aesop-collection-item-inner .aesop-collection-entry-title {
+  margin: auto;
+}
 .aesop-collection-grid.aesop-collection-grid-2col .aesop-collection-item {
   width: 50%;
 }
@@ -389,6 +392,12 @@
 }
 .aesop-hero-gallery-wrapper {
   position: relative;
+}
+.aesop-hero-gallery-wrapper .fotorama > * {
+  visibility: hidden;
+}
+.aesop-hero-gallery-wrapper .fotorama > .fotorama__wrap {
+  visibility: visible;
 }
 .aesop-hero-gallery-content {
   position: absolute;

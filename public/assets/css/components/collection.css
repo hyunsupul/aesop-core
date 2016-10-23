@@ -67,9 +67,9 @@
 }
 .aesop-story-collection .aesop-collection-item .aesop-collection-item-inner .aesop-collection-entry-title {
   font-weight: 800;
-  margin: 0 0 0.75rem;
   text-transform: uppercase;
   color: white;
+  margin: auto;
 }
 .aesop-story-collection .aesop-collection-item .aesop-collection-item-inner .aesop-collection-item-excerpt {
   font-size: 12px;
