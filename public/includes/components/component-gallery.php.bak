@@ -491,7 +491,7 @@ class AesopCoreGallery {
 	}
 
 	/**
-	 * Draws a hero gallery using fotorama
+	 * Draws a thumbnail gallery using fotorama
 	 *
 	 * @since    1.0.0
 	 */
@@ -502,8 +502,7 @@ class AesopCoreGallery {
 		// if hero option is not set use the thumb gallery option
 		$trans = $trans ? $trans : get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true );
 		$trans_speed = $trans_speed ? $trans_speed : get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true );
-		$trans_speed = $trans_speed ? $trans_speed : 300;
-		$autoplay  = sprintf( 'data-autoplay="%s"', $trans_speed, true );
+		$autoplay  = $trans_speed ? sprintf( 'data-autoplay="%s"', $trans_speed, true ) : null;
 		$transition = $trans ? $trans : 'crossfade';
 		$content = get_post_meta( $gallery_id, 'aesop_hero_gallery_content', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_content', true) : '';
 		$height = get_post_meta( $gallery_id, 'aesop_hero_gallery_height', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_height', true) : '';
@@ -537,11 +536,11 @@ class AesopCoreGallery {
 		foreach ( $image_ids as $image_id ):
 
 			$full    = wp_get_attachment_image_src( $image_id, $size, false );
-			$alt     = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
-			$caption  = get_post( $image_id )->post_excerpt;
-			 ?>
-			 <img src="<?php echo esc_url( $full[0] );?>" data-caption="<?php echo esc_attr( $caption );?>" alt="<?php echo esc_attr( $alt );?>">
-			 <?php
+		$alt     = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+		$caption  = get_post( $image_id )->post_excerpt;
+
+		?><img src="<?php echo esc_url( $full[0] );?>" data-caption="<?php echo esc_attr( $caption );?>" alt="<?php echo esc_attr( $alt );?>"><?php
+
 		endforeach;
 
 		?>

@@ -321,3 +321,18 @@ function aesop_gallery_component_data_atts( $postid = '' ) {
 
 	return $options;
 }
+
+/**
+ * Returns if the current component has revealfx set.
+ * This function can be used to override enabling/disabling of animation
+ * @since 1.9.3
+ */
+ if ( ! function_exists( 'aesop_revealfx_set' ) ) {
+	function aesop_revealfx_set($atts)
+	{
+		if (!empty($atts['revealfx']) && ($atts['revealfx']!='off')) {
+			return true;
+		}
+		return false;
+	}
+}

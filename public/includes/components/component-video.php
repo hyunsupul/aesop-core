@@ -27,7 +27,8 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			'vidwidth'  => '',
 			'vidheight' => '',
 			'poster_frame' =>'',
-			'force_fullwidth'=>'off'
+			'force_fullwidth'=>'off',
+			'revealfx'  => '',
 		);
 		$atts = apply_filters( 'aesop_video_defaults', shortcode_atts( $defaults, $atts ) );
 

@@ -19,7 +19,8 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 			'full'  	=> '',
 			'bgcolor'   => '',
 			'minheight' => '260px',
-			'force_fullwidth' => 'off'
+			'force_fullwidth' => 'off',
+			'revealfx'  => '',
 		);
 
 		$atts = apply_filters( 'aesop_chapter_defaults', shortcode_atts( $defaults, $atts ) );
