@@ -19,6 +19,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 			'captionposition' 	=> 'left',
 			'lightbox'    		=> 'off',
 			'force_fullwidth'   => 'off',
+			'overlay_content'   => '',
 			'revealfx'          => '',  
 		);
 
@@ -100,6 +101,9 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
 		</figure>
 		</div>
+		<div class="aesop-image-overlay-content">
+				<?php echo $atts['overlay_content']; ?>
+			</div>
 
 		<?php do_action( 'aesop_image_inside_bottom', $atts, $unique ); // action ?>
 

@@ -47,19 +47,19 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'select',
 						'values'  => array(
 							array(
+								'value' => 'center',
+								'name' => __( 'Center', 'aesop-core' ),
+							),
+							array(
 								'value' => 'left',
 								'name' => __( 'Left', 'aesop-core' ),
 							),
 							array(
 								'value' => 'right',
 								'name' => __( 'Right', 'aesop-core' ),
-							),
-							array(
-								'value' => 'center',
-								'name' => __( 'Center', 'aesop-core' ),
 							)
 						),
-						'default'  => 'left',
+						'default'  => 'center',
 						'desc'   => __( 'Image Alignment', 'aesop-core' ),
 						'tip'  => __( 'How should the image be aligned? If using a caption, the caption will automatically align with this option.', 'aesop-core' )
 					),
@@ -104,7 +104,13 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => 'left',
 						'desc'   => __( 'Caption Position', 'aesop-core' ),
 						'tip'  => __( 'Use this to override the alignment as inherited from the image.', 'aesop-core' )
-					)
+					),
+					'overlay_content'     => array(
+						'type'  => 'text_area',
+						'default'  => '',
+						'desc'   => __( 'Overlay Content', 'aesop-core' ),
+						'tip'  => __( 'Text or HTML content to be overlayed. You can use tags like H2, H3 etc.', 'aesop-core' )
+					),
 
 				),
 				'desc'     => __( 'Creates an image component with caption, alignment, and lightbox options.', 'aesop-core' )
@@ -522,13 +528,19 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'color',
 						'default'  => '#888888',
 						'desc'   => __( 'Background Color', 'aesop-core' ),
-						'tip'  => __( 'Select a color for the background. Used only if the Background Type is set to Solid Color', 'aesop-core' )
+						'tip'  => __( 'Select a color for the background. Used ONLY IF the Background Type is set to Solid Color', 'aesop-core' )
 					),
 					'minheight'    => array(
 						'type'  => 'text_small',
-						'default'  => '260px',
+						'default'  => '',
 						'desc'   => __( 'Minimum Height', 'aesop-core' ),
 						'tip'  => __( 'You can enter the minimum height in number of pixels like <code>300px</code>.', 'aesop-core' )
+					),
+					'overlay_content'     => array(
+						'type'  => 'text_area',
+						'default'  => '',
+						'desc'   => __( 'Overlay Content', 'aesop-core' ),
+						'tip'  => __( 'Text or HTML content to be displayed. You can use tags like H2, H3 etc. Important: If set, it will not show title and subtitle. The chapter menu will still use what you put in for Title.', 'aesop-core' )
 					),
 				),
 				'desc'     => __( 'Creates the scroll to point, as a chapter heading.', 'aesop-core' )
@@ -873,6 +885,12 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => '',
 						'desc'   => __( 'Caption', 'aesop-core' ),
 						'tip'  => __( 'Optionally display a caption below the video.', 'aesop-core' )
+					),
+					'overlay_content'     => array(
+						'type'  => 'text_area',
+						'default'  => '',
+						'desc'   => __( 'Overlay Content', 'aesop-core' ),
+						'tip'  => __( 'Text or HTML content to be overlayed. You can use tags like H2, H3 etc.', 'aesop-core' )
 					),
 					'hosted'   => array(
 						'type'  => 'media_upload',

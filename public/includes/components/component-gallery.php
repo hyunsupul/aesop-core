@@ -507,6 +507,7 @@ class AesopCoreGallery {
 		$transition = $trans ? $trans : 'crossfade';
 		$content = get_post_meta( $gallery_id, 'aesop_hero_gallery_content', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_content', true) : '';
 		$height = get_post_meta( $gallery_id, 'aesop_hero_gallery_height', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_height', true) : '';
+		$enable_nav = get_post_meta( $gallery_id, 'aesop_hero_gallery_enable_nav', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_enable_nav', true) : false;
 
 		// image size
 		$size    = apply_filters( 'aesop_thumb_gallery_size', 'full' );
@@ -524,13 +525,21 @@ class AesopCoreGallery {
 																			data-height="<?php echo esc_attr( $height );?>"
 																			<?php echo esc_attr( $autoplay );?>
 																			data-keyboard="false"
-																			data-nav=false
 																			data-allow-full-screen="false"
 																			data-click="false"
 																			data-fit="cover"
-																			data-captions="false"
+																			data-captions="true"
+																			data-stopautoplayontouch="false"
+																			<?php if ($enable_nav) {?>
+																			data-nav="dots"
+																			data-arrows="true"
+																			data-swipe="true"
+																			<?php }else {?>
+																			data-nav=false
 																			data-arrows="false"
 																			data-swipe="false"
+																			<?php }?>
+																			
 																			data-transitionduration="1500"
 																			><?php
 

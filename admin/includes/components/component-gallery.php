@@ -250,6 +250,7 @@ class AesopGalleryComponentAdmin {
 		$hero_trans  = $hero_trans ? $hero_trans: $thumb_trans;
 		$hero_speed  = get_post_meta( $id, 'aesop_hero_gallery_transition_speed', true );
 		$hero_speed  = $hero_trans ? $hero_speed: $thumb_speed;
+		$hero_enable_nav  = get_post_meta( $id, 'aesop_hero_gallery_enable_nav', true );
 
 ?>
 		<div class="ase-gallery-opts--global">
@@ -347,6 +348,10 @@ class AesopGalleryComponentAdmin {
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Content displayed within the Hero gallery. You can use HTML tags with classes and styles.', 'aesop-core' );?></p>
 				<textarea name="aesop_hero_gallery_content"><?php echo $hero_content; ?></textarea>
 			</div>
+			<div class="ase-gallery-opts--single">
+				<input type="checkbox" name="aesop_hero_gallery_enable_nav" <?php if ( $hero_enable_nav == true ) { ?>checked="checked"<?php } ?>>
+				<label for="aesop_hero_gallery_enable_nav"><?php _e( 'Enable Navigation Controls', 'aesop-core' );?></label>
+			</div>
 		</div>
 		<?php
 
@@ -399,6 +404,7 @@ class AesopGalleryComponentAdmin {
 		$hero_width_to_height_ratio = isset( $_POST['aesop_hero_gallery_height'] ) ? $_POST['aesop_hero_gallery_height'] : false;
         $hero_speed  = isset( $_POST['aesop_hero_gallery_transition_speed'] ) ? $_POST['aesop_hero_gallery_transition_speed'] : false;
         $hero_trans  = isset( $_POST['aesop_hero_gallery_transition'] ) ? $_POST['aesop_hero_gallery_transition'] : false;
+		$hero_enable_nav   = isset( $_POST['aesop_hero_gallery_enable_nav'] ) ? $_POST['aesop_hero_gallery_enable_nav'] : false;
 	
 
 		// safe to proceed
@@ -431,6 +437,7 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, 'aesop_hero_gallery_height',  sanitize_text_field($hero_width_to_height_ratio) );
         update_post_meta( $post_id, 'aesop_hero_gallery_transition_speed', absint( $thumb_speed ) );
         update_post_meta( $post_id, 'aesop_hero_gallery_transition', sanitize_text_field( $hero_trans ) );
+		update_post_meta( $post_id, 'aesop_hero_gallery_enable_nav', sanitize_text_field( $hero_enable_nav ) );
 	
 
 	}

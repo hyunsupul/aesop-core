@@ -1,12 +1,12 @@
 === Aesop Story Engine ===
 Contributors: nphaskins, etcio, michaelbeil, hyunster, peiche
-Author URI:  http://nickhaskins.com
+Author URI:  http://aesopstoryengine.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.6.1
-Stable tag: 1.9.3
+Stable tag: 1.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -168,6 +168,15 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.5 =
+* NEW Image, Video, Chapter components have new option : Overlay Content. You can use HTML tags, like the overlay content for Hero Gallery and Parallax.
+* NEW Hero Gallery has an option to add navigation controls.
+
+= 1.9.4 =
+* NEW Image, Quote, Chapter and Video components have new option : Reveal Effect (Animation)
+* FIX Collection Component style fixes. Also added "Loading" text
+* Update POT file updated
+ 
 = 1.9.3 =
 * NEW Collection Component has an option to add "Load More" using AJAX
 * NEW Collection item adds "aesop-has-image" class if the post has featured image. (An improvement for styling customization.)
