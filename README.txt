@@ -5,8 +5,8 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.6.1
-Stable tag: 1.9.5
+Tested up to: 4.7
+Stable tag: 1.9.6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,12 @@ Aesop Story Engine is a suite of open-sourced tools and components that empower 
 
 Utilizing these components, writers can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. 
 
-Check out the newest features of Aesop Story Engine (v 1.9)
+Check out the new features of Aesop Story Engine v 1.9.6
+
+[http://aesopstoryengine.com/releases/aesop-story-engine-1-9-6-new-features/](http://aesopstoryengine.com/releases/aesop-story-engine-1-9-6-new-features/)
+
+
+Check out the new features of Aesop Story Engine v 1.9
 
 [http://aesopstoryengine.com/updates/aesop-1-9-new-features/](http://aesopstoryengine.com/updates/aesop-1-9-new-features/)
 
@@ -168,6 +173,24 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.6.3 =
+* NEW Added Google API Key for the backend editing of Map Component. This key can be edited from Appearance->Customize->Aesop Story Engine menu
+
+= 1.9.6.2 =
+* FIX Fixed the editor issues when attributes include HTML
+* FIX Fixed the transition time value for Hero gallery not being saved
+* NEW Quote component can use HTML for texts
+* NEW Content box component now supports Reveal Animation
+
+= 1.9.6 =
+* NEW Gallery component (except Parallax) now support Reveal Animation.
+
+= 1.9.5.5 =
+* FIX disable parallax scrolling on mobile devices for compatibility
+
+= 1.9.5.1 =
+* FIX 1.9.5 had a shortcode interpretation bug. Fixed.
+
 = 1.9.5 =
 * NEW Image, Video, Chapter components have new option : Overlay Content. You can use HTML tags, like the overlay content for Hero Gallery and Parallax.
 * NEW Hero Gallery has an option to add navigation controls.

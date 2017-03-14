@@ -41,6 +41,10 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 				$floater_distance = 0;
 			}			
 		}
+		
+		if (wp_is_mobile()) {
+			$atts['parallaxbg'] = 'off';
+		}
 
 		// let this be used multiple times
 		static $instance = 0;

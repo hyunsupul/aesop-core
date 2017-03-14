@@ -11,7 +11,7 @@ class AesopStoryEngineOptions {
 
 		$wp_customize->add_section( 'aesop_story_engine', array(
 				'title'   => __( 'Aesop Story Engine', 'aesop-core' ),
-				'description' => __( 'Refer to the documentation located <a href="http://aesopstoryengine.com/help/map-component" target="_blank">here</a> for full option descriptions.', 'aesop-core' )
+				'description' => __( 'Refer to the documentation located <a href="http://aesopstoryengine.com/help/map-component" target="_blank">here</a> for option descriptions.', 'aesop-core' )
 			) );
 
 		// Enable Google Analytics
@@ -24,6 +24,19 @@ class AesopStoryEngineOptions {
 				'label'   => __( 'Mapbox Map ID', 'aesop-core' ),
 				'section'   => 'aesop_story_engine',
 				'settings'   => 'ase_mapbox_id',
+				'type'    => 'text'
+			) );
+			
+		$wp_customize->add_setting( 'ase_mapbox_apikey', array(
+				'default'   => 'AIzaSyAZpfTNQJ05fBo7Ai8qRYH4lzG72mkO83Y',
+				'type'    => 'option',
+				'sanitize_callback' => self::sanitize_text_field()
+			) );
+		$wp_customize->add_control( 'ase_mapbox_apikey', array(
+				'label'   => __( 'Google Map API Key.', 'aesop-core'),
+                'description' => __('Recommended: Visit <a href="https://developers.google.com/maps/documentation/javascript/get-api-key">here</a> to get your own API key.', 'aesop-core' ),
+				'section'   => 'aesop_story_engine',
+				'settings'   => 'ase_mapbox_apikey',
 				'type'    => 'text'
 			) );
 	}

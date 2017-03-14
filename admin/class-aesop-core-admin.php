@@ -64,6 +64,10 @@ class Aesop_Core_Admin {
 		add_filter( 'mce_external_plugins', array( $this, 'tinymce_plugin' ) );
 		add_action( 'after_wp_tiny_mce', array( $this, 'ase_after_wp_tiny_mce' ) );
 		add_filter( 'plugin_row_meta', array( $this, 'plugin_meta' ), 10, 2 );
+		
+        //trying to prevent extra ps an brs being inserted into shortcodes
+		remove_filter( 'the_content', 'wpautop' );
+        add_filter( 'the_content', 'wpautop' , 12);
 	}
 
 	/**

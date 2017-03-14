@@ -154,6 +154,10 @@ function aesop_component_media_filter( $input = '' ) {
 		    'class' => true,
 			'align' => true,
             'style' => true
+		)		,
+		'span'    => array(
+		    'class' => true,
+            'style' => true
 		),
 	);
 

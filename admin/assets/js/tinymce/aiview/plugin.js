@@ -141,7 +141,10 @@
 
                 var attr_key = attr2[0];
                 var attr_value = attr2[1];
-				attr_value = attr_value.replace('"<br />', '"').replace('<p>"', '"').replace('"</p>', '"');
+				attr_value = attr_value.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
+				   return '&#'+i.charCodeAt(0)+';';
+				});
+				attr_value = attr_value.replace('<p>', '').replace('</p>', '');
 
                 // trim first and last character to get rid of the quotes
                 attr_value = attr_value.slice(0, -1);
