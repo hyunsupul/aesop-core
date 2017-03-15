@@ -49,6 +49,7 @@ class Aesop_Core_Admin {
 		require_once AI_CORE_DIR . 'admin/includes/notify.php';
 		require_once AI_CORE_DIR . 'admin/includes/components/component-map.php';
 		require_once AI_CORE_DIR . 'admin/includes/components/component-gallery.php';
+		require_once AI_CORE_DIR . 'admin/includes/components/component-collection.php';
 
 
 		/*
@@ -248,7 +249,7 @@ class Aesop_Core_Admin {
 	private function messages() {
 
 		$message = array(
-			__( 'Product of <span><a href="http://aesopstoryengine.com">AESOP INTERACTIVE LLC</a></span>',
+			__( 'Product of <span><a href="http://aesopstoryengine.com">AESOP INTERACTIVE</a></span>',
 				'aesop-core' ),
 			__( '<span><a href="http://aesopstoryengine.com/donate">Support new features and bug fixes</a></span> of Aesop Story Engine',
 				'aesop-core' ),

@@ -1,11 +1,12 @@
 @import "base.less";
 
 .aesop-story-collection {
+    clear:both;
 
     .aesop-story-collection-title {
         text-align: center;
         background:@body-bg;
-        color:white;
+        //color:white;
         text-transform: uppercase;
         font-size:1.75rem;
         line-height: 1.75rem;
@@ -20,7 +21,8 @@
     .aesop-collection-item {
         float: left;
         position: relative;
-        height: 200px;
+        height: 220px;
+		overflow:hidden;
 
         .aesop-collection-item-link {
             display: table;
@@ -67,9 +69,9 @@
 
             .aesop-collection-entry-title {
                 font-weight: 800;
-                margin:0 0 0.75rem;
                 text-transform: uppercase;
                 color:white;
+				margin:auto;
             }
             .aesop-collection-item-excerpt {
                 font-size:@font-size-xsmall;
@@ -111,5 +113,15 @@
             }
         }
     }
+	
+	// load more
+	.aesop-collection-load-more {
+		background: black;
+        .opacity(.65);
+        z-index: 1;
+		height:70px;
+        line-height:70px;
+        color:white;
+	}
 
 }

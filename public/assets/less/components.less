@@ -305,6 +305,15 @@
 // collections
 
 .aesop-collection-grid {
+    overflow: auto;
+    &.aesop-collection-grid-1col .aesop-collection-item {
+        width:100%;
+		.aesop-collection-item-inner {
+			.aesop-collection-entry-title {
+				margin:auto;
+			}
+		}
+    }
     &.aesop-collection-grid-2col .aesop-collection-item {
         width:50%;
     }
@@ -317,6 +326,12 @@
     &.aesop-collection-grid-5col .aesop-collection-item {
         width:20%;
     }
+}
+
+.aesop-collection-load-more {
+    width:100%;
+	text-align: center;
+	cursor: pointer; cursor: hand;
 }
 
 
@@ -441,6 +456,33 @@
     }
 
 }
+
+// new since 1.9.0: hero gallery
+.aesop-hero-gallery-wrapper {
+    position: relative;
+	// the following style keeps the images hidden until fotorama is done resizing them
+    .fotorama > * {
+	  visibility: hidden;
+	}
+	.fotorama > .fotorama__wrap {
+	  visibility: visible;
+	}
+}
+
+.aesop-overlay-content,
+.aesop-video-overlay-content,
+.aesop-image-overlay-content,
+.aesop-chapter-overlay-content,
+.aesop-hero-gallery-content {
+  position: absolute;
+  top: 20px;
+  width:100%;
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+
+
 
 .aesop-map-component {
     // marker wrap

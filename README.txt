@@ -1,12 +1,12 @@
 === Aesop Story Engine ===
-Contributors: nphaskins, etcio, michaelbeil, hyunster
-Author URI:  http://nickhaskins.com
+Contributors: nphaskins, etcio, michaelbeil, hyunster, peiche
+Author URI:  http://aesopstoryengine.com
 Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.5.2
-Stable tag: 1.7.9
+Tested up to: 4.6.1
+Stable tag: 1.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,16 +14,18 @@ Suite of components that enables the creation of interactive longform stories in
 
 == Description ==
 
-Aesop Story Engine is a suite of open-sourced tools and components that empower developers and writers to build feature-rich, interactive, long-form storytelling themes for WordPress. At the heart of ASE are the suite of storytelling components, which are created on the fly while crafting posts within WordPress.
+Aesop Story Engine is a suite of open-sourced tools and components that empower developers and writers to build feature-rich, interactive, long-form storytelling themes for WordPress. At the heart of ASE are the suite of storytelling multimedia components, which are created on the fly while crafting posts within WordPress.
 
 [http://aesopstoryengine.com](http://aesopstoryengine.com)
 
 [youtube http://www.youtube.com/watch?v=84BFGxkHby0]
 
-**Try Aesop for Free** - [http://tryaesop.com](http://tryaesop.com)
 
-Utilizing these components, writers can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. Here’s a demo theme incorporating these story components.
-[http://playground.aesopstories.com](http://playground.aesopstories.com)
+Utilizing these components, writers can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. 
+
+Check out the newest features of Aesop Story Engine (v 1.9)
+
+[http://aesopstoryengine.com/updates/aesop-1-9-new-features/](http://aesopstoryengine.com/updates/aesop-1-9-new-features/)
 
 **Audio** -
 Display an audio player with support for MP3 that can be optionally hidden. This is great for showcasing audio interviews.
@@ -64,9 +66,7 @@ This component allows you to upload a PDF or image, that is shown to the user on
 **Collection** -
 The 13th component is meant to be used on a page of your site, and allows you to display stories from a specific collection (category).
 
-Here’s a demo theme incorporating these story components: [http://playground.aesopstories.com](http://playground.aesopstories.com).
 
-Here’s a real story: [http://aesopstoryseri.es/the-quiet-day/](http://aesopstoryseri.es/the-quiet-day).
 
 Here’s documentation on Aesop Story Engine: [http://aesopstoryengine.com/help](http://aesopstoryengine.com/help).
 
@@ -168,6 +168,43 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.5 =
+* NEW Image, Video, Chapter components have new option : Overlay Content. You can use HTML tags, like the overlay content for Hero Gallery and Parallax.
+* NEW Hero Gallery has an option to add navigation controls.
+
+= 1.9.4 =
+* NEW Image, Quote, Chapter and Video components have new option : Reveal Effect (Animation)
+* FIX Collection Component style fixes. Also added "Loading" text
+* Update POT file updated
+ 
+= 1.9.3 =
+* NEW Collection Component has an option to add "Load More" using AJAX
+* NEW Collection item adds "aesop-has-image" class if the post has featured image. (An improvement for styling customization.)
+* NEW At the backend editor, Component graphics show caption or title for easier identification. This change improves the editing process.
+
+= 1.9.2 =
+* FIX Fixed setting conflicts between Thumbnail and Hero galleries.
+* FIX Fixed Collection Component grid style errors
+
+= 1.9.1 =
+* FIX Fixed a syntax error for Parallax component when the height is not set.
+
+= 1.9.0 =
+* NEW Hero Gallery Type has been added. Great thanks to peiche (peiche@gmail.com).
+* NEW FIXED background type has been added to Parallax Component.
+* NEW Parallax Component has been overhauled and fixed many issues.
+* Update Many default options were changed to be more intuitive.
+* Update Documentation changes.
+
+
+= 1.7.11 =
+* FIX fixed the alignment option in Parallax component. Now center and right alignments work.
+* FIX If square brackets are put in as parameters, they get converted to html codes.
+* FIX Quote component checks the scroll direction to see if it makes sense.
+* Update Documentation changes.
+
+= 1.7.10 =
+* FIX fixed the bug where image credits can appear twice
 
 = 1.7.9 =
 * FIX Fixed the image credit for the Image Component was not visible when the caption was not set. Fixed.

@@ -50,6 +50,7 @@ class Aesop_Core {
 		require_once AI_CORE_DIR.'public/includes/browserclasses.php';
 		require_once AI_CORE_DIR.'public/includes/imgsizes.php';
 		require_once AI_CORE_DIR.'public/includes/theme-helpers.php';
+		require_once AI_CORE_DIR.'public/includes/reveal-anim.php';
 
 		// load optoins
 		require_once AI_CORE_DIR.'public/includes/options.php';

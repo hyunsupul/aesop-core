@@ -14,7 +14,9 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 			'title'   		=> '',
 			'columns'   	=> 2,
 			'limit'   		=> -1,
-			'splash'  		=> ''
+			'splash'  		=> '',
+			'loadmore'      => 'off',
+			'order'         => 'default' 
 		);
 		$atts = apply_filters( 'aesop_collection_defaults', shortcode_atts( $defaults, $atts ) );
 
@@ -93,33 +95,35 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 						} else {
 
 						// query args
+						$order =  $atts['order']=='default' ? 'DESC':'ASC'; 
 						$args = array(
+						    'orderby' => array( 'date'  => $order ),
 							'posts_per_page' => $atts['limit'],
 							'cat'    => $atts['collection'],
-							'ignore_sticky' => true
+							'ignore_sticky' => true,
+							'paged' => 1
 						);
-
-						// get cached query
-						$query = wp_cache_get( 'aesop_collection_query_' . $atts['collection'] );
-
-						// if no cached query then cache the query
-						if ( false == $query ) {
-							$query = new wp_query( apply_filters( 'aesop_collection_query', $args ) );
-							wp_cache_set( 'aesop_collection_query_' . $atts['collection'] , $query );
-						}
+						// do not use cache any more
+						//$query = wp_cache_get( 'aesop_collection_query_' . $atts['collection'] );
+						
+						$query = new wp_query( apply_filters( 'aesop_collection_query', $args ) );
+						wp_cache_set( 'aesop_collection_query_' . $atts['collection'] , $query );
+						
+						
+						$maxpages = $query->max_num_pages;
 
 						// loop through the stories
 						if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 
-							$coverimg   = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'large' );
+						$coverimg   = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'large' );
 
-						?><div class="aesop-collection-item">
+						?><div class="aesop-collection-item <?php if ($coverimg) {echo "aesop-has-image";} ?>">
 													<?php do_action( 'aesop_collection_inside_item_top', $atts, $unique ); // action ?>
 													<a class="aesop-fader aesop-collection-item-link" href="<?php the_permalink();?>">
 														<div class="aesop-collection-item-inner">
 															<h2 class="aesop-collection-entry-title" itemprop="title"><?php the_title();?></h2>
 															<p class="aesop-collection-meta"><?php printf( __( 'Written by %s', 'aesop-core' ), apply_filters( 'aesop_collection_author', get_the_author(), get_the_ID() ) ); ?></p>
-															<div class="aesop-collection-item-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 22, '...' );?></div>
+															<div class="aesop-collection-item-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 16, '...' );?></div>
 														</div>
 														<div class="aesop-collection-item-img" style="background-image:url(<?php echo $coverimg[0];?>);background-repeat:no-repeat;background-size:cover;"></div>
 													</a>
@@ -128,6 +132,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 												<?php
 
 						endwhile;endif;
+						
 						wp_reset_postdata();
 
 					}//end if
@@ -143,8 +148,52 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 
 ?>
 					</div>
-				<?php
+			    <?php 
+				if  ($atts['loadmore']=='on' && $atts['splash'] != 'on' && $maxpages>1) {
+                ?>			
+				<div class="aesop-collection-load-more" id="aesop-load-more-<?php echo $unique;?>"><span class="aesop-loadmore-text"><?php echo __( 'Load More', 'aesop-core' );?></span></div>
+				<script>
+				jQuery(document).ready(function($){
+					var pageindex = 2;
+					var loadMoreText = "<?php echo __( 'Load More', 'aesop-core' );?>";
+					var loadingText = "<?php echo __( 'Loading', 'aesop-core' );?>";
+				  	jQuery('#aesop-load-more-<?php echo $unique;?>').click(function(e){
 
+				  		e.preventDefault();
+
+						$(this).find(".aesop-loadmore-text").text(loadingText);
+						
+				  		var data = {
+				            action: 'aesop_get_more_posts',
+							posts_per_page:'<?php echo $atts['limit']?>',
+							order : '<?php echo $order?>',
+							cat:  '<?php echo $atts['collection']?>',
+							page: pageindex,
+				        };
+						ajaxurl = '<?php echo admin_url( 'admin-ajax.php' );?>';
+
+					  	jQuery.post(ajaxurl, data).done(function(response) {
+					  		if( response ){
+								jQuery("#aesop-collection-<?php echo $unique;?>").append(response);
+								pageindex++;
+								if (pageindex > <?php echo $maxpages?>) {
+									jQuery("#aesop-load-more-<?php echo $unique;?>").remove();
+								} else {
+									$(this).find(".aesop-loadmore-text").text(loadMoreText);
+								}
+					  		} else {
+								jQuery("#aesop-load-more-<?php echo $unique;?>").remove();
+							}
+					    })
+						.fail(function(xhr, status, error) {$(this).find(".aesop-loadmore-text").text("AJAX Error");});
+
+				    });
+				});
+			    </script>
+				<?php
+				}
+
+				
 		do_action( 'aesop_collection_inside_bottom', $atts, $unique ); // action ?>
 
 			</div>

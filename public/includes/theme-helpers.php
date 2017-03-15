@@ -101,6 +101,8 @@ function aesop_component_media_filter( $input = '' ) {
 	// setup our array of allowed content to pass
 	$allowed_html = array(
 		'a'    => array(
+		    'class' => true,
+            'style' => true,
 			'href'   => array(),
 			'title'  => array(),
 			'rel'  => array(),
@@ -108,6 +110,8 @@ function aesop_component_media_filter( $input = '' ) {
 			'name'   => array()
 		),
 		'img'   => array(
+		    'class' => true,
+            'style' => true,
 			'src'   => array(),
 			'alt'  => array(),
 			'title'  => array()
@@ -116,20 +120,40 @@ function aesop_component_media_filter( $input = '' ) {
 		'br'    => array(),
 		'em'    => array(),
 		'strong'   => array(),
+		'h1'    => array(
+			'align' => true,
+			'class' => true,
+			'style' => true
+		),
 		'h2'    => array(
 			'align' => true,
+			'class' => true,
+			'style' => true
 		),
 		'h3'    => array(
+		    'class' => true,
 			'align' => true,
+            'style' => true
 		),
 		'h4'    => array(
+		    'class' => true,
 			'align' => true,
+            'style' => true
 		),
 		'h5'    => array(
+		    'class' => true,
 			'align' => true,
+            'style' => true
 		),
 		'h6'    => array(
+		    'class' => true,
 			'align' => true,
+            'style' => true
+		),
+		'div'    => array(
+		    'class' => true,
+			'align' => true,
+            'style' => true
 		),
 	);
 
@@ -268,6 +292,10 @@ function aesop_gallery_component_data_atts( $postid = '' ) {
 	$photoset_layout = get_post_meta( $postid, 'aesop_photoset_gallery_layout', true );
 	$photoset_lb   = get_post_meta( $postid, 'aesop_photoset_gallery_lightbox', true );
 
+	// hero
+	$hero_content   = get_post_meta( $postid, 'aesop_hero_gallery_content', true );
+
+	
 	// get the meta and store into an array
 	$meta = array(
 		'id'   => $postid,
@@ -279,7 +307,8 @@ function aesop_gallery_component_data_atts( $postid = '' ) {
 		'speed'   => $thumb_speed,
 		'thumbhide' => $thumb_hide,
 		'pslayout'  => (int) trim( $photoset_layout ),
-		'pslightbox' => sanitize_text_field( trim( $photoset_lb ) )
+		'pslightbox' => sanitize_text_field( trim( $photoset_lb ) ),
+		'content' => sanitize_text_field( trim( $hero_content ) ),
 	);
 
 	// map the meta to att values
@@ -291,4 +320,19 @@ function aesop_gallery_component_data_atts( $postid = '' ) {
 	}
 
 	return $options;
+}
+
+/**
+ * Returns if the current component has revealfx set.
+ * This function can be used to override enabling/disabling of animation
+ * @since 1.9.3
+ */
+ if ( ! function_exists( 'aesop_revealfx_set' ) ) {
+	function aesop_revealfx_set($atts)
+	{
+		if (!empty($atts['revealfx']) && ($atts['revealfx']!='off')) {
+			return true;
+		}
+		return false;
+	}
 }

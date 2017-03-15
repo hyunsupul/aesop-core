@@ -21,7 +21,8 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 			'direction' => '',
 			'quote'  	=> __( 'People are made of stories, not atoms.', 'aesop-core' ),
 			'cite'  	=> '',
-			'type'  	=> 'block'
+			'type'  	=> 'block',
+			'revealfx'  => ''
 
 		);
 		$atts = apply_filters( 'aesop_quote_defaults', shortcode_atts( $defaults, $atts ) );
@@ -60,7 +61,9 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 		
 
 		// set styles
-		$style = $bgcolor || $fgcolor || $atts['height'] || $atts['width'] ? sprintf( 'style="%s%s%sheight:%s;width:%s;"', esc_attr( $bgcolor ), $bgimg, $fgcolor, esc_attr( $atts['height'] ), esc_attr( $atts['width'] ) ) : false;
+		// hide the component initially if revealfx is set
+		$visibility =  aesop_revealfx_set($atts) ? 'visibility:hidden;': false;
+		$style = $bgcolor || $fgcolor || $atts['height'] || $atts['width'] || $visibility? sprintf( 'style="%s%s%sheight:%s;width:%s;%s"', esc_attr( $bgcolor ), $bgimg, $fgcolor, esc_attr( $atts['height'] ), esc_attr( $atts['width'] ), $visibility ) : false;
 
 		$isparallax = 'on' == $atts['parallax'] ? 'quote-is-parallax' : false;
 		$lrclass = 'left' == $atts['direction'] || 'right' == $atts['direction'] ? 'quote-left-right' : false;
@@ -89,6 +92,14 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 			foreach ( $css_class_array as $class ) {
 				$css_classes .= ' '.$class;
 			}
+		}
+		// lets make sure scroll direction makes sense
+		if ($isparallax) {
+		   if ($atts['align']=="left") {
+			   $atts['direction'] = 'right';
+		   } else if ($atts['align']=="right"){
+			   $atts['direction'] = 'left';
+		   }
 		}
 
 		// core/custom classes

@@ -24,10 +24,12 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			'viewstart' => 'off',
 			'viewend'   => 'off',
 			'caption'  	=> '',
+			'overlay_content'   => '',
 			'vidwidth'  => '',
 			'vidheight' => '',
 			'poster_frame' =>'',
-			'force_fullwidth'=>'off'
+			'force_fullwidth'=>'off',
+			'revealfx'  => '',
 		);
 		$atts = apply_filters( 'aesop_video_defaults', shortcode_atts( $defaults, $atts ) );
 
@@ -68,7 +70,9 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 
 		do_action( 'aesop_video_before', $atts, $unique ); // action
 ?>
-	    <div id="aesop-video-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'video', $unique, $atts );?> class="aesop-component aesop-video-component aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $classes );?> <?php echo sanitize_html_class( $controlstatus );?> <?php echo sanitize_html_class( $contentwidth );?> <?php echo sanitize_html_class( $vineStagramClass );?> <?php echo sanitize_html_class( $vineStagramAlign );?>">
+	    <div id="aesop-video-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'video', $unique, $atts );?> class="aesop-component aesop-video-component aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $classes );?> <?php echo sanitize_html_class( $controlstatus );?> <?php echo sanitize_html_class( $contentwidth );?> <?php echo sanitize_html_class( $vineStagramClass );?> <?php echo sanitize_html_class( $vineStagramAlign );?>"
+		    <?php echo aesop_revealfx_set($atts) ? 'style="visibility:hidden;"': null ?>
+		>
 
 	    	<?php do_action( 'aesop_video_inside_top', $atts, $unique ); // action ?>
 
@@ -172,6 +176,9 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		}
 ?>
 		    </div>
+			<div class="aesop-video-overlay-content">
+				<?php echo $atts['overlay_content']; ?>
+			</div>
 
 	   	 	<?php echo $caption;
 

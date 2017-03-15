@@ -19,8 +19,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 			'captionposition' 	=> 'left',
 			'lightbox'    		=> 'off',
 			'force_fullwidth'   => 'off',
-			'overlay_content'   => '',
-			'revealfx'          => '',  
+			'revealfx'          => '',
 		);
 
 		$atts = apply_filters( 'aesop_image_defaults', shortcode_atts( $defaults, $atts ) );
@@ -48,11 +47,8 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 		ob_start();
 
 		do_action( 'aesop_image_before', $atts, $unique ); // action
-		// hide the component initially if revealfx is set
 ?>
-		<div id="aesop-image-component-<?php echo esc_html( $unique );?>" <?php echo aesop_component_data_atts( 'image', $unique, $atts );?> class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes )?>" 
-		        <?php echo aesop_revealfx_set($atts) ? 'style="visibility:hidden;"': null ?>
-		 >
+		<div id="aesop-image-component-<?php echo esc_html( $unique );?>" <?php echo aesop_component_data_atts( 'image', $unique, $atts );?> class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes );?>" >
 
 			<?php do_action( 'aesop_image_inside_top', $atts, $unique ); // action ?>
 
@@ -101,9 +97,6 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
 		</figure>
 		</div>
-		<div class="aesop-image-overlay-content">
-				<?php echo $atts['overlay_content']; ?>
-			</div>
 
 		<?php do_action( 'aesop_image_inside_bottom', $atts, $unique ); // action ?>
 

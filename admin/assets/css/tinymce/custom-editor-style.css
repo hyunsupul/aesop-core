@@ -19,6 +19,7 @@
 
 .aesop-component-bar{
 	font-size: 14px;
+	line-height:120%;
 	text-transform: uppercase;
 	display: block;
 	padding: 10px 15px;

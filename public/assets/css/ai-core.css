@@ -277,6 +277,15 @@
 .aesop-quote-component.quote-left-right {
   overflow: hidden;
 }
+.aesop-collection-grid {
+  overflow: auto;
+}
+.aesop-collection-grid.aesop-collection-grid-1col .aesop-collection-item {
+  width: 100%;
+}
+.aesop-collection-grid.aesop-collection-grid-1col .aesop-collection-item .aesop-collection-item-inner .aesop-collection-entry-title {
+  margin: auto;
+}
 .aesop-collection-grid.aesop-collection-grid-2col .aesop-collection-item {
   width: 50%;
 }
@@ -288,6 +297,12 @@
 }
 .aesop-collection-grid.aesop-collection-grid-5col .aesop-collection-item {
   width: 20%;
+}
+.aesop-collection-load-more {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  cursor: hand;
 }
 .aesop-article-chapter-wrap {
   height: auto;
@@ -374,6 +389,27 @@
   padding: 5px 8px;
   font-size: 14px;
   line-height: 18px;
+}
+.aesop-hero-gallery-wrapper {
+  position: relative;
+}
+.aesop-hero-gallery-wrapper .fotorama > * {
+  visibility: hidden;
+}
+.aesop-hero-gallery-wrapper .fotorama > .fotorama__wrap {
+  visibility: visible;
+}
+.aesop-overlay-content,
+.aesop-video-overlay-content,
+.aesop-image-overlay-content,
+.aesop-chapter-overlay-content,
+.aesop-hero-gallery-content {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  color: #fff;
 }
 .aesop-map-component .leaflet-popup-content-wrapper,
 .aesop-map-component .leaflet-popup-tip {
@@ -1411,10 +1447,6 @@ html.swipebox {
   bottom: 20px;
   right: 20px;
   text-align: right;
-}
-.aesop-parallax-sc-caption-wrap.bottom-left {
-  bottom: 20px;
-  left: 20px;
 }
 .aesop-stacked-gallery-wrap.low-index {
   z-index: -1;

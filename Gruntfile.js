@@ -127,6 +127,7 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'public/assets/js/ai-core.min.js': [
+					    'public/assets/js/scrollreveal.js',
                         'public/assets/js/fit-vids.js',
                         'public/assets/js/swipebox.js',
                         'public/assets/js/waypoints.js',
@@ -140,7 +141,8 @@ module.exports = function (grunt) {
                         'public/assets/js/parallax.js',
                         'public/assets/js/photoset.js',
                         'public/assets/js/arrive-2.0.0.min.js',
-                        'public/assets/js/methods.js'
+                        'public/assets/js/methods.js',
+						'public/assets/js/scrollreveal.js'
                     ]
                 }
             }

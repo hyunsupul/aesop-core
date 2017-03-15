@@ -4,6 +4,7 @@ jQuery(document).ready(function($){
 		if ( 'grid' == value ) {
 			$('.ase-gallery-opts--thumb').fadeOut();
 			$('.ase-gallery-opts--photoset').fadeOut();
+			$('.ase-gallery-opts--hero').fadeOut();
 			$('.ase-gallery-opts--grid').fadeIn();
 		} else {
 			$('.ase-gallery-opts--grid').fadeOut();
@@ -12,6 +13,7 @@ jQuery(document).ready(function($){
 		if ( 'thumbnail' == value ) {
 			$('.ase-gallery-opts--grid').fadeOut();
 			$('.ase-gallery-opts--photoset').fadeOut();
+			$('.ase-gallery-opts--hero').fadeOut();
 			$('.ase-gallery-opts--thumb').fadeIn();
 		} else {
 			$('.ase-gallery-opts--thumb').fadeOut();
@@ -20,9 +22,19 @@ jQuery(document).ready(function($){
 		if ( 'photoset' == value ) {
 			$('.ase-gallery-opts--grid').fadeOut();
 			$('.ase-gallery-opts--thumb').fadeOut();
+			$('.ase-gallery-opts--hero').fadeOut();
 			$('.ase-gallery-opts--photoset').fadeIn();
 		} else {
 			$('.ase-gallery-opts--photoset').fadeOut();
+		}
+		
+		if ( 'hero' == value ) {
+			$('.ase-gallery-opts--grid').fadeOut();
+			$('.ase-gallery-opts--thumb').fadeOut();
+			$('.ase-gallery-opts--photoset').fadeOut();
+			$('.ase-gallery-opts--hero').fadeIn();
+		} else {
+			$('.ase-gallery-opts--hero').fadeOut();
 		}
 	}
 
