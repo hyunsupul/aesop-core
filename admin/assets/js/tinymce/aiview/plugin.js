@@ -101,6 +101,23 @@
                 return '<p>' + sc + '</p>';
             }
         }
+		
+		function SpecialCharDecode(s)
+		{
+			var tagsToReplace = {
+				'&lt;':'<' ,
+				'&gt;': '>',
+				'&#91;': '[',
+				'&#93;': ']',
+				'&#34;': '"'
+			};
+			
+			return  s.replace(/&lt;|&gt;|&#91;|&#93;|&#34;/g, function(tag) {
+				return tagsToReplace[tag] || tag;
+			});
+		   //return s.replace(/\[/g, "&#91;").replace(/\]/g, "&#93;").replace(/\"/g, "'");
+		   //return s.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {					   return '&#'+i.charCodeAt(0)+';';					});
+		}
 
         // parse the shortcode and turn it into an array
         function parse(sc) {
@@ -113,7 +130,7 @@
             var parse = re_full.exec(sc);
 
             // what if it's short?
-            if (!parse) {
+            if (!parse) {[]
                 parse = re_short.exec(sc);
                 // what if it's not nothin'
                 if (!parse) {
@@ -141,11 +158,22 @@
 
                 var attr_key = attr2[0];
                 var attr_value = attr2[1];
-				attr_value = attr_value.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
-				   return '&#'+i.charCodeAt(0)+';';
-				});
+			
+				
+				if (attr_key != "floatermedia" && attr_key != "overlay_content") {				
+				    // if it's floatermedia, don't sanitize html tags
+					/*attr_value = attr_value.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
+					   return '&#'+i.charCodeAt(0)+';';
+					});*/
+					attr_value = SpecialCharDecode(attr_value);
+				} else {
+					// just santize brackets
+					attr_value = attr_value.replace(/\[/g, "&#91;").replace(/\]/g, "&#93;");
+				}
+				
 				attr_value = attr_value.replace('<p>', '').replace('</p>', '');
 
+				
                 // trim first and last character to get rid of the quotes
                 attr_value = attr_value.slice(0, -1);
                 ai_map[attr_key] = attr_value.substring(1);

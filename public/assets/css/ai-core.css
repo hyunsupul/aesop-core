@@ -531,6 +531,15 @@
 .aesop-gallery-component {
   z-index: 0;
 }
+.aesop-gallery-component .fotorama__dot {
+  width: 8px;
+  height: 8px;
+}
+.aesop-gallery-component .fotorama__nav__frame.fotorama__active .fotorama__dot {
+  width: 0;
+  height: 0;
+  border-width: 5px;
+}
 .aesop-grid-gallery {
   position: relative;
 }

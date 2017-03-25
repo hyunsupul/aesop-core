@@ -342,6 +342,7 @@ class AesopGalleryComponentAdmin {
 			<div class="ase-gallery-opts--single" style="padding-top:20px">
 				<label for="aesop_hero_gallery_height"><?php _e( 'Main Gallery Height', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Specify this if you want to control the height of the gallery. Acceptable values include 500px, 50%, 100% etc.', 'aesop-core' );?></p>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'If you enter a ratio, such as 800/600, the gallery would appear with a constant width/height ratio. This is useful if you want the galery to be responsive on mobile devices on portrait modes.', 'aesop-core' );?></p>
 				<input type="text" name="aesop_hero_gallery_height" value="<?php echo $hero_width_to_height_ratio;?>">
 			</div>
 			

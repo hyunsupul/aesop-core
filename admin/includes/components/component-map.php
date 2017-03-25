@@ -37,7 +37,7 @@ class AesopMapComponentAdmin {
 
 		if ( $hook == 'post.php' || $hook == 'post-new.php' ) {
 
-		    $goog_apikey = get_option( 'ase_mapbox_id' );
+		    $goog_apikey = get_option( 'ase_mapbox_key' );
 			// default api key
 			$goog_apikey = $goog_apikey ? $goog_apikey : "AIzaSyAZpfTNQJ05fBo7Ai8qRYH4lzG72mkO83Y";
 			wp_enqueue_script( 'google-maps', '//maps.googleapis.com/maps/api/js?libraries=places&sensor=false&key='.$goog_apikey );

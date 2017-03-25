@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.7
-Stable tag: 1.9.6.3
+Stable tag: 1.9.6.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -173,6 +173,17 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.6.6 =
+* FIX When editing paramters containing HTML tags, the text should not be sanitized.
+
+= 1.9.6.5 =
+* NEW Added an option to Hero Gallery to preserve width/height ratio
+* NEW Added an option to Parallax to preserve width/height ratio
+
+
+= 1.9.6.4 =
+* FIX incorrect loading of the Google api key option
+
 = 1.9.6.3 =
 * NEW Added Google API Key for the backend editing of Map Component. This key can be edited from Appearance->Customize->Aesop Story Engine menu
 

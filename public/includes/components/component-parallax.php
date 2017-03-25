@@ -73,6 +73,10 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 		ob_start();
 
 		do_action( 'aesop_parallax_before', $atts, $unique ); // action
+		
+		//$imgsize = getimagesize();
+		list($originalWidth, $originalHeight) = getimagesize($atts['img']);
+        $ratio = $originalWidth / $originalHeight;
 
 		?><div id="aesop-parallax-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'parallax', $unique, $atts );?> class="aesop-component aesop-parallax-component <?php echo sanitize_html_class( $classes );?>"><?php
 
