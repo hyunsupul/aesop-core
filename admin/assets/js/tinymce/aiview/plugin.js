@@ -130,7 +130,7 @@
             var parse = re_full.exec(sc);
 
             // what if it's short?
-            if (!parse) {[]
+            if (!parse) {
                 parse = re_short.exec(sc);
                 // what if it's not nothin'
                 if (!parse) {

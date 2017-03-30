@@ -74,9 +74,6 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 		do_action( 'aesop_parallax_before', $atts, $unique ); // action
 		
-		//$imgsize = getimagesize();
-		list($originalWidth, $originalHeight) = getimagesize($atts['img']);
-        $ratio = $originalWidth / $originalHeight;
 
 		?><div id="aesop-parallax-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'parallax', $unique, $atts );?> class="aesop-component aesop-parallax-component <?php echo sanitize_html_class( $classes );?>"><?php
 
@@ -85,10 +82,12 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 			<script>
 				jQuery(document).ready(function($){
 
-				    <?php if (empty($atts['height'])) {?>
+				    <?php /*if (empty($atts['height']))*/ {?>
 					var img 	  = $('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-img')
-					, 	setHeight = function() {
+					, 	
+					setHeight = function() {
 
+					        <?php if (empty($atts['height'])) {?> /* if height is not explicitly defined */
 							img.parent().imagesLoaded( function() {
 
 								var imgHeight 		= img.height()
@@ -109,6 +108,13 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 								<?php } ?>
 							});
+							<?php }
+                            /* the following code fixes extra vertical space after the image */
+                            ?>
+							if ($('#aesop-parallax-component-<?php echo esc_attr( $unique );?>').height() > img.height()) {
+								$('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?>').css('height',img.height());
+								$('#aesop-parallax-component-<?php echo esc_attr( $unique );?>').css('height',img.height());
+							}
 
 						}
 

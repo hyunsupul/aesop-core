@@ -5,8 +5,8 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.7
-Stable tag: 1.9.6.6
+Tested up to: 4.7.3
+Stable tag: 1.9.6.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -173,6 +173,10 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.6.7 =
+* Video Component now supports Autoplay, Loop, and Controls Off options for Youtube Videos
+* Some Spanish translations added.
+
 = 1.9.6.6 =
 * FIX When editing paramters containing HTML tags, the text should not be sanitized.
 

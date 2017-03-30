@@ -321,8 +321,14 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 					'width'   => array(
 						'type'  => 'text_small',
 						'default'  => '100%',
-						'desc'   => __( 'Width of Component', 'aesop-core' ),
+						'desc'   => __( 'Width of Content', 'aesop-core' ),
 						'tip'  => __( 'You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.', 'aesop-core' )
+					),
+					'component_width'   => array(
+						'type'  => 'text_small',
+						'default'  => '100%',
+						'desc'   => __( 'Width of Component', 'aesop-core' ),
+						'tip'  => __( 'You can enter the size as <code>40%</code> or <code>500px</code>.', 'aesop-core' )
 					),
 					'height'   => array(
 						'type'  => 'text_small',
@@ -933,7 +939,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							)
 						),
 						'default'  => 'on',
-						'desc'   => __( 'Video Loop (only if using <em>self</em> as video source)', 'aesop-core' ),
+						'desc'   => __( 'Video Loop (only if using <em>self</em> or YouTube as video source)', 'aesop-core' ),
 						'tip'  => __( 'Enable the video to loop.', 'aesop-core' )
 					),
 					'autoplay'    => array(
@@ -949,7 +955,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							)
 						),
 						'default'  => 'on',
-						'desc'   => __( 'Autoplay (only if using <em>self</em> as video source)', 'aesop-core' ),
+						'desc'   => __( 'Autoplay (only if using <em>self</em> or YouTube as video source)', 'aesop-core' ),
 						'tip'  => __( 'Should the video automatically start playing.', 'aesop-core' )
 					),
 					'controls'    => array(
@@ -965,8 +971,8 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							)
 						),
 						'default'  => 'off',
-						'desc'   => __( 'Video Controls (only if using <em>self</em> as video source)', 'aesop-core' ),
-						'tip'  => __( 'Hide or show the controls for the self-hosted video player.', 'aesop-core' )
+						'desc'   => __( 'Video Controls (only if using <em>self</em> or YouTube as video source)', 'aesop-core' ),
+						'tip'  => __( 'Hide or show the controls for the video player.', 'aesop-core' )
 					),
 					'viewstart'  => array(
 						'type'  => 'select',
