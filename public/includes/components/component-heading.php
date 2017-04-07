@@ -19,6 +19,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 			'full'  	=> '',
 			'bgcolor'   => '',
 			'minheight' => '260px',
+			'maxheight' => '100%',
 			'fixed_height' => '',
 			'force_fullwidth' => 'off',
 			'overlay_content'   => '',
@@ -46,11 +47,11 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 		}
 
 		if ('img' == $atts['bgtype'] && $atts['img']) {
-			$img_style     =  sprintf( 'style="background:url(\'%s\');%s min-height:%s"', esc_url( $atts['img'] ), $styles, $atts['minheight'] );		
+			$img_style     =  sprintf( 'style="background:url(\'%s\');%s min-height:%s;max-height:%s;"', esc_url( $atts['img'] ), $styles, $atts['minheight'],$atts['maxheight'] );		
 		} else {
-			$img_style     =  'style="height:auto;min-height:'.$atts['minheight'].';"';
+			$img_style     =  'style="height:auto;min-height:'.$atts['minheight'].';max-height:'.$atts['maxheight'].';"';
 			if ('color' == $atts['bgtype'] && $atts['bgcolor']) {
-				$img_style = 'style="min-height:'.$atts['minheight'].';background-color: '.$atts['bgcolor'].';"';
+				$img_style = 'style="min-height:'.$atts['minheight'].';max-height:'.$atts['maxheight'].';background-color: '.$atts['bgcolor'].';"';
 				$atts['full'] ='off';
 			} 
 		}

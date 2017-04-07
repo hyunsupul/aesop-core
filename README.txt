@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.7.3
-Stable tag: 1.9.6.7
+Stable tag: 1.9.6.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -173,6 +173,19 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.6.9 =
+* NEW Video Component now supports Autoplay, Loop, In-View Play, Out-Of-View Pause options for Vimeo
+* NEW Video Component now supports In-View Play, Out-Of-View Pause options for YouTube
+* FIX Audio Component play control is made to be always visible on mobile
+* FIX Video Component aspect ratio defaults to 16/9 if no other information is available
+* FIX Fixed a bug in the Collection Component where "loading" message was not updated
+* FIX Content reveal animation is enabled
+
+= 1.9.6.8 =
+* FIX An occasional bug on Parallax component where the component is resized before the image is fully loaded
+* NEW Option for Chapter Component to limit the height of the component.
+* German translations updated.
+
 = 1.9.6.7 =
 * Video Component now supports Autoplay, Loop, and Controls Off options for Youtube Videos
 * Some Spanish translations added.

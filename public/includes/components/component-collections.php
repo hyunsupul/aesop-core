@@ -179,7 +179,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 								if (pageindex > <?php echo $maxpages?>) {
 									jQuery("#aesop-load-more-<?php echo $unique;?>").remove();
 								} else {
-									$(this).find(".aesop-loadmore-text").text(loadMoreText);
+									$("#aesop-load-more-<?php echo $unique;?> .aesop-loadmore-text").text(loadMoreText);
 								}
 					  		} else {
 								jQuery("#aesop-load-more-<?php echo $unique;?>").remove();

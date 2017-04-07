@@ -64,6 +64,9 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		// waypoint filter
 		$point   = 'bottom-in-view';
 		$waypoint  = apply_filters( 'aesop_video_component_waypoint', $point, $unique );
+		if ( 'on' == $atts['viewstart'] || wp_is_mobile()) { 
+			$autoplaystatus = false;
+		}
 
 		ob_start();
 
@@ -82,8 +85,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			    
 				<?php
 				
-			if ( 'on' == $atts['viewstart'] && 'self' == $atts['src']  && !wp_is_mobile()) { 
-			     $autoplaystatus = false;
+			if ( $autoplaystatus && 'self' == $atts['src'] ) { 
 				?>
 				<script>
 					jQuery(document).ready(function($){
@@ -110,7 +112,50 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			<?php }//end if
 		switch ( $atts['src'] ) {
 		case 'vimeo':
-			printf( '<iframe src="//player.vimeo.com/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
+			$vmparams = $loopstatus ? sprintf ("&loop=1") : "";
+			$vmparams = $vmparams.($autoplaystatus ? "&autoplay=1" : "");
+			if ($controlstatus !=='controls-visible') { ?>
+			    <style> #aesop-vm-<?php echo esc_attr( $unique );?> .controls-wrapper { display:none !important;} </style>
+				
+			<?php	
+			}
+			printf( '<iframe id="aesop-vm-%s" src="//player.vimeo.com/video/%s?byline=0&controls=0%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), $vmparams, esc_attr( $iframe_size ) );
+			
+			if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'])&& !wp_is_mobile()) {
+			?>
+			   <script src="https://player.vimeo.com/api/player.js"></script>
+				<script>
+				jQuery(document).ready(function($){
+					// If multiple elements are selected, it will use the first element.
+					var player = new Vimeo.Player($('#aesop-vm-<?php echo esc_attr( $unique );?>'));
+					
+					<?php if ( 'on' == $atts['viewstart'] ) { ?>
+							$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+								offset: '10%',
+								handler: function(direction){
+									player.play();
+								}
+							});
+							$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+								offset: '<?php echo esc_attr( $waypoint );?>',
+								handler: function(direction){
+									player.play();
+								}
+							});
+							<?php } ?>
+							<?php if ( 'on' == $atts['viewend'] ) { ?>
+							$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+								offset: '-50%',
+								handler: function(direction){
+									player.pause();
+								}
+							});
+							<?php } ?>
+
+				});
+				</script>
+			<?php
+			}
 			break;
 		case 'dailymotion':
 			printf( '<iframe src="//www.dailymotion.com/embed/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
@@ -119,7 +164,54 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		    $ytparams = $loopstatus ? sprintf ("&loop=1&playlist=%s" ,esc_attr( $atts['id'])) : "";
 			$ytparams = $ytparams.($autoplaystatus ? "&autoplay=1" : "");
 			$ytparams = $ytparams.($controlstatus=='controls-visible' ? "" : "&controls=0&showinfo=0");
-			printf( '<iframe src="//www.youtube.com/embed/%s?rel=0&wmode=transparent%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $atts['id'] ), $ytparams, esc_attr( $iframe_size ) );
+			printf( '<iframe id ="aesop-ytb-%s"  src="//www.youtube.com/embed/%s?rel=0&enablejsapi=1&wmode=transparent%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0" width="100%%"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), $ytparams, esc_attr( $iframe_size ) );
+
+			if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'])&& !wp_is_mobile()) {
+			?>
+				<script type="text/javascript">
+				  var tag = document.createElement('script');
+				  tag.id = 'iframe-demo';
+				  tag.src = 'https://www.youtube.com/iframe_api';
+				  var firstScriptTag = document.getElementsByTagName('script')[0];
+				  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+				  var player;
+				  function onYouTubeIframeAPIReady() {
+					player = new YT.Player('aesop-ytb-<?php echo esc_attr( $unique );?>', {
+						events: {
+						  'onReady': onPlayerReady,
+						}
+					});
+				  }
+				  function onPlayerReady(event) {
+					  jQuery(document).ready(function($){
+						    <?php if ( 'on' == $atts['viewstart'] ) { ?>
+							$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+								offset: '10%',
+								handler: function(direction){
+									player.playVideo();
+								}
+							});
+							$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+								offset: '<?php echo esc_attr( $waypoint );?>',
+								handler: function(direction){
+									player.playVideo();
+								}
+							});
+							<?php } ?>
+							<?php if ( 'on' == $atts['viewend'] ) { ?>
+							$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+								offset: '-50%',
+								handler: function(direction){
+									player.pauseVideo();
+								}
+							});
+							<?php } ?>
+					  });
+				  }
+				</script>
+			<?php
+			}
 			break;
 		case 'kickstarter':
 			printf( '<iframe src="%s" %s scrolling="no" wmode="transparent" frameborder="0"> </iframe>', esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );

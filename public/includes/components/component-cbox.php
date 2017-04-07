@@ -29,7 +29,8 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 			'floaterdirection' 	=> 'down',
 			'floaterposition'	=> 'left',
 			'color'    			=> '#FFFFFF',
-			'background'  		=> '#222222'
+			'background'  		=> '#222222',
+			'revealfx'          => ''
 		);
 
 		$atts = apply_filters( 'aesop_cbox_defaults', shortcode_atts( $defaults, $atts ) );

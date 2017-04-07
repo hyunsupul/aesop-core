@@ -542,6 +542,12 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'desc'   => __( 'Minimum Height', 'aesop-core' ),
 						'tip'  => __( 'You can enter the minimum height in number of pixels like <code>300px</code>.', 'aesop-core' )
 					),
+					'maxheight'    => array(
+						'type'  => 'text_small',
+						'default'  => '',
+						'desc'   => __( 'Maximum Height', 'aesop-core' ),
+						'tip'  => __( 'You can enter the maximum height in number of pixels like <code>300px</code> or <code>50%</code>. 100% by default.', 'aesop-core' )
+					),
 					'overlay_content'     => array(
 						'type'  => 'text_area',
 						'default'  => '',
@@ -939,7 +945,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							)
 						),
 						'default'  => 'on',
-						'desc'   => __( 'Video Loop (only if using <em>self</em> or YouTube as video source)', 'aesop-core' ),
+						'desc'   => __( 'Video Loop (only if using <em>self</em>, YouTube or Vimeo as video source)', 'aesop-core' ),
 						'tip'  => __( 'Enable the video to loop.', 'aesop-core' )
 					),
 					'autoplay'    => array(
@@ -955,7 +961,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							)
 						),
 						'default'  => 'on',
-						'desc'   => __( 'Autoplay (only if using <em>self</em> or YouTube as video source)', 'aesop-core' ),
+						'desc'   => __( 'Autoplay (only if using <em>self</em>, YouTube or Vimeo as video source)', 'aesop-core' ),
 						'tip'  => __( 'Should the video automatically start playing.', 'aesop-core' )
 					),
 					'controls'    => array(
@@ -987,7 +993,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							)
 						),
 						'default'  => 'off',
-						'desc'   => __( 'Start Video When in View (only if using <em>self</em> as video source)', 'aesop-core' ),
+						'desc'   => __( 'Start Video When in View (only if using <em>self</em>, YouTube or Vimeo as video source)', 'aesop-core' ),
 						'tip'  => __( 'When set to <em>on</em> the video will start playing automatically once scrolled into view.', 'aesop-core' )
 					),
 					'viewend'  => array(
@@ -1003,7 +1009,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							)
 						),
 						'default'  => 'off',
-						'desc'   => __( 'Stop Video When Out of View (only if using <em>self</em> as video source)', 'aesop-core' ),
+						'desc'   => __( 'Stop Video When Out of View (only if using <em>self</em>, YouTube or Vimeo as video source)', 'aesop-core' ),
 						'tip'  => __( 'Used together with the option above, this option when set to <em>on</em> will stop the video player from playing once scrolled out of view.', 'aesop-core' )
 					)
 					

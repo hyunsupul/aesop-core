@@ -118,7 +118,10 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 						}
 
-					setHeight();
+					$(window).load(function(){
+					    setHeight();
+					});
+					
 
 					$(window).resize(function(){
 						setHeight();
