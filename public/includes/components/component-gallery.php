@@ -54,6 +54,7 @@ class AesopCoreGallery {
 
 		do_action( 'aesop_gallery_before', $type, $gallery_id, $atts, $unique ); // action
 		
+		$hidden ="";
 		if (aesop_revealfx_set($atts) && $type != 'stacked') {
 			$hidden ='style="visibility:hidden;"';
 		}
