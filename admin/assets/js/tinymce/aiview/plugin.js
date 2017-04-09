@@ -121,7 +121,9 @@
 
         // parse the shortcode and turn it into an array
         function parse(sc) {
-            var re_full = /\[aesop_([a-zA-Z_]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]/g;
+			//https://github.com/hyunsupul/aesop-core/issues/323
+            //var re_full = /\[aesop_([a-zA-Z_]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]/g;
+			var re_full = /\[aesop_([a-zA-Z_]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z_]+]/g;
             var re_short = /\[aesop_([a-zA-Z_]+)\s([^\[\]]*)]/g;
             var re_clean = /<br data-mce-bogus="1">/g;
             var re_slice = /([^\s]+="[^"]+")/g
