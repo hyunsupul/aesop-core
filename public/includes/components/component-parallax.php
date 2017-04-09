@@ -222,7 +222,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 					<?php
 					} else {
 				    ?>
-						<div class="aesop-stacked-img" style="background-attachment: fixed;height:100%;background-image:url('<?php echo esc_url( $atts['img'] );?>');background-size:cover;background-position:center center;?>">
+						<div class="aesop-stacked-img" style="background-attachment: fixed;height:100%;background-image:url('<?php echo esc_url( $atts['img'] );?>');background-size:cover;background-position:center center;">
 						</div>
 					<?php
 					}
