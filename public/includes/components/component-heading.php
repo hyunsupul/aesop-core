@@ -67,7 +67,8 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 
 ?>
 			<div id="chapter-unique-<?php echo $unique;?>" <?php echo aesop_component_data_atts( 'chapter', $unique, $atts );?> class="aesop-article-chapter-wrap default-cover <?php echo $video_chapter_class;?> aesop-component <?php echo $img_style_class;?> <?php echo $full_class;?> " 
-			    <?php echo aesop_revealfx_set($atts) ? 'style="visibility:hidden;"': null ?>
+			    <?php echo aesop_revealfx_set($atts) ? 'style="visibility:hidden;"': null ?> 
+			    data-title="<?php echo esc_attr( $atts['title'] );?>"
 			>
 
 				<?php do_action( 'aesop_chapter_inside_top', $atts, $unique ); // action ?>
@@ -75,7 +76,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 				<div class="aesop-article-chapter clearfix" <?php echo $img_style;?> >
 
 				    <?php if (empty($atts['overlay_content'])) { ?>
-					<h2 class="aesop-cover-title" itemprop="title" data-title="<?php echo esc_attr( $atts['title'] );?>">
+					<h2 class="aesop-cover-title" itemprop="title">
 						<span><?php echo esc_html( $atts['title'] );?></span>
 
 						<?php if ( $atts['subtitle'] ) { ?>
