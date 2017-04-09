@@ -74,6 +74,73 @@ function aesop_shortcodes_blob() {
 
 		$return .= '<input type="hidden" name="aesop-generator-result" id="aesop-generator-result" value="" />';
 
+		
+		if ($shortcode['name']==$codes['video']['name']) {
+			$return .='<script>	            
+						jQuery(document).ready(function($){
+							function srcSetting(src){								
+							    if (src=="kickstarter" || src=="viddler" || src=="vine" || src=="wistia" || src=="instagram" || src=="dailymotion") {
+									jQuery(".aesop-video-hosted,.aesop-video-disable_for_mobile,.aesop-video-poster_frame,.aesop-video-loop,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart, .aesop-video-viewend").slideUp();
+								}
+								else if (src=="youtube") {
+									jQuery(".aesop-video-loop,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart,.aesop-video-viewend").slideDown();
+									jQuery(".aesop-video-hosted").slideUp();
+								}
+								else if (src=="vimeo") {
+									jQuery(".aesop-video-loop,.aesop-video-autoplay,.aesop-video-viewstart, .aesop-video-viewend").slideDown();
+									jQuery(".aesop-video-hosted,.aesop-video-controls").slideUp();
+								}
+								else if (src=="self") {
+									jQuery("#aesop-generator-settings").children().slideDown();
+								}
+								disableMobileSetting(jQuery( "#aesop-generator-attr-disable_for_mobile" ).val());
+							}
+							function disableMobileSetting(onOff) {
+								if (jQuery( "#aesop-generator-attr-src" ).val()=="self" || onOff=="on") {
+									jQuery(".aesop-video-poster_frame").slideDown();
+								} else {
+									jQuery(".aesop-video-poster_frame").slideUp();
+								}
+							}
+							setTimeout( function() { 
+                                srcSetting(jQuery( "#aesop-generator-attr-src" ).val()); disableMobileSetting(jQuery( "#aesop-generator-attr-disable_for_mobile" ).val()); }, 500);
+							jQuery( "#aesop-generator-attr-src" ).change(function() {
+								srcSetting(this.value);
+							})
+							jQuery( "#aesop-generator-attr-disable_for_mobile" ).change(function() {
+								disableMobileSetting(this.value);
+							})
+						});
+			           </script>
+			           ';
+		}
+		else if ($shortcode['name']==$codes['chapter']['name']) {
+			$return .='<script>	            
+						jQuery(document).ready(function($){
+							
+							function bgSetting(bg){
+							    if (bg=="img") {
+									jQuery(".aesop-chapter-img").slideDown();
+									jQuery(".aesop-chapter-bgcolor,.aesop-chapter-alternate_img").slideUp();
+								}
+								else if (bg=="video") {
+									jQuery(".aesop-chapter-img,.aesop-chapter-alternate_img").slideDown();
+									jQuery(".aesop-chapter-bgcolor").slideUp();
+								}
+								else if (bg=="color") {
+									jQuery(".aesop-chapter-bgcolor").slideDown();
+									jQuery(".aesop-chapter-img,.aesop-chapter-alternate_img").slideUp();
+								}
+							}
+							setTimeout( function() { 
+							    bgSetting(jQuery( "#aesop-generator-attr-bgtype" ).val()); }, 500);
+							jQuery( "#aesop-generator-attr-bgtype" ).change(function() {
+								bgSetting(this.value);
+							})
+						});
+			           </script>
+			           ';
+		}
 		$blob[$slug] = $return;
 	}//end foreach
 	return $blob;

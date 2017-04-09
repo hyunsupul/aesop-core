@@ -73,7 +73,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 		ob_start();
 
 		do_action( 'aesop_parallax_before', $atts, $unique ); // action
-		
+		$nowebkitxform = ('fixed' == $atts['parallaxbg']) ? '-webkit-transform: none;':'';
 
 		?><div id="aesop-parallax-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'parallax', $unique, $atts );?> class="aesop-component aesop-parallax-component <?php echo sanitize_html_class( $classes );?>"><?php
 
@@ -196,9 +196,10 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 			</script>
 
 			<?php if (!empty($atts['height'])) {?>
-			  <figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>" style="height:<?php echo esc_attr( $atts['height'] );?>;">
+			  <figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>" style="height:<?php echo esc_attr( $atts['height'] );?>;<?php echo $nowebkitxform;?>">
 			<?php } else {?>
-			  <figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>">
+			  <figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>" style="<?php echo $nowebkitxform;?>">
+			  
 			<?php } ?>
 
 				<?php do_action( 'aesop_parallax_inner_inside_top', $atts, $unique ); // action ?>

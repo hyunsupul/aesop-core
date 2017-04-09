@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.7.3
-Stable tag: 1.9.6.9
+Stable tag: 1.9.7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -173,6 +173,16 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+
+= 1.9.7.0 =
+* NEW Video Component now supports Disable for Mobile options for all videos.
+* NEW The backend Video Component editor has been changed to hide options based on context 
+* NEW The backend Chapter Component editor has been changed to hide options based on context 
+* FIX Parallex Component's "fixed background" option fixed for Firefox
+* FIX Some code errors have been fixed
+* FIX An issue with multiple autoplaying YouTube videos in the same page has been fixed.
+* FIX Chapter data field location has been changed
+
 = 1.9.6.9 =
 * NEW Video Component now supports Autoplay, Loop, In-View Play, Out-Of-View Pause options for Vimeo
 * NEW Video Component now supports In-View Play, Out-Of-View Pause options for YouTube
