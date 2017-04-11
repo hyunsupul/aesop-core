@@ -918,7 +918,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						),
 						'default'  => 'on',
 						'desc'   => __( 'Disable video on Mobile Devices.', 'aesop-core' ),
-						'tip'  => __( 'Disable video on Mobile Devices. Will display the Poster Frame if it is set.', 'aesop-core' )
+						'tip'  => __( 'Disable video on Mobile Devices. Must specify the Poster Frame image.', 'aesop-core' )
 					),
 					'poster_frame'  => array(
 						'type'  => 'media_upload',

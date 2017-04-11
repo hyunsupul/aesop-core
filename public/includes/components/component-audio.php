@@ -28,7 +28,7 @@ if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
 		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'audio', '' ) : null;
 
 		// hidden
-		$hidden = 'on' == ($atts['hidden'] && !wp_is_mobile())? 'style=height:0;z-index:-1;position:absolute;opacity:0;' : null;
+		$hidden = (('on' == $atts['hidden']) && !wp_is_mobile())? 'style=height:0;z-index:-1;position:absolute;opacity:0;' : null;
 
 		// optional title
 		$title = $atts['title'] ? apply_filters( 'aesop_audio_component_title', sprintf( '<h5>%s</h5>', $atts['title'] ) ) : null;
