@@ -334,9 +334,35 @@ function aesop_gallery_component_data_atts( $postid = '' ) {
  if ( ! function_exists( 'aesop_revealfx_set' ) ) {
 	function aesop_revealfx_set($atts)
 	{
-		if (!empty($atts['revealfx']) && ($atts['revealfx']!='off')) {
+		if (  (!empty($atts['revealfx']) && $atts['revealfx']!='off') || (!empty($atts['overlay_revealfx']) && $atts['overlay_revealfx']!='off') ){
 			return true;
 		}
 		return false;
+	}
+}
+
+/*
+ A helper function to make sense out of a video URL
+*/
+ if ( ! function_exists( 'aesop_video_url_parse' ) ) {
+	function aesop_video_url_parse($url)
+	{
+		$atts = array(
+		    'type'   => "self",
+			'id'     => "",
+			'url'    => $url
+		);
+		//return $atts;
+		if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match)) {
+			$atts['id'] = $match[1];
+			$atts['type'] = 'youtube';
+			return $atts;
+		} 
+		else if(preg_match("/(https?:\/\/)?(www\.)?(player\.)?vimeo\.com\/([a-z]*\/)*([0-9]{6,11})[?]?.*/", $url, $match)) {
+			$atts['id'] = $match[5];
+			$atts['type'] = 'vimeo';
+			return $atts;
+		}
+		return $atts;
 	}
 }

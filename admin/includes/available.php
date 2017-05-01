@@ -522,13 +522,33 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'media_upload',
 						'default'  => '',
 						'desc'   => __( 'Chapter Image or Video URL', 'aesop-core' ),
-						'tip'  => __( 'URL for the image or video background as set above. Click <em>Select Media</em> to open the WordPress Media Library.', 'aesop-core' )
+						'tip'  => __( 'URL for the image or video background as set above. Click <em>Select Media</em> to open the WordPress Media Library. If using video, you can use Youtube, Vimeo, or self-hosted URL.', 'aesop-core' )
 					),
 					'alternate_img'    => array(
 						'type'  => 'media_upload',
 						'default'  => '',
 						'desc'   => __( 'Alternate Image for Mobile', 'aesop-core' ),
 						'tip'  => __( 'Used only on a mobile device and if the Background Type is set to Video.', 'aesop-core' )
+					),
+					'video_autoplay'=>  array(
+						'type'  => 'select',
+						'values'  => array(
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
+							),
+							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'play_scroll',
+								'name' => __( 'Play/Pause on Scroll', 'aesop-core' )
+							)
+						),
+						'default' => 'img',
+						'desc'  => __( 'Autoplay Setting for Video', 'aesop-core' ),
+						'tip'  => __( 'Autoplay setting. Only used if the type is set to video.', 'aesop-core' )
 					),
 					'bgcolor'    => array(
 						'type'  => 'color',

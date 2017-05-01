@@ -121,15 +121,15 @@ function aesop_shortcodes_blob() {
 							function bgSetting(bg){
 							    if (bg=="img") {
 									jQuery(".aesop-chapter-img").slideDown();
-									jQuery(".aesop-chapter-bgcolor,.aesop-chapter-alternate_img").slideUp();
+									jQuery(".aesop-chapter-bgcolor,.aesop-chapter-alternate_img,.aesop-chapter-video_autoplay").slideUp();
 								}
 								else if (bg=="video") {
-									jQuery(".aesop-chapter-img,.aesop-chapter-alternate_img").slideDown();
+									jQuery(".aesop-chapter-img,.aesop-chapter-alternate_img,.aesop-chapter-video_autoplay").slideDown();
 									jQuery(".aesop-chapter-bgcolor").slideUp();
 								}
 								else if (bg=="color") {
 									jQuery(".aesop-chapter-bgcolor").slideDown();
-									jQuery(".aesop-chapter-img,.aesop-chapter-alternate_img").slideUp();
+									jQuery(".aesop-chapter-img,.aesop-chapter-alternate_img,.aesop-chapter-video_autoplay").slideUp();
 								}
 							}
 							setTimeout( function() { 

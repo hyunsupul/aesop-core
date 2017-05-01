@@ -30,6 +30,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			'poster_frame' =>'',
 			'force_fullwidth'=>'off',
 			'revealfx'  => '',
+			'overlay_revealfx'          => ''
 		);
 		$atts = apply_filters( 'aesop_video_defaults', shortcode_atts( $defaults, $atts ) );
 
@@ -119,7 +120,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 											}
 										});
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
-											offset: '-50%',
+											offset: '-70%',
 											handler: function(direction){
 												if (playing) {
 												    $('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
@@ -157,7 +158,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 								
 								<?php if ( 'on' == $atts['viewstart'] ) { ?>
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
-											offset: '20%',
+											offset: '25%',
 											handler: function(direction){
 												player.play();
 											}
@@ -173,7 +174,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 											}
 										});
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
-											offset: '-50%',
+											offset: '-70%',
 											handler: function(direction){
 												player.pause();
 											}
@@ -192,6 +193,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 						$ytparams = $loopstatus ? sprintf ("&loop=1&playlist=%s" ,esc_attr( $atts['id'])) : "";
 						$ytparams = $ytparams.($autoplaystatus ? "&autoplay=1" : "");
 						$ytparams = $ytparams.($controlstatus=='controls-visible' ? "" : "&controls=0&showinfo=0");
+						
 						printf( '<iframe id ="aesop-ytb-%s"  src="//www.youtube.com/embed/%s?rel=0&enablejsapi=1&wmode=transparent%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0" width="100%%"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), $ytparams, esc_attr( $iframe_size ) );
 
 						if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'])&& !wp_is_mobile()) {
@@ -229,7 +231,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 								  jQuery(document).ready(function($){
 										<?php if ( 'on' == $atts['viewstart'] ) { ?>
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
-											offset: '20%',
+											offset: '30%',
 											handler: function(direction){
 													aseYTBplayer<?php echo esc_attr( $instance );?>.playVideo();
 											}
@@ -246,7 +248,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 											}
 										});
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
-											offset: '-50%',
+											offset: '-70%',
 											handler: function(direction){
 												if (direction == 'down') {
 													aseYTBplayer<?php echo esc_attr($instance );?>.pauseVideo();

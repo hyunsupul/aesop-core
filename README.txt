@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.7.3
-Stable tag: 1.9.7.0
+Stable tag: 1.9.7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,14 +21,20 @@ Aesop Story Engine is a suite of open-sourced tools and components that empower 
 [youtube http://www.youtube.com/watch?v=84BFGxkHby0]
 
 
-Utilizing these components, writers can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. 
+Utilizing these components, writers and developers can build feature-rich, visually compelling WordPress posts and themes. 
 
-Check out the new features of Aesop Story Engine v 1.9.6
+
+**Demos and More Info**
+
+[http://aesopstoryengine.com/about/](http://aesopstoryengine.com/about/)
+
+
+Reveal Animation: New features of Aesop Story Engine v 1.9.6 
 
 [http://aesopstoryengine.com/releases/aesop-story-engine-1-9-6-new-features/](http://aesopstoryengine.com/releases/aesop-story-engine-1-9-6-new-features/)
 
 
-Check out the new features of Aesop Story Engine v 1.9
+Hero Gallery and Fixed Parallax: New features of Aesop Story Engine v 1.9
 
 [http://aesopstoryengine.com/updates/aesop-1-9-new-features/](http://aesopstoryengine.com/updates/aesop-1-9-new-features/)
 
@@ -173,6 +179,14 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.7.3 =
+* FIX Chapter Video Background for Self Hosted Video
+
+= 1.9.7.2 =
+* FIX Chapter Video Options
+
+= 1.9.7.1 =
+* FIX Audio Component hide control option fixed
 
 = 1.9.7.0 =
 * NEW Video Component now supports Disable for Mobile options for all videos.
