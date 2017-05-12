@@ -44,6 +44,10 @@
         var height = ( this.tagName.toLowerCase() === 'object' || ($this.attr('height') && !isNaN(parseInt($this.attr('height'), 10))) ) ? parseInt($this.attr('height'), 10) : $this.height(),
             width = !isNaN(parseInt($this.attr('width'), 10)) ? parseInt($this.attr('width'), 10) : $this.width(),
             aspectRatio = height / width;
+            if (aspectRatio == 0.5) {
+               // assume it is incorrect and use the default
+			   aspectRatio = 9 / 16;
+            }
         if(!$this.attr('id')){
           var videoID = 'fitvid' + Math.floor(Math.random()*999999);
           $this.attr('id', videoID);

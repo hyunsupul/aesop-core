@@ -5,8 +5,8 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.6.1
-Stable tag: 1.9.5
+Tested up to: 4.7.3
+Stable tag: 1.9.7.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,9 +21,20 @@ Aesop Story Engine is a suite of open-sourced tools and components that empower 
 [youtube http://www.youtube.com/watch?v=84BFGxkHby0]
 
 
-Utilizing these components, writers can take their work to the next level, and developers can utilize the core storytelling engine to build feature-rich, visually compelling WordPress themes. 
+Utilizing these components, writers and developers can build feature-rich, visually compelling WordPress posts and themes. 
 
-Check out the newest features of Aesop Story Engine (v 1.9)
+
+**Demos and More Info**
+
+[http://aesopstoryengine.com/about/](http://aesopstoryengine.com/about/)
+
+
+Reveal Animation: New features of Aesop Story Engine v 1.9.6 
+
+[http://aesopstoryengine.com/releases/aesop-story-engine-1-9-6-new-features/](http://aesopstoryengine.com/releases/aesop-story-engine-1-9-6-new-features/)
+
+
+Hero Gallery and Fixed Parallax: New features of Aesop Story Engine v 1.9
 
 [http://aesopstoryengine.com/updates/aesop-1-9-new-features/](http://aesopstoryengine.com/updates/aesop-1-9-new-features/)
 
@@ -168,6 +179,70 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.7.3 =
+* FIX Chapter Video Background for Self Hosted Video
+
+= 1.9.7.2 =
+* FIX Chapter Video Options
+
+= 1.9.7.1 =
+* FIX Audio Component hide control option fixed
+
+= 1.9.7.0 =
+* NEW Video Component now supports Disable for Mobile options for all videos.
+* NEW The backend Video Component editor has been changed to hide options based on context 
+* NEW The backend Chapter Component editor has been changed to hide options based on context 
+* FIX Parallex Component's "fixed background" option fixed for Firefox
+* FIX Some code errors have been fixed
+* FIX An issue with multiple autoplaying YouTube videos in the same page has been fixed.
+* FIX Chapter data field location has been changed
+
+= 1.9.6.9 =
+* NEW Video Component now supports Autoplay, Loop, In-View Play, Out-Of-View Pause options for Vimeo
+* NEW Video Component now supports In-View Play, Out-Of-View Pause options for YouTube
+* FIX Audio Component play control is made to be always visible on mobile
+* FIX Video Component aspect ratio defaults to 16/9 if no other information is available
+* FIX Fixed a bug in the Collection Component where "loading" message was not updated
+* FIX Content reveal animation is enabled
+
+= 1.9.6.8 =
+* FIX An occasional bug on Parallax component where the component is resized before the image is fully loaded
+* NEW Option for Chapter Component to limit the height of the component.
+* German translations updated.
+
+= 1.9.6.7 =
+* Video Component now supports Autoplay, Loop, and Controls Off options for Youtube Videos
+* Some Spanish translations added.
+
+= 1.9.6.6 =
+* FIX When editing paramters containing HTML tags, the text should not be sanitized.
+
+= 1.9.6.5 =
+* NEW Added an option to Hero Gallery to preserve width/height ratio
+* NEW Added an option to Parallax to preserve width/height ratio
+
+
+= 1.9.6.4 =
+* FIX incorrect loading of the Google api key option
+
+= 1.9.6.3 =
+* NEW Added Google API Key for the backend editing of Map Component. This key can be edited from Appearance->Customize->Aesop Story Engine menu
+
+= 1.9.6.2 =
+* FIX Fixed the editor issues when attributes include HTML
+* FIX Fixed the transition time value for Hero gallery not being saved
+* NEW Quote component can use HTML for texts
+* NEW Content box component now supports Reveal Animation
+
+= 1.9.6 =
+* NEW Gallery component (except Parallax) now support Reveal Animation.
+
+= 1.9.5.5 =
+* FIX disable parallax scrolling on mobile devices for compatibility
+
+= 1.9.5.1 =
+* FIX 1.9.5 had a shortcode interpretation bug. Fixed.
+
 = 1.9.5 =
 * NEW Image, Video, Chapter components have new option : Overlay Content. You can use HTML tags, like the overlay content for Hero Gallery and Parallax.
 * NEW Hero Gallery has an option to add navigation controls.

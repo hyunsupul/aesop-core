@@ -90,6 +90,9 @@
   margin-left: auto;
   margin-right: auto;
 }
+.aesop-content-component {
+  clear: both;
+}
 .aesop-content-component .aesop-content-comp-wrap:before,
 .aesop-content-component .aesop-content-comp-wrap:after {
   content: " ";
@@ -269,7 +272,6 @@
 }
 .aesop-video-component .self .wp-video-shortcode {
   width: 100% !important;
-  height: 100% !important;
 }
 .aesop-quote-component {
   -webkit-transform: translateZ(0);
@@ -311,7 +313,6 @@
 .aesop-article-chapter-wrap .wp-video-shortcode,
 .aesop-article-chapter-wrap .wp-video {
   width: 100% !important;
-  height: 100% !important;
   max-width: 100% !important;
 }
 .aesop-article-chapter-wrap .wp-video-shortcode .mejs-overlay,
@@ -325,6 +326,10 @@
 }
 .aesop-article-chapter-wrap.aesop-chapter-full .aesop-article-chapter {
   height: 600px;
+}
+.aesop-video-chapter .aesop-article-chapter h2.aesop-cover-title {
+  z-index: 1;
+  max-width: 100%;
 }
 .aesop-video-chapter .aesop-cover-title {
   position: absolute;
@@ -530,6 +535,15 @@
 }
 .aesop-gallery-component {
   z-index: 0;
+}
+.aesop-gallery-component .fotorama__dot {
+  width: 8px;
+  height: 8px;
+}
+.aesop-gallery-component .fotorama__nav__frame.fotorama__active .fotorama__dot {
+  width: 0;
+  height: 0;
+  border-width: 5px;
 }
 .aesop-grid-gallery {
   position: relative;

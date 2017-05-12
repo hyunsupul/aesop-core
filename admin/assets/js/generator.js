@@ -182,7 +182,19 @@ jQuery(document).ready(function($) {
 
 	function SpecialCharEncode(s)
 	{
-	  return s.replace(/\[/g, "&#91;").replace(/\]/g, "&#93;").replace(/\"/g, "'");
+		var tagsToReplace = {
+        '<': '&lt;',
+        '>': '&gt;',
+		'[':'&#91;',
+		']':'&#93;',
+		'"': '&#34;'
+		};
+		
+		return  s.replace(/[\[\]<>\"]/g, function(tag) {
+			return tagsToReplace[tag] || tag;
+		});
+	   //return s.replace(/\[/g, "&#91;").replace(/\]/g, "&#93;").replace(/\"/g, "'");
+	   //return s.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {					   return '&#'+i.charCodeAt(0)+';';					});
 	}
 
 
@@ -196,7 +208,14 @@ jQuery(document).ready(function($) {
 		$('#aesop-generator-result').val('[' + aesop_compatibility_mode_prefix + queried_shortcode);
 		$('#aesop-generator-settings .aesop-generator-attr').each(function() {
 			if ( $(this).val() !== '' ) {
-				var val = SpecialCharEncode($(this).val());
+				var val = $(this).val();
+				if ($(this).attr('name') != "floatermedia" && $(this).attr('name') != "overlay_content") {
+					// encode special chars so we don't break html
+				    val = SpecialCharEncode(val);
+				} else {
+					// just replace brackets and quotes
+					val = val.replace(/\[/g, "&#91;").replace(/\]/g, "&#93;").replace(/\"/g, "'");
+				}
 				$('#aesop-generator-result').val( $('#aesop-generator-result').val() + ' ' + $(this).attr('name') + '="' + val + '"' );
 			}
 		});

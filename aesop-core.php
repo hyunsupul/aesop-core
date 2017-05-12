@@ -13,7 +13,7 @@
  *  Plugin Name:       Aesop Story Engine
  *  Plugin URI:        http://aesopstoryengine.com
  *  Description:       Open-sourced suite of components that empower interactive storytelling.
- *  Version:           1.9.5
+ *  Version:           1.9.7.3
  *  Author:            Aesopinteractive 
  *  Author URI:        http://aesopstoryengine.com
  *  Text Domain:       aesop-core
@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set some constants
-define( 'AI_CORE_VERSION', '1.9.5' );
+define( 'AI_CORE_VERSION', '1.9.7.3' );
 define( 'AI_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AI_CORE_URL', plugins_url( '', __FILE__ ) );
 
@@ -51,9 +51,6 @@ register_deactivation_hook( __FILE__, array( 'Aesop_Core', 'deactivate' ) );
 
 add_action( 'plugins_loaded', array( 'Aesop_Core', 'get_instance' ) );
 
-/* the following lines prevent br and p tags inserted by WordPress into shortcode params */
-remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'wpautop' , 12);
 
 /*
  ----------------------------------------------------------------------------*

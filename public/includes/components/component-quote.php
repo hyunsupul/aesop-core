@@ -176,8 +176,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 		do_action( 'aesop_quote_inside_top', $atts, $unique ); // action ?>
 
 				<blockquote class="<?php echo sanitize_html_class( $align );?>" style="font-size:<?php echo esc_attr( $size );?>;<?php echo $fgcolor?>">
-					<span><?php echo esc_html( $atts['quote'] );?></span>
-
+					<span><?php echo aesop_component_media_filter( $atts['quote'] );?></span>
 					<?php echo $cite ;?>
 				</blockquote>
 

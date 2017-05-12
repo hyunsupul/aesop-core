@@ -38,7 +38,7 @@ if ( ! function_exists( 'aesop_timeline_class_loader' ) ) {
 
 		global $post;
 
-		$default_location  = is_single();
+		$default_location  = is_single() || is_page();
 		$location    = apply_filters( 'aesop_timeline_component_appears', $default_location );
 
 		if ( function_exists( 'aesop_component_exists' ) && aesop_component_exists( 'timeline_stop' ) && ( $location ) ) {

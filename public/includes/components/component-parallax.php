@@ -41,6 +41,10 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 				$floater_distance = 0;
 			}			
 		}
+		
+		if (wp_is_mobile()) {
+			$atts['parallaxbg'] = 'off';
+		}
 
 		// let this be used multiple times
 		static $instance = 0;
@@ -69,6 +73,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 		ob_start();
 
 		do_action( 'aesop_parallax_before', $atts, $unique ); // action
+		$nowebkitxform = ('fixed' == $atts['parallaxbg']) ? '-webkit-transform: none;':'';
 
 		?><div id="aesop-parallax-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'parallax', $unique, $atts );?> class="aesop-component aesop-parallax-component <?php echo sanitize_html_class( $classes );?>"><?php
 
@@ -77,10 +82,12 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 			<script>
 				jQuery(document).ready(function($){
 
-				    <?php if (empty($atts['height'])) {?>
+				    <?php /*if (empty($atts['height']))*/ {?>
 					var img 	  = $('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?> .aesop-parallax-sc-img')
-					, 	setHeight = function() {
+					, 	
+					setHeight = function() {
 
+					        <?php if (empty($atts['height'])) {?> /* if height is not explicitly defined */
 							img.parent().imagesLoaded( function() {
 
 								var imgHeight 		= img.height()
@@ -101,10 +108,20 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 								<?php } ?>
 							});
+							<?php }
+                            /* the following code fixes extra vertical space after the image */
+                            ?>
+							if ($('#aesop-parallax-component-<?php echo esc_attr( $unique );?>').height() > img.height()) {
+								$('.aesop-parallax-sc.aesop-parallax-sc-<?php echo esc_attr( $unique );?>').css('height',img.height());
+								$('#aesop-parallax-component-<?php echo esc_attr( $unique );?>').css('height',img.height());
+							}
 
 						}
 
-					setHeight();
+					$(window).load(function(){
+					    setHeight();
+					});
+					
 
 					$(window).resize(function(){
 						setHeight();
@@ -179,9 +196,10 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 			</script>
 
 			<?php if (!empty($atts['height'])) {?>
-			  <figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>" style="height:<?php echo esc_attr( $atts['height'] );?>;">
+			  <figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>" style="height:<?php echo esc_attr( $atts['height'] );?>;<?php echo $nowebkitxform;?>">
 			<?php } else {?>
-			  <figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>">
+			  <figure class="aesop-parallax-sc aesop-parallax-sc-<?php echo esc_attr( $unique );?>" style="<?php echo $nowebkitxform;?>">
+			  
 			<?php } ?>
 
 				<?php do_action( 'aesop_parallax_inner_inside_top', $atts, $unique ); // action ?>
@@ -205,7 +223,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 					<?php
 					} else {
 				    ?>
-						<div class="aesop-stacked-img" style="background-attachment: fixed;height:100%;background-image:url('<?php echo esc_url( $atts['img'] );?>');background-size:cover;background-position:center center;?>">
+						<div class="aesop-stacked-img" style="background-attachment: fixed;height:100%;background-image:url('<?php echo esc_url( $atts['img'] );?>');background-size:cover;background-position:center center;">
 						</div>
 					<?php
 					}

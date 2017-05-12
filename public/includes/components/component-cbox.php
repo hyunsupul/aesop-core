@@ -17,6 +17,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 		$defaults = array(
 			'height'   			=> '',
 			'width'    			=> '100%',
+			'component_width'   => '100%',
 			'columns'   		=> '',
 			'position'   		=> 'center',
 			'innerposition'  	=> '',
@@ -28,7 +29,9 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 			'floaterdirection' 	=> 'down',
 			'floaterposition'	=> 'left',
 			'color'    			=> '#FFFFFF',
-			'background'  		=> '#222222'
+			'background'  		=> '#222222',
+			'revealfx'          => '',
+			'overlay_revealfx'          => ''
 		);
 
 		$atts = apply_filters( 'aesop_cbox_defaults', shortcode_atts( $defaults, $atts ) );
@@ -63,7 +66,8 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 		$imgstyle = $atts['img'] ? sprintf( '%sbackground-image:url(\'%s\');background-size:%s;background-position:%s;background-repeat:%s;', $bgcolor, esc_url( $atts['img'] ), esc_attr( $atts['imgsize'] ), esc_attr( $atts['imgposition'] ), esc_attr( $atts['imgrepeat'] ) ) : false;
 
 		$position = ( 'left' == $atts['position'] || 'right' == $atts['position'] ) ? sprintf( 'float:%s;', esc_attr( $atts['position'] ) ) : 'margin-left:auto;margin-right:auto;';
-		$widthContentStyle = 'content' == $atts['width'] ? false : sprintf( 'max-width:%s;', esc_attr( $atts['width'] ) );
+		$widthContentStyle = 'content' == $atts['width'] ? false : sprintf( 'width:%s;max-width:100%%;', esc_attr( $atts['width'] ) );
+		$widthComponentStyle = sprintf( 'width:%s;max-width:100%%;', esc_attr( $atts['component_width'] ) );
 		$innerstyle = $atts['width'] || $position || $atts['innerposition'] ? sprintf( 'style="%s%s%s"', $widthContentStyle, $position, $innerposition ) : false;
 		$txtcolor  = $atts['color'] ? sprintf( 'color:%s;', $atts['color'] ) : false;
 		$itemstyle = $imgstyle !== false || $txtcolor !== false || $height !== false ? sprintf( 'style="%s%s%s%s"', $imgstyle, $txtcolor, $bgcolor, $height ) : false;
@@ -84,7 +88,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 
 		do_action( 'aesop_cbox_before', $atts, $unique ); // action
 ?>
-		<div <?php echo aesop_component_data_atts( 'content', $unique, $atts, true );?> class="aesop-component aesop-content-component <?php echo sanitize_html_class( $classes ).' '.$has_img. ' '.$has_floater;?>" style="<?php echo $height;?>" >
+		<div <?php echo aesop_component_data_atts( 'content', $unique, $atts, true );?> class="aesop-component aesop-content-component <?php echo sanitize_html_class( $classes ).' '.$has_img. ' '.$has_floater;?>" style="<?php echo $height;echo $widthComponentStyle?>;<?php echo aesop_revealfx_set($atts) ? '"visibility:hidden;"': null ?>" >
 
 			<?php if ( $atts['floatermedia'] && ! wp_is_mobile() ) { ?>
 				<!-- Aesop Content Component -->
