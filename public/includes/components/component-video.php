@@ -94,12 +94,13 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 					 
 					<?php
 			} else {
-					if ( 'self' == $atts['src'] && ($autoplaystatus || 'on' == $atts['viewstart'] || 'on' == $atts['viewend']  )) { 
+					if ( 'self' == $atts['src'] && ($autoplaystatus || 'on' == $atts['viewstart'] || 'on' == $atts['viewend'] || 'pip' == $atts['viewend']  )) { 
 							?>
 							<script>
 								jQuery(document).ready(function($){
 									var playing = false;
 									$('#aesop-video-<?php echo esc_attr( $unique );?>').arrive('.mejs-video', function(){
+										<?php if ( 'on' == $atts['viewstart'] ) { ?>
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 											offset: '30%',
 											handler: function(direction){
@@ -109,6 +110,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 												}
 											}
 										});
+										<?php } ?>
 										<?php if ( 'on' == $atts['viewend'] ) { ?>
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 											offset: '100%',
@@ -125,6 +127,23 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 												if (playing) {
 												    $('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
 													playing = false;
+												}
+											}
+										});
+										<?php } else if ( 'pip' == $atts['viewend'] ) { ?>
+										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+											offset: '0%',
+											handler: function(direction){
+												if (direction == 'up') {
+													$('#aesop-video-<?php echo esc_attr( $unique );?>').removeClass('aesop-video-pip');
+												}
+											}
+										});
+										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+											offset: '-50%',
+											handler: function(direction){
+												if ($('#aesop-video-<?php echo esc_attr( $unique );?> video').length > 0 && !$('#aesop-video-<?php echo esc_attr( $unique );?> video').get(0).paused) {
+													$('#aesop-video-<?php echo esc_attr( $unique );?>').addClass('aesop-video-pip');
 												}
 											}
 										});
@@ -148,7 +167,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 						}
 						printf( '<iframe id="aesop-vm-%s" src="//player.vimeo.com/video/%s?byline=0&controls=0%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), $vmparams, esc_attr( $iframe_size ) );
 						
-						if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'])&& !wp_is_mobile()) {
+						if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'] || 'pip' == $atts['viewend'])&& !wp_is_mobile()) {
 						?>
 						   <script src="https://player.vimeo.com/api/player.js"></script>
 							<script>
@@ -179,6 +198,25 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 												player.pause();
 											}
 										});
+										<?php } else if ('pip' == $atts['viewend']) { ?>
+										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+											offset: '0%',
+											handler: function(direction){
+												if (direction == 'up') {
+													$('#aesop-video-<?php echo esc_attr( $unique );?>').removeClass('aesop-video-pip');
+												}
+											}
+										});
+										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+											offset: '-50%',
+											handler: function(direction){
+												// FIXME
+												console.log(player.getPaused());
+												if (!player.getPaused()) {
+													$('#aesop-video-<?php echo esc_attr( $unique );?>').addClass('aesop-video-pip');
+												}
+											}
+										});
 										<?php } ?>
 
 							});
@@ -196,7 +234,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 						
 						printf( '<iframe id ="aesop-ytb-%s"  src="//www.youtube.com/embed/%s?rel=0&enablejsapi=1&wmode=transparent%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0" width="100%%"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), $ytparams, esc_attr( $iframe_size ) );
 
-						if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'])&& !wp_is_mobile()) {
+						if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'] || 'pip' == $atts['viewend'])&& !wp_is_mobile()) {
 						?>
 							<script type="text/javascript">
 							  var tag = document.createElement('script');
@@ -252,6 +290,23 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 											handler: function(direction){
 												if (direction == 'down') {
 													aseYTBplayer<?php echo esc_attr($instance );?>.pauseVideo();
+												}
+											}
+										});
+										<?php } else if ( 'pip' == $atts['viewend'] ) { ?>
+										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+											offset: '0%',
+											handler: function(direction){
+												if (direction == 'up') {
+													$('#aesop-video-<?php echo esc_attr( $unique );?>').removeClass('aesop-video-pip');
+												}
+											}
+										});
+										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
+											offset: '-50%',
+											handler: function(direction){
+												if (aseYTBplayer<?php echo esc_attr($instance );?>.getPlayerState() == 1) {
+													$('#aesop-video-<?php echo esc_attr( $unique );?>').addClass('aesop-video-pip');
 												}
 											}
 										});
