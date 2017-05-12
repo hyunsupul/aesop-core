@@ -273,6 +273,50 @@
 .aesop-video-component .self .wp-video-shortcode {
   width: 100% !important;
 }
+.aesop-video-component .mejs-inner {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transition: all 200ms;
+  width: 100%;
+  height: 100%;
+}
+.aesop-video-component .mejs-controls {
+  transition: opacity 200ms;
+}
+.aesop-video-component .fluid-width-video-wrapper {
+  background-color: #ccc;
+}
+.aesop-video-component .fluid-width-video-wrapper iframe {
+  top: auto;
+  left: auto;
+  bottom: 0;
+}
+.aesop-video-component.aesop-video-pip .mejs-inner {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 25vw;
+  height: calc(14.0625vw);
+  min-width: 200px;
+  min-height: calc(112.5px);
+  z-index: 1;
+}
+.aesop-video-component.aesop-video-pip .mejs-controls {
+  opacity: 0;
+  visibility: hidden;
+}
+.aesop-video-component.aesop-video-pip .fluid-width-video-wrapper iframe {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 25vw;
+  height: calc(14.0625vw);
+  min-width: 200px;
+  min-height: calc(112.5px);
+  transition: all 200ms;
+  z-index: 1;
+}
 .aesop-quote-component {
   -webkit-transform: translateZ(0);
 }
