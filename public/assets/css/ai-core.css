@@ -284,13 +284,12 @@
 .aesop-video-component .mejs-controls {
   transition: opacity 200ms;
 }
-.aesop-video-component .fluid-width-video-wrapper {
-  background-color: #ccc;
-}
 .aesop-video-component .fluid-width-video-wrapper iframe {
   top: auto;
   left: auto;
   bottom: 0;
+  right: 0;
+  transition: all 200ms;
 }
 .aesop-video-component.aesop-video-pip .mejs-inner {
   position: fixed;
