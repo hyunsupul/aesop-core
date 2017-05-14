@@ -210,11 +210,11 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 											offset: '-50%',
 											handler: function(direction){
-												// FIXME
-												console.log(player.getPaused());
-												if (!player.getPaused()) {
-													$('#aesop-video-<?php echo esc_attr( $unique );?>').addClass('aesop-video-pip');
-												}
+												player.getPaused().then(function(paused) {
+													if (!paused) {
+														$('#aesop-video-<?php echo esc_attr( $unique );?>').addClass('aesop-video-pip');
+													}
+												});
 											}
 										});
 										<?php } ?>
