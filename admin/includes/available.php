@@ -1020,11 +1020,15 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							array(
 								'value' => 'off',
 								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'pip',
+								'name' => __( 'Picture in Picture Mode', 'aesop-core' )
 							)
 						),
 						'default'  => 'off',
 						'desc'   => __( 'Stop Video When Out of View', 'aesop-core' ),
-						'tip'  => __( 'Used together with the option above, this option when set to <em>on</em> will stop the video player from playing once scrolled out of view.', 'aesop-core' )
+						'tip'  => __( 'Used together with the option above, this option when set to <em>on</em> will stop the video player from playing once scrolled out of view. Selecting "Picture in Picture Mode" will move the video to a corner of the screen, allowing you to scroll and continue watching the video.', 'aesop-core' )
 					),
 					'overlay_content'     => array(
 						'type'  => 'text_area',
