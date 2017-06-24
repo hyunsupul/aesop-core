@@ -280,7 +280,7 @@ class AesopCoreGallery {
 ?>
 
 				<li class="aesop-grid-gallery-item">
-					<a class="aesop-lightbox" href="<?php echo esc_url( $getimagesrc[0] );?>" title="<?php esc_attr_e( $img_title );?>">
+					<a class="aesop-lightbox" href="<?php echo esc_url( $getimagesrc[0] );?>" title="<?php esc_attr_e( $img_title );echo "<br>".aesop_component_media_filter( $caption );?>">
 						<?php if ( $caption ) { ?>
 							<span class="aesop-grid-gallery-caption"><?php echo aesop_component_media_filter( $caption );?></span>
 						<?php } ?>
