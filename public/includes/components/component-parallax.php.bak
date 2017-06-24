@@ -23,7 +23,6 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 			'captionposition'	=> 'bottom-left',
 			'lightbox'			=> false,
 			'floaterdistance'   => '',
-			'overlay_revealfx'  => '',
 			'floaterspeed'		=> 1 // not used
 		);
 

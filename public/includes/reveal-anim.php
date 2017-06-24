@@ -9,24 +9,42 @@
 if ( ! function_exists( 'aesop_scroll_reveal_animation' ) ) {
 	function aesop_scroll_reveal_animation($component, $atts, $unique) 
 	{  
+	    $overlay_id = "";
+		$delay ="";
 		switch ($component) {
 			case 'image':
-				$id = '#aesop-image-component-'.esc_html( $unique );		     
+				$id = '#aesop-image-component-'.esc_html( $unique );
+				$overlay_id = ".aesop-image-overlay-content";				
 				break;
 			case 'quote':
 				$id = '#aesop-quote-component-'.esc_html( $unique );		     
 				break;
 			case 'chapter':
 				$id = '#chapter-unique-'.esc_html( $unique );		     
+				$overlay_id = ".aesop-chapter-overlay-content";
 				break;
 			case 'video':
-				$id = '#aesop-video-'.esc_html( $unique );		     
+				$id = '#aesop-video-'.esc_html( $unique );	
+				$overlay_id = ".aesop-video-overlay-content";
 				break;
 			case 'gallery':
-				$id = '#aesop-gallery-'.esc_html( $unique );				
+				$id = '#aesop-gallery-'.esc_html( $unique );
+				$overlay_id = ".aesop-hero-gallery-content";
 				break;
 			case 'content':
-				$id = '#aesop-content-component-'.esc_html( $unique );				
+				$id = '#aesop-content-component-'.esc_html( $unique );
+				$overlay_id = ".aesop-component-content-data";
+				break;
+			case 'character':
+				$id = '#aesop-character-component-'.esc_html( $unique );				
+				break;
+			case 'parallax':
+				$id = '#aesop-parallax-component-'.esc_html( $unique );
+				$overlay_id = ".aesop-parallax-sc-floater";
+				break;
+			case 'collection':  
+				$id = '#aesop-collection-'.esc_html( $unique )." .aesop-collection-item"; 
+				$delay = ',200'; 
 				break;
 			default:
 				return;
@@ -38,22 +56,50 @@ if ( ! function_exists( 'aesop_scroll_reveal_animation' ) ) {
 				   window.sr = ScrollReveal();
 				}
 		<?php
+		$overlay_delay = 500;
 		switch ($atts['revealfx']) {
 			case 'inplace':
-				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'bottom', distance: '0px', duration: 1000});<?php
+				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'bottom', distance: '0px', duration: 1000}<?php echo $delay ;?>);<?php
 				break;
 			case 'inplaceslow':
-				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'bottom', distance: '0px', delay:500, duration: 2000});<?php
+				$overlay_delay = 2500;
+				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'bottom', distance: '0px', delay:500, duration: 2000}<?php echo $delay ;?>);<?php
 				break;
 			case 'frombelow':
-				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'bottom', distance: '200px', duration: 1000});<?php
+				$overlay_delay = 1500;
+				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'bottom', distance: '200px', duration: 1000}<?php echo $delay ;?>);<?php
 				break;
 			case 'fromleft':
-				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'left', distance: '400px', duration: 1000});<?php
+				$overlay_delay = 1500;
+				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'left', distance: '400px', duration: 1000}<?php echo $delay ;?>);<?php
 				break;
 			case 'fromright':
-				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'right', distance: '400px', duration: 1000});<?php
+				$overlay_delay = 1500;
+				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'right', distance: '400px', duration: 1000}<?php echo $delay ;?>);<?php
 				break;
+			default:
+			    ?>jQuery('<?php echo esc_html( $id );?>').css("visibility","visible"); <?php
+			    break;
+		}
+		switch ($atts['overlay_revealfx']) {
+			case 'inplace':
+				?>sr.reveal('<?php echo esc_html( $id )." ".$overlay_id;?>', {origin:'bottom', delay:<?php echo $overlay_delay;?>, distance: '0px', duration: 1000});<?php
+				break;
+			case 'inplaceslow':
+				?>sr.reveal('<?php echo esc_html( $id )." ".$overlay_id;?>', {origin:'bottom', delay:<?php echo $overlay_delay;?>, distance: '0px', duration: 2000});<?php
+				break;
+			case 'frombelow':
+				?>sr.reveal('<?php echo esc_html( $id )." ".$overlay_id;?>', {origin:'bottom', delay:<?php echo $overlay_delay;?>, distance: '200px', duration: 1000});<?php
+				break;
+			case 'fromleft':
+				?>sr.reveal('<?php echo esc_html( $id )." ".$overlay_id;?>', {origin:'left', delay:<?php echo $overlay_delay;?>, distance: '400px', duration: 1000});<?php
+				break;
+			case 'fromright':
+				?>sr.reveal('<?php echo esc_html( $id )." ".$overlay_id;?>', {origin:'right', delay:<?php echo $overlay_delay;?>, distance: '400px', duration: 1000});<?php
+				break;
+			default:
+			    ?>jQuery('<?php echo esc_html( $id )." ".$overlay_id;?>').css("visibility","visible"); <?php
+			    break;
 		}
 		?>
 		});
@@ -125,7 +171,10 @@ class AesopRevealAnim {
 		
 		add_action('aesop_video_inside_top',array($this,'revealfx_video'),10,2);
 		add_action('aesop_cbox_inside_top',array($this,'revealfx_content'),10,2);
+		add_action('aesop_character_inside_top',array($this,'revealfx_character'),10,2);
 		add_action('aesop_gallery_inside_top',array($this,'revealfx_gallery'),10,4);
+		add_action('aesop_parallax_inside_top',array($this,'revealfx_parallax'),10,2);
+		add_action('aesop_collection_inside_top',array($this,'revealfx_collection'),10,2);
 		
 		
 		add_filter( 'aesop_avail_components',   array( $this, 'options' ) );
@@ -164,6 +213,20 @@ class AesopRevealAnim {
 		}	
 	}
 	
+	public function revealfx_character($atts, $unique)
+	{	
+	    if (aesop_revealfx_set($atts)) {
+			aesop_scroll_reveal_animation('character', $atts, $unique);
+		}	
+	}
+
+	public function revealfx_parallax($atts, $unique)
+	{	
+	    if (aesop_revealfx_set($atts)) {
+			aesop_scroll_reveal_animation('parallax', $atts, $unique);
+		}	
+	}
+	
 	
 	public function revealfx_chapter($atts, $unique)
 	{	
@@ -176,6 +239,13 @@ class AesopRevealAnim {
 	{	
 		if (aesop_revealfx_set($atts) && $type != "stacked") {
 			aesop_scroll_reveal_animation_gallery($type, $atts, $unique);
+		}	
+	}
+	
+	public function revealfx_collection($atts, $unique)
+	{	
+		if (aesop_revealfx_set($atts)) {
+			aesop_scroll_reveal_animation('collection', $atts, $unique);
 		}	
 	}
 	
@@ -219,8 +289,24 @@ class AesopRevealAnim {
 		$shortcodes['quote']['atts']['revealfx'] = $custom ;
 		$shortcodes['video']['atts']['revealfx'] = $custom ;
 		$shortcodes['content']['atts']['revealfx'] = $custom ;
+		$shortcodes['character']['atts']['revealfx'] = $custom ;
+		$shortcodes['collection']['atts']['revealfx'] = $custom ;
 		$custom['tip'] = __( 'Animation effect when the component is revealed. Not applied to Parallax Gallery', 'aesop-core' );
 		$shortcodes['gallery']['atts']['revealfx'] = $custom ;
+		
+		$custom['desc']=__( 'Overlay Reveal Effect', 'aesop-core' );
+		$custom['tip']=__( 'Reveal animation effect for the overlay content.', 'aesop-core' );
+		
+		$shortcodes['image']['atts']['overlay_revealfx'] = $custom ;
+		$shortcodes['chapter']['atts']['overlay_revealfx'] = $custom ;
+		$shortcodes['video']['atts']['overlay_revealfx'] = $custom ;
+		$custom['desc']=__( 'Floater Reveal Effect', 'aesop-core' );
+		$custom['tip']=__( 'Reveal animation effect for the floater.', 'aesop-core' );
+		$shortcodes['parallax']['atts']['overlay_revealfx'] = $custom ;
+		$custom['tip']=__( 'Reveal animation effect for the content.', 'aesop-core' );
+		$shortcodes['content']['atts']['overlay_revealfx'] = $custom ;
+		$custom['tip']=__( 'Reveal animation effect for the overlay content. Only applied to Hero Gallery', 'aesop-core' );
+		$shortcodes['gallery']['atts']['overlay_revealfx'] = $custom ;
 
 		return $shortcodes;
 

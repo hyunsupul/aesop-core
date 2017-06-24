@@ -21,6 +21,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 			'force_fullwidth'   => 'off',
 			'overlay_content'   => '',
 			'revealfx'          => '',  
+			'overlay_revealfx'          => ''			
 		);
 
 		$atts = apply_filters( 'aesop_image_defaults', shortcode_atts( $defaults, $atts ) );
