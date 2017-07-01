@@ -30,8 +30,7 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 		// 50% means when the id hits 50% from the top the waypoint will fire
 		$marker_waypoint_offset = apply_filters( 'aesop_map_waypoint_offset', '50%' );
 
-		// enable map component for all post types
-		$default_location  = true;//is_single();
+		$default_location  = is_single();
 		$location    = apply_filters( 'aesop_map_component_appears', $default_location );
 
 		static $instance = 0;
@@ -124,8 +123,7 @@ class AesopMapComponent {
 		$start   = isset( $post ) && self::get_map_meta( $id, 'ase_map_component_start' ) ? self::get_map_meta( $id, 'ase_map_component_start' ) : self::start_fallback( $markers );
 		$zoom   = isset( $post ) && self::get_map_meta( $id, 'ase_map_component_zoom' ) ? self::get_map_meta( $id, 'ase_map_component_zoom' ) : 12;
 
-		// enable map component for all post types
-		$default_location  = true;//is_single();
+		$default_location  = is_single();
 		$location    = apply_filters( 'aesop_map_component_appears', $default_location );
 
 		$tiles = isset( $post ) ? aesop_map_tile_provider( $post->ID ) : false;
