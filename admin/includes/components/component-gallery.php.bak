@@ -232,6 +232,7 @@ class AesopGalleryComponentAdmin {
 
 		// grid
 		$grid_item_width = get_post_meta( $id, 'aesop_grid_gallery_width', true );
+		$aesop_lightbox_text = get_post_meta( $id, 'aesop_lightbox_text', true );
 
 		// thumbnail
 		$thumb_trans  = get_post_meta( $id, 'aesop_thumb_gallery_transition', true );
@@ -253,6 +254,7 @@ class AesopGalleryComponentAdmin {
 		$hero_anim_speed  = get_post_meta( $id, 'aesop_hero_gallery_transition_anim_speed', true );
 		$hero_anim_speed  = $hero_anim_speed ? $hero_speed: 1500;
 		$hero_enable_nav  = get_post_meta( $id, 'aesop_hero_gallery_enable_nav', true );
+		$aesop_hero_image_text = get_post_meta( $id, 'aesop_hero_image_text', true );
 
 ?>
 		<div class="ase-gallery-opts--global">
@@ -277,6 +279,19 @@ class AesopGalleryComponentAdmin {
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Adjust the width of the individual grid items, only if using Grid gallery style. Default is 400.', 'aesop-core' );?></p>
 				<input type="text" name="aesop_grid_gallery_width" value="<?php echo (int) $grid_item_width;?>">
 			</div>
+			
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_lightbox_text"><?php _e( 'Lightbox Text', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Text to display when the lightbox is open. The texts are read from the image property.', 'aesop-core' );?></p>
+			   	<select name="aesop_lightbox_text">
+			      <option value="title" <?php selected( $aesop_lightbox_text, 'title' ); ?>><?php _e( 'Title', 'aesop-core' );?></option>
+			      <option value="caption" <?php selected( $aesop_lightbox_text, 'caption' ); ?>><?php _e( 'Caption', 'aesop-core' );?></option>
+			      <option value="title_caption" <?php selected( $aesop_lightbox_text, 'title_caption' ); ?>><?php _e( 'Title+Caption', 'aesop-core' );?></option>
+				  <option value="description" <?php selected( $aesop_lightbox_text, 'description' ); ?>><?php _e( 'Description', 'aesop-core' );?></option>
+				  <option value="none" <?php selected( $aesop_lightbox_text, 'none' ); ?>><?php _e( 'None', 'aesop-core' );?></option>
+			    </select>
+			</div>
+			
 
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--thumb" style="display:none;">
@@ -398,6 +413,7 @@ class AesopGalleryComponentAdmin {
 
 		// grid
 		$grid_item_width = isset( $_POST['aesop_grid_gallery_width'] ) ? $_POST['aesop_grid_gallery_width'] : false;
+		$aesop_lightbox_text = isset( $_POST['aesop_lightbox_text'] ) ? $_POST['aesop_lightbox_text'] : false;
 
 		// thumbnail
 		$thumb_trans  = isset( $_POST['aesop_thumb_gallery_transition'] ) ? $_POST['aesop_thumb_gallery_transition'] : false;
@@ -431,6 +447,7 @@ class AesopGalleryComponentAdmin {
 
 		// grid
 		update_post_meta( $post_id, 'aesop_grid_gallery_width', absint( $grid_item_width ) );
+		update_post_meta( $post_id, 'aesop_lightbox_text', $aesop_lightbox_text );
 
 		// thumbnail
 		update_post_meta( $post_id, 'aesop_thumb_gallery_transition', sanitize_text_field( $thumb_trans ) );
@@ -465,7 +482,6 @@ class AesopGalleryComponentAdmin {
 
 			$out = '<div class="error aesop-notice"><p>';
 
-			$out .= __( 'Welcome to Aesop Story Engine 1.4. We need to upgrade any galleries that you might have. Click <a id="aesop-upgrade-galleries" href="#">here</a> to start the upgrade process.', 'aesop-core' );
 
 			$out .= '</p></div>';
 

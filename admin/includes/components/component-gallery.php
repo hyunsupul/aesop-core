@@ -232,6 +232,7 @@ class AesopGalleryComponentAdmin {
 
 		// grid
 		$grid_item_width = get_post_meta( $id, 'aesop_grid_gallery_width', true );
+		$aesop_lightbox_text = get_post_meta( $id, 'aesop_lightbox_text', true );
 
 		// thumbnail
 		$thumb_trans  = get_post_meta( $id, 'aesop_thumb_gallery_transition', true );
@@ -253,6 +254,7 @@ class AesopGalleryComponentAdmin {
 		$hero_anim_speed  = get_post_meta( $id, 'aesop_hero_gallery_transition_anim_speed', true );
 		$hero_anim_speed  = $hero_anim_speed ? $hero_speed: 1500;
 		$hero_enable_nav  = get_post_meta( $id, 'aesop_hero_gallery_enable_nav', true );
+		$aesop_hero_image_text = get_post_meta( $id, 'aesop_hero_image_text', true );
 
 ?>
 		<div class="ase-gallery-opts--global">
@@ -277,6 +279,19 @@ class AesopGalleryComponentAdmin {
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Adjust the width of the individual grid items, only if using Grid gallery style. Default is 400.', 'aesop-core' );?></p>
 				<input type="text" name="aesop_grid_gallery_width" value="<?php echo (int) $grid_item_width;?>">
 			</div>
+			
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_lightbox_text"><?php _e( 'Lightbox Text', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Text to display when the lightbox is open. The texts are read from the image property.', 'aesop-core' );?></p>
+			   	<select name="aesop_lightbox_text">
+			      <option value="title" <?php selected( $aesop_lightbox_text, 'title' ); ?>><?php _e( 'Title', 'aesop-core' );?></option>
+			      <option value="caption" <?php selected( $aesop_lightbox_text, 'caption' ); ?>><?php _e( 'Caption', 'aesop-core' );?></option>
+			      <option value="title_caption" <?php selected( $aesop_lightbox_text, 'title_caption' ); ?>><?php _e( 'Title+Caption', 'aesop-core' );?></option>
+				  <option value="description" <?php selected( $aesop_lightbox_text, 'description' ); ?>><?php _e( 'Description', 'aesop-core' );?></option>
+				  <option value="none" <?php selected( $aesop_lightbox_text, 'none' ); ?>><?php _e( 'None', 'aesop-core' );?></option>
+			    </select>
+			</div>
+			
 
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--thumb" style="display:none;">
@@ -317,6 +332,18 @@ class AesopGalleryComponentAdmin {
 				<input type="checkbox" name="aesop_photoset_gallery_lightbox" <?php if ( $photoset_lb == true ) { ?>checked="checked"<?php } ?>>
 				<label for="aesop_photoset_gallery_lightbox"><?php _e( 'Enable Lightbox', 'aesop-core' );?></label>
 			</div>
+			
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_lightbox_text"><?php _e( 'Lightbox Text', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Text to display when the lightbox is open. The texts are read from the image property.', 'aesop-core' );?></p>
+			   	<select name="aesop_lightbox_text">
+			      <option value="title" <?php selected( $aesop_lightbox_text, 'title' ); ?>><?php _e( 'Title', 'aesop-core' );?></option>
+			      <option value="caption" <?php selected( $aesop_lightbox_text, 'caption' ); ?>><?php _e( 'Caption', 'aesop-core' );?></option>
+			      <option value="title_caption" <?php selected( $aesop_lightbox_text, 'title_caption' ); ?>><?php _e( 'Title+Caption', 'aesop-core' );?></option>
+				  <option value="description" <?php selected( $aesop_lightbox_text, 'description' ); ?>><?php _e( 'Description', 'aesop-core' );?></option>
+				  <option value="none" <?php selected( $aesop_lightbox_text, 'none' ); ?>><?php _e( 'None', 'aesop-core' );?></option>
+			    </select>
+			</div>
 
 		</div>
 
@@ -339,11 +366,29 @@ class AesopGalleryComponentAdmin {
 				<input type="text" name="aesop_hero_gallery_transition_speed" value="<?php echo (int) $hero_speed ? $hero_speed : 3000;?>">
 			</div>
 			
+			<div class="ase-gallery-opts--single" style="padding-top:20px;">
+				<label for="aesop_hero_gallery_content"><?php _e( 'Gallery Content', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Content displayed within the Hero gallery. You can use HTML tags with classes and styles.', 'aesop-core' );?></p>
+				<textarea name="aesop_hero_gallery_content" style="width:90%;padding-right:20px;"><?php echo $hero_content; ?></textarea>
+			</div>
+			
 			<div class="ase-gallery-opts--single" style="padding-top:20px">
 				<label for="aesop_hero_gallery_height"><?php _e( 'Main Gallery Height', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Specify this if you want to control the height of the gallery. Acceptable values include 500px, 50%, 100% etc.', 'aesop-core' );?></p>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'If you enter a ratio, such as 800/600, the gallery would appear with a constant width/height ratio. This is useful if you want the galery to be responsive on mobile devices on portrait modes.', 'aesop-core' );?></p>
 				<input type="text" name="aesop_hero_gallery_height" value="<?php echo $hero_width_to_height_ratio;?>">
+			</div>
+			
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_hero_image_text"><?php _e( 'Image Text', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Text to display with each image. The texts are read from the image property.', 'aesop-core' );?></p>
+			   	<select name="aesop_hero_image_text">
+				  <option value="none" <?php selected( $aesop_hero_image_text, 'none' ); ?>><?php _e( 'None', 'aesop-core' );?></option>
+			      <option value="title" <?php selected( $aesop_hero_image_text, 'title' ); ?>><?php _e( 'Title', 'aesop-core' );?></option>
+			      <option value="caption" <?php selected( $aesop_hero_image_text, 'caption' ); ?>><?php _e( 'Caption', 'aesop-core' );?></option>
+			      <option value="title_caption" <?php selected( $aesop_hero_image_text, 'title_caption' ); ?>><?php _e( 'Title+Caption', 'aesop-core' );?></option>
+				  <option value="description" <?php selected( $aesop_hero_image_text, 'description' ); ?>><?php _e( 'Description', 'aesop-core' );?></option>
+			    </select>
 			</div>
 			
 			<div class="ase-gallery-opts--single" style="padding-top:20px">
@@ -352,11 +397,10 @@ class AesopGalleryComponentAdmin {
 				<input type="text" name="aesop_hero_gallery_transition_anim_speed" value="<?php echo (int) $hero_speed ? $hero_anim_speed : 1500;?>">
 			</div>
 
-			<div class="ase-gallery-opts--single" style="padding-top:20px">
-				<label for="aesop_hero_gallery_content"><?php _e( 'Gallery Content', 'aesop-core' );?></label>
-				<p class="aesop-gallery-opts--desc"><?php _e( 'Content displayed within the Hero gallery. You can use HTML tags with classes and styles.', 'aesop-core' );?></p>
-				<textarea name="aesop_hero_gallery_content"><?php echo $hero_content; ?></textarea>
-			</div>
+			
+			
+			
+			
 			<div class="ase-gallery-opts--single">
 				<input type="checkbox" name="aesop_hero_gallery_enable_nav" <?php if ( $hero_enable_nav == true ) { ?>checked="checked"<?php } ?>>
 				<label for="aesop_hero_gallery_enable_nav"><?php _e( 'Enable Navigation Controls', 'aesop-core' );?></label>
@@ -398,6 +442,7 @@ class AesopGalleryComponentAdmin {
 
 		// grid
 		$grid_item_width = isset( $_POST['aesop_grid_gallery_width'] ) ? $_POST['aesop_grid_gallery_width'] : false;
+		$aesop_lightbox_text = isset( $_POST['aesop_lightbox_text'] ) ? $_POST['aesop_lightbox_text'] : false;
 
 		// thumbnail
 		$thumb_trans  = isset( $_POST['aesop_thumb_gallery_transition'] ) ? $_POST['aesop_thumb_gallery_transition'] : false;
@@ -414,6 +459,7 @@ class AesopGalleryComponentAdmin {
         $hero_speed  = isset( $_POST['aesop_hero_gallery_transition_speed'] ) ? $_POST['aesop_hero_gallery_transition_speed'] : false;
         $hero_trans  = isset( $_POST['aesop_hero_gallery_transition'] ) ? $_POST['aesop_hero_gallery_transition'] : false;
 		$hero_enable_nav   = isset( $_POST['aesop_hero_gallery_enable_nav'] ) ? $_POST['aesop_hero_gallery_enable_nav'] : false;
+		$aesop_hero_image_text = isset( $_POST['aesop_hero_image_text'] ) ? $_POST['aesop_hero_image_text'] : 'none';
 	
 
 		// safe to proceed
@@ -431,6 +477,7 @@ class AesopGalleryComponentAdmin {
 
 		// grid
 		update_post_meta( $post_id, 'aesop_grid_gallery_width', absint( $grid_item_width ) );
+		update_post_meta( $post_id, 'aesop_lightbox_text', $aesop_lightbox_text );
 
 		// thumbnail
 		update_post_meta( $post_id, 'aesop_thumb_gallery_transition', sanitize_text_field( $thumb_trans ) );
@@ -448,6 +495,7 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, 'aesop_hero_gallery_transition_anim_speed', absint( $hero_anim_speed ) );
         update_post_meta( $post_id, 'aesop_hero_gallery_transition', sanitize_text_field( $hero_trans ) );
 		update_post_meta( $post_id, 'aesop_hero_gallery_enable_nav', sanitize_text_field( $hero_enable_nav ) );
+		update_post_meta( $post_id, 'aesop_hero_image_text', $aesop_hero_image_text );
 	
 
 	}

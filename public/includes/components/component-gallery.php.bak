@@ -173,6 +173,8 @@ class AesopCoreGallery {
 	public function aesop_grid_gallery( $gallery_id, $image_ids, $width, $unique) {
 
 		$gridwidth  = get_post_meta( $gallery_id, 'aesop_grid_gallery_width', true ) ? get_post_meta( $gallery_id, 'aesop_grid_gallery_width', true ) : 400;
+		$aesop_lightbox_text = get_post_meta( $gallery_id, 'aesop_lightbox_text', true ) ? get_post_meta( $gallery_id, 'aesop_lightbox_text', true ) : 'title';
+		
 
 		// allow theme developers to determine the spacing between grid items
 		$space = apply_filters( 'aesop_grid_gallery_spacing', 5 );
@@ -267,8 +269,16 @@ class AesopCoreGallery {
 		foreach ( $image_ids as $image_id ):
 
 			$getimage   = wp_get_attachment_image( $image_id, 'aesop-grid-image', false, array( 'class' => 'aesop-grid-image' ) );
-			$caption   = get_post( $image_id )->post_excerpt;
-			$img_title     = get_post( $image_id )->post_title;
+			$img = get_post( $image_id );
+			$caption   = $img->post_excerpt;
+			$img_title     = $img->post_title;
+			$lightbox_text = "";
+			switch ($aesop_lightbox_text) {
+				case 'title': $lightbox_text = $img_title;break;	
+				case 'caption': $lightbox_text = $caption;break;
+				case 'title_caption': $lightbox_text = $img_title."<br>".$caption;break;
+				case 'description': $lightbox_text = $img->post_content;break;
+			}
 			$getimagesrc    = wp_get_attachment_image_src( $image_id, 'full' );	
 			if (class_exists( 'AesopLazyLoader' )) {
 			    $getimagesrc2    = wp_get_attachment_image_src( $image_id, 'aesop-grid-image' );
@@ -280,7 +290,7 @@ class AesopCoreGallery {
 ?>
 
 				<li class="aesop-grid-gallery-item">
-					<a class="aesop-lightbox" href="<?php echo esc_url( $getimagesrc[0] );?>" title="<?php esc_attr_e( $img_title );?>">
+					<a class="aesop-lightbox" href="<?php echo esc_url( $getimagesrc[0] );?>" title="<?php echo $lightbox_text;?>">
 						<?php if ( $caption ) { ?>
 							<span class="aesop-grid-gallery-caption"><?php echo aesop_component_media_filter( $caption );?></span>
 						<?php } ?>
@@ -435,6 +445,7 @@ class AesopCoreGallery {
 
 		// lightbox
 		$lightbox = get_post_meta( $gallery_id, 'aesop_photoset_gallery_lightbox', true );
+		$aesop_lightbox_text = get_post_meta( $gallery_id, 'aesop_lightbox_text', true ) ? get_post_meta( $gallery_id, 'aesop_lightbox_text', true ) : 'title';
 
 		// image size
 		$size    = apply_filters( 'aesop_photoset_gallery_size', 'large' );
