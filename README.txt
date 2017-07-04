@@ -5,8 +5,8 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.7.3
-Stable tag: 1.9.7.3
+Tested up to: 4.8
+Stable tag: 1.9.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,15 +28,14 @@ Utilizing these components, writers and developers can build feature-rich, visua
 
 [http://aesopstoryengine.com/about/](http://aesopstoryengine.com/about/)
 
+** Check the latest new features of Aesop Story Engine **
+
+[http://aesopstoryengine.com/blog/](http://aesopstoryengine.com/blog/)
 
 Reveal Animation: New features of Aesop Story Engine v 1.9.6 
 
 [http://aesopstoryengine.com/releases/aesop-story-engine-1-9-6-new-features/](http://aesopstoryengine.com/releases/aesop-story-engine-1-9-6-new-features/)
 
-
-Hero Gallery and Fixed Parallax: New features of Aesop Story Engine v 1.9
-
-[http://aesopstoryengine.com/updates/aesop-1-9-new-features/](http://aesopstoryengine.com/updates/aesop-1-9-new-features/)
 
 **Audio** -
 Display an audio player with support for MP3 that can be optionally hidden. This is great for showcasing audio interviews.
@@ -77,6 +76,9 @@ This component allows you to upload a PDF or image, that is shown to the user on
 **Collection** -
 The 13th component is meant to be used on a page of your site, and allows you to display stories from a specific collection (category).
 
+** Sign up for news and exclusive offers **
+
+[http://aesopstoryengine.com/be-social/](http://aesopstoryengine.com/be-social/)
 
 
 Here’s documentation on Aesop Story Engine: [http://aesopstoryengine.com/help](http://aesopstoryengine.com/help).
@@ -179,6 +181,12 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.8 =
+* NEW "Picture in Picture" exit option for Video Component. Thanks to Paul Eiche (peiche@gmail.com)
+* NEW Reveal animations for component overlay contents
+* NEW Options to set text source for lightboxes for Grid and Photoset Galleries
+* NEW Options to set image text for Hero Galleries
+
 = 1.9.7.3 =
 * FIX Chapter Video Background for Self Hosted Video
 

@@ -319,7 +319,7 @@ class Aesop_Core_Admin {
 		if ( strpos( $file, 'aesop-core.php' ) !== false ) {
 
 			$new_links = array(
-				'<a href="http://aesopstoryengine.com/help" target="_blank">Documentation</a>',
+				'<a href="http://aesopstoryengine.com/" target="_blank">Visit Plugin Site</a>',
 				'<a href="http://aesopstoryengine.com/donate" target="_blank">Donate</a>'
 			);
 
