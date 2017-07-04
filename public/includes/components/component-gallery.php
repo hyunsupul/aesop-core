@@ -462,7 +462,7 @@ class AesopCoreGallery {
 				  	onComplete: function(){
 
 				  		<?php if ( $lightbox ) { ?>
-				  			jQuery('.aesop-gallery-photoset a').addClass('aesop-lightbox').prepend('<i class="dashicons dashicons-search"></i>');
+							jQuery('.aesop-gallery-photoset a').addClass('aesop-lightbox').prepend('<i class="dashicons dashicons-search"></i>');
 
 				  		<?php } ?>
 
@@ -475,7 +475,6 @@ class AesopCoreGallery {
 								
 								title = jQuery(this).attr('data-title');
 								lbtitle = jQuery(this).attr('title');
-								alert(lbtitle);
 								jQuery(this).after('<span class="aesop-photoset-caption"><span class="aesop-photoset-caption-title">' + title + '</span><span class="aesop-photoset-caption-caption">' + caption +'</span></span>');
 								jQuery('.aesop-photoset-caption').hide().fadeIn();
 
@@ -566,7 +565,7 @@ class AesopCoreGallery {
 			}
 		}
 		?>
-		<div class="aesop-hero-gallery-wrapper">
+		<div class="aesop-hero-gallery-wrapper"  >
 		<div id="aesop-hero-gallery-<?php echo esc_attr( $gallery_id );?>" class="fotorama" 	data-transition="<?php echo esc_attr( $transition );?>"
 																			data-width="<?php echo esc_attr( $width );?>"
 																			data-height="<?php echo esc_attr( $height );?>"
@@ -598,9 +597,9 @@ class AesopCoreGallery {
 			$img = get_post( $image_id );
 			$caption  = $img->post_excerpt;
 			$image_text = "";
-
+			 
 			if ($image_text_op && $image_text_op != 'none') {
-			
+			 
 				switch ($image_text_op) {
 					case 'title': $image_text = $img->post_title;break;	
 					case 'caption': $image_text = $caption;break;
@@ -611,7 +610,7 @@ class AesopCoreGallery {
 				<div data-img="<?php echo esc_url( $full[0] );?>" data-caption="<?php echo esc_attr( $caption );?>" style="display:block;">
 				  <div class="aesop-hero-gallery-content"><?php echo esc_attr($image_text);?></div>
 				</div>
-			   <?php
+			 <?php
 			} else { ?>
 			    <img src="<?php echo esc_url( $full[0] );?>" data-caption="<?php echo esc_attr( $caption );?>" alt="<?php echo esc_attr( $alt );?>">
 			   <?php
