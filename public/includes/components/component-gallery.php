@@ -608,7 +608,7 @@ class AesopCoreGallery {
 				}
 				?>
 				<div data-img="<?php echo esc_url( $full[0] );?>" data-caption="<?php echo esc_attr( $caption );?>" style="display:block;">
-				  <div class="aesop-hero-gallery-content"><?php echo esc_attr($image_text);?></div>
+				  <div class="aesop-hero-gallery-content"><?php echo $image_text;?></div>
 				</div>
 			 <?php
 			} else { ?>
