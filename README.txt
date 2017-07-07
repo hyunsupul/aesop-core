@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.8
-Stable tag: 1.9.8.1
+Stable tag: 1.9.8.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -181,6 +181,11 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.8.2 =
+* Improved the menu behavior for the Video Component
+* Hero image texts can include HTML now
+* FIX Fixed a styling issue for the play button on self hosted videos.
+
 = 1.9.8.1 =
 * FIX Fixed an issue in the hero gallery
 
