@@ -28,7 +28,7 @@ class AesopStoryEngineOptions {
 			) );
 			
 		$wp_customize->add_setting( 'ase_mapbox_apikey', array(
-				'default'   => 'AIzaSyAZpfTNQJ05fBo7Ai8qRYH4lzG72mkO83Y',
+				'default'   => 'AIzaSyDguxUeZr9LUPe9ImgYwXPTqPwQbsUFAJo',
 				'type'    => 'option',
 				'sanitize_callback' => self::sanitize_text_field()
 			) );

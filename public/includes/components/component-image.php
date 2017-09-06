@@ -20,7 +20,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 			'lightbox'    		=> 'off',
 			'force_fullwidth'   => 'off',
 			'overlay_content'   => '',
-			'revealfx'          => '',  
+			'revealfx'          => '', 
 			'overlay_revealfx'          => ''			
 		);
 

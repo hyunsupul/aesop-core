@@ -37,9 +37,9 @@ class AesopMapComponentAdmin {
 
 		if ( $hook == 'post.php' || $hook == 'post-new.php' ) {
 
-		    $goog_apikey = get_option( 'ase_mapbox_key' );
+		    $goog_apikey = get_option( 'ase_mapbox_apikey' );
 			// default api key
-			$goog_apikey = $goog_apikey ? $goog_apikey : "AIzaSyAZpfTNQJ05fBo7Ai8qRYH4lzG72mkO83Y";
+			$goog_apikey = $goog_apikey ? $goog_apikey : "AIzaSyDguxUeZr9LUPe9ImgYwXPTqPwQbsUFAJo";
 			wp_enqueue_script( 'google-maps', '//maps.googleapis.com/maps/api/js?libraries=places&sensor=false&key='.$goog_apikey );
 			wp_enqueue_script( 'aesop-map-script', AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js' );
 			wp_enqueue_script( 'jquery-geocomplete', AI_CORE_URL.'/admin/assets/js/vendor/jquery.geocomplete.min.js' );

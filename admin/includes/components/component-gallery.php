@@ -332,7 +332,7 @@ class AesopGalleryComponentAdmin {
 				<input type="checkbox" name="aesop_photoset_gallery_lightbox" <?php if ( $photoset_lb == true ) { ?>checked="checked"<?php } ?>>
 				<label for="aesop_photoset_gallery_lightbox"><?php _e( 'Enable Lightbox', 'aesop-core' );?></label>
 			</div>
-			
+
 			<div class="ase-gallery-opts--single">
 				<label for="aesop_lightbox_text"><?php _e( 'Lightbox Text', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Text to display when the lightbox is open. The texts are read from the image property.', 'aesop-core' );?></p>

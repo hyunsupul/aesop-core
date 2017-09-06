@@ -81,21 +81,22 @@ if ( ! function_exists( 'aesop_scroll_reveal_animation' ) ) {
 			    ?>jQuery('<?php echo esc_html( $id );?>').css("visibility","visible"); <?php
 			    break;
 		}
+		$overlay = esc_html( $id )." ".$overlay_id.", ".esc_html( $id )." ".$overlay_id." > *";
 		switch ($atts['overlay_revealfx']) {
 			case 'inplace':
-				?>sr.reveal('<?php echo esc_html( $id )." ".$overlay_id;?>', {origin:'bottom', delay:<?php echo $overlay_delay;?>, distance: '0px', duration: 1000});<?php
+				?>sr.reveal("<?php echo $overlay?>", {origin:'bottom', delay:<?php echo $overlay_delay;?>, distance: '0px', duration: 1000}, 200);<?php
 				break;
 			case 'inplaceslow':
-				?>sr.reveal('<?php echo esc_html( $id )." ".$overlay_id;?>', {origin:'bottom', delay:<?php echo $overlay_delay;?>, distance: '0px', duration: 2000});<?php
+				?>sr.reveal("<?php echo $overlay?>", {origin:'bottom', delay:<?php echo $overlay_delay;?>, distance: '0px', duration: 2000}, 200);<?php
 				break;
 			case 'frombelow':
-				?>sr.reveal('<?php echo esc_html( $id )." ".$overlay_id;?>', {origin:'bottom', delay:<?php echo $overlay_delay;?>, distance: '200px', duration: 1000});<?php
+				?>sr.reveal("<?php echo $overlay?>", {origin:'bottom', delay:<?php echo $overlay_delay;?>, distance: '200px', duration: 1000}, 200);<?php
 				break;
 			case 'fromleft':
-				?>sr.reveal('<?php echo esc_html( $id )." ".$overlay_id;?>', {origin:'left', delay:<?php echo $overlay_delay;?>, distance: '400px', duration: 1000});<?php
+				?>sr.reveal("<?php echo $overlay?>", {origin:'left', delay:<?php echo $overlay_delay;?>, distance: '400px', duration: 1000}, 200);<?php
 				break;
 			case 'fromright':
-				?>sr.reveal('<?php echo esc_html( $id )." ".$overlay_id;?>', {origin:'right', delay:<?php echo $overlay_delay;?>, distance: '400px', duration: 1000});<?php
+				?>sr.reveal("<?php echo $overlay?>", {origin:'right', delay:<?php echo $overlay_delay;?>, distance: '400px', duration: 1000},200);<?php
 				break;
 			default:
 			    ?>jQuery('<?php echo esc_html( $id )." ".$overlay_id;?>').css("visibility","visible"); <?php
