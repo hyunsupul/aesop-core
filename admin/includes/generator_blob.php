@@ -19,8 +19,12 @@ function aesop_shortcodes_blob() {
 				$return .= '<small class="aesop-option-desc">'.$attr_info['tip'].'</small>';
 				// Select
 				if ( isset( $attr_info['values'] ) ) {
-
-					$return .= '<select name="' . $attr_name . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr">';
+					// Select multiple
+					if ('select_multiple' == $attr_info['type']) {
+						$return .= '<select multiple name="' . $attr_name . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr" style="height:150px;">';
+					} else {
+						$return .= '<select name="' . $attr_name . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr">';
+					}
 
 					$i = 0;
 

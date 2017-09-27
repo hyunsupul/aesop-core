@@ -410,7 +410,9 @@ class AesopCoreGallery {
 			$alt     = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 			$caption = get_post( $image_id )->post_excerpt;
 
-			$lazy   = class_exists( 'AesopLazyLoader' ) ? sprintf( 'src="%s" data-src="%s" class="aesop-sequence-img aesop-lazy-img"', $lazy_holder, esc_url( $img[0] ) ) : sprintf( 'src="%s" class="aesop-sequence-img" ', esc_url( $img[0] ) );
+			// lazy loading disabled for now
+			//$lazy   = class_exists( 'AesopLazyLoader' ) ? sprintf( 'src="%s" data-src="%s" class="aesop-sequence-img aesop-lazy-img"', $lazy_holder, esc_url( $img[0] ) ) : sprintf( 'src="%s" class="aesop-sequence-img" ', esc_url( $img[0] ) );
+			$lazy = sprintf( 'src="%s" class="aesop-sequence-img" ', esc_url( $img[0] ) );
 
 ?>
            	<figure class="aesop-sequence-img-wrap">

@@ -340,6 +340,22 @@
 .aesop-collection-grid.aesop-collection-grid-5col .aesop-collection-item {
   width: 20%;
 }
+@media (max-width: 782px) {
+  .aesop-story-collection .aesop-collection-grid-2col .aesop-collection-item,
+  .aesop-story-collection .aesop-collection-grid-3col .aesop-collection-item,
+  .aesop-story-collection .aesop-collection-grid-4col .aesop-collection-item,
+  .aesop-story-collection .aesop-collection-grid-5col .aesop-collection-item {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .aesop-story-collection .aesop-collection-grid-2col .aesop-collection-item,
+  .aesop-story-collection .aesop-collection-grid-3col .aesop-collection-item,
+  .aesop-story-collection .aesop-collection-grid-4col .aesop-collection-item,
+  .aesop-story-collection .aesop-collection-grid-5col .aesop-collection-item {
+    width: 100%;
+  }
+}
 .aesop-collection-load-more {
   width: 100%;
   text-align: center;
@@ -1651,7 +1667,7 @@ html.swipebox {
 }
 .aesop-photoset-gallery-wrap .aesop-photoset-caption .aesop-photoset-caption-title,
 .aesop-photoset-gallery-wrap .aesop-photoset-caption .aesop-photoset-caption-caption {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.8);
   padding: 6px 8px;
   color: #555;
 }

@@ -182,6 +182,7 @@ jQuery(document).ready(function($) {
 
 	function SpecialCharEncode(s)
 	{
+		if ((typeof s) != "string") return s;
 		var tagsToReplace = {
         '<': '&lt;',
         '>': '&gt;',
@@ -189,6 +190,8 @@ jQuery(document).ready(function($) {
 		']':'&#93;',
 		'"': '&#34;'
 		};
+	    
+		
 		
 		return  s.replace(/[\[\]<>\"]/g, function(tag) {
 			return tagsToReplace[tag] || tag;

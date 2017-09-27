@@ -1,7 +1,7 @@
 .aesop-gallery-component .aesop-component-caption {
   color: #333;
   padding: 0.25rem 0.75rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
   font-size: 14px;
 }
 .aesop-stacked-img {
@@ -22,7 +22,7 @@
   z-index: 0;
   color: #333;
   padding: 0.25rem 0.75rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
   font-size: 14px;
   -webkit-transition: all 0.75s ease-in-out;
   transition: all 0.75s ease-in-out;

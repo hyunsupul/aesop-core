@@ -77,7 +77,7 @@ class aesopCoreWelcome {
 					
 					    <li>
 							<strong><?php _e( 'Introduction', 'aesop-core' );?></strong>
-							<p>Check <a href="http://http://aesopstoryengine.com/about/"><?php _e( 'Intro/Demo page ', 'aesop-core' );?></a> <?php _e(' to see what Aesop has to offer.', 'aesop-core' )?></p>
+							<p>Check <a href="http://aesopstoryengine.com/about/"><?php _e( 'Intro/Demo page ', 'aesop-core' );?></a> <?php _e(' to see what Aesop has to offer.', 'aesop-core' )?></p>
 						</li>
 						<li>
 							<strong><?php _e( 'Development Information', 'aesop-core' );?></strong>

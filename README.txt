@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.8
-Stable tag: 1.9.8.5
+Stable tag: 1.9.8.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -181,6 +181,11 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.8.6 =
+* NEW Options to remove background image shading on the Content Component
+* NEW Made the collection component with multiple columns responsive.
+* FIX Fixes to parameter descriptions and a link.
+
 = 1.9.8.5 =
 * NEW Option to select multiple categories for the Collection Component
 * FIX Map marker hidden option fixed.

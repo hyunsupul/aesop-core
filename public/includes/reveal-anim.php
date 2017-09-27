@@ -82,6 +82,7 @@ if ( ! function_exists( 'aesop_scroll_reveal_animation' ) ) {
 			    break;
 		}
 		$overlay = esc_html( $id )." ".$overlay_id.", ".esc_html( $id )." ".$overlay_id." > *";
+        
 		switch ($atts['overlay_revealfx']) {
 			case 'inplace':
 				?>sr.reveal("<?php echo $overlay?>", {origin:'bottom', delay:<?php echo $overlay_delay;?>, distance: '0px', duration: 1000}, 200);<?php
@@ -103,6 +104,7 @@ if ( ! function_exists( 'aesop_scroll_reveal_animation' ) ) {
 			    break;
 		}
 		?>
+		
 		});
 		</script>
 	    <?php
@@ -303,7 +305,8 @@ class AesopRevealAnim {
 		$shortcodes['video']['atts']['overlay_revealfx'] = $custom ;
 		$custom['desc']=__( 'Floater Reveal Effect', 'aesop-core' );
 		$custom['tip']=__( 'Reveal animation effect for the floater.', 'aesop-core' );
-		$shortcodes['parallax']['atts']['overlay_revealfx'] = $custom ;
+		$shortcodes['parallax']['atts']['overlay_revealfx'] = $custom;
+		$custom['desc']=__( 'Content Reveal Effect', 'aesop-core' );
 		$custom['tip']=__( 'Reveal animation effect for the content.', 'aesop-core' );
 		$shortcodes['content']['atts']['overlay_revealfx'] = $custom ;
 		$custom['tip']=__( 'Reveal animation effect for the overlay content. Only applied to Hero Gallery', 'aesop-core' );

@@ -316,7 +316,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'color',
 						'default'  => '#333333',
 						'desc'   => __( 'Background Color', 'aesop-core' ),
-						'tip'  => __( 'Choose an optional background color for the content component.', 'aesop-core' )
+						'tip'  => __( 'Choose an optional background color for the content component.', 'aesop-core' ).__( 'Not used if using image background.', 'aesop-core' )
 					),
 					'width'   => array(
 						'type'  => 'text_small',
@@ -360,7 +360,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							)
 						),
 						'default'  => 'none',
-						'desc'   => __( 'Text Block Alignment', 'aesop-core' ),
+						'desc'   => __( 'Content Block Alignment', 'aesop-core' ),
 						'tip'  => __( 'This option allows you to float the text block to the left or right. This is useful when using a width like <code>300px</code>.', 'aesop-core' )
 					),
 					'innerposition'    => array(
@@ -410,6 +410,22 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => '',
 						'desc'   => __( 'Background Image Size', 'aesop-core' ),
 						'tip'  => __( 'If using a background image, this option sets the size of the image. By default the image will be full width.', 'aesop-core' )
+					),
+					'disable_bgshading'    => array(
+						'type'  => 'select',
+						'values'  => array(
+							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
+							)
+						),
+						'default'  => 'off',
+						'desc'   => __( 'Do not shade the image background.', 'aesop-core' ),
+						'tip'  => __( 'When using an image background, by default the background is shaded to make the text stand out. Set this option on to disable shading.', 'aesop-core' )
 					),
 					'floatermedia'  => array(
 						'type'  => 'text_area',
@@ -1149,7 +1165,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'tip'  => __( 'Display an optional heading to be used within the Collection component.', 'aesop-core' )
 					),
 					'collection'    => array(
-						'type'  => 'select',
+						'type'  => 'select_multiple',
 						'values' => aesop_option_get_categories(),
 						'default'  => '',
 						'desc'   => __( 'Category', 'aesop-core' ),

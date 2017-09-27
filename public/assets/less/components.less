@@ -379,7 +379,26 @@
     &.aesop-collection-grid-5col .aesop-collection-item {
         width:20%;
     }
+	
 }
+
+
+
+.aesop-story-collection {
+	.aesop-collection-grid-2col, .aesop-collection-grid-3col, .aesop-collection-grid-4col, .aesop-collection-grid-5col  {
+		@media(max-width:782px) {
+			.aesop-collection-item {
+			   width:50%;
+			}
+		}
+	    @media(max-width:480px) {
+			.aesop-collection-item {
+			   width:100%;
+			}
+		}
+	}
+}
+
 
 .aesop-collection-load-more {
     width:100%;

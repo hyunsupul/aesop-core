@@ -30,6 +30,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 			'floaterposition'	=> 'left',
 			'color'    			=> '#FFFFFF',
 			'background'  		=> '#222222',
+			'disable_bgshading' => 'off',
 			'revealfx'          => '',
 			'overlay_revealfx'          => ''
 		);
@@ -68,7 +69,9 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 		$position = ( 'left' == $atts['position'] || 'right' == $atts['position'] ) ? sprintf( 'float:%s;', esc_attr( $atts['position'] ) ) : 'margin-left:auto;margin-right:auto;';
 		$widthContentStyle = 'content' == $atts['width'] ? false : sprintf( 'width:%s;max-width:100%%;', esc_attr( $atts['width'] ) );
 		$widthComponentStyle = sprintf( 'width:%s;max-width:100%%;', esc_attr( $atts['component_width'] ) );
-		$innerstyle = $atts['width'] || $position || $atts['innerposition'] ? sprintf( 'style="%s%s%s"', $widthContentStyle, $position, $innerposition ) : false;
+		$overlay_animated_style = (!empty($atts['overlay_revealfx']) && $atts['overlay_revealfx']!='off') ? 'visibility:hidden;':false;
+		$shade_style = (empty($atts['disable_bgshading']) || $atts['disable_bgshading']=='off') ? false : 'background-color:transparent;';
+		$innerstyle = sprintf( 'style="%s%s%s%s%s"', $widthContentStyle, $position, $innerposition, $overlay_animated_style, $shade_style ) ;
 		$txtcolor  = $atts['color'] ? sprintf( 'color:%s;', $atts['color'] ) : false;
 		$itemstyle = $imgstyle !== false || $txtcolor !== false || $height !== false ? sprintf( 'style="%s%s%s%s"', $imgstyle, $txtcolor, $bgcolor, $height ) : false;
 
@@ -83,6 +86,8 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 
 		// floater positoin
 		$floaterposition = $atts['floaterposition'] ? sprintf( 'floater-%s', $atts['floaterposition'] ) : false;
+		
+		
 
 		ob_start();
 
