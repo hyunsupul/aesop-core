@@ -11,10 +11,20 @@ class AesopStoryEngineOptions {
 
 		$wp_customize->add_section( 'aesop_story_engine', array(
 				'title'   => __( 'Aesop Story Engine', 'aesop-core' ),
-				'description' => __( 'Refer to the documentation located <a href="http://aesopstoryengine.com/help/map-component" target="_blank">here</a> for option descriptions.', 'aesop-core' )
+							) );
+			
+		$wp_customize->add_setting( 'ase_chapter_no_animate_scroll', array(
+				'default'   => '',
+				'type'    => 'option',
+				'label'		=> __('Enable parallax movement of header image on a single post.', 'novella')
+			) );
+		$wp_customize->add_control( 'ase_chapter_no_animate_scroll', array(
+				'label'   => __( 'Disable Chapter Scroll Animation', 'aesop-core' ),
+				'section'   => 'aesop_story_engine',
+				'settings'   => 'ase_chapter_no_animate_scroll',
+				'type'    =>  'checkbox',
 			) );
 
-		// Enable Google Analytics
 		$wp_customize->add_setting( 'ase_mapbox_id', array(
 				'default'   => '',
 				'type'    => 'option',
@@ -24,6 +34,7 @@ class AesopStoryEngineOptions {
 				'label'   => __( 'Mapbox Map ID', 'aesop-core' ),
 				'section'   => 'aesop_story_engine',
 				'settings'   => 'ase_mapbox_id',
+				'description' => __( 'Refer to the documentation located <a href="http://aesopstoryengine.com/help/map-component" target="_blank">here</a> for option descriptions.', 'aesop-core' ),
 				'type'    => 'text'
 			) );
 			

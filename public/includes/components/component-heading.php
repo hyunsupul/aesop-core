@@ -174,6 +174,8 @@ class AesopChapterHeadingComponent {
 		} else {
 		   $contentClass = apply_filters( 'aesop_chapter_scroll_container', '.entry-content' );
 		}
+		
+		$animate = get_option( 'ase_chapter_no_animate_scroll' ) ? 'false' : 'true';
 /**/
 		// filterabl content header class
 		$contentHeaderClass = apply_filters( 'aesop_chapter_scroll_nav', '.aesop-entry-header' );
@@ -190,6 +192,7 @@ class AesopChapterHeadingComponent {
 						
 						
 					    sections: '.aesop-article-chapter-wrap',
+						animated: <?php echo $animate;?>,
 					    arrowKeys: true,
 					    insertTarget: '<?php echo esc_attr( $contentHeaderClass );?>',
 					    insertLocation: 'appendTo',
