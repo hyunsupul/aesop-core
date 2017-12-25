@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.9.1
-Stable tag: 1.9.8.7
+Stable tag: 1.9.8.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -175,6 +175,9 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.8.8 =
+* FIX Changed the size of the mobile Parallax gallery images.
+
 = 1.9.8.7 =
 * NEW New option to disable scroll animation for chapters
 * FIX On mobile devices, the Parallax gallery's parallax is disabled. But its style didn't look correct. Now on mobile devices Parallax gallery uses the style of Sequence gallery.

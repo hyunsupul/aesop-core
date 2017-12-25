@@ -388,7 +388,7 @@ class AesopCoreGallery {
 				endforeach;
 
 			} else {
-				$size    = apply_filters( 'aesop_sequence_gallery_size', 'medium' );
+				$size    = apply_filters( 'aesop_sequence_gallery_size', 'large' );
 				foreach ( $image_ids as $image_id ):
 
 					$img     = wp_get_attachment_image_src( $image_id, $size, false, '' );
