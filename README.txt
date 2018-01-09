@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 4.9.1
-Stable tag: 1.9.8.8
+Stable tag: 1.9.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,10 @@ Utilizing these components, writers and developers can build feature-rich, visua
 ** Check the latest new features of Aesop Story Engine **
 
 [http://aesopstoryengine.com/blog/](http://aesopstoryengine.com/blog/)
+
+Chapter Styles: New features of Aesop Story Engine v 1.9.9   
+
+[http://aesopstoryengine.com/releases/new-chapter-styles-aesop-1-9-9-features/](http://aesopstoryengine.com/releases/new-chapter-styles-aesop-1-9-9-features/)
 
 Reveal Animation: New features of Aesop Story Engine v 1.9.6 
 
@@ -175,6 +179,9 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 1.9.9 =
+* NEW New Chapter options accessible from the customize menu.
+
 = 1.9.8.8 =
 * FIX Changed the size of the mobile Parallax gallery images.
 

@@ -62,19 +62,19 @@ if ( ! function_exists( 'aesop_scroll_reveal_animation' ) ) {
 				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'bottom', distance: '0px', duration: 1000}<?php echo $delay ;?>);<?php
 				break;
 			case 'inplaceslow':
-				$overlay_delay = 2500;
+				$overlay_delay = 1500;
 				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'bottom', distance: '0px', delay:500, duration: 2000}<?php echo $delay ;?>);<?php
 				break;
 			case 'frombelow':
-				$overlay_delay = 1500;
+				$overlay_delay = 1000;
 				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'bottom', distance: '200px', duration: 1000}<?php echo $delay ;?>);<?php
 				break;
 			case 'fromleft':
-				$overlay_delay = 1500;
+				$overlay_delay = 1000;
 				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'left', distance: '400px', duration: 1000}<?php echo $delay ;?>);<?php
 				break;
 			case 'fromright':
-				$overlay_delay = 1500;
+				$overlay_delay = 1000;
 				?>sr.reveal('<?php echo esc_html( $id );?>', {origin:'right', distance: '400px', duration: 1000}<?php echo $delay ;?>);<?php
 				break;
 			default:

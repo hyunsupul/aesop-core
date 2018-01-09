@@ -160,11 +160,12 @@ class AesopChapterHeadingComponent {
 
 	public function aesop_chapter_loader() {
 
+	
 
 		// allow theme developers to determine the offset amount
 		$chapterOffset = apply_filters( 'aesop_chapter_scroll_offset', 0 );
 		
-		$top = apply_filters( 'aesop_chapter_top_text', 'Top' );
+		$top = apply_filters( 'aesop_chapter_top_text', __('Top','aesop-core') );
 
 		// filterable content class
 		$postClass = get_post_class(); 
@@ -176,8 +177,8 @@ class AesopChapterHeadingComponent {
 		}
 		
 		$animate = get_option( 'ase_chapter_no_animate_scroll' ) ? 'false' : 'true';
-/**/
-		// filterabl content header class
+
+		// filterable content header class
 		$contentHeaderClass = apply_filters( 'aesop_chapter_scroll_nav', '.aesop-entry-header' );
 ?>
 			<!-- Chapter Loader -->
@@ -209,7 +210,11 @@ class AesopChapterHeadingComponent {
 					       			var match = jQuery(this).attr('href');
 
 					       			if ( match == '#'+id ) {
-					       				jQuery(this).text(title);
+										if (title) {
+											jQuery(this).html("<span>"+title+"</span>");
+										} else if (id=='scrollNav-1') {
+											jQuery(this).html("<span>"+'<?php echo esc_attr( $top );?>'+"</span>");
+										}
 					       			}
 					       		});
 
@@ -241,8 +246,66 @@ class AesopChapterHeadingComponent {
 	 */
 	public function aesop_chapter_menu() {
 
-		$out = '<a id="aesop-toggle-chapter-menu" class="aesop-toggle-chapter-menu" href="#aesop-chapter-menu"><i class="dashicons dashicons-tag aesop-close-chapter-menu"></i></a>';
-		$out .= '<div id="aesop-chapter-menu" class="aesop-chapter-menu">
+		$ui_style = get_option( 'ase_chapter_ui_style' );
+		$ui_style = apply_filters( 'aesop_chapter_menu_ui_style', $ui_style );
+		$out = '';
+		$exclass="";
+		if (empty($ui_style) || (wp_is_mobile() && !get_option( 'ase_chapter_enable_dots_mobile' ))) {
+			$out .= '<a id="aesop-toggle-chapter-menu" class="aesop-toggle-chapter-menu" href="#aesop-chapter-menu"><i class="dashicons dashicons-tag aesop-close-chapter-menu"></i></a>';
+		} else {
+			if ($ui_style == 'left_dots') {
+				$exclass = 'aesop-chapter-menu-left';
+			} else if ($ui_style == 'right_dots') {
+				$exclass = 'aesop-chapter-menu-right';
+			}
+			
+			$style_link  = apply_filters( 'aesop_chapter_ex_style_link', AI_CORE_URL . '/public/assets/css/ai-chapters.css' );
+			$active_color = get_option( 'ase_chapter_active_dot_color','#1e73be');
+			
+			$hover_color = get_option( 'ase_chapter_active_hover_color','#dd9933');
+			$dot_color = get_option( 'ase_chapter_dot_color','#7f7f7f');
+			$inview_color = self::color_avg($active_color,$dot_color);
+			
+			$out .= '<link rel="stylesheet" href="'.$style_link.'">';
+			$out .= '<script>
+					jQuery(document).ready(function(){
+						jQuery( ".scroll-nav__item" ).hover(
+						  function() {
+							jQuery( this ).find("span").show();
+						  }, function() {
+							jQuery( this ).find("span").hide();
+						  }
+						);
+					});
+		         </script>';
+			$out .= '<style>
+				   .aesop-chapter-menu-left .scroll-nav__item.active.in-view a:before,
+				   .aesop-chapter-menu-right .scroll-nav__item.active.in-view a:after{
+						background:'.$active_color.'; 
+					}
+					.aesop-chapter-menu-left .scroll-nav__item.in-view a:before,
+				    .aesop-chapter-menu-right .scroll-nav__item.in-view a:after{
+						background:'.$inview_color.'; 
+					}
+
+					.aesop-chapter-menu-left .scroll-nav__item:hover a:before,
+					.aesop-chapter-menu-right .scroll-nav__item:hover a:after{
+						background:'.$hover_color.';
+					}
+					.aesop-chapter-menu .scroll-nav__item a:after,
+					.aesop-chapter-menu .scroll-nav__item a:before {
+						background:'.$dot_color.';						
+					}
+		        ';
+			if (!get_option('ase_chapter_hide_active_chapter_name')) {
+				$out .= '.aesop-chapter-menu	.active.scroll-nav__item span {
+								display: inline !important;
+							}
+						';
+			}
+			$out .= '</style>';
+		}
+		$out .= '<div id="aesop-chapter-menu" class="aesop-chapter-menu '.$exclass.'">
 					<i class="dashicons dashicons-no-alt aesop-close-chapter-menu"></i>
 					<div class="aesop-chapter-menu--inner aesop-entry-header">
 					</div>
@@ -251,5 +314,20 @@ class AesopChapterHeadingComponent {
 		$return = apply_filters( 'aesop_chapter_menu_output', $out );
 
 		return $return;
+	}
+	
+	private function color_avg($color1,$color2) {
+
+        // extract RGB values for color1.
+        list($r1,$g1,$b1) = str_split(ltrim($color1,'#'),2);
+        // extract RGB values for color2.
+        list($r2,$g2,$b2) = str_split(ltrim($color2,'#'),2);
+
+        // get the average RGB values.
+        $r_avg = (hexdec($r1)+hexdec($r2))/2;
+        $g_avg = (hexdec($g1)+hexdec($g2))/2;
+        $b_avg = (hexdec($b1)+hexdec($b2))/2;
+   
+        return '#'.sprintf("%02s",dechex($r_avg)).sprintf("%02s",dechex($g_avg)).sprintf("%02s",dechex($b_avg));
 	}
 }
