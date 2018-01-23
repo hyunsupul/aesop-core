@@ -11,18 +11,26 @@ function AesopStoryEngineOptions_register( $wp_customize ) {
 		class ChapterUI_Select_Control extends WP_Customize_Control {
 			public $type = 'select';
 			
-			public function render_content() { ?>
-			<label>
-				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<select <?php $this->link(); ?>>
-					<option value="" <?php $val = $this->value(); if(empty($val)) echo 'selected="selected"'; ?>><?php echo __( 'Default', 'aesop-core' )?></option>
-					<option value="left_dots" <?php if($this->value() == 'left_dots') echo 'selected="selected"'; ?>><?php echo __( 'Left Dots', 'aesop-core' )?></option>
-					<option value="right_dots" <?php if($this->value() == 'right_dots') echo 'selected="selected"'; ?>><?php echo __( 'Right Dots', 'aesop-core' )?></option>
+			public function render_content() { 
+				$val = $this->value();
+			    $def_selected ="";
+				$left_dots ="";
+				$right_dots ="";
+				if(empty($val)) $def_selected =  'selected="selected"';
+				if($this->value() == 'left_dots') $left_dots =  'selected="selected"';
+				if($this->value() == 'right_dots') $right_dots =  'selected="selected"';
+				$content = '
+				<label>
+				<span class="customize-control-title">'.esc_html( $this->label ).'</span>
+				<select '.$this->get_link().'>
+					<option value="" '.$def_selected.'>'.__( 'Default', 'aesop-core' ).'</option>
+					<option value="left_dots" '.$left_dots.'>'.__( 'Left Dots', 'aesop-core' ).'</option>
+					<option value="right_dots" '.$right_dots.'>'.__( 'Right Dots', 'aesop-core' ).'</option>
 				</select>
 				<script>
 					jQuery(document).ready(function($){			
 						function optSetting(val){
-							if (val == '') {
+							if (val == "") {
 								jQuery("#customize-control-ase_chapter_dot_color,#customize-control-ase_chapter_hide_active_chapter_name,#customize-control-ase_chapter_active_dot_color,#customize-control-ase_chapter_active_hover_color,#customize-control-ase_chapter_enable_dots_mobile").slideUp();
 							} else {
 								jQuery("#customize-control-ase_chapter_dot_color,#customize-control-ase_chapter_hide_active_chapter_name,#customize-control-ase_chapter_active_dot_color,#customize-control-ase_chapter_active_hover_color,#customize-control-ase_chapter_enable_dots_mobile").slideDown();
@@ -35,8 +43,9 @@ function AesopStoryEngineOptions_register( $wp_customize ) {
 						})
 					});
 				</script>
-			</label>
-		<?php
+				</label>';
+				$content = apply_filters( 'aesop_chapter_ui_select_content', $content );
+				echo $content;
 			} //render_content()
 		} //Select_Control()
 

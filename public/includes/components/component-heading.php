@@ -261,15 +261,19 @@ class AesopChapterHeadingComponent {
 			
 			$style_link  = apply_filters( 'aesop_chapter_ex_style_link', AI_CORE_URL . '/public/assets/css/ai-chapters.css' );
 			$active_color = get_option( 'ase_chapter_active_dot_color','#1e73be');
+			$active_color = apply_filters( 'aesop_chapter_active_dot_color', $active_color );
 			
 			$hover_color = get_option( 'ase_chapter_active_hover_color','#dd9933');
+			$hover_color = apply_filters( 'aesop_chapter_active_hover_color', $hover_color );
 			$dot_color = get_option( 'ase_chapter_dot_color','#7f7f7f');
+			$dot_color = apply_filters( 'aesop_chapter_dot_color', $dot_color );
 			$inview_color = self::color_avg($active_color,$dot_color);
+			$inview_color = apply_filters( 'aesop_chapter_dot_inview_color', $inview_color );
 			
 			$out .= '<link rel="stylesheet" href="'.$style_link.'">';
 			$out .= '<script>
 					jQuery(document).ready(function(){
-						jQuery( ".scroll-nav__item" ).hover(
+						jQuery( ".aesop-chapter-menu .scroll-nav__item" ).hover(
 						  function() {
 							jQuery( this ).find("span").show();
 						  }, function() {

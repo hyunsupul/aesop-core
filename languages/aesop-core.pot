@@ -5,14 +5,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine 1.6.5\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2018-01-01 00:50-0500\n"
+"POT-Creation-Date: 2018-01-17 16:31-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: WP-Translations (http://wp-translations.org/)\n"
 "Language-Team: WP-Translations <fxb@wp-translations.org>\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
@@ -1184,7 +1184,7 @@ msgid ""
 "Setting this to on will display only the actual category titles (without images)."
 msgstr ""
 
-#: admin/includes/available.php:1208 public/includes/options.php:18
+#: admin/includes/available.php:1208 public/includes/options.php:26
 msgid "Default"
 msgstr ""
 
@@ -1677,7 +1677,7 @@ msgstr ""
 msgid "Update Component"
 msgstr ""
 
-#: admin/includes/help.php:23 public/includes/options.php:28
+#: admin/includes/help.php:23 public/includes/options.php:53
 msgid "Aesop Story Engine"
 msgstr ""
 
@@ -1885,52 +1885,69 @@ msgstr ""
 msgid "People are made of stories, not atoms."
 msgstr ""
 
-#: public/includes/options.php:19
+#: public/includes/options.php:27
 msgid "Left Dots"
 msgstr ""
 
-#: public/includes/options.php:20
+#: public/includes/options.php:28
 msgid "Right Dots"
 msgstr ""
 
-#: public/includes/options.php:39
+#: public/includes/options.php:64
 msgid "Mapbox Map ID"
 msgstr ""
 
-#: public/includes/options.php:42
+#: public/includes/options.php:67
 msgid ""
 "Refer to the documentation located <a href=\"http://aesopstoryengine.com/help/map-"
 "component\" target=\"_blank\">here</a> for option descriptions."
 msgstr ""
 
-#: public/includes/options.php:52
+#: public/includes/options.php:77
 msgid "Google Map API Key."
 msgstr ""
 
-#: public/includes/options.php:53
+#: public/includes/options.php:78
 msgid ""
 "Recommended: Visit <a href=\"https://developers.google.com/maps/documentation/"
 "javascript/get-api-key\">here</a> to get your own API key."
 msgstr ""
 
-#: public/includes/options.php:62
+#: public/includes/options.php:87
 msgid "Chapter Component UI"
 msgstr ""
 
-#: public/includes/options.php:73
-msgid "Enable parallax movement of header image on a single post."
-msgstr ""
-
-#: public/includes/options.php:77
-msgid "Disable Chapter Scroll Animation"
-msgstr ""
-
-#: public/includes/options.php:90
-msgid "Active Chapter Dot Color"
+#: public/includes/options.php:98
+msgid "Disable Chapter Scroll Animation."
 msgstr ""
 
 #: public/includes/options.php:102
-msgid "Active Chapter Hover Color"
+msgid "Disable Chapter Scroll Animation"
+msgstr ""
+
+#: public/includes/options.php:111 public/includes/options.php:115
+msgid "Hide The Active Chapter Name on Dots."
+msgstr ""
+
+#: public/includes/options.php:124
+msgid "Enable Dots Navigation on Mobile."
+msgstr ""
+
+#: public/includes/options.php:128
+msgid ""
+"Enable Chapter Dots on Mobile. By default dots navigation is disabled on mobile."
+msgstr ""
+
+#: public/includes/options.php:140
+msgid "Chapter Dot Color"
+msgstr ""
+
+#: public/includes/options.php:152
+msgid "Active Chapter Dot Color"
+msgstr ""
+
+#: public/includes/options.php:163
+msgid "Active Chapter Hover Dot Color"
 msgstr ""
 
 #: public/includes/reveal-anim.php:265

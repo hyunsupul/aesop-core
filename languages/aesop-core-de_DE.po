@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2018-01-01 00:53-0500\n"
-"PO-Revision-Date: 2018-01-01 00:53-0500\n"
+"POT-Creation-Date: 2018-01-17 16:32-0500\n"
+"PO-Revision-Date: 2018-01-17 16:32-0500\n"
 "Last-Translator: Aesopinteractive\n"
 "Language-Team: German (Germany) (http://www.transifex.com/wp-translations/"
 "aesop-story-engine/language/de_DE/)\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
@@ -1350,7 +1350,7 @@ msgid ""
 "images)."
 msgstr "Mit dieser Einstellung wird nur die Kategorie angezeigt (ohne Bilder)."
 
-#: admin/includes/available.php:1208 public/includes/options.php:18
+#: admin/includes/available.php:1208 public/includes/options.php:26
 msgid "Default"
 msgstr "Standardeinstellung"
 
@@ -1894,7 +1894,7 @@ msgstr "Element einfügen"
 msgid "Update Component"
 msgstr "Komponente aktualisieren"
 
-#: admin/includes/help.php:23 public/includes/options.php:28
+#: admin/includes/help.php:23 public/includes/options.php:53
 msgid "Aesop Story Engine"
 msgstr "Aesop Story Engine"
 
@@ -2163,19 +2163,19 @@ msgstr "Füge einige Markierungen hinzu"
 msgid "People are made of stories, not atoms."
 msgstr "Menschen sind aus Geschichten gemacht, nicht aus Atomen."
 
-#: public/includes/options.php:19
+#: public/includes/options.php:27
 msgid "Left Dots"
 msgstr ""
 
-#: public/includes/options.php:20
+#: public/includes/options.php:28
 msgid "Right Dots"
 msgstr ""
 
-#: public/includes/options.php:39
+#: public/includes/options.php:64
 msgid "Mapbox Map ID"
 msgstr "Mapbox-Karten-ID"
 
-#: public/includes/options.php:42
+#: public/includes/options.php:67
 msgid ""
 "Refer to the documentation located <a href=\"http://aesopstoryengine.com/"
 "help/map-component\" target=\"_blank\">here</a> for option descriptions."
@@ -2183,11 +2183,11 @@ msgstr ""
 "Lies die Dokumentation <a href=„http://aesopstoryengine.com/help/map-"
 "component“ target=„_blank“>hier</a> für Beschreibungen der Optionen."
 
-#: public/includes/options.php:52
+#: public/includes/options.php:77
 msgid "Google Map API Key."
 msgstr "Google-Karten API-Schlüssel"
 
-#: public/includes/options.php:53
+#: public/includes/options.php:78
 msgid ""
 "Recommended: Visit <a href=\"https://developers.google.com/maps/"
 "documentation/javascript/get-api-key\">here</a> to get your own API key."
@@ -2195,24 +2195,46 @@ msgstr ""
 "Empfohlen: Besuche <a href=„https://developers.google.com/maps/documentation/"
 "javascript/get-api-key“>hier</a> um deinen eigenen API-Schlüssel zu erhalten"
 
-#: public/includes/options.php:62
+#: public/includes/options.php:87
 msgid "Chapter Component UI"
 msgstr ""
 
-#: public/includes/options.php:73
-msgid "Enable parallax movement of header image on a single post."
+#: public/includes/options.php:98
+msgid "Disable Chapter Scroll Animation."
 msgstr ""
 
-#: public/includes/options.php:77
+#: public/includes/options.php:102
 msgid "Disable Chapter Scroll Animation"
 msgstr ""
 
-#: public/includes/options.php:89
+#: public/includes/options.php:111 public/includes/options.php:115
+msgid "Hide The Active Chapter Name on Dots."
+msgstr ""
+
+#: public/includes/options.php:124
+#, fuzzy
+#| msgid "Enable Navigation Controls"
+msgid "Enable Dots Navigation on Mobile."
+msgstr "Aktiviere Navigations-Anzeigen"
+
+#: public/includes/options.php:128
+msgid ""
+"Enable Chapter Dots on Mobile. By default dots navigation is disabled on "
+"mobile."
+msgstr ""
+
+#: public/includes/options.php:140
+#, fuzzy
+#| msgid "Chapter Block"
+msgid "Chapter Dot Color"
+msgstr "Chapter-Block"
+
+#: public/includes/options.php:152
 msgid "Active Chapter Dot Color"
 msgstr ""
 
-#: public/includes/options.php:100
-msgid "Active Chapter Hover Color"
+#: public/includes/options.php:163
+msgid "Active Chapter Hover Dot Color"
 msgstr ""
 
 #: public/includes/reveal-anim.php:265
