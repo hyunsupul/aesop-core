@@ -983,3 +983,22 @@ Don't need small height mod anymore due to making the icons smaller
     bottom: 10px;
   }
 }
+
+/**
+ * ----------------------------------------------------------------------------
+ * #.# Gutenberg Editor CSS
+ *
+ * BLOCK: basic block CSS for the editor.
+ * ----------------------------------------------------------------------------
+ */
+
+.wp-block-ase-image {
+	color: #000000;
+	background: mistyrose;
+	border: 0.2rem solid red;
+	padding: 2rem;
+}
+
+
+
+

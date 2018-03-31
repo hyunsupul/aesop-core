@@ -13,18 +13,40 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 				'name'     => __( 'Image', 'aesop-core' ),
 				'type'     => 'single',
 				'atts'     => array(
-					'imgwidth'    => array(
-						'type'  => 'text_small',
-						'default'  => '300px',
-						'desc'   => __( 'Image Width', 'aesop-core' ),
-						'tip'  => __( 'Width of the image. You can enter the size as <code>40%</code> or <code>500px</code>.', 'aesop-core' )
-					),
 					'img'    => array(
 						'type'  => 'media_upload',
 						'default'  => '',
 						'desc'   => __( 'Image URL', 'aesop-core' ),
 						'tip'  => __( 'URL for the image. Click <em>Select Media</em> to open the WordPress Media Library.', 'aesop-core' )
 					),
+					'panorama'    => array(
+						'type'  => 'select',
+						'values'  => array(						
+							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
+							),
+						),
+						'default'  => 'off',
+						'desc'   => __( 'Panorama', 'aesop-core' ),
+						'tip'  => __( 'Enable Panorama Mode. Can display an image wider than the screen and can be viewed the moose cursor.', 'aesop-core' )
+					),
+					'imgwidth'    => array(
+						'type'  => 'text_small',
+						'default'  => '300px',
+						'desc'   => __( 'Image Width', 'aesop-core' ),
+						'tip'  => __( 'Width of the image. You can enter the size in pixels or percentage such as <code>40%</code> or <code>500px</code>.', 'aesop-core' )
+					),
+					'imgheight'    => array(
+						'type'  => 'text_small',
+						'default'  => '',
+						'desc'   => __( 'Image Height', 'aesop-core' ),
+						'tip'  => __( 'Used only for the Panorama mode. Can be set using pixel values such as <code>500px</code>. If unspecified, the original height would be used. ', 'aesop-core' )
+					),					
 					'offset'   => array(
 						'type'  => 'text_small',
 						'default'  => '',
@@ -113,7 +135,28 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 					),
 
 				),
-				'desc'     => __( 'Creates an image component with caption, alignment, and lightbox options.', 'aesop-core' )
+				'desc'     => __( 'Creates an image component with caption, alignment, and lightbox options.', 'aesop-core' ),
+				'codes'    => '<script>	            
+						jQuery(document).ready(function($){
+							
+							function panoramaSetting(panorama){
+							    if (panorama=="off") {
+									jQuery(".aesop-image-imgwidth,.aesop-image-offset,.aesop-image-align").slideDown();
+									jQuery(".aesop-image-imgheight").slideUp();
+								}
+								else if (panorama=="on") {
+									jQuery(".aesop-image-imgheight").slideDown();
+									jQuery(".aesop-image-imgwidth,.aesop-image-offset,.aesop-image-align").slideUp();
+								}
+								
+							}
+							setTimeout( function() { 
+							    panoramaSetting(jQuery( "#aesop-generator-attr-panorama" ).val()); }, 500);
+							jQuery( "#aesop-generator-attr-panorama" ).change(function() {
+								panoramaSetting(this.value);
+							})
+						});
+			           </script>'
 			),
 			'character'    => array(
 				'name'     => __( 'Character', 'aesop-core' ),
@@ -157,7 +200,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'text_small',
 						'default'  => '',
 						'desc'   => __( 'Width', 'aesop-core' ),
-						'tip'  => __( 'Width of the character component. You can enter the size as <code>40%</code> or <code>500px</code>.', 'aesop-core' )
+						'tip'  => __( 'Width of the character component. You can enter the size such as <code>40%</code> or <code>500px</code>.', 'aesop-core' )
 					),
 					'force_circle'    => array(
 						'type'  => 'select',
@@ -176,7 +219,8 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'tip'  => __( 'Force the display to be a circle instead of an oval.', 'aesop-core' )
 					),
 				),
-				'desc'     => __( 'Creates a character that can be positioned to the left or right of your story.', 'aesop-core' )
+				'desc'     => __( 'Creates a character that can be positioned to the left or right of your story.', 'aesop-core' ),
+				'codes'    => ''
 			),
 			'quote'    => array(
 				'name'     => __( 'Aesop Quote Section', 'aesop-core' ),
@@ -214,7 +258,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'text_small',
 						'default'  => '100%',
 						'desc'   => __( 'Component Width', 'aesop-core' ),
-						'tip'  => __( 'You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.', 'aesop-core' )
+						'tip'  => __( 'You can enter the size such as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.', 'aesop-core' )
 					),
 					'height'   => array(
 						'type'  => 'text_small',
@@ -300,7 +344,8 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'tip'  => __( 'The direction that the quote should travel in, if using parallax.', 'aesop-core' )
 					)
 				),
-				'desc'     => __( 'Section quote area with background and color controls.', 'aesop-core' )
+				'desc'     => __( 'Section quote area with background and color controls.', 'aesop-core' ),
+				'codes'    => ''
 			),
 			'content'    => array(
 				'name'     => __( 'Content', 'aesop-core' ),
@@ -322,19 +367,19 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'text_small',
 						'default'  => '100%',
 						'desc'   => __( 'Width of Content', 'aesop-core' ),
-						'tip'  => __( 'You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.', 'aesop-core' )
+						'tip'  => __( 'You can enter the size such as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.', 'aesop-core' )
 					),
 					'component_width'   => array(
 						'type'  => 'text_small',
 						'default'  => '100%',
 						'desc'   => __( 'Width of Component', 'aesop-core' ),
-						'tip'  => __( 'You can enter the size as <code>40%</code> or <code>500px</code>.', 'aesop-core' )
+						'tip'  => __( 'You can enter the size such as <code>40%</code> or <code>500px</code>.', 'aesop-core' )
 					),
 					'height'   => array(
 						'type'  => 'text_small',
 						'default'  => '',
 						'desc'   => __( 'Height of Component', 'aesop-core' ),
-						'tip'  => __( 'Enter an optional height for the component. You can enter the size as <code>40%</code> or <code>500px</code>. By default it\'s set to <code>auto</code>. Use a large height like <code>1200px</code> to have a large blank area with small text.', 'aesop-core' )
+						'tip'  => __( 'Enter an optional height for the component. You can enter the size such as <code>40%</code> or <code>500px</code>. By default it\'s set to <code>auto</code>. Use a large height like <code>1200px</code> to have a large blank area with small text.', 'aesop-core' )
 					),
 					'columns'    => array(
 						'type'  => 'select',
@@ -480,7 +525,8 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 				),
 				'content'    => __( 'All your normal text goes here.', 'ba-shortcodes' ),
 				'desc'     => __( 'Multiple use content area with options for background image, background color, and magazine style columns.', 'aesop-core' ),
-				'tip'    => __( 'The actual content text that will be displayed.', 'aesop-core' )
+				'tip'    => __( 'The actual content text that will be displayed.', 'aesop-core' ),
+				'codes'    => ''
 			),
 			'chapter'  => array(
 				'name'     => __( 'Chapter Block', 'aesop-core' ),
@@ -591,7 +637,31 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'tip'  => __( 'Text or HTML content to be displayed. You can use tags like H2, H3 etc. Important: If set, it will not show title and subtitle. The chapter menu will still use what you put in for Title.', 'aesop-core' )
 					),
 				),
-				'desc'     => __( 'Creates the scroll to point, as a chapter heading.', 'aesop-core' )
+				'desc'     => __( 'Creates the scroll to point, as a chapter heading.', 'aesop-core' ),
+				'codes'    => '<script>	            
+						jQuery(document).ready(function($){
+							
+							function bgSetting(bg){
+							    if (bg=="img") {
+									jQuery(".aesop-chapter-img").slideDown();
+									jQuery(".aesop-chapter-bgcolor,.aesop-chapter-alternate_img,.aesop-chapter-video_autoplay").slideUp();
+								}
+								else if (bg=="video") {
+									jQuery(".aesop-chapter-img,.aesop-chapter-alternate_img,.aesop-chapter-video_autoplay").slideDown();
+									jQuery(".aesop-chapter-bgcolor").slideUp();
+								}
+								else if (bg=="color") {
+									jQuery(".aesop-chapter-bgcolor").slideDown();
+									jQuery(".aesop-chapter-img,.aesop-chapter-alternate_img,.aesop-chapter-video_autoplay").slideUp();
+								}
+							}
+							setTimeout( function() { 
+							    bgSetting(jQuery( "#aesop-generator-attr-bgtype" ).val()); }, 500);
+							jQuery( "#aesop-generator-attr-bgtype" ).change(function() {
+								bgSetting(this.value);
+							})
+						});
+			           </script>'
 			),
 			'parallax'    => array(
 				'name'     => __( 'Parallax Image', 'aesop-core' ),
@@ -762,7 +832,8 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 					),
 				),
 				'content'    => __( 'Optional Caption', 'ba-shortcodes' ),
-				'desc'     => __( 'Parallax styled image component with caption and optional lightbox.', 'aesop-core' )
+				'desc'     => __( 'Parallax styled image component with caption and optional lightbox.', 'aesop-core' ),
+				'codes'    => ''
 			),
 			'audio'    => array(
 				'name'     => __( 'Audio', 'aesop-core' ),
@@ -855,7 +926,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'text_small',
 						'default'  => '100%',
 						'desc'   => __( 'Component Width', 'aesop-core' ),
-						'tip'  => __( 'You can enter the size as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.', 'aesop-core' )
+						'tip'  => __( 'You can enter the size such as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.', 'aesop-core' )
 					),
 					'align'    => array(
 						'type'  => 'select',
@@ -1055,6 +1126,44 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 					
 				),
 				'desc'     => __( 'Responsive video component with alignment and optional caption.', 'aesop-core' ),
+				'codes'    => '<script>	            
+						jQuery(document).ready(function($){
+							function srcSetting(src){								
+							    if (src=="kickstarter" || src=="viddler" || src=="vine" || src=="wistia" || src=="instagram" || src=="dailymotion") {
+									jQuery(".aesop-video-id").slideDown();
+									jQuery(".aesop-video-hosted,.aesop-video-disable_for_mobile,.aesop-video-poster_frame,.aesop-video-loop,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart, .aesop-video-viewend").slideUp();
+								}
+								else if (src=="youtube") {
+									jQuery(".aesop-video-id,.aesop-video-loop,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart,.aesop-video-viewend").slideDown();
+									jQuery(".aesop-video-hosted").slideUp();
+								}
+								else if (src=="vimeo") {
+									jQuery(".aesop-video-id,.aesop-video-loop,.aesop-video-autoplay,.aesop-video-viewstart, .aesop-video-viewend").slideDown();
+									jQuery(".aesop-video-hosted,.aesop-video-controls").slideUp();
+								}
+								else if (src=="self") {
+									jQuery("#aesop-generator-settings").children().slideDown();
+									jQuery(".aesop-video-id").slideUp();
+								}
+								disableMobileSetting(jQuery( "#aesop-generator-attr-disable_for_mobile" ).val());
+							}
+							function disableMobileSetting(onOff) {
+								if (jQuery( "#aesop-generator-attr-src" ).val()=="self" || onOff=="on") {
+									jQuery(".aesop-video-poster_frame").slideDown();
+								} else {
+									jQuery(".aesop-video-poster_frame").slideUp();
+								}
+							}
+							setTimeout( function() { 
+                                srcSetting(jQuery( "#aesop-generator-attr-src" ).val()); disableMobileSetting(jQuery( "#aesop-generator-attr-disable_for_mobile" ).val()); }, 500);
+							jQuery( "#aesop-generator-attr-src" ).change(function() {
+								srcSetting(this.value);
+							})
+							jQuery( "#aesop-generator-attr-disable_for_mobile" ).change(function() {
+								disableMobileSetting(this.value);
+							})
+						});
+			           </script>'
 			),
 			'map'     => array(
 				'name'     => __( 'Map', 'aesop-core' ),
@@ -1098,7 +1207,8 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						)
 					)
 				),
-				'desc'     => __( 'Creates the basic map component. Use the Map Locations edit boxes when writing your story to add locations.', 'aesop-core' )
+				'desc'     => __( 'Creates the basic map component. Use the Map Locations edit boxes when writing your story to add locations.', 'aesop-core' ),
+				'codes'    => ''
 			),
 			'timeline_stop'  => array(
 				'name'     => __( 'Timeline Stop', 'aesop-core' ),
@@ -1117,8 +1227,9 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'tip'  => __( 'The timeline title that should be displayed within the story.', 'aesop-core' )
 					)
 				),
-				'desc'     => __( 'Enter a number such as 2007, and a small timeline will be displayed with scroll to points. This works similar to the chapter heading.', 'aesop-core' )
-			),
+				'desc'     => __( 'Enter a number such as 2007, and a small timeline will be displayed with scroll to points. This works similar to the chapter heading.', 'aesop-core' ),
+                'codes'    => ''
+				),
 			'document'  => array(
 				'name'     => __( 'Document', 'aesop-core' ),
 				'type'     => 'single',
@@ -1152,7 +1263,8 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'tip'  => __( 'Provide an optional caption for the document component.', 'aesop-core' )
 					)
 				),
-				'desc'     => __( 'Show a document that is revealed with a click.', 'aesop-core' )
+				'desc'     => __( 'Show a document that is revealed with a click.', 'aesop-core' ),
+				'codes'    => ''
 			),
 			'collection'  => array(
 				'name'     => __( 'Collections', 'aesop-core' ),
@@ -1233,7 +1345,8 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'tip'  => __( 'Setting this to on will display Load More link to load more posts.', 'aesop-core' )
 					)
 				),
-				'desc'     => __( 'Show a collection of stories. Typically used on a page like the home page.', 'aesop-core' )
+				'desc'     => __( 'Show a collection of stories. Typically used on a page like the home page.', 'aesop-core' ),
+				'codes'    => ''
 			),
 			'gallery'     => array(
 				'name'     => __( 'Gallery', 'aesop-core' ),
@@ -1249,7 +1362,8 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'tip'  => __( 'Select a gallery below to insert it.', 'aesop-core' )
 					)
 				),
-				'desc'     => __( ' ', 'aesop-core' )
+				'desc'     => __( ' ', 'aesop-core' ),
+				'codes'    => ''
 			)
 		);
 

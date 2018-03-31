@@ -238,10 +238,18 @@ class AesopGalleryComponentAdmin {
 		$thumb_trans  = get_post_meta( $id, 'aesop_thumb_gallery_transition', true );
 		$thumb_speed  = get_post_meta( $id, 'aesop_thumb_gallery_transition_speed', true );
 		$thumb_hide  = get_post_meta( $id, 'aesop_thumb_gallery_hide_thumbs', true );
+		
+		//sequence
+		$sequence_panorama = get_post_meta( $id, 'aesop_sequence_gallery_panorama', true );
+		$sequence_panorama_height = get_post_meta( $id, 'aesop_sequence_gallery_panorama_height', true ) ;
+		$sequence_panorama_height = $sequence_panorama_height ? $sequence_panorama_height: 500;
 
 		// photoset
 		$photoset_layout = get_post_meta( $id, 'aesop_photoset_gallery_layout', true );
 		$photoset_lb   = get_post_meta( $id, 'aesop_photoset_gallery_lightbox', true );
+		
+		//parallax
+		$parallax_mobile_panorama = get_post_meta( $id, 'aesop_parallax_gallery_mobile_panorama', true );
 		
 		//hero
 		$hero_content = get_post_meta( $id, 'aesop_hero_gallery_content', true );
@@ -250,9 +258,9 @@ class AesopGalleryComponentAdmin {
 		// if hero option is not set use the thumb gallery option
 		$hero_trans  = $hero_trans ? $hero_trans: $thumb_trans;
 		$hero_speed  = get_post_meta( $id, 'aesop_hero_gallery_transition_speed', true );
-		$hero_speed  = $hero_trans ? $hero_speed: $thumb_speed;
+		$hero_speed  = $hero_speed ? $hero_speed: $thumb_speed;
 		$hero_anim_speed  = get_post_meta( $id, 'aesop_hero_gallery_transition_anim_speed', true );
-		$hero_anim_speed  = $hero_anim_speed ? $hero_speed: 1500;
+		$hero_anim_speed  = $hero_anim_speed ? $hero_anim_speed: 1500;
 		$hero_enable_nav  = get_post_meta( $id, 'aesop_hero_gallery_enable_nav', true );
 		$aesop_hero_image_text = get_post_meta( $id, 'aesop_hero_image_text', true );
 
@@ -319,6 +327,21 @@ class AesopGalleryComponentAdmin {
 			</div>
 
 		</div>
+		<div class="ase-gallery-opts ase-gallery-opts--sequence" style="display:none;">
+			<h3><?php _e( 'Sequence Gallery Options', 'aesop-core' );?></h3>
+
+
+			<div class="ase-gallery-opts--single">
+				<input type="checkbox" name="aesop_sequence_gallery_panorama" <?php if ( $sequence_panorama == true ) { ?>checked="checked"<?php } ?>>
+				<label for="aesop_sequence_gallery_panorama"><?php _e( 'Panorama Mode', 'aesop-core' );?></label>
+			</div>
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_sequence_gallery_panorama_height"><?php _e( 'Panorama Height', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Used Only When the Panorama Mode is On. Height of Each Panorama in Pixels.', 'aesop-core' );?></p>
+				<input type="text" name="aesop_sequence_gallery_panorama_height" value="<?php echo (int) $sequence_panorama_height;?>">
+			</div>
+
+		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--photoset" style="display:none;">
 			<h3><?php _e( 'Photoset Options', 'aesop-core' );?></h3>
 
@@ -347,6 +370,19 @@ class AesopGalleryComponentAdmin {
 
 		</div>
 
+		<div class="ase-gallery-opts ase-gallery-opts--parallax" style="display:none;">
+			<h3><?php _e( 'Parallax Gallery Options', 'aesop-core' );?></h3>
+
+
+			<div class="ase-gallery-opts--single">
+				<input type="checkbox" name="aesop_parallax_gallery_mobile_panorama" <?php if ( $parallax_mobile_panorama == true ) { ?>checked="checked"<?php } ?>>
+				<label for="aesop_parallax_gallery_mobile_panorama"><?php _e( 'Panorama Mode for Mobile', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Use Panorama Images for Mobile Devices', 'aesop-core' );?></p>
+
+			</div>
+
+		</div>
+		
 	    <div class="ase-gallery-opts ase-gallery-opts--hero" style="display: none;">
 			<h3><?php _e( 'Hero Options', 'aesop-core' );?></h3>
 
@@ -394,7 +430,7 @@ class AesopGalleryComponentAdmin {
 			<div class="ase-gallery-opts--single" style="padding-top:20px">
 				<label for="aesop_hero_gallery_transition_anim_speed"><?php _e( 'Gallery Transition Animation Speed', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Animation duration for transition in milliseconds.', 'aesop-core' );?></p>
-				<input type="text" name="aesop_hero_gallery_transition_anim_speed" value="<?php echo (int) $hero_speed ? $hero_anim_speed : 1500;?>">
+				<input type="text" name="aesop_hero_gallery_transition_anim_speed" value="<?php echo (int) $hero_anim_speed ? $hero_anim_speed : 1500;?>">
 			</div>
 
 			
@@ -448,15 +484,25 @@ class AesopGalleryComponentAdmin {
 		$thumb_trans  = isset( $_POST['aesop_thumb_gallery_transition'] ) ? $_POST['aesop_thumb_gallery_transition'] : false;
 		$thumb_speed  = isset( $_POST['aesop_thumb_gallery_transition_speed'] ) ? $_POST['aesop_thumb_gallery_transition_speed'] : false;
 		$thumb_hide  = isset( $_POST['aesop_thumb_gallery_hide_thumbs'] ) ? $_POST['aesop_thumb_gallery_hide_thumbs'] : false;
+		
+		// sequence
+		$sequence_panorama   = isset( $_POST['aesop_sequence_gallery_panorama'] ) ? $_POST['aesop_sequence_gallery_panorama'] : false;
+		$sequence_panorama_height   = isset( $_POST['aesop_sequence_gallery_panorama_height'] ) ? $_POST['aesop_sequence_gallery_panorama_height'] : false;
+
+
 
 		// photoset
 		$photoset_layout = isset( $_POST['aesop_photoset_gallery_layout'] ) ? $_POST['aesop_photoset_gallery_layout'] : false;
 		$photoset_lb   = isset( $_POST['aesop_photoset_gallery_lightbox'] ) ? $_POST['aesop_photoset_gallery_lightbox'] : false;
+		
+		// parallax
+		$parallax_mobile_panorama   = isset( $_POST['aesop_parallax_gallery_mobile_panorama'] ) ? $_POST['aesop_parallax_gallery_mobile_panorama'] : false;
 
 		// hero
 		$hero_content = isset( $_POST['aesop_hero_gallery_content'] ) ? $_POST['aesop_hero_gallery_content'] : false;
 		$hero_width_to_height_ratio = isset( $_POST['aesop_hero_gallery_height'] ) ? $_POST['aesop_hero_gallery_height'] : false;
         $hero_speed  = isset( $_POST['aesop_hero_gallery_transition_speed'] ) ? $_POST['aesop_hero_gallery_transition_speed'] : false;
+		$hero_anim_speed  = isset( $_POST['aesop_hero_gallery_transition_anim_speed'] ) ? $_POST['aesop_hero_gallery_transition_anim_speed'] : false;
         $hero_trans  = isset( $_POST['aesop_hero_gallery_transition'] ) ? $_POST['aesop_hero_gallery_transition'] : false;
 		$hero_enable_nav   = isset( $_POST['aesop_hero_gallery_enable_nav'] ) ? $_POST['aesop_hero_gallery_enable_nav'] : false;
 		$aesop_hero_image_text = isset( $_POST['aesop_hero_image_text'] ) ? $_POST['aesop_hero_image_text'] : 'none';
@@ -483,10 +529,17 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, 'aesop_thumb_gallery_transition', sanitize_text_field( $thumb_trans ) );
 		update_post_meta( $post_id, 'aesop_thumb_gallery_transition_speed', absint( $thumb_speed ) );
 		update_post_meta( $post_id, 'aesop_thumb_gallery_hide_thumbs', $thumb_hide );
+		
+		// sequence
+		update_post_meta( $post_id, 'aesop_sequence_gallery_panorama', $sequence_panorama );
+		update_post_meta( $post_id, 'aesop_sequence_gallery_panorama_height', $sequence_panorama_height );
 
 		// photoset
 		update_post_meta( $post_id, 'aesop_photoset_gallery_layout', absint( $photoset_layout ) );
 		update_post_meta( $post_id, 'aesop_photoset_gallery_lightbox', $photoset_lb );
+		
+		// parallax
+		update_post_meta( $post_id, 'aesop_parallax_gallery_mobile_panorama', $parallax_mobile_panorama );
 		
 		// hero width_to_height_ratio
 		update_post_meta( $post_id, 'aesop_hero_gallery_content', aesop_component_media_filter( $hero_content ) );

@@ -1729,3 +1729,12 @@ body.rtl {
   direction: rtl;
   unicode-bidi: embed;
 }
+
+.aesop-panorama {
+	height: 400px;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	img {
+		height: 100%;
+	}
+}

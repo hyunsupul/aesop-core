@@ -8,9 +8,12 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
 	function aesop_image_shortcode( $atts ) {
 			    
+
 		$defaults = array(
+			'panorama'     		=> 'off',
 			'img'     			=> '',
-			'imgwidth'   		=> '300px',
+			'imgwidth'   		=> '100%',
+			'imgheight'   		=> '',
 			'offset'   			=> '',
 			'alt'    			=> '',
 			'align'    			=> 'left',
@@ -25,7 +28,22 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 		);
 
 		$atts = apply_filters( 'aesop_image_defaults', shortcode_atts( $defaults, $atts ) );
-
+		
+		$panorama = $atts['panorama'] == "on";
+		$imgheight = 0;
+		
+		if ($panorama) {
+			wp_enqueue_script( 'aesop-paver', AI_CORE_URL.'/public/assets/js/jquery.paver.min.js', array( 'ai-core' ) );
+			$atts['imgwidth'] ="100%";
+			if ($atts['imgheight'] == '') {
+				list($width, $height, $type, $attr) = getimagesize($atts['img']);
+				$imgheight = $height;
+			} else {
+				$imgheight = $atts['imgheight'];
+			}
+			//$image_id = aesop_get_image_id($atts['img']);
+		}
+		
 		// offset styles
 		$offsetstyle = $atts['offset'] && ( 'left' == $atts['align'] || 'right' == $atts['align'] ) ? sprintf( 'style=margin-%s:%s;width:%s;', $atts['align'], $atts['offset'], $atts['imgwidth'] ) : 'style=max-width:'.$atts['imgwidth'].';';
 
@@ -54,10 +72,25 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 		<div id="aesop-image-component-<?php echo esc_html( $unique );?>" <?php echo aesop_component_data_atts( 'image', $unique, $atts );?> class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes )?>" 
 		        <?php echo aesop_revealfx_set($atts) ? 'style="visibility:hidden;"': null ?>
 		 >
+		<?php 
+		if ($panorama) { ?>
+		<script>
+				jQuery(document).ready(function($){
+					var screensize = $(window).height();
+					$( ".aesop-panorama" ).each(function() {
+						if ($(this).height() > screensize) {
+							$( this ).height(screensize);
+						}
+					});
+				  	jQuery('.aesop-panorama').paver();
+				});		 
+		</script>
+		<?php
+		}?>
 
 			<?php do_action( 'aesop_image_inside_top', $atts, $unique ); // action ?>
 
-			<div class="aesop-content">
+			<div >
 				<figure class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> aesop-image-component-caption-<?php echo sanitize_html_class( $atts['captionposition'] );?>" <?php echo esc_attr( $offsetstyle );?>>
 					<?php
 
@@ -69,12 +102,31 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
 						<a class="aesop-lightbox" href="<?php echo $atts['img'];?>" title="<?php echo $atts['caption'];?>">
 							<p class="aesop-img-enlarge"><i class="aesopicon aesopicon-search-plus"></i> <?php _e( 'Enlarge', 'aesop-core' );?></p>
-							<img <?php echo $lazy;?> alt="<?php echo esc_attr( $alt );?>">
+							<?php
+							if ($panorama) { ?>
+								<div class="aesop-panorama" style="height:<?php echo $imgheight;?>px;">
+							<?php 
+							}?>
+							<img <?php echo $lazy;?> alt="<?php echo esc_attr( $alt );?>" >
+							<?php
+							if ($panorama) { ?>
+								</div>
+							<?php 
+							}?>							
 						</a>
 
 					<?php } else { ?>
-
+							<?php
+							if ($panorama) { ?>
+								<div class="aesop-panorama" style="height:<?php echo $imgheight;?>px;">
+							<?php 
+							}?>
 						<img <?php echo $lazy;?> alt="<?php echo esc_attr( $alt );?>">
+						    <?php
+							if ($panorama) { ?>
+								</div>
+							<?php 
+							}?>
 
 					<?php }
 
@@ -113,5 +165,11 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 		do_action( 'aesop_image_after', $atts, $unique ); // action
 
 		return ob_get_clean();
+	}
+	
+	function aesop_get_image_id($image_url) {
+		global $wpdb;
+		$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
+			return $attachment[0]; 
 	}
 }//end if
