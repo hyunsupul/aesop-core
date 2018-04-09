@@ -79,7 +79,9 @@ function aesop_shortcodes_blob() {
 		$return .= '<input type="hidden" name="aesop-generator-result" id="aesop-generator-result" value="" />';
 
 		// extra JS codes
-		$return .= $shortcode['codes'];
+		if ( isset( $shortcode['codes'] ) ) :
+			$return .= $shortcode['codes'];
+		endif;
 		
 		
 		$blob[$slug] = $return;
