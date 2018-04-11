@@ -5,8 +5,8 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 4.9.2
-Stable tag: 1.9.9.5
+Tested up to: 4.9.5
+Stable tag: 1.9.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,7 +32,10 @@ Utilizing these components, writers and developers can build feature-rich, visua
 
 [http://aesopstoryengine.com/blog/](http://aesopstoryengine.com/blog/)
 
-Chapter Styles: New features of Aesop Story Engine v 1.9.9   
+Panorama Mode: New features  v 1.9.10   
+[http://aesopstoryengine.com/releases/new-aesop-feature-panorama-image/](http://aesopstoryengine.com/releases/new-aesop-feature-panorama-image/)
+
+Chapter Styles: New features  v 1.9.9   
 
 [http://aesopstoryengine.com/releases/new-chapter-styles-aesop-1-9-9-features/](http://aesopstoryengine.com/releases/new-chapter-styles-aesop-1-9-9-features/)
 
@@ -179,7 +182,11 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
-= 1.9.9.5 =
+= 1.9.10 =
+* Some PHP fixes
+* Preparation for future Gutenberg supports
+
+= 1.9.9.6 =
 * NEW Panorama options for images and galleries
 * FIX Options for Hero Gallery.
 

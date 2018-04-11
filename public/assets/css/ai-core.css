@@ -1724,17 +1724,11 @@ html.swipebox {
   -webkit-transition: opacity 0.25s ease-in;
   transition: opacity 0.25s ease-in;
 }
+.aesop-stacked-img {
+  background-attachment: fixed;
+}
 /* @noflip */
 body.rtl {
   direction: rtl;
   unicode-bidi: embed;
-}
-
-.aesop-panorama {
-	height: 400px;
-	overflow-x: scroll;
-	overflow-y: hidden;
-	img {
-		height: 100%;
-	}
 }

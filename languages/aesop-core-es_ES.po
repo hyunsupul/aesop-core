@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2018-01-17 16:35-0500\n"
-"PO-Revision-Date: 2018-01-17 16:35-0500\n"
+"POT-Creation-Date: 2018-04-04 17:11-0500\n"
+"PO-Revision-Date: 2018-04-04 17:12-0500\n"
 "Last-Translator: Aesopinteractive\n"
 "Language-Team: Spanish (Spain) (http://www.transifex.com/wp-translations/"
 "aesop-story-engine/language/es_ES/)\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.0.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
@@ -50,47 +50,105 @@ msgid ""
 "the developer</a></span>."
 msgstr ""
 
-#: admin/includes/available.php:13 admin/includes/available.php:506
-#: admin/includes/available.php:1135
+#: admin/includes/available.php:13 admin/includes/available.php:552
+#: admin/includes/available.php:1276
 msgid "Image"
 msgstr "Imagen"
 
 #: admin/includes/available.php:19
-msgid "Image Width"
-msgstr "Ancho de la imagen"
-
-#: admin/includes/available.php:20
-msgid ""
-"Width of the image. You can enter the size as <code>40%</code> or "
-"<code>500px</code>."
-msgstr "Puedes cambiar el tamaño en Porcentaje (%) o en Pixeles (px)"
-
-#: admin/includes/available.php:25
 msgid "Image URL"
 msgstr "URL de la imagen"
 
-#: admin/includes/available.php:26 admin/includes/available.php:126
-#: admin/includes/available.php:376 admin/includes/available.php:612
+#: admin/includes/available.php:20 admin/includes/available.php:169
+#: admin/includes/available.php:421 admin/includes/available.php:682
 msgid ""
 "URL for the image. Click <em>Select Media</em> to open the WordPress Media "
 "Library."
 msgstr "Haz clíck en el icono y selecciona la imágen dentro de la librería."
 
-#: admin/includes/available.php:31
+#: admin/includes/available.php:27 admin/includes/available.php:97
+#: admin/includes/available.php:210 admin/includes/available.php:319
+#: admin/includes/available.php:464 admin/includes/available.php:576
+#: admin/includes/available.php:604 admin/includes/available.php:694
+#: admin/includes/available.php:746 admin/includes/available.php:762
+#: admin/includes/available.php:893 admin/includes/available.php:909
+#: admin/includes/available.php:925 admin/includes/available.php:941
+#: admin/includes/available.php:1053 admin/includes/available.php:1075
+#: admin/includes/available.php:1091 admin/includes/available.php:1107
+#: admin/includes/available.php:1123 admin/includes/available.php:1139
+#: admin/includes/available.php:1218 admin/includes/available.php:1334
+#: admin/includes/available.php:1366
+#: admin/includes/components/component-map.php:79
+#: public/includes/reveal-anim.php:261
+msgid "Off"
+msgstr "Apagado"
+
+#: admin/includes/available.php:31 admin/includes/available.php:93
+#: admin/includes/available.php:214 admin/includes/available.php:323
+#: admin/includes/available.php:468 admin/includes/available.php:572
+#: admin/includes/available.php:600 admin/includes/available.php:690
+#: admin/includes/available.php:750 admin/includes/available.php:766
+#: admin/includes/available.php:889 admin/includes/available.php:905
+#: admin/includes/available.php:921 admin/includes/available.php:937
+#: admin/includes/available.php:1049 admin/includes/available.php:1071
+#: admin/includes/available.php:1087 admin/includes/available.php:1103
+#: admin/includes/available.php:1119 admin/includes/available.php:1135
+#: admin/includes/available.php:1338 admin/includes/available.php:1370
+#: admin/includes/components/component-map.php:83
+msgid "On"
+msgstr "Encendido"
+
+#: admin/includes/available.php:35
+msgid "Panorama"
+msgstr ""
+
+#: admin/includes/available.php:36
+msgid ""
+"Enable Panorama Mode. Can display an image wider than the screen and can be "
+"viewed the moose cursor."
+msgstr ""
+
+#: admin/includes/available.php:41 blocks/image/block.js:92
+msgid "Image Width"
+msgstr "Ancho de la imagen"
+
+#: admin/includes/available.php:42
+#, fuzzy
+#| msgid ""
+#| "Width of the image. You can enter the size as <code>40%</code> or "
+#| "<code>500px</code>."
+msgid ""
+"Width of the image. You can enter the size in pixels or percentage such as "
+"<code>40%</code> or <code>500px</code>."
+msgstr "Puedes cambiar el tamaño en Porcentaje (%) o en Pixeles (px)"
+
+#: admin/includes/available.php:47
+#, fuzzy
+#| msgid "Image Lightbox"
+msgid "Image Height"
+msgstr "Imagen Lightbox"
+
+#: admin/includes/available.php:48
+msgid ""
+"Used only for the Panorama mode. Can be set using pixel values such as "
+"<code>500px</code>. If unspecified, the original height would be used. "
+msgstr ""
+
+#: admin/includes/available.php:53
 msgid "Image Offset"
 msgstr "Offset de la imagen"
 
-#: admin/includes/available.php:32
+#: admin/includes/available.php:54
 msgid ""
 "Using this option you can <em>float</em> an image outside of the text. Enter "
 "a size like <code>-200px</code>."
 msgstr ""
 
-#: admin/includes/available.php:37
+#: admin/includes/available.php:59
 msgid "Image Credit"
 msgstr "Autor de la imagen entrada/proyecto"
 
-#: admin/includes/available.php:38
+#: admin/includes/available.php:60
 msgid ""
 "This is typically used to credit the photographer. Enter a name and it will "
 "show as <em>Photo by: Name</em>."
@@ -98,180 +156,155 @@ msgstr ""
 "En esta casilla debes nombrar al autor de la imagen (Fotógrafo) "
 "introduciondo el crédito de la foto."
 
-#: admin/includes/available.php:43
+#: admin/includes/available.php:65
 msgid "Image ALT"
 msgstr "Nombre posicionamiento imágen"
 
-#: admin/includes/available.php:44
+#: admin/includes/available.php:66
 msgid "ALT tag used for the image. Primarily used for SEO purposes."
 msgstr ""
 "Escribe el nombre de la imágen con la que te gustaría posicionar esta imagen "
 "a través de SEO."
 
-#: admin/includes/available.php:51 admin/includes/available.php:101
-#: admin/includes/available.php:238 admin/includes/available.php:449
-#: admin/includes/available.php:722 admin/includes/available.php:865
+#: admin/includes/available.php:73 admin/includes/available.php:123
+#: admin/includes/available.php:282 admin/includes/available.php:494
+#: admin/includes/available.php:792 admin/includes/available.php:966
 msgid "Center"
 msgstr "Centro"
 
-#: admin/includes/available.php:55 admin/includes/available.php:93
-#: admin/includes/available.php:145 admin/includes/available.php:230
-#: admin/includes/available.php:291 admin/includes/available.php:355
-#: admin/includes/available.php:441 admin/includes/available.php:469
-#: admin/includes/available.php:714 admin/includes/available.php:746
-#: admin/includes/available.php:869
+#: admin/includes/available.php:77 admin/includes/available.php:115
+#: admin/includes/available.php:188 admin/includes/available.php:274
+#: admin/includes/available.php:335 admin/includes/available.php:400
+#: admin/includes/available.php:486 admin/includes/available.php:514
+#: admin/includes/available.php:784 admin/includes/available.php:816
+#: admin/includes/available.php:970
 msgid "Left"
 msgstr "Izquierda"
 
-#: admin/includes/available.php:59 admin/includes/available.php:97
-#: admin/includes/available.php:149 admin/includes/available.php:234
-#: admin/includes/available.php:295 admin/includes/available.php:359
-#: admin/includes/available.php:445 admin/includes/available.php:473
-#: admin/includes/available.php:718 admin/includes/available.php:750
-#: admin/includes/available.php:873
+#: admin/includes/available.php:81 admin/includes/available.php:119
+#: admin/includes/available.php:192 admin/includes/available.php:278
+#: admin/includes/available.php:339 admin/includes/available.php:404
+#: admin/includes/available.php:490 admin/includes/available.php:518
+#: admin/includes/available.php:788 admin/includes/available.php:820
+#: admin/includes/available.php:974
 msgid "Right"
 msgstr "Derecha"
 
-#: admin/includes/available.php:63
+#: admin/includes/available.php:85
 msgid "Image Alignment"
 msgstr "Alinear la imagen..."
 
-#: admin/includes/available.php:64
+#: admin/includes/available.php:86
 msgid ""
 "How should the image be aligned? If using a caption, the caption will "
 "automatically align with this option."
 msgstr ""
 
-#: admin/includes/available.php:71 admin/includes/available.php:171
-#: admin/includes/available.php:279 admin/includes/available.php:423
-#: admin/includes/available.php:526 admin/includes/available.php:554
-#: admin/includes/available.php:620 admin/includes/available.php:680
-#: admin/includes/available.php:692 admin/includes/available.php:788
-#: admin/includes/available.php:804 admin/includes/available.php:820
-#: admin/includes/available.php:836 admin/includes/available.php:948
-#: admin/includes/available.php:970 admin/includes/available.php:986
-#: admin/includes/available.php:1002 admin/includes/available.php:1018
-#: admin/includes/available.php:1034 admin/includes/available.php:1196
-#: admin/includes/available.php:1228
-#: admin/includes/components/component-map.php:83
-msgid "On"
-msgstr "Encendido"
-
-#: admin/includes/available.php:75 admin/includes/available.php:167
-#: admin/includes/available.php:275 admin/includes/available.php:419
-#: admin/includes/available.php:530 admin/includes/available.php:558
-#: admin/includes/available.php:624 admin/includes/available.php:676
-#: admin/includes/available.php:696 admin/includes/available.php:792
-#: admin/includes/available.php:808 admin/includes/available.php:824
-#: admin/includes/available.php:840 admin/includes/available.php:952
-#: admin/includes/available.php:974 admin/includes/available.php:990
-#: admin/includes/available.php:1006 admin/includes/available.php:1022
-#: admin/includes/available.php:1038 admin/includes/available.php:1079
-#: admin/includes/available.php:1192 admin/includes/available.php:1224
-#: admin/includes/components/component-map.php:79
-#: public/includes/reveal-anim.php:261
-msgid "Off"
-msgstr "Apagado"
-
-#: admin/includes/available.php:79
+#: admin/includes/available.php:101 blocks/parallax/block.js:97
 msgid "Lightbox"
 msgstr "Efecto al clickar en la imagen"
 
-#: admin/includes/available.php:80
+#: admin/includes/available.php:102
 msgid ""
 "Choose <em>on</em> and the image will open up the full-size version in a "
 "lightbox."
 msgstr ""
 
-#: admin/includes/available.php:85 admin/includes/available.php:137
-#: admin/includes/available.php:644 admin/includes/available.php:934
-#: admin/includes/components/component-gallery.php:288
-#: admin/includes/components/component-gallery.php:341
-#: admin/includes/components/component-gallery.php:388
+#: admin/includes/available.php:107 admin/includes/available.php:180
+#: admin/includes/available.php:714 admin/includes/available.php:1035
+#: admin/includes/components/component-gallery.php:301
+#: admin/includes/components/component-gallery.php:369
+#: admin/includes/components/component-gallery.php:429
+#: blocks/character/block.js:73 blocks/image/block.js:116
+#: blocks/parallax/block.js:107 blocks/video/block.js:118
 msgid "Caption"
 msgstr "Subtítulo"
 
-#: admin/includes/available.php:86
+#: admin/includes/available.php:108
 msgid ""
 "Optional caption for the image. If you do not enter a caption, it will not "
 "show."
 msgstr ""
 
-#: admin/includes/available.php:105 admin/includes/available.php:668
+#: admin/includes/available.php:127 admin/includes/available.php:738
 msgid "Caption Position"
 msgstr "Posición del subtítulo"
 
-#: admin/includes/available.php:106
+#: admin/includes/available.php:128
 msgid "Use this to override the alignment as inherited from the image."
 msgstr ""
 
-#: admin/includes/available.php:111 admin/includes/available.php:590
-#: admin/includes/available.php:1052
+#: admin/includes/available.php:133 admin/includes/available.php:636
+#: admin/includes/available.php:1153
 msgid "Overlay Content"
 msgstr ""
 
-#: admin/includes/available.php:112 admin/includes/available.php:1053
+#: admin/includes/available.php:134 admin/includes/available.php:1154
 msgid "Text or HTML content to be overlayed. You can use tags like H2, H3 etc."
 msgstr ""
 
-#: admin/includes/available.php:116
+#: admin/includes/available.php:138
 msgid ""
 "Creates an image component with caption, alignment, and lightbox options."
 msgstr "Crea un componente de imagen con subtítulo, alineación y lightbox"
 
-#: admin/includes/available.php:119
+#: admin/includes/available.php:162
 msgid "Character"
 msgstr "Personaje"
 
-#: admin/includes/available.php:125
+#: admin/includes/available.php:168
 msgid "Character Image"
 msgstr "Imagen del personaje"
 
-#: admin/includes/available.php:131
+#: admin/includes/available.php:174
 msgid "Character Name"
 msgstr "Nombre del personaje"
 
-#: admin/includes/available.php:132
+#: admin/includes/available.php:175
 msgid ""
 "Enter a name for the character. If you do not enter a name, it will not show."
 msgstr ""
 
-#: admin/includes/available.php:138
+#: admin/includes/available.php:181
 msgid ""
 "Optional caption for the character. If you do not enter a caption, it will "
 "not show."
 msgstr ""
 
-#: admin/includes/available.php:153 admin/includes/available.php:242
-#: admin/includes/available.php:877
+#: admin/includes/available.php:196 admin/includes/available.php:286
+#: admin/includes/available.php:978
 msgid "Alignment"
 msgstr "Alineación"
 
-#: admin/includes/available.php:154
+#: admin/includes/available.php:197
 msgid ""
 "Alignment of the character component. You can align it to the left or right "
 "of the main text."
 msgstr ""
 
-#: admin/includes/available.php:159
+#: admin/includes/available.php:202
 msgid "Width"
 msgstr "Ancho"
 
-#: admin/includes/available.php:160
+#: admin/includes/available.php:203
+#, fuzzy
+#| msgid ""
+#| "Width of the image. You can enter the size as <code>40%</code> or "
+#| "<code>500px</code>."
 msgid ""
-"Width of the character component. You can enter the size as <code>40%</code> "
-"or <code>500px</code>."
-msgstr ""
+"Width of the character component. You can enter the size such as <code>40%</"
+"code> or <code>500px</code>."
+msgstr "Puedes cambiar el tamaño en Porcentaje (%) o en Pixeles (px)"
 
-#: admin/includes/available.php:175
+#: admin/includes/available.php:218 blocks/character/block.js:83
 msgid "Force Circle"
 msgstr ""
 
-#: admin/includes/available.php:176
+#: admin/includes/available.php:219
 msgid "Force the display to be a circle instead of an oval."
 msgstr ""
 
-#: admin/includes/available.php:179
+#: admin/includes/available.php:222
 msgid ""
 "Creates a character that can be positioned to the left or right of your "
 "story."
@@ -279,212 +312,212 @@ msgstr ""
 "Crea un personaje que puede ser posicionado a la izquierda o derecha de tu "
 "historia."
 
-#: admin/includes/available.php:182
+#: admin/includes/available.php:226
 msgid "Aesop Quote Section"
 msgstr "Aesop Sección Cita"
 
-#: admin/includes/available.php:190
+#: admin/includes/available.php:234
 msgid "Full Width"
 msgstr ""
 
-#: admin/includes/available.php:194
+#: admin/includes/available.php:238
 msgid "Pull Quote"
 msgstr ""
 
-#: admin/includes/available.php:198
+#: admin/includes/available.php:242
 msgid "Quote Styles"
 msgstr ""
 
-#: admin/includes/available.php:199
+#: admin/includes/available.php:243
 msgid "By default the quote is full width, but you can change that here."
 msgstr ""
 
-#: admin/includes/available.php:204 admin/includes/available.php:318
-#: admin/includes/available.php:572
+#: admin/includes/available.php:248 admin/includes/available.php:363
+#: admin/includes/available.php:618 blocks/quote/block.js:65
 msgid "Background Color"
 msgstr "Color del fondo"
 
-#: admin/includes/available.php:205
+#: admin/includes/available.php:249
 msgid ""
 "Select a background color to be used as the quote background. Used only for "
 "full width quotes"
 msgstr ""
 
-#: admin/includes/available.php:210
+#: admin/includes/available.php:254
 msgid "Text Color"
 msgstr "Color del texto"
 
-#: admin/includes/available.php:211
+#: admin/includes/available.php:255
 msgid "Select a color for the quote text."
 msgstr ""
 
-#: admin/includes/available.php:216 admin/includes/available.php:857
+#: admin/includes/available.php:260 admin/includes/available.php:958
 msgid "Component Width"
 msgstr "Ancho del componente"
 
-#: admin/includes/available.php:217 admin/includes/available.php:325
-#: admin/includes/available.php:858
+#: admin/includes/available.php:261 admin/includes/available.php:370
+#: admin/includes/available.php:959
 msgid ""
-"You can enter the size as <code>40%</code> or <code>500px</code>. Enter the "
-"word <code>content</code> to restrict the width to that of the main text."
+"You can enter the size such as <code>40%</code> or <code>500px</code>. Enter "
+"the word <code>content</code> to restrict the width to that of the main text."
 msgstr ""
 
-#: admin/includes/available.php:222
+#: admin/includes/available.php:266
 msgid "Height of Quote Area"
 msgstr ""
 
-#: admin/includes/available.php:223
+#: admin/includes/available.php:267
 msgid ""
 "Enter a quote area height like <code>400px</code>. The quote will "
 "automatically center itself vertically. By default this is set to "
 "<code>auto</code>."
 msgstr ""
 
-#: admin/includes/available.php:243
+#: admin/includes/available.php:287
 msgid ""
 "By default the quote is centered but you can choose to have it left or right "
 "aligned as well."
 msgstr ""
 
-#: admin/includes/available.php:249
+#: admin/includes/available.php:293
 msgid "Quote Size"
 msgstr ""
 
-#: admin/includes/available.php:250
+#: admin/includes/available.php:294
 msgid "Font size of the quote."
 msgstr ""
 
-#: admin/includes/available.php:255 admin/includes/available.php:375
+#: admin/includes/available.php:299 admin/includes/available.php:420
 msgid "Background Image"
 msgstr "Imagen de fondo"
 
-#: admin/includes/available.php:256
+#: admin/includes/available.php:300
 msgid ""
 "Optionally add a background image to the quote area. Enter the image URL or "
 "click <em>Select Media</em> to open the WordPress Media Library."
 msgstr ""
 
-#: admin/includes/available.php:261
+#: admin/includes/available.php:305
 msgid "Quote Text"
 msgstr ""
 
-#: admin/includes/available.php:262
+#: admin/includes/available.php:306
 msgid "The actual quote text that will be displayed."
 msgstr ""
 
-#: admin/includes/available.php:267
+#: admin/includes/available.php:311 blocks/quote/block.js:57
 msgid "Cite"
 msgstr ""
 
-#: admin/includes/available.php:268
+#: admin/includes/available.php:312
 msgid "Provide an optional cite or source for the quote."
 msgstr ""
 
-#: admin/includes/available.php:283
+#: admin/includes/available.php:327
 msgid "Enable Quote Parallax"
 msgstr ""
 
-#: admin/includes/available.php:284
+#: admin/includes/available.php:328
 msgid ""
 "Set to <em>on</em> to enable the quote text to animate across the component."
 msgstr ""
 
-#: admin/includes/available.php:299
+#: admin/includes/available.php:343
 msgid "Parallax Direction of Quote"
 msgstr ""
 
-#: admin/includes/available.php:300
+#: admin/includes/available.php:344
 msgid "The direction that the quote should travel in, if using parallax."
 msgstr ""
 
-#: admin/includes/available.php:303
+#: admin/includes/available.php:347
 msgid "Section quote area with background and color controls."
 msgstr "Aréa del área de la cita con fondo y controles de color"
 
-#: admin/includes/available.php:306 admin/includes/generator_blob.php:74
+#: admin/includes/available.php:351 admin/includes/generator_blob.php:74
 msgid "Content"
 msgstr "Contenido"
 
-#: admin/includes/available.php:312
+#: admin/includes/available.php:357
 msgid "Color of Text"
 msgstr "Color del texto"
 
-#: admin/includes/available.php:313
+#: admin/includes/available.php:358
 msgid "Set a color to be used for the main text."
 msgstr ""
 
-#: admin/includes/available.php:319
+#: admin/includes/available.php:364
 msgid "Choose an optional background color for the content component."
 msgstr ""
 
-#: admin/includes/available.php:319
+#: admin/includes/available.php:364
 msgid "Not used if using image background."
 msgstr ""
 
-#: admin/includes/available.php:324
+#: admin/includes/available.php:369
 #, fuzzy
 #| msgid "Width of Component"
 msgid "Width of Content"
 msgstr "Ancho del componente\t\t"
 
-#: admin/includes/available.php:330
+#: admin/includes/available.php:375
 msgid "Width of Component"
 msgstr "Ancho del componente\t\t"
 
-#: admin/includes/available.php:331
+#: admin/includes/available.php:376
 #, fuzzy
 #| msgid ""
 #| "Width of the image. You can enter the size as <code>40%</code> or "
 #| "<code>500px</code>."
-msgid "You can enter the size as <code>40%</code> or <code>500px</code>."
+msgid "You can enter the size such as <code>40%</code> or <code>500px</code>."
 msgstr "Puedes cambiar el tamaño en Porcentaje (%) o en Pixeles (px)"
 
-#: admin/includes/available.php:336
+#: admin/includes/available.php:381
 msgid "Height of Component"
 msgstr ""
 
-#: admin/includes/available.php:337
+#: admin/includes/available.php:382
 msgid ""
-"Enter an optional height for the component. You can enter the size as "
+"Enter an optional height for the component. You can enter the size such as "
 "<code>40%</code> or <code>500px</code>. By default it's set to <code>auto</"
 "code>. Use a large height like <code>1200px</code> to have a large blank "
 "area with small text."
 msgstr ""
 
-#: admin/includes/available.php:343
+#: admin/includes/available.php:388
 msgid "Number of Columns"
 msgstr "Número de columnas"
 
-#: admin/includes/available.php:344
+#: admin/includes/available.php:389
 msgid ""
 "Optionally set the number of columns that the text should be split into. For "
 "example, <code>2</code> will make 2 columns of text."
 msgstr ""
 
-#: admin/includes/available.php:351 admin/includes/available.php:734
-#: admin/includes/components/component-gallery.php:291
-#: admin/includes/components/component-gallery.php:344
-#: admin/includes/components/component-gallery.php:386
+#: admin/includes/available.php:396 admin/includes/available.php:804
+#: admin/includes/components/component-gallery.php:304
+#: admin/includes/components/component-gallery.php:372
+#: admin/includes/components/component-gallery.php:427
 msgid "None"
 msgstr "Ninguno"
 
-#: admin/includes/available.php:363
+#: admin/includes/available.php:408
 #, fuzzy
 #| msgid "Text Block Alignment"
 msgid "Content Block Alignment"
 msgstr "Alineación del bloque de texto"
 
-#: admin/includes/available.php:364
+#: admin/includes/available.php:409
 msgid ""
 "This option allows you to float the text block to the left or right. This is "
 "useful when using a width like <code>300px</code>."
 msgstr ""
 
-#: admin/includes/available.php:369
+#: admin/includes/available.php:414
 msgid "Floating Text Position"
 msgstr ""
 
-#: admin/includes/available.php:370
+#: admin/includes/available.php:415
 msgid ""
 "By setting this optional position, the text will be <em>floated</em> on the "
 "content component. For example, entering <code>10px, 20px, auto, auto</code> "
@@ -492,68 +525,68 @@ msgid ""
 "automatically positioned from the bottom and left."
 msgstr ""
 
-#: admin/includes/available.php:383
+#: admin/includes/available.php:428
 msgid "No Repeat"
 msgstr "Sin repetición"
 
-#: admin/includes/available.php:387
+#: admin/includes/available.php:432
 msgid "Repeat"
 msgstr "Repetir"
 
-#: admin/includes/available.php:391
+#: admin/includes/available.php:436
 msgid "Repeat Vertical"
 msgstr ""
 
-#: admin/includes/available.php:395
+#: admin/includes/available.php:440
 msgid "Repeat Horizontal"
 msgstr ""
 
-#: admin/includes/available.php:399
+#: admin/includes/available.php:444
 msgid "Image Repeat"
 msgstr "Repetir imagen"
 
-#: admin/includes/available.php:400
+#: admin/includes/available.php:445
 msgid ""
 "If using a background image, should the background image repeat? Useful for "
 "using tiled images."
 msgstr ""
 
-#: admin/includes/available.php:405
+#: admin/includes/available.php:450
 msgid "Background Image Position"
 msgstr ""
 
-#: admin/includes/available.php:406
+#: admin/includes/available.php:451
 msgid ""
 "If using a background image, this option sets the position of the background "
 "image. Default is <code>center center</code> which results in the image "
 "being centered horizontally and vertically."
 msgstr ""
 
-#: admin/includes/available.php:411
+#: admin/includes/available.php:456
 msgid "Background Image Size"
 msgstr ""
 
-#: admin/includes/available.php:412
+#: admin/includes/available.php:457
 msgid ""
 "If using a background image, this option sets the size of the image. By "
 "default the image will be full width."
 msgstr ""
 
-#: admin/includes/available.php:427
+#: admin/includes/available.php:472
 msgid "Do not shade the image background."
 msgstr ""
 
-#: admin/includes/available.php:428
+#: admin/includes/available.php:473
 msgid ""
 "When using an image background, by default the background is shaded to make "
 "the text stand out. Set this option on to disable shading."
 msgstr ""
 
-#: admin/includes/available.php:433 admin/includes/available.php:706
+#: admin/includes/available.php:478 admin/includes/available.php:776
 msgid "Floater Element Content"
 msgstr ""
 
-#: admin/includes/available.php:434
+#: admin/includes/available.php:479
 msgid ""
 "You can use text and images here. To use an image, use the full HTML tag "
 "without quotes around the image path. Example: <code><span class=\"dashicons "
@@ -565,35 +598,35 @@ msgid ""
 "dashicons-arrow-right-alt2\"></span></code>"
 msgstr ""
 
-#: admin/includes/available.php:453 admin/includes/available.php:726
+#: admin/includes/available.php:498 admin/includes/available.php:796
 msgid "Position of Floater Element"
 msgstr ""
 
-#: admin/includes/available.php:454
+#: admin/includes/available.php:499
 msgid "If using the Floater Element option, where should it be positioned?"
 msgstr ""
 
-#: admin/includes/available.php:461 admin/includes/available.php:738
+#: admin/includes/available.php:506 admin/includes/available.php:808
 msgid "Up"
 msgstr ""
 
-#: admin/includes/available.php:465 admin/includes/available.php:742
+#: admin/includes/available.php:510 admin/includes/available.php:812
 msgid "Down"
 msgstr ""
 
-#: admin/includes/available.php:477 admin/includes/available.php:754
+#: admin/includes/available.php:522 admin/includes/available.php:824
 msgid "Movement Direction of Floater Element"
 msgstr ""
 
-#: admin/includes/available.php:478
+#: admin/includes/available.php:523
 msgid "In what direction should the Floater Element travel?"
 msgstr ""
 
-#: admin/includes/available.php:481
+#: admin/includes/available.php:526
 msgid "All your normal text goes here."
 msgstr "Todo el texto normal va aquí."
 
-#: admin/includes/available.php:482
+#: admin/includes/available.php:527
 msgid ""
 "Multiple use content area with options for background image, background "
 "color, and magazine style columns."
@@ -601,61 +634,61 @@ msgstr ""
 "Área de uso multiple con opciones de imagen de fondo, color de fondo y "
 "columnas estilo revista (magazine)"
 
-#: admin/includes/available.php:483
+#: admin/includes/available.php:528
 msgid "The actual content text that will be displayed."
 msgstr ""
 
-#: admin/includes/available.php:486
+#: admin/includes/available.php:532
 msgid "Chapter Block"
 msgstr "Bloque de capitulo"
 
-#: admin/includes/available.php:492
+#: admin/includes/available.php:538
 msgid "Chapter Title"
 msgstr "Título del capítulo"
 
-#: admin/includes/available.php:493
+#: admin/includes/available.php:539
 msgid "The title of the chapter."
 msgstr ""
 
-#: admin/includes/available.php:498
+#: admin/includes/available.php:544
 msgid "Chapter Subtitle"
 msgstr ""
 
-#: admin/includes/available.php:499
+#: admin/includes/available.php:545
 msgid "This will optionally display a subtitle after the Chapter Title text."
 msgstr ""
 
-#: admin/includes/available.php:510
+#: admin/includes/available.php:556
 msgid "Video"
 msgstr "Vídeo"
 
-#: admin/includes/available.php:514
+#: admin/includes/available.php:560
 msgid "Solid Color"
 msgstr "Color uniforme"
 
-#: admin/includes/available.php:518
+#: admin/includes/available.php:564
 msgid "Background Type"
 msgstr "Tipo de fondo"
 
-#: admin/includes/available.php:519
+#: admin/includes/available.php:565
 msgid "Choose from an image or a looping video background."
 msgstr ""
 
-#: admin/includes/available.php:534
+#: admin/includes/available.php:580
 msgid "Full-size Background Image"
 msgstr ""
 
-#: admin/includes/available.php:535
+#: admin/includes/available.php:581
 msgid ""
 "If set to on, the background image of the chapter will be as large as the "
 "browser window."
 msgstr ""
 
-#: admin/includes/available.php:540
+#: admin/includes/available.php:586
 msgid "Chapter Image or Video URL"
 msgstr ""
 
-#: admin/includes/available.php:541
+#: admin/includes/available.php:587
 #, fuzzy
 #| msgid ""
 #| "URL for the image. Click <em>Select Media</em> to open the WordPress "
@@ -666,151 +699,151 @@ msgid ""
 "Youtube, Vimeo, or self-hosted URL."
 msgstr "Haz clíck en el icono y selecciona la imágen dentro de la librería."
 
-#: admin/includes/available.php:546
+#: admin/includes/available.php:592
 msgid "Alternate Image for Mobile"
 msgstr ""
 
-#: admin/includes/available.php:547
+#: admin/includes/available.php:593
 msgid ""
 "Used only on a mobile device and if the Background Type is set to Video."
 msgstr ""
 
-#: admin/includes/available.php:562
+#: admin/includes/available.php:608
 msgid "Play/Pause on Scroll"
 msgstr ""
 
-#: admin/includes/available.php:566
+#: admin/includes/available.php:612
 msgid "Autoplay Setting for Video"
 msgstr ""
 
-#: admin/includes/available.php:567
+#: admin/includes/available.php:613
 msgid "Autoplay setting. Only used if the type is set to video."
 msgstr ""
 
-#: admin/includes/available.php:573
+#: admin/includes/available.php:619
 msgid ""
 "Select a color for the background. Used ONLY IF the Background Type is set "
 "to Solid Color"
 msgstr ""
 
-#: admin/includes/available.php:578
+#: admin/includes/available.php:624
 msgid "Minimum Height"
 msgstr ""
 
-#: admin/includes/available.php:579
+#: admin/includes/available.php:625
 msgid ""
 "You can enter the minimum height in number of pixels like <code>300px</code>."
 msgstr ""
 
-#: admin/includes/available.php:584
+#: admin/includes/available.php:630
 #, fuzzy
 #| msgid "Height"
 msgid "Maximum Height"
 msgstr "Altura"
 
-#: admin/includes/available.php:585
+#: admin/includes/available.php:631
 msgid ""
 "You can enter the maximum height in number of pixels like <code>300px</code> "
 "or <code>50%</code>. 100% by default."
 msgstr ""
 
-#: admin/includes/available.php:591
+#: admin/includes/available.php:637
 msgid ""
 "Text or HTML content to be displayed. You can use tags like H2, H3 etc. "
 "Important: If set, it will not show title and subtitle. The chapter menu "
 "will still use what you put in for Title."
 msgstr ""
 
-#: admin/includes/available.php:594
+#: admin/includes/available.php:640
 msgid "Creates the scroll to point, as a chapter heading."
 msgstr ""
 
-#: admin/includes/available.php:597 admin/includes/available.php:611
+#: admin/includes/available.php:667 admin/includes/available.php:681
 msgid "Parallax Image"
 msgstr "Imagen tipo Parallax"
 
-#: admin/includes/available.php:604
+#: admin/includes/available.php:674
 msgid "Height of Image Area"
 msgstr ""
 
-#: admin/includes/available.php:605
+#: admin/includes/available.php:675
 msgid ""
 "The height of the viewable image area. Enter a value such as <code>500px</"
 "code>. Avoid using percentages with this option. Leave blank for the default "
 "value."
 msgstr ""
 
-#: admin/includes/available.php:628
+#: admin/includes/available.php:698
 msgid "Fixed"
 msgstr ""
 
-#: admin/includes/available.php:632
+#: admin/includes/available.php:702 blocks/parallax/block.js:72
 msgid "Image Movement"
 msgstr ""
 
-#: admin/includes/available.php:633
+#: admin/includes/available.php:703
 msgid ""
 "If set to <em>On</em>, the image will move slightly as you scroll down the "
 "page. If set to <em>Fixed</em> the background image will stay at fixed "
 "position as you scroll."
 msgstr ""
 
-#: admin/includes/available.php:638
+#: admin/includes/available.php:708
 msgid "Parallax Speed"
 msgstr ""
 
-#: admin/includes/available.php:639
+#: admin/includes/available.php:709
 msgid "The minimum and default value is 1. The maximum value is 6."
 msgstr ""
 
-#: admin/includes/available.php:645
+#: admin/includes/available.php:715
 msgid ""
 "Display an optional caption that will appear where set in the next option."
 msgstr ""
 
-#: admin/includes/available.php:652
+#: admin/includes/available.php:722
 msgid "Bottom Left"
 msgstr ""
 
-#: admin/includes/available.php:656
+#: admin/includes/available.php:726
 msgid "Bottom Right"
 msgstr ""
 
-#: admin/includes/available.php:660
+#: admin/includes/available.php:730
 msgid "Top Left"
 msgstr ""
 
-#: admin/includes/available.php:664
+#: admin/includes/available.php:734
 msgid "Top Right"
 msgstr ""
 
-#: admin/includes/available.php:669
+#: admin/includes/available.php:739
 msgid ""
 "If using a caption, where should it be positioned within the parallax "
 "component?"
 msgstr ""
 
-#: admin/includes/available.php:684
+#: admin/includes/available.php:754
 msgid "Image Lightbox"
 msgstr "Imagen Lightbox"
 
-#: admin/includes/available.php:685
+#: admin/includes/available.php:755
 msgid ""
 "Enable an optional lightbox. When a user clicks the image, it will display "
 "the full size version of the parallax image in a lightbox."
 msgstr ""
 
-#: admin/includes/available.php:700
+#: admin/includes/available.php:770
 msgid "Enable Floater Element"
 msgstr ""
 
-#: admin/includes/available.php:701
+#: admin/includes/available.php:771
 msgid ""
 "This option will enable a second parallax media layer that will float on top "
 "of the background image."
 msgstr ""
 
-#: admin/includes/available.php:707
+#: admin/includes/available.php:777
 msgid ""
 "You can use text and images here with tags. Example: <code><span class="
 "\"dashicons dashicons-arrow-left-alt2\"></span>img src=\"image.jpg\"<span "
@@ -818,244 +851,244 @@ msgid ""
 "use classes and styles in tags."
 msgstr ""
 
-#: admin/includes/available.php:727
+#: admin/includes/available.php:797
 msgid ""
 "If you are using the Floater option, where should the floater be positioned?"
 msgstr ""
 
-#: admin/includes/available.php:755
+#: admin/includes/available.php:825
 msgid "What direction should the floater media travel in?"
 msgstr ""
 
-#: admin/includes/available.php:760
+#: admin/includes/available.php:830
 msgid "Floater Distance"
 msgstr ""
 
-#: admin/includes/available.php:761
+#: admin/includes/available.php:831
 msgid ""
 "The distance the floater travels. You can specift 50%, 200px etc. The "
 "default is 33% of width or height."
 msgstr ""
 
-#: admin/includes/available.php:764
+#: admin/includes/available.php:834
 msgid "Optional Caption"
 msgstr "Subtítulo opcional"
 
-#: admin/includes/available.php:765
+#: admin/includes/available.php:835
 msgid "Parallax styled image component with caption and optional lightbox."
 msgstr ""
 
-#: admin/includes/available.php:768
+#: admin/includes/available.php:869
 msgid "Audio"
 msgstr "Audio"
 
-#: admin/includes/available.php:774 admin/includes/available.php:1164
-#: admin/includes/components/component-gallery.php:287
-#: admin/includes/components/component-gallery.php:340
-#: admin/includes/components/component-gallery.php:387
+#: admin/includes/available.php:875 admin/includes/available.php:1306
+#: admin/includes/components/component-gallery.php:300
+#: admin/includes/components/component-gallery.php:368
+#: admin/includes/components/component-gallery.php:428
 #: admin/includes/components/component-map.php:71
 msgid "Title"
 msgstr "Título"
 
-#: admin/includes/available.php:775
+#: admin/includes/available.php:876
 msgid "Provide an optional heading for the audio player."
 msgstr ""
 
-#: admin/includes/available.php:780
+#: admin/includes/available.php:881
 msgid "Audio URL"
 msgstr "URL del Audio"
 
-#: admin/includes/available.php:781
+#: admin/includes/available.php:882
 msgid ""
 "URL to the mp3 file. Click <em>Select Media</em> to open the WordPress Media "
 "Library."
 msgstr ""
 
-#: admin/includes/available.php:796
+#: admin/includes/available.php:897
 msgid "Loop Audio Player"
 msgstr ""
 
-#: admin/includes/available.php:797
+#: admin/includes/available.php:898
 msgid "Enable looping within the audio player."
 msgstr ""
 
-#: admin/includes/available.php:812
+#: admin/includes/available.php:913 blocks/audio/block.js:96
 msgid "Start Audio When in View"
 msgstr ""
 
-#: admin/includes/available.php:813
+#: admin/includes/available.php:914
 msgid ""
 "When set to <em>on</em> the audio will start playing automatically once "
 "scrolled into view."
 msgstr ""
 
-#: admin/includes/available.php:828
+#: admin/includes/available.php:929 blocks/audio/block.js:104
 msgid "Stop Audio When Out of View"
 msgstr ""
 
-#: admin/includes/available.php:829
+#: admin/includes/available.php:930
 msgid ""
 "Used together with the option above, this option when set to <em>on</em> "
 "will stop the audio player from playing once scrolled out of view."
 msgstr ""
 
-#: admin/includes/available.php:844
+#: admin/includes/available.php:945
 msgid "Hide Audio Player"
 msgstr ""
 
-#: admin/includes/available.php:845
+#: admin/includes/available.php:946
 msgid ""
 "Hide the audio player by setting this to <em>on</em>. This is useful for "
 "looping audio effects that do not need user controls."
 msgstr ""
 
-#: admin/includes/available.php:848
+#: admin/includes/available.php:949
 msgid "Creates an audio player with your own audio."
 msgstr "Crea un reproductor de audio con tu propio audio."
 
-#: admin/includes/available.php:851
+#: admin/includes/available.php:952
 msgid "Video Section"
 msgstr "Sección de Video"
 
-#: admin/includes/available.php:878
+#: admin/includes/available.php:979
 msgid "Should the video be floated to the left, right, or centered?"
 msgstr ""
 
-#: admin/includes/available.php:886
+#: admin/includes/available.php:987
 msgid "YouTube"
 msgstr ""
 
-#: admin/includes/available.php:890
+#: admin/includes/available.php:991
 msgid "Vimeo"
 msgstr ""
 
-#: admin/includes/available.php:894
+#: admin/includes/available.php:995
 msgid "Kickstarter"
 msgstr ""
 
-#: admin/includes/available.php:898
+#: admin/includes/available.php:999
 msgid "Viddler"
 msgstr ""
 
-#: admin/includes/available.php:902
+#: admin/includes/available.php:1003
 msgid "Vine"
 msgstr ""
 
-#: admin/includes/available.php:906
+#: admin/includes/available.php:1007
 msgid "Wistia"
 msgstr ""
 
-#: admin/includes/available.php:910
+#: admin/includes/available.php:1011
 msgid "Instagram"
 msgstr "Instagram"
 
-#: admin/includes/available.php:914
+#: admin/includes/available.php:1015
 msgid "Dailymotion"
 msgstr ""
 
-#: admin/includes/available.php:918
+#: admin/includes/available.php:1019
 msgid "Self"
 msgstr ""
 
-#: admin/includes/available.php:922
+#: admin/includes/available.php:1023
 msgid "Video Source"
 msgstr "Origen del video"
 
-#: admin/includes/available.php:923
+#: admin/includes/available.php:1024
 msgid "Choose an available source for the video."
 msgstr ""
 
-#: admin/includes/available.php:928
+#: admin/includes/available.php:1029 blocks/video/block.js:94
 msgid "Video ID"
 msgstr "Video ID"
 
-#: admin/includes/available.php:929
+#: admin/includes/available.php:1030
 msgid ""
 "The video ID can be found within the video URL and typically looks something "
 "like <code>s8J2Ge4</code>. For Viddler videos, enter the full URL instead."
 msgstr ""
 
-#: admin/includes/available.php:935
+#: admin/includes/available.php:1036
 msgid "Optionally display a caption below the video."
 msgstr ""
 
-#: admin/includes/available.php:940
+#: admin/includes/available.php:1041
 msgid "Video URL (only if using <em>self</em> as video source)"
 msgstr ""
 
-#: admin/includes/available.php:941
+#: admin/includes/available.php:1042
 msgid ""
 "This is only used if you are hosting the video yourself and have set the "
 "Video Source (above) to <em>self</em>. Click <em>Select Media</em> to open "
 "the WordPress Media Library."
 msgstr ""
 
-#: admin/includes/available.php:956
+#: admin/includes/available.php:1057
 msgid "Disable video on Mobile Devices."
 msgstr ""
 
-#: admin/includes/available.php:957
+#: admin/includes/available.php:1058
 msgid "Disable video on Mobile Devices. Must specify the Poster Frame image."
 msgstr ""
 
-#: admin/includes/available.php:962
+#: admin/includes/available.php:1063
 msgid "Poster Frame"
 msgstr ""
 
-#: admin/includes/available.php:963
+#: admin/includes/available.php:1064
 msgid ""
 "Image to display before the video plays if the target is self. Or the image "
 "to display if the video is disabled for mobile. Click <em>Select Media</em> "
 "to open the WordPress Media Library."
 msgstr ""
 
-#: admin/includes/available.php:978
+#: admin/includes/available.php:1079
 #, fuzzy
 #| msgid "Video ID"
 msgid "Video Loop"
 msgstr "Video ID"
 
-#: admin/includes/available.php:979
+#: admin/includes/available.php:1080
 msgid "Enable the video to loop."
 msgstr ""
 
-#: admin/includes/available.php:994
+#: admin/includes/available.php:1095 blocks/video/block.js:128
 msgid "Autoplay"
 msgstr ""
 
-#: admin/includes/available.php:995
+#: admin/includes/available.php:1096
 msgid "Should the video automatically start playing."
 msgstr ""
 
-#: admin/includes/available.php:1010
+#: admin/includes/available.php:1111
 #, fuzzy
 #| msgid "Video Source"
 msgid "Video Controls"
 msgstr "Origen del video"
 
-#: admin/includes/available.php:1011
+#: admin/includes/available.php:1112
 msgid "Hide or show the controls for the video player."
 msgstr ""
 
-#: admin/includes/available.php:1026
+#: admin/includes/available.php:1127 blocks/video/block.js:138
 msgid "Start Video When in View"
 msgstr ""
 
-#: admin/includes/available.php:1027
+#: admin/includes/available.php:1128
 msgid ""
 "When set to <em>on</em> the video will start playing automatically once "
 "scrolled into view."
 msgstr ""
 
-#: admin/includes/available.php:1042
+#: admin/includes/available.php:1143
 msgid "Picture in Picture Mode"
 msgstr ""
 
-#: admin/includes/available.php:1046
+#: admin/includes/available.php:1147 blocks/video/block.js:148
 msgid "Stop Video When Out of View"
 msgstr ""
 
-#: admin/includes/available.php:1047
+#: admin/includes/available.php:1148
 msgid ""
 "Used together with the option above, this option when set to <em>on</em> "
 "will stop the video player from playing once scrolled out of view. Selecting "
@@ -1063,29 +1096,30 @@ msgid ""
 "allowing you to scroll and continue watching the video."
 msgstr ""
 
-#: admin/includes/available.php:1057
+#: admin/includes/available.php:1158
 msgid "Responsive video component with alignment and optional caption."
 msgstr "Componente de video responsivo con alineación y subtítulo opcional."
 
-#: admin/includes/available.php:1060
+#: admin/includes/available.php:1199
 msgid "Map"
 msgstr "Mapa"
 
-#: admin/includes/available.php:1068
+#: admin/includes/available.php:1207 blocks/map/block.js:43
+#: blocks/parallax/block.js:87
 msgid "Height"
 msgstr "Altura"
 
-#: admin/includes/available.php:1069
+#: admin/includes/available.php:1208
 msgid ""
 "The height of the map component. By default this is set to <em>500px</em>. "
 "Avoid using percentages with this option."
 msgstr ""
 
-#: admin/includes/available.php:1074
+#: admin/includes/available.php:1213
 msgid "Sticky Maps"
 msgstr ""
 
-#: admin/includes/available.php:1075
+#: admin/includes/available.php:1214
 msgid ""
 "By choosing a position the map will follow the scrolling of the story with "
 "the markers that you'll add below.<br /><br />After toggling a location, a "
@@ -1094,23 +1128,23 @@ msgid ""
 "that you added the markers in the map admin."
 msgstr ""
 
-#: admin/includes/available.php:1083
+#: admin/includes/available.php:1222
 msgid "Sticky Left"
 msgstr ""
 
-#: admin/includes/available.php:1087
+#: admin/includes/available.php:1226
 msgid "Sticky Top"
 msgstr ""
 
-#: admin/includes/available.php:1091
+#: admin/includes/available.php:1230
 msgid "Sticky Right"
 msgstr ""
 
-#: admin/includes/available.php:1096
+#: admin/includes/available.php:1235
 msgid "Sticky Bottom"
 msgstr ""
 
-#: admin/includes/available.php:1101
+#: admin/includes/available.php:1240
 msgid ""
 "Creates the basic map component. Use the Map Locations edit boxes when "
 "writing your story to add locations."
@@ -1118,29 +1152,29 @@ msgstr ""
 "Crea un componente de mapa básico. Usa la caja de edición de ubicaciones de "
 "mapas cuando estés escribiendo la historia."
 
-#: admin/includes/available.php:1104
+#: admin/includes/available.php:1244
 msgid "Timeline Stop"
 msgstr "Parar linea de tiempo"
 
-#: admin/includes/available.php:1110
+#: admin/includes/available.php:1250 blocks/timeline/block.js:43
 msgid "Navigation Menu Item Label"
 msgstr ""
 
-#: admin/includes/available.php:1111
+#: admin/includes/available.php:1251
 msgid ""
 "This is what is displayed for the timeline navigation menu item label. "
 "Example usage includes dates, years, colors, locations, and names."
 msgstr ""
 
-#: admin/includes/available.php:1116
+#: admin/includes/available.php:1256 blocks/timeline/block.js:51
 msgid "Timeline Title"
 msgstr ""
 
-#: admin/includes/available.php:1117
+#: admin/includes/available.php:1257
 msgid "The timeline title that should be displayed within the story."
 msgstr ""
 
-#: admin/includes/available.php:1120
+#: admin/includes/available.php:1260
 msgid ""
 "Enter a number such as 2007, and a small timeline will be displayed with "
 "scroll to points. This works similar to the chapter heading."
@@ -1149,132 +1183,140 @@ msgstr ""
 "con puntos de scroll. Esto funciona de una forma similar al título de un "
 "capitulo."
 
-#: admin/includes/available.php:1123
+#: admin/includes/available.php:1264
 msgid "Document"
 msgstr "Documento"
 
-#: admin/includes/available.php:1131
+#: admin/includes/available.php:1272
 msgid "PDF"
 msgstr ""
 
-#: admin/includes/available.php:1139
+#: admin/includes/available.php:1280
 msgid "Document Type"
 msgstr "Tipo de documento"
 
-#: admin/includes/available.php:1140
+#: admin/includes/available.php:1281
 msgid "The type of document. Choose image or PDF."
 msgstr ""
 
-#: admin/includes/available.php:1145
+#: admin/includes/available.php:1286
 msgid "Document URL"
 msgstr ""
 
-#: admin/includes/available.php:1146
+#: admin/includes/available.php:1287
 msgid ""
 "URL to the document. Click <em>Select Media</em> to open the WordPress Media "
 "Library."
 msgstr ""
 
-#: admin/includes/available.php:1151
+#: admin/includes/available.php:1292
 msgid "Document Caption"
 msgstr ""
 
-#: admin/includes/available.php:1152
+#: admin/includes/available.php:1293
 msgid "Provide an optional caption for the document component."
 msgstr ""
 
-#: admin/includes/available.php:1155
+#: admin/includes/available.php:1296
 msgid "Show a document that is revealed with a click."
 msgstr "Muestra un documento y es revelado con un clic."
 
-#: admin/includes/available.php:1158
+#: admin/includes/available.php:1300
 msgid "Collections"
 msgstr "Colecciones"
 
-#: admin/includes/available.php:1165
+#: admin/includes/available.php:1307
 msgid "Display an optional heading to be used within the Collection component."
 msgstr ""
 
-#: admin/includes/available.php:1171
+#: admin/includes/available.php:1313
 msgid "Category"
 msgstr "Categoría"
 
-#: admin/includes/available.php:1172
+#: admin/includes/available.php:1314
 msgid "Select the category that you want stories to be displayed from."
 msgstr ""
 
-#: admin/includes/available.php:1177
+#: admin/includes/available.php:1319
 msgid "Number of Stories"
 msgstr ""
 
-#: admin/includes/available.php:1178
+#: admin/includes/available.php:1320
 msgid "How many stories should be displayed in this collection?"
 msgstr ""
 
-#: admin/includes/available.php:1184
+#: admin/includes/available.php:1326
 msgid "Columns"
 msgstr "Columnas"
 
-#: admin/includes/available.php:1185
+#: admin/includes/available.php:1327
 msgid "Stories are displayed in a grid. How many columns should the grid be?"
 msgstr ""
 
-#: admin/includes/available.php:1200
+#: admin/includes/available.php:1342
 msgid "Splash Mode"
 msgstr ""
 
-#: admin/includes/available.php:1201
+#: admin/includes/available.php:1343
 msgid ""
 "Setting this to on will display only the actual category titles (without "
 "images)."
 msgstr ""
 
-#: admin/includes/available.php:1208 public/includes/options.php:26
+#: admin/includes/available.php:1350 public/includes/options.php:26
 msgid "Default"
 msgstr ""
 
-#: admin/includes/available.php:1212
+#: admin/includes/available.php:1354
 msgid "Reverse"
 msgstr ""
 
-#: admin/includes/available.php:1216
+#: admin/includes/available.php:1358
 msgid "Post Order"
 msgstr ""
 
-#: admin/includes/available.php:1217
+#: admin/includes/available.php:1359
 msgid "Choose Default to show the newest post first."
 msgstr ""
 
-#: admin/includes/available.php:1232
+#: admin/includes/available.php:1374
 #: public/includes/components/component-collections.php:160
 #: public/includes/components/component-collections.php:164
 msgid "Load More"
 msgstr ""
 
-#: admin/includes/available.php:1233
+#: admin/includes/available.php:1375
 msgid "Setting this to on will display Load More link to load more posts."
 msgstr ""
 
-#: admin/includes/available.php:1236
+#: admin/includes/available.php:1378
 msgid ""
 "Show a collection of stories. Typically used on a page like the home page."
 msgstr ""
 "Muestra una colección de historias. Típicamente es usado un una página como "
 "la página hogar. "
 
-#: admin/includes/available.php:1239
+#: admin/includes/available.php:1382
 msgid "Gallery"
 msgstr "Galería"
 
-#: admin/includes/available.php:1248
+#: admin/includes/available.php:1391
 msgid "Choose Gallery"
 msgstr ""
 
-#: admin/includes/available.php:1249
+#: admin/includes/available.php:1392
 msgid "Select a gallery below to insert it."
 msgstr ""
 
-#: admin/includes/available.php:1252
+#: admin/includes/available.php:1395
+#: node_modules/ajv/dist/regenerator.min.js:25
+#: node_modules/ajv/dist/regenerator.min.js:26
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:110
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:359
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:110
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:359
+#: node_modules/underscore.string/test/strings.js:76
+#: node_modules/underscore.string/test/strings.js:269
 msgid " "
 msgstr ""
 
@@ -1455,232 +1497,266 @@ msgstr "No se encontraron galerías en la basura"
 msgid "Create responsive galleries."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:75
+#: admin/includes/components/component-gallery.php:80
 msgid "Gallery Code"
 msgstr "Código de la galería"
 
-#: admin/includes/components/component-gallery.php:76
+#: admin/includes/components/component-gallery.php:81
 msgid "Used In"
 msgstr "Usado en"
 
-#: admin/includes/components/component-gallery.php:136
+#: admin/includes/components/component-gallery.php:141
 msgid "Add Images"
 msgstr "Agregar Imágenes"
 
-#: admin/includes/components/component-gallery.php:139
+#: admin/includes/components/component-gallery.php:144
 msgid "Select Layout"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:142
+#: admin/includes/components/component-gallery.php:147
 msgid "Set Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:207
+#: admin/includes/components/component-gallery.php:212
 msgid "Grid"
 msgstr "Rejilla"
 
-#: admin/includes/components/component-gallery.php:208
+#: admin/includes/components/component-gallery.php:213
 msgid "Thumbnail"
 msgstr "Miniatura"
 
-#: admin/includes/components/component-gallery.php:210
+#: admin/includes/components/component-gallery.php:215
 msgid "Photoset"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:211
+#: admin/includes/components/component-gallery.php:216
 msgid "Parallax"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:212
+#: admin/includes/components/component-gallery.php:217
 msgid "Hero"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:263
+#: admin/includes/components/component-gallery.php:276
 msgid "Main Gallery Width"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:264
+#: admin/includes/components/component-gallery.php:277
 msgid ""
 "Adjust the overall width of the grid/thumbnail gallery. Acceptable values "
 "include 500px, 50%, 100% etc"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:268
+#: admin/includes/components/component-gallery.php:281
 msgid "Gallery Caption"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:269
+#: admin/includes/components/component-gallery.php:282
 msgid "Add an optional caption for the gallery."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:275
+#: admin/includes/components/component-gallery.php:288
 msgid "Grid Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:278
+#: admin/includes/components/component-gallery.php:291
 msgid "Grid Gallery Width"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:279
+#: admin/includes/components/component-gallery.php:292
 msgid ""
 "Adjust the width of the individual grid items, only if using Grid gallery "
 "style. Default is 400."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:284
-#: admin/includes/components/component-gallery.php:337
+#: admin/includes/components/component-gallery.php:297
+#: admin/includes/components/component-gallery.php:365
 #, fuzzy
 #| msgid "Lightbox"
 msgid "Lightbox Text"
 msgstr "Efecto al clickar en la imagen"
 
-#: admin/includes/components/component-gallery.php:285
-#: admin/includes/components/component-gallery.php:338
+#: admin/includes/components/component-gallery.php:298
+#: admin/includes/components/component-gallery.php:366
 msgid ""
 "Text to display when the lightbox is open. The texts are read from the image "
 "property."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:289
-#: admin/includes/components/component-gallery.php:342
-#: admin/includes/components/component-gallery.php:389
+#: admin/includes/components/component-gallery.php:302
+#: admin/includes/components/component-gallery.php:370
+#: admin/includes/components/component-gallery.php:430
 #, fuzzy
 #| msgid "Caption"
 msgid "Title+Caption"
 msgstr "Subtítulo"
 
-#: admin/includes/components/component-gallery.php:290
-#: admin/includes/components/component-gallery.php:343
-#: admin/includes/components/component-gallery.php:390
+#: admin/includes/components/component-gallery.php:303
+#: admin/includes/components/component-gallery.php:371
+#: admin/includes/components/component-gallery.php:431
 msgid "Description"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:298
+#: admin/includes/components/component-gallery.php:311
 msgid "Thumbnail Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:301
-#: admin/includes/components/component-gallery.php:354
+#: admin/includes/components/component-gallery.php:314
+#: admin/includes/components/component-gallery.php:395
 msgid "Gallery Transition"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:302
+#: admin/includes/components/component-gallery.php:315
 msgid ""
 "Adjust the transition effect for the Thumbnail gallery. Default is slide."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:304
-#: admin/includes/components/component-gallery.php:357
+#: admin/includes/components/component-gallery.php:317
+#: admin/includes/components/component-gallery.php:398
 msgid "Fade"
 msgstr "Desvanecer"
 
-#: admin/includes/components/component-gallery.php:305
-#: admin/includes/components/component-gallery.php:358
+#: admin/includes/components/component-gallery.php:318
+#: admin/includes/components/component-gallery.php:399
 msgid "Slide"
 msgstr "Deslizar"
 
-#: admin/includes/components/component-gallery.php:306
-#: admin/includes/components/component-gallery.php:359
+#: admin/includes/components/component-gallery.php:319
+#: admin/includes/components/component-gallery.php:400
 msgid "Dissolve"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:311
-#: admin/includes/components/component-gallery.php:364
+#: admin/includes/components/component-gallery.php:324
+#: admin/includes/components/component-gallery.php:405
 msgid "Gallery Transition Speed"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:312
+#: admin/includes/components/component-gallery.php:325
 msgid ""
 "Activate slideshow by setting a speed for the transition.5000 = 5 seconds."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:318
+#: admin/includes/components/component-gallery.php:331
 msgid "Hide Gallery Thumbnails"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:323
+#: admin/includes/components/component-gallery.php:336
+#, fuzzy
+#| msgid "Search Galleries"
+msgid "Sequence Gallery Options"
+msgstr "Buscar galerías"
+
+#: admin/includes/components/component-gallery.php:341 blocks/image/block.js:82
+msgid "Panorama Mode"
+msgstr ""
+
+#: admin/includes/components/component-gallery.php:344
+#: blocks/image/block.js:100
+#, fuzzy
+#| msgid "Height"
+msgid "Panorama Height"
+msgstr "Altura"
+
+#: admin/includes/components/component-gallery.php:345
+msgid ""
+"Used Only When the Panorama Mode is On. Height of Each Panorama in Pixels."
+msgstr ""
+
+#: admin/includes/components/component-gallery.php:351
 msgid "Photoset Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:326
+#: admin/includes/components/component-gallery.php:354
 msgid "Gallery Layout"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:327
+#: admin/includes/components/component-gallery.php:355
 msgid ""
 "Let's say you have 4 images in this gallery. If you enter 121 you will have "
 "one image on the top row, two images on the second row, and one image on the "
 "third row."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:333
+#: admin/includes/components/component-gallery.php:361
 msgid "Enable Lightbox"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:351
+#: admin/includes/components/component-gallery.php:379
+msgid "Parallax Gallery Options"
+msgstr ""
+
+#: admin/includes/components/component-gallery.php:384
+msgid "Panorama Mode for Mobile"
+msgstr ""
+
+#: admin/includes/components/component-gallery.php:385
+msgid "Use Panorama Images for Mobile Devices"
+msgstr ""
+
+#: admin/includes/components/component-gallery.php:392
 msgid "Hero Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:355
+#: admin/includes/components/component-gallery.php:396
 msgid "Adjust the transition effect for the Hero gallery. Default is fade."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:365
+#: admin/includes/components/component-gallery.php:406
 msgid ""
 "Activate slideshow by setting a speed for the transition. 5000 = 5 seconds."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:370
+#: admin/includes/components/component-gallery.php:411
 msgid "Gallery Content"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:371
+#: admin/includes/components/component-gallery.php:412
 msgid ""
 "Content displayed within the Hero gallery. You can use HTML tags with "
 "classes and styles."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:376
+#: admin/includes/components/component-gallery.php:417
 msgid "Main Gallery Height"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:377
+#: admin/includes/components/component-gallery.php:418
 msgid ""
 "Specify this if you want to control the height of the gallery. Acceptable "
 "values include 500px, 50%, 100% etc."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:378
+#: admin/includes/components/component-gallery.php:419
 msgid ""
 "If you enter a ratio, such as 800/600, the gallery would appear with a "
 "constant width/height ratio. This is useful if you want the galery to be "
 "responsive on mobile devices on portrait modes."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:383
+#: admin/includes/components/component-gallery.php:424
 #, fuzzy
 #| msgid "Image ALT"
 msgid "Image Text"
 msgstr "Nombre posicionamiento imágen"
 
-#: admin/includes/components/component-gallery.php:384
+#: admin/includes/components/component-gallery.php:425
 msgid ""
 "Text to display with each image. The texts are read from the image property."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:395
+#: admin/includes/components/component-gallery.php:436
 msgid "Gallery Transition Animation Speed"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:396
+#: admin/includes/components/component-gallery.php:437
 msgid "Animation duration for transition in milliseconds."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:406
+#: admin/includes/components/component-gallery.php:447
 msgid "Enable Navigation Controls"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:556
+#: admin/includes/components/component-gallery.php:614
 msgid "All done!"
 msgstr "¡Todo hecho!"
 
@@ -1898,6 +1974,1411 @@ msgid ""
 "more information."
 msgstr ""
 
+#: block/image/block.js:29 blocks/block.js:29 blocks/image/block.js:25
+msgid "Aesop Image Block"
+msgstr ""
+
+#: blocks/audio/block.js:25
+msgid "Aesop Audio Block"
+msgstr ""
+
+#: blocks/audio/block.js:86
+#, fuzzy
+#| msgid "Optional Caption"
+msgid "Optional Title"
+msgstr "Subtítulo opcional"
+
+#: blocks/audio/block.js:112
+#, fuzzy
+#| msgid "Audio"
+msgid "Loop Audio"
+msgstr "Audio"
+
+#: blocks/audio/block.js:120
+msgid "Hidden"
+msgstr ""
+
+#: blocks/audio/block.js:132 blocks/chapter/block.js:92
+msgid "Select Audio"
+msgstr ""
+
+#: blocks/audio/block.js:142 blocks/chapter/block.js:102
+#, fuzzy
+#| msgid "Video Source"
+msgid "Set Audio Source"
+msgstr "Origen del video"
+
+#: blocks/chapter/block.js:25
+#, fuzzy
+#| msgid "Chapter Block"
+msgid "Aesop Chapter Block"
+msgstr "Bloque de capitulo"
+
+#: blocks/chapter/block.js:109
+msgid "Start on Show"
+msgstr ""
+
+#: blocks/character/block.js:25
+#, fuzzy
+#| msgid "Character"
+msgid "Aesop Character"
+msgstr "Personaje"
+
+#: blocks/character/block.js:65
+msgid "Name"
+msgstr ""
+
+#: blocks/character/block.js:96 blocks/image/block.js:135
+#: blocks/quote/block.js:76 blocks/video/block.js:169
+msgid "Reveal Animation"
+msgstr ""
+
+#: blocks/character/block.js:120 blocks/image/block.js:159
+#: blocks/parallax/block.js:121
+msgid "Select Image"
+msgstr ""
+
+#: blocks/character/block.js:129 blocks/image/block.js:168
+#: blocks/parallax/block.js:130
+msgid "Set Image Source"
+msgstr ""
+
+#: blocks/gallery/block.js:29
+#, fuzzy
+#| msgid "New Gallery"
+msgid "Aesop Gallery Block"
+msgstr "Nueva galería"
+
+#: blocks/image/block.js:108
+#, fuzzy
+#| msgid "Image Credit"
+msgid "Credit"
+msgstr "Autor de la imagen entrada/proyecto"
+
+#: blocks/image/block.js:124
+msgid "ALT"
+msgstr ""
+
+#: blocks/map/block.js:25
+msgid "Aesop Map Block"
+msgstr ""
+
+#: blocks/map/block.js:54
+msgid "Sticky"
+msgstr ""
+
+#: blocks/parallax/block.js:25
+msgid "Aesop Parallax Block"
+msgstr ""
+
+#: blocks/quote/block.js:29
+#, fuzzy
+#| msgid "Aesop Quote Section"
+msgid "Aesop Quote Block"
+msgstr "Aesop Sección Cita"
+
+#: blocks/quote/block.js:98
+msgid "Quote"
+msgstr ""
+
+#: blocks/timeline/block.js:25
+#, fuzzy
+#| msgid "Timeline Stop"
+msgid "Aesop Timeline Block"
+msgstr "Parar linea de tiempo"
+
+#: blocks/video/block.js:25
+#, fuzzy
+#| msgid "Video"
+msgid "Aesop Video"
+msgstr "Vídeo"
+
+#: blocks/video/block.js:79
+#, fuzzy
+#| msgid "Video Source"
+msgid "Source"
+msgstr "Origen del video"
+
+#: blocks/video/block.js:104
+msgid "Select Video File"
+msgstr ""
+
+#: blocks/video/block.js:113
+msgid "Set Video File"
+msgstr ""
+
+#: blocks/video/block.js:158
+#, fuzzy
+#| msgid "Video"
+msgid "Loop Video"
+msgstr "Vídeo"
+
+#: node_modules/ajv/dist/regenerator.min.js:25
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "."
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "*"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "import"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "{}"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid ", "
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "this"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "super"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "null"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid ",\n"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid " = "
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:360
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:360
+#: node_modules/underscore.string/test/strings.js:270
+msgid "\n"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "debugger;"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid ":"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "empty"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "any"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "mixed"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "boolean"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "interface "
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid " & "
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "number"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "string"
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "typeof "
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid " | "
+msgstr ""
+
+#: node_modules/ajv/dist/regenerator.min.js:26
+msgid "void"
+msgstr ""
+
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:3
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:5
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:9
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:10
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:14
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:15
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:4
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:6
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:10
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:11
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:15
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:16
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:3
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:5
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:9
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:10
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:14
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:15
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:3
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:5
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:9
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:10
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:14
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:15
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:3
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:5
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:9
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:10
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:14
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:15
+#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:3
+#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:5
+#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:9
+#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:10
+#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:14
+#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:15
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:4
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:6
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:10
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:11
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:15
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:16
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:97
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:428
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:436
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:97
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:428
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:436
+#: node_modules/underscore.string/test/speed.js:87
+#: node_modules/underscore.string/test/strings.js:316
+msgid "Hello World"
+msgstr ""
+
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:4
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:6
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:11
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:16
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:5
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:7
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:12
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:17
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:4
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:6
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:11
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:16
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:4
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:6
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:11
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:16
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:4
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:6
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:11
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:16
+#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:4
+#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:6
+#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:11
+#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:16
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:5
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:7
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:12
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:17
+msgctxt "verb"
+msgid "Post"
+msgstr ""
+
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:20
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:24
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:21
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:25
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:20
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:24
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:20
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:24
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:20
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:24
+#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:20
+#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:24
+#: node_modules/grunt-checktextdomain/test/fixtures/plurals.php:3
+#: node_modules/grunt-checktextdomain/test/fixtures/plurals.php:8
+#: node_modules/grunt-checktextdomain/test/fixtures/plurals.php:15
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:21
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:25
+#, php-format
+msgid "%d apple"
+msgid_plural "%d apples"
+msgstr[0] ""
+msgstr[1] ""
+
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:21
+#: node_modules/grunt-checktextdomain/test/expected/incorrect-domain-autocorrect.php:25
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:22
+#: node_modules/grunt-checktextdomain/test/expected/variable-domain-autocorrect.php:26
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:21
+#: node_modules/grunt-checktextdomain/test/fixtures/correct-domain.php:25
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:21
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain-autocorrect.php:25
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:21
+#: node_modules/grunt-checktextdomain/test/fixtures/incorrect-domain.php:25
+#: node_modules/grunt-checktextdomain/test/fixtures/missing-domain.php:25
+#: node_modules/grunt-checktextdomain/test/fixtures/plurals.php:4
+#: node_modules/grunt-checktextdomain/test/fixtures/plurals.php:9
+#: node_modules/grunt-checktextdomain/test/fixtures/plurals.php:16
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:22
+#: node_modules/grunt-checktextdomain/test/fixtures/variable-domain-autocorrect.php:26
+#, php-format
+msgctxt "noun, job positions"
+msgid "%d post"
+msgid_plural "%d posts"
+msgstr[0] ""
+msgstr[1] ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:22
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:22
+#: node_modules/underscore.string/test/speed.js:12
+msgid "  foobar  "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:46
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:189
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:190
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:191
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:46
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:189
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:190
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:191
+#: node_modules/underscore.string/test/speed.js:36
+#: node_modules/underscore.string/test/strings.js:140
+#: node_modules/underscore.string/test/strings.js:141
+#: node_modules/underscore.string/test/strings.js:142
+msgid "whitespace"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:50
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:50
+#: node_modules/underscore.string/test/speed.js:40
+msgid "Hello worls"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:54
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:215
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:216
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:54
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:215
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:216
+#: node_modules/underscore.string/test/speed.js:44
+#: node_modules/underscore.string/test/strings.js:161
+#: node_modules/underscore.string/test/strings.js:162
+msgid "Hello "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:58
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:224
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:58
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:224
+#: node_modules/underscore.string/test/speed.js:48
+#: node_modules/underscore.string/test/strings.js:167
+msgid "https://edtsech@bitbucket.org/edtsech/underscore.strings"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:73
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:237
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:73
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:237
+#: node_modules/underscore.string/test/speed.js:63
+#: node_modules/underscore.string/test/strings.js:180
+msgid "the titleize string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:77
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:81
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:203
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:204
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:205
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:327
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:328
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:342
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:77
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:81
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:203
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:204
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:205
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:327
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:328
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:342
+#: node_modules/underscore.string/test/speed.js:67
+#: node_modules/underscore.string/test/speed.js:71
+#: node_modules/underscore.string/test/strings.js:152
+#: node_modules/underscore.string/test/strings.js:153
+#: node_modules/underscore.string/test/strings.js:154
+#: node_modules/underscore.string/test/strings.js:244
+#: node_modules/underscore.string/test/strings.js:245
+#: node_modules/underscore.string/test/strings.js:256
+msgid "Hello world"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:89
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:89
+#: node_modules/underscore.string/test/speed.js:79
+msgid "<div>Blah blah blah</div>"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:93
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:93
+#: node_modules/underscore.string/test/speed.js:83
+msgid "&lt;div&gt;Blah blah blah&lt;/div&gt;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:101
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:105
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:109
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:113
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:117
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:450
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:451
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:452
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:472
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:473
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:483
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:484
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:485
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings_standalone.js:6
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:101
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:105
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:109
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:113
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:117
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:450
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:451
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:452
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:472
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:473
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:483
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:484
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:485
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings_standalone.js:6
+#: node_modules/underscore.string/test/speed.js:91
+#: node_modules/underscore.string/test/speed.js:95
+#: node_modules/underscore.string/test/speed.js:99
+#: node_modules/underscore.string/test/speed.js:103
+#: node_modules/underscore.string/test/speed.js:107
+#: node_modules/underscore.string/test/strings.js:327
+#: node_modules/underscore.string/test/strings.js:328
+#: node_modules/underscore.string/test/strings.js:329
+#: node_modules/underscore.string/test/strings.js:343
+#: node_modules/underscore.string/test/strings.js:344
+#: node_modules/underscore.string/test/strings.js:351
+#: node_modules/underscore.string/test/strings.js:352
+#: node_modules/underscore.string/test/strings.js:353
+#: node_modules/underscore.string/test/strings_standalone.js:6
+msgid "foo"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:121
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:121
+#: node_modules/underscore.string/test/speed.js:111
+msgid "10.232323"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:125
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:129
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:133
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:137
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:125
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:129
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:133
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:137
+#: node_modules/underscore.string/test/speed.js:115
+#: node_modules/underscore.string/test/speed.js:119
+#: node_modules/underscore.string/test/speed.js:123
+#: node_modules/underscore.string/test/speed.js:127
+msgid "aaa_bbb_ccc"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:141
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:141
+#: node_modules/underscore.string/test/speed.js:131
+msgid "separator"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/speed.js:145
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:607
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/speed.js:145
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:607
+#: node_modules/underscore.string/test/speed.js:135
+#: node_modules/underscore.string/test/strings.js:424
+msgid "Un éléphant à l'orée du bois"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:16
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:56
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:75
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:16
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:56
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:75
+#: node_modules/underscore.string/test/strings.js:10
+#: node_modules/underscore.string/test/strings.js:31
+#: node_modules/underscore.string/test/strings.js:48
+msgid " foo"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:17
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:58
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:76
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:17
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:58
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:76
+#: node_modules/underscore.string/test/strings.js:11
+#: node_modules/underscore.string/test/strings.js:33
+#: node_modules/underscore.string/test/strings.js:49
+msgid "foo "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:18
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:59
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:79
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:18
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:59
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:79
+#: node_modules/underscore.string/test/strings.js:12
+#: node_modules/underscore.string/test/strings.js:34
+#: node_modules/underscore.string/test/strings.js:52
+msgid " foo "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:19
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:20
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:19
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:20
+#: node_modules/underscore.string/test/strings.js:13
+#: node_modules/underscore.string/test/strings.js:14
+msgid "    foo     "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:21
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:21
+msgid "\t    foo \t  "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:23
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:64
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:81
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:23
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:64
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:81
+#: node_modules/underscore.string/test/strings.js:16
+#: node_modules/underscore.string/test/strings.js:37
+#: node_modules/underscore.string/test/strings.js:54
+msgid "ffoo"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:24
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:65
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:82
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:24
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:65
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:82
+#: node_modules/underscore.string/test/strings.js:17
+#: node_modules/underscore.string/test/strings.js:38
+#: node_modules/underscore.string/test/strings.js:55
+msgid "ooff"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:25
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:66
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:83
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:25
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:66
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:83
+#: node_modules/underscore.string/test/strings.js:18
+#: node_modules/underscore.string/test/strings.js:39
+#: node_modules/underscore.string/test/strings.js:56
+msgid "ffooff"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:28
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:68
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:85
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:28
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:68
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:85
+#: node_modules/underscore.string/test/strings.js:21
+#: node_modules/underscore.string/test/strings.js:41
+#: node_modules/underscore.string/test/strings.js:58
+msgid "_-foobar-_"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:30
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:74
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:30
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:74
+#: node_modules/underscore.string/test/strings.js:23
+#: node_modules/underscore.string/test/strings.js:47
+msgid "http://foo/"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:31
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:31
+#: node_modules/underscore.string/test/strings.js:24
+msgid "c:\\"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:57
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:57
+#: node_modules/underscore.string/test/strings.js:32
+msgid "    foo"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:77
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:77
+#: node_modules/underscore.string/test/strings.js:50
+msgid "foo     "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:78
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:78
+#: node_modules/underscore.string/test/strings.js:51
+msgid "foo  bar     "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:93
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:93
+#: node_modules/underscore.string/test/strings.js:64
+msgid "fabio"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:126
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:126
+#: node_modules/underscore.string/test/strings.js:89
+msgid " foo    bar   "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:137
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:148
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:137
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:148
+#: node_modules/underscore.string/test/strings.js:97
+#: node_modules/underscore.string/test/strings.js:108
+#, javascript-format
+msgid "Hello %s"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:138
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:149
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:138
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:149
+#: node_modules/underscore.string/test/strings.js:98
+#: node_modules/underscore.string/test/strings.js:109
+#, javascript-format
+msgid "hello %s"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:157
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:167
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:157
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:167
+#: node_modules/underscore.string/test/strings.js:117
+#: node_modules/underscore.string/test/strings.js:124
+msgid "foobar"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:158
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:158
+#: node_modules/underscore.string/test/strings.js:118
+msgid "oobar"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:170
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:170
+#: node_modules/underscore.string/test/strings.js:127
+msgid "fooba"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:206
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:206
+#: node_modules/underscore.string/test/strings.js:155
+msgid "x.xx....x.x"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:230
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:361
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:230
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:361
+#: node_modules/underscore.string/test/strings.js:173
+#: node_modules/underscore.string/test/strings.js:271
+msgid "a"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:231
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:231
+#: node_modules/grunt-wp-i18n/test/fixtures/translator-comments/translator-comments.php:7
+#: node_modules/underscore.string/test/strings.js:174
+msgid "A"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:232
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:232
+#: node_modules/underscore.string/test/strings.js:175
+msgid "+"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:238
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:238
+#: node_modules/underscore.string/test/strings.js:181
+msgid "the titleize string  method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:242
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:242
+msgid "let's have some fun"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:243
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:243
+msgid "a-dash-separated-string"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:244
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:244
+msgid "A-DASH-SEPARATED-STRING"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:249
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:249
+#: node_modules/underscore.string/test/strings.js:186
+msgid "the_camelize_string_method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:250
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:250
+#: node_modules/underscore.string/test/strings.js:187
+msgid "-the-camelize-string-method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:251
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:251
+#: node_modules/underscore.string/test/strings.js:188
+msgid "the camelize string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:252
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:252
+#: node_modules/underscore.string/test/strings.js:189
+msgid " the camelize  string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:253
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:253
+#: node_modules/underscore.string/test/strings.js:190
+msgid "the camelize   string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:261
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:261
+#: node_modules/underscore.string/test/strings.js:195
+msgid "the-underscored-string-method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:262
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:262
+#: node_modules/underscore.string/test/strings.js:196
+msgid "theUnderscoredStringMethod"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:263
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:263
+#: node_modules/underscore.string/test/strings.js:197
+msgid "TheUnderscoredStringMethod"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:264
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:264
+#: node_modules/underscore.string/test/strings.js:198
+msgid " the underscored  string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:272
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:272
+#: node_modules/underscore.string/test/strings.js:203
+msgid "the_dasherize_string_method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:273
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:273
+#: node_modules/underscore.string/test/strings.js:204
+msgid "TheDasherizeStringMethod"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:274
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:274
+#: node_modules/underscore.string/test/strings.js:205
+msgid "thisIsATest"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:275
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:275
+#: node_modules/underscore.string/test/strings.js:206
+msgid "this Is A Test"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:276
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:276
+#: node_modules/underscore.string/test/strings.js:207
+msgid "thisIsATest123"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:277
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:277
+#: node_modules/underscore.string/test/strings.js:208
+msgid "123thisIsATest"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:278
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:278
+#: node_modules/underscore.string/test/strings.js:209
+msgid "the dasherize string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:279
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:279
+#: node_modules/underscore.string/test/strings.js:210
+msgid "the  dasherize string method  "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:280
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:280
+#: node_modules/underscore.string/test/strings.js:211
+msgid "téléphone"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:281
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:281
+#: node_modules/underscore.string/test/strings.js:212
+msgid "foo$bar"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:296
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:296
+msgid "_som eWeird---name-"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:308
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:308
+#: node_modules/underscore.string/test/strings.js:230
+msgid "some_class_name"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:309
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:309
+msgid "my wonderfull class_name"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:310
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:310
+msgid "my wonderfull.class.name"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:314
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:314
+#: node_modules/underscore.string/test/strings.js:234
+msgid "the_humanize_string_method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:315
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:315
+#: node_modules/underscore.string/test/strings.js:235
+msgid "ThehumanizeStringMethod"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:316
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:316
+#: node_modules/underscore.string/test/strings.js:236
+msgid "the humanize string method"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:317
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:317
+#: node_modules/underscore.string/test/strings.js:237
+msgid "the humanize_id string method_id"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:318
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:318
+#: node_modules/underscore.string/test/strings.js:238
+msgid "the  humanize string method  "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:319
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:319
+#: node_modules/underscore.string/test/strings.js:239
+msgid "   capitalize dash-CamelCase_underscore trim  "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:329
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:419
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:329
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:419
+#: node_modules/underscore.string/test/strings.js:246
+#: node_modules/underscore.string/test/strings.js:310
+msgid "Hello"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:337
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:341
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:337
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:341
+#: node_modules/underscore.string/test/strings.js:251
+#: node_modules/underscore.string/test/strings.js:255
+msgid "Hello, cruel world"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:338
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:339
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:340
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:338
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:339
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:340
+#: node_modules/underscore.string/test/strings.js:252
+#: node_modules/underscore.string/test/strings.js:253
+#: node_modules/underscore.string/test/strings.js:254
+msgid "Hello, world"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:343
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:347
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:343
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:347
+#: node_modules/underscore.string/test/strings.js:257
+#: node_modules/underscore.string/test/strings.js:261
+msgid "Привет, жестокий мир"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:344
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:345
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:346
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:348
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:344
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:345
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:346
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:348
+#: node_modules/underscore.string/test/strings.js:258
+#: node_modules/underscore.string/test/strings.js:259
+#: node_modules/underscore.string/test/strings.js:260
+#: node_modules/underscore.string/test/strings.js:262
+msgid "Привет, мир"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:349
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:349
+msgid "alksjd!!!!!!...."
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:362
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:494
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:362
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:494
+#: node_modules/underscore.string/test/strings.js:272
+#: node_modules/underscore.string/test/strings.js:359
+msgid "0"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:375
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:375
+#: node_modules/underscore.string/test/strings.js:277
+msgid "<div>Blah & \"blah\" & 'blah'</div>"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:377
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:377
+#: node_modules/underscore.string/test/strings.js:279
+msgid "&lt;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:385
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:385
+msgid ""
+"&lt;div&gt;Blah &amp; &quot;blah&quot; &amp; &apos;blah&#39;&lt;/div&gt;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:387
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:387
+#: node_modules/underscore.string/test/strings.js:287
+msgid "&amp;lt;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:388
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:388
+msgid "&apos;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:389
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:389
+#: node_modules/underscore.string/test/strings.js:288
+msgid "&#39;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:390
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:390
+#: node_modules/underscore.string/test/strings.js:289
+msgid "&#0039;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:391
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:391
+#: node_modules/underscore.string/test/strings.js:290
+msgid "&#x4a;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:392
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:392
+#: node_modules/underscore.string/test/strings.js:291
+msgid "&#x04A;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:393
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:393
+#: node_modules/underscore.string/test/strings.js:292
+msgid "&#X4A;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:394
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:394
+#: node_modules/underscore.string/test/strings.js:293
+msgid "&_#39;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:395
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:395
+#: node_modules/underscore.string/test/strings.js:294
+msgid "&#39_;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:396
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:396
+#: node_modules/underscore.string/test/strings.js:295
+msgid "&amp;#38;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:397
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:397
+#: node_modules/underscore.string/test/strings.js:296
+msgid "&#38;amp;"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:406
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:406
+#: node_modules/underscore.string/test/strings.js:302
+msgid "I love you!"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:407
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:407
+#: node_modules/underscore.string/test/strings.js:303
+msgid " I    love   you!  "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:408
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:408
+#: node_modules/underscore.string/test/strings.js:304
+msgid "I_love_you!"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:409
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:409
+#: node_modules/underscore.string/test/strings.js:305
+msgid "I-love-you!"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:413
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:413
+msgid "   "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:427
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:427
+msgid "AaBbCcDdEe"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:435
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:435
+#: node_modules/underscore.string/test/strings.js:315
+msgid ""
+"Hello\n"
+"World"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:444
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:446
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:447
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:448
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:449
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:459
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:461
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:462
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:469
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:471
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:480
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:482
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:444
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:446
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:447
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:448
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:449
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:459
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:461
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:462
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:469
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:471
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:480
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:482
+#: node_modules/underscore.string/test/strings.js:321
+#: node_modules/underscore.string/test/strings.js:323
+#: node_modules/underscore.string/test/strings.js:324
+#: node_modules/underscore.string/test/strings.js:325
+#: node_modules/underscore.string/test/strings.js:326
+#: node_modules/underscore.string/test/strings.js:333
+#: node_modules/underscore.string/test/strings.js:335
+#: node_modules/underscore.string/test/strings.js:336
+#: node_modules/underscore.string/test/strings.js:340
+#: node_modules/underscore.string/test/strings.js:342
+#: node_modules/underscore.string/test/strings.js:348
+#: node_modules/underscore.string/test/strings.js:350
+msgid "1"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:492
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:492
+#: node_modules/underscore.string/test/strings.js:357
+msgid "not a number"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:495
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:495
+msgid "0.0"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:496
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:497
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:496
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:497
+msgid "0.1"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:498
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:498
+msgid "  0.1 "
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:499
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:499
+#: node_modules/underscore.string/test/strings.js:360
+msgid "0000"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:500
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:501
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:502
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:500
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:501
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:502
+#: node_modules/underscore.string/test/strings.js:361
+#: node_modules/underscore.string/test/strings.js:362
+#: node_modules/underscore.string/test/strings.js:363
+msgid "2.345"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:503
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:503
+#: node_modules/underscore.string/test/strings.js:364
+msgid "2.344"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:504
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:504
+#: node_modules/underscore.string/test/strings.js:365
+msgid "2"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:507
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:507
+#: node_modules/underscore.string/test/strings.js:368
+msgid "-2"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:533
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:534
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:535
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:536
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:537
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:538
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:546
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:547
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:548
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:549
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:550
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:558
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:559
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:560
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:561
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:562
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:570
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:571
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:572
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:573
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:574
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:533
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:534
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:535
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:536
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:537
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:538
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:546
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:547
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:548
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:549
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:550
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:558
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:559
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:560
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:561
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:562
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:570
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:571
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:572
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:573
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:574
+#: node_modules/underscore.string/test/strings.js:372
+#: node_modules/underscore.string/test/strings.js:373
+#: node_modules/underscore.string/test/strings.js:374
+#: node_modules/underscore.string/test/strings.js:375
+#: node_modules/underscore.string/test/strings.js:376
+#: node_modules/underscore.string/test/strings.js:381
+#: node_modules/underscore.string/test/strings.js:382
+#: node_modules/underscore.string/test/strings.js:383
+#: node_modules/underscore.string/test/strings.js:384
+#: node_modules/underscore.string/test/strings.js:385
+#: node_modules/underscore.string/test/strings.js:390
+#: node_modules/underscore.string/test/strings.js:391
+#: node_modules/underscore.string/test/strings.js:392
+#: node_modules/underscore.string/test/strings.js:393
+#: node_modules/underscore.string/test/strings.js:394
+#: node_modules/underscore.string/test/strings.js:399
+#: node_modules/underscore.string/test/strings.js:400
+#: node_modules/underscore.string/test/strings.js:401
+#: node_modules/underscore.string/test/strings.js:402
+#: node_modules/underscore.string/test/strings.js:403
+msgid "This_is_a_test_string"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:582
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:582
+#: node_modules/underscore.string/test/strings.js:408
+msgid "a <a href=\"#\">link</a>"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:583
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:583
+#: node_modules/underscore.string/test/strings.js:409
+msgid "a <a href=\"#\">link</a><script>alert(\"hello world!\")</script>"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:584
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:584
+#: node_modules/underscore.string/test/strings.js:410
+msgid "<html><body>hello world</body></html>"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:606
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:606
+#: node_modules/underscore.string/test/strings.js:423
+msgid "Jack & Jill like numbers 1,2,3 and 4 and silly characters ?%.$!/"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:608
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:608
+msgid "I know latin characters: á í ó ú ç ã õ ñ ü ă ș ț"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:609
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:609
+#: node_modules/underscore.string/test/strings.js:426
+msgid "I am a word too, even though I am but a single letter: i!"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:660
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:660
+msgid "false"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/strings.js:667
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/strings.js:667
+msgid "true"
+msgstr ""
+
+#: node_modules/grunt-legacy-log-utils/node_modules/underscore.string/test/test_underscore/utility.js:51
+#: node_modules/grunt-legacy-log/node_modules/underscore.string/test/test_underscore/utility.js:51
+#: node_modules/underscore.string/test/test_underscore/utility.js:41
+msgid "champ"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/basic-theme/exclude/file.php:3
+#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/plugin-include.php:6
+msgid "Exclude"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/plugin-include/include/file.php:2
+msgid "Include"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/add-domain.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:3
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:4
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:2
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-domains.php:3
+msgid "String"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:6
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:7
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:8
+msgctxt "a string"
+msgid "String"
+msgstr ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:9
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:10
+#: node_modules/grunt-wp-i18n/test/fixtures/text-domains/update-all-domains.php:11
+#, php-format
+msgid "1 Star"
+msgid_plural "%s Stars"
+msgstr[0] ""
+msgstr[1] ""
+
+#: node_modules/grunt-wp-i18n/test/fixtures/translator-comments/translator-comments.php:15
+msgid "B"
+msgstr ""
+
+#: node_modules/underscore.string/test/strings.js:285
+msgid ""
+"&lt;div&gt;Blah &amp; &quot;blah&quot; &amp; &apos;blah&apos;&lt;/div&gt;"
+msgstr ""
+
+#: node_modules/underscore.string/test/strings.js:425
+msgid "I know latin characters: á í ó ú ç ã õ ñ ü"
+msgstr ""
+
 #: public/class-aesop-core.php:248
 msgid "Doh! There was an issue deactivating Aesop. Try again perhaps?."
 msgstr ""
@@ -1910,17 +3391,17 @@ msgstr ""
 msgid "Loading"
 msgstr ""
 
-#: public/includes/components/component-gallery.php:102
+#: public/includes/components/component-gallery.php:111
 msgid "edit gallery"
 msgstr ""
 
-#: public/includes/components/component-gallery.php:112
+#: public/includes/components/component-gallery.php:121
 msgid ""
 "Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon "
 "above."
 msgstr ""
 
-#: public/includes/components/component-gallery.php:118
+#: public/includes/components/component-gallery.php:127
 msgid ""
 "This gallery is empty! It's also possible that you simply have the wrong "
 "gallery ID."
@@ -1930,7 +3411,7 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: public/includes/components/component-image.php:71
+#: public/includes/components/component-image.php:104
 msgid "Enlarge"
 msgstr ""
 

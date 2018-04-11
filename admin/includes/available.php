@@ -758,12 +758,12 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'select',
 						'values' => array(
 							array(
-								'value' => 'on',
-								'name' => __( 'On', 'aesop-core' )
-							),
-							array(
 								'value' => 'off',
 								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
 							)
 						),
 						'default'  => 'off',
@@ -771,7 +771,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'tip'  => __( 'This option will enable a second parallax media layer that will float on top of the background image.', 'aesop-core' )
 					),
 					'floatermedia'  => array(
-						'type'  => 'text',
+						'type'  => 'text_area',
 						'default'  => '',
 						'desc'   => __( 'Floater Element Content', 'aesop-core' ),
 						'tip'  => __( 'You can use text and images here with tags. Example: <code><span class="dashicons dashicons-arrow-left-alt2"></span>img src="image.jpg"<span class="dashicons dashicons-arrow-right-alt2"></span></code> You can also use classes and styles in tags.', 'aesop-core' )
@@ -833,7 +833,37 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 				),
 				'content'    => __( 'Optional Caption', 'ba-shortcodes' ),
 				'desc'     => __( 'Parallax styled image component with caption and optional lightbox.', 'aesop-core' ),
-				'codes'    => ''
+				'codes'    => '<script>	            
+						jQuery(document).ready(function($){
+							
+							function parallaxSetting(parallax){
+							    if (parallax=="on") {
+									jQuery(".aesop-parallax-parallaxspeed").slideDown();
+								} else {
+									jQuery(".aesop-parallax-parallaxspeed").slideUp();
+								}
+								
+							}
+							function floaterSetting(floater){
+							    if (floater=="on") {
+									jQuery(".aesop-parallax-floatermedia,.aesop-parallax-floaterdistance,.aesop-parallax-floaterdirection,.aesop-parallax-floaterdistance,.aesop-parallax-floaterposition,.aesop-parallax-overlay_revealfx").slideDown();
+								} else {
+									jQuery(".aesop-parallax-floatermedia,.aesop-parallax-floaterdistance,.aesop-parallax-floaterdirection,.aesop-parallax-floaterdistance,.aesop-parallax-floaterposition,.aesop-parallax-overlay_revealfx").slideUp();
+								}
+								
+							}
+							setTimeout( function() { 
+							    parallaxSetting(jQuery( "#aesop-generator-attr-parallaxbg" ).val()); 
+								floaterSetting(jQuery( "#aesop-generator-attr-floater" ).val());}, 500);
+								 
+							jQuery( "#aesop-generator-attr-parallaxbg" ).change(function() {
+								parallaxSetting(this.value);
+							});
+							jQuery( "#aesop-generator-attr-floater" ).change(function() {
+								floaterSetting(this.value);
+							});
+						});
+			           </script>'
 			),
 			'audio'    => array(
 				'name'     => __( 'Audio', 'aesop-core' ),
