@@ -10,6 +10,14 @@ class AesopCoreGallery {
 	function __construct() {
 
 		add_shortcode( 'aesop_gallery',  array( $this, 'aesop_post_gallery' ) );
+		
+        // if gutenberg is active 
+		if (  function_exists( 'register_block_type' ) ) {
+			register_block_type( 'ase/gallery', array(
+                'render_callback' => array( $this, 'aesop_post_gallery' )
+			) );
+		} 
+		
 
 	}
 
@@ -418,17 +426,7 @@ class AesopCoreGallery {
 					endforeach;
 				} else {
 					wp_enqueue_script( 'aesop-paver', AI_CORE_URL.'/public/assets/js/jquery.paver.min.js', array( 'ai-core' ) );?>
-					<script>
-							jQuery(document).ready(function($){
-								var screensize = $(window).height();
-								$( ".aesop-panorama" ).each(function() {
-									if ($(this).height() > screensize) {
-								        $( this ).height(screensize);
-									}
-								});
-								jQuery('.aesop-panorama').paver();
-							});							 
-					</script>
+					add_action( 'wp_footer', aesop_panorama, 20 );
 					<?php
 					foreach ( $image_ids as $image_id ):
 
@@ -472,21 +470,7 @@ class AesopCoreGallery {
 			$sequence_panorama_height = 500;
 			$sequence_panorama_height = get_post_meta( $gallery_id, 'aesop_sequence_gallery_panorama_height', true );;
 			wp_enqueue_script( 'aesop-paver', AI_CORE_URL.'/public/assets/js/jquery.paver.min.js', array( 'ai-core' ) );
-		?>
-		
-					<script>
-							jQuery(document).ready(function($){
-								var screensize = $(window).height();
-								$( ".aesop-panorama" ).each(function() {
-									if ($(this).height() > screensize) {
-								        $( this ).height(screensize);
-									}
-								});
- 
-								jQuery('.aesop-panorama').paver();
-							});							 
-					</script>
-		<?php
+			add_action( 'wp_footer', aesop_panorama, 20 );
 		}
 
 		foreach ( $image_ids as $image_id ):

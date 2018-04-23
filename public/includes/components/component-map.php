@@ -111,7 +111,13 @@ class AesopMapComponent {
 
 		// map marker shortcode
 		add_shortcode( 'aesop_map_marker', array( $this, 'aesop_map_marker_sc' ) );
-
+		
+		// if Gutenberg is active, register block handler
+		if (  function_exists( 'register_block_type' ) ) {
+			register_block_type( 'ase/mapmarker', array(
+                'render_callback' => array( $this, 'aesop_map_marker_sc' )
+			) );
+		}
 	}
 
 	public function aesop_map_loader() {

@@ -33,15 +33,24 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 		$imgheight = 0;
 		
 		if ($panorama) {
+			// panorama mode is on
 			wp_enqueue_script( 'aesop-paver', AI_CORE_URL.'/public/assets/js/jquery.paver.min.js', array( 'ai-core' ) );
 			$atts['imgwidth'] ="100%";
-			if ($atts['imgheight'] == '') {
+			if (empty($atts['imgheight'])) {
 				list($width, $height, $type, $attr) = getimagesize($atts['img']);
-				$imgheight = $height;
+				
+				if (empty($height)) {
+					$imgheight = "500px";
+				} else {
+					$imgheight = $height."px";
+				}
 			} else {
-				$imgheight = $atts['imgheight'];
+				$imgheight = aesop_size_string_parse($atts['imgheight'], "500px");
 			}
+			
 			//$image_id = aesop_get_image_id($atts['img']);
+			
+			add_action( 'wp_footer', aesop_panorama, 20 );
 		}
 		
 		// offset styles
@@ -72,21 +81,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 		<div id="aesop-image-component-<?php echo esc_html( $unique );?>" <?php echo aesop_component_data_atts( 'image', $unique, $atts );?> class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes )?>" 
 		        <?php echo aesop_revealfx_set($atts) ? 'style="visibility:hidden;"': null ?>
 		 >
-		<?php 
-		if ($panorama) { ?>
-		<script>
-				jQuery(document).ready(function($){
-					var screensize = $(window).height();
-					$( ".aesop-panorama" ).each(function() {
-						if ($(this).height() > screensize) {
-							$( this ).height(screensize);
-						}
-					});
-				  	jQuery('.aesop-panorama').paver();
-				});		 
-		</script>
-		<?php
-		}?>
+		
 
 			<?php do_action( 'aesop_image_inside_top', $atts, $unique ); // action ?>
 
@@ -104,7 +99,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 							<p class="aesop-img-enlarge"><i class="aesopicon aesopicon-search-plus"></i> <?php _e( 'Enlarge', 'aesop-core' );?></p>
 							<?php
 							if ($panorama) { ?>
-								<div class="aesop-panorama" style="height:<?php echo $imgheight;?>px;">
+								<div class="aesop-panorama" style="height:<?php echo $imgheight;?>;">
 							<?php 
 							}?>
 							<img <?php echo $lazy;?> alt="<?php echo esc_attr( $alt );?>" >
@@ -118,7 +113,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 					<?php } else { ?>
 							<?php
 							if ($panorama) { ?>
-								<div class="aesop-panorama" style="height:<?php echo $imgheight;?>px;">
+								<div class="aesop-panorama" style="height:<?php echo $imgheight;?>;">
 							<?php 
 							}?>
 						<img <?php echo $lazy;?> alt="<?php echo esc_attr( $alt );?>">
@@ -172,4 +167,6 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 		$attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
 			return $attachment[0]; 
 	}
+	
+	
 }//end if

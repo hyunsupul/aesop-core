@@ -8,7 +8,8 @@ class AesopGalleryComponentAdmin {
 
 	public function __construct() {
 
-		add_action( 'init',          array( $this, 'do_type' ) );
+	    // Gallery custom post type registration has been moved to Aesop_Core
+		//add_action( 'init',          array( $this, 'do_type' ) );
 		add_filter( 'manage_ai_galleries_posts_columns',   array( $this, 'col_head' ) );
 		add_action( 'manage_ai_galleries_posts_custom_column',  array( $this, 'col_content' ), 10, 2 );
 
@@ -22,47 +23,7 @@ class AesopGalleryComponentAdmin {
 		add_action( 'wp_ajax_upgrade_galleries',     array( $this, 'upgrade_galleries' ) );
 		add_action( 'admin_head',        array( $this, 'upgrade_click_handle' ) );
 	}
-	/**
-	 * Creates an Aesop Galleries custom post type to manage all psot galleries
-	 *
-	 * @since    1.0.0
-	 */
-	public function do_type() {
-
-		$labels = array(
-			'name'                  => _x( 'Galleries', 'aesop-core' ),
-			'singular_name'         => _x( 'Gallery', 'aesop-core' ),
-			'menu_name'             => __( 'Galleries', 'aesop-core' ),
-			'parent_item_colon'     => __( 'Parent Gallery:', 'aesop-core' ),
-			'all_items'             => __( 'All Galleries', 'aesop-core' ),
-			'view_item'             => __( 'View Gallery', 'aesop-core' ),
-			'add_new_item'          => __( 'Add New Gallery', 'aesop-core' ),
-			'add_new'               => __( 'New Gallery', 'aesop-core' ),
-			'edit_item'             => __( 'Edit Gallery', 'aesop-core' ),
-			'update_item'           => __( 'Update Gallery', 'aesop-core' ),
-			'search_items'          => __( 'Search Galleries', 'aesop-core' ),
-			'not_found'             => __( 'No Galleries found', 'aesop-core' ),
-			'not_found_in_trash'    => __( 'No Galleries found in Trash', 'aesop-core' ),
-		);
-		$args = array(
-			'label'					=> __( 'Galleries', 'aesop-core' ),
-			'description'			=> __( 'Create responsive galleries.', 'aesop-core' ),
-			'menu_icon'				=> AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
-			'menu_position'			=> 15,
-			'labels'				=> $labels,
-			'supports'				=> array( 'title' ),
-			'hierarchical'			=> false,
-			'public'				=> false,
-			'show_ui'				=> true,
-			'exclude_from_search'	=> true,
-			'query_var'				=> true,
-			'can_export'			=> true,
-			'capability_type'		=> 'post',
-		);
-
-		register_post_type( 'ai_galleries', apply_filters( 'ai_gallery_args', $args ) );
-
-	}
+	
 
 	/**
 	 * Adds columns to the Aesop Galleries custom post type

@@ -61,6 +61,9 @@ function aesop_component_exists( $component = '' ) {
 
 	} else {
 		if (  function_exists( 'gutenberg_content_has_blocks' ) ) {
+			if ($component == 'timeline_stop') {
+				$component = 'timeline';
+			}
 			// if Gutenberg is on, check for Aesop Gutenberg blocks
 			if (  gutenberg_content_has_blocks( $post->post_content ) ) {
 				// check if the given Aesop block exists
@@ -74,6 +77,26 @@ function aesop_component_exists( $component = '' ) {
 		}
 		return false;
 	}
+}
+
+// a function to enable panorama features
+function aesop_panorama()
+{
+	?>
+		<script>
+
+				jQuery(document).ready(function($){
+					var screensize = $(window).height();
+					$( ".aesop-panorama" ).each(function() {
+						if ($(this).height() > screensize) {
+							$( this ).height(screensize);
+						}
+					});
+				  	jQuery('.aesop-panorama').paver();
+				});		 
+		</script>
+		<?php
+	
 }
 
 /**
@@ -377,5 +400,22 @@ function aesop_gallery_component_data_atts( $postid = '' ) {
 			return $atts;
 		}
 		return $atts;
+	}
+}
+
+/*
+ A helper function to process pixel size string
+*/
+ if ( ! function_exists( 'aesop_size_string_parse' ) ) {
+	function aesop_size_string_parse($size, $default)
+	{
+		$i = intval($size);
+		if ($i == 0) {
+			return $default;
+		}
+		if (strpos($size, 'px') == false) {
+			return $i."px";
+		}
+		return $size;
 	}
 }

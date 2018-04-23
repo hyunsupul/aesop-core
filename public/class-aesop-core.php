@@ -262,6 +262,44 @@ class Aesop_Core {
 
 		$domain = $this->plugin_slug;
 		$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
+		
+		//Creates an Aesop Galleries custom post type to manage all psot galleries
+		$labels = array(
+			'name'                  => _x( 'Galleries', 'aesop-core' ),
+			'singular_name'         => _x( 'Gallery', 'aesop-core' ),
+			'menu_name'             => __( 'Galleries', 'aesop-core' ),
+			'parent_item_colon'     => __( 'Parent Gallery:', 'aesop-core' ),
+			'all_items'             => __( 'All Galleries', 'aesop-core' ),
+			'view_item'             => __( 'View Gallery', 'aesop-core' ),
+			'add_new_item'          => __( 'Add New Gallery', 'aesop-core' ),
+			'add_new'               => __( 'New Gallery', 'aesop-core' ),
+			'edit_item'             => __( 'Edit Gallery', 'aesop-core' ),
+			'update_item'           => __( 'Update Gallery', 'aesop-core' ),
+			'search_items'          => __( 'Search Galleries', 'aesop-core' ),
+			'not_found'             => __( 'No Galleries found', 'aesop-core' ),
+			'not_found_in_trash'    => __( 'No Galleries found in Trash', 'aesop-core' ),
+		);
+		$args = array(
+			'label'					=> __( 'Galleries', 'aesop-core' ),
+			'description'			=> __( 'Create responsive galleries.', 'aesop-core' ),
+			'menu_icon'				=> AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
+			'menu_position'			=> 15,
+			'labels'				=> $labels,
+			'supports'				=> array( 'title' ),
+			'hierarchical'			=> false,
+			'public'				=> false,
+			'show_ui'				=> true,
+			'exclude_from_search'	=> true,
+			'query_var'				=> true,
+			'can_export'			=> true,
+			'capability_type'		=> 'post',
+			'show_in_rest'       => true,
+			'rest_base'          => 'ai-galleries',
+			'rest_controller_class' => 'WP_REST_Posts_Controller',
+		);
+
+
+		register_post_type( 'ai_galleries', apply_filters( 'ai_gallery_args', $args ) );
 
 		$out = load_textdomain( $domain, trailingslashit( AI_CORE_DIR ). 'languages/' . $domain . '-' . $locale . '.mo' );
 
@@ -324,6 +362,47 @@ class Aesop_Core {
 		add_shortcode( 'aesop_timeline_stop', 	'aesop_timeline_stop_shortcode' );
 		add_shortcode( 'aesop_map', 		'aesop_map_shortcode' );
 		add_shortcode( 'aesop_content', 	'aesop_content_shortcode' );
+		
+        // if Gutenberg is active, register block handlers
+		if (  function_exists( 'register_block_type' ) ) {
+			// gallery is registered elsewhere
+			register_block_type( 'ase/image', array(
+                'render_callback' => 'aesop_image_shortcode'
+			) );
+			register_block_type( 'ase/audio', array(
+                'render_callback' => 'aesop_audio_shortcode'
+			) );
+			register_block_type( 'ase/quote', array(
+                'render_callback' => 'aesop_quote_shortcode'
+			) );
+			register_block_type( 'ase/content', array(
+                'render_callback' => 'aesop_content_block'
+			) );
+			register_block_type( 'ase/timeline', array(
+                'render_callback' => 'aesop_timeline_stop_shortcode'
+			) );
+			register_block_type( 'ase/map', array(
+                'render_callback' => 'aesop_map_shortcode'
+			) );
+			register_block_type( 'ase/collection', array(
+                'render_callback' => 'aesop_collection_shortcode'
+			) );
+			register_block_type( 'ase/character', array(
+                'render_callback' => 'aesop_character_shortcode'
+			) );
+			register_block_type( 'ase/video', array(
+                'render_callback' => 'aesop_video_shortcode'
+			) );
+			register_block_type( 'ase/chapter', array(
+                'render_callback' => 'aesop_chapter_shortcode'
+			) );
+			register_block_type( 'ase/document', array(
+                'render_callback' => 'aesop_document_shortcode'
+			) );
+			register_block_type( 'ase/parallax', array(
+                'render_callback' => 'aesop_parallax_shortcode'
+			) );
+		}
 	}
 
 	/**

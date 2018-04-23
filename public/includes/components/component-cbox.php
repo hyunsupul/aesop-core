@@ -164,4 +164,10 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 
 		return ob_get_clean();
 	}
+	
+	function aesop_content_block( $atts) {
+		if (isset($atts['content'])) {
+			return aesop_content_shortcode( $atts, $atts['content'] );
+		}
+	}
 }//end if
