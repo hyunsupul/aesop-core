@@ -67,3 +67,14 @@ if ( is_admin() ) {
 	add_action( 'plugins_loaded', array( 'Aesop_Core_Admin', 'get_instance' ) );
 
 }
+
+
+
+
+
+
+/**
+ * BLOCK: Aesop Gutenberg Blocks.
+ * Uncomment the following to enable Gutenberg support
+ */
+//require_once( AI_CORE_DIR . 'blocks/index.php' );

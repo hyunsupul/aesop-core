@@ -1,0 +1,26 @@
+/**
+ * ----------------------------------------------------------------------------
+ * #.# Editor CSS
+ *
+ * BLOCK: 01-basic block CSS for the editor.
+ * ----------------------------------------------------------------------------
+ */
+
+.wp-block-aesop-story-engine {
+	color: #000000;
+	background: #bbddff;
+	border: 0.2rem solid blue;
+	padding: 1rem;
+}
+
+.wp-block-aesop-story-engine  audio {
+	width:100%;
+}
+
+.wp-block-aesop-story-engine-title {
+	margin-left:10px;
+}
+
+.wp-block-aesop-story-engine-option-label {
+	font-weight:600;
+}
