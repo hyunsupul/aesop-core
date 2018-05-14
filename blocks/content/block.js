@@ -65,6 +65,10 @@
 			imgposition : {
 				type: 'string',
 			},
+			imgrepeat : {
+				type: 'string',
+				default: 'norepeat',
+			},
 			imgsize : {
 				type: 'string',
 			},
@@ -110,8 +114,8 @@
                                 setAttributes( { color: value } );
                             }
                 }),
-				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Color') ),
-				el( wp.blocks.ColorPalette,{
+				!attributes.img && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Color') ),
+				!attributes.img && el( wp.blocks.ColorPalette,{
 					        label: __( 'Choose an optional background color for the content component.' ),
                             value: attributes.background, 
                             onChange: function(value){
@@ -119,12 +123,13 @@
                             }
                 }),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Image') ),
+				attributes.img && el( 'img', {src: attributes.img} ),
 				el(
 					wp.blocks.MediaUpload,
 					{
-							title: __( 'Background Image' ),
+							title: __( attributes.img ),
 							onSelect:function(value){
-                                setAttributes( { img: value } );
+                                setAttributes( { img: value.url } );
                             },
 							type: 'image',
 							value: attributes.img,
