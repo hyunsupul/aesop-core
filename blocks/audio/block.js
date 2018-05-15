@@ -34,13 +34,13 @@
 				type: 'string'
 			},
 			viewstart:{
-				type : 'boolean'
+				type : 'string'
 			},
 			viewend:{
-				type : 'boolean'
+				type : 'string'
 			},
 			loop:{
-				type : 'boolean'
+				type : 'string'
 			},
 			hidden:{
 				type : 'boolean'
@@ -61,18 +61,21 @@
 			
 			
 			var onSetStart = ( state ) => {
+				var value = state ? "on" : "off"; 
 				setAttributes({                       
-										viewstart:state
+										viewstart:value
                                 });
 			};
 			var onSetEnd = ( state ) => {
+				var value = state ? "on" : "off"; 
 				setAttributes({                       
-										viewend:state
+										viewend:value
                                 });
 			};
 			var onSetLoop = ( state ) => {
+				var value = state ? "on" : "off"; 
 				setAttributes({                       
-										loop:state
+										loop:value
                                 });
 			};
 			var onSetHidden = ( state ) => {
@@ -94,7 +97,7 @@
 					wp.components.ToggleControl,
 					{
 						label: __( 'Start Audio When in View' ),
-						checked: !! attributes.viewstart,
+						checked: attributes.viewstart == "on",
 						onChange: onSetStart
 					}
 				),
@@ -102,7 +105,7 @@
 					wp.components.ToggleControl,
 					{
 						label: __( 'Stop Audio When Out of View' ),
-						checked: !! attributes.viewend,
+						checked: attributes.viewend == "on",
 						onChange: onSetEnd
 					}
 				),
@@ -110,7 +113,7 @@
 					wp.components.ToggleControl,
 					{
 						label: __( 'Loop Audio' ),
-						checked: !! attributes.loop,
+						checked: attributes.loop  == "on",
 						onChange: onSetLoop
 					}
 				),

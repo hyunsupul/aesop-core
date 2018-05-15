@@ -94,12 +94,13 @@
 					}
 				),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Image') ),
+				attributes.img && el( 'img', {src: attributes.img} ),
 				el(
 					wp.blocks.MediaUpload,
 					{
 							title: __( 'Optionally add a background image to the quote area.' ),
 							onSelect: function(value){
-                                setAttributes( { img: value } );
+                                setAttributes( { img: value.url } );
                             },
 							type: 'image',
 							value: attributes.img,

@@ -120,7 +120,7 @@
 				),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Image Credit') ),
 				el( wp.components.TextControl, {
-						label: __( 'This is typically used to credit the photographer. Enter a name and it will show as <em>Photo by: Name</em>.' ),
+						label: __( 'This is typically used to credit the photographer. Enter a name and it will show as Photo by: Name.' ),
 						value: attributes.credit,
 						onChange: function( content ) {
 							setAttributes( { credit : content} );
@@ -150,7 +150,7 @@
 				el(
 					wp.components.ToggleControl,
 					{
-						label: __( 'Choose <em>on</em> and the image will open up the full-size version in a lightbox.' ),
+						label: __( 'Choose on and the image will open up the full-size version in a lightbox.' ),
 						checked: attributes.lightbox =='on',
 						onChange: function( newVal ) {										
 										if (newVal) {

@@ -40,7 +40,7 @@
 			const advcontrols = isSelected && el( wp.blocks.InspectorControls, {},
 			el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Height') ),
 				el( wp.components.TextControl, {
-						label: __( 'The height of the map component. By default this is set to <em>500px</em>. Avoid using percentages with this option.' ),
+						label: __( 'The height of the map component. By default this is set to 500px. Avoid using percentages with this option.' ),
 						value: attributes.height,
 						onChange: function( content ) {
 							setAttributes( { height: content } );
@@ -61,7 +61,10 @@
 								},
 								options: [
 								  { value: 'off', label:  'Off'  },
-								  { value: 'on', label: 'On'  },
+								  { value: 'left', label: 'Sticky Left'  },
+								  { value: 'top', label: 'Sticky Top'  },
+								  { value: 'right', label: 'Sticky Right'  },
+								  { value: 'bottom', label: 'Sticky Bottom'  },
 								],
 					} 
 				),
