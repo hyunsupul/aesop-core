@@ -3,9 +3,6 @@
  * BLOCK: Basic
  *
  * Gutenberg Custom Block assets.
- *
- * @since   1.0.0
- * @package GB
  */
 
 // Exit if accessed directly.
@@ -22,8 +19,6 @@ add_action( 'enqueue_block_editor_assets', 'ase_block_basic_editor_assets' );
  * `wp-blocks`: includes block type registration and related functions.
  * `wp-element`: includes the WordPress Element abstraction for describing the structure of your blocks.
  * `wp-i18n`: To internationalize the block's text.
- *
- * @since 1.0.0
  */
 function ase_block_basic_editor_assets() {
 	// Scripts.
@@ -128,20 +123,3 @@ function ase_block_basic_editor_assets() {
 } // End function gb_block_01_basic_editor_assets().
 
 
-// Hook: Frontend assets.
-add_action( 'enqueue_block_assets', 'ase_block_editor_assets' );
-
-/**
- * Enqueue the block's assets for the frontend.
- *
- * @since 1.0.0
- */
-function ase_block_editor_assets() {
-	// Styles.
-	/*wp_enqueue_style(
-		'ase-block-image-frontend', // Handle.
-		plugins_url( 'style.css', __FILE__ ), // Block frontend CSS.
-		array( 'wp-blocks' ), // Dependency to include the CSS after it.
-		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' ) // filemtime — Gets file modification time.
-	);*/
-} // End function ase_block_image_editor_assets().

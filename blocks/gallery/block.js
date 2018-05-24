@@ -50,14 +50,6 @@
 			if ( ! props.aesop_galleries.data ) {
 				return "loading !";
 			}
-			if ( props.aesop_galleries.data.length === 0 ) {
-				return "No galleries";
-			}
-			
-			var galleries = [];
-			for (var i = 0, len = props.aesop_galleries.data.length; i < len; i++) {
-			   galleries.push({value:props.aesop_galleries.data[i].id, label:props.aesop_galleries.data[i].title.rendered });
-			}
 			
 			var label = el(
 						'div', 
@@ -73,6 +65,27 @@
 							'Aesop Gallery'
 						)
 			);
+			
+			if ( props.aesop_galleries.data.length === 0 ) {
+				var uis = [];
+
+				uis.push(label);
+				uis.push(__( 'No Galleries have been created.' ));
+				return [
+					el(
+						'div', // Tag type.
+						{ className: "wp-block-aesop-story-engine" }, 
+						uis// Content inside the tag.
+					)
+				];	
+			}
+			
+			var galleries = [];
+			for (var i = 0, len = props.aesop_galleries.data.length; i < len; i++) {
+			   galleries.push({value:props.aesop_galleries.data[i].id, label:props.aesop_galleries.data[i].title.rendered });
+			}
+			
+			
 			const controls = el( 'div', { className: '' }
 				,
 				el(
