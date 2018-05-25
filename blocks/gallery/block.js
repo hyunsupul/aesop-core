@@ -85,6 +85,12 @@
 			   galleries.push({value:props.aesop_galleries.data[i].id, label:props.aesop_galleries.data[i].title.rendered });
 			}
 			
+			if (!props.attributes.id) {
+				props.setAttributes({
+					id: props.aesop_galleries.data[0].id
+				});
+			}
+			
 			
 			const controls = el( 'div', { className: '' }
 				,

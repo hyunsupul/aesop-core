@@ -115,7 +115,7 @@ function ase_block_basic_editor_assets() {
 
 	// Styles.
 	wp_enqueue_style(
-		'ase-block-image-editor', // Handle.
+		'ase-block-editor', // Handle.
 		plugins_url( 'editor.css', __FILE__ ), // Block editor CSS.
 		array( 'wp-edit-blocks' ), // Dependency to include the CSS after it.
 		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' ) // filemtime — Gets file modification time.
