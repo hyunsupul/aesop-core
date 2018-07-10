@@ -107,7 +107,7 @@
 			
 			const advcontrols = isSelected && el( wp.editor.InspectorControls, {value: id,},
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Color of Text') ),
-				el( wp.blocks.ColorPalette,{
+				el( wp.components.ColorPalette,{
 					        label: __( 'Set a color to be used for the main text.' ),
                             value: attributes.color, 
                             onChange: function(value){
@@ -115,7 +115,7 @@
                             }
                 }),
 				!attributes.img && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Color') ),
-				!attributes.img && el( wp.blocks.ColorPalette,{
+				!attributes.img && el( wp.components.ColorPalette,{
 					        label: __( 'Choose an optional background color for the content component.' ),
                             value: attributes.background, 
                             onChange: function(value){
@@ -125,7 +125,7 @@
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Image') ),
 				attributes.img && el( 'img', {src: attributes.img} ),
 				el(
-					wp.blocks.MediaUpload,
+					wp.editor.MediaUpload,
 					{
 							title: __( attributes.img ),
 							onSelect:function(value){

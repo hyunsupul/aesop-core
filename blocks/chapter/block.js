@@ -110,7 +110,7 @@
 				),
 				attributes.bgtype != 'color' && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Chapter Image or Video URL') ),
 				attributes.bgtype != 'color' && el(
-					wp.blocks.MediaUpload,
+					wp.editor.MediaUpload,
 					{
 							title: __( 'Chapter Image or Video URL' ),
 							onSelect: onSelectMedia,
@@ -127,7 +127,7 @@
 					}
 				),
 				attributes.bgtype == 'color' && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Color') ),
-				attributes.bgtype == 'color' && el( wp.blocks.ColorPalette,{
+				attributes.bgtype == 'color' && el( wp.components.ColorPalette,{
 					        label: __( 'Background Color' ),
                             value: attributes.bgcolor, 
                             onChange: function(newVal){
@@ -137,7 +137,7 @@
                 }),
 				attributes.bgtype == 'video' && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Alternate Image for Mobile') ),
 				attributes.bgtype == 'video' && el(
-					wp.blocks.MediaUpload,
+					wp.editor.MediaUpload,
 					{
 							title: __( 'Used only on a mobile device and if the Background Type is set to Video.' ),
 							onSelect: onSelectMedia,

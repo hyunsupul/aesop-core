@@ -113,7 +113,7 @@
 					} 
 				),
 				attributes.src == 'self' && el(
-					wp.blocks.MediaUpload,
+					wp.editor.MediaUpload,
 					{
 							title: __( 'Select Video File' ),
 							onSelect: onSelectMedia,
@@ -203,7 +203,7 @@
 				),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Poster Frame.') ),
 				el(
-					wp.blocks.MediaUpload,
+					wp.editor.MediaUpload,
 					{
 							title: __( 'Image to display before the video plays if the target is self. Or the image to display if the video is disabled for mobile. Click <em>Select Media</em> to open the WordPress Media Library.' ),
 							onSelect: function( content ) {
@@ -276,7 +276,7 @@
 			var controls = el( 'div', { className: '' }
 				,
 				/*isSelected &&  el(
-					wp.blocks.MediaUpload,
+					wp.editor.MediaUpload,
 					{
 							title: __( 'Select Image' ),
 							onSelect: onSelectMedia,

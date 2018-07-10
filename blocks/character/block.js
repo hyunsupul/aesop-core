@@ -137,7 +137,7 @@
 			var controls = el( 'div', { className: '' }
 				,
 				isSelected &&  el(
-					wp.blocks.MediaUpload,
+					wp.editor.MediaUpload,
 					{
 							title: __( 'Select Image' ),
 							onSelect: onSelectMedia,
