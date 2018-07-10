@@ -79,7 +79,7 @@
 			};
 			
 			
-			const advcontrols = isSelected && el( wp.blocks.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Subtitle') ),
 				el( wp.components.TextControl, {
 								label: __( 'This will optionally display a subtitle after the Chapter Title text.' ),

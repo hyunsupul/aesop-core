@@ -65,7 +65,7 @@
 			
 			var revealfx = attributes.revealfx;
 			
-			const advcontrols = isSelected && el( wp.blocks.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Cite') ),
 				el( wp.components.TextControl, {
 						label: __( 'Provide an optional cite or source for the quote.' ),

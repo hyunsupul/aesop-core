@@ -84,7 +84,7 @@
                                 });
 			};
 			
-			const advcontrols = isSelected && el( wp.blocks.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
 				el( wp.components.TextControl, {
 						label: __( 'Optional Title' ),
 						value: attributes.title,

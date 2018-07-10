@@ -26,6 +26,8 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 		$actionbottom = do_action( 'aesop_document_cafter', $atts, $unique ); // action
 		$actioninsidetop = do_action( 'aesop_document_inside_top', $atts, $unique ); // action
 		$actioninsidebottom = do_action( 'aesop_document_inside_bottom', $atts, $unique ); // action
+		
+		$showpdflink = ($atts['type'] =='pdf' && wp_is_mobile());
 
 		// custom classes
 		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'document', '' ) : null;
@@ -57,6 +59,10 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 		$slide = $atts['caption'] ? esc_html( $atts['caption'] ) : false;
 		$link = sprintf( '<a href="#" class="aesop-doc-reveal-%s"><span class="aesop-document-component--label">document</span><br /> <div class="aesop-document-component--caption">%s</div></a>', esc_attr( $unique ), $slide );
 		$guts = sprintf( '<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>',esc_attr( $unique ), $source );
+		if ($showpdflink) {
+
+			$guts .= sprintf( '<a href="%s">%s</a>',esc_url( $atts['src'] ),__('PDF Download','aesop-core') );
+		}
 
 		$out = sprintf( '%s<aside %s class="aesop-component aesop-document-component aesop-content %s">%s%s%s%s%s</aside>%s', $actiontop, aesop_component_data_atts( 'document', $unique, $atts ), $classes, $script, $actioninsidetop, $link, $guts, $actioninsidebottom, $actionbottom );
 

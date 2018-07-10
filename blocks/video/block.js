@@ -77,7 +77,7 @@
 			}
 			
 			
-			const advcontrols = isSelected && el( wp.blocks.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Video Source') ),
 				el(
 					wp.components.SelectControl, 

@@ -122,14 +122,21 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 						if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 
 						$coverimg   = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'large' );
+						$excerpt = '';
+						$gutenberg_on = function_exists( 'register_block_type' );
+						if (!$gutenberg_on) {
+							// for an unknown reason, the following code fails when running with Gutenberg
+						    $excerpt = get_the_excerpt(get_the_ID());
+						}
 
+						
 						?><div class="aesop-collection-item <?php if ($coverimg) {echo "aesop-has-image";} ?>" <?php echo $hidden;?>>
 													<?php do_action( 'aesop_collection_inside_item_top', $atts, $unique ); // action ?>
 													<a class="aesop-fader aesop-collection-item-link" href="<?php the_permalink();?>">
 														<div class="aesop-collection-item-inner">
 															<h2 class="aesop-collection-entry-title" itemprop="title"><?php the_title();?></h2>
 															<p class="aesop-collection-meta"><?php printf( __( 'Written by %s', 'aesop-core' ), apply_filters( 'aesop_collection_author', get_the_author(), get_the_ID() ) ); ?></p>
-															<div class="aesop-collection-item-excerpt"><?php echo wp_trim_words( get_the_excerpt(), 16, '...' );?></div>
+															<div class="aesop-collection-item-excerpt"><?php echo wp_trim_words( $excerpt, 16, '...' );?></div>
 														</div>
 														<div class="aesop-collection-item-img" style="background-image:url(<?php echo $coverimg[0];?>);background-repeat:no-repeat;background-size:cover;"></div>
 													</a>

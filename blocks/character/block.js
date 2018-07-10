@@ -61,7 +61,7 @@
 			};
 			
 			
-			const advcontrols = isSelected && el( wp.blocks.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Caption') ),
 				el( wp.components.TextControl, {
 						label: __( 'Optional caption for the character. If you do not enter a caption, it will not show.' ),

@@ -109,7 +109,7 @@
 					}
 				),
 			);
-			const advcontrols = props.isSelected && el( wp.blocks.InspectorControls, {},
+			const advcontrols = props.isSelected && el( wp.editor.InspectorControls, {},
 				el(
 					wp.components.SelectControl, 
 					{ 

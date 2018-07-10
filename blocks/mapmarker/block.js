@@ -38,7 +38,7 @@
 		// The "edit" property must be a valid function.
 			
 		edit	( { attributes, setAttributes, isSelected, className }) {		
-			const advcontrols = isSelected && el( wp.blocks.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
 			el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Title') ),
 				el( wp.components.TextControl, {
 						//label: __( '' ),

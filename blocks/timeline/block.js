@@ -46,7 +46,7 @@
 			};
 			
 			
-			const advcontrols = isSelected && el( wp.blocks.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Navigation Menu Item Label') ),
 				el( wp.components.TextControl, {
 						label: __( 'This is what is displayed for the timeline navigation menu item label. Example usage includes dates, years, colors, locations, and names.' ),

@@ -78,7 +78,7 @@
 			};
 			
 			
-			const advcontrols = isSelected && el( wp.blocks.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Panorama') ),
 				el(
 					wp.components.ToggleControl,

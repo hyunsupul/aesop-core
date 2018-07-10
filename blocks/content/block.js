@@ -105,7 +105,7 @@
 			var id = attributes.id;
 			var revealfx = attributes.revealfx;
 			
-			const advcontrols = isSelected && el( wp.blocks.InspectorControls, {value: id,},
+			const advcontrols = isSelected && el( wp.editor.InspectorControls, {value: id,},
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Color of Text') ),
 				el( wp.blocks.ColorPalette,{
 					        label: __( 'Set a color to be used for the main text.' ),
