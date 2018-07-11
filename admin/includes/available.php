@@ -1373,6 +1373,22 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => 'off',
 						'desc'   => __( 'Load More', 'aesop-core' ),
 						'tip'  => __( 'Setting this to on will display Load More link to load more posts.', 'aesop-core' )
+					),
+					'showexcerpt'    => array(
+						'type'  => 'select',
+						'values'  => array(						
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
+							),
+							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							),
+						),
+						'default'  => 'on',
+						'desc'   => __( 'Show Excerpt', 'aesop-core' ),
+						'tip'  => __( 'Setting this to on will display excerpts from each post', 'aesop-core' )
 					)
 				),
 				'desc'     => __( 'Show a collection of stories. Typically used on a page like the home page.', 'aesop-core' ),

@@ -16,6 +16,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 			'limit'   		=> -1,
 			'splash'  		=> '',
 			'loadmore'      => 'off',
+			'showexcerpt'      => 'on',
 			'order'         => 'default',
 			'revealfx'    => ''
 		);
@@ -124,7 +125,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 						$coverimg   = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'large' );
 						$excerpt = '';
 						$gutenberg_on = function_exists( 'register_block_type' );
-						if (!$gutenberg_on) {
+						if (!$gutenberg_on && $atts['showexcerpt']=='on') {
 							// for an unknown reason, the following code fails when running with Gutenberg
 						    $excerpt = get_the_excerpt(get_the_ID());
 						}

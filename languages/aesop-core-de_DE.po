@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2018-04-04 17:10-0500\n"
-"PO-Revision-Date: 2018-04-04 17:11-0500\n"
+"POT-Creation-Date: 2018-07-11 16:37-0500\n"
+"PO-Revision-Date: 2018-07-11 16:37-0500\n"
 "Last-Translator: Aesopinteractive\n"
 "Language-Team: German (Germany) (http://www.transifex.com/wp-translations/"
 "aesop-story-engine/language/de_DE/)\n"
@@ -85,7 +85,7 @@ msgstr ""
 #: admin/includes/available.php:1091 admin/includes/available.php:1107
 #: admin/includes/available.php:1123 admin/includes/available.php:1139
 #: admin/includes/available.php:1218 admin/includes/available.php:1334
-#: admin/includes/available.php:1366
+#: admin/includes/available.php:1366 admin/includes/available.php:1386
 #: admin/includes/components/component-map.php:79
 #: public/includes/reveal-anim.php:261
 msgid "Off"
@@ -102,6 +102,7 @@ msgstr "Aus"
 #: admin/includes/available.php:1087 admin/includes/available.php:1103
 #: admin/includes/available.php:1119 admin/includes/available.php:1135
 #: admin/includes/available.php:1338 admin/includes/available.php:1370
+#: admin/includes/available.php:1382
 #: admin/includes/components/component-map.php:83
 msgid "On"
 msgstr "An"
@@ -116,7 +117,7 @@ msgid ""
 "viewed the moose cursor."
 msgstr ""
 
-#: admin/includes/available.php:41 blocks/image/block.js:92
+#: admin/includes/available.php:41
 msgid "Image Width"
 msgstr "Bildbreite"
 
@@ -212,7 +213,7 @@ msgstr ""
 "Wie soll das Bild ausgerichtet werden? Bei Verwendung einer Bildunterschrift "
 "wird auch diese automatisch ausgerichtet."
 
-#: admin/includes/available.php:101 blocks/parallax/block.js:97
+#: admin/includes/available.php:101
 msgid "Lightbox"
 msgstr "Lightbox"
 
@@ -226,11 +227,9 @@ msgstr ""
 
 #: admin/includes/available.php:107 admin/includes/available.php:180
 #: admin/includes/available.php:714 admin/includes/available.php:1035
-#: admin/includes/components/component-gallery.php:301
-#: admin/includes/components/component-gallery.php:369
-#: admin/includes/components/component-gallery.php:429
-#: blocks/character/block.js:73 blocks/image/block.js:116
-#: blocks/parallax/block.js:107 blocks/video/block.js:118
+#: admin/includes/components/component-gallery.php:257
+#: admin/includes/components/component-gallery.php:325
+#: admin/includes/components/component-gallery.php:385
 msgid "Caption"
 msgstr "Beschreibung"
 
@@ -323,7 +322,7 @@ msgstr ""
 "Breite der Charakter-Komponente. Als Größe kannst Du <code>40%</code> oder "
 "<code>500px</code> eingeben."
 
-#: admin/includes/available.php:218 blocks/character/block.js:83
+#: admin/includes/available.php:218
 msgid "Force Circle"
 msgstr "Erzwinge Kreis"
 
@@ -362,7 +361,7 @@ msgstr ""
 "ändern."
 
 #: admin/includes/available.php:248 admin/includes/available.php:363
-#: admin/includes/available.php:618 blocks/quote/block.js:65
+#: admin/includes/available.php:618
 msgid "Background Color"
 msgstr "Hintergrundfarbe"
 
@@ -450,7 +449,7 @@ msgstr "Zitattext"
 msgid "The actual quote text that will be displayed."
 msgstr "Der eigentliche Zitattext"
 
-#: admin/includes/available.php:311 blocks/quote/block.js:57
+#: admin/includes/available.php:311
 msgid "Cite"
 msgstr "Quelle"
 
@@ -553,9 +552,9 @@ msgstr ""
 "z.B. 2 Textspalten."
 
 #: admin/includes/available.php:396 admin/includes/available.php:804
-#: admin/includes/components/component-gallery.php:304
-#: admin/includes/components/component-gallery.php:372
-#: admin/includes/components/component-gallery.php:427
+#: admin/includes/components/component-gallery.php:260
+#: admin/includes/components/component-gallery.php:328
+#: admin/includes/components/component-gallery.php:383
 msgid "None"
 msgstr "Keine"
 
@@ -863,7 +862,7 @@ msgstr ""
 msgid "Fixed"
 msgstr "Festgestellt"
 
-#: admin/includes/available.php:702 blocks/parallax/block.js:72
+#: admin/includes/available.php:702
 msgid "Image Movement"
 msgstr "Bildbewegung"
 
@@ -987,9 +986,9 @@ msgid "Audio"
 msgstr "Audio"
 
 #: admin/includes/available.php:875 admin/includes/available.php:1306
-#: admin/includes/components/component-gallery.php:300
-#: admin/includes/components/component-gallery.php:368
-#: admin/includes/components/component-gallery.php:428
+#: admin/includes/components/component-gallery.php:256
+#: admin/includes/components/component-gallery.php:324
+#: admin/includes/components/component-gallery.php:384
 #: admin/includes/components/component-map.php:71
 msgid "Title"
 msgstr "Titel"
@@ -1016,7 +1015,7 @@ msgstr "Endlosschleife"
 msgid "Enable looping within the audio player."
 msgstr "Endlosschleife im Audioplayer aktivieren"
 
-#: admin/includes/available.php:913 blocks/audio/block.js:96
+#: admin/includes/available.php:913
 msgid "Start Audio When in View"
 msgstr "Audio abspielen, sobald sichtbar"
 
@@ -1028,7 +1027,7 @@ msgstr ""
 "Wenn <em>An</em>, wird die Audio-Datei automatisch abgespielt, sobald sie in "
 "den sichtbaren Bereich "
 
-#: admin/includes/available.php:929 blocks/audio/block.js:104
+#: admin/includes/available.php:929
 msgid "Stop Audio When Out of View"
 msgstr "Audio anhalten, sobald nicht mehr sichtbar"
 
@@ -1108,7 +1107,7 @@ msgstr "Video-Quelle"
 msgid "Choose an available source for the video."
 msgstr "Die Quelle für das Video"
 
-#: admin/includes/available.php:1029 blocks/video/block.js:94
+#: admin/includes/available.php:1029
 msgid "Video ID"
 msgstr "Video-ID"
 
@@ -1166,7 +1165,7 @@ msgstr ""
 msgid "Enable the video to loop."
 msgstr "Zeigt das Video in einer Endlosschleife an."
 
-#: admin/includes/available.php:1095 blocks/video/block.js:128
+#: admin/includes/available.php:1095
 msgid "Autoplay"
 msgstr ""
 
@@ -1186,7 +1185,7 @@ msgstr ""
 "Zeigt die Bedienelemente für den selbst gehosteten Video-Player an oder "
 "versteckt sie"
 
-#: admin/includes/available.php:1127 blocks/video/block.js:138
+#: admin/includes/available.php:1127
 msgid "Start Video When in View"
 msgstr ""
 
@@ -1202,7 +1201,7 @@ msgstr ""
 msgid "Picture in Picture Mode"
 msgstr ""
 
-#: admin/includes/available.php:1147 blocks/video/block.js:148
+#: admin/includes/available.php:1147
 msgid "Stop Video When Out of View"
 msgstr ""
 
@@ -1222,8 +1221,7 @@ msgstr "Responsives Videoelement mit Anordnung und optionaler Beschriftung."
 msgid "Map"
 msgstr "Karte"
 
-#: admin/includes/available.php:1207 blocks/map/block.js:43
-#: blocks/parallax/block.js:87
+#: admin/includes/available.php:1207
 msgid "Height"
 msgstr "Höhe"
 
@@ -1282,7 +1280,7 @@ msgstr ""
 msgid "Timeline Stop"
 msgstr "Zeitleisten-Punkt"
 
-#: admin/includes/available.php:1250 blocks/timeline/block.js:43
+#: admin/includes/available.php:1250
 msgid "Navigation Menu Item Label"
 msgstr "Beschriftung für das Navigations-Menü"
 
@@ -1294,7 +1292,7 @@ msgstr ""
 "Diese Beschriftung wird für das Navigations-Menü der Zeitleiste angezeigt. "
 "Beispiele: Datum, Jahre, Farben, Orte, Namen"
 
-#: admin/includes/available.php:1256 blocks/timeline/block.js:51
+#: admin/includes/available.php:1256
 msgid "Timeline Title"
 msgstr "Zeitleisten-Titel"
 
@@ -1414,8 +1412,8 @@ msgid "Choose Default to show the newest post first."
 msgstr "Wähle Standardeinstellung um neueste Beiträge zuerst anzuzeigen."
 
 #: admin/includes/available.php:1374
-#: public/includes/components/component-collections.php:160
-#: public/includes/components/component-collections.php:164
+#: public/includes/components/component-collections.php:168
+#: public/includes/components/component-collections.php:172
 msgid "Load More"
 msgstr "Lade mehr"
 
@@ -1425,26 +1423,38 @@ msgstr ""
 "Mit dieser Einstellung wird ein „Lade mehr“-Link angezeigt, um mehr Beiträge "
 "zu laden."
 
-#: admin/includes/available.php:1378
+#: admin/includes/available.php:1390
+msgid "Show Excerpt"
+msgstr ""
+
+#: admin/includes/available.php:1391
+#, fuzzy
+#| msgid "Setting this to on will display Load More link to load more posts."
+msgid "Setting this to on will display excerpts from each post"
+msgstr ""
+"Mit dieser Einstellung wird ein „Lade mehr“-Link angezeigt, um mehr Beiträge "
+"zu laden."
+
+#: admin/includes/available.php:1394
 msgid ""
 "Show a collection of stories. Typically used on a page like the home page."
 msgstr ""
 "Zeige eine Sammlung an Geschichten. Wird üblicherweise auf der Homepage "
 "benutzt."
 
-#: admin/includes/available.php:1382
+#: admin/includes/available.php:1398
 msgid "Gallery"
 msgstr "Galerie"
 
-#: admin/includes/available.php:1391
+#: admin/includes/available.php:1407
 msgid "Choose Gallery"
 msgstr "Galerie auswählen"
 
-#: admin/includes/available.php:1392
+#: admin/includes/available.php:1408
 msgid "Select a gallery below to insert it."
 msgstr "Wähle unten eine Galerie, um sie einzufügen."
 
-#: admin/includes/available.php:1395
+#: admin/includes/available.php:1411
 msgid " "
 msgstr ""
 
@@ -1567,115 +1577,56 @@ msgid "Read More..."
 msgstr "Weiterlesen..."
 
 #: admin/includes/components/component-collection.php:41
-#: public/includes/components/component-collections.php:131
+#: public/includes/components/component-collections.php:139
 #, php-format
 msgid "Written by %s"
 msgstr "Geschrieben von %s"
 
-#: admin/includes/components/component-gallery.php:33
-msgctxt "aesop-core"
-msgid "Galleries"
-msgstr "Galerien"
-
-#: admin/includes/components/component-gallery.php:34
-msgctxt "aesop-core"
-msgid "Gallery"
-msgstr "Galerie"
-
-#: admin/includes/components/component-gallery.php:35
-#: admin/includes/components/component-gallery.php:48
-msgid "Galleries"
-msgstr "Galerien"
-
 #: admin/includes/components/component-gallery.php:36
-msgid "Parent Gallery:"
-msgstr "Hauptgalerie"
-
-#: admin/includes/components/component-gallery.php:37
-msgid "All Galleries"
-msgstr "Galerieübersicht"
-
-#: admin/includes/components/component-gallery.php:38
-msgid "View Gallery"
-msgstr "Zeige Galerie an"
-
-#: admin/includes/components/component-gallery.php:39
-msgid "Add New Gallery"
-msgstr "Füge neue Galerie hinzu"
-
-#: admin/includes/components/component-gallery.php:40
-msgid "New Gallery"
-msgstr "Galerie hinzufügen"
-
-#: admin/includes/components/component-gallery.php:41
-msgid "Edit Gallery"
-msgstr "Bearbeite Galerie"
-
-#: admin/includes/components/component-gallery.php:42
-msgid "Update Gallery"
-msgstr "Aktualisiere Galerie"
-
-#: admin/includes/components/component-gallery.php:43
-msgid "Search Galleries"
-msgstr "Suche Galerien"
-
-#: admin/includes/components/component-gallery.php:44
-msgid "No Galleries found"
-msgstr "Keine Galerien gefunden"
-
-#: admin/includes/components/component-gallery.php:45
-msgid "No Galleries found in Trash"
-msgstr "Keine Galerien im Müll gefunden"
-
-#: admin/includes/components/component-gallery.php:49
-msgid "Create responsive galleries."
-msgstr "Erstelle responsive Galerien"
-
-#: admin/includes/components/component-gallery.php:80
 msgid "Gallery Code"
 msgstr "Galerie Code"
 
-#: admin/includes/components/component-gallery.php:81
+#: admin/includes/components/component-gallery.php:37
 msgid "Used In"
 msgstr "Benutzt in"
 
-#: admin/includes/components/component-gallery.php:141
+#: admin/includes/components/component-gallery.php:97
 msgid "Add Images"
 msgstr "Bilder hinzufügen"
 
-#: admin/includes/components/component-gallery.php:144
+#: admin/includes/components/component-gallery.php:100
 msgid "Select Layout"
 msgstr "Layout auswählen"
 
-#: admin/includes/components/component-gallery.php:147
+#: admin/includes/components/component-gallery.php:103
 msgid "Set Options"
 msgstr "Einstellungen festlegen"
 
-#: admin/includes/components/component-gallery.php:212
+#: admin/includes/components/component-gallery.php:168
 msgid "Grid"
 msgstr "Raster"
 
-#: admin/includes/components/component-gallery.php:213
+#: admin/includes/components/component-gallery.php:169
 msgid "Thumbnail"
 msgstr "Miniaturbild"
 
-#: admin/includes/components/component-gallery.php:215
+#: admin/includes/components/component-gallery.php:171
 msgid "Photoset"
 msgstr "Fotoset"
 
-#: admin/includes/components/component-gallery.php:216
+#: admin/includes/components/component-gallery.php:172
 msgid "Parallax"
 msgstr "Parallax"
 
-#: admin/includes/components/component-gallery.php:217
+#: admin/includes/components/component-gallery.php:173
 msgid "Hero"
 msgstr "Hero"
 
-#: admin/includes/components/component-gallery.php:276
+#: admin/includes/components/component-gallery.php:232
 msgid "Main Gallery Width"
 msgstr "Breite der Hauptgalerie"
 
-#: admin/includes/components/component-gallery.php:277
+#: admin/includes/components/component-gallery.php:233
 msgid ""
 "Adjust the overall width of the grid/thumbnail gallery. Acceptable values "
 "include 500px, 50%, 100% etc"
@@ -1683,23 +1634,23 @@ msgstr ""
 "Passe die generelle Breite der Raster/Miniaturbild-Galerie an. Akzeptierte "
 "Werte sind zum Beispiel 500px, 50%, 100%, etc."
 
-#: admin/includes/components/component-gallery.php:281
+#: admin/includes/components/component-gallery.php:237
 msgid "Gallery Caption"
 msgstr "Gallerie-Beschriftung"
 
-#: admin/includes/components/component-gallery.php:282
+#: admin/includes/components/component-gallery.php:238
 msgid "Add an optional caption for the gallery."
 msgstr "Füge eine optionale Beschriftung für die Galerie hinzu."
 
-#: admin/includes/components/component-gallery.php:288
+#: admin/includes/components/component-gallery.php:244
 msgid "Grid Options"
 msgstr "Raster-Optionen"
 
-#: admin/includes/components/component-gallery.php:291
+#: admin/includes/components/component-gallery.php:247
 msgid "Grid Gallery Width"
 msgstr "Weite der Raster-Galerie"
 
-#: admin/includes/components/component-gallery.php:292
+#: admin/includes/components/component-gallery.php:248
 msgid ""
 "Adjust the width of the individual grid items, only if using Grid gallery "
 "style. Default is 400."
@@ -1707,108 +1658,107 @@ msgstr ""
 "Passe die Breite der individuellen Raster-Komponenten an (nur bei Verwendung "
 "der Raster-Galerie). Standardeinstellung ist 400."
 
-#: admin/includes/components/component-gallery.php:297
-#: admin/includes/components/component-gallery.php:365
+#: admin/includes/components/component-gallery.php:253
+#: admin/includes/components/component-gallery.php:321
 msgid "Lightbox Text"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:298
-#: admin/includes/components/component-gallery.php:366
+#: admin/includes/components/component-gallery.php:254
+#: admin/includes/components/component-gallery.php:322
 msgid ""
 "Text to display when the lightbox is open. The texts are read from the image "
 "property."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:302
-#: admin/includes/components/component-gallery.php:370
-#: admin/includes/components/component-gallery.php:430
+#: admin/includes/components/component-gallery.php:258
+#: admin/includes/components/component-gallery.php:326
+#: admin/includes/components/component-gallery.php:386
 msgid "Title+Caption"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:303
-#: admin/includes/components/component-gallery.php:371
-#: admin/includes/components/component-gallery.php:431
+#: admin/includes/components/component-gallery.php:259
+#: admin/includes/components/component-gallery.php:327
+#: admin/includes/components/component-gallery.php:387
 msgid "Description"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:311
+#: admin/includes/components/component-gallery.php:267
 msgid "Thumbnail Options"
 msgstr "Miniaturbild-Optionen"
 
-#: admin/includes/components/component-gallery.php:314
-#: admin/includes/components/component-gallery.php:395
+#: admin/includes/components/component-gallery.php:270
+#: admin/includes/components/component-gallery.php:351
 msgid "Gallery Transition"
 msgstr "Galerie-Übergang"
 
-#: admin/includes/components/component-gallery.php:315
+#: admin/includes/components/component-gallery.php:271
 msgid ""
 "Adjust the transition effect for the Thumbnail gallery. Default is slide."
 msgstr ""
 "Passe den Übergangseffekt für die Miniaturbild-Galerie an. "
 "Standardeinstellung ist Gleiten."
 
-#: admin/includes/components/component-gallery.php:317
-#: admin/includes/components/component-gallery.php:398
+#: admin/includes/components/component-gallery.php:273
+#: admin/includes/components/component-gallery.php:354
 msgid "Fade"
 msgstr "Blenden"
 
-#: admin/includes/components/component-gallery.php:318
-#: admin/includes/components/component-gallery.php:399
+#: admin/includes/components/component-gallery.php:274
+#: admin/includes/components/component-gallery.php:355
 msgid "Slide"
 msgstr "Gleiten"
 
-#: admin/includes/components/component-gallery.php:319
-#: admin/includes/components/component-gallery.php:400
+#: admin/includes/components/component-gallery.php:275
+#: admin/includes/components/component-gallery.php:356
 msgid "Dissolve"
 msgstr "Auflösen"
 
-#: admin/includes/components/component-gallery.php:324
-#: admin/includes/components/component-gallery.php:405
+#: admin/includes/components/component-gallery.php:280
+#: admin/includes/components/component-gallery.php:361
 msgid "Gallery Transition Speed"
 msgstr "Geschwindigkeit für Galerie-Übergang"
 
-#: admin/includes/components/component-gallery.php:325
+#: admin/includes/components/component-gallery.php:281
 msgid ""
 "Activate slideshow by setting a speed for the transition.5000 = 5 seconds."
 msgstr ""
 "Aktiviere Slideshow indem Du eine Übergangsgeschwindigkeit festlegst. 5000 = "
 "5 Sekunden."
 
-#: admin/includes/components/component-gallery.php:331
+#: admin/includes/components/component-gallery.php:287
 msgid "Hide Gallery Thumbnails"
 msgstr "Galerie-Miniaturen verstecken"
 
-#: admin/includes/components/component-gallery.php:336
+#: admin/includes/components/component-gallery.php:292
 #, fuzzy
 #| msgid "Gallery Caption"
 msgid "Sequence Gallery Options"
 msgstr "Gallerie-Beschriftung"
 
-#: admin/includes/components/component-gallery.php:341 blocks/image/block.js:82
+#: admin/includes/components/component-gallery.php:297
 msgid "Panorama Mode"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:344
-#: blocks/image/block.js:100
+#: admin/includes/components/component-gallery.php:300
 #, fuzzy
 #| msgid "Minimum Height"
 msgid "Panorama Height"
 msgstr "Mindesthöhe"
 
-#: admin/includes/components/component-gallery.php:345
+#: admin/includes/components/component-gallery.php:301
 msgid ""
 "Used Only When the Panorama Mode is On. Height of Each Panorama in Pixels."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:351
+#: admin/includes/components/component-gallery.php:307
 msgid "Photoset Options"
 msgstr "Fotoset-Optionen"
 
-#: admin/includes/components/component-gallery.php:354
+#: admin/includes/components/component-gallery.php:310
 msgid "Gallery Layout"
 msgstr "Galerie-Layout"
 
-#: admin/includes/components/component-gallery.php:355
+#: admin/includes/components/component-gallery.php:311
 msgid ""
 "Let's say you have 4 images in this gallery. If you enter 121 you will have "
 "one image on the top row, two images on the second row, and one image on the "
@@ -1818,50 +1768,50 @@ msgstr ""
 "erscheint ein Bild in der oberen Reihe, zwei in der mittleren und eines in "
 "der unteren Reihe."
 
-#: admin/includes/components/component-gallery.php:361
+#: admin/includes/components/component-gallery.php:317
 msgid "Enable Lightbox"
 msgstr "Lightbox aktivieren"
 
-#: admin/includes/components/component-gallery.php:379
+#: admin/includes/components/component-gallery.php:335
 #, fuzzy
 #| msgid "Gallery Caption"
 msgid "Parallax Gallery Options"
 msgstr "Gallerie-Beschriftung"
 
-#: admin/includes/components/component-gallery.php:384
+#: admin/includes/components/component-gallery.php:340
 #, fuzzy
 #| msgid "Alternate Image for Mobile"
 msgid "Panorama Mode for Mobile"
 msgstr "Alternatives Bild für mobile Anzeige"
 
-#: admin/includes/components/component-gallery.php:385
+#: admin/includes/components/component-gallery.php:341
 #, fuzzy
 #| msgid "Alternate Image for Mobile"
 msgid "Use Panorama Images for Mobile Devices"
 msgstr "Alternatives Bild für mobile Anzeige"
 
-#: admin/includes/components/component-gallery.php:392
+#: admin/includes/components/component-gallery.php:348
 msgid "Hero Options"
 msgstr "Hero-Optionen"
 
-#: admin/includes/components/component-gallery.php:396
+#: admin/includes/components/component-gallery.php:352
 msgid "Adjust the transition effect for the Hero gallery. Default is fade."
 msgstr ""
 "Passe den Übergangs-Effekt für die Hero-Galerie an. Standardeinstellung ist "
 "Blenden."
 
-#: admin/includes/components/component-gallery.php:406
+#: admin/includes/components/component-gallery.php:362
 msgid ""
 "Activate slideshow by setting a speed for the transition. 5000 = 5 seconds."
 msgstr ""
 "Aktiviere Slideshow indem Du eine Übergangsgeschwindigkeit festlegst. 5000 = "
 "5 Sekunden."
 
-#: admin/includes/components/component-gallery.php:411
+#: admin/includes/components/component-gallery.php:367
 msgid "Gallery Content"
 msgstr "Galerie-Inhalt"
 
-#: admin/includes/components/component-gallery.php:412
+#: admin/includes/components/component-gallery.php:368
 msgid ""
 "Content displayed within the Hero gallery. You can use HTML tags with "
 "classes and styles."
@@ -1869,11 +1819,11 @@ msgstr ""
 "Inhalt, der in der Hero-Galerie angezeigt wird. Du kannst HTML-Tags mit "
 "Klassen und Stilen benutzen."
 
-#: admin/includes/components/component-gallery.php:417
+#: admin/includes/components/component-gallery.php:373
 msgid "Main Gallery Height"
 msgstr "Galerie-Höhe"
 
-#: admin/includes/components/component-gallery.php:418
+#: admin/includes/components/component-gallery.php:374
 msgid ""
 "Specify this if you want to control the height of the gallery. Acceptable "
 "values include 500px, 50%, 100% etc."
@@ -1881,7 +1831,7 @@ msgstr ""
 "Spezifiziere hier, wenn du die Höhe deiner Galerie kontrollieren willst. "
 "Akzeptierte Werte sind zum Beispiel 500px, 50%, 100%, etc."
 
-#: admin/includes/components/component-gallery.php:419
+#: admin/includes/components/component-gallery.php:375
 msgid ""
 "If you enter a ratio, such as 800/600, the gallery would appear with a "
 "constant width/height ratio. This is useful if you want the galery to be "
@@ -1891,28 +1841,28 @@ msgstr ""
 "einer konstanten Breite/Höhe-Ratio. Das ist nützlich, wenn Du möchtest, dass "
 "die Galerie auf mobilen Geräten im Porträt-Modus responsiv ist."
 
-#: admin/includes/components/component-gallery.php:424
+#: admin/includes/components/component-gallery.php:380
 msgid "Image Text"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:425
+#: admin/includes/components/component-gallery.php:381
 msgid ""
 "Text to display with each image. The texts are read from the image property."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:436
+#: admin/includes/components/component-gallery.php:392
 msgid "Gallery Transition Animation Speed"
 msgstr "Animationsgeschwindigkeit für Galerie-Übergang"
 
-#: admin/includes/components/component-gallery.php:437
+#: admin/includes/components/component-gallery.php:393
 msgid "Animation duration for transition in milliseconds."
 msgstr "Animationsdauer für Übergang in Millisekunden."
 
-#: admin/includes/components/component-gallery.php:447
+#: admin/includes/components/component-gallery.php:403
 msgid "Enable Navigation Controls"
 msgstr "Aktiviere Navigations-Anzeigen"
 
-#: admin/includes/components/component-gallery.php:614
+#: admin/includes/components/component-gallery.php:570
 msgid "All done!"
 msgstr "Fertig!"
 
@@ -2196,178 +2146,87 @@ msgstr ""
 "aufrufst und auf „Komponente einfügen“ klickst. Klicke auf den Hilfe-Link "
 "während du einen Beitrag bearbeitest, um mehr Informationen zu erhalten."
 
-#: block/image/block.js:29 blocks/block.js:29 blocks/image/block.js:25
-msgid "Aesop Image Block"
-msgstr ""
-
-#: blocks/audio/block.js:25
-msgid "Aesop Audio Block"
-msgstr ""
-
-#: blocks/audio/block.js:86
-#, fuzzy
-#| msgid "Optional Caption"
-msgid "Optional Title"
-msgstr "Optionale Beschriftung"
-
-#: blocks/audio/block.js:112
-#, fuzzy
-#| msgid "Loop Audio Player"
-msgid "Loop Audio"
-msgstr "Endlosschleife"
-
-#: blocks/audio/block.js:120
-msgid "Hidden"
-msgstr ""
-
-#: blocks/audio/block.js:132 blocks/chapter/block.js:92
-#, fuzzy
-#| msgid "Select Layout"
-msgid "Select Audio"
-msgstr "Layout auswählen"
-
-#: blocks/audio/block.js:142 blocks/chapter/block.js:102
-#, fuzzy
-#| msgid "Video Source"
-msgid "Set Audio Source"
-msgstr "Video-Quelle"
-
-#: blocks/chapter/block.js:25
-#, fuzzy
-#| msgid "Chapter Block"
-msgid "Aesop Chapter Block"
-msgstr "Chapter-Block"
-
-#: blocks/chapter/block.js:109
-msgid "Start on Show"
-msgstr ""
-
-#: blocks/character/block.js:25
-#, fuzzy
-#| msgid "Character"
-msgid "Aesop Character"
-msgstr "Charakter"
-
-#: blocks/character/block.js:65
-msgid "Name"
-msgstr ""
-
-#: blocks/character/block.js:96 blocks/image/block.js:135
-#: blocks/quote/block.js:76 blocks/video/block.js:169
-#, fuzzy
-#| msgid "Development Information"
-msgid "Reveal Animation"
-msgstr "Entwicklungsinformation"
-
-#: blocks/character/block.js:120 blocks/image/block.js:159
-#: blocks/parallax/block.js:121
-#, fuzzy
-#| msgid "Select Layout"
-msgid "Select Image"
-msgstr "Layout auswählen"
-
-#: blocks/character/block.js:129 blocks/image/block.js:168
-#: blocks/parallax/block.js:130
-#, fuzzy
-#| msgid "Height of Image Area"
-msgid "Set Image Source"
-msgstr "Höhe des Bildbereichs"
-
-#: blocks/gallery/block.js:29
-#, fuzzy
-#| msgid "Aesop Gallery Component"
-msgid "Aesop Gallery Block"
-msgstr "Aesop Galerie-Komponente"
-
-#: blocks/image/block.js:108
-#, fuzzy
-#| msgid "Image Credit"
-msgid "Credit"
-msgstr "Bildrechte"
-
-#: blocks/image/block.js:124
-msgid "ALT"
-msgstr ""
-
-#: blocks/map/block.js:25
-#, fuzzy
-#| msgid "Aesop Map Marker"
-msgid "Aesop Map Block"
-msgstr "Aesop Karten-Markierung"
-
-#: blocks/map/block.js:54
-#, fuzzy
-#| msgid "Sticky Top"
-msgid "Sticky"
-msgstr "Oben gepinnt"
-
-#: blocks/parallax/block.js:25
-msgid "Aesop Parallax Block"
-msgstr ""
-
-#: blocks/quote/block.js:29
-#, fuzzy
-#| msgid "Aesop Quote Section"
-msgid "Aesop Quote Block"
-msgstr "Aesop Zitat-Abschnitt"
-
-#: blocks/quote/block.js:98
-#, fuzzy
-#| msgid "Pull Quote"
-msgid "Quote"
-msgstr "Textzitat"
-
-#: blocks/timeline/block.js:25
-#, fuzzy
-#| msgid "Timeline Stop"
-msgid "Aesop Timeline Block"
-msgstr "Zeitleisten-Punkt"
-
-#: blocks/video/block.js:25
-#, fuzzy
-#| msgid "Video"
-msgid "Aesop Video"
-msgstr "Video"
-
-#: blocks/video/block.js:79
-#, fuzzy
-#| msgid "Video Source"
-msgid "Source"
-msgstr "Video-Quelle"
-
-#: blocks/video/block.js:104
-msgid "Select Video File"
-msgstr ""
-
-#: blocks/video/block.js:113
-msgid "Set Video File"
-msgstr ""
-
-#: blocks/video/block.js:158
-#, fuzzy
-#| msgid "Video"
-msgid "Loop Video"
-msgstr "Video"
-
 #: public/class-aesop-core.php:248
 msgid "Doh! There was an issue deactivating Aesop. Try again perhaps?."
 msgstr ""
 "Nein! Beim Deaktivieren von Aesop gab es ein Problem. Versuche es vielleicht "
 "nochmal?"
 
-#: public/includes/components/component-collections.php:150
+#: public/class-aesop-core.php:268
+msgctxt "aesop-core"
+msgid "Galleries"
+msgstr "Galerien"
+
+#: public/class-aesop-core.php:269
+msgctxt "aesop-core"
+msgid "Gallery"
+msgstr "Galerie"
+
+#: public/class-aesop-core.php:270 public/class-aesop-core.php:283
+msgid "Galleries"
+msgstr "Galerien"
+
+#: public/class-aesop-core.php:271
+msgid "Parent Gallery:"
+msgstr "Hauptgalerie"
+
+#: public/class-aesop-core.php:272
+msgid "All Galleries"
+msgstr "Galerieübersicht"
+
+#: public/class-aesop-core.php:273
+msgid "View Gallery"
+msgstr "Zeige Galerie an"
+
+#: public/class-aesop-core.php:274
+msgid "Add New Gallery"
+msgstr "Füge neue Galerie hinzu"
+
+#: public/class-aesop-core.php:275
+msgid "New Gallery"
+msgstr "Galerie hinzufügen"
+
+#: public/class-aesop-core.php:276
+msgid "Edit Gallery"
+msgstr "Bearbeite Galerie"
+
+#: public/class-aesop-core.php:277
+msgid "Update Gallery"
+msgstr "Aktualisiere Galerie"
+
+#: public/class-aesop-core.php:278
+msgid "Search Galleries"
+msgstr "Suche Galerien"
+
+#: public/class-aesop-core.php:279
+msgid "No Galleries found"
+msgstr "Keine Galerien gefunden"
+
+#: public/class-aesop-core.php:280
+msgid "No Galleries found in Trash"
+msgstr "Keine Galerien im Müll gefunden"
+
+#: public/class-aesop-core.php:284
+msgid "Create responsive galleries."
+msgstr "Erstelle responsive Galerien"
+
+#: public/includes/components/component-collections.php:158
 msgid "Specify a category ID to display stories from."
 msgstr "Gib eine Kategorie-ID an, aus der Stories angezeigt werden sollen."
 
-#: public/includes/components/component-collections.php:165
+#: public/includes/components/component-collections.php:173
 msgid "Loading"
 msgstr "Lädt"
 
-#: public/includes/components/component-gallery.php:111
+#: public/includes/components/component-document.php:64
+msgid "PDF Download"
+msgstr ""
+
+#: public/includes/components/component-gallery.php:110
 msgid "edit gallery"
 msgstr "Galerie bearbeiten"
 
-#: public/includes/components/component-gallery.php:121
+#: public/includes/components/component-gallery.php:120
 msgid ""
 "Setup a gallery by clicking the <span class=\"lasso-icon-gear\"></span> icon "
 "above."
@@ -2375,7 +2234,7 @@ msgstr ""
 "Richte eine Galerie ein, indem du auf das <span class=„lasso-icon-gear“></"
 "span> Icon oben klickst."
 
-#: public/includes/components/component-gallery.php:127
+#: public/includes/components/component-gallery.php:126
 msgid ""
 "This gallery is empty! It's also possible that you simply have the wrong "
 "gallery ID."
@@ -2387,7 +2246,7 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: public/includes/components/component-image.php:104
+#: public/includes/components/component-image.php:99
 msgid "Enlarge"
 msgstr "Vergrößern"
 
@@ -2541,6 +2400,101 @@ msgstr ""
 msgid ""
 "Reveal animation effect for the overlay content. Only applied to Hero Gallery"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Optional Caption"
+#~ msgid "Optional Title"
+#~ msgstr "Optionale Beschriftung"
+
+#, fuzzy
+#~| msgid "Loop Audio Player"
+#~ msgid "Loop Audio"
+#~ msgstr "Endlosschleife"
+
+#, fuzzy
+#~| msgid "Select Layout"
+#~ msgid "Select Audio"
+#~ msgstr "Layout auswählen"
+
+#, fuzzy
+#~| msgid "Video Source"
+#~ msgid "Set Audio Source"
+#~ msgstr "Video-Quelle"
+
+#, fuzzy
+#~| msgid "Chapter Block"
+#~ msgid "Aesop Chapter Block"
+#~ msgstr "Chapter-Block"
+
+#, fuzzy
+#~| msgid "Character"
+#~ msgid "Aesop Character"
+#~ msgstr "Charakter"
+
+#, fuzzy
+#~| msgid "Development Information"
+#~ msgid "Reveal Animation"
+#~ msgstr "Entwicklungsinformation"
+
+#, fuzzy
+#~| msgid "Select Layout"
+#~ msgid "Select Image"
+#~ msgstr "Layout auswählen"
+
+#, fuzzy
+#~| msgid "Height of Image Area"
+#~ msgid "Set Image Source"
+#~ msgstr "Höhe des Bildbereichs"
+
+#, fuzzy
+#~| msgid "Aesop Gallery Component"
+#~ msgid "Aesop Gallery Block"
+#~ msgstr "Aesop Galerie-Komponente"
+
+#, fuzzy
+#~| msgid "Image Credit"
+#~ msgid "Credit"
+#~ msgstr "Bildrechte"
+
+#, fuzzy
+#~| msgid "Aesop Map Marker"
+#~ msgid "Aesop Map Block"
+#~ msgstr "Aesop Karten-Markierung"
+
+#, fuzzy
+#~| msgid "Sticky Top"
+#~ msgid "Sticky"
+#~ msgstr "Oben gepinnt"
+
+#, fuzzy
+#~| msgid "Aesop Quote Section"
+#~ msgid "Aesop Quote Block"
+#~ msgstr "Aesop Zitat-Abschnitt"
+
+#, fuzzy
+#~| msgid "Pull Quote"
+#~ msgid "Quote"
+#~ msgstr "Textzitat"
+
+#, fuzzy
+#~| msgid "Timeline Stop"
+#~ msgid "Aesop Timeline Block"
+#~ msgstr "Zeitleisten-Punkt"
+
+#, fuzzy
+#~| msgid "Video"
+#~ msgid "Aesop Video"
+#~ msgstr "Video"
+
+#, fuzzy
+#~| msgid "Video Source"
+#~ msgid "Source"
+#~ msgstr "Video-Quelle"
+
+#, fuzzy
+#~| msgid "Video"
+#~ msgid "Loop Video"
+#~ msgstr "Video"
 
 #~ msgid "Text Block Alignment"
 #~ msgstr "Textausrichtung"
