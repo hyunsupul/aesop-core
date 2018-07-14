@@ -44,7 +44,7 @@
 		// The "edit" property must be a valid function.
 		edit: withAPIData( function() {
 			return {
-				aesop_galleries: '/wp/v2/ai_galleries'
+				aesop_galleries: '/wp/v2/ai-galleries'
 			};
 		} )( function( props ) {
 			if ( ! props.aesop_galleries.data ) {
