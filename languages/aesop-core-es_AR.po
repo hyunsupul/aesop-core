@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2018-07-11 16:41-0500\n"
-"PO-Revision-Date: 2018-07-11 16:41-0500\n"
+"POT-Creation-Date: 2018-07-27 16:02-0500\n"
+"PO-Revision-Date: 2018-07-27 16:02-0500\n"
 "Last-Translator: Aesopinteractive\n"
 "Language-Team: Spanish (Argentina) (http://www.transifex.com/wp-translations/"
 "aesop-story-engine/language/es_AR/)\n"
@@ -2009,6 +2009,10 @@ msgstr ""
 
 #: public/includes/components/component-heading.php:168
 msgid "Top"
+msgstr ""
+
+#: public/includes/components/component-heading.php:254
+msgid "Chapter Toggle Button"
 msgstr ""
 
 #: public/includes/components/component-image.php:99

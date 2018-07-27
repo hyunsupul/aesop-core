@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2018-07-11 16:37-0500\n"
-"PO-Revision-Date: 2018-07-11 16:37-0500\n"
+"POT-Creation-Date: 2018-07-27 16:01-0500\n"
+"PO-Revision-Date: 2018-07-27 16:01-0500\n"
 "Last-Translator: Aesopinteractive\n"
 "Language-Team: Arabic (http://www.transifex.com/wp-translations/aesop-story-"
 "engine/language/ar/)\n"
@@ -1976,6 +1976,10 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
+#: public/includes/components/component-heading.php:254
+msgid "Chapter Toggle Button"
+msgstr ""
+
 #: public/includes/components/component-image.php:99
 msgid "Enlarge"
 msgstr ""
@@ -2128,3 +2132,48 @@ msgstr ""
 msgid ""
 "Reveal animation effect for the overlay content. Only applied to Hero Gallery"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Audio"
+#~ msgid "Loop Audio"
+#~ msgstr "صوت"
+
+#, fuzzy
+#~| msgid "Title"
+#~ msgid "Subtitle"
+#~ msgstr "العنوان"
+
+#, fuzzy
+#~| msgid "Documentation"
+#~ msgid "Reveal Animation"
+#~ msgstr "وثائق المساعدة"
+
+#, fuzzy
+#~| msgid "Alignment"
+#~ msgid "Align"
+#~ msgstr "محاذاة"
+
+#, fuzzy
+#~| msgid "Caption"
+#~ msgid "Image Caption"
+#~ msgstr "كلمات توضيحية"
+
+#, fuzzy
+#~| msgid "Image"
+#~ msgid "Image Alt"
+#~ msgstr "صورة"
+
+#, fuzzy
+#~| msgid "Background Image"
+#~ msgid "Background Movement Type"
+#~ msgstr "صورة الخلفية"
+
+#, fuzzy
+#~| msgid "Video"
+#~ msgid "Aesop Video"
+#~ msgstr "فيديو"
+
+#, fuzzy
+#~| msgid "Video"
+#~ msgid "Loop Video"
+#~ msgstr "فيديو"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine 1.6.5\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2018-07-11 16:39-0500\n"
+"POT-Creation-Date: 2018-07-27 16:00-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1929,6 +1929,10 @@ msgstr ""
 
 #: public/includes/components/component-heading.php:168
 msgid "Top"
+msgstr ""
+
+#: public/includes/components/component-heading.php:254
+msgid "Chapter Toggle Button"
 msgstr ""
 
 #: public/includes/components/component-image.php:99

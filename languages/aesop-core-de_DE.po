@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2018-07-11 16:37-0500\n"
-"PO-Revision-Date: 2018-07-11 16:37-0500\n"
+"POT-Creation-Date: 2018-07-27 16:00-0500\n"
+"PO-Revision-Date: 2018-07-27 16:00-0500\n"
 "Last-Translator: Aesopinteractive\n"
 "Language-Team: German (Germany) (http://www.transifex.com/wp-translations/"
 "aesop-story-engine/language/de_DE/)\n"
@@ -2246,6 +2246,12 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
+#: public/includes/components/component-heading.php:254
+#, fuzzy
+#| msgid "Chapter Title"
+msgid "Chapter Toggle Button"
+msgstr "Chapter-Titel"
+
 #: public/includes/components/component-image.php:99
 msgid "Enlarge"
 msgstr "Vergrößern"
@@ -2402,6 +2408,11 @@ msgid ""
 msgstr ""
 
 #, fuzzy
+#~| msgid "Aesop Quote Section"
+#~ msgid "Aesop Audio Block"
+#~ msgstr "Aesop Zitat-Abschnitt"
+
+#, fuzzy
 #~| msgid "Optional Caption"
 #~ msgid "Optional Title"
 #~ msgstr "Optionale Beschriftung"
@@ -2427,14 +2438,54 @@ msgstr ""
 #~ msgstr "Chapter-Block"
 
 #, fuzzy
-#~| msgid "Character"
-#~ msgid "Aesop Character"
-#~ msgstr "Charakter"
+#~| msgid "Chapter Subtitle"
+#~ msgid "Subtitle"
+#~ msgstr "Chapter-Untertitel"
+
+#, fuzzy
+#~| msgid "Full-size Background Image"
+#~ msgid "Full-size Background"
+#~ msgstr "Bildschirmfüllendes Hintergrundbild"
+
+#, fuzzy
+#~| msgid ""
+#~| "You can enter the minimum height in number of pixels like <code>300px</"
+#~| "code>."
+#~ msgid "You can enter the minimum height in number of pixels like 300px."
+#~ msgstr ""
+#~ "Du kannst die Mindesthöhe als Pixelzahl eingeben, wie <code>300px</code>."
+
+#, fuzzy
+#~| msgid ""
+#~| "You can enter the maximum height in number of pixels like <code>300px</"
+#~| "code> or <code>50%</code>. 100% by default."
+#~ msgid ""
+#~ "You can enter the maximum height in number of pixels like 300px or 50%. "
+#~ "100% by default."
+#~ msgstr ""
+#~ "Du kannst die Maximale Höhe als Pixelzahl eingeben, wie <code>300px</"
+#~ "code>."
 
 #, fuzzy
 #~| msgid "Development Information"
 #~ msgid "Reveal Animation"
 #~ msgstr "Entwicklungsinformation"
+
+#, fuzzy
+#~| msgid "Character"
+#~ msgid "Aesop Character"
+#~ msgstr "Charakter"
+
+#, fuzzy
+#~| msgid ""
+#~| "Width of the character component. You can enter the size as <code>40%</"
+#~| "code> or <code>500px</code>."
+#~ msgid ""
+#~ "Width of the character component. You can enter the size such as 40% or "
+#~ "500px."
+#~ msgstr ""
+#~ "Breite der Charakter-Komponente. Als Größe kannst Du <code>40%</code> "
+#~ "oder <code>500px</code> eingeben."
 
 #, fuzzy
 #~| msgid "Select Layout"
@@ -2448,13 +2499,131 @@ msgstr ""
 
 #, fuzzy
 #~| msgid "Aesop Gallery Component"
+#~ msgid "Aesop Collection Block"
+#~ msgstr "Aesop Galerie-Komponente"
+
+#, fuzzy
+#~| msgid "Aesop Quote Section"
+#~ msgid "Aesop Content Block"
+#~ msgstr "Aesop Zitat-Abschnitt"
+
+#, fuzzy
+#~| msgid "Select Layout"
+#~ msgid "Select Media"
+#~ msgstr "Layout auswählen"
+
+#, fuzzy
+#~| msgid ""
+#~| "You can enter the size as <code>40%</code> or <code>500px</code>. Enter "
+#~| "the word <code>content</code> to restrict the width to that of the main "
+#~| "text."
+#~ msgid ""
+#~ "You can enter the size such as 40% or 500px. Enter the word content to "
+#~ "restrict the width to that of the main text."
+#~ msgstr ""
+#~ "Als Größe kannst Du <code>40%</code> oder <code>500px</code> eingeben. "
+#~ "Gib das Wort <code>content</code> ein, um die Breite auf die des "
+#~ "Haupttextes anzugleichen."
+
+#, fuzzy
+#~| msgid ""
+#~| "Optionally set the number of columns that the text should be split into. "
+#~| "For example, <code>2</code> will make 2 columns of text."
+#~ msgid ""
+#~ "Optionally set the number of columns that the text should be split into. "
+#~ "For example, 2 will make 2 columns of text."
+#~ msgstr ""
+#~ "Der Text kann optional in Spalten aufgeteilt werden. <code>2</code> "
+#~ "erzeugt z.B. 2 Textspalten."
+
+#, fuzzy
+#~| msgid ""
+#~| "This option allows you to float the text block to the left or right. "
+#~| "This is useful when using a width like <code>300px</code>."
+#~ msgid ""
+#~ "This option allows you to float the text block to the left or right. This "
+#~ "is useful when using a width like 300px."
+#~ msgstr ""
+#~ "Diese Einstellung ermöglicht, den Textblock links oder rechts "
+#~ "auszurichten. Das ist praktisch für Breitenangaben wie z.B. <code>300px</"
+#~ "code>."
+
+#, fuzzy
+#~| msgid "Document"
+#~ msgid "Aesop Document"
+#~ msgstr "Dokument"
+
+#, fuzzy
+#~| msgid "Select Layout"
+#~ msgid "Select File"
+#~ msgstr "Layout auswählen"
+
+#, fuzzy
+#~| msgid "Height of Image Area"
+#~ msgid "Set File Source"
+#~ msgstr "Höhe des Bildbereichs"
+
+#, fuzzy
+#~| msgid "Aesop Gallery Component"
 #~ msgid "Aesop Gallery Block"
 #~ msgstr "Aesop Galerie-Komponente"
 
 #, fuzzy
-#~| msgid "Image Credit"
-#~ msgid "Credit"
-#~ msgstr "Bildrechte"
+#~| msgid "No Galleries found in Trash"
+#~ msgid "No Galleries have been created."
+#~ msgstr "Keine Galerien im Müll gefunden"
+
+#, fuzzy
+#~| msgid "Aesop Map Marker"
+#~ msgid "Aesop Image Block"
+#~ msgstr "Aesop Karten-Markierung"
+
+#, fuzzy
+#~| msgid ""
+#~| "Width of the image. You can enter the size as <code>40%</code> or "
+#~| "<code>500px</code>."
+#~ msgid ""
+#~ "Width of the image. You can enter the size in pixels or percentage such "
+#~ "as 40% or 500px."
+#~ msgstr ""
+#~ "Breite des Bildes. Als Größe kannst Du <code>40%</code> oder <code>500px</"
+#~ "code> eingeben."
+
+#, fuzzy
+#~| msgid ""
+#~| "This is typically used to credit the photographer. Enter a name and it "
+#~| "will show as <em>Photo by: Name</em>."
+#~ msgid ""
+#~ "This is typically used to credit the photographer. Enter a name and it "
+#~ "will show as Photo by: Name."
+#~ msgstr ""
+#~ "Dies wird üblicherweise für den Fotografennachweis verwendet. Gib einen "
+#~ "Namen ein und es wird <em>Foto: Name</em> angezeigt."
+
+#, fuzzy
+#~| msgid "Alignment"
+#~ msgid "Align"
+#~ msgstr "Ausrichtung"
+
+#, fuzzy
+#~| msgid ""
+#~| "Choose <em>on</em> and the image will open up the full-size version in a "
+#~| "lightbox."
+#~ msgid ""
+#~ "Choose on and the image will open up the full-size version in a lightbox."
+#~ msgstr ""
+#~ "Wähle <em>An</em>, um das Bild in einer Vollbild-Ansicht einer Lightbox "
+#~ "zu öffnen."
+
+#, fuzzy
+#~| msgid "Gallery Caption"
+#~ msgid "Image Caption"
+#~ msgstr "Gallerie-Beschriftung"
+
+#, fuzzy
+#~| msgid "Image ALT"
+#~ msgid "Image Alt"
+#~ msgstr "Bild-ALT"
 
 #, fuzzy
 #~| msgid "Aesop Map Marker"
@@ -2462,9 +2631,40 @@ msgstr ""
 #~ msgstr "Aesop Karten-Markierung"
 
 #, fuzzy
+#~| msgid ""
+#~| "The height of the map component. By default this is set to <em>500px</"
+#~| "em>. Avoid using percentages with this option."
+#~ msgid ""
+#~ "The height of the map component. By default this is set to 500px. Avoid "
+#~ "using percentages with this option."
+#~ msgstr ""
+#~ "Die Höhe der Karten-Komponente. Automatisch ist sie eingestellt auf "
+#~ "<em>500px</em>. Vermeide Prozentzahlen bei dieser Option."
+
+#, fuzzy
 #~| msgid "Sticky Top"
 #~ msgid "Sticky"
 #~ msgstr "Oben gepinnt"
+
+#, fuzzy
+#~| msgid "Aesop Map Marker"
+#~ msgid "Aesop Map"
+#~ msgstr "Aesop Karten-Markierung"
+
+#, fuzzy
+#~| msgid "Aesop Gallery Component"
+#~ msgid "Aesop Parallax Block"
+#~ msgstr "Aesop Galerie-Komponente"
+
+#, fuzzy
+#~| msgid "Background Type"
+#~ msgid "Background Movement Type"
+#~ msgstr "Hintergrundart"
+
+#, fuzzy
+#~| msgid "Parallax"
+#~ msgid "Aesop Parallax"
+#~ msgstr "Parallax"
 
 #, fuzzy
 #~| msgid "Aesop Quote Section"
@@ -2478,7 +2678,12 @@ msgstr ""
 
 #, fuzzy
 #~| msgid "Timeline Stop"
-#~ msgid "Aesop Timeline Block"
+#~ msgid "Aesop Timeline Stop"
+#~ msgstr "Zeitleisten-Punkt"
+
+#, fuzzy
+#~| msgid "Timeline Stop"
+#~ msgid "Aesop Timeline"
 #~ msgstr "Zeitleisten-Punkt"
 
 #, fuzzy
@@ -2487,14 +2692,42 @@ msgstr ""
 #~ msgstr "Video"
 
 #, fuzzy
-#~| msgid "Video Source"
-#~ msgid "Source"
-#~ msgstr "Video-Quelle"
+#~| msgid ""
+#~| "The video ID can be found within the video URL and typically looks "
+#~| "something like <code>s8J2Ge4</code>. For Viddler videos, enter the full "
+#~| "URL instead."
+#~ msgid ""
+#~ "The video ID can be found within the video URL and typically looks "
+#~ "something like s8J2Ge4. For Viddler videos, enter the full URL instead."
+#~ msgstr ""
+#~ "Die Video-ID kann der Video-URL entnommen werden und sieht gewöhnlich aus "
+#~ "wie <code>s8J2Ge4</code>. Bei Viddler-Videos stattdessen die volle URL "
+#~ "eintragen."
+
+#, fuzzy
+#~| msgid "Select Layout"
+#~ msgid "Select Video File"
+#~ msgstr "Layout auswählen"
 
 #, fuzzy
 #~| msgid "Video"
 #~ msgid "Loop Video"
 #~ msgstr "Video"
+
+#, fuzzy
+#~| msgid "Post Order"
+#~ msgid "Poster Frame."
+#~ msgstr "Beitragsreihenfolge"
+
+#, fuzzy
+#~| msgid "Image Credit"
+#~ msgid "Credit"
+#~ msgstr "Bildrechte"
+
+#, fuzzy
+#~| msgid "Video Source"
+#~ msgid "Source"
+#~ msgstr "Video-Quelle"
 
 #~ msgid "Text Block Alignment"
 #~ msgstr "Textausrichtung"

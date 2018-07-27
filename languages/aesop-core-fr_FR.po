@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2018-07-11 16:42-0500\n"
-"PO-Revision-Date: 2018-07-11 16:42-0500\n"
+"POT-Creation-Date: 2018-07-27 16:02-0500\n"
+"PO-Revision-Date: 2018-07-27 16:02-0500\n"
 "Last-Translator: FX Bénard <fxb@wp-translations.org>\n"
 "Language-Team: French (France) (http://www.transifex.com/wp-translations/"
 "aesop-story-engine/language/fr_FR/)\n"
@@ -2377,6 +2377,12 @@ msgstr ""
 #: public/includes/components/component-heading.php:168
 msgid "Top"
 msgstr ""
+
+#: public/includes/components/component-heading.php:254
+#, fuzzy
+#| msgid "Chapter Title"
+msgid "Chapter Toggle Button"
+msgstr "Titre du chapitre"
 
 #: public/includes/components/component-image.php:99
 msgid "Enlarge"

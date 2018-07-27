@@ -251,7 +251,7 @@ class AesopChapterHeadingComponent {
 		$out = '';
 		$exclass="";
 		if (empty($ui_style) || (wp_is_mobile() && !get_option( 'ase_chapter_enable_dots_mobile' ))) {
-			$out .= '<a id="aesop-toggle-chapter-menu" class="aesop-toggle-chapter-menu" href="#aesop-chapter-menu"><i class="dashicons dashicons-tag aesop-close-chapter-menu"></i></a>';
+			$out .= '<a id="aesop-toggle-chapter-menu" aria-label="'.__('Chapter Toggle Button','aesop-core').'" class="aesop-toggle-chapter-menu" href="#aesop-chapter-menu"><i class="dashicons dashicons-tag aesop-close-chapter-menu"></i></a>';
 		} else {
 			if ($ui_style == 'left_dots') {
 				$exclass = 'aesop-chapter-menu-left';

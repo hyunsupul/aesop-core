@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2018-07-11 16:43-0500\n"
-"PO-Revision-Date: 2018-07-11 16:43-0500\n"
+"POT-Creation-Date: 2018-07-27 16:08-0500\n"
+"PO-Revision-Date: 2018-07-27 16:08-0500\n"
 "Last-Translator: Aesopinteractive\n"
 "Language-Team: Serbian (Serbia) (http://www.transifex.com/wp-translations/"
 "aesop-story-engine/language/sr_RS/)\n"
@@ -1994,6 +1994,12 @@ msgstr ""
 #: public/includes/components/component-heading.php:168
 msgid "Top"
 msgstr ""
+
+#: public/includes/components/component-heading.php:254
+#, fuzzy
+#| msgid "Chapter Title"
+msgid "Chapter Toggle Button"
+msgstr "Naslov poglavlja"
 
 #: public/includes/components/component-image.php:99
 msgid "Enlarge"

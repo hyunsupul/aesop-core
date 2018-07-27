@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2018-07-11 16:40-0500\n"
-"PO-Revision-Date: 2018-07-11 16:40-0500\n"
+"POT-Creation-Date: 2018-07-27 16:01-0500\n"
+"PO-Revision-Date: 2018-07-27 16:01-0500\n"
 "Last-Translator: Aesopinteractive\n"
 "Language-Team: Greek (http://www.transifex.com/wp-translations/aesop-story-"
 "engine/language/el/)\n"
@@ -2061,6 +2061,12 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
+#: public/includes/components/component-heading.php:254
+#, fuzzy
+#| msgid "Chapter Title"
+msgid "Chapter Toggle Button"
+msgstr "Τίτλος Κεφαλαίου"
+
 #: public/includes/components/component-image.php:99
 msgid "Enlarge"
 msgstr "Μεγέθυνση"
@@ -2215,6 +2221,181 @@ msgstr ""
 msgid ""
 "Reveal animation effect for the overlay content. Only applied to Hero Gallery"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Optional Caption"
+#~ msgid "Optional Title"
+#~ msgstr "Προαιρετική Λεζάντα"
+
+#, fuzzy
+#~| msgid "Audio"
+#~ msgid "Loop Audio"
+#~ msgstr "Audio"
+
+#, fuzzy
+#~| msgid "Select Layout"
+#~ msgid "Select Audio"
+#~ msgstr "Επιλογή Διάταξης"
+
+#, fuzzy
+#~| msgid "Video Source"
+#~ msgid "Set Audio Source"
+#~ msgstr "Πηγή Βίντεο"
+
+#, fuzzy
+#~| msgid "Chapter Subtitle"
+#~ msgid "Subtitle"
+#~ msgstr "Υπότιτλος Κεφαλαίου"
+
+#, fuzzy
+#~| msgid "Full-size Background Image"
+#~ msgid "Full-size Background"
+#~ msgstr "Εικόνα φόντου πλήρους μεγέθους"
+
+#, fuzzy
+#~| msgid "Document Caption"
+#~ msgid "Reveal Animation"
+#~ msgstr "Λεζάντα Εγγράφου"
+
+#, fuzzy
+#~| msgid "Character"
+#~ msgid "Aesop Character"
+#~ msgstr "Χαρακτήρας"
+
+#, fuzzy
+#~| msgid ""
+#~| "Width of the image. You can enter the size as <code>40%</code> or "
+#~| "<code>500px</code>."
+#~ msgid ""
+#~ "Width of the character component. You can enter the size such as 40% or "
+#~ "500px."
+#~ msgstr ""
+#~ "Πλάτος της εικόνας. Μπορείτε να εισάγετε το μέγεθος ως <code>40%</code> ή "
+#~ "<code>500px</code>."
+
+#, fuzzy
+#~| msgid "Select Layout"
+#~ msgid "Select Image"
+#~ msgstr "Επιλογή Διάταξης"
+
+#, fuzzy
+#~| msgid "Height of Quote Area"
+#~ msgid "Set Image Source"
+#~ msgstr "Ύψος Περιοχής Παραθέματος"
+
+#, fuzzy
+#~| msgid "Collections"
+#~ msgid "Aesop Collection Block"
+#~ msgstr "Συλλογές"
+
+#, fuzzy
+#~| msgid "Select Layout"
+#~ msgid "Select Media"
+#~ msgstr "Επιλογή Διάταξης"
+
+#, fuzzy
+#~| msgid ""
+#~| "Optionally set the number of columns that the text should be split into. "
+#~| "For example, <code>2</code> will make 2 columns of text."
+#~ msgid ""
+#~ "Optionally set the number of columns that the text should be split into. "
+#~ "For example, 2 will make 2 columns of text."
+#~ msgstr ""
+#~ "Προαιρετικά ορίστε τον αριθμό των στηλών στις οποίες θα πρέπει να "
+#~ "χωρίζεται. Για παράδειγμα, <code>2</code> θα δημιουργήσει 2 στήλες "
+#~ "κειμένου."
+
+#, fuzzy
+#~| msgid "Document"
+#~ msgid "Aesop Document"
+#~ msgstr "Document"
+
+#, fuzzy
+#~| msgid "Video Source"
+#~ msgid "Set File Source"
+#~ msgstr "Πηγή Βίντεο"
+
+#, fuzzy
+#~| msgid "Aesop Galleries"
+#~ msgid "Aesop Gallery Block"
+#~ msgstr "Συλλογές Aesop"
+
+#, fuzzy
+#~| msgid "No Galleries found in Trash"
+#~ msgid "No Galleries have been created."
+#~ msgstr "Δεν βρέθηκαν Συλλογές στον Κάδο"
+
+#, fuzzy
+#~| msgid ""
+#~| "Width of the image. You can enter the size as <code>40%</code> or "
+#~| "<code>500px</code>."
+#~ msgid ""
+#~ "Width of the image. You can enter the size in pixels or percentage such "
+#~ "as 40% or 500px."
+#~ msgstr ""
+#~ "Πλάτος της εικόνας. Μπορείτε να εισάγετε το μέγεθος ως <code>40%</code> ή "
+#~ "<code>500px</code>."
+
+#, fuzzy
+#~| msgid ""
+#~| "This is typically used to credit the photographer. Enter a name and it "
+#~| "will show as <em>Photo by: Name</em>."
+#~ msgid ""
+#~ "This is typically used to credit the photographer. Enter a name and it "
+#~ "will show as Photo by: Name."
+#~ msgstr ""
+#~ "Αυτό χρησιμοποιείται τυπικά για να ευχαριστήσουμε το φωτογράφο. Εισάγετε "
+#~ "ένα όνομα και θα εμφανίζεται ως <em>Φωτογραφία από: Όνομα</em>."
+
+#, fuzzy
+#~| msgid "Alignment"
+#~ msgid "Align"
+#~ msgstr "Στοίχιση"
+
+#, fuzzy
+#~| msgid "Gallery Caption"
+#~ msgid "Image Caption"
+#~ msgstr "Λεζάντα Συλλογής"
+
+#, fuzzy
+#~| msgid "Image ALT"
+#~ msgid "Image Alt"
+#~ msgstr "ALT Εικόνας"
+
+#, fuzzy
+#~| msgid "Sticky Maps"
+#~ msgid "Sticky"
+#~ msgstr "Μόνιμοι Χάρτες"
+
+#, fuzzy
+#~| msgid "Background Type"
+#~ msgid "Background Movement Type"
+#~ msgstr "Τύπος Φόντου"
+
+#, fuzzy
+#~| msgid "Aesop Galleries"
+#~ msgid "Aesop Parallax"
+#~ msgstr "Συλλογές Aesop"
+
+#, fuzzy
+#~| msgid "Quote Size"
+#~ msgid "Quote"
+#~ msgstr "Μέγεθος Παραθέματος"
+
+#, fuzzy
+#~| msgid "Aesop Galleries"
+#~ msgid "Aesop Timeline"
+#~ msgstr "Συλλογές Aesop"
+
+#, fuzzy
+#~| msgid "Video"
+#~ msgid "Aesop Video"
+#~ msgstr "Video"
+
+#, fuzzy
+#~| msgid "Video"
+#~ msgid "Loop Video"
+#~ msgstr "Video"
 
 #~ msgid "Enable Theme Support"
 #~ msgstr "Ενεργοποιήστε την Υποστήριξη Θέματος"

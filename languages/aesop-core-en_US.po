@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Core\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2018-07-11 16:41-0500\n"
-"PO-Revision-Date: 2018-07-11 16:41-0500\n"
+"POT-Creation-Date: 2018-07-27 16:02-0500\n"
+"PO-Revision-Date: 2018-07-27 16:02-0500\n"
 "Last-Translator: Team Aesop <support@aesopinteractive.com>\n"
 "Language-Team: Team Aesop <info@aesopinteractive.com>\n"
 "Language: en_US\n"
@@ -1934,6 +1934,10 @@ msgstr ""
 
 #: ../public/includes/components/component-heading.php:168
 msgid "Top"
+msgstr ""
+
+#: ../public/includes/components/component-heading.php:254
+msgid "Chapter Toggle Button"
 msgstr ""
 
 #: ../public/includes/components/component-image.php:99
