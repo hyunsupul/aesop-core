@@ -77,6 +77,20 @@ if ( is_admin() ) {
  * BLOCK: Aesop Gutenberg Blocks.
  */
 /*
-Uncomment this line to enable Gutenberg support
+Uncomment the following lines to enable Gutenberg support*/
 require_once( AI_CORE_DIR . 'blocks/index.php' );
-*/
+
+add_filter( 'block_categories', function( $categories, $post ) {
+	if ( $post->post_type !== 'post' ) {
+		return $categories;
+	}
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug' => 'aesop-story-engine',
+				'title' => __( 'Aesop Story Engine', 'ASE' ),
+			),
+		)
+	);
+}, 10, 2 );

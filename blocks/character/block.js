@@ -24,7 +24,7 @@
 	registerBlockType( 'ase/character', { // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 		title: __( 'Aesop Character', 'ASE' ), // Block title.
 		icon: 'businessman', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-		category: 'widgets', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+		category: 'aesop-story-engine', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 		
 		attributes: {
 			img : {

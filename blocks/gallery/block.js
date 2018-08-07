@@ -9,6 +9,8 @@
 	var el = wp.element.createElement; // The wp.element.createElement() function to create elements.
 	var registerBlockType = wp.blocks.registerBlockType; // The registerBlockType() to register blocks.
 	var withAPIData = wp.components.withAPIData;
+	
+	var withSelect = wp.data.withSelect;
 	/**
 	 * Register Basic Block.
 	 *
@@ -24,7 +26,7 @@
 	registerBlockType( 'ase/gallery', { // Block name. Block names must be string that contains a namespace prefix. Example: my-plugin/my-custom-block.
 		title: __( 'Aesop Gallery Block', 'ASE' ), // Block title.
 		icon: 'format-gallery', // Block icon from Dashicons → https://developer.wordpress.org/resource/dashicons/.
-		category: 'widgets', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
+		category: 'aesop-story-engine', // Block category — Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 		
 		attributes: {
 			galleryname : {
@@ -46,7 +48,16 @@
 			return {
 				aesop_galleries: '/wp/v2/ai-galleries'
 			};
-		} )( function( props ) {
+		}
+
+		/*edit: withSelect( function( select ) {
+			debugger;
+			return {
+				aesop_galleries: select( 'core' ).getEntityRecords( 'postType', 'post' )
+			};
+		}*/
+		)( function( props ) {
+			debugger;
 			if ( ! props.aesop_galleries.data ) {
 				return "loading !";
 			}
@@ -165,6 +176,26 @@
 				)
 			];	
 		} ),
+		
+		/*edit: withSelect( function( select ) {
+			return {
+				posts: select( 'core' ).getEntityRecords( 'postType', 'post' )
+			};
+		} )( function( props ) {
+			if ( props.posts && props.posts.length === 0 ) {
+				return "No posts";
+			}
+			var className = props.className;
+			var post = props.posts[ 0 ];
+
+			return el(
+				'a',
+				{ className: className, href: post.link },
+				post.title.rendered
+			);
+		} ),*/
+
+
 
 		// The "save" property must be specified and must be a valid function.
 		save: function( props ) {
