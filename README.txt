@@ -32,6 +32,9 @@ Utilizing these components, writers and developers can build feature-rich, visua
 
 [http://aesopstoryengine.com/blog/](http://aesopstoryengine.com/blog/)
 
+Gutenberg Support: New Feature for v 1.10.0 
+Aesop blocks are found under the category "Aesop Story Engine"
+
 Panorama Mode: New features  v 1.9.10   
 [http://aesopstoryengine.com/releases/new-aesop-feature-panorama-image/](http://aesopstoryengine.com/releases/new-aesop-feature-panorama-image/)
 
