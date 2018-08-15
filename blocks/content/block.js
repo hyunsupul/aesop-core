@@ -201,12 +201,12 @@
 										});
 								},
 								options: [
-								  { value: 'off', label:  'Off'  },
-								  { value: 'inplace', label: 'In Place'  },
-								  { value: 'inplaceslow', label: 'In Place Slow'  },
-								  { value: 'frombelow', label: 'From Below'  },
-								  { value: 'fromleft', label: 'From Left'  },
-								  { value: 'fromright', label: 'From Right'  },
+								  { value: 'off', label:  __('Off')  },
+								  { value: 'inplace', label: __('In Place')  },
+								  { value: 'inplaceslow', label: __('In Place Slow')  },
+								  { value: 'frombelow', label: __('From Below')  },
+								  { value: 'fromleft', label: __('From Left')  },
+								  { value: 'fromright', label: __('From Right') },
 								],
 					}
 				),
@@ -222,12 +222,12 @@
 										});
 								},
 								options: [
-								  { value: 'off', label:  'Off'  },
-								  { value: 'inplace', label: 'In Place'  },
-								  { value: 'inplaceslow', label: 'In Place Slow'  },
-								  { value: 'frombelow', label: 'From Below'  },
-								  { value: 'fromleft', label: 'From Left'  },
-								  { value: 'fromright', label: 'From Right'  },
+								  { value: 'off', label:  __('Off')  },
+								  { value: 'inplace', label: __('In Place')  },
+								  { value: 'inplaceslow', label: __('In Place Slow')  },
+								  { value: 'frombelow', label: __('From Below')  },
+								  { value: 'fromleft', label: __('From Left')  },
+								  { value: 'fromright', label: __('From Right') },
 								],
 					}
 				),

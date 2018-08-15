@@ -7,13 +7,13 @@
  * @author    Nick Haskins <nick@aesopinteractive.com>
  * @license   GPL-2.0+
  * @link      http://aesopinteractive.com
- * @copyright 2016-2017 Hyun Supul <hyun@aesopinteractive.com>
+ * @copyright 2016-2018 Hyun Supul <hyun@aesopinteractive.com>
  *
  * @wordpress-plugin
  *  Plugin Name:       Aesop Story Engine
  *  Plugin URI:        http://aesopstoryengine.com
  *  Description:       Open-sourced suite of components that empower interactive storytelling.
- *  Version:           1.9.10.5
+ *  Version:           1.10.0
  *  Author:            Aesopinteractive 
  *  Author URI:        http://aesopstoryengine.com
  *  Text Domain:       aesop-core
@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set some constants
-define( 'AI_CORE_VERSION', '1.9.10.5' );
+define( 'AI_CORE_VERSION', '1.10.0' );
 define( 'AI_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AI_CORE_URL', plugins_url( '', __FILE__ ) );
 
@@ -74,10 +74,8 @@ if ( is_admin() ) {
 
 
 /**
- * BLOCK: Aesop Gutenberg Blocks.
+ * Aesop Gutenberg Support.
  */
-/*
-Uncomment the following lines to enable Gutenberg support*/
 require_once( AI_CORE_DIR . 'blocks/index.php' );
 
 add_filter( 'block_categories', function( $categories, $post ) {

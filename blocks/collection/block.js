@@ -8,7 +8,8 @@
 	var __ = wp.i18n.__; // The __() for internationalization.
 	var el = wp.element.createElement; // The wp.element.createElement() function to create elements.
 	var registerBlockType = wp.blocks.registerBlockType; // The registerBlockType() to register blocks.
-	var withAPIData = wp.components.withAPIData;
+	var withSelect = wp.data.withSelect;
+	
 	/**
 	 * Register Basic Block.
 	 *
@@ -54,21 +55,24 @@
 			},
 		},
 
-		// The "edit" property must be a valid function.
-		edit: withAPIData( function() {
+		edit: withSelect( function( select ) {
+			const { getCategories, isRequestingCategories } = select( 'core' );
 			return {
-				categories: '/wp/v2/categories'
+				categories: getCategories(), 
+				isRequesting: isRequestingCategories(), 
 			};
-		} )( function( props ) {
-			if ( ! props.categories.data ) {
-				return "loading !";
+		}
+		)( function( props ) {
+			
+			if (  props.isRequesting ) {
+				return __('loading !');
 			}
-			if ( props.categories.data.length === 0 ) {
-				return "No posts";
+			if ( props.categories.length === 0 ) {
+				return __('No Categories');
 			}
 			var cats = [];
-			for (var i = 0, len = props.categories.data.length; i < len; i++) {
-			   cats.push({value:props.categories.data[i].id, label:props.categories.data[i].name });
+			for (var i = 0, len = props.categories.length; i < len; i++) {
+			   cats.push({value:props.categories[i].id, label:props.categories[i].name });
 			}
 			
 			
@@ -172,12 +176,12 @@
 										});
 								},
 								options: [
-								  { value: 'off', label:  'Off'  },
-								  { value: 'inplace', label: 'In Place'  },
-								  { value: 'inplaceslow', label: 'In Place Slow'  },
-								  { value: 'frombelow', label: 'From Below'  },
-								  { value: 'fromleft', label: 'From Left'  },
-								  { value: 'fromright', label: 'From Right'  },
+								  { value: 'off', label:  __('Off')  },
+								  { value: 'inplace', label: __('In Place')  },
+								  { value: 'inplaceslow', label: __('In Place Slow')  },
+								  { value: 'frombelow', label: __('From Below')  },
+								  { value: 'fromleft', label: __('From Left')  },
+								  { value: 'fromright', label: __('From Right') },
 								],
 					}
 				),

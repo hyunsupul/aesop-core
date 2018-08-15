@@ -8,8 +8,6 @@
 	var __ = wp.i18n.__; // The __() for internationalization.
 	var el = wp.element.createElement; // The wp.element.createElement() function to create elements.
 	var registerBlockType = wp.blocks.registerBlockType; // The registerBlockType() to register blocks.
-	var withAPIData = wp.components.withAPIData;
-	
 	var withSelect = wp.data.withSelect;
 	/**
 	 * Register Basic Block.
@@ -43,22 +41,15 @@
 			}
 		},
 
-		// The "edit" property must be a valid function.
-		edit: withAPIData( function() {
+
+		edit: withSelect( function( select ) {
 			return {
-				aesop_galleries: '/wp/v2/ai-galleries'
+				aesop_galleries: select( 'core' ).getEntityRecords( 'postType', 'ai_galleries' )
 			};
 		}
-
-		/*edit: withSelect( function( select ) {
-			debugger;
-			return {
-				aesop_galleries: select( 'core' ).getEntityRecords( 'postType', 'post' )
-			};
-		}*/
 		)( function( props ) {
-			debugger;
-			if ( ! props.aesop_galleries.data ) {
+			
+			if ( ! props.aesop_galleries ) {
 				return "loading !";
 			}
 			
@@ -77,7 +68,7 @@
 						)
 			);
 			
-			if ( props.aesop_galleries.data.length === 0 ) {
+			if ( props.aesop_galleries.length === 0 ) {
 				var uis = [];
 
 				uis.push(label);
@@ -92,13 +83,13 @@
 			}
 			
 			var galleries = [];
-			for (var i = 0, len = props.aesop_galleries.data.length; i < len; i++) {
-			   galleries.push({value:props.aesop_galleries.data[i].id, label:props.aesop_galleries.data[i].title.rendered });
+			for (var i = 0, len = props.aesop_galleries.length; i < len; i++) {
+			   galleries.push({value:props.aesop_galleries[i].id, label:props.aesop_galleries[i].title.rendered });
 			}
 			
 			if (!props.attributes.id) {
 				props.setAttributes({
-					id: props.aesop_galleries.data[0].id
+					id: props.aesop_galleries[0].id
 				});
 			}
 			
@@ -133,12 +124,12 @@
 										});
 								},
 								options: [
-								  { value: 'off', label:  'Off'  },
-								  { value: 'inplace', label: 'In Place'  },
-								  { value: 'inplaceslow', label: 'In Place Slow'  },
-								  { value: 'frombelow', label: 'From Below'  },
-								  { value: 'fromleft', label: 'From Left'  },
-								  { value: 'fromright', label: 'From Right'  },
+								  { value: 'off', label:  __('Off')  },
+								  { value: 'inplace', label: __('In Place')  },
+								  { value: 'inplaceslow', label: __('In Place Slow')  },
+								  { value: 'frombelow', label: __('From Below')  },
+								  { value: 'fromleft', label: __('From Left')  },
+								  { value: 'fromright', label: __('From Right') },
 								],
 					},
 					wp.components.SelectControl, 
@@ -152,12 +143,12 @@
 										});
 								},
 								options: [
-								  { value: 'off', label:  'Off'  },
-								  { value: 'inplace', label: 'In Place'  },
-								  { value: 'inplaceslow', label: 'In Place Slow'  },
-								  { value: 'frombelow', label: 'From Below'  },
-								  { value: 'fromleft', label: 'From Left'  },
-								  { value: 'fromright', label: 'From Right'  },
+								  { value: 'off', label:  __('Off')  },
+								  { value: 'inplace', label: __('In Place')  },
+								  { value: 'inplaceslow', label: __('In Place Slow')  },
+								  { value: 'frombelow', label: __('From Below')  },
+								  { value: 'fromleft', label: __('From Left')  },
+								  { value: 'fromright', label: __('From Right') },
 								],
 					}
 				
@@ -176,26 +167,6 @@
 				)
 			];	
 		} ),
-		
-		/*edit: withSelect( function( select ) {
-			return {
-				posts: select( 'core' ).getEntityRecords( 'postType', 'post' )
-			};
-		} )( function( props ) {
-			if ( props.posts && props.posts.length === 0 ) {
-				return "No posts";
-			}
-			var className = props.className;
-			var post = props.posts[ 0 ];
-
-			return el(
-				'a',
-				{ className: className, href: post.link },
-				post.title.rendered
-			);
-		} ),*/
-
-
 
 		// The "save" property must be specified and must be a valid function.
 		save: function( props ) {
