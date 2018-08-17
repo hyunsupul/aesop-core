@@ -117,14 +117,10 @@ class AesopGalleryComponentAdmin {
 		wp_nonce_field( 'ase_gallery_meta', 'ase_gallery_meta_nonce' );
 		echo '</div>';
 
-		// get the existing images for this post prior to 1.4, else get the IDs set into post meta for 1.4
-		if ( AI_CORE_VERSION < 1.4 ) {
-			$get_image_ids  = get_post_gallery( $post->ID, false );
-			$image_ids   = explode( ',', $get_image_ids['ids'] );
-		} else {
-			$get_image_ids  = get_post_meta( $post->ID, '_ase_gallery_images', true );
-			$image_ids   = explode( ',', $get_image_ids );
-		}
+		// get the existing images for this post prior to 1.4, else get the IDs set into post meta for 1.4	
+		$get_image_ids  = get_post_meta( $post->ID, '_ase_gallery_images', true );
+		$image_ids   = explode( ',', $get_image_ids );
+
 
 		echo '<a id="ase-gallery-add-image" class="ase-gallery-image-placeholder button-primary"><i class="dashicons dashicons-plus">Add Images</i></a>';
 
