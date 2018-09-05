@@ -352,6 +352,8 @@ class AesopMapComponentAdmin {
 					function decodeMarkerData(mdata) {
 						return decodeURIComponent(JSON.parse(mdata));
 					}
+					
+					window.dispatchEvent(new Event('resize'));
 				});
 			</script>
 		<?php

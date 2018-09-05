@@ -147,7 +147,14 @@ class AesopMapComponent {
 					var map = L.map('aesop-map-component',{
 						scrollWheelZoom: false,
 						zoom: <?php echo wp_filter_nohtml_kses( round( $zoom ) );?>,
-						center: [<?php echo $start;?>]
+						<?php
+						// if Gutenberg is not active,
+						if (  !function_exists( 'register_block_type' ) ) {
+						?>
+						   center: [<?php echo $start;?>]
+						<?php
+						} 
+						?>
 					});
 
 					L.tileLayer('<?php echo $tiles;?>', {
@@ -187,7 +194,11 @@ class AesopMapComponent {
 				}
 
 			endif;
+			// if Gutenberg is active,
+			if (  function_exists( 'register_block_type' ) ) {
 ?>
+                 map.panTo(new L.LatLng(<?php echo $loc;?>));
+		    <?php }?>
 			</script>
 
 		<?php }//end if
