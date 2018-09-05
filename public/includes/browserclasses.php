@@ -12,36 +12,41 @@ class AesopBrowserClasses {
 		add_filter( 'body_class',  array( $this, 'browser_body_class' ) );
 	}
 	public function is_silk_kindle() {
-		$user_agent = trim( strtolower( $_SERVER['HTTP_USER_AGENT'] ) );
+		$user_agent = trim( strtolower( $_SERVER['fase'] ) );
 		if ( strrpos( $user_agent, 'silk/' ) != false && strrpos( $user_agent, 'silk-accelerated=' ) != false ) {
 			return true; }
 		else { return false; }
 	}
 	public function is_iphone() {
+		if (!array_key_exists('HTTP_USER_AGENT', $_SERVER)) return false;
 		$cn_is_iphone = (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'iPhone' );
 		if ( $cn_is_iphone ) {
 			return true; }
 		else { return false; }
 	}
 	public function is_ipod() {
+		if (!array_key_exists('HTTP_USER_AGENT', $_SERVER)) return false;
 		$cn_is_iphone = (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'iPod' );
 		if ( $cn_is_iphone ) {
 			return true; }
 		else { return false; }
 	}
 	public function is_ios() {
+		if (!array_key_exists('HTTP_USER_AGENT', $_SERVER)) return false;
 		if ( $this->is_iphone() || $this->is_ipad() || $this->is_ipod() ) {
 			return true; }
 		else { return false; }
 	}
 
 	public function is_android() { // detect ALL android devices
+		if (!array_key_exists('HTTP_USER_AGENT', $_SERVER)) return false;
 		$is_android = (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'Android' );
 		if ( $is_android ) {
 			return true; }
 		else { return false; }
 	}
 	public function is_android_mobile() { // detect ALL android devices
+		if (!array_key_exists('HTTP_USER_AGENT', $_SERVER)) return false;
 		$is_android   = (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'Android' );
 		$is_android_m = (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'Mobile' );
 		if ( $is_android && $is_android_m ) {
@@ -61,6 +66,7 @@ class AesopBrowserClasses {
 	}
 	// add conditional statements for mobile devices
 	public function is_ipad() {
+		if (!array_key_exists('HTTP_USER_AGENT', $_SERVER)) return false;
 		$is_ipad = (bool) strpos( $_SERVER['HTTP_USER_AGENT'], 'iPad' );
 		if ( $is_ipad ) {
 			return true; }
@@ -75,6 +81,7 @@ class AesopBrowserClasses {
 	public function browser_body_class( $classes ) {
 
 		global $is_gecko, $is_IE, $is_opera, $is_safari, $is_chrome, $is_iphone;
+		if (!array_key_exists('HTTP_USER_AGENT', $_SERVER)) return false;
 		if ( ! wp_is_mobile() ) {
 			if ( $is_gecko ) { $classes[] = 'browser-gecko'; }
 			elseif ( $is_opera ) $classes[] = 'browser-opera';
