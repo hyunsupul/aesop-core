@@ -60,12 +60,12 @@ function aesop_component_exists( $component = '' ) {
 		return true;
 
 	} else {
-		if (  function_exists( 'gutenberg_content_has_blocks' ) ) {
+		if (  function_exists( 'has_blocks' ) ) {
 			if ($component == 'timeline_stop') {
 				$component = 'timeline';
 			}
 			// if Gutenberg is on, check for Aesop Gutenberg blocks
-			if (  gutenberg_content_has_blocks( $post->post_content ) ) {
+			if ( has_blocks( $post->post_content ) ) {
 				// check if the given Aesop block exists
 				$blocks = gutenberg_parse_blocks($post->post_content );
 				foreach ($blocks as &$block) {
