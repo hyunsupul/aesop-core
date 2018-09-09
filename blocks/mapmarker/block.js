@@ -42,9 +42,9 @@
 			el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Title') ),
 				el( wp.components.TextControl, {
 						//label: __( '' ),
-						value: attributes.height,
+						value: attributes.title,
 						onChange: function( content ) {
-							setAttributes( { height: content } );
+							setAttributes( { title: content } );
 						},
 					} 
 				),
