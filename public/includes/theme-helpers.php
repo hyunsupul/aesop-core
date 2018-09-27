@@ -77,6 +77,7 @@ function aesop_component_exists( $component = '' ) {
 						if ( $block->blockName == 'ase/'.$component ) {
 							return true;
 						}
+
 					}
 				}
 			}
