@@ -69,8 +69,14 @@ function aesop_component_exists( $component = '' ) {
 				// check if the given Aesop block exists
 				$blocks = gutenberg_parse_blocks($post->post_content );
 				foreach ($blocks as &$block) {
-					if ( $block->blockName == 'ase/'.$component ) {
-						return true;
+					if ( is_array( $block )) {
+						if ( array_key_exists('blockName', $block) && $block['blockName'] == 'ase/'.$component ) {
+							return true;
+						}
+					} else {
+						if ( $block->blockName == 'ase/'.$component ) {
+							return true;
+						}
 					}
 				}
 			}
