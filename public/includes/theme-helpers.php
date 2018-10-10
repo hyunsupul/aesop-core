@@ -65,7 +65,7 @@ function aesop_component_exists( $component = '' ) {
 				$component = 'timeline';
 			}
 			// if Gutenberg is on, check for Aesop Gutenberg blocks
-			if ( has_blocks( $post->post_content ) ) {
+			if ( is_object( $post) && has_blocks( $post->post_content ) ) {
 				// check if the given Aesop block exists
 				$blocks = gutenberg_parse_blocks($post->post_content );
 				foreach ($blocks as &$block) {
