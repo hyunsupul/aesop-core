@@ -173,7 +173,8 @@ class AesopChapterHeadingComponent {
 		{
 		   $contentClass = '.aesop-entry-content';
 		} else {
-		   $contentClass = apply_filters( 'aesop_chapter_scroll_container', '.entry-content' );
+		   $content_selector = get_option( 'ase_chapter_content_class' );
+		   $contentClass = apply_filters( 'aesop_chapter_scroll_container', $content_selector );
 		}
 		
 		$animate = get_option( 'ase_chapter_no_animate_scroll' ) ? 'false' : 'true';

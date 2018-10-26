@@ -90,6 +90,19 @@ function AesopStoryEngineOptions_register( $wp_customize ) {
 			'transport' => 'refresh'
 		) ) );
 		
+		$wp_customize->add_setting( 'ase_chapter_content_class', array(
+				'default'   => '.entry-content',
+				'type'    => 'option',
+				'sanitize_callback' => AesopStoryEngineOptions_sanitize_text_field()
+			) );
+		$wp_customize->add_control( 'ase_chapter_content_class', array(
+				'label'   => __( 'Selector for the Post Content.', 'aesop-core'),
+                'description' => __('ASE Chapter Component uses this information to search the chapters. The default should work for most themes.', 'aesop-core' ),
+				'section'   => 'aesop_story_engine',
+				'settings'   => 'ase_chapter_content_class',
+				'type'    => 'text'
+			) );
+		
 
 			
 		$wp_customize->add_setting( 'ase_chapter_no_animate_scroll', array(
