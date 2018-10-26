@@ -67,18 +67,28 @@ function aesop_component_exists( $component = '' ) {
 			// if Gutenberg is on, check for Aesop Gutenberg blocks
 			if ( is_object( $post) && has_blocks( $post->post_content ) ) {
 				// check if the given Aesop block exists
-				$blocks = gutenberg_parse_blocks($post->post_content );
-				foreach ($blocks as &$block) {
-					if ( is_array( $block )) {
-						if ( array_key_exists('blockName', $block) && $block['blockName'] == 'ase/'.$component ) {
-							return true;
-						}
-					} else {
-						if ( $block->blockName == 'ase/'.$component ) {
-							return true;
+				// If the Gutenberg plugin is installed
+				if ( function_exists( 'gutenberg_parse_blocks' ) ) :
+					$blocks = gutenberg_parse_blocks($post->post_content );
+				
+				// If WordPress is upgraded to 5.0
+				elseif ( function_exists( 'parse_blocks' ) ) :
+					$blocks = parse_blocks($post->post_content );
+				endif;
+				
+				if ( isset( $blocks ) ) :
+					foreach ($blocks as &$block) {
+						if ( is_array( $block )) {
+							if ( array_key_exists('blockName', $block) && $block['blockName'] == 'ase/'.$component ) {
+								return true;
+							}
+						} else {
+							if ( $block->blockName == 'ase/'.$component ) {
+								return true;
+							}
 						}
 					}
-				}
+				endif;
 			}
 		}
 		return false;
