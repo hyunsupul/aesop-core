@@ -119,7 +119,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 						}
 
-					$(window).load(function(){
+					$(window).on('load',function(){
 					    setHeight();
 					});
 					

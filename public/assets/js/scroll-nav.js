@@ -401,7 +401,7 @@
     } else {
       // Method doesn't exist
 
-      $.error( 'Method ' +  method + ' does not exist in the scrollNav plugin' );
+      //$.error( 'Method ' +  method + ' does not exist in the scrollNav plugin' );
       return this;
     }
 

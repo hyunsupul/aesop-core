@@ -261,7 +261,7 @@ class AesopCoreGallery {
 			
 			jQuery(document).ready(function($){
 				$('.aesop-lazy-img2').unveil2(0,function() {
-				  	$(this).load(function() {
+				  	$(this).on('load',function() {
 				    	this.style.opacity = 1;
 				  	});
 				});
@@ -535,7 +535,7 @@ class AesopCoreGallery {
 ?>
 		<!-- Aesop Photoset Gallery -->
 		<script>
-			jQuery(window).load(function(){
+			jQuery(window).on('load',function(){
 				jQuery('.aesop-gallery-photoset').photosetGrid({
 				  	gutter: "<?php echo absint( $space ).'px';?>",
 				  	<?php if ( $lightbox ) { ?>
