@@ -31,6 +31,9 @@
 			title : {
 				type: 'string',
 			},
+			collectionArr : {
+				type: 'array',
+			},
 			collection : {
 				type: 'string',
 			},
@@ -58,8 +61,8 @@
 		edit: withSelect( function( select ) {
 			const { getCategories, isRequestingCategories } = select( 'core' );
 			return {
-				categories: getCategories(), 
-				isRequesting: isRequestingCategories(), 
+				categories: select("core").getEntityRecords('taxonomy', 'category', { per_page: -1 }), 
+				isRequesting: wp.data.select("core/data").isResolving('core', 'getEntityRecords', [ 'taxonomy', 'category', { per_page: -1 } ]), 
 			};
 		}
 		)( function( props ) {
@@ -95,12 +98,14 @@
 				el(
 					wp.components.SelectControl, 
 					{ 
+					            multiple: true,
 								type: 'string',
 								label: __( 'Category' ),
-								value: props.attributes.collection,
+								value: props.attributes.collectionArr,
 								onChange: function( newVal ) {
 										props.setAttributes({
-												collection: newVal
+												collectionArr: newVal,
+												collection: newVal.join(',')
 										});
 								},
 								options: cats,
