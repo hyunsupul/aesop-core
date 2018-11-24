@@ -212,7 +212,7 @@ jQuery(document).ready(function($) {
 		$('#aesop-generator-settings .aesop-generator-attr').each(function() {
 			if ( $(this).val() !== '' ) {
 				var val = $(this).val();
-				if ($(this).attr('name') != "floatermedia" && $(this).attr('name') != "overlay_content") {
+				if ($(this).attr('name') != "floatermedia" && $(this).attr('name') != "overlay_content" && $(this).attr('name') != "credit" &&  $(this).attr('name') != "caption") {
 					// encode special chars so we don't break html
 				    val = SpecialCharEncode(val);
 				} else {

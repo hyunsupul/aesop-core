@@ -99,7 +99,7 @@ class AesopCoreGallery {
 			}
 
 			if ( $gallery_caption ) {
-				printf( '<p class="aesop-component-caption">%s</p>', esc_html( $gallery_caption ) );
+				printf( '<p class="aesop-component-caption">%s</p>', $gallery_caption );
 			}
 
 			// provide the edit link to the backend edit if Aesop Editor is not active

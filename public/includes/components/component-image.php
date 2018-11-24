@@ -133,7 +133,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 			echo aesop_component_media_filter( $atts['caption'] );
 
 			if ( $atts['credit'] ) { ?>
-								<p class="aesop-cap-cred"><?php echo esc_html( $atts['credit'] );?></p>
+								<p class="aesop-cap-cred"><?php echo  $atts['credit'] ;?></p>
 							<?php 
             } ?>
 

@@ -232,7 +232,7 @@ class AesopGalleryComponentAdmin {
 			<div class="ase-gallery-opts--single">
 				<label for="aesop_gallery_caption"><?php _e( 'Gallery Caption', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Add an optional caption for the gallery.', 'aesop-core' );?></p>
-				<textarea name="aesop_gallery_caption"><?php echo esc_html( $caption );?></textarea>
+				<textarea name="aesop_gallery_caption"><?php echo  $caption ;?></textarea>
 			</div>
 
 		</div>
@@ -475,8 +475,14 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, 'aesop_gallery_type', sanitize_text_field( trim( $type ) ) );
 
 		// global
+		$allowed_html = array(
+		  'a' => array(
+			'href' => array(),
+		  )
+		);
+		$caption = wp_kses( $caption, $allowed_html );
 		update_post_meta( $post_id, 'aesop_gallery_width', sanitize_text_field( $width ) );
-		update_post_meta( $post_id, 'aesop_gallery_caption', sanitize_text_field( $caption ) );
+		update_post_meta( $post_id, 'aesop_gallery_caption', $caption  );
 
 		// grid
 		update_post_meta( $post_id, 'aesop_grid_gallery_width', absint( $grid_item_width ) );
