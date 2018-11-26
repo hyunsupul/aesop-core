@@ -185,6 +185,9 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 2.0.3 =
+* Changes to image and gallery captions
+
 = 2.0.2 =
 *FIX Gutenberg 4.1.1 fix
 
