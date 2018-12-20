@@ -596,19 +596,20 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'select',
 						'values'  => array(
 							array(
+								'value' => 'play_scroll',
+								'name' => __( 'Play/Pause on Scroll', 'aesop-core' )
+							),
+							array(
 								'value' => 'on',
 								'name' => __( 'On', 'aesop-core' )
 							),
 							array(
 								'value' => 'off',
 								'name' => __( 'Off', 'aesop-core' )
-							),
-							array(
-								'value' => 'play_scroll',
-								'name' => __( 'Play/Pause on Scroll', 'aesop-core' )
 							)
+							
 						),
-						'default' => 'img',
+						'default' => 'play_scroll',
 						'desc'  => __( 'Autoplay Setting for Video', 'aesop-core' ),
 						'tip'  => __( 'Autoplay setting. Only used if the type is set to video.', 'aesop-core' )
 					),
@@ -1029,17 +1030,17 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'desc'   => __( 'Video ID', 'aesop-core' ),
 						'tip'  => __( 'The video ID can be found within the video URL and typically looks something like <code>s8J2Ge4</code>. For Viddler videos, enter the full URL instead.', 'aesop-core' )
 					),
-					'caption'   => array(
-						'type'  => 'text_area',
-						'default'  => '',
-						'desc'   => __( 'Caption', 'aesop-core' ),
-						'tip'  => __( 'Optionally display a caption below the video.', 'aesop-core' )
-					),
 					'hosted'   => array(
 						'type'  => 'media_upload',
 						'default'  => '',
 						'desc'   => __( 'Video URL (only if using <em>self</em> as video source)', 'aesop-core' ),
 						'tip'  => __( 'This is only used if you are hosting the video yourself and have set the Video Source (above) to <em>self</em>. Click <em>Select Media</em> to open the WordPress Media Library.', 'aesop-core' )
+					),
+					'caption'   => array(
+						'type'  => 'text_area',
+						'default'  => '',
+						'desc'   => __( 'Caption', 'aesop-core' ),
+						'tip'  => __( 'Optionally display a caption below the video.', 'aesop-core' )
 					),
 					'disable_for_mobile'    => array(
 						'type'  => 'select',
@@ -1079,6 +1080,22 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'desc'   => __( 'Video Loop', 'aesop-core' ),
 						'tip'  => __( 'Enable the video to loop.', 'aesop-core' )
 					),
+					'controls'    => array(
+						'type'  => 'select',
+						'values'  => array(
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
+							),
+							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							)
+						),
+						'default'  => 'off',
+						'desc'   => __( 'Video Controls', 'aesop-core' ),
+						'tip'  => __( 'Hide or show the controls for the video player.', 'aesop-core' )
+					),
 					'autoplay'    => array(
 						'type'  => 'select',
 						'values'  => array(
@@ -1095,21 +1112,22 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'desc'   => __( 'Autoplay', 'aesop-core' ),
 						'tip'  => __( 'Should the video automatically start playing.', 'aesop-core' )
 					),
-					'controls'    => array(
+
+					'mute'    => array(
 						'type'  => 'select',
 						'values'  => array(
 							array(
-								'value' => 'on',
-								'name' => __( 'On', 'aesop-core' )
-							),
-							array(
 								'value' => 'off',
 								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
 							)
 						),
 						'default'  => 'off',
-						'desc'   => __( 'Video Controls', 'aesop-core' ),
-						'tip'  => __( 'Hide or show the controls for the video player.', 'aesop-core' )
+						'desc'   => __( 'Mute', 'aesop-core' ),
+						'tip'  => __( 'Mute Video. On Chrome, using Youtube or Vimeo, you need to mute the video to have autoplay work.', 'aesop-core' )
 					),
 					'viewstart'  => array(
 						'type'  => 'select',
@@ -1164,11 +1182,11 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 									jQuery(".aesop-video-hosted,.aesop-video-disable_for_mobile,.aesop-video-poster_frame,.aesop-video-loop,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart, .aesop-video-viewend").slideUp();
 								}
 								else if (src=="youtube") {
-									jQuery(".aesop-video-id,.aesop-video-loop,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart,.aesop-video-viewend").slideDown();
+									jQuery(".aesop-video-id,.aesop-video-loop,.aesop-video-mute,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart,.aesop-video-viewend").slideDown();
 									jQuery(".aesop-video-hosted").slideUp();
 								}
 								else if (src=="vimeo") {
-									jQuery(".aesop-video-id,.aesop-video-loop,.aesop-video-autoplay,.aesop-video-viewstart, .aesop-video-viewend").slideDown();
+									jQuery(".aesop-video-id,.aesop-video-loop,.aesop-video-mute,.aesop-video-autoplay,.aesop-video-viewstart, .aesop-video-viewend").slideDown();
 									jQuery(".aesop-video-hosted,.aesop-video-controls").slideUp();
 								}
 								else if (src=="self") {

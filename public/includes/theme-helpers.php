@@ -404,7 +404,6 @@ function aesop_gallery_component_data_atts( $postid = '' ) {
 			'id'     => "",
 			'url'    => $url
 		);
-		//return $atts;
 		if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match)) {
 			$atts['id'] = $match[1];
 			$atts['type'] = 'youtube';
@@ -414,6 +413,9 @@ function aesop_gallery_component_data_atts( $postid = '' ) {
 			$atts['id'] = $match[5];
 			$atts['type'] = 'vimeo';
 			return $atts;
+		} else {
+			// not youtube or vimeo, assume self hosted for now
+			$atts['type'] = 'self';
 		}
 		return $atts;
 	}

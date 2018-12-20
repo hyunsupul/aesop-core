@@ -28,6 +28,8 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			'vidwidth'  => '',
 			'vidheight' => '',
 			'poster_frame' =>'',
+			'mute' =>'on',
+			'inside_chapter' => '',    // this is meant to be only turned on when the Chapter Component uses it for video background.
 			'force_fullwidth'=>'off',
 			'revealfx'  => '',
 			'overlay_revealfx'          => ''
@@ -50,6 +52,8 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		}
 
 		$loopstatus  = 'on' == $atts['loop'] ? true : false;
+		$inside_chapter = 'on' == $atts['inside_chapter'] ? true : false;
+		$mute  = 'on' == $atts['mute'] || ($inside_chapter && $atts['src'] != 'self') ? true : false;
 		$autoplaystatus = 'on' == $atts['autoplay'] ? true : false;
 		$disable_for_mobile = 'on' == $atts['disable_for_mobile'] ? true : false;
 		$controlstatus = 'on' == $atts['controls'] ? 'controls-visible' : 'controls-hidden';
@@ -105,7 +109,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 											offset: '30%',
 											handler: function(direction){
 												if (!playing) {
-												     $('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
+												     $('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button, #aesop-video-<?php echo esc_attr( $unique );?> mejs-overlay-button').trigger('click');
 													 playing = true;
 												}
 											}
@@ -116,7 +120,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 											offset: '100%',
 											handler: function(direction){
 												if (direction == 'up' && playing) {
-													$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
+													$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button, #aesop-video-<?php echo esc_attr( $unique );?> mejs-overlay-button').trigger('click');
 													playing = false;
 												}
 											}
@@ -125,7 +129,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 											offset: '-70%',
 											handler: function(direction){
 												if (playing) {
-												    $('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
+												    $('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button, #aesop-video-<?php echo esc_attr( $unique );?> mejs-overlay-button').trigger('click');
 													playing = false;
 												}
 											}
@@ -165,21 +169,28 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 							
 						<?php	
 						}
-						printf( '<iframe id="aesop-vm-%s" src="//player.vimeo.com/video/%s?byline=0&controls=0%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), $vmparams, esc_attr( $iframe_size ) );
+						printf( '<iframe id="aesop-vm-%s" src="//player.vimeo.com/video/%s?api=1&&player_id=aesop-vm-%s&controls=0%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), esc_attr( $unique ),$vmparams, esc_attr( $iframe_size ) );
 						
 						if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'] || 'pip' == $atts['viewend'])&& !wp_is_mobile()) {
 						?>
-						   <script src="https://player.vimeo.com/api/player.js"></script>
+						   <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+
 							<script>
 							jQuery(document).ready(function($){
 								// If multiple elements are selected, it will use the first element.
-								var player = new Vimeo.Player($('#aesop-vm-<?php echo esc_attr( $unique );?>'));
+								 var vimeo_iframe = $('#aesop-vm-<?php echo esc_attr( $unique );?>')[0];
+								 var player = $f(vimeo_iframe);								
+								 player.addEvent('ready', function() {
+									 <?php if ( $mute ) { ?>
+									 player.api('setVolume', 0);
+									 <?php } ?>
 								
-								<?php if ( 'on' == $atts['viewstart'] ) { ?>
+								
+									<?php if ( 'on' == $atts['viewstart'] ) { ?>
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 											offset: '25%',
 											handler: function(direction){
-												player.play();
+												player.api('play');
 											}
 										});
 										<?php } ?>
@@ -188,14 +199,14 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 											offset: '100%',
 											handler: function(direction){
 												if (direction == 'up') {
-													player.pause();
+													player.api('pause');
 												}
 											}
 										});
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 											offset: '-70%',
 											handler: function(direction){
-												player.pause();
+												player.api('pause');
 											}
 										});
 										<?php } else if ('pip' == $atts['viewend']) { ?>
@@ -217,7 +228,9 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 												});
 											}
 										});
-										<?php } ?>
+									<?php } ?>
+									
+								});
 
 							});
 							</script>
@@ -230,6 +243,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 					case 'youtube':
 						$ytparams = $loopstatus ? sprintf ("&loop=1&playlist=%s" ,esc_attr( $atts['id'])) : "";
 						$ytparams = $ytparams.($autoplaystatus ? "&autoplay=1" : "");
+						$ytparams = $ytparams.($mute ? "&mute=1" : "");
 						$ytparams = $ytparams.($controlstatus=='controls-visible' ? "" : "&controls=0&showinfo=0");
 						
 						printf( '<iframe id ="aesop-ytb-%s"  src="//www.youtube.com/embed/%s?rel=0&enablejsapi=1&wmode=transparent%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0" width="100%%"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), $ytparams, esc_attr( $iframe_size ) );
@@ -271,7 +285,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 											offset: '30%',
 											handler: function(direction){
-													aseYTBplayer<?php echo esc_attr( $instance );?>.playVideo();
+												aseYTBplayer<?php echo esc_attr( $instance );?>.playVideo();
 											}
 										});
 										
@@ -338,24 +352,28 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 						break;
 					case 'self':
 						if (!$disable_for_mobile || !wp_is_mobile() ) {
-							
+							$video_code ="";
 							if ($atts['poster_frame']!=='') {
+								
 								?>
 								<script>
 									jQuery(document).ready(function($){
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').click( function(){
 											$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-poster' ).remove();
-											$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button').trigger('click');
+											$('#aesop-video-<?php echo esc_attr( $unique );?> .mejs-playpause-button button, #aesop-video-<?php echo esc_attr( $unique );?> mejs-overlay-button').trigger('click');
 											$('#aesop-video-<?php echo esc_attr( $unique );?>').off('click');
-											//$('#aesop-video-<?php echo esc_attr( $unique );?>' ).hide();
 										});
 									});
 								</script>
 								<?php
-								echo do_shortcode( '[video src="'.$atts['hosted'].'" loop="'.esc_attr( $loopstatus ).'" autoplay="'.esc_attr( $autoplaystatus ).'" poster="'.$atts['poster_frame'].'"]' );
+								$video_code = do_shortcode( '[video src="'.$atts['hosted'].'" loop="'.esc_attr( $loopstatus ).'" autoplay="'.esc_attr( $autoplaystatus ).'" poster="'.$atts['poster_frame'].'"]' );
 							} else {
-								echo do_shortcode( '[video src="'.$atts['hosted'].'" loop="'.esc_attr( $loopstatus ).'" autoplay="'.esc_attr( $autoplaystatus ).'"]' );
+								$video_code = do_shortcode( '[video src="'.$atts['hosted'].'" loop="'.esc_attr( $loopstatus ).'" autoplay="'.esc_attr( $autoplaystatus ).'"]' );
 							}
+							if ($mute) {
+								$video_code = str_replace( '<video', '<video muted', $video_code );
+							}
+							echo $video_code;
 						} else {
 							// disable video for mobile
 							if ($atts['poster_frame']!=='') {

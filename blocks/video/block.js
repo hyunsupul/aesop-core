@@ -28,7 +28,8 @@
 		
 		attributes: {
 			src : {
-				type: 'string'
+				type: 'string',
+				default: 'youtube',
 			},
 			id : {
 				type: 'string'
@@ -43,6 +44,9 @@
 				type: 'string'
 			},
 			autoplay:{
+				type : 'boolean'
+			},
+			mute:{
 				type : 'boolean'
 			},
 			controls:{
@@ -78,56 +82,7 @@
 			
 			
 			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
-				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Video Source') ),
-				el(
-					wp.components.SelectControl, 
-					{ 
-								type: 'string',
-								label: __( 'Choose an available source for the video.' ),
-								value: attributes.src,
-								onChange: function( newVal ) {
-										setAttributes({
-												src: newVal
-										});
-								},
-								options: [
-								  { value: 'youtube', label:  'Youtube'  },
-								  { value: 'vimeo', label: 'Vimeo'  },
-								  { value: 'kickstarter', label: 'Kickstarter'  },
-								  { value: 'viddler', label: 'Viddler'  },
-								  { value: 'instagram', label: 'Instagram'  },
-								  { value: 'dailymotion', label: 'Dailymotion'  },
-								  { value: 'vine', label: 'Vine'  },
-								  { value: 'wistia', label: 'Wistia'  },
-								  { value: 'self', label: 'Self Hosted'  }
-								],
-					}
-				),
-				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Video ID') ),
-				attributes.src != 'self' && el( wp.components.TextControl, {
-						label: __( 'The video ID can be found within the video URL and typically looks something like s8J2Ge4. For Viddler videos, enter the full URL instead.' ),
-						value: attributes.id,
-						onChange: function( content ) {
-							setAttributes( { id: content } );
-						},
-					} 
-				),
-				attributes.src == 'self' && el(
-					wp.editor.MediaUpload,
-					{
-							title: __( 'Select Video File' ),
-							onSelect: onSelectMedia,
-							type: 'image',
-							value: attributes.src,
-							render: function( obj ) {
-										return el( wp.components.Button, {
-									  className:  'button button-large',
-									  onClick: obj.open
-									},
-									 __( 'Set Video File' ) 
-								); }
-					}
-				),
+				
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Caption') ),
 				el( wp.components.TextControl, {
 						label: __( 'Optionally display a caption below the video.' ),
@@ -145,6 +100,17 @@
 						checked: !! attributes.viewstart,
 						onChange: function( content ) {
 							setAttributes( { autoplay: content } );
+						}
+					}
+				),
+				(attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
+				&& el(
+					wp.components.ToggleControl,
+					{
+						label: __( 'Mute Video. On Chrome, when using Youtube or Vimeo, you need to mute the video to have autoplay work.' ),
+						checked: !! attributes.mute,
+						onChange: function( content ) {
+							setAttributes( { mute: content } );
 						}
 					}
 				),
@@ -273,12 +239,45 @@
 				)
 			);
 			
-			var controls = el( 'div', { className: '' }
-				,
-				/*isSelected &&  el(
+			var controls = el( 'div', { className: '' },
+				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Video Source') ),
+				el(
+					wp.components.SelectControl, 
+					{ 
+								type: 'string',
+								label: __( 'Choose an available source for the video.' ),
+								value: attributes.src,
+								onChange: function( newVal ) {
+										setAttributes({
+												src: newVal
+										});
+								},
+								options: [
+								  { value: 'youtube', label:  'Youtube'  },
+								  { value: 'vimeo', label: 'Vimeo'  },
+								  { value: 'kickstarter', label: 'Kickstarter'  },
+								  { value: 'viddler', label: 'Viddler'  },
+								  { value: 'instagram', label: 'Instagram'  },
+								  { value: 'dailymotion', label: 'Dailymotion'  },
+								  { value: 'vine', label: 'Vine'  },
+								  { value: 'wistia', label: 'Wistia'  },
+								  { value: 'self', label: 'Self Hosted'  }
+								],
+					}
+				),
+				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Video ID') ),
+				attributes.src != 'self' && el( wp.components.TextControl, {
+						label: __( 'The video ID can be found within the video URL and typically looks something like s8J2Ge4. For Viddler videos, enter the full URL instead.' ),
+						value: attributes.id,
+						onChange: function( content ) {
+							setAttributes( { id: content } );
+						},
+					} 
+				),
+				attributes.src == 'self' && el(
 					wp.editor.MediaUpload,
 					{
-							title: __( 'Select Image' ),
+							title: __( 'Select Video File' ),
 							onSelect: onSelectMedia,
 							type: 'image',
 							value: attributes.src,
@@ -287,15 +286,10 @@
 									  className:  'button button-large',
 									  onClick: obj.open
 									},
-									 __( 'Set Image Source' ) 
+									 __( 'Set Video File' ) 
 								); }
 					}
-				),
-				attributes.img && el(
-					'img', // Tag type.
-					{ 
-					src: attributes.img}
-				)*/
+				)
 			);
 			var label = el(
 						'div', 

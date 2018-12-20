@@ -108,7 +108,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 								break;
 						}
                         						
-						$vidcode = do_shortcode( '[aesop_video src="'.$vid_atts['type'].'" id="'.$vid_atts['id'].'"  hosted="'.$atts['img'].'" loop="on" '.$autoplay.' disable_for_mobile="off"]' );  
+						$vidcode = do_shortcode( '[aesop_video src="'.$vid_atts['type'].'" id="'.$vid_atts['id'].'"  hosted="'.$atts['img'].'" loop="on" '.$autoplay.' disable_for_mobile="off" inside_chapter="on"]' );  
 						//echo preg_replace('/<div (id=".*?").*>/i','<div $1>', $vidcode);
 						echo $vidcode;
 						
