@@ -11,7 +11,7 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 		wp_enqueue_script( 'aesop-map-script', AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.js' );
 		wp_enqueue_style( 'aesop-map-style', AI_CORE_URL.'/public/includes/libs/leaflet/leaflet.css', AI_CORE_VERSION, true );
 
-		$atts = apply_filters( 'aesop_map_defaults', shortcode_atts( $defaults, $atts ) );
+		$atts = apply_filters( 'aesop_map_defaults', shortcode_atts( $defaults, $atts, 'aesop_map' ) );
 
 		// sticky maps class
 		$sticky = 'off' !== $atts['sticky'] ? sprintf( 'aesop-sticky-map-%s', esc_attr( $atts['sticky'] ) ) : null;
@@ -267,7 +267,7 @@ class AesopMapComponent {
 
 		$defaults = array( 'title' => '', 'hidden' => '' );
 
-		$atts = shortcode_atts( $defaults, $atts );
+		$atts = shortcode_atts( $defaults, $atts, 'aesop_map_marker' );
 
 		// let this be used multiple times
 		static $instance = 0;

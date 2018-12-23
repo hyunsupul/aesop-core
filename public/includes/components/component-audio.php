@@ -17,7 +17,7 @@ if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
 			'loop'     	=> 'off',
 			'hidden'   	=> ''
 		);
-		$atts     = apply_filters( 'aesop_audio_defaults', shortcode_atts( $defaults, $atts ) );
+		$atts     = apply_filters( 'aesop_audio_defaults', shortcode_atts( $defaults, $atts, 'aesop_audio') );
 
 		// let this be used multiple times
 		static $instance = 0;

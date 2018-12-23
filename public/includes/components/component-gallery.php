@@ -33,8 +33,8 @@ class AesopCoreGallery {
 		
 
 		// attributes
-		$defaults  = array( 'id' => '', 'revealfx' => 'off' );
-		$atts   = shortcode_atts( $defaults, $atts );
+		$defaults  = array( 'id' => '', 'revealfx' => 'off', 'no_gallery' => 'off' );
+		$atts   = apply_filters( 'aesop_gallery_defaults', shortcode_atts( $defaults, $atts, 'aesop_gallery' ));
 
 		// gallery ID
 		$gallery_id = isset( $atts['id'] ) ? (int) $atts['id'] : false;
@@ -71,8 +71,10 @@ class AesopCoreGallery {
 
 		do_action( 'aesop_gallery_inside_top', $type, $gallery_id, $atts, $unique ); // action
 		
+		$image_ids = apply_filters( 'aesop_gallery_image_ids', $image_ids ); 
+		
 
-		if ( ! empty( $image_ids ) ) {
+		if ( ! empty( $image_ids ) && $atts['no_gallery'] != 'on' ) {
 
 			switch ( $type ) {
 				case 'thumbnail':

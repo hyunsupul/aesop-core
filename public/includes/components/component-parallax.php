@@ -27,7 +27,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 			'floaterspeed'		=> 1 // not used
 		);
 
-		$atts = apply_filters( 'aesop_parallax_defaults', shortcode_atts( $defaults, $atts ) );
+		$atts = apply_filters( 'aesop_parallax_defaults', shortcode_atts( $defaults, $atts, 'aesop_parallax' ) );
 		$floater_ratio =0;
 		$floater_distance = 0;
 		

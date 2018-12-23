@@ -34,7 +34,7 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
 		$instance++;
 		$unique = sprintf( '%s-%s', get_the_ID(), $instance );
 
-		$atts = apply_filters( 'aesop_character_defaults', shortcode_atts( $defaults, $atts ) );
+		$atts = apply_filters( 'aesop_character_defaults', shortcode_atts( $defaults, $atts , 'aesop_character') );
 
 		// custom classes
 		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'character', '' ) : null;

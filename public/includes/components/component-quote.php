@@ -25,7 +25,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 			'revealfx'  => ''
 
 		);
-		$atts = apply_filters( 'aesop_quote_defaults', shortcode_atts( $defaults, $atts ) );
+		$atts = apply_filters( 'aesop_quote_defaults', shortcode_atts( $defaults, $atts, 'aesop_quote' ) );
 
 		// let this be used multiple times
 		static $instance = 0;

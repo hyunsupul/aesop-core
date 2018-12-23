@@ -28,13 +28,13 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			'vidwidth'  => '',
 			'vidheight' => '',
 			'poster_frame' =>'',
-			'mute' =>'on',
+			'mute' =>'off',
 			'inside_chapter' => '',    // this is meant to be only turned on when the Chapter Component uses it for video background.
 			'force_fullwidth'=>'off',
 			'revealfx'  => '',
 			'overlay_revealfx'          => ''
 		);
-		$atts = apply_filters( 'aesop_video_defaults', shortcode_atts( $defaults, $atts ) );
+		$atts = apply_filters( 'aesop_video_defaults', shortcode_atts( $defaults, $atts, 'aesop_video' ) );
 
 		$contentwidth = 'content' == $atts['width'] ? 'aesop-content' : false;
 

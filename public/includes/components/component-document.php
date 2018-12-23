@@ -14,7 +14,7 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 			'src'  		=> '',
 			'caption' 	=> ''
 		);
-		$atts = apply_filters( 'aesop_document_defaults', shortcode_atts( $defaults, $atts ) );
+		$atts = apply_filters( 'aesop_document_defaults', shortcode_atts( $defaults, $atts, 'aesop_document' ) );
 
 		// let this be used multiple times
 		static $instance = 0;

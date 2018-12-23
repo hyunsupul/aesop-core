@@ -27,7 +27,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 			'overlay_revealfx'          => ''			
 		);
 
-		$atts = apply_filters( 'aesop_image_defaults', shortcode_atts( $defaults, $atts ) );
+		$atts = apply_filters( 'aesop_image_defaults', shortcode_atts( $defaults, $atts, 'aesop_image' ) );
 		
 		$panorama = $atts['panorama'] == "on";
 		$imgheight = 0;

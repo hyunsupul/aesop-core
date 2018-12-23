@@ -28,7 +28,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 			'overlay_revealfx'          => ''
 		);
 
-		$atts = apply_filters( 'aesop_chapter_defaults', shortcode_atts( $defaults, $atts ) );
+		$atts = apply_filters( 'aesop_chapter_defaults', shortcode_atts( $defaults, $atts, 'aesop_chapter' ) );
 
 		// let this be used multiple times
 		static $instance = 0;
