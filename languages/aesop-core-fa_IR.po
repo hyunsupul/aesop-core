@@ -1,28 +1,25 @@
-# Copyright (C) 2015 Aesopinteractive LLC
-# This file is distributed under the GPL-2.0+.
-# Translators:
 msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine\n"
-"Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2018-07-27 16:02-0500\n"
-"PO-Revision-Date: 2018-07-27 16:02-0500\n"
-"Last-Translator: Aesopinteractive\n"
-"Language-Team: Persian (Iran) (http://www.transifex.com/wp-translations/"
-"aesop-story-engine/language/fa_IR/)\n"
+"POT-Creation-Date: 2018-12-27 21:55-0800\n"
+"PO-Revision-Date: 2018-12-27 22:29-0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
-"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
-"esc_html_x:1,2c\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: aesop-core.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Textdomain-Support: yes\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: admin/class-aesop-core-admin.php:156
 msgid "Add Component"
@@ -101,7 +98,7 @@ msgstr "روشن"
 
 #: admin/includes/available.php:35
 msgid "Panorama"
-msgstr ""
+msgstr "پانوراما"
 
 #: admin/includes/available.php:36
 msgid ""
@@ -111,7 +108,7 @@ msgstr ""
 
 #: admin/includes/available.php:41
 msgid "Image Width"
-msgstr ""
+msgstr "عرض تصویر"
 
 #: admin/includes/available.php:42
 msgid ""
@@ -120,10 +117,8 @@ msgid ""
 msgstr ""
 
 #: admin/includes/available.php:47
-#, fuzzy
-#| msgid "Image"
 msgid "Image Height"
-msgstr "تصویر"
+msgstr "ارتفاع ‫تصویر"
 
 #: admin/includes/available.php:48
 msgid ""
@@ -163,7 +158,7 @@ msgstr ""
 #: admin/includes/available.php:282 admin/includes/available.php:494
 #: admin/includes/available.php:792 admin/includes/available.php:966
 msgid "Center"
-msgstr "سنتر"
+msgstr "وسط"
 
 #: admin/includes/available.php:77 admin/includes/available.php:115
 #: admin/includes/available.php:188 admin/includes/available.php:274
@@ -185,7 +180,7 @@ msgstr "راست"
 
 #: admin/includes/available.php:85
 msgid "Image Alignment"
-msgstr ""
+msgstr "ترازبندی تصویر"
 
 #: admin/includes/available.php:86
 msgid ""
@@ -195,7 +190,7 @@ msgstr ""
 
 #: admin/includes/available.php:101
 msgid "Lightbox"
-msgstr ""
+msgstr "لایت باکس"
 
 #: admin/includes/available.php:102
 msgid ""
@@ -205,11 +200,11 @@ msgstr ""
 
 #: admin/includes/available.php:107 admin/includes/available.php:180
 #: admin/includes/available.php:714 admin/includes/available.php:1035
-#: admin/includes/components/component-gallery.php:257
-#: admin/includes/components/component-gallery.php:325
-#: admin/includes/components/component-gallery.php:385
+#: admin/includes/components/component-gallery.php:253
+#: admin/includes/components/component-gallery.php:321
+#: admin/includes/components/component-gallery.php:381
 msgid "Caption"
-msgstr "نام"
+msgstr "زیرنویس"
 
 #: admin/includes/available.php:108
 msgid ""
@@ -219,7 +214,7 @@ msgstr ""
 
 #: admin/includes/available.php:127 admin/includes/available.php:738
 msgid "Caption Position"
-msgstr ""
+msgstr "جای زیرنویس"
 
 #: admin/includes/available.php:128
 msgid "Use this to override the alignment as inherited from the image."
@@ -227,10 +222,8 @@ msgstr ""
 
 #: admin/includes/available.php:133 admin/includes/available.php:636
 #: admin/includes/available.php:1153
-#, fuzzy
-#| msgid "Content"
 msgid "Overlay Content"
-msgstr "محتوا"
+msgstr "متن روکش"
 
 #: admin/includes/available.php:134 admin/includes/available.php:1154
 msgid "Text or HTML content to be overlayed. You can use tags like H2, H3 etc."
@@ -243,15 +236,15 @@ msgstr ""
 
 #: admin/includes/available.php:162
 msgid "Character"
-msgstr ""
+msgstr "کاراکتر"
 
 #: admin/includes/available.php:168
 msgid "Character Image"
-msgstr ""
+msgstr "تصویر کاراکتر"
 
 #: admin/includes/available.php:174
 msgid "Character Name"
-msgstr ""
+msgstr "نام کاراکتر"
 
 #: admin/includes/available.php:175
 msgid ""
@@ -267,7 +260,7 @@ msgstr ""
 #: admin/includes/available.php:196 admin/includes/available.php:286
 #: admin/includes/available.php:978
 msgid "Alignment"
-msgstr "چیدمان"
+msgstr "ترازبندی"
 
 #: admin/includes/available.php:197
 msgid ""
@@ -277,7 +270,7 @@ msgstr ""
 
 #: admin/includes/available.php:202
 msgid "Width"
-msgstr "پهنا"
+msgstr "عرض"
 
 #: admin/includes/available.php:203
 msgid ""
@@ -287,11 +280,11 @@ msgstr ""
 
 #: admin/includes/available.php:218
 msgid "Force Circle"
-msgstr ""
+msgstr "اعمال شکل دایره"
 
 #: admin/includes/available.php:219
 msgid "Force the display to be a circle instead of an oval."
-msgstr ""
+msgstr "به جای بیضی تصویر را در دایره نشان دهید."
 
 #: admin/includes/available.php:222
 msgid ""
@@ -305,15 +298,15 @@ msgstr ""
 
 #: admin/includes/available.php:234
 msgid "Full Width"
-msgstr ""
+msgstr "عرض کامل"
 
 #: admin/includes/available.php:238
 msgid "Pull Quote"
-msgstr ""
+msgstr "نقل قول"
 
 #: admin/includes/available.php:242
 msgid "Quote Styles"
-msgstr ""
+msgstr "استایل های نقل قول"
 
 #: admin/includes/available.php:243
 msgid "By default the quote is full width, but you can change that here."
@@ -336,7 +329,7 @@ msgstr "رنگ متن"
 
 #: admin/includes/available.php:255
 msgid "Select a color for the quote text."
-msgstr ""
+msgstr "رنگ نقل قول را انتخاب کنید."
 
 #: admin/includes/available.php:260 admin/includes/available.php:958
 msgid "Component Width"
@@ -368,7 +361,7 @@ msgstr ""
 
 #: admin/includes/available.php:293
 msgid "Quote Size"
-msgstr ""
+msgstr "اندازه نقل قول"
 
 #: admin/includes/available.php:294
 msgid "Font size of the quote."
@@ -386,7 +379,7 @@ msgstr ""
 
 #: admin/includes/available.php:305
 msgid "Quote Text"
-msgstr ""
+msgstr "متن نقل قول"
 
 #: admin/includes/available.php:306
 msgid "The actual quote text that will be displayed."
@@ -394,7 +387,7 @@ msgstr ""
 
 #: admin/includes/available.php:311
 msgid "Cite"
-msgstr ""
+msgstr "منبع نقل قول"
 
 #: admin/includes/available.php:312
 msgid "Provide an optional cite or source for the quote."
@@ -402,7 +395,7 @@ msgstr ""
 
 #: admin/includes/available.php:327
 msgid "Enable Quote Parallax"
-msgstr ""
+msgstr "فعال سازی پارالاکس برای نقل قول"
 
 #: admin/includes/available.php:328
 msgid ""
@@ -427,7 +420,7 @@ msgstr "محتوا"
 
 #: admin/includes/available.php:357
 msgid "Color of Text"
-msgstr ""
+msgstr "رنگ نوشته"
 
 #: admin/includes/available.php:358
 msgid "Set a color to be used for the main text."
@@ -442,10 +435,8 @@ msgid "Not used if using image background."
 msgstr ""
 
 #: admin/includes/available.php:369
-#, fuzzy
-#| msgid "Content"
 msgid "Width of Content"
-msgstr "محتوا"
+msgstr "عرض متن"
 
 #: admin/includes/available.php:375
 msgid "Width of Component"
@@ -478,9 +469,9 @@ msgid ""
 msgstr ""
 
 #: admin/includes/available.php:396 admin/includes/available.php:804
-#: admin/includes/components/component-gallery.php:260
-#: admin/includes/components/component-gallery.php:328
-#: admin/includes/components/component-gallery.php:383
+#: admin/includes/components/component-gallery.php:256
+#: admin/includes/components/component-gallery.php:324
+#: admin/includes/components/component-gallery.php:379
 msgid "None"
 msgstr "هیچ‌یک"
 
@@ -516,15 +507,15 @@ msgstr "تکرار"
 
 #: admin/includes/available.php:436
 msgid "Repeat Vertical"
-msgstr ""
+msgstr "تکرار عمودی"
 
 #: admin/includes/available.php:440
 msgid "Repeat Horizontal"
-msgstr ""
+msgstr "تکرار افقی"
 
 #: admin/includes/available.php:444
 msgid "Image Repeat"
-msgstr ""
+msgstr "تکرار تصویر"
 
 #: admin/includes/available.php:445
 msgid ""
@@ -589,11 +580,11 @@ msgstr ""
 
 #: admin/includes/available.php:506 admin/includes/available.php:808
 msgid "Up"
-msgstr ""
+msgstr "بالا"
 
 #: admin/includes/available.php:510 admin/includes/available.php:812
 msgid "Down"
-msgstr ""
+msgstr "پایین"
 
 #: admin/includes/available.php:522 admin/includes/available.php:824
 msgid "Movement Direction of Floater Element"
@@ -623,7 +614,7 @@ msgstr ""
 
 #: admin/includes/available.php:538
 msgid "Chapter Title"
-msgstr ""
+msgstr "عنوان فصل"
 
 #: admin/includes/available.php:539
 msgid "The title of the chapter."
@@ -631,7 +622,7 @@ msgstr ""
 
 #: admin/includes/available.php:544
 msgid "Chapter Subtitle"
-msgstr ""
+msgstr "زیرعنوان فصل"
 
 #: admin/includes/available.php:545
 msgid "This will optionally display a subtitle after the Chapter Title text."
@@ -643,11 +634,11 @@ msgstr "ویدیو"
 
 #: admin/includes/available.php:560
 msgid "Solid Color"
-msgstr ""
+msgstr "رنگ یکدست"
 
 #: admin/includes/available.php:564
 msgid "Background Type"
-msgstr ""
+msgstr "نوع پس زمینه"
 
 #: admin/includes/available.php:565
 msgid "Choose from an image or a looping video background."
@@ -689,7 +680,7 @@ msgstr ""
 
 #: admin/includes/available.php:612
 msgid "Autoplay Setting for Video"
-msgstr ""
+msgstr "تنظیمات پخش خودکار ویدیو"
 
 #: admin/includes/available.php:613
 msgid "Autoplay setting. Only used if the type is set to video."
@@ -702,10 +693,8 @@ msgid ""
 msgstr ""
 
 #: admin/includes/available.php:624
-#, fuzzy
-#| msgid "Height"
 msgid "Minimum Height"
-msgstr "ارتفاع"
+msgstr "حداقل ارتفاع"
 
 #: admin/includes/available.php:625
 msgid ""
@@ -713,10 +702,8 @@ msgid ""
 msgstr ""
 
 #: admin/includes/available.php:630
-#, fuzzy
-#| msgid "Height"
 msgid "Maximum Height"
-msgstr "ارتفاع"
+msgstr "حداکثر ارتفاع"
 
 #: admin/includes/available.php:631
 msgid ""
@@ -737,7 +724,7 @@ msgstr ""
 
 #: admin/includes/available.php:667 admin/includes/available.php:681
 msgid "Parallax Image"
-msgstr ""
+msgstr "تصویر پارالاکس"
 
 #: admin/includes/available.php:674
 msgid "Height of Image Area"
@@ -752,11 +739,11 @@ msgstr ""
 
 #: admin/includes/available.php:698
 msgid "Fixed"
-msgstr ""
+msgstr "ثابت"
 
 #: admin/includes/available.php:702
 msgid "Image Movement"
-msgstr ""
+msgstr "حرکت تصویر"
 
 #: admin/includes/available.php:703
 msgid ""
@@ -767,7 +754,7 @@ msgstr ""
 
 #: admin/includes/available.php:708
 msgid "Parallax Speed"
-msgstr ""
+msgstr "سرعت پارالکس"
 
 #: admin/includes/available.php:709
 msgid "The minimum and default value is 1. The maximum value is 6."
@@ -780,19 +767,19 @@ msgstr ""
 
 #: admin/includes/available.php:722
 msgid "Bottom Left"
-msgstr ""
+msgstr "پایین چپ"
 
 #: admin/includes/available.php:726
 msgid "Bottom Right"
-msgstr ""
+msgstr "پایین راست"
 
 #: admin/includes/available.php:730
 msgid "Top Left"
-msgstr ""
+msgstr "بالا چپ"
 
 #: admin/includes/available.php:734
 msgid "Top Right"
-msgstr ""
+msgstr "بالا راست"
 
 #: admin/includes/available.php:739
 msgid ""
@@ -860,9 +847,9 @@ msgid "Audio"
 msgstr "صدا"
 
 #: admin/includes/available.php:875 admin/includes/available.php:1306
-#: admin/includes/components/component-gallery.php:256
-#: admin/includes/components/component-gallery.php:324
-#: admin/includes/components/component-gallery.php:384
+#: admin/includes/components/component-gallery.php:252
+#: admin/includes/components/component-gallery.php:320
+#: admin/includes/components/component-gallery.php:380
 #: admin/includes/components/component-map.php:71
 msgid "Title"
 msgstr "عنوان"
@@ -873,7 +860,7 @@ msgstr ""
 
 #: admin/includes/available.php:881
 msgid "Audio URL"
-msgstr ""
+msgstr "آدرس فایل صوتی"
 
 #: admin/includes/available.php:882
 msgid ""
@@ -925,7 +912,7 @@ msgstr ""
 
 #: admin/includes/available.php:952
 msgid "Video Section"
-msgstr ""
+msgstr "بخش ویدیو"
 
 #: admin/includes/available.php:979
 msgid "Should the video be floated to the left, right, or centered?"
@@ -933,51 +920,51 @@ msgstr ""
 
 #: admin/includes/available.php:987
 msgid "YouTube"
-msgstr ""
+msgstr "یوتیوب"
 
 #: admin/includes/available.php:991
 msgid "Vimeo"
-msgstr ""
+msgstr "ویمئو"
 
 #: admin/includes/available.php:995
 msgid "Kickstarter"
-msgstr ""
+msgstr "کیک استارتر"
 
 #: admin/includes/available.php:999
 msgid "Viddler"
-msgstr ""
+msgstr "ویدلر"
 
 #: admin/includes/available.php:1003
 msgid "Vine"
-msgstr ""
+msgstr "واین"
 
 #: admin/includes/available.php:1007
 msgid "Wistia"
-msgstr ""
+msgstr "ویستیا"
 
 #: admin/includes/available.php:1011
 msgid "Instagram"
-msgstr ""
+msgstr "اینستاگرم"
 
 #: admin/includes/available.php:1015
 msgid "Dailymotion"
-msgstr ""
+msgstr "دیلی موشن"
 
 #: admin/includes/available.php:1019
 msgid "Self"
-msgstr ""
+msgstr "ویدئو در خود سایت"
 
 #: admin/includes/available.php:1023
 msgid "Video Source"
-msgstr ""
+msgstr "منبع ویدئو"
 
 #: admin/includes/available.php:1024
 msgid "Choose an available source for the video."
-msgstr ""
+msgstr "منبع موجود برای این ویدئو را انتخاب کنید."
 
 #: admin/includes/available.php:1029
 msgid "Video ID"
-msgstr ""
+msgstr "شناسه ویدیو"
 
 #: admin/includes/available.php:1030
 msgid ""
@@ -1010,7 +997,7 @@ msgstr ""
 
 #: admin/includes/available.php:1063
 msgid "Poster Frame"
-msgstr ""
+msgstr "تصویر جایگزین ویدئو"
 
 #: admin/includes/available.php:1064
 msgid ""
@@ -1031,7 +1018,7 @@ msgstr ""
 
 #: admin/includes/available.php:1095
 msgid "Autoplay"
-msgstr ""
+msgstr "پخش خودکار"
 
 #: admin/includes/available.php:1096
 msgid "Should the video automatically start playing."
@@ -1039,7 +1026,7 @@ msgstr ""
 
 #: admin/includes/available.php:1111
 msgid "Video Controls"
-msgstr ""
+msgstr "کنترل کننده های ویدئو"
 
 #: admin/includes/available.php:1112
 msgid "Hide or show the controls for the video player."
@@ -1057,7 +1044,7 @@ msgstr ""
 
 #: admin/includes/available.php:1143
 msgid "Picture in Picture Mode"
-msgstr ""
+msgstr " حالت تصویر در تصویر"
 
 #: admin/includes/available.php:1147
 msgid "Stop Video When Out of View"
@@ -1077,7 +1064,7 @@ msgstr ""
 
 #: admin/includes/available.php:1199
 msgid "Map"
-msgstr ""
+msgstr "نقشه"
 
 #: admin/includes/available.php:1207
 msgid "Height"
@@ -1091,7 +1078,7 @@ msgstr ""
 
 #: admin/includes/available.php:1213
 msgid "Sticky Maps"
-msgstr ""
+msgstr "نقشه های چسبان"
 
 #: admin/includes/available.php:1214
 msgid ""
@@ -1104,19 +1091,19 @@ msgstr ""
 
 #: admin/includes/available.php:1222
 msgid "Sticky Left"
-msgstr ""
+msgstr "چسبیده به چپ"
 
 #: admin/includes/available.php:1226
 msgid "Sticky Top"
-msgstr ""
+msgstr "‫چسبیده به بالا"
 
 #: admin/includes/available.php:1230
 msgid "Sticky Right"
-msgstr ""
+msgstr "‫چسبیده به چپ"
 
 #: admin/includes/available.php:1235
 msgid "Sticky Bottom"
-msgstr ""
+msgstr "‫چسبیده به پایین"
 
 #: admin/includes/available.php:1240
 msgid ""
@@ -1140,7 +1127,7 @@ msgstr ""
 
 #: admin/includes/available.php:1256
 msgid "Timeline Title"
-msgstr ""
+msgstr "عنوان زمان نگار"
 
 #: admin/includes/available.php:1257
 msgid "The timeline title that should be displayed within the story."
@@ -1154,11 +1141,11 @@ msgstr ""
 
 #: admin/includes/available.php:1264
 msgid "Document"
-msgstr ""
+msgstr "مدرک"
 
 #: admin/includes/available.php:1272
 msgid "PDF"
-msgstr ""
+msgstr "پی دی اف"
 
 #: admin/includes/available.php:1280
 msgid "Document Type"
@@ -1180,7 +1167,7 @@ msgstr ""
 
 #: admin/includes/available.php:1292
 msgid "Document Caption"
-msgstr ""
+msgstr "‫عنوان سند"
 
 #: admin/includes/available.php:1293
 msgid "Provide an optional caption for the document component."
@@ -1192,7 +1179,7 @@ msgstr ""
 
 #: admin/includes/available.php:1300
 msgid "Collections"
-msgstr ""
+msgstr "مجموعه ها"
 
 #: admin/includes/available.php:1307
 msgid "Display an optional heading to be used within the Collection component."
@@ -1277,7 +1264,7 @@ msgstr "گالری"
 
 #: admin/includes/available.php:1407
 msgid "Choose Gallery"
-msgstr ""
+msgstr "انتخاب گالری"
 
 #: admin/includes/available.php:1408
 msgid "Select a gallery below to insert it."
@@ -1290,11 +1277,11 @@ msgstr ""
 #: admin/includes/class.welcome.php:48 admin/includes/class.welcome.php:63
 #: admin/includes/help.php:25
 msgid "Welcome to Aesop Story Engine"
-msgstr ""
+msgstr " به ازوپ موتور داستانگویی خوش آمدید"
 
 #: admin/includes/class.welcome.php:64 admin/includes/class.welcome.php:79
 msgid "Introduction"
-msgstr ""
+msgstr "مقدمه"
 
 #: admin/includes/class.welcome.php:65
 msgid "Get started in a snap with our quick start guide"
@@ -1302,11 +1289,11 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:67
 msgid "Twitter"
-msgstr ""
+msgstr "توییتر"
 
 #: admin/includes/class.welcome.php:68
 msgid "Facebook"
-msgstr ""
+msgstr "فیس بوک"
 
 #: admin/includes/class.welcome.php:69
 msgid "Sign up for news and exclusive offers!"
@@ -1314,7 +1301,7 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:74
 msgid "Quick Start"
-msgstr ""
+msgstr "شروع سریع"
 
 #: admin/includes/class.welcome.php:75
 msgid ""
@@ -1346,7 +1333,7 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:87
 msgid "Build your Story"
-msgstr ""
+msgstr "داستان خود را بسازید"
 
 #: admin/includes/class.welcome.php:88
 msgid ""
@@ -1358,7 +1345,7 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:89
 msgid "User guide "
-msgstr ""
+msgstr "راهنمای کاربر"
 
 #: admin/includes/class.welcome.php:89
 msgid " for more information."
@@ -1366,7 +1353,7 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:95
 msgid "Themes & Addons"
-msgstr ""
+msgstr "تم ها و افزونه ها"
 
 #: admin/includes/class.welcome.php:96
 msgid "Browse our growing library of"
@@ -1374,11 +1361,11 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:96
 msgid "themes"
-msgstr ""
+msgstr "تم ها"
 
 #: admin/includes/class.welcome.php:96
 msgid "addons"
-msgstr ""
+msgstr "افزونه ها"
 
 #: admin/includes/class.welcome.php:96
 msgid "built specifically for Aesop Story Engine."
@@ -1399,17 +1386,17 @@ msgstr ""
 
 #: admin/includes/class.welcome.php:101
 msgid "Read More..."
-msgstr ""
+msgstr "ادامه مطلب..."
 
 #: admin/includes/components/component-collection.php:41
 #: public/includes/components/component-collections.php:139
 #, php-format
 msgid "Written by %s"
-msgstr ""
+msgstr "نوشته شده توسط %s"
 
 #: admin/includes/components/component-gallery.php:36
 msgid "Gallery Code"
-msgstr ""
+msgstr "کد گالری"
 
 #: admin/includes/components/component-gallery.php:37
 msgid "Used In"
@@ -1417,255 +1404,247 @@ msgstr ""
 
 #: admin/includes/components/component-gallery.php:97
 msgid "Add Images"
-msgstr ""
+msgstr "افزودن تصاویر"
 
 #: admin/includes/components/component-gallery.php:100
 msgid "Select Layout"
-msgstr ""
+msgstr "انتخاب چیدمان"
 
 #: admin/includes/components/component-gallery.php:103
 msgid "Set Options"
-msgstr ""
+msgstr "تنظیم گزینه ها"
 
-#: admin/includes/components/component-gallery.php:168
+#: admin/includes/components/component-gallery.php:164
 msgid "Grid"
-msgstr "دستگاه مختصات"
+msgstr "گرید"
 
-#: admin/includes/components/component-gallery.php:169
+#: admin/includes/components/component-gallery.php:165
 msgid "Thumbnail"
 msgstr "بندانگشتی"
 
-#: admin/includes/components/component-gallery.php:171
+#: admin/includes/components/component-gallery.php:167
 msgid "Photoset"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:172
+#: admin/includes/components/component-gallery.php:168
 msgid "Parallax"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:173
+#: admin/includes/components/component-gallery.php:169
 msgid "Hero"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:232
+#: admin/includes/components/component-gallery.php:228
 msgid "Main Gallery Width"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:233
+#: admin/includes/components/component-gallery.php:229
 msgid ""
 "Adjust the overall width of the grid/thumbnail gallery. Acceptable values "
 "include 500px, 50%, 100% etc"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:237
+#: admin/includes/components/component-gallery.php:233
 msgid "Gallery Caption"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:238
+#: admin/includes/components/component-gallery.php:234
 msgid "Add an optional caption for the gallery."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:244
+#: admin/includes/components/component-gallery.php:240
 msgid "Grid Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:247
+#: admin/includes/components/component-gallery.php:243
 msgid "Grid Gallery Width"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:248
+#: admin/includes/components/component-gallery.php:244
 msgid ""
 "Adjust the width of the individual grid items, only if using Grid gallery "
 "style. Default is 400."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:253
-#: admin/includes/components/component-gallery.php:321
+#: admin/includes/components/component-gallery.php:249
+#: admin/includes/components/component-gallery.php:317
 msgid "Lightbox Text"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:254
-#: admin/includes/components/component-gallery.php:322
+#: admin/includes/components/component-gallery.php:250
+#: admin/includes/components/component-gallery.php:318
 msgid ""
 "Text to display when the lightbox is open. The texts are read from the image "
 "property."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:258
-#: admin/includes/components/component-gallery.php:326
-#: admin/includes/components/component-gallery.php:386
-#, fuzzy
-#| msgid "Caption"
+#: admin/includes/components/component-gallery.php:254
+#: admin/includes/components/component-gallery.php:322
+#: admin/includes/components/component-gallery.php:382
 msgid "Title+Caption"
-msgstr "نام"
+msgstr "عنوان + زیرنویس"
 
-#: admin/includes/components/component-gallery.php:259
-#: admin/includes/components/component-gallery.php:327
-#: admin/includes/components/component-gallery.php:387
+#: admin/includes/components/component-gallery.php:255
+#: admin/includes/components/component-gallery.php:323
+#: admin/includes/components/component-gallery.php:383
 msgid "Description"
-msgstr ""
+msgstr "توضیحات"
 
-#: admin/includes/components/component-gallery.php:267
+#: admin/includes/components/component-gallery.php:263
 msgid "Thumbnail Options"
-msgstr ""
+msgstr "گزینه های تصویر بند انگشتی"
 
-#: admin/includes/components/component-gallery.php:270
-#: admin/includes/components/component-gallery.php:351
+#: admin/includes/components/component-gallery.php:266
+#: admin/includes/components/component-gallery.php:347
 msgid "Gallery Transition"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:271
+#: admin/includes/components/component-gallery.php:267
 msgid ""
 "Adjust the transition effect for the Thumbnail gallery. Default is slide."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:273
-#: admin/includes/components/component-gallery.php:354
+#: admin/includes/components/component-gallery.php:269
+#: admin/includes/components/component-gallery.php:350
 msgid "Fade"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:274
-#: admin/includes/components/component-gallery.php:355
+#: admin/includes/components/component-gallery.php:270
+#: admin/includes/components/component-gallery.php:351
 msgid "Slide"
 msgstr "اسلاید"
 
-#: admin/includes/components/component-gallery.php:275
-#: admin/includes/components/component-gallery.php:356
+#: admin/includes/components/component-gallery.php:271
+#: admin/includes/components/component-gallery.php:352
 msgid "Dissolve"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:280
-#: admin/includes/components/component-gallery.php:361
+#: admin/includes/components/component-gallery.php:276
+#: admin/includes/components/component-gallery.php:357
 msgid "Gallery Transition Speed"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:281
+#: admin/includes/components/component-gallery.php:277
 msgid ""
 "Activate slideshow by setting a speed for the transition.5000 = 5 seconds."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:287
+#: admin/includes/components/component-gallery.php:283
 msgid "Hide Gallery Thumbnails"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:292
+#: admin/includes/components/component-gallery.php:288
 msgid "Sequence Gallery Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:297
+#: admin/includes/components/component-gallery.php:293
 msgid "Panorama Mode"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:300
-#, fuzzy
-#| msgid "Height"
+#: admin/includes/components/component-gallery.php:296
 msgid "Panorama Height"
-msgstr "ارتفاع"
+msgstr "ارتفاع پانوراما"
 
-#: admin/includes/components/component-gallery.php:301
+#: admin/includes/components/component-gallery.php:297
 msgid ""
 "Used Only When the Panorama Mode is On. Height of Each Panorama in Pixels."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:307
+#: admin/includes/components/component-gallery.php:303
 msgid "Photoset Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:310
+#: admin/includes/components/component-gallery.php:306
 msgid "Gallery Layout"
-msgstr ""
+msgstr "چیدمان گالری"
 
-#: admin/includes/components/component-gallery.php:311
+#: admin/includes/components/component-gallery.php:307
 msgid ""
 "Let's say you have 4 images in this gallery. If you enter 121 you will have "
 "one image on the top row, two images on the second row, and one image on the "
 "third row."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:317
+#: admin/includes/components/component-gallery.php:313
 msgid "Enable Lightbox"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:335
+#: admin/includes/components/component-gallery.php:331
 msgid "Parallax Gallery Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:340
+#: admin/includes/components/component-gallery.php:336
 msgid "Panorama Mode for Mobile"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:341
+#: admin/includes/components/component-gallery.php:337
 msgid "Use Panorama Images for Mobile Devices"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:348
+#: admin/includes/components/component-gallery.php:344
 msgid "Hero Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:352
+#: admin/includes/components/component-gallery.php:348
 msgid "Adjust the transition effect for the Hero gallery. Default is fade."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:362
+#: admin/includes/components/component-gallery.php:358
 msgid ""
 "Activate slideshow by setting a speed for the transition. 5000 = 5 seconds."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:367
-#, fuzzy
-#| msgid "Content"
+#: admin/includes/components/component-gallery.php:363
 msgid "Gallery Content"
-msgstr "محتوا"
+msgstr "محتوای گالری"
 
-#: admin/includes/components/component-gallery.php:368
+#: admin/includes/components/component-gallery.php:364
 msgid ""
 "Content displayed within the Hero gallery. You can use HTML tags with "
 "classes and styles."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:373
+#: admin/includes/components/component-gallery.php:369
 msgid "Main Gallery Height"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:374
+#: admin/includes/components/component-gallery.php:370
 msgid ""
 "Specify this if you want to control the height of the gallery. Acceptable "
 "values include 500px, 50%, 100% etc."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:375
+#: admin/includes/components/component-gallery.php:371
 msgid ""
 "If you enter a ratio, such as 800/600, the gallery would appear with a "
 "constant width/height ratio. This is useful if you want the galery to be "
 "responsive on mobile devices on portrait modes."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:380
-#, fuzzy
-#| msgid "Image"
+#: admin/includes/components/component-gallery.php:376
 msgid "Image Text"
-msgstr "تصویر"
+msgstr ""
 
-#: admin/includes/components/component-gallery.php:381
+#: admin/includes/components/component-gallery.php:377
 msgid ""
 "Text to display with each image. The texts are read from the image property."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:392
+#: admin/includes/components/component-gallery.php:388
 msgid "Gallery Transition Animation Speed"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:393
+#: admin/includes/components/component-gallery.php:389
 msgid "Animation duration for transition in milliseconds."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:403
+#: admin/includes/components/component-gallery.php:399
 msgid "Enable Navigation Controls"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:570
+#: admin/includes/components/component-gallery.php:572
 msgid "All done!"
-msgstr "همگی انجام شدند!"
+msgstr "انجام شد!"
 
 #: admin/includes/components/component-map.php:65
 msgid "Aesop Map Marker"
@@ -1698,14 +1677,14 @@ msgid ""
 ">Aesop Story Engine.</em>"
 msgstr ""
 
-#: admin/includes/components/component-map.php:420
+#: admin/includes/components/component-map.php:422
 msgid ""
 "Welcome to Aesop Story Engine 1.3. We need to upgrade any map markers that "
 "you might have. Click <a id=\"aesop-upgrade-map-meta\" href=\"#\">here</a> "
 "to start the upgrade process."
 msgstr ""
 
-#: admin/includes/components/component-map.php:575
+#: admin/includes/components/component-map.php:577
 msgid ""
 "Welcome to Aesop Story Engine 1.5. We need to upgrade your Mapbox Map ID. "
 "Click <a id=\"aesop-upgrade-mapbox\" href=\"#\">here</a> to start the "
@@ -1720,7 +1699,8 @@ msgstr ""
 msgid "Update Component"
 msgstr ""
 
-#: admin/includes/help.php:23 public/includes/options.php:53
+#. Plugin Name of the plugin/theme
+#: admin/includes/help.php:23 aesop-core.php:90 public/includes/options.php:53
 msgid "Aesop Story Engine"
 msgstr ""
 
@@ -1804,7 +1784,7 @@ msgstr ""
 
 #: admin/includes/help.php:39
 msgid "Donations"
-msgstr ""
+msgstr "کمک های مالی"
 
 #: admin/includes/help.php:40
 #, php-format
@@ -1901,23 +1881,23 @@ msgstr "گالری‌‌ها"
 
 #: public/class-aesop-core.php:271
 msgid "Parent Gallery:"
-msgstr ""
+msgstr "گالری مادر:"
 
 #: public/class-aesop-core.php:272
 msgid "All Galleries"
-msgstr ""
+msgstr "همه گالری ها"
 
 #: public/class-aesop-core.php:273
 msgid "View Gallery"
-msgstr ""
+msgstr "مشاهده گالری"
 
 #: public/class-aesop-core.php:274
 msgid "Add New Gallery"
-msgstr ""
+msgstr "افزودن گالری جدید"
 
 #: public/class-aesop-core.php:275
 msgid "New Gallery"
-msgstr ""
+msgstr "گالری جدید"
 
 #: public/class-aesop-core.php:276
 msgid "Edit Gallery"
@@ -1925,15 +1905,15 @@ msgstr "ویرایش گالری"
 
 #: public/class-aesop-core.php:277
 msgid "Update Gallery"
-msgstr ""
+msgstr "بروزرسانی گالری"
 
 #: public/class-aesop-core.php:278
 msgid "Search Galleries"
-msgstr ""
+msgstr "جستجوی گالری ها"
 
 #: public/class-aesop-core.php:279
 msgid "No Galleries found"
-msgstr ""
+msgstr "هیچ گالری یافته نشد"
 
 #: public/class-aesop-core.php:280
 msgid "No Galleries found in Trash"
@@ -1953,11 +1933,11 @@ msgstr ""
 
 #: public/includes/components/component-document.php:64
 msgid "PDF Download"
-msgstr ""
+msgstr "دانلود پی دی اف"
 
 #: public/includes/components/component-gallery.php:110
 msgid "edit gallery"
-msgstr ""
+msgstr "ویرایش گالری"
 
 #: public/includes/components/component-gallery.php:120
 msgid ""
@@ -1973,15 +1953,15 @@ msgstr ""
 
 #: public/includes/components/component-heading.php:168
 msgid "Top"
-msgstr ""
+msgstr "بالا"
 
-#: public/includes/components/component-heading.php:254
+#: public/includes/components/component-heading.php:256
 msgid "Chapter Toggle Button"
 msgstr ""
 
 #: public/includes/components/component-image.php:99
 msgid "Enlarge"
-msgstr ""
+msgstr "بزرگنمایی کنید"
 
 #: public/includes/components/component-map.php:46
 msgid "Add Map Markers"
@@ -1996,16 +1976,12 @@ msgid "People are made of stories, not atoms."
 msgstr ""
 
 #: public/includes/options.php:27
-#, fuzzy
-#| msgid "Left"
 msgid "Left Dots"
-msgstr "چپ"
+msgstr "نقطه های چپ"
 
 #: public/includes/options.php:28
-#, fuzzy
-#| msgid "Right"
 msgid "Right Dots"
-msgstr "راست"
+msgstr "نقطه های راست"
 
 #: public/includes/options.php:64
 msgid "Mapbox Map ID"
@@ -2031,37 +2007,47 @@ msgstr ""
 msgid "Chapter Component UI"
 msgstr ""
 
-#: public/includes/options.php:98
+#: public/includes/options.php:99
+msgid "Selector for the Post Content."
+msgstr ""
+
+#: public/includes/options.php:100
+msgid ""
+"ASE Chapter Component uses this information to search the chapters. The "
+"default should work for most themes."
+msgstr ""
+
+#: public/includes/options.php:111
 msgid "Disable Chapter Scroll Animation."
 msgstr ""
 
-#: public/includes/options.php:102
+#: public/includes/options.php:115
 msgid "Disable Chapter Scroll Animation"
 msgstr ""
 
-#: public/includes/options.php:111 public/includes/options.php:115
+#: public/includes/options.php:124 public/includes/options.php:128
 msgid "Hide The Active Chapter Name on Dots."
 msgstr ""
 
-#: public/includes/options.php:124
+#: public/includes/options.php:137
 msgid "Enable Dots Navigation on Mobile."
 msgstr ""
 
-#: public/includes/options.php:128
+#: public/includes/options.php:141
 msgid ""
 "Enable Chapter Dots on Mobile. By default dots navigation is disabled on "
 "mobile."
 msgstr ""
 
-#: public/includes/options.php:140
+#: public/includes/options.php:153
 msgid "Chapter Dot Color"
 msgstr ""
 
-#: public/includes/options.php:152
+#: public/includes/options.php:165
 msgid "Active Chapter Dot Color"
 msgstr ""
 
-#: public/includes/options.php:163
+#: public/includes/options.php:176
 msgid "Active Chapter Hover Dot Color"
 msgstr ""
 
@@ -2078,16 +2064,12 @@ msgid "From Below"
 msgstr ""
 
 #: public/includes/reveal-anim.php:277
-#, fuzzy
-#| msgid "Left"
 msgid "From Left"
-msgstr "چپ"
+msgstr "از چپ"
 
 #: public/includes/reveal-anim.php:281
-#, fuzzy
-#| msgid "Right"
 msgid "From Right"
-msgstr "راست"
+msgstr "از راست"
 
 #: public/includes/reveal-anim.php:286
 msgid "Reveal Effect"
@@ -2130,4 +2112,17 @@ msgstr ""
 #: public/includes/reveal-anim.php:312
 msgid ""
 "Reveal animation effect for the overlay content. Only applied to Hero Gallery"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "http://aesopstoryengine.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Open-sourced suite of components that empower interactive storytelling."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Aesopinteractive"
 msgstr ""
