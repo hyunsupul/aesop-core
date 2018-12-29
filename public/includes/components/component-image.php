@@ -16,7 +16,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 			'imgheight'   		=> '',
 			'offset'   			=> '',
 			'alt'    			=> '',
-			'align'    			=> 'left',
+			'align'    			=> 'center', // deffault value fixed BY BORAY
 			'caption'   		=> '',
 			'credit'   			=> '',
 			'captionposition' 	=> 'left',
