@@ -48,6 +48,10 @@
 			alt : {
 				type: 'string'
 			},
+			// align ATTRIBUTE ADDED BY BORAY
+			align : {
+				type: 'string'
+			},
 			caption : {
 				type: 'string'
 			},
@@ -100,8 +104,8 @@
 								},
 					}
 				),
-				!attributes.panorama && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Image Width') ),
-				!attributes.panorama && el( wp.components.TextControl, {
+				(!attributes.panorama || attributes.panorama == 'off') && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Image Width') ),
+				(!attributes.panorama || attributes.panorama == 'off') && el( wp.components.TextControl, {
 						label: __( 'Width of the image. You can enter the size in pixels or percentage such as 40% or 500px.' ),
 						value: attributes.imgwidth,
 						onChange: function( content ) {
@@ -127,8 +131,8 @@
 						},
 					} 
 				),
-				!attributes.panorama && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Align') ),
-				!attributes.panorama && el(
+				(!attributes.panorama || attributes.panorama == 'off') && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Align') ),
+				(!attributes.panorama || attributes.panorama == 'off') && el(
 					wp.components.SelectControl, 
 					{ 
 								type: 'string',
@@ -277,7 +281,7 @@
 				),
 				attributes.img && el(
 					'img', // Tag type.
-					{ 
+				{ 
 					src: attributes.img}
 				)
 			);

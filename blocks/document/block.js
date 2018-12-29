@@ -45,7 +45,7 @@
 
 			var onSelectMedia = ( media ) => {
 				return setAttributes({                       
-					img:media.url
+					src:media.url // fixed by BORAY
                 });
 			};
 			

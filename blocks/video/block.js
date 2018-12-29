@@ -58,6 +58,10 @@
 			viewend:{
 				type : 'boolean'
 			},
+			// poster_frame ATTRIBUTE ADDED BY BORAY
+			poster_frame:{
+				type : 'string'
+			},
 			overlay_revealfx : {
 				type: 'string',
 			},
@@ -97,7 +101,7 @@
 					wp.components.ToggleControl,
 					{
 						label: __( 'Autoplay' ),
-						checked: !! attributes.viewstart,
+						checked: !! attributes.autoplay, // viewstart REPLACED TO autoplay BY BORAY
 						onChange: function( content ) {
 							setAttributes( { autoplay: content } );
 						}
