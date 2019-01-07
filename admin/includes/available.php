@@ -644,16 +644,16 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							
 							function bgSetting(bg){
 							    if (bg=="img") {
-									jQuery(".aesop-chapter-img").slideDown();
+									jQuery(".aesop-chapter-img,.aesop-chapter-full").slideDown();
 									jQuery(".aesop-chapter-bgcolor,.aesop-chapter-alternate_img,.aesop-chapter-video_autoplay").slideUp();
 								}
 								else if (bg=="video") {
 									jQuery(".aesop-chapter-img,.aesop-chapter-alternate_img,.aesop-chapter-video_autoplay").slideDown();
-									jQuery(".aesop-chapter-bgcolor").slideUp();
+									jQuery(".aesop-chapter-bgcolor,.aesop-chapter-full").slideUp();
 								}
 								else if (bg=="color") {
 									jQuery(".aesop-chapter-bgcolor").slideDown();
-									jQuery(".aesop-chapter-img,.aesop-chapter-alternate_img,.aesop-chapter-video_autoplay").slideUp();
+									jQuery(".aesop-chapter-img,.aesop-chapter-alternate_img,.aesop-chapter-video_autoplay,.aesop-chapter-full").slideUp();
 								}
 							}
 							setTimeout( function() { 
