@@ -5,6 +5,8 @@
  * @since    1.0.0
  */
 
+use Aesop\Plugin\BackgroundImageStyle\ClassBackgroundImageStyle as BIS;
+
 class AesopCoreGallery {
 
 	function __construct() {
@@ -362,9 +364,9 @@ class AesopCoreGallery {
 				// image size
 				$size    = apply_filters( 'aesop_stacked_gallery_size', 'full' );
 				
-					?>
-					<!-- Aesop Stacked Gallery Desktop -->
-					<script>
+				?>
+				<!-- Aesop Stacked Gallery Desktop -->
+				<script>
 
 						jQuery(document).ready(function($){
 
@@ -378,26 +380,47 @@ class AesopCoreGallery {
 							});
 						});
 
-					</script>
-					<?php
-					$stacked_styles = 'background-size:100%;background-position:center center';
-					$styles = apply_filters( 'aesop_stacked_gallery_styles_'.$unique, $stacked_styles );
-					
+				</script>
+				<?php
+				$stacked_styles = 'background-size:100%;background-position:center center';
+				$styles = apply_filters( 'aesop_stacked_gallery_styles_'.$unique, $stacked_styles );
 
-					foreach ( $image_ids as $image_id ):
+                $new_bis = new BIS(); //ClassBackgroundImageStyle
 
-						$full      = wp_get_attachment_image_src( $image_id, $size, false );
-						$caption   = get_post( $image_id )->post_excerpt;
+
+                foreach ( $image_ids as $image_id ):
+
+					$full      = wp_get_attachment_image_src( $image_id, $size, false );
+					$caption   = get_post( $image_id )->post_excerpt;
+
+                    $new_bis->setAttachmentID($image_id);
+                    $new_bis->setSelector( 'aesop-stacked-img-' . $image_id );
+                    $arr_push_size = [
+                            'pushXS' => 'medium_large',
+                            'pushMD' => 'aesop-cover-img',
+                            'pushXL' => 'full'
+                    ];
+                    // TODO - put a filter right here.
+                    foreach ( $arr_push_size as $str_method => $str_size){
+                        if ( method_exists($new_bis, $str_method)){
+                            $new_bis->$str_method( $str_size );
+                        }
+                    }
+                    // note the added id= in the div below. and the background image (in style="background-image ...") has been removed
 
 					?>
-								<div class="aesop-stacked-img" style="background-image:url('<?php echo esc_url( $full[0] );?>');<?php echo $styles;?>">
+								<div id="aesop-stacked-img-<?php echo esc_attr($image_id) ?>" class="aesop-stacked-img" style="Xbackground-image:url('<?php echo esc_url( $full[0] );?>');<?php echo $styles;?>">
 									<?php if ( $caption ) { ?>
 										<div class="aesop-stacked-caption"><?php echo aesop_component_media_filter( $caption );?></div>
 									<?php } ?>
 								</div>
 								<?php
 
-					endforeach; 
+                    $new_bis->setReset();
+
+				endforeach;
+
+                $new_bis->getStyle( true );
 
 			} else {
 				$size    = apply_filters( 'aesop_sequence_gallery_size', 'large' );
@@ -649,11 +672,14 @@ class AesopCoreGallery {
 			}
 		}
 		?>
-		<div class="aesop-hero-gallery-wrapper"  >
+		<div class="aesop-hero-gallery-wrapper">
 		<div id="aesop-hero-gallery-<?php echo esc_attr( $gallery_id );?>" class="fotorama" 	data-transition="<?php echo esc_attr( $transition );?>"
 																			data-width="<?php echo esc_attr( $width );?>"
 																			data-height="<?php echo esc_attr( $height );?>"
-																			<?php echo  $ratio ;?>
+																			<?php
+                                                                            if ( isset($ratio)) {
+                                                                                echo  $ratio ;
+                                                                            }?>
 																			<?php echo esc_attr( $autoplay );?>
 																			data-keyboard="false"
 																			data-allow-full-screen="false"
@@ -695,8 +721,9 @@ class AesopCoreGallery {
 				  <div class="aesop-hero-gallery-content"><?php echo $image_text;?></div>
 				</div>
 			 <?php
-			} else { ?>
-			    <img src="<?php echo esc_url( $full[0] );?>" data-caption="<?php echo esc_attr( $caption );?>" alt="<?php echo esc_attr( $alt );?>">
+			} else {
+			    ?>
+			    <img src="<?php echo esc_url( $full[0] );?>"  srcset="<?php echo wp_get_attachment_image_srcset( $image_id );?>" data-caption="<?php echo esc_attr( $caption );?>" alt="<?php echo esc_attr( $alt );?>">
 			   <?php
 			}
 		endforeach;
