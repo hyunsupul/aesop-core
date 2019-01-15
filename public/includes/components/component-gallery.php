@@ -73,10 +73,23 @@ class AesopCoreGallery {
 
 		do_action( 'aesop_gallery_inside_top', $type, $gallery_id, $atts, $unique ); // action
 		
-		$image_ids = apply_filters( 'aesop_gallery_image_ids', $image_ids ); 
+		$image_ids = apply_filters( 'aesop_gallery_image_ids', $image_ids );
+
+        // new
+        $bool_custom = false;
+        $arr_args = [
+            'atts'    => $atts,
+            'type'    => $type,
+            'gallery_id'   => $gallery_id,
+            'image_ids'    => $image_ids,
+            'instance' => $instance,
+            'width' => $width,
+            'unique'  => $unique
+        ];
+        $bool_custom = apply_filters('aesop_gallery_custom_view', $bool_custom, $arr_args);
 		
 
-		if ( ! empty( $image_ids ) && $atts['no_gallery'] != 'on' ) {
+		if ( ! empty( $image_ids ) && $atts['no_gallery'] != 'on' && $bool_custom === false ) {
 
 			switch ( $type ) {
 				case 'thumbnail':
