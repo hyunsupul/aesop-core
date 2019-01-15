@@ -173,7 +173,22 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 
 				<?php endif;
 
-		do_action( 'aesop_quote_inside_top', $atts, $unique ); // action ?>
+		do_action( 'aesop_quote_inside_top', $atts, $unique ); // action
+
+        // new
+        $bool_custom = false;
+        $arr_args    = [
+            'atts'    => $atts,
+            'cite'    => $cite,
+            'align'   => $align,
+            'size'    => $size,
+            'fgcolor' => $fgcolor,
+            'unique'  => $unique
+        ];
+        $bool_custom = apply_filters( 'aesop_quote_custom_view', $bool_custom, $arr_args );
+
+        if ( $bool_custom === false ) {
+                ?>
 
 				<blockquote class="<?php echo sanitize_html_class( $align );?>" style="font-size:<?php echo esc_attr( $size );?>;<?php echo $fgcolor?>">
 					<span><?php echo aesop_component_media_filter( $atts['quote'] );?></span>
@@ -184,6 +199,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 
 			</div>
 		<?php
+        }
 		do_action( 'aesop_quote_after', $atts, $unique ); // action
 
 		return ob_get_clean();
