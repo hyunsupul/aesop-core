@@ -78,7 +78,25 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 		?><div id="aesop-parallax-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'parallax', $unique, $atts );?> class="aesop-component aesop-parallax-component <?php echo sanitize_html_class( $classes );?>"><?php
 
-			do_action( 'aesop_parallax_inside_top', $atts, $unique ); // action ?>
+			do_action( 'aesop_parallax_inside_top', $atts, $unique ); // action
+
+        // new
+        $bool_custom = false;
+        $arr_args    = [
+            'atts'    => $atts,
+            'auto_alt' => $auto_alt,
+            'classes' => $classes,
+            'floater_direction' => $floater_direction,
+            'floater_distance' => $floater_distance,
+            'floater_ratio' => $floater_ratio,
+            'instance' => $instance,
+            'laxclass' => $laxclass,
+            'unique'  => $unique
+        ];
+        $bool_custom = apply_filters( 'aesop_parallax_custom_view', $bool_custom, $arr_args );
+
+        if ( $bool_custom === false ) {
+        ?>
 
 			<script>
 				jQuery(document).ready(function($){
@@ -250,7 +268,9 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
 		</div>
 
-		<?php do_action( 'aesop_parallax_after', $atts, $unique ); // action
+		<?php
+        }
+		do_action( 'aesop_parallax_after', $atts, $unique ); // action
 
 		return ob_get_clean();
 	}

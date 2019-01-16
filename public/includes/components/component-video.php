@@ -60,8 +60,6 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		$iframe_height = $atts['vidheight'] ? sprintf( 'height="%s"', preg_replace( '/[^0-9]/', '', $atts['vidheight'] ) ) : sprintf( 'height=""' );
 		$iframe_width = $atts['vidwidth'] ? sprintf( 'width="%s"', preg_replace( '/[^0-9]/', '', $atts['vidwidth'] ) ) : sprintf( 'width=""' );
 		$iframe_size = sprintf( '%s %s' , $iframe_height, $iframe_width );
-		
-		
 
 		// custom classes
 		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'video', '' ) : null;
@@ -82,7 +80,31 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		    <?php echo aesop_revealfx_set($atts) ? 'style="visibility:hidden;"': null ?>
 		>
 
-	    	<?php do_action( 'aesop_video_inside_top', $atts, $unique ); // action ?>
+	    	<?php do_action( 'aesop_video_inside_top', $atts, $unique ); // action
+        // new
+        $bool_custom = false;
+        $arr_args    = [
+            'atts'    => $atts,
+            'autoplaystatus' => $autoplaystatus,
+            'classes' => $classes,
+            'controlstatus' => $controlstatus,
+            'disable_for_mobile' => $disable_for_mobile,
+            'iframe_height' => $iframe_height,
+            'iframe_size' => $iframe_size,
+            'iframe_width' => $iframe_width,
+            'inside_chapter' => $inside_chapter,
+            'instance' => $instance,
+            'loopstatus' => $loopstatus,
+            'mute' => $mute,
+            'point' => $point,
+            'unique'  => $unique,
+            'waypoint' => $waypoint
+        ];
+        $bool_custom = apply_filters( 'aesop_video_custom_view', $bool_custom, $arr_args );
+
+        if ( $bool_custom === false ) {
+
+        ?>
 
 	    	<div class="aesop-video-container aesop-video-container-<?php echo esc_attr( $unique );?> aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $atts['src'] );?>" <?php echo $widthstyle;?> >
 
@@ -403,7 +425,8 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		do_action( 'aesop_video_inside_bottom', $atts, $unique ); // action ?>
 		</div>
 
-		<?php do_action( 'aesop_video_after', $atts, $unique ); // action
+		<?php }
+		do_action( 'aesop_video_after', $atts, $unique ); // action
 		return ob_get_clean();
 	}
 }//end if
