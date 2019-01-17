@@ -1,90 +1,108 @@
 <?php
 
 function aesop_shortcodes_blob() {
-	$codes = aesop_shortcodes();
 
-	$blob = array();
+    $codes = aesop_shortcodes();
 
-	foreach ( $codes as $slug => $shortcode ) {
-		$return = '';
-		// Shortcode has atts
-		if ( count( $shortcode['atts'] ) && $shortcode['atts'] ) {
+    $blob = [];
 
-			foreach ( $shortcode['atts'] as $attr_name => $attr_info ) {
+    foreach ( $codes as $slug => $shortcode ) {
+        $return = '';
+        // Shortcode has atts
+        if ( count( $shortcode['atts'] ) && $shortcode['atts'] ) {
 
-				$prefix = isset( $attr_info['prefix'] ) ? sprintf( '<span class="aesop-option-prefix">%s</span>', $attr_info['prefix'] ) : null;
+            foreach ( $shortcode['atts'] as $attr_name => $attr_info ) {
 
-				$return .= '<p class="aesop-'.$slug.'-'.$attr_name.'">';
-				$return .= '<label for="aesop-generator-attr-' . $attr_name . '">' . $attr_info['desc'] . '</label>';
-				$return .= '<small class="aesop-option-desc">'.$attr_info['tip'].'</small>';
-				// Select
-				if ( isset( $attr_info['values'] ) ) {
-					// Select multiple
-					if ('select_multiple' == $attr_info['type']) {
-						$return .= '<select multiple name="' . $attr_name . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr" style="height:150px;">';
-					} else {
-						$return .= '<select name="' . $attr_name . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr">';
-					}
+                $prefix = isset( $attr_info['prefix'] ) ? sprintf( '<span class="aesop-option-prefix">%s</span>', $attr_info['prefix'] ) : null;
 
-					$i = 0;
+                // TODO - in theory the type might not be suppported so this shouldn't output until we're 100% certain it's necessary
+                $return .= '<p class="aesop-' . $slug . '-' . $attr_name . '">';
+                $return .= '<label for="aesop-generator-attr-' . $attr_name . '">' . $attr_info['desc'] . '</label>';
+                $return .= '<small class="aesop-option-desc">' . $attr_info['tip'] . '</small>';
 
-					foreach ( $attr_info['values'] as $attr_value ) {
-						$attr_value_selected = ( $attr_info['default'] == $attr_value ) ? ' selected="selected"' : '';
+                // Select
+                // Select multiple
+                $str_select = 'select';
+                if ( isset( $attr_info['values'] ) && substr( $attr_info['type'], 0, strlen( $str_select ) ) === $str_select ) {
 
-						$return .= '<option value="'.$attr_info['values'][$i]['value'].'" ' . $attr_value_selected . '>'.$attr_info['values'][$i]['name'].'</option>';
+                    $str_select_multi = '';
+                    if ( 'select_multiple' == $attr_info['type'] ) {
 
-						$i++;
-					}
+                        $str_select_multi = 'multiple';
+                    }
 
-					$return .= '</select>';
+                    $return .= '<select ' . esc_attr( $str_select_multi ) . ' name="' . $attr_name . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr">';
 
-				} else {
+                    $i = 0;
 
-					$attr_field_type = isset( $attr_info['type'] ) ? $attr_info['type'] : 'text';
+                    foreach ( $attr_info['values'] as $attr_value ) {
+                        $attr_value_selected = ( $attr_info['default'] == $attr_value ) ? ' selected="selected"' : '';
 
-					// image upload
-					if ( 'media_upload' == $attr_info['type'] ) {
+                        $return .= '<option value="' . $attr_info['values'][ $i ]['value'] . '" ' . $attr_value_selected . '>' . $attr_info['values'][ $i ]['name'] . '</option>';
 
-						$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
-						$return .= '<input id="aesop-upload-img" type="button" class="button button-primary button-large" value="Select Media"/>';
+                        $i++;
+                    }
 
-					} elseif ( 'color' == $attr_info['type'] ) {
+                    $return .= '</select>';
 
-						$return .= '<input type="color" name="' . $attr_name . '" value="'.$attr_info['default'].'" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />';
 
-					} elseif ( 'text_area' == $attr_info['type'] ) {
+                } elseif ( isset( $attr_info['type'] ) && $attr_info['type'] === 'text' ) {
 
-						$return .= '<textarea type="' . $attr_field_type . '" name="' . $attr_name . '" value="" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />'.$prefix.'';
+                    $attr_field_type = isset( $attr_info['type'] ) ? $attr_info['type'] : 'text';
 
-					} else {
-						$return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-'.$attr_field_type.'" />'.$prefix.'';
-					}
-				}//end if
-				$return .= '</p>';
-			}//end foreach
-		}//end if
+                    // image upload
+                    if ( 'media_upload' == $attr_info['type'] ) {
 
-		// Single shortcode (not closed)
-		if ( 'single' == $shortcode['type'] ) {
+                        $return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-' . $attr_field_type . '" />';
+                        $return .= '<input id="aesop-upload-img" type="button" class="button button-primary button-large" value="Select Media"/>';
 
-			$return .= '<input type="hidden" name="aesop-generator-content" id="aesop-generator-content" value="false" />';
+                    } elseif ( 'color' == $attr_info['type'] ) {
 
-		} else {
+                        $return .= '<input type="color" name="' . $attr_name . '" value="' . $attr_info['default'] . '" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-' . $attr_field_type . '" />';
 
-			$return .= '<p><label>' . __( 'Content', 'aesop-core' ) . '</label><textarea type="text" name="aesop-generator-content" id="aesop-generator-content" value="' . $shortcode['content'] . '" /></p>';
-		}
+                    } elseif ( 'text_area' == $attr_info['type'] ) {
 
-		$return .= '<p class="aesop-buttoninsert-wrap"><a href="#" id="aesop-generator-insert"><span class="aesop-generator-button-insert">' . __( 'Insert Component', 'aesop-core' ) . '</span><span class="aesop-generator-button-update">' . __( 'Update Component', 'aesop-core' ) . '</span></a></p> ';
+                        $return .= '<textarea type="' . $attr_field_type . '" name="' . $attr_name . '" value="" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-' . $attr_field_type . '" />' . $prefix . '';
 
-		$return .= '<input type="hidden" name="aesop-generator-result" id="aesop-generator-result" value="" />';
+                    } else {
+                        $return .= '<input type="' . $attr_field_type . '" name="' . $attr_name . '" value="" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-' . $attr_field_type . '" />' . $prefix . '';
+                    }
+                } else {
 
-		// extra JS codes
-		if ( isset( $shortcode['codes'] ) ) :
-			$return .= $shortcode['codes'];
-		endif;
-		
-		
-		$blob[$slug] = $return;
-	}//end foreach
-	return $blob;
+                    $bool_custom = false;
+                    // wanna render a custom type (e.g., radio), this is the filter for you :)
+                    $bool_custom = apply_filters( 'aesop_custom_att_type', $bool_custom, $attr_info );
+
+                    if ( is_string( $bool_custom ) ) {
+                        $return .= $bool_custom;
+                    }
+
+                }
+                $return .= '</p>';
+            }//end foreach
+        }//end if
+
+        // Single shortcode (not closed)
+        if ( 'single' == $shortcode['type'] ) {
+
+            $return .= '<input type="hidden" name="aesop-generator-content" id="aesop-generator-content" value="false" />';
+
+        } else {
+
+            $return .= '<p><label>' . __( 'Content', 'aesop-core' ) . '</label><textarea type="text" name="aesop-generator-content" id="aesop-generator-content" value="' . $shortcode['content'] . '" /></p>';
+        }
+
+        $return .= '<p class="aesop-buttoninsert-wrap"><a href="#" id="aesop-generator-insert"><span class="aesop-generator-button-insert">' . __( 'Insert Component', 'aesop-core' ) . '</span><span class="aesop-generator-button-update">' . __( 'Update Component', 'aesop-core' ) . '</span></a></p> ';
+
+        $return .= '<input type="hidden" name="aesop-generator-result" id="aesop-generator-result" value="" />';
+
+        // extra JS codes
+        if ( isset( $shortcode['codes'] ) ) :
+            $return .= $shortcode['codes'];
+        endif;
+
+
+        $blob[ $slug ] = $return;
+    }//end foreach
+    return $blob;
 }

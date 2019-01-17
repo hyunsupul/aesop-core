@@ -388,6 +388,10 @@
   line-height: 1.4em;
   height: 32px;
 }
+#aesop-generator-settings-outer #aesop-generator-settings input,
+#aesop-generator-settings-outer #aesop-generator-settings select[multiple] {
+  height: 150px;
+}
 #aesop-generator-settings-outer #aesop-generator-settings .aesop-generator-attr {
   background: #FFF;
   color: #535353;

@@ -18,15 +18,13 @@
 }
 .aesop-image-component .aesop-img-enlarge,
 .aesop-image-component .aesop-image-component-caption {
-  //color: #b3b3b3;
-  color: #767676;
+  color: #b3b3b3;
   font-size: 12px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .aesop-image-component .aesop-cap-cred,
 .aesop-image-component .aesop-img-enlarge {
-  //color: #b3b3b3;
-  color: #767676;
+  color: #b3b3b3;
 }
 .aesop-image-component .aesop-cap-cred {
   border-top: 1px dotted #b3b3b3;
