@@ -254,7 +254,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'desc'   => __( 'Text Color', 'aesop-core' ),
 						'tip'  => __( 'Select a color for the quote text.', 'aesop-core' )
 					),
-
+/*
                     'test'    => array(
                         'type'  => 'test',
                         'default'  => 'xyz',
@@ -275,6 +275,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
                             )
                         ),
                     ),
+*/
 
 					'width'    => array(
 						'type'  => 'text_small',
