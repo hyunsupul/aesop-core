@@ -427,6 +427,9 @@
   outline: none;
   border: 1px solid rgba(0, 116, 162, 0.2);
 }
+#aesop-generator-settings-outer #aesop-generator-settings select[multiple] {
+  height: 250px;
+}
 #aesop-generator-settings-outer #aesop-generator-settings textarea {
   width: 100%;
 }
