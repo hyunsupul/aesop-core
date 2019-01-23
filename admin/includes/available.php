@@ -256,22 +256,22 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 					),
 /*
                     'test'    => array(
-                        'type'  => 'test',
-                        'default'  => 'xyz',
-                        'desc'   => 'todo',
-                        'tip'  => 'todo',
+                        'type'  => 'radio_row',
+                        'default'  => 'center',
+                        'desc'   => 'Test Desc',
+                        'tip'  => 'This is the Test Tip',
                         'values'  => array(
                             array(
                                 'value' => 'left',
                                 'name' => __( 'Left', 'aesop-core' ),
                             ),
                             array(
-                                'value' => 'right',
-                                'name' => __( 'Right', 'aesop-core' ),
-                            ),
-                            array(
                                 'value' => 'center',
                                 'name' => __( 'Center', 'aesop-core' ),
+                            ),
+                            array(
+                                'value' => 'right',
+                                'name' => __( 'Right', 'aesop-core' ),
                             )
                         ),
                     ),
