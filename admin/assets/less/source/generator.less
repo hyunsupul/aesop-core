@@ -259,6 +259,29 @@
             color:darken(@desc,5);
 
         }
+
+        .aesop-type-radio label{
+        font-size: 16px;
+        display: inline
+        }
+
+        .aesop-span-label {
+        display: block;
+        position: relative;
+        font-size:18px;
+        color:darken(@desc,5);
+        vertical-align: middle;
+        }
+
+        .aesop-type-radio_row .aesop-radio-wrap{
+        margin-right: 20px
+        }
+
+         .aesop-type-radio_col .aesop-radio-wrap{
+           display: block;
+           margin-bottom: 5px
+        }
+
         input[type="text"] {
             width: 90%;
             padding: 5px 8px;
@@ -296,6 +319,12 @@
                 box-shadow:none;
             }
         }
+
+        .aesop-type-radio input[type="radio"]{
+        height: 16px;
+        border-radius: 50%
+        }
+
         select {
             background:@desc;
             color: @generator--background;

@@ -6,7 +6,8 @@ function aesop_shortcodes_blob() {
 
     $blob = [];
 
-    $arr_core_types = [ 'select', 'select_multiple', 'text', 'text_small', 'media_upload', 'color', 'text_area' ];
+    $arr_core_types_1 = array ('color', 'media_upload', 'select', 'select_multiple', 'text', 'text_area', 'text_small' );
+    $arr_core_types_2 = array('radio_col', 'radio_row');
 
     foreach ( $codes as $slug => $shortcode ) {
         $return = '';
@@ -15,7 +16,7 @@ function aesop_shortcodes_blob() {
 
             foreach ( $shortcode['atts'] as $attr_name => $attr_info ) {
 
-                if ( in_array( $attr_info['type'], $arr_core_types ) ) {
+                if ( in_array( $attr_info['type'], $arr_core_types_1 ) ) {
 
                     // TODO - prefix is for?
                     $prefix = isset( $attr_info['prefix'] ) ? sprintf( '<span class="aesop-option-prefix">%s</span>', $attr_info['prefix'] ) : null;
@@ -75,6 +76,46 @@ function aesop_shortcodes_blob() {
                         }
                     }
                     $return .= '</p>';
+                } elseif( in_array( $attr_info['type'], $arr_core_types_2 ) ) {
+
+
+                 //   $slug = $arr_args['slug'];
+                 //   $attr_name = $arr_args['att_name'];
+                 //   $attr_info = $arr_args['att_info'];
+
+                    $prefix = isset( $attr_info['prefix'] ) ? sprintf( '<span class="aesop-option-prefix">%s</span>', $attr_info['prefix'] ) : null;
+
+                    $return .= '<p class="aesop-type-radio aesop-type-' . esc_attr($attr_info['type']) . ' aesop-' . esc_attr($slug) . '-' . esc_attr($attr_name) . '">';
+                    //  $return .= '<label for="aesop-generator-attr-' . $attr_name . '">' . $attr_info['desc'] . '</label>';
+                    $return .= '<span class="aesop-span-label" for="aesop-generator-attr-' . esc_attr($attr_name) . '">' . esc_html($attr_info['desc']) . '</span>';
+                    $return .= '<small class="aesop-option-desc">' . esc_html($attr_info['tip']) . '</small>';
+
+                    if (isset($attr_info['default'])){
+                        $str_default = $attr_info['default'];
+                    }
+                    $str_temp = '';
+                    if ( isset($attr_info['values']) && is_array($attr_info['values'])){
+
+                        foreach ( $attr_info['values'] as $ndx => $arr_pair ){
+
+                            $str_id = 'aesop-radio-' . trim($attr_name) . '-' . $ndx;
+                            $str_temp .= '<span class="aesop-radio-wrap">';
+                            $str_checked = '';
+                            if ( $str_default === $arr_pair['value'] ){
+                                $str_checked = ' checked ';
+                            }
+                            $str_temp .= '<input type="radio" id="' . esc_attr( $str_id) .'" name="' . esc_attr($attr_name) . '" value="' . esc_attr($arr_pair['value']) .'"' . $str_checked . '>';
+                            $str_temp .= '<label for="' . esc_attr($str_id) . '">' . esc_attr($arr_pair['name']) . '</label>';
+                            $str_temp .= '</span>';
+                            // $return .= $arr_pair['value'] . ' -- ' . $arr_pair['name'];
+
+                        }
+                    }
+                    $return .= $str_temp . '</p>';
+
+                    //     $return .= '<input type="' . 'hidden' . '" name="' . $attr_name . '" value="123" id="aesop-generator-attr-' . $attr_name . '" class="aesop-generator-attr aesop-generator-attr-' . 'text' . '" />' . $prefix . '';
+                    // return $return; //$bool_custom;
+
                 } else {
 
                     $bool_custom = false;

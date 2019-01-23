@@ -379,6 +379,24 @@
   font-size: 18px;
   color: #474747;
 }
+#aesop-generator-settings-outer #aesop-generator-settings .aesop-type-radio label {
+  font-size: 16px;
+  display: inline;
+}
+#aesop-generator-settings-outer #aesop-generator-settings .aesop-span-label {
+  display: block;
+  position: relative;
+  font-size: 18px;
+  color: #474747;
+  vertical-align: middle;
+}
+#aesop-generator-settings-outer #aesop-generator-settings .aesop-type-radio_row .aesop-radio-wrap {
+  margin-right: 20px;
+}
+#aesop-generator-settings-outer #aesop-generator-settings .aesop-type-radio_col .aesop-radio-wrap {
+  display: block;
+  margin-bottom: 5px;
+}
 #aesop-generator-settings-outer #aesop-generator-settings input[type="text"] {
   width: 90%;
   padding: 5px 8px;
@@ -413,6 +431,10 @@
   border-color: rgba(0, 116, 162, 0.2);
   outline: none;
   box-shadow: none;
+}
+#aesop-generator-settings-outer #aesop-generator-settings .aesop-type-radio input[type="radio"] {
+  height: 16px;
+  border-radius: 50%;
 }
 #aesop-generator-settings-outer #aesop-generator-settings select {
   background: #535353;
