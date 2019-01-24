@@ -8,27 +8,35 @@
                 return html('aesop-component', match);
             });
         }
-		
-		function getComponentTitle(component, parsedSc)
-		{  
-		    var ret;
-		    switch(component)
-			{
-				case 'parallax':
-				case 'video':
-				case 'document':
-				case 'image': ret =  parsedSc.caption; break;
-				case 'gallery': ret = "id:"+parsedSc.id; break;
-				case 'character': ret = parsedSc.name;break;
-				case 'timeline_stop':
-				case 'chapter':
-				case 'audio':
-				case 'collection': ret = parsedSc.title;break;
-				case 'quote': ret = parsedSc.quote;break;
-			}
-			if (ret === undefined) return "";
-			return ret;
-		}
+
+        function getComponentTitle(component, parsedSc) {
+            var ret;
+            switch (component) {
+                case 'parallax':
+                case 'video':
+                case 'document':
+                case 'image':
+                    ret = parsedSc.caption;
+                    break;
+                case 'gallery':
+                    ret = "id:" + parsedSc.id;
+                    break;
+                case 'character':
+                    ret = parsedSc.name;
+                    break;
+                case 'timeline_stop':
+                case 'chapter':
+                case 'audio':
+                case 'collection':
+                    ret = parsedSc.title;
+                    break;
+                case 'quote':
+                    ret = parsedSc.quote;
+                    break;
+            }
+            if (ret === undefined) return "";
+            return ret;
+        }
 
         // return the html div equivalent of the shortcodes
         function html(cls, data) {
@@ -41,19 +49,19 @@
             var re_cleaner_short = /(<\/p>[\s]*<p>)[\s]*$/;
 
             var parsed = re_full.exec(data);
-			
+
 
             if (!parsed) {
                 parsed = re_short.exec(data);
                 var parsedSc = parse(parsed);
                 var componentTitle = getComponentTitle(parsed[1], parsedSc);
-                var st = '<div data-mce-resize="false" data-mce-placeholder="1" contenteditable="false" data-aesop-sc="' + window.encodeURIComponent(data) + '" class="mceItem aesop-component-short ' + cls + '"><div class="aesop-component-mask mceNonEditable unselectable" contenteditable="false"></div><div class="aesop-component-bar" contenteditable="false"><div class="aesop-component-controls"><div title="Delete Component" class="aesop-button aesop-button-delete">&nbsp;</div><div title="Clone Component" class="aesop-button aesop-button-clone">&nbsp;</div><div title="Edit Component" class="aesop-button aesop-button-edit aesop-scope-' + parsed[1] + '">&nbsp;</div><div title="Cut Component / CTRL + ALT + ENTER to Paste" class="aesop-button aesop-button-clipboard">&nbsp;</div></div><div class="mceNonEditable aesop-component-title unselectable aesop-' + parsed[1] + '-title">' + parsed[1].replace(/_/g, " ") + "<div style='font-size:75%;padding-left:2.3em;'>"+componentTitle + '</div></div></div><div class="aesop-end">WcMgcq</div></div>';
+                var st = '<div data-mce-resize="false" data-mce-placeholder="1" contenteditable="false" data-aesop-sc="' + window.encodeURIComponent(data) + '" class="mceItem aesop-component-short ' + cls + '"><div class="aesop-component-mask mceNonEditable unselectable" contenteditable="false"></div><div class="aesop-component-bar" contenteditable="false"><div class="aesop-component-controls"><div title="Delete Component" class="aesop-button aesop-button-delete">&nbsp;</div><div title="Clone Component" class="aesop-button aesop-button-clone">&nbsp;</div><div title="Edit Component" class="aesop-button aesop-button-edit aesop-scope-' + parsed[1] + '">&nbsp;</div><div title="Cut Component / CTRL + ALT + ENTER to Paste" class="aesop-button aesop-button-clipboard">&nbsp;</div></div><div class="mceNonEditable aesop-component-title unselectable aesop-' + parsed[1] + '-title">' + parsed[1].replace(/_/g, " ") + "<div style='font-size:75%;padding-left:2.3em;'>" + componentTitle + '</div></div></div><div class="aesop-end">WcMgcq</div></div>';
             } else {
                 var parsedSc = parse(parsed);
                 var componentTitle = getComponentTitle(parsed[1], parsedSc);
                 parsed[3] = parsed[3].replace(re_cleaner, '');
                 parsed[3] = parsed[3].replace(re_cleaner_short, '');
-                var st = '<div data-mce-resize="false" data-mce-placeholder="1" contenteditable="false" data-aesop-sc="' + window.encodeURIComponent(data) + '" class="mceItem aesop-component-long ' + cls + '"><div class="aesop-component-mask mceNonEditable unselectable" contenteditable="false"></div><div class="aesop-component-bar" contenteditable="false"><div class="aesop-component-controls"><div title="Delete Component" class="aesop-button aesop-button-delete">&nbsp;</div><div title="Clone Component" class="aesop-button aesop-button-clone">&nbsp;</div><div title="Edit Component" class="aesop-button aesop-button-edit aesop-scope-' + parsed[1] + '">&nbsp;</div><div title="Cut Component / CTRL + ALT + ENTER to Paste" class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parsed[1] + '-title">' + parsed[1].replace(/_/g, " ") + "<div style='font-size:75%;padding-left:2.3em;'> "+ componentTitle + '</div></span></div><div class="aesop-component-content aesop-' + parsed[1] + '"><p>' + parsed[3] + '</p></div></div>';
+                var st = '<div data-mce-resize="false" data-mce-placeholder="1" contenteditable="false" data-aesop-sc="' + window.encodeURIComponent(data) + '" class="mceItem aesop-component-long ' + cls + '"><div class="aesop-component-mask mceNonEditable unselectable" contenteditable="false"></div><div class="aesop-component-bar" contenteditable="false"><div class="aesop-component-controls"><div title="Delete Component" class="aesop-button aesop-button-delete">&nbsp;</div><div title="Clone Component" class="aesop-button aesop-button-clone">&nbsp;</div><div title="Edit Component" class="aesop-button aesop-button-edit aesop-scope-' + parsed[1] + '">&nbsp;</div><div title="Cut Component / CTRL + ALT + ENTER to Paste" class="aesop-button aesop-button-clipboard">&nbsp;</div></div><span class="mceNonEditable aesop-component-title unselectable aesop-' + parsed[1] + '-title">' + parsed[1].replace(/_/g, " ") + "<div style='font-size:75%;padding-left:2.3em;'> " + componentTitle + '</div></span></div><div class="aesop-component-content aesop-' + parsed[1] + '"><p>' + parsed[3] + '</p></div></div>';
             }
 
             return st;
@@ -101,29 +109,28 @@
                 return '<p>' + sc + '</p>';
             }
         }
-		
-		function SpecialCharDecode(s)
-		{
-			var tagsToReplace = {
-				'&lt;':'<' ,
-				'&gt;': '>',
-				'&#91;': '[',
-				'&#93;': ']',
-				'&#34;': '"'
-			};
-			
-			return  s.replace(/&lt;|&gt;|&#91;|&#93;|&#34;/g, function(tag) {
-				return tagsToReplace[tag] || tag;
-			});
-		   //return s.replace(/\[/g, "&#91;").replace(/\]/g, "&#93;").replace(/\"/g, "'");
-		   //return s.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {					   return '&#'+i.charCodeAt(0)+';';					});
-		}
+
+        function SpecialCharDecode(s) {
+            var tagsToReplace = {
+                '&lt;': '<',
+                '&gt;': '>',
+                '&#91;': '[',
+                '&#93;': ']',
+                '&#34;': '"'
+            };
+
+            return s.replace(/&lt;|&gt;|&#91;|&#93;|&#34;/g, function (tag) {
+                return tagsToReplace[tag] || tag;
+            });
+            //return s.replace(/\[/g, "&#91;").replace(/\]/g, "&#93;").replace(/\"/g, "'");
+            //return s.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {					   return '&#'+i.charCodeAt(0)+';';					});
+        }
 
         // parse the shortcode and turn it into an array
         function parse(sc) {
-			//https://github.com/hyunsupul/aesop-core/issues/323
+            //https://github.com/hyunsupul/aesop-core/issues/323
             //var re_full = /\[aesop_([a-zA-Z_]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z]+]/g;
-			var re_full = /\[aesop_([a-zA-Z_]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z_]+]/g;
+            var re_full = /\[aesop_([a-zA-Z_]+)\s([^\[\]]*)]([^\[\]]+)\[\/aesop_[a-zA-Z_]+]/g;
             var re_short = /\[aesop_([a-zA-Z_]+)\s([^\[\]]*)]/g;
             var re_clean = /<br data-mce-bogus="1">/g;
             var re_slice = /([^\s]+="[^"]+")/g
@@ -153,29 +160,29 @@
             // split based on equal sign
             attrs.forEach(function (attr) {
                 var attr2 = attr.split(/=(.+)?/);//split('=');
-				if(attr2.length >2) {
-				  var i = attr.indexOf('=');
-                  attr2 = [attr.slice(0,i), attr.slice(i+1)];
-				}
+                if (attr2.length > 2) {
+                    var i = attr.indexOf('=');
+                    attr2 = [attr.slice(0, i), attr.slice(i + 1)];
+                }
 
                 var attr_key = attr2[0];
                 var attr_value = attr2[1];
-			
-				
-				if (attr_key != "floatermedia" && attr_key != "overlay_content") {				
-				    // if it's floatermedia, don't sanitize html tags
-					/*attr_value = attr_value.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
-					   return '&#'+i.charCodeAt(0)+';';
-					});*/
-					attr_value = SpecialCharDecode(attr_value);
-				} else {
-					// just santize brackets
-					attr_value = attr_value.replace(/\[/g, "&#91;").replace(/\]/g, "&#93;");
-				}
-				
-				attr_value = attr_value.replace('<p>', '').replace('</p>', '');
 
-				
+
+                if (attr_key != "floatermedia" && attr_key != "overlay_content") {
+                    // if it's floatermedia, don't sanitize html tags
+                    /*attr_value = attr_value.replace(/[\u00A0-\u9999<>\&]/gim, function(i) {
+                       return '&#'+i.charCodeAt(0)+';';
+                    });*/
+                    attr_value = SpecialCharDecode(attr_value);
+                } else {
+                    // just santize brackets
+                    attr_value = attr_value.replace(/\[/g, "&#91;").replace(/\]/g, "&#93;");
+                }
+
+                attr_value = attr_value.replace('<p>', '').replace('</p>', '');
+
+
                 // trim first and last character to get rid of the quotes
                 attr_value = attr_value.slice(0, -1);
                 ai_map[attr_key] = attr_value.substring(1);
@@ -271,7 +278,7 @@
             this.setCursorPosition(this.val().length);
             return this;
         }
-		
+
 
         // handle the click events
         editor.onClick.add(function (ed, e) {
@@ -303,16 +310,16 @@
                 var scope = re_scope.exec(e.target.className);
 
                 var ai_parent = e.target.parentNode.parentNode.parentNode;
-				var sc= ai_parent.getAttribute("data-aesop-sc");
-				if (!sc) {
-                   sc = restoreAesopShortcodes(ai_parent.outerHTML);
-				} else {
-				   sc = window.decodeURIComponent(sc);
-				   sc = '<p>'+sc+'</p>';
-				}
+                var sc = ai_parent.getAttribute("data-aesop-sc");
+                if (!sc) {
+                    sc = restoreAesopShortcodes(ai_parent.outerHTML);
+                } else {
+                    sc = window.decodeURIComponent(sc);
+                    sc = '<p>' + sc + '</p>';
+                }
 
                 ai_parent.setAttribute("id", 'aesop-generator-editing');
-				
+
 
                 if (scope) {
                     $('body').toggleClass('modal-open');
@@ -323,15 +330,40 @@
                     var selector = '.dk_options li.' + scope[1] + ' a';
                     $(selector).click();
 
-					var attrs = parse(sc);
-					
+                    var attrs = parse(sc);
 
+                    /*
+                    // TODO - remove pre radio version
                     for (var key in attrs) {
-						
+
                         if (key === 'content') {
                             $('#aesop-generator-content').val(attrs[key]);
                         } else {
                             $('#aesop-generator-settings [name="' + key + '"]').val(attrs[key]);
+                        }
+                    }
+                    */
+                    // take the shortcode atts and update the aesop gen settings form fields
+                    var ele, getSettings = $('#aesop-generator-settings');
+                    for (var key in attrs) {
+
+                        if (key === 'content') {
+                            $('#aesop-generator-content').val(attrs[key]);
+                        } else {
+                            ele = getSettings.find('[name="' + key + '"]');
+                            if (ele.attr('type') == 'radio') {
+                                // which radio is checked?
+                                ele.each(function () {
+                                    if ($(this).val() == attrs[key]) {
+                                        $(this).attr('checked', true);
+                                    } else {
+                                        $(this).attr('checked', false);
+                                    }
+                                });
+                            } else {
+                                // not a radio? then simply update the eke's val()
+                                ele.val(attrs[key]);
+                            }
                         }
                     }
                 }
