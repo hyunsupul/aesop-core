@@ -25,45 +25,45 @@ class ClassBackgroundImageStyle {
 
         $this->_str_selector_prefix = '#';
         // IMPORTANT - Order here matters. You want to start small (read: "mobile-first") and get larger.
-        $this->_arr_breakpoints          = [
+        $this->_arr_breakpoints          = array(
 
-            'xs' => [
+            'xs' => array(
                 'min_width' => 0,
                 'unit'      => 'px',
-            ],
-            'sm' => [
+            ),
+            'sm' => array(
                 'min_width' => 576,
                 'unit'      => 'px',
-            ],
-            'md' => [
+            ),
+            'md' => array(
                 'min_width' => 768,
                 'unit'      => 'px',
-            ],
-            'lg' => [
+            ),
+            'lg' => array(
                 'min_width' => 992,
                 'unit'      => 'px',
-            ],
-            'xl' => [
+            ),
+            'xl' => array(
                 'min_width' => 1200,
                 'unit'      => 'px',
-            ],
-        ];
+            ),
+        );
         // TODO - setter? 
-        $this->_arr_breakpoints_defaults = [
+        $this->_arr_breakpoints_defaults = array(
             'min_width' => 0,
             'unit'      => 'px'
-        ];
+        );
         // optional - what wp image size to use for each breakpoint
         // if you don't set these then you MUST define the wp image size as you go, as you'll see below.
-        $this->_arr_wp_image_sizes = [
+        $this->_arr_wp_image_sizes = array(
 
             'xs' => false,
             'sm' => false,
             'md' => false,
             'lg' => false,
             'xl' => false
-        ];
-        $this->_arr_push           = [];
+        );
+        $this->_arr_push           = array();
 
     }
 
@@ -77,7 +77,7 @@ class ClassBackgroundImageStyle {
         $this->_str_css_selector_slug  = false;
 
         if ( $bool_push === true ){
-            $this->_arr_push           = [];
+            $this->_arr_push           = array();
         }
     }
 
@@ -248,7 +248,8 @@ class ClassBackgroundImageStyle {
         if ( $this->_bool_active === null ) {
 
             $this->_bool_active = false;
-            if ( is_integer( $this->_int_attachment_id ) && is_string( $this->_str_css_selector_slug ) && ! empty( esc_attr( $this->_str_css_selector_slug ) ) ) {
+			$slug = esc_attr( $this->_str_css_selector_slug );
+            if ( is_integer( $this->_int_attachment_id ) && is_string( $this->_str_css_selector_slug ) && ! empty( $slug  ) ) {
                 $this->_bool_active = true;
             }
         }
@@ -277,7 +278,7 @@ class ClassBackgroundImageStyle {
      */
     public function getStyle( $bool_echo = true ) {
 
-        $arr_ret = [];
+        $arr_ret = array();
         foreach ( $this->_arr_breakpoints as $str_key => $arr_args ) {
 
             if ( is_array( $arr_args ) ) {
@@ -287,7 +288,7 @@ class ClassBackgroundImageStyle {
             // for this bp, was something push'ed and it must be an array
             if ( isset( $this->_arr_push[ $str_key ] ) && is_array( $this->_arr_push[ $str_key ] ) ) {
 
-                $arr_temp = [];
+                $arr_temp = array();
                 // loop over the pairs [ css_selector , url] and make the magic happen for this bp
                 foreach ( $this->_arr_push[ $str_key ] as $str_css_sel => $str_url ) {
                     if ( is_string( $str_css_sel ) && is_string( $str_url ) ) {

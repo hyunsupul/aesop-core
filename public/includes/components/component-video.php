@@ -83,7 +83,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 	    	<?php do_action( 'aesop_video_inside_top', $atts, $unique ); // action
         // new
         $bool_custom = false;
-        $arr_args    = [
+        $arr_args    = array(
             'atts'    => $atts,
             'autoplaystatus' => $autoplaystatus,
             'classes' => $classes,
@@ -99,7 +99,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
             'point' => $point,
             'unique'  => $unique,
             'waypoint' => $waypoint
-        ];
+        );
         $bool_custom = apply_filters( 'aesop_video_custom_view', $bool_custom, $arr_args );
 
         if ( $bool_custom === false ) {

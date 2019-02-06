@@ -15,7 +15,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
         $instance++;
         $unique = sprintf( '%s-%s', get_the_ID(), $instance );
 
-        $defaults = [
+        $defaults = array(
             'height'            => '',
             'width'             => '100%',
             'component_width'   => '100%',
@@ -34,7 +34,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
             'disable_bgshading' => 'off',
             'revealfx'          => '',
             'overlay_revealfx'  => ''
-        ];
+        );
 
         $atts = apply_filters( 'aesop_cbox_defaults', shortcode_atts( $defaults, $atts, 'aesop_content' ) );
 
@@ -47,12 +47,12 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
         // inner positioning
         $getinnerposition = $atts['innerposition'] ? preg_split( '/[\s,]+/', $atts['innerposition'] ) : false;
 
-        $positionArray = [
+        $positionArray = array(
             'top'    => $getinnerposition[0],
             'right'  => $getinnerposition[1],
             'bottom' => $getinnerposition[2],
             'left'   => $getinnerposition[3]
-        ];
+        );
 
         //$innerposition = is_array( $positionArray ) && $atts['innerposition'] ? sprintf( 'position:absolute;top:%s;right:%s;bottom:%s;left:%s;', $positionArray['top'], $positionArray['right'], $positionArray['bottom'], $positionArray['left'] ) : false;
         $innerposition = is_array( $positionArray ) && $atts['innerposition'] ? sprintf( 'top:%s;right:%s;bottom:%s;left:%s;', $positionArray['top'], $positionArray['right'], $positionArray['bottom'], $positionArray['left'] ) : false;
@@ -138,7 +138,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
             echo do_action( 'aesop_cbox_inside_top', $atts, $unique ); // action
 
             $bool_custom = false;
-            $arr_args    = [
+            $arr_args    = array(
                 'atts'            => $atts,
                 'content'         => $content,
                 'contentwidth'    => $contentwidth,
@@ -148,7 +148,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
                 'itemstyle'       => $itemstyle,
                 'typeclass'       => $typeclass,
                 'unique'          => $unique
-            ];
+            );
             $bool_custom = apply_filters( 'aesop_cbox_custom_view', $bool_custom, $arr_args );
 
             if ( $bool_custom === false ) {

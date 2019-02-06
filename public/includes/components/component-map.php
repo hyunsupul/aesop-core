@@ -3,10 +3,10 @@
 if ( ! function_exists( 'aesop_map_shortcode' ) ) {
     function aesop_map_shortcode( $atts ) {
 
-        $defaults = [
+        $defaults = array(
             'height' => 500,
             'sticky' => 'off'
-        ];
+        );
 
         // TODO - move these elsewhere
         wp_enqueue_script( 'aesop-map-script', AI_CORE_URL . '/public/includes/libs/leaflet/leaflet.js' );
@@ -58,13 +58,13 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 
         // new
         $bool_custom = false;
-        $arr_args    = [
+        $arr_args    = array(
             'atts'     => $atts,
             'instance' => $instance,
             'markers'  => $markers,
             'sticky'   => $sticky,
             'unique'   => $unique
-        ];
+        );
         // TODO - revisit. map might require a different approach.
         $bool_custom = apply_filters( 'aesop_map_custom_view', $bool_custom, $arr_args );
 
@@ -295,7 +295,7 @@ class AesopMapComponent {
      */
     public function aesop_map_marker_sc( $atts ) {
 
-        $defaults = [ 'title' => '', 'hidden' => '' ];
+        $defaults = array( 'title' => '', 'hidden' => '' );
 
         $atts = shortcode_atts( $defaults, $atts, 'aesop_map_marker' );
 

@@ -46,7 +46,7 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 
         // new
         $bool_custom = false;
-        $arr_args    = [
+        $arr_args    = array(
             'actiontop' => $actiontop,
             'actionbottom' => $actionbottom,
             'actioninsidetop' => $actioninsidetop,
@@ -56,7 +56,7 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
             'instance' => $instance,
             'showpdflink' => $showpdflink,
             'unique'  => $unique
-        ];
+        );
         $bool_custom = apply_filters( 'aesop_document_custom_view', $bool_custom, $arr_args );
 
         if ( $bool_custom === false ) {

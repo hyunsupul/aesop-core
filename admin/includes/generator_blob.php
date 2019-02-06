@@ -4,7 +4,7 @@ function aesop_shortcodes_blob() {
 
     $codes = aesop_shortcodes();
 
-    $blob = [];
+    $blob = array();
 
     $arr_core_types_1 = array ('color', 'media_upload', 'select', 'select_multiple', 'text', 'text_area', 'text_small' );
     $arr_core_types_2 = array('radio_col', 'radio_row');

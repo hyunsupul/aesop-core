@@ -10,7 +10,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
     function aesop_chapter_shortcode( $atts ) {
 
 
-        $defaults = [
+        $defaults = array(
             'title'            => '',
             'subtitle'         => '',
             'bgtype'           => 'img',
@@ -26,7 +26,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
             'revealfx'         => '',
             'video_autoplay'   => 'on',
             'overlay_revealfx' => ''
-        ];
+        );
 
         $atts = apply_filters( 'aesop_chapter_defaults', shortcode_atts( $defaults, $atts, 'aesop_chapter' ) );
 

@@ -9,7 +9,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
     function aesop_image_shortcode( $atts ) {
 
 
-        $defaults = [
+        $defaults = array(
             'panorama'         => 'off',
             'img'              => '',
             'imgwidth'         => '100%',
@@ -25,7 +25,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
             'overlay_content'  => '',
             'revealfx'         => '',
             'overlay_revealfx' => ''
-        ];
+        );
 
         $atts = apply_filters( 'aesop_image_defaults', shortcode_atts( $defaults, $atts, 'aesop_image' ) );
 
@@ -87,7 +87,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
             <?php do_action( 'aesop_image_inside_top', $atts, $unique ); // action
             // new
             $bool_custom = false;
-            $arr_args    = [
+            $arr_args    = array(
                 'alt'         => $alt,
                 'atts'        => $atts,
                 'auto_alt'    => $auto_alt,
@@ -97,7 +97,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
                 'lazy_holder' => $lazy_holder,
                 'panorama'    => $panorama,
                 'unique'      => $unique
-            ];
+            );
             $bool_custom = apply_filters( 'aesop_image_custom_view', $bool_custom, $arr_args );
 
             if ( $bool_custom === false ) {
