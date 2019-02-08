@@ -254,29 +254,6 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'desc'   => __( 'Text Color', 'aesop-core' ),
 						'tip'  => __( 'Select a color for the quote text.', 'aesop-core' )
 					),
-/*
-                    'test'    => array(
-                        'type'  => 'radio_row',
-                        'default'  => 'center',
-                        'desc'   => 'Test Desc',
-                        'tip'  => 'This is the Test Tip',
-                        'values'  => array(
-                            array(
-                                'value' => 'left',
-                                'name' => __( 'Left', 'aesop-core' ),
-                            ),
-                            array(
-                                'value' => 'center',
-                                'name' => __( 'Center', 'aesop-core' ),
-                            ),
-                            array(
-                                'value' => 'right',
-                                'name' => __( 'Right', 'aesop-core' ),
-                            )
-                        ),
-                    ),
-*/
-
 					'width'    => array(
 						'type'  => 'text_small',
 						'default'  => '100%',
