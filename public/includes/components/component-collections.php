@@ -85,10 +85,10 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
                         if ( 'on' == $atts['splash'] ) {
 
                             // cat query args
-                            $cat_args = [
+                            $cat_args = array(
                                 'orderby' => 'name',
                                 'order'   => 'ASC'
-                            ];
+                            );
 
                             // get cached query
                             $cats = wp_cache_get( 'aesop_splash_query_' . $atts['collection'] );
@@ -129,7 +129,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
                             // query args
                             $order = $atts['order'] == 'default' ? 'DESC' : 'ASC';
                             $args  = array(
-                                'orderby'        => [ 'date' => $order ],
+                                'orderby'        => array( 'date' => $order ),
                                 'posts_per_page' => $atts['limit'],
                                 'cat'            => $atts['collection'],
                                 'ignore_sticky'  => true,

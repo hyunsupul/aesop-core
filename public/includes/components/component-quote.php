@@ -78,14 +78,14 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
         $align = $atts['align'] ? sprintf( 'aesop-component-align-%s', esc_attr( $atts['align'] ) ) : null;
 
         // style/consolidated classes
-        $css_class_array = [
+        $css_class_array = array(
             $align,
             $type,
             $contentwidth,
             $isparallax,
             $lrclass,
             $imgclass
-        ];
+        );
 
         $css_classes = '';
         if ( ! empty( $css_class_array ) ) {

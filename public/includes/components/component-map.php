@@ -129,16 +129,16 @@ class AesopMapComponent {
 
     public function __construct() {
 
-        add_action( 'wp_footer', [ $this, 'aesop_map_loader' ], 20 );
+        add_action( 'wp_footer', array( $this, 'aesop_map_loader' ), 20 );
 
         // map marker shortcode
-        add_shortcode( 'aesop_map_marker', [ $this, 'aesop_map_marker_sc' ] );
+        add_shortcode( 'aesop_map_marker', array( $this, 'aesop_map_marker_sc' ) );
 
         // if Gutenberg is active, register block handler
         if ( function_exists( 'register_block_type' ) ) {
-            register_block_type( 'ase/mapmarker', [
-                'render_callback' => [ $this, 'aesop_map_marker_sc' ]
-            ] );
+            register_block_type( 'ase/mapmarker', array(
+                'render_callback' => array( $this, 'aesop_map_marker_sc' )
+            ) );
         }
     }
 

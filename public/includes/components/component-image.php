@@ -34,7 +34,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
         if ( $panorama ) {
             // panorama mode is on
-            wp_enqueue_script( 'aesop-paver', AI_CORE_URL . '/public/assets/js/jquery.paver.min.js', [ 'ai-core' ] );
+            wp_enqueue_script( 'aesop-paver', AI_CORE_URL . '/public/assets/js/jquery.paver.min.js', array( 'ai-core' ) );
             $atts['imgwidth'] = "100%";
             if ( empty( $atts['imgheight'] ) ) {
                 list( $width, $height, $type, $attr ) = getimagesize( $atts['img'] );

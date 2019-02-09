@@ -94,7 +94,7 @@ if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
                 echo aesop_component_media_filter( $title );
             }
 
-            echo wp_audio_shortcode( [ 'src' => $atts['src'], 'loop' => $loop ] );
+            echo wp_audio_shortcode( array( 'src' => $atts['src'], 'loop' => $loop ) );
 
         }
 

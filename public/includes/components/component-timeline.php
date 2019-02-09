@@ -71,10 +71,10 @@ class AesopTimelineComponent {
     public function __construct() {
 
         // call our method in the footer
-        add_action( 'wp_footer', [ $this, 'aesop_timeline_loader' ], 21 );
+        add_action( 'wp_footer', array( $this, 'aesop_timeline_loader' ), 21 );
 
         // add a body class if timeline is active
-        add_filter( 'body_class', [ $this, 'body_class' ] );
+        add_filter( 'body_class', array( $this, 'body_class' ) );
 
     }
 
