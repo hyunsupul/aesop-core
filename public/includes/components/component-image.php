@@ -166,7 +166,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
                             <?php
                         }
                         ?>
-                        }
+                        
 
 
                         <?php do_action( 'aesop_image_inner_inside_bottom', $atts, $unique ); // action ?>
