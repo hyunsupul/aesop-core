@@ -72,9 +72,9 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
         $widthComponentStyle    = sprintf( 'width:%s;max-width:100%%;', esc_attr( $atts['component_width'] ) );
         $overlay_animated_style = ( ! empty( $atts['overlay_revealfx'] ) && $atts['overlay_revealfx'] != 'off' ) ? 'visibility:hidden;' : false;
         $shade_style            = ( empty( $atts['disable_bgshading'] ) || $atts['disable_bgshading'] == 'off' ) ? false : 'background-color:transparent;';
-        $innerstyle             = sprintf( 'style="%s%s%s%s%s"', $widthContentStyle, $position, $innerposition, $overlay_animated_style, $shade_style );
+        $innerstyle             = 'style="'.esc_attr(sprintf( '%s%s%s%s%s', $widthContentStyle, $position, $innerposition, $overlay_animated_style, $shade_style )).'"';
         $txtcolor               = $atts['color'] ? sprintf( 'color:%s;', $atts['color'] ) : false;
-        $itemstyle              = $imgstyle !== false || $txtcolor !== false || $height !== false ? sprintf( 'style="%s%s%s%s"', $imgstyle, $txtcolor, $bgcolor, $height ) : false;
+        $itemstyle              = $imgstyle !== false || $txtcolor !== false || $height !== false ? 'style="'.esc_attr(sprintf( '%s%s%s%s', $imgstyle, $txtcolor, $bgcolor, $height )).'"' : false;
 
         // custom classes
         $classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'content', '' ) : false;
@@ -156,7 +156,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
                 ?>
 
                 <div id="aesop-content-component-<?php echo esc_attr( $unique ); ?>"
-                     class="aesop-content-comp-wrap <?php echo esc_attr( $typeclass ); ?>" <?php echo esc_attr( $itemstyle ); ?>>
+                     class="aesop-content-comp-wrap <?php echo esc_attr( $typeclass ); ?>" <?php echo  $itemstyle ; ?>>
 
                     <?php echo do_action( 'aesop_cbox_content_inside_top', $atts, $unique ); // action
 
@@ -167,7 +167,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 
                     <?php } ?>
 
-                    <div class="aesop-component-content-data aesop-content-comp-inner <?php echo esc_attr( $contentwidth ); ?>" <?php echo esc_attr( $innerstyle ); ?>>
+                    <div class="aesop-component-content-data aesop-content-comp-inner <?php echo esc_attr( $contentwidth ); ?>" <?php echo $innerstyle ; ?>>
 
                         <?php echo do_action( 'aesop_cbox_content_inner_inside_top', $atts, $unique ); // action
                         ?>
