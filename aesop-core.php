@@ -13,7 +13,7 @@
  *  Plugin Name:       Aesop Story Engine
  *  Plugin URI:        http://aesopstoryengine.com
  *  Description:       Open-sourced suite of components that empower interactive storytelling.
- *  Version:           2.0.7
+ *  Version:           2.0.7.1
  *  Author:            Aesopinteractive 
  *  Author URI:        http://aesopstoryengine.com
  *  Text Domain:       aesop-core
