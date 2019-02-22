@@ -14,10 +14,10 @@
             // if we have an "internal note"
             if (parsedSc[component + '_internal_note'] !== undefined) {
                 // and it's not blank(s)
-                var temp = parsedSc['name'].replace(/ /g, "");
+                var temp = parsedSc[component + '_internal_note'].replace(/ /g, "");
                 if (temp !== "") {
                     // use it, otherwise...
-                    ret = parsedSc['name'];
+                    ret = parsedSc[component + '_internal_note'];
 
                 }
             }
