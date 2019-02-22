@@ -21,6 +21,7 @@
 
                 }
             }
+            
             // otherwise... use this switch to figure out what we'll show in the shortcode
             if (ret === undefined) {
                 switch (component) {
