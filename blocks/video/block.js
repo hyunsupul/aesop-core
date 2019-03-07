@@ -67,7 +67,10 @@
 			},
 			revealfx : {
 				type: 'string',
-			}
+			},
+			nocookies:{
+				type : 'boolean'
+			},
 		},
 
 		// The "edit" property must be a valid function.
@@ -95,6 +98,17 @@
 							setAttributes( { caption: content } );
 						},
 					} 
+				),
+				(attributes.src == 'youtube')
+				&& el(
+				wp.components.ToggleControl,
+				{
+					label: __( 'No cookies' ),
+					checked: !! attributes.nocookies,
+					onChange: function( content ) {
+						setAttributes( { nocookies: content } );
+					}
+				}
 				),
 			    (attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
 				&& el(

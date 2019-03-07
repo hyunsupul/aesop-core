@@ -32,7 +32,8 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			'inside_chapter' => '',    // this is meant to be only turned on when the Chapter Component uses it for video background.
 			'force_fullwidth'=>'off',
 			'revealfx'  => '',
-			'overlay_revealfx'          => ''
+			'overlay_revealfx'          => '',
+			'nocookies'    => 'off'
 		);
 		$atts = apply_filters( 'aesop_video_defaults', shortcode_atts( $defaults, $atts, 'aesop_video' ) );
 
@@ -52,6 +53,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		}
 
 		$loopstatus  = 'on' == $atts['loop'] ? true : false;
+		$nocookies  = 'on' == $atts['nocookies'] ? true : false;
 		$inside_chapter = 'on' == $atts['inside_chapter'] ? true : false;
 		$mute  = 'on' == $atts['mute'] || ($inside_chapter && $atts['src'] != 'self') ? true : false;
 		$autoplaystatus = 'on' == $atts['autoplay'] ? true : false;
@@ -267,8 +269,9 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 						$ytparams = $ytparams.($autoplaystatus ? "&autoplay=1" : "");
 						$ytparams = $ytparams.($mute ? "&mute=1" : "");
 						$ytparams = $ytparams.($controlstatus=='controls-visible' ? "" : "&controls=0&showinfo=0");
+						$ytdomain = $nocookies ? 'youtube-nocookie' : 'youtube';
 						
-						printf( '<iframe id ="aesop-ytb-%s"  src="//www.youtube.com/embed/%s?rel=0&enablejsapi=1&wmode=transparent%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0" width="100%%"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), $ytparams, esc_attr( $iframe_size ) );
+						printf( '<iframe id ="aesop-ytb-%s"  src="//www.%s.com/embed/%s?rel=0&enablejsapi=1&wmode=transparent%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0" width="100%%"></iframe>', esc_attr( $unique ), $ytdomain, esc_attr( $atts['id'] ), $ytparams, esc_attr( $iframe_size ) );
 
 						if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'] || 'pip' == $atts['viewend'])&& !wp_is_mobile()) {
 						?>
