@@ -107,6 +107,17 @@
 						}
 					}
 				),
+				(attributes.src == 'youtube' || attributes.src == 'vimeo')
+				&& el(
+				wp.components.ToggleControl,
+				{
+					label: __( 'Show controls' ),
+					checked: !! attributes.controls,
+					onChange: function( content ) {
+						setAttributes( { controls: content } );
+					}
+				}
+				),
 				(attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
 				&& el(
 					wp.components.ToggleControl,
