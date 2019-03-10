@@ -71,7 +71,10 @@
 			},
 			revealfx : {
 				type: 'string',
-			}
+			},
+			nocookies:{
+				type : 'boolean'
+			},
 		},
 
 		// The "edit" property must be a valid function.
@@ -100,6 +103,16 @@
 						},
 					} 
 				),
+				(attributes.src == 'youtube')
+				&& el(
+				wp.components.ToggleControl,
+				{
+					label: __( 'No cookies' ),
+					checked: !! attributes.nocookies,
+					onChange: function( content ) {
+						setAttributes( { nocookies: content } );
+					}
+				},
 				el( wp.components.TextControl, {
 						label: __( 'Video (max) width' ),
 						value: attributes.width,
