@@ -31,6 +31,10 @@
 				type: 'string',
 				default: 'youtube',
 			},
+			width : {
+				type: 'string',
+				default: '100%',
+			},
 			id : {
 				type: 'string'
 			},
@@ -108,7 +112,14 @@
 					onChange: function( content ) {
 						setAttributes( { nocookies: content } );
 					}
-				}
+				},
+				el( wp.components.TextControl, {
+						label: __( 'Video (max) width' ),
+						value: attributes.width,
+						onChange: function( content ) {
+							setAttributes( { width: content } );
+						},
+					}
 				),
 			    (attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
 				&& el(
@@ -120,6 +131,17 @@
 							setAttributes( { autoplay: content } );
 						}
 					}
+				),
+				(attributes.src == 'youtube' || attributes.src == 'vimeo')
+				&& el(
+				wp.components.ToggleControl,
+				{
+					label: __( 'Show controls' ),
+					checked: !! attributes.controls,
+					onChange: function( content ) {
+						setAttributes( { controls: content } );
+					}
+				}
 				),
 				(attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
 				&& el(
