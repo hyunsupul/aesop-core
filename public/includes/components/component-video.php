@@ -103,6 +103,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
             'unique'  => $unique,
             'waypoint' => $waypoint
         );
+
         $bool_custom = apply_filters( 'aesop_video_custom_view', $bool_custom, $arr_args );
 
         if ( $bool_custom === false ) {

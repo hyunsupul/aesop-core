@@ -74,7 +74,7 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 		', esc_attr( $unique ), esc_attr( $unique ) );
 
             $slide = $atts['caption'] ? esc_html( $atts['caption'] ) : false;
-			$link = sprintf( '<a href="#" class="aesop-doc-reveal-%s"><span class="aesop-document-component--label">'.__('document','aesop-core' ).'</span><br /> <div class="aesop-document-component--caption">%s</div></a>', esc_attr( $unique ), $slide );
+			      $link = sprintf( '<a href="#" class="aesop-doc-reveal-%s"><span class="aesop-document-component--label">'.__('document','aesop-core' ).'</span><br /> <div class="aesop-document-component--caption">%s</div></a>', esc_attr( $unique ), $slide );
             $guts  = sprintf( '<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>', esc_attr( $unique ), $source );
             if ( $showpdflink ) {
 

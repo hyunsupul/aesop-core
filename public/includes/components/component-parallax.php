@@ -93,6 +93,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
             'laxclass' => $laxclass,
             'unique'  => $unique
         );
+
         $bool_custom = apply_filters( 'aesop_parallax_custom_view', $bool_custom, $arr_args );
 
         if ( $bool_custom === false ) {

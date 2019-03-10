@@ -9,7 +9,6 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 
     function aesop_chapter_shortcode( $atts ) {
 
-
         $defaults = array(
             'title'            => '',
             'subtitle'         => '',
@@ -173,7 +172,6 @@ if ( ! function_exists( 'aesop_chapter_heading_loader' ) ) {
 class AesopChapterHeadingComponent {
 
     public function __construct() {
-
         add_action( 'wp_footer', array( $this, 'aesop_chapter_loader' ), 21 );
     }
 

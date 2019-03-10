@@ -11,28 +11,55 @@
 
         function getComponentTitle(component, parsedSc) {
             var ret;
-            switch (component) {
-                case 'parallax':
-                case 'video':
-                case 'document':
-                case 'image':
-                    ret = parsedSc.caption;
-                    break;
-                case 'gallery':
-                    ret = "id:" + parsedSc.id;
-                    break;
-                case 'character':
-                    ret = parsedSc.name;
-                    break;
-                case 'timeline_stop':
-                case 'chapter':
-                case 'audio':
-                case 'collection':
-                    ret = parsedSc.title;
-                    break;
-                case 'quote':
-                    ret = parsedSc.quote;
-                    break;
+            // if we have an "internal note"
+            if (parsedSc[component + '_internal_note'] !== undefined) {
+                // and it's not blank(s)
+                var temp = parsedSc[component + '_internal_note'].replace(/ /g, "");
+                if (temp !== "") {
+                    // use it, otherwise...
+                    ret = parsedSc[component + '_internal_note'];
+
+                }
+            }
+            
+            // otherwise... use this switch to figure out what we'll show in the shortcode
+            if (ret === undefined) {
+                switch (component) {
+                    case 'parallax':
+                    case 'video':
+                    case 'document':
+                    case 'image':
+                        ret = parsedSc.caption;
+                        break;
+                    case 'gallery':
+                        ret = "id:" + parsedSc.id;
+                        break;
+                    case 'character':
+                        ret = parsedSc.name;
+                        break;
+                    case 'timeline_stop':
+                    case 'chapter':
+                    case 'audio':
+                    case 'collection':
+                        ret = parsedSc.title;
+                        break;
+                    case 'quote':
+                        ret = parsedSc.quote;
+                        break;
+                    default:
+                        // if it's a custom component, we'll try to guess it's "label"
+                        // TODO - pass this in via a wp localized script
+                        var props = ['title', 'name', 'headline'];
+                        for (var i in props) {
+                            if (parsedSc[props[i]] !== undefined) {
+                                var temp = parsedSc[props[i]].replace(/ /g, "");
+                                if (temp !== "") {
+                                    ret = parsedSc[props[i]];
+                                    break;
+                                }
+                            }
+                        }
+                }
             }
             if (ret === undefined) return "";
             return ret;

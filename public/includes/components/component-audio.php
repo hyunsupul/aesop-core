@@ -8,7 +8,6 @@
 if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
 
     function aesop_audio_shortcode( $atts ) {
-
         $defaults = array(
             'title'     => '',
             'src'       => '',
@@ -17,6 +16,7 @@ if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
             'loop'      => 'off',
             'hidden'    => ''
         );
+
         $atts     = apply_filters( 'aesop_audio_defaults', shortcode_atts( $defaults, $atts, 'aesop_audio' ) );
 
         // let this be used multiple times
@@ -84,8 +84,8 @@ if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
             'title'    => $title,
             'unique'   => $unique,
             'waypoint' => $waypoint,
-
         );
+
         $bool_custom = apply_filters( 'aesop_audio_custom_view', $bool_custom, $arr_args );
 
         if ( $bool_custom === false ) {
@@ -93,9 +93,7 @@ if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
             if ( $title ) {
                 echo aesop_component_media_filter( $title );
             }
-
             echo wp_audio_shortcode( array( 'src' => $atts['src'], 'loop' => $loop ) );
-
         }
 
         do_action( 'aesop_audio_inside_bottom', $atts, $unique ); // action

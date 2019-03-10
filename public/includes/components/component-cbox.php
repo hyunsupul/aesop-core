@@ -166,9 +166,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
                              data-speed="10"><?php echo aesop_component_media_filter( $atts['floatermedia'] ); ?></div>
 
                     <?php } ?>
-
                     <div class="aesop-component-content-data aesop-content-comp-inner <?php echo esc_attr( $contentwidth ); ?>" <?php echo $innerstyle ; ?>>
-
                         <?php echo do_action( 'aesop_cbox_content_inner_inside_top', $atts, $unique ); // action
                         ?>
 

@@ -9,7 +9,6 @@
 if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 
     function aesop_collection_shortcode( $atts ) {
-
         $defaults = array(
             'collection'  => 1,
             'title'       => '',
@@ -21,6 +20,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
             'order'       => 'default',
             'revealfx'    => ''
         );
+
         $atts     = apply_filters( 'aesop_collection_defaults', shortcode_atts( $defaults, $atts, 'aesop_collection' ) );
 
         // let this be used multiple times
@@ -135,6 +135,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
                                 'ignore_sticky'  => true,
                                 'paged'          => 1
                             );
+
                             // do not use cache any more
                             //$query = wp_cache_get( 'aesop_collection_query_' . $atts['collection'] );
 

@@ -128,7 +128,6 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 class AesopMapComponent {
 
     public function __construct() {
-
         add_action( 'wp_footer', array( $this, 'aesop_map_loader' ), 20 );
 
         // map marker shortcode
@@ -308,7 +307,6 @@ class AesopMapComponent {
         }
 
         $out = sprintf( '<h2 id="aesop-map-marker-%s" class="aesop-map-marker" %s>%s</h2>', $instance, $style, esc_html( $atts['title'] ) );
-
         return apply_filters( 'aesop_map_marker_output', $out );
     }
 }

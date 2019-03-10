@@ -7,8 +7,6 @@
 if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
     function aesop_image_shortcode( $atts ) {
-
-
         $defaults = array(
             'panorama'         => 'off',
             'img'              => '',
@@ -98,6 +96,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
                 'panorama'    => $panorama,
                 'unique'      => $unique
             );
+
             $bool_custom = apply_filters( 'aesop_image_custom_view', $bool_custom, $arr_args );
 
             if ( $bool_custom === false ) {
@@ -166,7 +165,6 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
                             <?php
                         }
                         ?>
-                        
 
 
                         <?php do_action( 'aesop_image_inner_inside_bottom', $atts, $unique ); // action ?>

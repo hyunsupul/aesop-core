@@ -23,8 +23,8 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
             'cite'       => '',
             'type'       => 'block',
             'revealfx'   => ''
-
         );
+
         $atts     = apply_filters( 'aesop_quote_defaults', shortcode_atts( $defaults, $atts, 'aesop_quote' ) );
 
         // let this be used multiple times
