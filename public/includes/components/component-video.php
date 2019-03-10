@@ -32,7 +32,8 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			'inside_chapter' => '',    // this is meant to be only turned on when the Chapter Component uses it for video background.
 			'force_fullwidth'=>'off',
 			'revealfx'  => '',
-			'overlay_revealfx'          => ''
+			'overlay_revealfx'          => '',
+			'className'    => ''
 		);
 		$atts = apply_filters( 'aesop_video_defaults', shortcode_atts( $defaults, $atts, 'aesop_video' ) );
 
@@ -62,7 +63,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		$iframe_size = sprintf( '%s %s' , $iframe_height, $iframe_width );
 
 		// custom classes
-		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'video', '' ) : null;
+		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'video', $atts['className'] ) : null;
 
 		// waypoint filter
 		$point   = 'bottom-in-view';
