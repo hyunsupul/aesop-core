@@ -31,6 +31,10 @@
 				type: 'string',
 				default: 'youtube',
 			},
+			width : {
+				type: 'string',
+				default: '100%',
+			},
 			id : {
 				type: 'string'
 			},
@@ -95,6 +99,14 @@
 							setAttributes( { caption: content } );
 						},
 					} 
+				),
+				el( wp.components.TextControl, {
+						label: __( 'Video (max) width' ),
+						value: attributes.width,
+						onChange: function( content ) {
+							setAttributes( { width: content } );
+						},
+					}
 				),
 			    (attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
 				&& el(
