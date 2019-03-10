@@ -122,6 +122,36 @@
 						},
 					} 
 				),
+				
+				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Image Caption') ),
+				el( wp.components.TextControl, {
+						label: __( 'Optional caption for the image. If you do not enter a caption, it will not show.' ),
+						value: attributes.caption,
+						onChange: function( content ) {
+							setAttributes( { caption: content } );
+						},
+					} 
+				),
+				
+				attributes.caption && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Caption Position') ),
+				attributes.caption && el(
+					wp.components.SelectControl, 
+					{ 
+								type: 'string',
+								label: __( 'Use this to override the alignment as inherited from the image.' ),
+								value: attributes.captionposition,
+								onChange: function( newVal ) {
+										setAttributes({
+												captionposition: newVal
+										});
+								},
+								options: [
+								  { value: 'center', label:  'Center'  },
+								  { value: 'left', label: 'Left'  },
+								  { value: 'right', label: 'Right'  }
+								],
+					}
+				),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Image Credit') ),
 				el( wp.components.TextControl, {
 						label: __( 'This is typically used to credit the photographer. Enter a name and it will show as Photo by: Name.' ),
@@ -170,35 +200,7 @@
 								},
 					}
 				),
-				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Image Caption') ),
-				el( wp.components.TextControl, {
-						label: __( 'Optional caption for the image. If you do not enter a caption, it will not show.' ),
-						value: attributes.caption,
-						onChange: function( content ) {
-							setAttributes( { caption: content } );
-						},
-					} 
-				),
 				
-				attributes.caption && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Caption Position') ),
-				attributes.caption && el(
-					wp.components.SelectControl, 
-					{ 
-								type: 'string',
-								label: __( 'Use this to override the alignment as inherited from the image.' ),
-								value: attributes.captionposition,
-								onChange: function( newVal ) {
-										setAttributes({
-												captionposition: newVal
-										});
-								},
-								options: [
-								  { value: 'center', label:  'Center'  },
-								  { value: 'left', label: 'Left'  },
-								  { value: 'right', label: 'Right'  }
-								],
-					}
-				),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Image Alt') ),
 				el( wp.components.TextControl, {
 						label: __( 'ALT tag used for the image. Primarily used for SEO purposes.' ),

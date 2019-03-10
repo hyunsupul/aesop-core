@@ -254,29 +254,6 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'desc'   => __( 'Text Color', 'aesop-core' ),
 						'tip'  => __( 'Select a color for the quote text.', 'aesop-core' )
 					),
-/*
-                    'test'    => array(
-                        'type'  => 'radio_row',
-                        'default'  => 'center',
-                        'desc'   => 'Test Desc',
-                        'tip'  => 'This is the Test Tip',
-                        'values'  => array(
-                            array(
-                                'value' => 'left',
-                                'name' => __( 'Left', 'aesop-core' ),
-                            ),
-                            array(
-                                'value' => 'center',
-                                'name' => __( 'Center', 'aesop-core' ),
-                            ),
-                            array(
-                                'value' => 'right',
-                                'name' => __( 'Right', 'aesop-core' ),
-                            )
-                        ),
-                    ),
-*/
-
 					'width'    => array(
 						'type'  => 'text_small',
 						'default'  => '100%',
@@ -976,32 +953,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 				'name'     => __( 'Video Section', 'aesop-core' ),
 				'type'     => 'single',
 				'atts'     => array(
-					'width'    => array(
-						'type'  => 'text_small',
-						'default'  => '100%',
-						'desc'   => __( 'Component Width', 'aesop-core' ),
-						'tip'  => __( 'You can enter the size such as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.', 'aesop-core' )
-					),
-					'align'    => array(
-						'type'  => 'select',
-						'values'  => array(
-							array(
-								'value' => 'center',
-								'name' => __( 'Center', 'aesop-core' )
-							),
-							array(
-								'value' => 'left',
-								'name' => __( 'Left', 'aesop-core' )
-							),
-							array(
-								'value' => 'right',
-								'name' => __( 'Right', 'aesop-core' )
-							)
-						),
-						'default'  => 'center',
-						'desc'   => __( 'Alignment', 'aesop-core' ),
-						'tip'  => __( 'Should the video be floated to the left, right, or centered?', 'aesop-core' )
-					),
+					
 					'src'    => array(
 						'type'  => 'select',
 						'values'  => array(
@@ -1058,6 +1010,32 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => '',
 						'desc'   => __( 'Video URL (only if using <em>self</em> as video source)', 'aesop-core' ),
 						'tip'  => __( 'This is only used if you are hosting the video yourself and have set the Video Source (above) to <em>self</em>. Click <em>Select Media</em> to open the WordPress Media Library.', 'aesop-core' )
+					),
+					'width'    => array(
+						'type'  => 'text_small',
+						'default'  => '100%',
+						'desc'   => __( 'Component Width', 'aesop-core' ),
+						'tip'  => __( 'You can enter the size such as <code>40%</code> or <code>500px</code>. Enter the word <code>content</code> to restrict the width to that of the main text.', 'aesop-core' )
+					),
+					'align'    => array(
+						'type'  => 'select',
+						'values'  => array(
+							array(
+								'value' => 'center',
+								'name' => __( 'Center', 'aesop-core' )
+							),
+							array(
+								'value' => 'left',
+								'name' => __( 'Left', 'aesop-core' )
+							),
+							array(
+								'value' => 'right',
+								'name' => __( 'Right', 'aesop-core' )
+							)
+						),
+						'default'  => 'center',
+						'desc'   => __( 'Alignment', 'aesop-core' ),
+						'tip'  => __( 'Should the video be floated to the left, right, or centered?', 'aesop-core' )
 					),
 					'caption'   => array(
 						'type'  => 'text_area',

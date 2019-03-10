@@ -55,7 +55,12 @@
 							setAttributes( { num: content } );
 						},
 					} 
-				),
+				)
+				
+			);
+			
+			var controls = el( 'div', { className: '' }
+				,
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Timeline Title') ),
 				el( wp.components.TextControl, {
 						label: __( 'The timeline title that should be displayed within the story.' ),
@@ -64,17 +69,6 @@
 							setAttributes( { title: content } );
 						},
 					} 
-				)
-			);
-			
-			var controls = el( 'div', { className: '' }
-				,
-				
-				attributes.title && el(
-					'div', // Tag type.
-					{ 
-					},
-					attributes.title
 				)
 			);
 			var label = el(

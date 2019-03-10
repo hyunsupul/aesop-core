@@ -3,10 +3,10 @@
 if ( ! function_exists( 'aesop_map_shortcode' ) ) {
     function aesop_map_shortcode( $atts ) {
 
-        $defaults = [
+        $defaults = array(
             'height' => 500,
             'sticky' => 'off'
-        ];
+        );
 
         // TODO - move these elsewhere
         wp_enqueue_script( 'aesop-map-script', AI_CORE_URL . '/public/includes/libs/leaflet/leaflet.js' );
@@ -58,13 +58,13 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 
         // new
         $bool_custom = false;
-        $arr_args    = [
+        $arr_args    = array(
             'atts'     => $atts,
             'instance' => $instance,
             'markers'  => $markers,
             'sticky'   => $sticky,
             'unique'   => $unique
-        ];
+        );
         // TODO - revisit. map might require a different approach.
         $bool_custom = apply_filters( 'aesop_map_custom_view', $bool_custom, $arr_args );
 
@@ -128,17 +128,16 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 class AesopMapComponent {
 
     public function __construct() {
-
-        add_action( 'wp_footer', [ $this, 'aesop_map_loader' ], 20 );
+        add_action( 'wp_footer', array( $this, 'aesop_map_loader' ), 20 );
 
         // map marker shortcode
-        add_shortcode( 'aesop_map_marker', [ $this, 'aesop_map_marker_sc' ] );
+        add_shortcode( 'aesop_map_marker', array( $this, 'aesop_map_marker_sc' ) );
 
         // if Gutenberg is active, register block handler
         if ( function_exists( 'register_block_type' ) ) {
-            register_block_type( 'ase/mapmarker', [
-                'render_callback' => [ $this, 'aesop_map_marker_sc' ]
-            ] );
+            register_block_type( 'ase/mapmarker', array(
+                'render_callback' => array( $this, 'aesop_map_marker_sc' )
+            ) );
         }
     }
 
@@ -295,7 +294,7 @@ class AesopMapComponent {
      */
     public function aesop_map_marker_sc( $atts ) {
 
-        $defaults = [ 'title' => '', 'hidden' => '' ];
+        $defaults = array( 'title' => '', 'hidden' => '' );
 
         $atts = shortcode_atts( $defaults, $atts, 'aesop_map_marker' );
 
@@ -308,7 +307,6 @@ class AesopMapComponent {
         }
 
         $out = sprintf( '<h2 id="aesop-map-marker-%s" class="aesop-map-marker" %s>%s</h2>', $instance, $style, esc_html( $atts['title'] ) );
-
         return apply_filters( 'aesop_map_marker_output', $out );
     }
 }

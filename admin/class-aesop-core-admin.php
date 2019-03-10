@@ -95,10 +95,10 @@ class Aesop_Core_Admin {
 	public function admin_scripts() {
 
 		// Register Scripts
-		wp_register_script( 'ai-core-script', AI_CORE_URL . '/admin/assets/js/generator.min.js', [], AI_CORE_VERSION  );
+		wp_register_script( 'ai-core-script', AI_CORE_URL . '/admin/assets/js/generator.min.js', array(), AI_CORE_VERSION );
 
 		// Register Styles
-		wp_register_style( 'ai-core-styles', AI_CORE_URL . '/admin/assets/css/aesop-admin.css', [],AI_CORE_VERSION  );
+		wp_register_style( 'ai-core-styles', AI_CORE_URL . '/admin/assets/css/aesop-admin.css', array(),AI_CORE_VERSION );
 
 		// Load styles and scripts on areas that users will edit
 		if ( is_admin() ) {

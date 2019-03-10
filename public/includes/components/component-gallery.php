@@ -77,7 +77,7 @@ class AesopCoreGallery {
 
         // new
         $bool_custom = false;
-        $arr_args = [
+        $arr_args = array(
             'atts'    => $atts,
             'type'    => $type,
             'gallery_id'   => $gallery_id,
@@ -85,7 +85,7 @@ class AesopCoreGallery {
             'instance' => $instance,
             'width' => $width,
             'unique'  => $unique
-        ];
+        );
         $bool_custom = apply_filters('aesop_gallery_custom_view', $bool_custom, $arr_args);
 		
 
@@ -408,11 +408,11 @@ class AesopCoreGallery {
 
                     $new_bis->setAttachmentID($image_id);
                     $new_bis->setSelector( 'aesop-stacked-img-' . $image_id );
-                    $arr_push_size = [
+                    $arr_push_size = array(
                             'pushXS' => 'medium_large',
                             'pushMD' => 'aesop-cover-img',
                             'pushXL' => 'full'
-                    ];
+                    );
                     // TODO - put a filter right here.
                     foreach ( $arr_push_size as $str_method => $str_size){
                         if ( method_exists($new_bis, $str_method)){

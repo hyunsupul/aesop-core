@@ -10,10 +10,10 @@ if ( ! function_exists( 'aesop_timeline_stop_shortcode' ) ) {
 
     function aesop_timeline_stop_shortcode( $atts ) {
 
-        $defaults = [
+        $defaults = array(
             'num'   => '2007',
             'title' => ''
-        ];
+        );
         $atts     = apply_filters( 'aesop_timeline_defaults', shortcode_atts( $defaults, $atts ) );
 
         // let this be used multiple times
@@ -28,14 +28,14 @@ if ( ! function_exists( 'aesop_timeline_stop_shortcode' ) ) {
 
         // new
         $bool_custom = false;
-        $arr_args    = [
+        $arr_args    = array(
             'actiontop'    => $actiontop,
             'actionbottom' => $actionbottom,
             'atts'         => $atts,
             'datatitle'    => $datatitle,
             'instance'     => $instance,
             'unique'       => $unique
-        ];
+        );
         $bool_custom = apply_filters( 'aesop_timeline_custom_view', $bool_custom, $arr_args );
 
         if ( $bool_custom === false ) {
@@ -71,10 +71,10 @@ class AesopTimelineComponent {
     public function __construct() {
 
         // call our method in the footer
-        add_action( 'wp_footer', [ $this, 'aesop_timeline_loader' ], 21 );
+        add_action( 'wp_footer', array( $this, 'aesop_timeline_loader' ), 21 );
 
         // add a body class if timeline is active
-        add_filter( 'body_class', [ $this, 'body_class' ] );
+        add_filter( 'body_class', array( $this, 'body_class' ) );
 
     }
 

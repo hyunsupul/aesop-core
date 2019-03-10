@@ -9,7 +9,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 
     function aesop_quote_shortcode( $atts ) {
 
-        $defaults = [
+        $defaults = array(
             'width'      => '100%',
             'background' => '#222222',
             'img'        => '',
@@ -23,8 +23,8 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
             'cite'       => '',
             'type'       => 'block',
             'revealfx'   => ''
+        );
 
-        ];
         $atts     = apply_filters( 'aesop_quote_defaults', shortcode_atts( $defaults, $atts, 'aesop_quote' ) );
 
         // let this be used multiple times
@@ -78,14 +78,14 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
         $align = $atts['align'] ? sprintf( 'aesop-component-align-%s', esc_attr( $atts['align'] ) ) : null;
 
         // style/consolidated classes
-        $css_class_array = [
+        $css_class_array = array(
             $align,
             $type,
             $contentwidth,
             $isparallax,
             $lrclass,
             $imgclass
-        ];
+        );
 
         $css_classes = '';
         if ( ! empty( $css_class_array ) ) {
@@ -181,7 +181,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 
         // new
         $bool_custom = false;
-        $arr_args    = [
+        $arr_args    = array(
             'align'   => $align,
             'atts'    => $atts,
             'cite'    => $cite,
@@ -189,7 +189,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
             'instance' => $instance,
             'size'    => $size,
             'unique'  => $unique
-        ];
+        );
         $bool_custom = apply_filters( 'aesop_quote_custom_view', $bool_custom, $arr_args );
 
         if ( $bool_custom === false ) {

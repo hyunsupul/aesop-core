@@ -66,15 +66,7 @@
 			var revealfx = attributes.revealfx;
 			
 			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
-				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Cite') ),
-				el( wp.components.TextControl, {
-						label: __( 'Provide an optional cite or source for the quote.' ),
-						value: attributes.cite,
-						onChange: function( content ) {
-							setAttributes( { cite: content } );
-						},
-					} 
-				),
+				
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Quote Styles') ),
 				el(
 					wp.components.SelectControl, 
@@ -180,13 +172,23 @@
 			
 			const controls = el( 'div', { className: '' }
 				,
+				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Quote') ),
 				el( wp.components.TextControl, {
-								label: __( 'Quote' ),
+								label: __( '' ),
 								value: attributes.quote,
 								onChange: function( content ) {
 									setAttributes( { quote: content } );
 								},
 							} 
+				),
+				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Cite') ),
+				el( wp.components.TextControl, {
+						label: __( 'Provide an optional cite or source for the quote.' ),
+						value: attributes.cite,
+						onChange: function( content ) {
+							setAttributes( { cite: content } );
+						},
+					} 
 				),
 			);
 			

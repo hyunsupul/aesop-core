@@ -9,8 +9,7 @@
 if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 
     function aesop_collection_shortcode( $atts ) {
-
-        $defaults = [
+        $defaults = array(
             'collection'  => 1,
             'title'       => '',
             'columns'     => 2,
@@ -20,7 +19,8 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
             'showexcerpt' => 'on',
             'order'       => 'default',
             'revealfx'    => ''
-        ];
+        );
+
         $atts     = apply_filters( 'aesop_collection_defaults', shortcode_atts( $defaults, $atts, 'aesop_collection' ) );
 
         // let this be used multiple times
@@ -53,7 +53,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 
             // new
             $bool_custom = false;
-            $arr_args    = [
+            $arr_args    = array(
                 'atts'         => $atts,
                 'classes'      => $classes,
                 'col'          => $col,
@@ -61,7 +61,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
                 'instance'     => $instance,
                 'splash_class' => $splash_class,
                 'unique'       => $unique
-            ];
+            );
             $bool_custom = apply_filters( 'aesop_collections_custom_view', $bool_custom, $arr_args );
 
             if ( $bool_custom === false ) {
@@ -85,10 +85,10 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
                         if ( 'on' == $atts['splash'] ) {
 
                             // cat query args
-                            $cat_args = [
+                            $cat_args = array(
                                 'orderby' => 'name',
                                 'order'   => 'ASC'
-                            ];
+                            );
 
                             // get cached query
                             $cats = wp_cache_get( 'aesop_splash_query_' . $atts['collection'] );
@@ -128,13 +128,14 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
 
                             // query args
                             $order = $atts['order'] == 'default' ? 'DESC' : 'ASC';
-                            $args  = [
-                                'orderby'        => [ 'date' => $order ],
+                            $args  = array(
+                                'orderby'        => array( 'date' => $order ),
                                 'posts_per_page' => $atts['limit'],
                                 'cat'            => $atts['collection'],
                                 'ignore_sticky'  => true,
                                 'paged'          => 1
-                            ];
+                            );
+
                             // do not use cache any more
                             //$query = wp_cache_get( 'aesop_collection_query_' . $atts['collection'] );
 

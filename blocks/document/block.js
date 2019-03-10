@@ -85,7 +85,7 @@
 					{
 							title: __( 'Select File' ),
 							onSelect: onSelectMedia,
-							type: 'image',
+							type: '',
 							value: attributes.src,
 							render: function( obj ) {
 										return el( wp.components.Button, {
@@ -95,7 +95,8 @@
 									 __( 'Set File Source' ) 
 								); }
 					}
-				)
+				),
+				attributes.src && el( 'div', { className: '' },attributes.src ),
 			);
 			var label = el(
 						'div', 

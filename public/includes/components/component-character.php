@@ -17,8 +17,7 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
     }
 
     function aesop_character_shortcode( $atts, $content = null ) {
-
-        $defaults = [
+        $defaults = array(
             'img'          => '',
             'name'         => '',
             'caption'      => '',
@@ -27,7 +26,7 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
             'force_circle' => 'off',
             'revealfx'     => '',
             'link'         => '',
-        ];
+        );
 
         // let this be used multiple times
         static $instance = 0;
@@ -63,7 +62,7 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
             <?php do_action( 'aesop_character_inside_top', $atts, $unique ); // action
             // new
             $bool_custom = false;
-            $arr_args    = [
+            $arr_args    = array(
                 'alt'      => $alt,
                 'auto_alt' => $auto_alt,
                 'atts'     => $atts,
@@ -71,7 +70,7 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
                 'instance' => $instance,
                 'styles'   => $styles,
                 'unique'   => $unique
-            ];
+            );
             $bool_custom = apply_filters( 'aesop_character_custom_view', $bool_custom, $arr_args );
 
             if ( $bool_custom === false ) {

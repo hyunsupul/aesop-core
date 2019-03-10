@@ -9,8 +9,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 
     function aesop_chapter_shortcode( $atts ) {
 
-
-        $defaults = [
+        $defaults = array(
             'title'            => '',
             'subtitle'         => '',
             'bgtype'           => 'img',
@@ -26,7 +25,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
             'revealfx'         => '',
             'video_autoplay'   => 'on',
             'overlay_revealfx' => ''
-        ];
+        );
 
         $atts = apply_filters( 'aesop_chapter_defaults', shortcode_atts( $defaults, $atts, 'aesop_chapter' ) );
 
@@ -85,7 +84,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 
         // new
         $bool_custom = false;
-        $arr_args    = [
+        $arr_args    = array(
             'atts'     => $atts,
             'img_style' => $img_style,
             'inline_styles' => $inline_styles,
@@ -94,7 +93,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
             'styles' => $styles,
             'unique'   => $unique,
             'vid_atts' => $vid_atts
-        ];
+        );
         $bool_custom = apply_filters( 'aesop_heading_custom_view', $bool_custom, $arr_args );
 
         if ( $bool_custom === false ) {
@@ -173,8 +172,7 @@ if ( ! function_exists( 'aesop_chapter_heading_loader' ) ) {
 class AesopChapterHeadingComponent {
 
     public function __construct() {
-
-        add_action( 'wp_footer', [ $this, 'aesop_chapter_loader' ], 21 );
+        add_action( 'wp_footer', array( $this, 'aesop_chapter_loader' ), 21 );
     }
 
     public function aesop_chapter_loader() {

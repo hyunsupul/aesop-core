@@ -82,7 +82,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 
         // new
         $bool_custom = false;
-        $arr_args    = [
+        $arr_args    = array(
             'atts'    => $atts,
             'auto_alt' => $auto_alt,
             'classes' => $classes,
@@ -92,7 +92,8 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
             'instance' => $instance,
             'laxclass' => $laxclass,
             'unique'  => $unique
-        ];
+        );
+
         $bool_custom = apply_filters( 'aesop_parallax_custom_view', $bool_custom, $arr_args );
 
         if ( $bool_custom === false ) {

@@ -15,7 +15,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
         $instance++;
         $unique = sprintf( '%s-%s', get_the_ID(), $instance );
 
-        $defaults = [
+        $defaults = array(
             'height'            => '',
             'width'             => '100%',
             'component_width'   => '100%',
@@ -34,7 +34,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
             'disable_bgshading' => 'off',
             'revealfx'          => '',
             'overlay_revealfx'  => ''
-        ];
+        );
 
         $atts = apply_filters( 'aesop_cbox_defaults', shortcode_atts( $defaults, $atts, 'aesop_content' ) );
 
@@ -47,12 +47,12 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
         // inner positioning
         $getinnerposition = $atts['innerposition'] ? preg_split( '/[\s,]+/', $atts['innerposition'] ) : false;
 
-        $positionArray = [
+        $positionArray = array(
             'top'    => $getinnerposition[0],
             'right'  => $getinnerposition[1],
             'bottom' => $getinnerposition[2],
             'left'   => $getinnerposition[3]
-        ];
+        );
 
         //$innerposition = is_array( $positionArray ) && $atts['innerposition'] ? sprintf( 'position:absolute;top:%s;right:%s;bottom:%s;left:%s;', $positionArray['top'], $positionArray['right'], $positionArray['bottom'], $positionArray['left'] ) : false;
         $innerposition = is_array( $positionArray ) && $atts['innerposition'] ? sprintf( 'top:%s;right:%s;bottom:%s;left:%s;', $positionArray['top'], $positionArray['right'], $positionArray['bottom'], $positionArray['left'] ) : false;
@@ -72,9 +72,9 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
         $widthComponentStyle    = sprintf( 'width:%s;max-width:100%%;', esc_attr( $atts['component_width'] ) );
         $overlay_animated_style = ( ! empty( $atts['overlay_revealfx'] ) && $atts['overlay_revealfx'] != 'off' ) ? 'visibility:hidden;' : false;
         $shade_style            = ( empty( $atts['disable_bgshading'] ) || $atts['disable_bgshading'] == 'off' ) ? false : 'background-color:transparent;';
-        $innerstyle             = sprintf( 'style="%s%s%s%s%s"', $widthContentStyle, $position, $innerposition, $overlay_animated_style, $shade_style );
+        $innerstyle             = 'style="'.esc_attr(sprintf( '%s%s%s%s%s', $widthContentStyle, $position, $innerposition, $overlay_animated_style, $shade_style )).'"';
         $txtcolor               = $atts['color'] ? sprintf( 'color:%s;', $atts['color'] ) : false;
-        $itemstyle              = $imgstyle !== false || $txtcolor !== false || $height !== false ? sprintf( 'style="%s%s%s%s"', $imgstyle, $txtcolor, $bgcolor, $height ) : false;
+        $itemstyle              = $imgstyle !== false || $txtcolor !== false || $height !== false ? 'style="'.esc_attr(sprintf( '%s%s%s%s', $imgstyle, $txtcolor, $bgcolor, $height )).'"' : false;
 
         // custom classes
         $classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'content', '' ) : false;
@@ -138,7 +138,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
             echo do_action( 'aesop_cbox_inside_top', $atts, $unique ); // action
 
             $bool_custom = false;
-            $arr_args    = [
+            $arr_args    = array(
                 'atts'            => $atts,
                 'content'         => $content,
                 'contentwidth'    => $contentwidth,
@@ -148,7 +148,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
                 'itemstyle'       => $itemstyle,
                 'typeclass'       => $typeclass,
                 'unique'          => $unique
-            ];
+            );
             $bool_custom = apply_filters( 'aesop_cbox_custom_view', $bool_custom, $arr_args );
 
             if ( $bool_custom === false ) {
@@ -156,7 +156,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
                 ?>
 
                 <div id="aesop-content-component-<?php echo esc_attr( $unique ); ?>"
-                     class="aesop-content-comp-wrap <?php echo esc_attr( $typeclass ); ?>" <?php echo esc_attr( $itemstyle ); ?>>
+                     class="aesop-content-comp-wrap <?php echo esc_attr( $typeclass ); ?>" <?php echo  $itemstyle ; ?>>
 
                     <?php echo do_action( 'aesop_cbox_content_inside_top', $atts, $unique ); // action
 
@@ -166,9 +166,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
                              data-speed="10"><?php echo aesop_component_media_filter( $atts['floatermedia'] ); ?></div>
 
                     <?php } ?>
-
-                    <div class="aesop-component-content-data aesop-content-comp-inner <?php echo esc_attr( $contentwidth ); ?>" <?php echo esc_attr( $innerstyle ); ?>>
-
+                    <div class="aesop-component-content-data aesop-content-comp-inner <?php echo esc_attr( $contentwidth ); ?>" <?php echo $innerstyle ; ?>>
                         <?php echo do_action( 'aesop_cbox_content_inner_inside_top', $atts, $unique ); // action
                         ?>
 
