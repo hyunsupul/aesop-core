@@ -35,6 +35,12 @@
 				type: 'string',
 				default: '100%',
 			},
+			vidwidth : {
+				type: 'string'
+			},
+			vidheight : {
+				type: 'string'
+			},
 			id : {
 				type: 'string'
 			},
@@ -112,12 +118,28 @@
 					onChange: function( content ) {
 						setAttributes( { nocookies: content } );
 					}
-				},
+				}),
 				el( wp.components.TextControl, {
 						label: __( 'Video (max) width' ),
 						value: attributes.width,
 						onChange: function( content ) {
 							setAttributes( { width: content } );
+						}
+					}
+				),
+				el( wp.components.TextControl, {
+						label: __( 'Iframe width' ),
+						value: attributes.vidwidth,
+						onChange: function( content ) {
+							setAttributes( { vidwidth: content } );
+						},
+					}
+				),
+				el( wp.components.TextControl, {
+						label: __( 'Iframe height' ),
+						value: attributes.vidheight,
+						onChange: function( content ) {
+							setAttributes( { vidheight: content } );
 						},
 					}
 				),

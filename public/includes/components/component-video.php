@@ -195,7 +195,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 							
 						<?php	
 						}
-						printf( '<iframe id="aesop-vm-%s" src="//player.vimeo.com/video/%s?api=1&&player_id=aesop-vm-%s&controls=0%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), esc_attr( $unique ),$vmparams, esc_attr( $iframe_size ) );
+						printf( '<iframe id="aesop-vm-%s" src="//player.vimeo.com/video/%s?api=1&&player_id=aesop-vm-%s&controls=0%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), esc_attr( $unique ),$vmparams, $iframe_size );
 						
 						if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'] || 'pip' == $atts['viewend'])&& !wp_is_mobile()) {
 						?>
@@ -264,7 +264,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 						}
 						break;
 					case 'dailymotion':
-						printf( '<iframe src="//www.dailymotion.com/embed/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
+						printf( '<iframe src="//www.dailymotion.com/embed/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $atts['id'] ), $iframe_size );
 						break;
 					case 'youtube':
 						$ytparams = $loopstatus ? sprintf ("&loop=1&playlist=%s" ,esc_attr( $atts['id'])) : "";
@@ -273,7 +273,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 						$ytparams = $ytparams.($controlstatus=='controls-visible' ? "" : "&controls=0&showinfo=0");
 						$ytdomain = $nocookies ? 'youtube-nocookie' : 'youtube';
 						
-						printf( '<iframe id ="aesop-ytb-%s"  src="//www.%s.com/embed/%s?rel=0&enablejsapi=1&wmode=transparent%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0" width="100%%"></iframe>', esc_attr( $unique ), $ytdomain, esc_attr( $atts['id'] ), $ytparams, esc_attr( $iframe_size ) );
+						printf( '<iframe id ="aesop-ytb-%s"  src="//www.%s.com/embed/%s?rel=0&enablejsapi=1&wmode=transparent%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0" width="100%%"></iframe>', esc_attr( $unique ), $ytdomain, esc_attr( $atts['id'] ), $ytparams, $iframe_size );
 
 						if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'] || 'pip' == $atts['viewend'])&& !wp_is_mobile()) {
 						?>
@@ -359,10 +359,10 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 						}
 						break;
 					case 'kickstarter':
-						printf( '<iframe src="%s" %s scrolling="no" wmode="transparent" frameborder="0"> </iframe>', esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
+						printf( '<iframe src="%s" %s scrolling="no" wmode="transparent" frameborder="0"> </iframe>', esc_attr( $atts['id'] ), $iframe_size );
 						break;
 					case 'viddler':
-						printf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" %s mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>', esc_attr( $atts['id'] ), esc_attr( $atts['id'] ), esc_attr( $iframe_size ) );
+						printf( '<iframe id="viddler-%s" src="//www.viddler.com/embed/%s/" %s mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>', esc_attr( $atts['id'] ), esc_attr( $atts['id'] ), $iframe_size );
 						break;
 					case 'vine':
 						printf( '<iframe class="vine-embed" src="//vine.co/v/%s/embed/simple" width="480" height="480" frameborder="0"></iframe><script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>', esc_attr( $atts['id'] ) );
