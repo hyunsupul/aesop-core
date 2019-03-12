@@ -112,7 +112,7 @@
 					onChange: function( content ) {
 						setAttributes( { nocookies: content } );
 					}
-				},
+				}),
 				el( wp.components.TextControl, {
 						label: __( 'Video (max) width' ),
 						value: attributes.width,
