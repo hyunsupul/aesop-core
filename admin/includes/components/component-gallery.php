@@ -19,7 +19,8 @@ class AesopGalleryComponentAdmin {
 		add_action( 'save_post',        array( $this, 'save_gallery_box' ), 10, 2 );
 
 		// admin notice for upgrading
-		add_action( 'admin_notices',        array( $this, 'upgrade_galleries_notice' ) );
+		// removed notice
+		//add_action( 'admin_notices',        array( $this, 'upgrade_galleries_notice' ) );
 		add_action( 'wp_ajax_upgrade_galleries',     array( $this, 'upgrade_galleries' ) );
 		add_action( 'admin_head',        array( $this, 'upgrade_click_handle' ) );
 	}
@@ -522,7 +523,7 @@ class AesopGalleryComponentAdmin {
 	 *
 	 * @since 1.4
 	 */
-	public function upgrade_galleries_notice() {
+	/*public function upgrade_galleries_notice() {
 
 		// only run if we have markers and have never upgraded
 		if ( ! get_option( 'ase_galleries_upgraded_to' ) && 'true' == self::aesop_check_for_galleries() && current_user_can('manage_options') ) {
@@ -535,7 +536,7 @@ class AesopGalleryComponentAdmin {
 			echo $out;
 
 		}
-	}
+	}*/
 
 	/**
 	 * When the user starts the upgrade process let's run a function to map the old gallery ids to psot meta

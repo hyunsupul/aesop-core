@@ -60,8 +60,8 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		$autoplaystatus = 'on' == $atts['autoplay'] ? true : false;
 		$disable_for_mobile = 'on' == $atts['disable_for_mobile'] ? true : false;
 		$controlstatus = 'on' == $atts['controls'] ? 'controls-visible' : 'controls-hidden';
-		$iframe_height = $atts['vidheight'] ? sprintf( 'height="%s"', preg_replace( '/[^0-9]/', '', $atts['vidheight'] ) ) : sprintf( 'height=""' );
-		$iframe_width = $atts['vidwidth'] ? sprintf( 'width="%s"', preg_replace( '/[^0-9]/', '', $atts['vidwidth'] ) ) : sprintf( 'width=""' );
+		$iframe_height = $atts['vidheight'] ? sprintf( 'height="%s"', preg_replace( '/[^0-9]/', '', esc_attr($atts['vidheight'] )) ) : sprintf( 'height=""' );
+		$iframe_width = $atts['vidwidth'] ? sprintf( 'width="%s"', preg_replace( '/[^0-9]/', '', esc_attr($atts['vidwidth'] )) ) : sprintf( 'width=""' );
 		$iframe_size = sprintf( '%s %s' , $iframe_height, $iframe_width );
 
 		// custom classes
