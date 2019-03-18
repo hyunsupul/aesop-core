@@ -54,19 +54,19 @@
 				type: 'string'
 			},
 			autoplay:{
-				type : 'boolean'
+				type : 'string'
 			},
 			mute:{
-				type : 'boolean'
+				type : 'string'
 			},
 			controls:{
-				type : 'boolean'
+				type : 'string'
 			},
 			viewstart:{
-				type : 'boolean'
+				type : 'string'
 			},
 			viewend:{
-				type : 'boolean'
+				type : 'string'
 			},
 			// poster_frame ATTRIBUTE ADDED BY BORAY
 			poster_frame:{
@@ -79,7 +79,7 @@
 				type: 'string',
 			},
 			nocookies:{
-				type : 'boolean'
+				type : 'string'
 			},
 		},
 
