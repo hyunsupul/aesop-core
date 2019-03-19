@@ -56,6 +56,12 @@
 			autoplay:{
 				type : 'string'
 			},
+			loop:{
+				type : 'string'
+			},
+			disable_for_mobile:{
+				type : 'string'
+			},
 			mute:{
 				type : 'string'
 			},
@@ -96,8 +102,19 @@
 			var canAutoPlay = (attributes) => {
 				return attributes.src == 'youtube';
 			}
-			
-			
+
+			var checked = ( val ) => {
+				return val == 'on' || val == 1;
+			}
+
+			var setChecked = ( attr ) => {
+				return ( val ) => {
+					setAttributes({
+						[attr]: val ? 'on' : 'off'
+					});
+				}
+			}
+
 			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
 				
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Caption') ),
@@ -114,10 +131,8 @@
 				wp.components.ToggleControl,
 				{
 					label: __( 'No cookies' ),
-					checked: !! attributes.nocookies,
-					onChange: function( content ) {
-						setAttributes( { nocookies: content } );
-					}
+					checked: checked(attributes.nocookies),
+					onChange: setChecked( 'nocookies' )
 				}),
 				el( wp.components.TextControl, {
 						label: __( 'Video (max) width' ),
@@ -148,10 +163,8 @@
 					wp.components.ToggleControl,
 					{
 						label: __( 'Autoplay' ),
-						checked: !! attributes.autoplay, // viewstart REPLACED TO autoplay BY BORAY
-						onChange: function( content ) {
-							setAttributes( { autoplay: content } );
-						}
+						checked: checked(attributes.autoplay), // viewstart REPLACED TO autoplay BY BORAY
+						onChange: setChecked( 'autoplay' )
 					}
 				),
 				(attributes.src == 'youtube' || attributes.src == 'vimeo')
@@ -159,10 +172,8 @@
 				wp.components.ToggleControl,
 				{
 					label: __( 'Show controls' ),
-					checked: !! attributes.controls,
-					onChange: function( content ) {
-						setAttributes( { controls: content } );
-					}
+					checked: checked(attributes.controls),
+					onChange: setChecked( 'controls' )
 				}
 				),
 				(attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
@@ -170,10 +181,8 @@
 					wp.components.ToggleControl,
 					{
 						label: __( 'Mute Video. On Chrome, when using Youtube or Vimeo, you need to mute the video to have autoplay work.' ),
-						checked: !! attributes.mute,
-						onChange: function( content ) {
-							setAttributes( { mute: content } );
-						}
+						checked: checked(attributes.mute),
+						onChange: setChecked( 'mute' )
 					}
 				),
 			    (attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
@@ -181,10 +190,8 @@
 					wp.components.ToggleControl,
 					{
 						label: __( 'Start Video When in View' ),
-						checked: !! attributes.viewstart,
-						onChange: function( content ) {
-							setAttributes( { viewstart: content } );
-						}
+						checked: checked(attributes.viewstart),
+						onChange: setChecked( 'viewstart' )
 					}
 				),
 				(attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
@@ -192,10 +199,8 @@
 					wp.components.ToggleControl,
 					{
 						label: __( 'Stop Video When Out of View' ),
-						checked: !! attributes.viewend,
-						onChange: function( content ) {
-							setAttributes( { viewend: content } );
-						}
+						checked: checked(attributes.viewend),
+						onChange: setChecked( 'viewend' )
 					}
 				),
 				(attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
@@ -203,10 +208,8 @@
 					wp.components.ToggleControl,
 					{
 						label: __( 'Loop Video' ),
-						checked: !! attributes.loop,
-						onChange: function( content ) {
-							setAttributes( { loop: content } );
-						}
+						checked: checked(attributes.loop),
+						onChange: setChecked( 'loop' )
 					}
 				),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Disable video on Mobile Devices.') ),
@@ -214,19 +217,8 @@
 					wp.components.ToggleControl,
 					{
 						label: __( 'Disable video on Mobile Devices. Must specify the Poster Frame image.' ),
-						checked: attributes.disable_for_mobile =='on',
-						onChange: function( newVal ) {										
-										if (newVal) {
-											setAttributes({
-												disable_for_mobile: 'on'
-											});
-										} else {
-											setAttributes({
-												disable_for_mobile: 'off'
-											});
-										}
-									
-								},
+						checked: checked(attributes.disable_for_mobile),
+						onChange: setChecked( 'disable_for_mobile' )
 					}
 				),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Poster Frame.') ),
