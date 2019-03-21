@@ -205,7 +205,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 							jQuery(document).ready(function($){
 								// If multiple elements are selected, it will use the first element.
 								 var vimeo_iframe = $('#aesop-vm-<?php echo esc_attr( $unique );?>')[0];
-								 var player = $f(vimeo_iframe);								
+								 var player = $(vimeo_iframe);								
 								 player.addEvent('ready', function() {
 									 <?php if ( $mute ) { ?>
 									 player.api('setVolume', 0);
@@ -312,9 +312,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 											offset: '30%',
 											handler: function(direction){
-												if ( $(this.element).is(':visible') ) {
-													aseYTBplayer<?php echo esc_attr( $instance );?>.playVideo();
-												}
+												aseYTBplayer<?php echo esc_attr( $instance );?>.playVideo();
 											}
 										});
 										
