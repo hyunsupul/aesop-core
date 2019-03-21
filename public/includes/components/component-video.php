@@ -199,13 +199,13 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 						
 						if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'] || 'pip' == $atts['viewend'])&& !wp_is_mobile()) {
 						?>
-						   <script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+						   <script src='<?php echo AI_CORE_URL;?>/public/assets/js/froogaloop.min.js'></script>
 
 							<script>
 							jQuery(document).ready(function($){
 								// If multiple elements are selected, it will use the first element.
 								 var vimeo_iframe = $('#aesop-vm-<?php echo esc_attr( $unique );?>')[0];
-								 var player = $(vimeo_iframe);								
+								 var player = $f(vimeo_iframe);								
 								 player.addEvent('ready', function() {
 									 <?php if ( $mute ) { ?>
 									 player.api('setVolume', 0);
