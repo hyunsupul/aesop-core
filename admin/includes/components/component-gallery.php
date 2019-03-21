@@ -220,6 +220,7 @@ class AesopGalleryComponentAdmin {
 		$hero_anim_speed  = get_post_meta( $id, 'aesop_hero_gallery_transition_anim_speed', true );
 		$hero_anim_speed  = $hero_anim_speed ? $hero_anim_speed: 1500;
 		$hero_enable_nav  = get_post_meta( $id, 'aesop_hero_gallery_enable_nav', true );
+		$hero_enable_full  = get_post_meta( $id, 'aesop_hero_gallery_enable_full', true );
 		$aesop_hero_image_text = get_post_meta( $id, 'aesop_hero_image_text', true );
 
 ?>
@@ -399,6 +400,11 @@ class AesopGalleryComponentAdmin {
 				<input type="checkbox" name="aesop_hero_gallery_enable_nav" <?php if ( $hero_enable_nav == true ) { ?>checked="checked"<?php } ?>>
 				<label for="aesop_hero_gallery_enable_nav"><?php _e( 'Enable Navigation Controls', 'aesop-core' );?></label>
 			</div>
+			
+			<div class="ase-gallery-opts--single">
+				<input type="checkbox" name="aesop_hero_gallery_enable_full" <?php if ( $hero_enable_full == true ) { ?>checked="checked"<?php } ?>>
+				<label for="aesop_hero_gallery_enable_full"><?php _e( 'Enable Full Screen', 'aesop-core' );?></label>
+			</div>
 		</div>
 		<?php
 
@@ -463,6 +469,7 @@ class AesopGalleryComponentAdmin {
 		$hero_anim_speed  = isset( $_POST['aesop_hero_gallery_transition_anim_speed'] ) ? $_POST['aesop_hero_gallery_transition_anim_speed'] : false;
         $hero_trans  = isset( $_POST['aesop_hero_gallery_transition'] ) ? $_POST['aesop_hero_gallery_transition'] : false;
 		$hero_enable_nav   = isset( $_POST['aesop_hero_gallery_enable_nav'] ) ? $_POST['aesop_hero_gallery_enable_nav'] : false;
+		$hero_enable_full   = isset( $_POST['aesop_hero_gallery_enable_full'] ) ? $_POST['aesop_hero_gallery_enable_full'] : false;
 		$aesop_hero_image_text = isset( $_POST['aesop_hero_image_text'] ) ? $_POST['aesop_hero_image_text'] : 'none';
 	
 
@@ -512,6 +519,7 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, 'aesop_hero_gallery_transition_anim_speed', absint( $hero_anim_speed ) );
         update_post_meta( $post_id, 'aesop_hero_gallery_transition', sanitize_text_field( $hero_trans ) );
 		update_post_meta( $post_id, 'aesop_hero_gallery_enable_nav', sanitize_text_field( $hero_enable_nav ) );
+		update_post_meta( $post_id, 'aesop_hero_gallery_enable_full', sanitize_text_field( $hero_enable_full ) );
 		update_post_meta( $post_id, 'aesop_hero_image_text', $aesop_hero_image_text );
 	
 

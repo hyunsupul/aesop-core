@@ -463,8 +463,9 @@ class AesopCoreGallery {
 
 					endforeach;
 				} else {
-					wp_enqueue_script( 'aesop-paver', AI_CORE_URL.'/public/assets/js/jquery.paver.min.js', array( 'ai-core' ) );?>
-					add_action( 'wp_footer', aesop_panorama, 20 );
+					wp_enqueue_script( 'aesop-paver', AI_CORE_URL.'/public/assets/js/jquery.paver.min.js', array( 'ai-core' ) );
+					add_action( 'wp_footer', aesop_panorama, 20 );?>
+					
 					<?php
 					foreach ( $image_ids as $image_id ):
 
@@ -667,6 +668,7 @@ class AesopCoreGallery {
 		$content = get_post_meta( $gallery_id, 'aesop_hero_gallery_content', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_content', true) : '';
 		$height = get_post_meta( $gallery_id, 'aesop_hero_gallery_height', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_height', true) : '';
 		$enable_nav = get_post_meta( $gallery_id, 'aesop_hero_gallery_enable_nav', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_enable_nav', true) : false;
+		$enable_full = get_post_meta( $gallery_id, 'aesop_hero_gallery_enable_full', true ) ? get_post_meta( $gallery_id, 'aesop_hero_gallery_enable_full', true) : false;
 		$image_text_op = get_post_meta( $gallery_id, 'aesop_hero_image_text', true ) ? get_post_meta( $gallery_id, 'aesop_hero_image_text', true) : false;
 
 		// image size
@@ -695,7 +697,6 @@ class AesopCoreGallery {
                                                                             }?>
 																			<?php echo esc_attr( $autoplay );?>
 																			data-keyboard="false"
-																			data-allow-full-screen="false"
 																			data-click="false"
 																			data-fit="cover"
 																			data-captions="true"
@@ -708,6 +709,10 @@ class AesopCoreGallery {
 																			data-nav=false
 																			data-arrows="false"
 																			data-swipe="false"
+																			<?php }?>
+																			
+																			<?php if ($enable_full) {?>
+																			data-allow-full-screen="true"
 																			<?php }?>
 																			
 																			data-transitionduration="<?php echo esc_attr( $trans_anim_speed );?>"
