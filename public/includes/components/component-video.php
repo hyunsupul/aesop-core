@@ -312,7 +312,9 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 											offset: '30%',
 											handler: function(direction){
-												aseYTBplayer<?php echo esc_attr( $instance );?>.playVideo();
+												if ( $(this.element).is(':visible') ) {
+													aseYTBplayer<?php echo esc_attr( $instance );?>.playVideo();
+												}
 											}
 										});
 										
