@@ -162,6 +162,7 @@ class AesopCoreGallery {
 	 * @since    1.0.0
 	 */
 	public function aesop_thumb_gallery( $gallery_id, $image_ids, $width ) {
+	    global $is_edge;
 
 		$thumbs  = get_post_meta( $gallery_id, 'aesop_thumb_gallery_hide_thumbs', true ) ? sprintf( 'data-nav=false' ) : sprintf( 'data-nav=thumbs' );
 		$autoplay  = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ) ? sprintf( 'data-autoplay="%s"', get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ) ) : null;
@@ -169,13 +170,14 @@ class AesopCoreGallery {
 
 		// image size
 		$size    = apply_filters( 'aesop_thumb_gallery_size', 'full' );
+		$fullscreen = $is_edge ? "true" : "native";
 
 		?><div id="aesop-thumb-gallery-<?php echo esc_attr( $gallery_id );?>" class="fotorama" 	data-transition="<?php echo esc_attr( $transition );?>"
 																			data-width="<?php echo esc_attr( $width );?>"
 																			<?php echo esc_attr( $autoplay );?>
 																			data-keyboard="true"
 																			<?php echo esc_attr( $thumbs );?>
-																			data-allow-full-screen="native"
+																			data-allow-full-screen="<?php echo $fullscreen; ?>"
 																			data-click="true"><?php
 
 		foreach ( $image_ids as $image_id ):
