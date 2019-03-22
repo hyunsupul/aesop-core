@@ -44,7 +44,7 @@
 
 		edit: withSelect( function( select ) {
 			return {
-				aesop_galleries: select( 'core' ).getEntityRecords( 'postType', 'ai_galleries' )
+				aesop_galleries: select( 'core' ).getEntityRecords( 'postType', 'ai_galleries',{ per_page: -1 } )
 			};
 		}
 		)( function( props ) {
