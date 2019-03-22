@@ -401,6 +401,7 @@ class AesopGalleryComponentAdmin {
 				<label for="aesop_hero_gallery_enable_nav"><?php _e( 'Enable Navigation Controls', 'aesop-core' );?></label>
 			</div>
 			
+			<div style="margin-top:30px"></div>
 			<div class="ase-gallery-opts--single">
 				<input type="checkbox" name="aesop_hero_gallery_enable_full" <?php if ( $hero_enable_full == true ) { ?>checked="checked"<?php } ?>>
 				<label for="aesop_hero_gallery_enable_full"><?php _e( 'Enable Full Screen', 'aesop-core' );?></label>
