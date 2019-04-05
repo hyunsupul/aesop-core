@@ -84,8 +84,12 @@ class aesopCoreWelcome {
 							<p>Check <a href="http://aesopstoryengine.com/developers/"><?php _e( 'Developer page ', 'aesop-core' );?></a> <?php _e(' for more information about theme development.', 'aesop-core' )?></p>
 						</li>
 						<li>
-							<strong><?php _e( 'Build your Story', 'aesop-core' );?></strong>
+							<strong><?php _e( 'Build your Story', 'aesop-core' );?></strong><p></p>
+							<strong><?php _e( 'Classic Editor', 'aesop-core' );?></strong>
 							<p><?php _e( 'Go to any post, and locate the "Add Component" button. It sits right above the post editor. Once you toggle this, you\'ll be able to select the component, adjust any options, and insert it anywhere within your story. Galleries are managed with the "Galleries" tab within WordPress.', 'aesop-core' );?></p>
+							<strong><?php _e( 'Gutenberg', 'aesop-core' );?></strong>
+							<p><?php _e( 'Go to any post, and locate the "Add Block" button. It sits above the post editor. Scroll down to find "Aesop Story Engine" group. From there you\'ll be able to select and insert Aesop blocks. Galleries are managed with the "Galleries" tab within WordPress.', 'aesop-core' );?></p>
+							<p><?php _e( 'Do not try to mix up editors. Posts edited with Classic Editor should not be edited with Gutenberg Editor and vice versa.', 'aesop-core' );?></p>
 							<p>Check <a href="http://aesopstoryengine.com/help/"><?php _e( 'User guide ', 'aesop-core' );?></a> <?php _e(' for more information.', 'aesop-core' )?></p>
 						</li>
 					</ul>
