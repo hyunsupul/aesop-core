@@ -1128,7 +1128,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						),
 						'default'  => 'off',
 						'desc'   => __( 'Mute', 'aesop-core' ),
-						'tip'  => __( 'Mute Video. On Chrome, using Youtube or Vimeo, you need to mute the video to have autoplay work.', 'aesop-core' )
+						'tip'  => __( 'Mute Video. On Chrome, using Youtube, you need to mute the video to have autoplay work.', 'aesop-core' )
 					),
 					'viewstart'  => array(
 						'type'  => 'select',
@@ -1178,18 +1178,18 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 				'codes'    => '<script>	            
 						jQuery(document).ready(function($){
 							function srcSetting(src){								
-							    if (src=="kickstarter" || src=="viddler" || src=="vine" || src=="wistia" || src=="instagram" || src=="dailymotion") {
+							    if (src=="vimeo" || src=="kickstarter" || src=="viddler" || src=="vine" || src=="wistia" || src=="instagram" || src=="dailymotion") {
 									jQuery(".aesop-video-id").slideDown();
-									jQuery(".aesop-video-hosted,.aesop-video-disable_for_mobile,.aesop-video-poster_frame,.aesop-video-loop,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart, .aesop-video-viewend").slideUp();
+									jQuery(".aesop-video-hosted,.aesop-video-disable_for_mobile,.aesop-video-poster_frame,.aesop-video-loop,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart, .aesop-video-mute, .aesop-video-viewend").slideUp();
 								}
 								else if (src=="youtube") {
 									jQuery(".aesop-video-id,.aesop-video-loop,.aesop-video-mute,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart,.aesop-video-viewend").slideDown();
 									jQuery(".aesop-video-hosted").slideUp();
 								}
-								else if (src=="vimeo") {
+								/*else if (src=="vimeo") {
 									jQuery(".aesop-video-id,.aesop-video-loop,.aesop-video-mute,.aesop-video-autoplay,.aesop-video-viewstart, .aesop-video-viewend").slideDown();
 									jQuery(".aesop-video-hosted,.aesop-video-controls").slideUp();
-								}
+								}*/
 								else if (src=="self") {
 									jQuery("#aesop-generator-settings").children().slideDown();
 									jQuery(".aesop-video-id").slideUp();

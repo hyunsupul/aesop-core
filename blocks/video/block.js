@@ -158,7 +158,7 @@
 						},
 					}
 				),
-			    (attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
+			    (attributes.src == 'youtube'  || attributes.src == 'self')
 				&& el(
 					wp.components.ToggleControl,
 					{
@@ -167,7 +167,7 @@
 						onChange: setChecked( 'autoplay' )
 					}
 				),
-				(attributes.src == 'youtube' || attributes.src == 'vimeo')
+				(attributes.src == 'youtube' )
 				&& el(
 				wp.components.ToggleControl,
 				{
@@ -176,7 +176,7 @@
 					onChange: setChecked( 'controls' )
 				}
 				),
-				(attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
+				(attributes.src == 'youtube' || attributes.src == 'self')
 				&& el(
 					wp.components.ToggleControl,
 					{
@@ -185,7 +185,7 @@
 						onChange: setChecked( 'mute' )
 					}
 				),
-			    (attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
+			    (attributes.src == 'youtube'  || attributes.src == 'self')
 				&& el(
 					wp.components.ToggleControl,
 					{
@@ -194,7 +194,7 @@
 						onChange: setChecked( 'viewstart' )
 					}
 				),
-				(attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
+				(attributes.src == 'youtube' || attributes.src == 'self')
 				&& el(
 					wp.components.ToggleControl,
 					{
@@ -203,7 +203,7 @@
 						onChange: setChecked( 'viewend' )
 					}
 				),
-				(attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
+				(attributes.src == 'youtube' || attributes.src == 'self')
 				&& el(
 					wp.components.ToggleControl,
 					{

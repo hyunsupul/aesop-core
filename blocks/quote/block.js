@@ -49,6 +49,10 @@
 			},
 			img : {
 				type: 'string',
+				default: '1',
+			},
+			size : {
+				type: 'string',
 			},
 			align : {
 				type: 'string',
@@ -145,6 +149,28 @@
                                 setAttributes( { background: newVal } );
                             }
                 }),
+				
+				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Quote Font Size') ),
+				el(
+					wp.components.SelectControl, 
+					{ 
+								type: 'string',
+								//label: __( '' ),
+								value: attributes.size,
+								onChange: function( newVal ) {
+										setAttributes({
+												size: newVal
+										});
+								},
+								options: [
+								  { value: '1', label:  __('1')  },
+								  { value: '2', label: __('2')  },
+								  { value: '3', label: __('3')  },
+								  { value: '4', label: __('4')  },
+								  { value: '5', label: __('5')  },
+								],
+					}
+				),
 				
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Reveal Animation') ),
 				el(

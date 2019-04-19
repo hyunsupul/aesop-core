@@ -195,9 +195,10 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 							
 						<?php	
 						}
-						printf( '<iframe id="aesop-vm-%s" src="//player.vimeo.com/video/%s?api=1&&player_id=aesop-vm-%s&controls=0%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), esc_attr( $unique ),$vmparams, $iframe_size );
+						printf( '<iframe id="aesop-vm-%s" src="//player.vimeo.com/video/%s?player_id=aesop-vm-%s%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), esc_attr( $unique ),$vmparams, $iframe_size );
 						
-						if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'] || 'pip' == $atts['viewend'])&& !wp_is_mobile()) {
+						// the following feature is disabled for now as the Vimeo API changed.
+						/*if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'] || 'pip' == $atts['viewend'])&& !wp_is_mobile()) {
 						?>
 						   <script src='<?php echo AI_CORE_URL;?>/public/assets/js/froogaloop.min.js'></script>
 
@@ -216,7 +217,9 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 											offset: '25%',
 											handler: function(direction){
+												alert("here");
 												player.api('play');
+												
 											}
 										});
 										<?php } ?>
@@ -261,7 +264,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 							});
 							</script>
 						<?php
-						}
+						}*/
 						break;
 					case 'dailymotion':
 						printf( '<iframe src="//www.dailymotion.com/embed/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $atts['id'] ), $iframe_size );
