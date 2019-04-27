@@ -52,6 +52,9 @@
 			align : {
 				type: 'string'
 			},
+			captionsrc : {
+				type: 'string'
+			},
 			caption : {
 				type: 'string'
 			},
@@ -122,6 +125,24 @@
 						},
 					} 
 				),
+				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Caption Source') ),
+				el(
+					wp.components.SelectControl, 
+					{ 
+								type: 'string',
+								label: __( 'Source for the Optional Caption.' ),
+								value: attributes.captionsrc,
+								onChange: function( newVal ) {
+										setAttributes({
+												captionsrc: newVal
+										});
+								},
+								options: [
+								  { value: 'custom', label:  'Custom'  },
+								  { value: 'wp_media_caption', label: 'WP Media Caption'  }
+								],
+					}
+				),
 				
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Image Caption') ),
 				el( wp.components.TextControl, {
@@ -133,8 +154,8 @@
 					} 
 				),
 				
-				attributes.caption && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Caption Position') ),
-				attributes.caption && el(
+				(attributes.caption || attributes.captionsrc=='wp_media_caption')&& el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Caption Position') ),
+				(attributes.caption || attributes.captionsrc=='wp_media_caption') && el(
 					wp.components.SelectControl, 
 					{ 
 								type: 'string',

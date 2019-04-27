@@ -15,6 +15,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
             'offset'           => '',
             'alt'              => '',
             'align'            => 'center', // deffault value fixed BY BORAY
+			'captionsrc'      => 'custom',
             'caption'          => '',
             'credit'           => '',
             'captionposition'  => 'left',
@@ -72,6 +73,14 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
         // combine into component shell
         ob_start();
+		
+		//get attachment caption
+		if ($atts['captionsrc'] == 'wp_media_caption') {
+			$image_id = aesop_get_image_id($atts['img']);
+			if ($image_id) {	
+				$atts['caption'] = wp_get_attachment_caption( $image_id  );
+			}
+		}
 
         do_action( 'aesop_image_before', $atts, $unique ); // action
         // hide the component initially if revealfx is set

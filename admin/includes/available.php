@@ -101,11 +101,27 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'desc'   => __( 'Lightbox', 'aesop-core' ),
 						'tip'  => __( 'Choose <em>on</em> and the image will open up the full-size version in a lightbox.', 'aesop-core' )
 					),
+					'captionsrc'    => array(
+						'type'  => 'select',
+						'values'  => array(
+							array(
+								'value' => 'custom',
+								'name' => __( 'Custom', 'aesop-core' )
+							),
+							array(
+								'value' => 'wp_media_caption',
+								'name' => __( 'WP Media Caption', 'aesop-core' )
+							)
+						),
+						'default'  => 'off',
+						'desc'   => __( 'Caption Source', 'aesop-core' ),
+						'tip'  => __( 'Choose if the image caption should be pulled from the media information.', 'aesop-core' )
+					),
 					'caption'    => array(
 						'type'  => 'text_area',
 						'default'  => '',
 						'desc'   => __( 'Caption', 'aesop-core' ),
-						'tip'  => __( 'Optional caption for the image. If you do not enter a caption, it will not show.', 'aesop-core' )
+						'tip'  => __( 'Optional caption for the image.', 'aesop-core' )
 					),
 					'captionposition' => array(
 						'type'  => 'select',
@@ -138,7 +154,6 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 				'desc'     => __( 'Creates an image component with caption, alignment, and lightbox options.', 'aesop-core' ),
 				'codes'    => '<script>	            
 						jQuery(document).ready(function($){
-							
 							function panoramaSetting(panorama){
 							    if (panorama=="off") {
 									jQuery(".aesop-image-imgwidth,.aesop-image-offset,.aesop-image-align").slideDown();
@@ -148,13 +163,24 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 									jQuery(".aesop-image-imgheight").slideDown();
 									jQuery(".aesop-image-imgwidth,.aesop-image-offset,.aesop-image-align").slideUp();
 								}
-								
+							}
+							function captionSetting(captionsrc){
+							    if (captionsrc=="wp_media_caption") {
+									jQuery(".aesop-image-caption").slideUp();
+								} else {
+									jQuery(".aesop-image-caption").slideDown();
+								}
 							}
 							setTimeout( function() { 
-							    panoramaSetting(jQuery( "#aesop-generator-attr-panorama" ).val()); }, 500);
+							    panoramaSetting(jQuery( "#aesop-generator-attr-panorama" ).val());
+								captionSetting(jQuery( "#aesop-generator-attr-captionsrc" ).val()); }, 500);
 							jQuery( "#aesop-generator-attr-panorama" ).change(function() {
 								panoramaSetting(this.value);
-							})
+							});
+							jQuery( "#aesop-generator-attr-captionsrc" ).change(function() {
+								captionSetting(this.value);
+							});
+							
 						});
 			           </script>'
 			),
@@ -1097,6 +1123,22 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'desc'   => __( 'Video Controls', 'aesop-core' ),
 						'tip'  => __( 'Hide or show the controls for the video player.', 'aesop-core' )
 					),
+					'mute'    => array(
+						'type'  => 'select',
+						'values'  => array(
+							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
+							)
+						),
+						'default'  => 'off',
+						'desc'   => __( 'Mute', 'aesop-core' ),
+						'tip'  => __( 'Mute Video. Using Youtube or Vimeo, you need to mute the video to have autoplay work.', 'aesop-core' )
+					),
 					'autoplay'    => array(
 						'type'  => 'select',
 						'values'  => array(
@@ -1112,23 +1154,6 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => 'on',
 						'desc'   => __( 'Autoplay', 'aesop-core' ),
 						'tip'  => __( 'Should the video automatically start playing.', 'aesop-core' )
-					),
-
-					'mute'    => array(
-						'type'  => 'select',
-						'values'  => array(
-							array(
-								'value' => 'off',
-								'name' => __( 'Off', 'aesop-core' )
-							),
-							array(
-								'value' => 'on',
-								'name' => __( 'On', 'aesop-core' )
-							)
-						),
-						'default'  => 'off',
-						'desc'   => __( 'Mute', 'aesop-core' ),
-						'tip'  => __( 'Mute Video. On Chrome, using Youtube, you need to mute the video to have autoplay work.', 'aesop-core' )
 					),
 					'viewstart'  => array(
 						'type'  => 'select',
@@ -1178,7 +1203,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 				'codes'    => '<script>	            
 						jQuery(document).ready(function($){
 							function srcSetting(src){								
-							    if (src=="vimeo" || src=="kickstarter" || src=="viddler" || src=="vine" || src=="wistia" || src=="instagram" || src=="dailymotion") {
+							    if ( src=="kickstarter" || src=="viddler" || src=="vine" || src=="wistia" || src=="instagram" || src=="dailymotion") {
 									jQuery(".aesop-video-id").slideDown();
 									jQuery(".aesop-video-hosted,.aesop-video-disable_for_mobile,.aesop-video-poster_frame,.aesop-video-loop,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart, .aesop-video-mute, .aesop-video-viewend").slideUp();
 								}
@@ -1186,10 +1211,10 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 									jQuery(".aesop-video-id,.aesop-video-loop,.aesop-video-mute,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart,.aesop-video-viewend").slideDown();
 									jQuery(".aesop-video-hosted").slideUp();
 								}
-								/*else if (src=="vimeo") {
+								else if (src=="vimeo") {
 									jQuery(".aesop-video-id,.aesop-video-loop,.aesop-video-mute,.aesop-video-autoplay,.aesop-video-viewstart, .aesop-video-viewend").slideDown();
 									jQuery(".aesop-video-hosted,.aesop-video-controls").slideUp();
-								}*/
+								}
 								else if (src=="self") {
 									jQuery("#aesop-generator-settings").children().slideDown();
 									jQuery(".aesop-video-id").slideUp();
@@ -1203,13 +1228,29 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 									jQuery(".aesop-video-poster_frame").slideUp();
 								}
 							}
+							function muteSetting(onOff) {
+								if (jQuery( "#aesop-generator-attr-src" ).val()=="vimeo" || jQuery( "#aesop-generator-attr-src" ).val()=="youtube") {
+									if (onOff=="on") {
+										jQuery(".aesop-video-autoplay,.aesop-video-viewstart, .aesop-video-viewend").slideDown();
+									} else {
+										jQuery(".aesop-video-autoplay,.aesop-video-viewstart, .aesop-video-viewend").slideUp();
+									}
+								}
+							}
 							setTimeout( function() { 
-                                srcSetting(jQuery( "#aesop-generator-attr-src" ).val()); disableMobileSetting(jQuery( "#aesop-generator-attr-disable_for_mobile" ).val()); }, 500);
+                                srcSetting(jQuery( "#aesop-generator-attr-src" ).val()); 
+								disableMobileSetting(jQuery( "#aesop-generator-attr-disable_for_mobile" ).val());
+								muteSetting(jQuery( "#aesop-generator-attr-mute" ).val());}, 
+							500);
+								
 							jQuery( "#aesop-generator-attr-src" ).change(function() {
 								srcSetting(this.value);
 							})
 							jQuery( "#aesop-generator-attr-disable_for_mobile" ).change(function() {
 								disableMobileSetting(this.value);
+							})
+							jQuery( "#aesop-generator-attr-mute" ).change(function() {
+								muteSetting(this.value);
 							})
 						});
 			           </script>'

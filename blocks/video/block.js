@@ -63,6 +63,7 @@
 				type : 'string'
 			},
 			mute:{
+				default: 'off',
 				type : 'string'
 			},
 			controls:{
@@ -158,15 +159,6 @@
 						},
 					}
 				),
-			    (attributes.src == 'youtube'  || attributes.src == 'self')
-				&& el(
-					wp.components.ToggleControl,
-					{
-						label: __( 'Autoplay' ),
-						checked: checked(attributes.autoplay), // viewstart REPLACED TO autoplay BY BORAY
-						onChange: setChecked( 'autoplay' )
-					}
-				),
 				(attributes.src == 'youtube' )
 				&& el(
 				wp.components.ToggleControl,
@@ -176,16 +168,46 @@
 					onChange: setChecked( 'controls' )
 				}
 				),
-				(attributes.src == 'youtube' || attributes.src == 'self')
+				(attributes.src == 'youtube' || attributes.src == 'vimeo' || attributes.src == 'self')
 				&& el(
 					wp.components.ToggleControl,
 					{
-						label: __( 'Mute Video. On Chrome, when using Youtube or Vimeo, you need to mute the video to have autoplay work.' ),
-						checked: checked(attributes.mute),
-						onChange: setChecked( 'mute' )
+						label: __( 'Mute Video. Using Youtube or Vimeo, you need to mute the video to have autoplay work.' ),
+						checked: attributes.mute =='on',
+						onChange: function( newVal ) {				
+										if (newVal) {
+											setAttributes({
+												mute: 'on'
+											});
+										} else {
+											setAttributes({
+												mute: 'off'
+											});
+										}
+									
+								},
 					}
 				),
-			    (attributes.src == 'youtube'  || attributes.src == 'self')
+				(((attributes.src == 'youtube' || attributes.src == 'vimeo') && attributes.mute=='on') || attributes.src == 'self')
+				&& el(
+					wp.components.ToggleControl,
+					{
+						label: __( 'Autoplay' ),
+						checked: attributes.autoplay =='on',
+						onChange: function( newVal ) {				
+										if (newVal) {
+											setAttributes({
+												autoplay: 'on'
+											});
+										} else {
+											setAttributes({
+												autoplay: 'off'
+											});
+										}
+								},
+					}
+				),
+			    (((attributes.src == 'youtube' || attributes.src == 'vimeo') && attributes.mute=='on') || attributes.src == 'self')
 				&& el(
 					wp.components.ToggleControl,
 					{
@@ -194,7 +216,7 @@
 						onChange: setChecked( 'viewstart' )
 					}
 				),
-				(attributes.src == 'youtube' || attributes.src == 'self')
+				(((attributes.src == 'youtube' || attributes.src == 'vimeo') && attributes.mute=='on') || attributes.src == 'self')
 				&& el(
 					wp.components.ToggleControl,
 					{
@@ -203,7 +225,7 @@
 						onChange: setChecked( 'viewend' )
 					}
 				),
-				(attributes.src == 'youtube' || attributes.src == 'self')
+				(((attributes.src == 'youtube' || attributes.src == 'vimeo') && attributes.mute=='on') || attributes.src == 'self')
 				&& el(
 					wp.components.ToggleControl,
 					{

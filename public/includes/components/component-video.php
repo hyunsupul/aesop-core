@@ -190,26 +190,29 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 					case 'vimeo':
 						$vmparams = $loopstatus ? sprintf ("&loop=1") : "";
 						$vmparams = $vmparams.($autoplaystatus ? "&autoplay=1" : "");
+						$vmparams = $vmparams.($mute ? "&mute=1" : "");
 						if ($controlstatus !=='controls-visible') { ?>
 							<style> #aesop-vm-<?php echo esc_attr( $unique );?> .controls-wrapper { display:none !important;} </style>
 							
 						<?php	
 						}
 						printf( '<iframe id="aesop-vm-%s" src="//player.vimeo.com/video/%s?player_id=aesop-vm-%s%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $unique ), esc_attr( $atts['id'] ), esc_attr( $unique ),$vmparams, $iframe_size );
-						
-						// the following feature is disabled for now as the Vimeo API changed.
-						/*if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'] || 'pip' == $atts['viewend'])&& !wp_is_mobile()) {
 						?>
-						   <script src='<?php echo AI_CORE_URL;?>/public/assets/js/froogaloop.min.js'></script>
+						
+						<?php
+						// the following feature is disabled for now as the Vimeo API changed.
+						if (('on' == $atts['viewstart'] || 'on' == $atts['viewend'] || 'pip' == $atts['viewend'])&& !wp_is_mobile() && $mute) {
+						?>
+						   <script src="https://player.vimeo.com/api/player.js"></script>
 
 							<script>
 							jQuery(document).ready(function($){
+								
+								var vimeo_iframe = $('#aesop-vm-<?php echo esc_attr( $unique );?>')[0];
+								var player = new Vimeo.Player(vimeo_iframe);
 								// If multiple elements are selected, it will use the first element.
-								 var vimeo_iframe = $('#aesop-vm-<?php echo esc_attr( $unique );?>')[0];
-								 var player = $f(vimeo_iframe);								
-								 player.addEvent('ready', function() {
 									 <?php if ( $mute ) { ?>
-									 player.api('setVolume', 0);
+									 player.setVolume(0);
 									 <?php } ?>
 								
 								
@@ -217,8 +220,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 											offset: '25%',
 											handler: function(direction){
-												alert("here");
-												player.api('play');
+												player.play();
 												
 											}
 										});
@@ -228,14 +230,14 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 											offset: '100%',
 											handler: function(direction){
 												if (direction == 'up') {
-													player.api('pause');
+													player.pause();
 												}
 											}
 										});
 										$('#aesop-video-<?php echo esc_attr( $unique );?>').waypoint({
 											offset: '-70%',
 											handler: function(direction){
-												player.api('pause');
+												player.pause();
 											}
 										});
 										<?php } else if ('pip' == $atts['viewend']) { ?>
@@ -259,12 +261,12 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 										});
 									<?php } ?>
 									
-								});
+								//});
 
 							});
 							</script>
 						<?php
-						}*/
+						}
 						break;
 					case 'dailymotion':
 						printf( '<iframe src="//www.dailymotion.com/embed/video/%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0"></iframe>', esc_attr( $atts['id'] ), $iframe_size );
