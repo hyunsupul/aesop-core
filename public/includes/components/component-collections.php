@@ -12,7 +12,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
         $defaults = array(
             'collection'  => 1,
             'title'       => '',
-            'columns'     => 2,
+            'columns'     => 1,
             'limit'       => -1,
             'splash'      => '',
             'loadmore'    => 'off',
@@ -91,13 +91,13 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
                             );
 
                             // get cached query
-                            $cats = wp_cache_get( 'aesop_splash_query_' . $atts['collection'] );
+                            //$cats = wp_cache_get( 'aesop_splash_query_' . $atts['collection'] );
 
                             // if no cached query then cache the query
-                            if ( false == $cats ) {
-                                $cats = get_categories( apply_filters( 'aesop_splash_query', $cat_args ) );
-                                wp_cache_set( 'aesop_splash_query_' . $atts['collection'], $cats );
-                            }
+                            //if ( false == $cats ) {
+                            //    $cats = get_categories( apply_filters( 'aesop_splash_query', $cat_args ) );
+                            //    wp_cache_set( 'aesop_splash_query_' . $atts['collection'], $cats );
+                            //}
 
                             if ( $cats ):
 
@@ -133,6 +133,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
                                 'posts_per_page' => $atts['limit'],
                                 'cat'            => $atts['collection'],
                                 'ignore_sticky'  => true,
+                                'post_status' => array('publish'),
                                 'paged'          => 1
                             );
 
@@ -140,7 +141,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
                             //$query = wp_cache_get( 'aesop_collection_query_' . $atts['collection'] );
 
                             $query = new wp_query( apply_filters( 'aesop_collection_query', $args ) );
-                            wp_cache_set( 'aesop_collection_query_' . $atts['collection'], $query );
+                            //wp_cache_set( 'aesop_collection_query_' . $atts['collection'], $query );
 
 
                             $maxpages = $query->max_num_pages;

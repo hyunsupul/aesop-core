@@ -25,6 +25,7 @@ class AesopCollectionComponentAdmin {
 			'posts_per_page' => $ppp,
 			'cat' => $cat,
 			'ignore_sticky' => true,
+			'post_status' => array('publish'),
 			'paged' => $paged
 		);
 

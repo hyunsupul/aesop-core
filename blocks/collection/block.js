@@ -132,13 +132,25 @@
 					} 
 				),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Columns') ),
-				el( wp.components.TextControl, {
-						label: __( 'Stories are displayed in a grid. How many columns should the grid be?' ),
-						value: props.attributes.columns,
-						onChange: function( content ) {
-							props.setAttributes( { columns: content } );
-						},
-					} 
+				el(
+					wp.components.SelectControl, 
+					{ 
+								type: 'string',
+								label: __( 'Stories are displayed in a grid. How many columns should the grid be?' ),
+								value: props.attributes.columns,
+								onChange: function( newVal ) {
+										props.setAttributes({
+												columns: newVal
+										});
+								},
+								options: [
+								  { value: '1', label:  '1'  },
+								  { value: '2', label: '2'  },
+								  { value: '3', label:  '3'  },
+								  { value: '4', label: '4'  },
+                                  { value: '5', label: '5'  },
+								],
+					}
 				),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Post Order') ),
 				el(
