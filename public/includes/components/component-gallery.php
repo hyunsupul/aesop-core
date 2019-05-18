@@ -165,7 +165,9 @@ class AesopCoreGallery {
 	    global $is_edge;
 
 		$thumbs  = get_post_meta( $gallery_id, 'aesop_thumb_gallery_hide_thumbs', true ) ? sprintf( 'data-nav=false' ) : sprintf( 'data-nav=thumbs' );
-		$autoplay  = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ) ? sprintf( 'data-autoplay="%s"', get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ) ) : null;
+		$trans_speed = intval(get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ));
+		$autoplay  = $trans_speed ? sprintf( 'data-autoplay=%s', $trans_speed ) : null;
+		
 		$transition = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true ) ? get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true ) : 'crossfade';
 
 		// image size

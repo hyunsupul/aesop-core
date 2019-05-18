@@ -355,11 +355,7 @@ class AesopGalleryComponentAdmin {
 			    </select>
 			</div>
 			
-			<div class="ase-gallery-opts--single" style="padding-top:20px">
-				<label for="aesop_hero_gallery_transition_speed"><?php _e( 'Gallery Transition Speed', 'aesop-core' );?></label>
-				<p class="aesop-gallery-opts--desc"><?php _e( 'Activate slideshow by setting a speed for the transition. 5000 = 5 seconds.', 'aesop-core' );?></p>
-				<input type="text" name="aesop_hero_gallery_transition_speed" value="<?php echo (int) $hero_speed ? $hero_speed : 3000;?>">
-			</div>
+			
 			
 			<div class="ase-gallery-opts--single" style="padding-top:20px;">
 				<label for="aesop_hero_gallery_content"><?php _e( 'Gallery Content', 'aesop-core' );?></label>
@@ -384,6 +380,12 @@ class AesopGalleryComponentAdmin {
 			      <option value="title_caption" <?php selected( $aesop_hero_image_text, 'title_caption' ); ?>><?php _e( 'Title+Caption', 'aesop-core' );?></option>
 				  <option value="description" <?php selected( $aesop_hero_image_text, 'description' ); ?>><?php _e( 'Description', 'aesop-core' );?></option>
 			    </select>
+			</div>
+			
+			<div class="ase-gallery-opts--single" style="padding-top:20px">
+				<label for="aesop_hero_gallery_transition_speed"><?php _e( 'Gallery Transition Speed', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Activate slideshow by setting a speed for the transition. 5000 = 5 seconds.', 'aesop-core' );?></p>
+				<input type="text" name="aesop_hero_gallery_transition_speed" value="<?php echo (int) $hero_speed ? $hero_speed : 3000;?>">
 			</div>
 			
 			<div class="ase-gallery-opts--single" style="padding-top:20px">
