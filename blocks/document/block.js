@@ -64,7 +64,9 @@
 								},
 								options: [
 								  { value: 'pdf', label:  'PDF'  },
-								  { value: 'image', label: 'Image'  }
+								  { value: 'image', label: 'Image'  },
+								  { value: 'ms', label:  'Microsoft'  },
+								  { value: 'download', label: 'Download Link'  }
 								],
 					}
 				),

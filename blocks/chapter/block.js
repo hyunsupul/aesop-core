@@ -80,15 +80,7 @@
 			
 			
 			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
-				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Subtitle') ),
-				el( wp.components.TextControl, {
-								label: __( 'This will optionally display a subtitle after the Chapter Title text.' ),
-								value: attributes.subtitle,
-								onChange: function( newVal ) {
-									setAttributes( { subtitle : newVal } );
-								},
-							} 
-				),
+				
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Type') ),
 				el(
 					wp.components.SelectControl, 
@@ -108,6 +100,8 @@
 								],
 					}
 				),
+				
+				attributes.bgtype != 'image' && el( 'img', {src: attributes.img} ),
 				attributes.bgtype != 'color' && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Chapter Image or Video URL') ),
 				attributes.bgtype != 'color' && el(
 					wp.editor.MediaUpload,
@@ -126,6 +120,14 @@
 							}
 					}
 				),
+				attributes.img && el( wp.components.Button, {
+									  className:  'button button-large',
+									  onClick: function(){
+											setAttributes( { img: "" } );
+									  }
+									},
+									 __( 'Remove Media' ) 
+				),	
 				attributes.bgtype == 'color' && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Color') ),
 				attributes.bgtype == 'color' && el( wp.components.ColorPalette,{
 					        label: __( 'Background Color' ),
@@ -237,13 +239,21 @@
 				
 			);
 			
-			const controls = el( 'div', { className: '' }
+			const controls = el( 'div', { className: 'wp-block-aesop-story-engine-bg',style: { backgroundImage: 'url("'+attributes.img+'")' }}
 				,
 				el( wp.components.TextControl, {
 								label: __( 'Title' ),
 								value: attributes.title,
 								onChange: function( newVal ) {
 									setAttributes( { title : newVal } );
+								},
+							} 
+				),
+				el( wp.components.TextControl, {
+								label: __( 'Subtitle: Ooptionally display a subtitle after the Chapter Title text.' ),
+								value: attributes.subtitle,
+								onChange: function( newVal ) {
+									setAttributes( { subtitle : newVal } );
 								},
 							} 
 				),
@@ -275,7 +285,9 @@
 			return [ advcontrols,
 				el(
 					'div', // Tag type.
-					{ className: "wp-block-aesop-story-engine" }, 
+					{ className: "wp-block-aesop-story-engine",
+					  //style: { backgroundImage: 'url("'+attributes.img+'")', backgroundSize: "cover" },
+					}, 
 					uis// Content inside the tag.
 				)
 			];	

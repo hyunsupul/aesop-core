@@ -136,6 +136,7 @@
 							render: function( obj ) {
 										return el( wp.components.Button, {
 									  className:  'button button-large',
+									  style: { width: '100%' },
 									  onClick: obj.open
 									},
 									 __( 'Select Media' ) 
@@ -143,6 +144,16 @@
 							}
 					}
 				),
+				attributes.img && el( wp.components.Button, {
+									  className:  'button button-large',
+									  style: { width: '100%' },
+									  onClick: function(){
+											setAttributes( { img: "" } );
+									  }
+									},
+									 __( 'Remove Image' ) 
+				),
+				
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Width of Content') ),
 				el( wp.components.TextControl, {
 						label: __( 'You can enter the size such as 40% or 500px. Enter the word content to restrict the width to that of the main text.' ),
@@ -234,12 +245,14 @@
 				
 			);
 			
-			const controls = el( 'div', { className: '' }
+			const controls = el( 'div', { className: 'wp-block-aesop-story-engine-bg',style: { backgroundImage: 'url("'+attributes.img+'")' }, }
 				,
+				
 				el(  wp.components.TextareaControl, //todo: replace with wp.blocks.RichText, 
 				{
 								label: __( 'Content' ),
 								value: attributes.content,
+								style: { color: attributes.color },
 								onChange: function( newVal ) {
 									setAttributes( { content : newVal } );
 								},

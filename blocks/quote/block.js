@@ -49,7 +49,6 @@
 			},
 			img : {
 				type: 'string',
-				default: '1',
 			},
 			size : {
 				type: 'string',
@@ -102,13 +101,23 @@
 							value: attributes.img,
 							render: function( obj ) {
 										return el( wp.components.Button, {
-									  className:  'button button-large',
+									  className:  'button',
+									  style: { width: '100%' },
 									  onClick: obj.open
 									},
-									 __( 'Background Image' ) 
+									 __( 'Set Background Image' ) 
 								); 
 							}
 					}
+				),
+				attributes.img && el( wp.components.Button, {
+									  className:  'button',
+									  style: { width: '100%' },
+									  onClick: function(){
+											setAttributes( { img: "" } );
+									  }
+									},
+									 __( 'Remove Image' ) 
 				),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Alignment') ),
 				el(
@@ -196,11 +205,10 @@
 				)
 			);
 			
-			const controls = el( 'div', { className: '' }
+			const controls = el( 'div', { className: 'wp-block-aesop-story-engine-bg',style: { backgroundImage: 'url("'+attributes.img+'")'  }}
 				,
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Quote') ),
 				el( wp.components.TextControl, {
-								label: __( '' ),
 								value: attributes.quote,
 								onChange: function( content ) {
 									setAttributes( { quote: content } );

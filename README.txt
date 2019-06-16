@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 5.0.3
-Stable tag: 2.0.8.7
+Stable tag: 2.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -185,6 +185,10 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 2.0.9 =
+* NEW New file type options for the Document component
+* NEW Added buttons to remove images to a few Gutenberg blocks
+
 = 2.0.8.5 =
 * FIX Fixes for the Collection component
 

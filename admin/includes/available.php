@@ -1334,11 +1334,19 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							array(
 								'value' => 'image',
 								'name' => __( 'Image', 'aesop-core' )
+							),
+							array(
+								'value' => 'ms',
+								'name' => __( 'Microsoft', 'aesop-core' )
+							),
+							array(
+								'value' => 'download',
+								'name' => __( 'Download Link', 'aesop-core' )
 							)
 						),
 						'default'  => 'pdf',
 						'desc'   => __( 'Document Type', 'aesop-core' ),
-						'tip'  => __( 'The type of document. Choose image or PDF.', 'aesop-core' )
+						'tip'  => __( 'The type of document. Choose image, PDF or Miscrosoft.', 'aesop-core' ).__( 'Or "download" to add a download link.', 'aesop-core' )
 					),
 					'src'    => array(
 						'type'  => 'media_upload',

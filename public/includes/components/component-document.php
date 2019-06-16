@@ -39,6 +39,12 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 		case 'image':
 			$source = sprintf( '<img src="%s"', esc_url( $atts['src'] ) );
 			break;
+		case 'ms':
+		    $source = sprintf( '<iframe class="aesop-ms-doc" src="http://docs.google.com/viewer?url=%s&embedded=true" ></iframe>', esc_url( $atts['src'] )  );
+		    break;
+		case 'download':
+		    $source = sprintf( '<a href="%s" download>'.__('Download','aesop-core' ).'</a>', esc_url( $atts['src'] ) );
+			break;
 		default:
 			$source = sprintf( '<object class="aesop-pdf" data="%s" type="application/pdf" ></object>', esc_url( $atts['src'] ) );
 			break;
@@ -70,7 +76,7 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 					return false;
 				});
 			});
-		</script>
+		    </script>
 		', esc_attr( $unique ), esc_attr( $unique ) );
 
             $slide = $atts['caption'] ? esc_html( $atts['caption'] ) : false;

@@ -13,6 +13,16 @@
 	padding: 1rem;
 }
 
+.wp-block-aesop-story-engine-label {
+	background: #bbddff;
+}
+
+
+.wp-block-aesop-story-engine-bg {
+	background-size: cover;
+	padding: 1rem;
+}
+
 .wp-block-aesop-story-engine  audio {
 	width:100%;
 }

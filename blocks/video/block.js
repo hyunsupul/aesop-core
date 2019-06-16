@@ -256,11 +256,21 @@
 							render: function( obj ) {
 										return el( wp.components.Button, {
 									  className:  'button button-large',
+									  style: { width: '100%' },
 									  onClick: obj.open
 									},
 									 __( 'Select Media' ) 
 								); }
 					}
+				),
+				attributes.poster_frame && el( wp.components.Button, {
+									  className:  'button button-large',
+									  style: { width: '100%' },
+									  onClick: function(){
+											setAttributes( { poster_frame: "" } );
+									  }
+									},
+									 __( 'Remove Image' ) 
 				),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Overlay Content') ),
 				el( wp.components.TextControl, {
