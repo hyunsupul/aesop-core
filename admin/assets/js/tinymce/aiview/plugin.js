@@ -96,7 +96,7 @@
 
         // restore the Aesop shortcode from the div placeholder
         function restoreAesopShortcodes(content) {
-            return content.replace((/<div[^>]+?class="[^"]+?aesop-component-long.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>|<div class="[^"+]+?aesop-component-short.*?aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g), function (match) {
+            return content.replace((/<div[^>]+?class="[^"]+?aesop-component-long.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>|<div class="[^"+]+?aesop-component-short.*?aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div>[\s]*<\/div>/g), function (match) {
                 return shortcode(match);
             });
         }
@@ -104,8 +104,8 @@
         // return the shortcode equivalent for any matches and update the content with the new version
         function shortcode(match) {
             var re_full = /<div[^>]+?class="[^"]+?aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?aesop-component-content[^>]*?>(.*?)<\/div>[\s]*?<\/div>/g;
-            var re_short = /<div class="[^"+]+?aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div><\/div>/g;
-            var re_clean = /<div\s*class="clipboardControl[^>]+?><div\s*class="aesop[^>]+>\s*<\/div><\/div>/g;
+            var re_short = /<div class="[^"+]+?aesop-component.*?aesop-sc="([^"]+)"[\s\S]*?WcMgcq<\/div>[\s]*<\/div>/g;
+            var re_clean = /<div\s*class="clipboardControl[^>]+?><div\s*class="aesop[^>]+>\s*<\/div>[\s]*<\/div>/g;
 
             match = match.replace(re_clean, '');
             //var re_clean = /<p> <\/p>\s*/g;
