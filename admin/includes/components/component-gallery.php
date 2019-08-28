@@ -196,6 +196,9 @@ class AesopGalleryComponentAdmin {
 		$thumb_trans  = get_post_meta( $id, 'aesop_thumb_gallery_transition', true );
 		$thumb_speed  = get_post_meta( $id, 'aesop_thumb_gallery_transition_speed', true );
 		$thumb_hide  = get_post_meta( $id, 'aesop_thumb_gallery_hide_thumbs', true );
+
+		// lazy loading
+		$lazy_load  = get_post_meta( $id, 'aesop_gallery_lazy_load', true );
 		
 		//sequence
 		$sequence_panorama = get_post_meta( $id, 'aesop_sequence_gallery_panorama', true );
@@ -284,6 +287,11 @@ class AesopGalleryComponentAdmin {
 				<input type="checkbox" name="aesop_thumb_gallery_hide_thumbs" <?php if ( $thumb_hide == true ) { ?>checked="checked"<?php } ?>>
 				<label for="aesop_thumb_gallery_hide_thumbs"><?php _e( 'Hide Gallery Thumbnails', 'aesop-core' );?></label>
 			</div>
+
+            <div class="ase-gallery-opts--single">
+                <input type="checkbox" id="aesop_gallery_lazy_load" name="aesop_gallery_lazy_load" <?php if ( $lazy_load == true ) { ?>checked="checked"<?php } ?>>
+                <label for="aesop_gallery_lazy_load"><?php _e( 'Lazy load Gallery', 'aesop-core' );?></label>
+            </div>
 
 		</div>
 		<div class="ase-gallery-opts ase-gallery-opts--sequence" style="display:none;">
@@ -451,6 +459,9 @@ class AesopGalleryComponentAdmin {
 		$thumb_trans  = isset( $_POST['aesop_thumb_gallery_transition'] ) ? $_POST['aesop_thumb_gallery_transition'] : false;
 		$thumb_speed  = isset( $_POST['aesop_thumb_gallery_transition_speed'] ) ? $_POST['aesop_thumb_gallery_transition_speed'] : false;
 		$thumb_hide  = isset( $_POST['aesop_thumb_gallery_hide_thumbs'] ) ? $_POST['aesop_thumb_gallery_hide_thumbs'] : false;
+
+		// lazy loading
+		$lazy_load  = isset( $_POST['aesop_gallery_lazy_load'] ) ? $_POST['aesop_gallery_lazy_load'] : false;
 		
 		// sequence
 		$sequence_panorama   = isset( $_POST['aesop_sequence_gallery_panorama'] ) ? $_POST['aesop_sequence_gallery_panorama'] : false;
@@ -503,6 +514,9 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, 'aesop_thumb_gallery_transition', sanitize_text_field( $thumb_trans ) );
 		update_post_meta( $post_id, 'aesop_thumb_gallery_transition_speed', absint( $thumb_speed ) );
 		update_post_meta( $post_id, 'aesop_thumb_gallery_hide_thumbs', $thumb_hide );
+
+		// lazy loading
+		update_post_meta( $post_id, 'aesop_gallery_lazy_load', $lazy_load );
 		
 		// sequence
 		update_post_meta( $post_id, 'aesop_sequence_gallery_panorama', $sequence_panorama );

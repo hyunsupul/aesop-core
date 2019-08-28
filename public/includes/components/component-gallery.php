@@ -167,6 +167,7 @@ class AesopCoreGallery {
 		$thumbs  = get_post_meta( $gallery_id, 'aesop_thumb_gallery_hide_thumbs', true ) ? sprintf( 'data-nav=false' ) : sprintf( 'data-nav=thumbs' );
 		$trans_speed = intval(get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition_speed', true ));
 		$autoplay  = $trans_speed ? sprintf( 'data-autoplay=%s', $trans_speed ) : null;
+		$lazy_load  = get_post_meta( $gallery_id, 'aesop_gallery_lazy_load', true );
 		
 		$transition = get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true ) ? get_post_meta( $gallery_id, 'aesop_thumb_gallery_transition', true ) : 'crossfade';
 
@@ -188,7 +189,11 @@ class AesopCoreGallery {
 		$alt     = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 		$caption  = get_post( $image_id )->post_excerpt;
 
-		?><img src="<?php echo esc_url( $full[0] );?>" data-caption="<?php echo esc_attr( $caption );?>" alt="<?php echo esc_attr( $alt );?>"><?php
+		    if ( $lazy_load ) {
+				?><a href="<?php echo esc_url( $full[0] );?>" data-caption="<?php echo esc_attr( $caption );?>" alt="<?php echo esc_attr( $alt );?>"></a><?php
+            } else {
+			    ?><img src="<?php echo esc_url( $full[0] );?>" data-caption="<?php echo esc_attr( $caption );?>" alt="<?php echo esc_attr( $alt );?>"><?php
+            }
 
 		endforeach;
 
