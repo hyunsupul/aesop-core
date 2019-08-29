@@ -67,6 +67,13 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
         $lazy_holder = AI_CORE_URL . '/public/assets/img/aesop-lazy-holder.png';
         $lazy        = class_exists( 'AesopLazyLoader' ) && ! is_user_logged_in() ? sprintf( 'src="%s" data-src="%s" class="aesop-lazy-img"', $lazy_holder, esc_url( $atts['img'] ) ) : sprintf( 'src="%s"', esc_url( $atts['img'] ) );
 
+        // try to use srcset and sizes on new WP installs
+		if ( function_exists('wp_get_attachment_image_srcset') && $attachment_id = attachment_url_to_postid( $atts['img'] ) ) {
+			$srcset = wp_get_attachment_image_srcset( $attachment_id, 'full' );
+			$sizes = wp_get_attachment_image_sizes( $attachment_id, 'full' );
+            $lazy = "srcset='$srcset' sizes='$sizes' $lazy";
+        }
+
         // automatic alt tag fallback if none specified
         $auto_alt = $atts['img'] ? basename( $atts['img'] ) : null;
         $alt      = $atts['alt'] ? $atts['alt'] : preg_replace( '/\\.[^.\\s]{3,4}$/', '', $auto_alt );
