@@ -5,8 +5,8 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 5.0.3
-Stable tag: 2.0.10
+Tested up to: 5.2.2
+Stable tag: 2.0.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -185,6 +185,9 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 2.0.11 =
+* UPDATE Improved the behavior for LazyLoad. (Thanks for Christoph Herbst)
+
 = 2.0.10 =
 * FIX fix for a bug in the visual editing mode under the Classical Editor.
 

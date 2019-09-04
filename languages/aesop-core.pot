@@ -5,14 +5,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Aesop Story Engine 1.6.5\n"
 "Report-Msgid-Bugs-To: http://aesopstoryengine.com/\n"
-"POT-Creation-Date: 2019-06-16 14:20-0600\n"
+"POT-Creation-Date: 2019-09-04 13:27-0500\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: WP-Translations (http://wp-translations.org/)\n"
 "Language-Team: WP-Translations <fxb@wp-translations.org>\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
@@ -224,9 +224,9 @@ msgstr ""
 
 #: admin/includes/available.php:123 admin/includes/available.php:206
 #: admin/includes/available.php:741 admin/includes/available.php:1069
-#: admin/includes/components/component-gallery.php:255
-#: admin/includes/components/component-gallery.php:323
-#: admin/includes/components/component-gallery.php:379 blocks/character/block.js:65
+#: admin/includes/components/component-gallery.php:258
+#: admin/includes/components/component-gallery.php:331
+#: admin/includes/components/component-gallery.php:387 blocks/character/block.js:65
 #: blocks/document/block.js:74 blocks/parallax/block.js:111
 #: blocks/video/block.js:121
 msgid "Caption"
@@ -497,9 +497,9 @@ msgid ""
 msgstr ""
 
 #: admin/includes/available.php:422 admin/includes/available.php:831
-#: admin/includes/components/component-gallery.php:258
-#: admin/includes/components/component-gallery.php:326
-#: admin/includes/components/component-gallery.php:377
+#: admin/includes/components/component-gallery.php:261
+#: admin/includes/components/component-gallery.php:334
+#: admin/includes/components/component-gallery.php:385
 msgid "None"
 msgstr ""
 
@@ -873,9 +873,9 @@ msgid "Audio"
 msgstr ""
 
 #: admin/includes/available.php:902 admin/includes/available.php:1374
-#: admin/includes/components/component-gallery.php:254
-#: admin/includes/components/component-gallery.php:322
-#: admin/includes/components/component-gallery.php:378
+#: admin/includes/components/component-gallery.php:257
+#: admin/includes/components/component-gallery.php:330
+#: admin/includes/components/component-gallery.php:386
 #: admin/includes/components/component-map.php:71 blocks/chapter/block.js:245
 #: blocks/collection/block.js:116 blocks/mapmarker/block.js:42
 msgid "Title"
@@ -1498,214 +1498,218 @@ msgstr ""
 msgid "Hero"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:230
+#: admin/includes/components/component-gallery.php:233
 msgid "Main Gallery Width"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:231
+#: admin/includes/components/component-gallery.php:234
 msgid ""
 "Adjust the overall width of the grid/thumbnail gallery. Acceptable values include "
 "500px, 50%, 100% etc"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:235
+#: admin/includes/components/component-gallery.php:238
 msgid "Gallery Caption"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:236
+#: admin/includes/components/component-gallery.php:239
 msgid "Add an optional caption for the gallery."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:242
+#: admin/includes/components/component-gallery.php:245
 msgid "Grid Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:245
+#: admin/includes/components/component-gallery.php:248
 msgid "Grid Gallery Width"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:246
+#: admin/includes/components/component-gallery.php:249
 msgid ""
 "Adjust the width of the individual grid items, only if using Grid gallery style. "
 "Default is 400."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:251
-#: admin/includes/components/component-gallery.php:319
+#: admin/includes/components/component-gallery.php:254
+#: admin/includes/components/component-gallery.php:327
 msgid "Lightbox Text"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:252
-#: admin/includes/components/component-gallery.php:320
+#: admin/includes/components/component-gallery.php:255
+#: admin/includes/components/component-gallery.php:328
 msgid ""
 "Text to display when the lightbox is open. The texts are read from the image "
 "property."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:256
-#: admin/includes/components/component-gallery.php:324
-#: admin/includes/components/component-gallery.php:380
+#: admin/includes/components/component-gallery.php:259
+#: admin/includes/components/component-gallery.php:332
+#: admin/includes/components/component-gallery.php:388
 msgid "Title+Caption"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:257
-#: admin/includes/components/component-gallery.php:325
-#: admin/includes/components/component-gallery.php:381
+#: admin/includes/components/component-gallery.php:260
+#: admin/includes/components/component-gallery.php:333
+#: admin/includes/components/component-gallery.php:389
 msgid "Description"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:265
+#: admin/includes/components/component-gallery.php:268
 msgid "Thumbnail Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:268
-#: admin/includes/components/component-gallery.php:349
+#: admin/includes/components/component-gallery.php:271
+#: admin/includes/components/component-gallery.php:357
 msgid "Gallery Transition"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:269
+#: admin/includes/components/component-gallery.php:272
 msgid "Adjust the transition effect for the Thumbnail gallery. Default is slide."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:271
-#: admin/includes/components/component-gallery.php:352
+#: admin/includes/components/component-gallery.php:274
+#: admin/includes/components/component-gallery.php:360
 msgid "Fade"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:272
-#: admin/includes/components/component-gallery.php:353
+#: admin/includes/components/component-gallery.php:275
+#: admin/includes/components/component-gallery.php:361
 msgid "Slide"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:273
-#: admin/includes/components/component-gallery.php:354
+#: admin/includes/components/component-gallery.php:276
+#: admin/includes/components/component-gallery.php:362
 msgid "Dissolve"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:278
-#: admin/includes/components/component-gallery.php:386
+#: admin/includes/components/component-gallery.php:281
+#: admin/includes/components/component-gallery.php:394
 msgid "Gallery Transition Speed"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:279
+#: admin/includes/components/component-gallery.php:282
 msgid "Activate slideshow by setting a speed for the transition.5000 = 5 seconds."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:285
+#: admin/includes/components/component-gallery.php:288
 msgid "Hide Gallery Thumbnails"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:290
+#: admin/includes/components/component-gallery.php:293
+msgid "Lazy load Gallery"
+msgstr ""
+
+#: admin/includes/components/component-gallery.php:298
 msgid "Sequence Gallery Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:295
+#: admin/includes/components/component-gallery.php:303
 msgid "Panorama Mode"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:298 blocks/image/block.js:119
+#: admin/includes/components/component-gallery.php:306 blocks/image/block.js:119
 msgid "Panorama Height"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:299
+#: admin/includes/components/component-gallery.php:307
 msgid "Used Only When the Panorama Mode is On. Height of Each Panorama in Pixels."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:305
+#: admin/includes/components/component-gallery.php:313
 msgid "Photoset Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:308
+#: admin/includes/components/component-gallery.php:316
 msgid "Gallery Layout"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:309
+#: admin/includes/components/component-gallery.php:317
 msgid ""
 "Let's say you have 4 images in this gallery. If you enter 121 you will have one "
 "image on the top row, two images on the second row, and one image on the third "
 "row."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:315
+#: admin/includes/components/component-gallery.php:323
 msgid "Enable Lightbox"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:333
+#: admin/includes/components/component-gallery.php:341
 msgid "Parallax Gallery Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:338
+#: admin/includes/components/component-gallery.php:346
 msgid "Panorama Mode for Mobile"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:339
+#: admin/includes/components/component-gallery.php:347
 msgid "Use Panorama Images for Mobile Devices"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:346
+#: admin/includes/components/component-gallery.php:354
 msgid "Hero Options"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:350
+#: admin/includes/components/component-gallery.php:358
 msgid "Adjust the transition effect for the Hero gallery. Default is fade."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:361
+#: admin/includes/components/component-gallery.php:369
 msgid "Gallery Content"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:362
+#: admin/includes/components/component-gallery.php:370
 msgid ""
 "Content displayed within the Hero gallery. You can use HTML tags with classes and "
 "styles."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:367
+#: admin/includes/components/component-gallery.php:375
 msgid "Main Gallery Height"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:368
+#: admin/includes/components/component-gallery.php:376
 msgid ""
 "Specify this if you want to control the height of the gallery. Acceptable values "
 "include 500px, 50%, 100% etc."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:369
+#: admin/includes/components/component-gallery.php:377
 msgid ""
 "If you enter a ratio, such as 800/600, the gallery would appear with a constant "
 "width/height ratio. This is useful if you want the galery to be responsive on "
 "mobile devices on portrait modes."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:374
+#: admin/includes/components/component-gallery.php:382
 msgid "Image Text"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:375
+#: admin/includes/components/component-gallery.php:383
 msgid "Text to display with each image. The texts are read from the image property."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:387
+#: admin/includes/components/component-gallery.php:395
 msgid "Activate slideshow by setting a speed for the transition. 5000 = 5 seconds."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:392
+#: admin/includes/components/component-gallery.php:400
 msgid "Gallery Transition Animation Speed"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:393
+#: admin/includes/components/component-gallery.php:401
 msgid "Animation duration for transition in milliseconds."
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:403
+#: admin/includes/components/component-gallery.php:411
 msgid "Enable Navigation Controls"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:409
+#: admin/includes/components/component-gallery.php:417
 msgid "Enable Full Screen"
 msgstr ""
 
-#: admin/includes/components/component-gallery.php:584
+#: admin/includes/components/component-gallery.php:598
 msgid "All done!"
 msgstr ""
 
@@ -2417,7 +2421,7 @@ msgstr ""
 msgid "Chapter Toggle Button"
 msgstr ""
 
-#: public/includes/components/component-image.php:127
+#: public/includes/components/component-image.php:134
 msgid "Enlarge"
 msgstr ""
 
