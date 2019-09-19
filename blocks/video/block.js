@@ -88,6 +88,12 @@
 			nocookies:{
 				type : 'string'
 			},
+			show_subtitles:{
+				type : 'string'
+			},
+			lang_pref:{
+				type : 'string'
+			},
 		},
 
 		// The "edit" property must be a valid function.
@@ -232,6 +238,25 @@
 						label: __( 'Loop Video' ),
 						checked: checked(attributes.loop),
 						onChange: setChecked( 'loop' )
+					}
+				),
+				(attributes.src == 'youtube')
+				&& el(
+				wp.components.ToggleControl,
+				{
+					label: __( 'Show Subtitles by default' ),
+					checked: checked(attributes.show_subtitles),
+					onChange: setChecked( 'show_subtitles' )
+				}),
+				(attributes.src == 'youtube')
+				&& el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Default subtitle language') ),
+				(attributes.src == 'youtube')
+				&& el( wp.components.TextControl, {
+						label: __( 'Language code of the default subtitle language (e.g "fr").' ),
+						value: attributes.lang_pref,
+						onChange: function( pref ) {
+							setAttributes( { lang_pref: pref } );
+						},
 					}
 				),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Disable video on Mobile Devices.') ),
