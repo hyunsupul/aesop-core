@@ -34,6 +34,8 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			'revealfx'  => '',
 			'overlay_revealfx'          => '',
 			'nocookies'    => 'off',
+			'show_subtitles' => 'off',
+			'lang_pref' => '',
 			'className'    => ''
 		);
 		$atts = apply_filters( 'aesop_video_defaults', shortcode_atts( $defaults, $atts, 'aesop_video' ) );
@@ -63,6 +65,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		$iframe_height = $atts['vidheight'] ? sprintf( 'height="%s"', preg_replace( '/[^0-9]/', '', esc_attr($atts['vidheight'] )) ) : sprintf( 'height=""' );
 		$iframe_width = $atts['vidwidth'] ? sprintf( 'width="%s"', preg_replace( '/[^0-9]/', '', esc_attr($atts['vidwidth'] )) ) : sprintf( 'width=""' );
 		$iframe_size = sprintf( '%s %s' , $iframe_height, $iframe_width );
+		$show_subtitles  = 'on' == $atts['show_subtitles'] ? true : false;
 
 		// custom classes
 		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'video', $atts['className'] ) : null;
@@ -276,6 +279,8 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 						$ytparams = $ytparams.($autoplaystatus ? "&autoplay=1" : "");
 						$ytparams = $ytparams.($mute ? "&mute=1" : "");
 						$ytparams = $ytparams.($controlstatus=='controls-visible' ? "" : "&controls=0&showinfo=0");
+						$ytparams = $ytparams.($show_subtitles ? "&cc_load_policy=1" : "");
+						$ytparams = $ytparams.($atts['lang_pref'] ? sprintf ("&cc_lang_pref=%s" , esc_attr( $atts['lang_pref'] ) ) : "");
 						$ytdomain = $nocookies ? 'youtube-nocookie' : 'youtube';
 						
 						printf( '<iframe id ="aesop-ytb-%s"  src="//www.%s.com/embed/%s?rel=0&enablejsapi=1&wmode=transparent%s" %s  webkitAllowFullScreen mozallowfullscreen allowFullScreen wmode="transparent" frameborder="0" width="100%%"></iframe>', esc_attr( $unique ), $ytdomain, esc_attr( $atts['id'] ), $ytparams, $iframe_size );
