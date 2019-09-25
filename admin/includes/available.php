@@ -1143,29 +1143,29 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'select',
 						'values'  => array(
 							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
 								'value' => 'on',
 								'name' => __( 'On', 'aesop-core' )
 							),
-							array(
-								'value' => 'off',
-								'name' => __( 'Off', 'aesop-core' )
-							)
 						),
-						'default'  => 'on',
+						'default'  => 'off',
 						'desc'   => __( 'Autoplay', 'aesop-core' ),
 						'tip'  => __( 'Should the video automatically start playing.', 'aesop-core' )
 					),
 					'viewstart'  => array(
 						'type'  => 'select',
-						'values'  => array(
+						'values'  => array(	
+							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							),
 							array(
 								'value' => 'on',
 								'name' => __( 'On', 'aesop-core' )
 							),
-							array(
-								'value' => 'off',
-								'name' => __( 'Off', 'aesop-core' )
-							)
 						),
 						'default'  => 'off',
 						'desc'   => __( 'Start Video When in View', 'aesop-core' ),
@@ -1175,12 +1175,12 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'type'  => 'select',
 						'values'  => array(
 							array(
-								'value' => 'on',
-								'name' => __( 'On', 'aesop-core' )
-							),
-							array(
 								'value' => 'off',
 								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
 							),
 							array(
 								'value' => 'pip',
@@ -1190,6 +1190,28 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'default'  => 'off',
 						'desc'   => __( 'Stop Video When Out of View', 'aesop-core' ),
 						'tip'  => __( 'Used together with the option above, this option when set to <em>on</em> will stop the video player from playing once scrolled out of view. Selecting "Picture in Picture Mode" will move the video to a corner of the screen, allowing you to scroll and continue watching the video.', 'aesop-core' )
+					),
+					'show_subtitles'  => array(
+						'type'  => 'select',
+						'values'  => array(
+							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
+							),
+						),
+						'default'  => 'off',
+						'desc'   => __( 'Show Subtitles', 'aesop-core' ),
+						'tip'  => __( 'Does not work with auto-generated subtitles. Must specify the language code below.', 'aesop-core' )
+					),
+					'lang_pref'    => array(
+						'type'  => 'text',
+						'default'  => '',
+						'desc'   => __( 'Subtitle Language', 'aesop-core' ),
+						'tip'  => __( 'Language code of the default subtitle language (e.g "en" "fr")', 'aesop-core' )
 					),
 					'overlay_content'     => array(
 						'type'  => 'text_area',
@@ -1205,19 +1227,19 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 							function srcSetting(src){								
 							    if ( src=="kickstarter" || src=="viddler" || src=="vine" || src=="wistia" || src=="instagram" || src=="dailymotion") {
 									jQuery(".aesop-video-id").slideDown();
-									jQuery(".aesop-video-hosted,.aesop-video-disable_for_mobile,.aesop-video-poster_frame,.aesop-video-loop,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart, .aesop-video-mute, .aesop-video-viewend").slideUp();
+									jQuery(".aesop-video-hosted,.aesop-video-disable_for_mobile,.aesop-video-poster_frame,.aesop-video-loop,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart, .aesop-video-mute, .aesop-video-viewend,.aesop-video-show_subtitles,.aesop-video-lang_pref").slideUp();
 								}
 								else if (src=="youtube") {
-									jQuery(".aesop-video-id,.aesop-video-loop,.aesop-video-mute,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart,.aesop-video-viewend").slideDown();
+									jQuery(".aesop-video-id,.aesop-video-loop,.aesop-video-mute,.aesop-video-autoplay,.aesop-video-controls,.aesop-video-viewstart,.aesop-video-viewend,.aesop-video-show_subtitles,.aesop-video-lang_pref").slideDown();
 									jQuery(".aesop-video-hosted").slideUp();
 								}
 								else if (src=="vimeo") {
 									jQuery(".aesop-video-id,.aesop-video-loop,.aesop-video-mute,.aesop-video-autoplay,.aesop-video-viewstart, .aesop-video-viewend").slideDown();
-									jQuery(".aesop-video-hosted,.aesop-video-controls").slideUp();
+									jQuery(".aesop-video-hosted,.aesop-video-controls,.aesop-video-show_subtitles,.aesop-video-lang_pref").slideUp();
 								}
 								else if (src=="self") {
 									jQuery("#aesop-generator-settings").children().slideDown();
-									jQuery(".aesop-video-id").slideUp();
+									jQuery(".aesop-video-id,.aesop-video-show_subtitles,.aesop-video-lang_pref").slideUp();
 								}
 								disableMobileSetting(jQuery( "#aesop-generator-attr-disable_for_mobile" ).val());
 							}

@@ -19,7 +19,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			'id'  		=> '',
 			'disable_for_mobile'  => 'on',
 			'loop'  	=> 'on',
-			'autoplay' 	=> 'on',
+			'autoplay' 	=> 'off',
 			'controls' 	=> 'off',
 			'viewstart' => 'off',
 			'viewend'   => 'off',
@@ -59,6 +59,12 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		$nocookies  = 'on' == $atts['nocookies'] ? true : false;
 		$inside_chapter = 'on' == $atts['inside_chapter'] ? true : false;
 		$mute  = 'on' == $atts['mute'] || ($inside_chapter && $atts['src'] != 'self') ? true : false;
+		if ($atts['src'] =='youtube' || $atts['src'] =='vimeo')
+		{
+			 if (!$mute){
+				 $atts['autoplay'] = 'off';
+			 }
+		}
 		$autoplaystatus = 'on' == $atts['autoplay'] ? true : false;
 		$disable_for_mobile = 'on' == $atts['disable_for_mobile'] ? true : false;
 		$controlstatus = 'on' == $atts['controls'] ? 'controls-visible' : 'controls-hidden';
@@ -76,8 +82,12 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		if ( 'on' == $atts['viewstart'] || wp_is_mobile()) { 
 			$autoplaystatus = false;
 		}
+		
+		
 
 		ob_start();
+		
+		echo $mute;
 
 
 		do_action( 'aesop_video_before', $atts, $unique ); // action

@@ -244,7 +244,7 @@
 				&& el(
 				wp.components.ToggleControl,
 				{
-					label: __( 'Show Subtitles by default' ),
+					label: __( 'Show Subtitles. Does not work with auto-generated subtitles. Must specify the language code below.' ),
 					checked: checked(attributes.show_subtitles),
 					onChange: setChecked( 'show_subtitles' )
 				}),
