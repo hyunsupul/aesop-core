@@ -12,7 +12,9 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 		$defaults = array(
 			'type'  	=> 'pdf',
 			'src'  		=> '',
-			'caption' 	=> ''
+			'caption' 	=> '',
+			'title' 	=> '',
+			'download'  => ''
 		);
 		$atts = apply_filters( 'aesop_document_defaults', shortcode_atts( $defaults, $atts, 'aesop_document' ) );
 
@@ -49,6 +51,10 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 			$source = sprintf( '<object class="aesop-pdf" data="%s" type="application/pdf" ></object>', esc_url( $atts['src'] ) );
 			break;
 		}
+		
+		if ($atts['download']=='on' && $atts['type'] != 'download') {
+			 $source = sprintf( '<a href="%s" download>'.__('Download','aesop-core' ).'</a>', esc_url( $atts['src'] ) ).$source;
+		}
 
         // new
         $bool_custom = false;
@@ -80,10 +86,13 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 		', esc_attr( $unique ), esc_attr( $unique ) );
 
             $slide = $atts['caption'] ? esc_html( $atts['caption'] ) : false;
-			$link = sprintf( '<a href="#" class="aesop-doc-reveal-%s"><span class="aesop-document-component--label">'.__('document','aesop-core' ).'</span><br /> <div class="aesop-document-component--caption">%s</div></a>', esc_attr( $unique ), $slide );
+			if ($atts['title']=='') {
+				$link = sprintf( '<a href="#" class="aesop-doc-reveal-%s"><span class="aesop-document-component--label">'.__('document','aesop-core' ).'</span><br /> <div class="aesop-document-component--caption">%s</div></a>', esc_attr( $unique ), $slide );
+			} else {
+				$link = sprintf( '<a href="#" class="aesop-doc-reveal-%s"><span class="aesop-document-component--label">'. esc_attr($atts['title']).'</span><br /> <div class="aesop-document-component--caption">%s</div></a>', esc_attr( $unique ), $slide );
+			}
             $guts  = sprintf( '<div id="aesop-doc-collapse-%s" style="display:none;" class="aesop-content">%s</div>', esc_attr( $unique ), $source );
             if ( $showpdflink ) {
-
                 $guts .= sprintf( '<a href="%s">%s</a>', esc_url( $atts['src'] ), __( 'PDF Download', 'aesop-core' ) );
             }
 

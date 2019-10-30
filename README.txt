@@ -5,8 +5,8 @@ Plugin URI: http://aesopstoryengine.com
 Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 5.2.2
-Stable tag: 2.0.12
+Tested up to: 5.2.4
+Stable tag: 2.0.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -185,6 +185,9 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 2.0.13 =
+* NEW Title and Add Download Link options for the Document Component
+
 = 2.0.12 =
 * NEW Subtitle option for Youtube. (Thanks to Christoph Herbst)
 * FIX fixed the default autoplay settings for Video

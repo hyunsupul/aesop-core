@@ -1368,7 +1368,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						),
 						'default'  => 'pdf',
 						'desc'   => __( 'Document Type', 'aesop-core' ),
-						'tip'  => __( 'The type of document. Choose image, PDF or Miscrosoft.', 'aesop-core' ).__( 'Or "download" to add a download link.', 'aesop-core' )
+						'tip'  => __( 'The type of document. Choose image, PDF or Miscrosoft.', 'aesop-core' ).__( 'Or "download" to just add a download link.', 'aesop-core' )
 					),
 					'src'    => array(
 						'type'  => 'media_upload',
@@ -1376,15 +1376,58 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 						'desc'   => __( 'Document URL', 'aesop-core' ),
 						'tip'  => __( 'URL to the document. Click <em>Select Media</em> to open the WordPress Media Library.', 'aesop-core' )
 					),
+					'title'    => array(
+						'type'  => 'text_area',
+						'default'  => '',
+						'desc'   => __( 'Title', 'aesop-core' ),
+						'tip'  => __( 'By default, the title is "DOCUMENT".', 'aesop-core' )
+					),
 					'caption'    => array(
 						'type'  => 'text_area',
 						'default'  => '',
 						'desc'   => __( 'Document Caption', 'aesop-core' ),
 						'tip'  => __( 'Provide an optional caption for the document component.', 'aesop-core' )
+					),
+					'download'    => array(
+						'type'  => 'select',
+						'values'  => array(
+							array(
+								'value' => 'off',
+								'name' => __( 'Off', 'aesop-core' )
+							),
+							array(
+								'value' => 'on',
+								'name' => __( 'On', 'aesop-core' )
+							),
+						),
+						'default'  => 'off',
+						'desc'   => __( 'Download Link', 'aesop-core' ),
+						'tip'  => __( 'Add a download link for the file.', 'aesop-core' )
 					)
 				),
 				'desc'     => __( 'Show a document that is revealed with a click.', 'aesop-core' ),
-				'codes'    => ''
+				'codes'    => '<script>	            
+						jQuery(document).ready(function($){
+							function typeSetting(t){								
+							    if ( t=="download") {
+									jQuery(".aesop-document-download").slideUp();						
+								}
+								else  {
+									jQuery(".aesop-document-download").slideDown();
+								}
+								
+								disableMobileSetting(jQuery( "#aesop-generator-attr-disable_for_mobile" ).val());
+							}
+							
+							setTimeout( function() { 
+                                typeSetting(jQuery( "#aesop-generator-attr-type" ).val()); 
+								}, 500);
+								
+							jQuery( "#aesop-generator-attr-type" ).change(function() {
+								typeSetting(this.value);
+							})
+						});
+			           </script>'
 			),
 			'collection'  => array(
 				'name'     => __( 'Collections', 'aesop-core' ),

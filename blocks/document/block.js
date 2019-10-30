@@ -33,7 +33,13 @@
 			src : {
 				type: 'string'
 			},
+			title : {
+				type: 'string'
+			},
 			caption : {
+				type: 'string'
+			},
+			download : {
 				type: 'string'
 			}
 		},
@@ -71,13 +77,42 @@
 					}
 				),
 				el( wp.components.TextControl, {
+						label: __( 'Title' ),
+						value: attributes.title,
+						onChange: function( content ) {
+							setAttributes( { title: content } );
+						},
+					} 
+				),
+				el( wp.components.TextControl, {
 						label: __( 'Caption' ),
 						value: attributes.caption,
 						onChange: function( content ) {
 							setAttributes( { caption: content } );
 						},
 					} 
-				)
+				),
+				(attributes.type != 'download') && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Download Link') ),
+				(attributes.type != 'download') && el(
+					wp.components.ToggleControl,
+					{
+						label: __( 'Add a download link.' ),
+						checked: attributes.download =='on',
+						onChange: function( newVal ) {
+										
+										if (newVal) {
+											setAttributes({
+												download: 'on'
+											});
+										} else {
+											setAttributes({
+												download: 'off'
+											});
+										}
+									
+								},
+					}
+				),
 			);
 			
 			var controls = el( 'div', { className: '' }
