@@ -110,6 +110,9 @@ class AesopCoreGallery {
 				case 'hero':
 					$this->aesop_hero_gallery( $gallery_id, $image_ids, $width );
 					break;
+				case 'horizontal':
+					$this->aesop_horizontal_gallery( $gallery_id, $image_ids, $unique);
+					break;
 				default:
 					$this->aesop_grid_gallery( $gallery_id, $image_ids, $width, $unique);
 					break;
@@ -555,6 +558,107 @@ class AesopCoreGallery {
 			}
 
 		endforeach;
+
+	}
+	
+	/**
+	 * Gallery that scrolls horizontally as you scroll down
+	 *
+	 * @since    
+	 */
+	public function aesop_horizontal_gallery($gallery_id, $image_ids, $unique) {
+
+		$direction= get_post_meta( $gallery_id, 'aesop_horizontal_gallery_direction', true ) ? get_post_meta( $gallery_id, 'aesop_horizontal_gallery_direction', true) : false;
+		$behavior= get_post_meta( $gallery_id, 'aesop_horizontal_gallery_behavior', true ) ? get_post_meta( $gallery_id, 'aesop_horizontal_gallery_behavior', true) : false;
+		// image size
+		$size    = apply_filters( 'aesop_sequence_gallery_size', 'large' );
+		
+		$float = "left";
+		if ($direction=='lefttoright') {
+			$float = 'right';
+		}
+
+		// lazy loader class
+		$lazy_holder = AI_CORE_URL.'/public/assets/img/aesop-lazy-holder.png';
+		
+		$c = count($image_ids);
+		
+		?>
+		
+		<figure class="aesop-horizontal-gallery" id="aesop-horizontal-gallery-<?php echo esc_attr( $unique );?>" style="height:300vh;">
+		    <div id="aesop-horizontal-gallery-row-wrapper-<?php echo esc_attr( $unique );?>" class="aesop-horizontal-gallery-row-wrapper" style="width:100%;height:100vh;position:sticky;position:-webkit-sticky;top:0;">
+
+			  <div id="aesop-horizontal-gallery-row-<?php echo esc_attr( $unique );?>" class="aesop-horizontal-gallery-row" style="position:absolute;width:<?php echo $c;?>00vw;height:100vh;<?php if ($direction=='lefttoright') {echo 'right:0px;';}?>">
+			  <script>
+			jQuery(document).ready(function($){
+
+				const obj = document.querySelector('#aesop-horizontal-gallery-<?php echo esc_attr( $unique );?>');
+				const obj2 = document.querySelector('#aesop-horizontal-gallery-row-<?php echo esc_attr( $unique );?>');
+				const imgWidth = obj2.getBoundingClientRect().width/<?php echo $c;?>;
+				const objTop = obj.style.top;		
+				const maxScrollX = obj2.getBoundingClientRect().width- obj.getBoundingClientRect().width + (imgWidth/2);
+				
+				obj.style.height = (obj2.getBoundingClientRect().width+ (imgWidth)) +"px";
+				
+
+				document.addEventListener('scroll', () => {
+					var rect = obj.getBoundingClientRect();
+					var scrollY = 0;
+					var scrollX = 0;
+					 
+					if (rect.top<0) {
+						if (-rect.top>=maxScrollX) {
+							scrollX = -maxScrollX+(imgWidth/2);;
+						} else if (-rect.top<=(imgWidth/2)) {
+							scrollX = 0;
+						} else {
+							scrollX =rect.top+(imgWidth/2);
+						}
+						scrollY = rect.top;
+						<?php
+						if ($direction=='lefttoright') {
+						?>
+							obj2.style.right = scrollX+"px";
+						<?php 
+						} else {?>
+							obj2.style.left = scrollX+"px";
+						<?php 
+						}?>
+						//obj2.style.top = objTop-scrollY+"px";
+					}			
+				});
+			}); // end jquery doc ready
+				
+			</script>
+		<?php
+		foreach ( $image_ids as $image_id ):
+
+			$img     = wp_get_attachment_image_src( $image_id, $size, false, '' );
+			$alt     = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+			$caption = get_post( $image_id )->post_excerpt;
+
+			// lazy loading disabled for now
+			//$lazy   = class_exists( 'AesopLazyLoader' ) ? sprintf( 'src="%s" data-src="%s" class="aesop-sequence-img aesop-lazy-img"', $lazy_holder, esc_url( $img[0] ) ) : sprintf( 'src="%s" class="aesop-sequence-img" ', esc_url( $img[0] ) );
+			$lazy = sprintf( 'src="%s" class="aesop-sequence-img" ', esc_url( $img[0] ) );
+
+			?>
+			     <div class = "aesop-horizontal-gallery-image" style="background-image:url('<?php echo esc_url( $img[0] );?>');<?php if ($behavior=='parallax') {echo 'background-attachment:fixed;';}?>;background-size:cover;height:100vh;width:100vw;display: inline-block;float: <?php echo $float;?>;">
+				 <?php if ( $caption ) { ?>
+						<figcaption class="aesop-content aesop-component-caption"><?php echo aesop_component_media_filter( $caption );?></figcaption>
+				 <?php } ?>
+				 </div>
+				 
+			<?php
+
+		endforeach;
+		?>
+			</div>
+		  </div>
+		  <div style="height:100vh;">
+		  </div>
+		</figure>
+		
+		<?php
 
 	}
 

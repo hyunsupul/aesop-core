@@ -8,6 +8,7 @@ jQuery(document).ready(function($){
 			$('.ase-gallery-opts--hero').fadeOut();
 			$('.ase-gallery-opts--grid').fadeIn();
 			$('.ase-gallery-opts--parallax').fadeOut();
+			$('.ase-gallery-opts--horizontal').fadeOut();
 		} else {
 			$('.ase-gallery-opts--grid').fadeOut();
 		}
@@ -19,6 +20,7 @@ jQuery(document).ready(function($){
 			$('.ase-gallery-opts--hero').fadeOut();
 			$('.ase-gallery-opts--thumb').fadeIn();
 			$('.ase-gallery-opts--parallax').fadeOut();
+			$('.ase-gallery-opts--horizontal').fadeOut();
 		} else {
 			$('.ase-gallery-opts--thumb').fadeOut();
 		}
@@ -29,6 +31,7 @@ jQuery(document).ready(function($){
 			$('.ase-gallery-opts--photoset').fadeOut();
 			$('.ase-gallery-opts--sequence').fadeIn();
 			$('.ase-gallery-opts--hero').fadeOut();
+			$('.ase-gallery-opts--horizontal').fadeOut();
 			$('.ase-gallery-opts--parallax').fadeOut();
 		}
 
@@ -38,6 +41,7 @@ jQuery(document).ready(function($){
 			$('.ase-gallery-opts--hero').fadeOut();
 			$('.ase-gallery-opts--sequence').fadeOut();
 			$('.ase-gallery-opts--photoset').fadeIn();
+			$('.ase-gallery-opts--horizontal').fadeOut();
 			$('.ase-gallery-opts--parallax').fadeOut();
 		} else {
 			$('.ase-gallery-opts--photoset').fadeOut();
@@ -49,6 +53,7 @@ jQuery(document).ready(function($){
 			$('.ase-gallery-opts--photoset').fadeOut();
 			$('.ase-gallery-opts--sequence').fadeOut();
 			$('.ase-gallery-opts--hero').fadeOut();
+			$('.ase-gallery-opts--horizontal').fadeOut();
 			$('.ase-gallery-opts--parallax').fadeIn();
 		} else {
 			$('.ase-gallery-opts--parallax').fadeOut();
@@ -60,9 +65,21 @@ jQuery(document).ready(function($){
 			$('.ase-gallery-opts--photoset').fadeOut();
 			$('.ase-gallery-opts--sequence').fadeOut();
 			$('.ase-gallery-opts--parallax').fadeOut();
+			$('.ase-gallery-opts--horizontal').fadeOut();
 			$('.ase-gallery-opts--hero').fadeIn();
 		} else {
 			$('.ase-gallery-opts--hero').fadeOut();
+		}
+		if ( 'horizontal' == value ) {
+			$('.ase-gallery-opts--grid').fadeOut();
+			$('.ase-gallery-opts--thumb').fadeOut();
+			$('.ase-gallery-opts--photoset').fadeOut();
+			$('.ase-gallery-opts--sequence').fadeOut();
+			$('.ase-gallery-opts--parallax').fadeOut();
+			$('.ase-gallery-opts--hero').fadeOut();
+			$('.ase-gallery-opts--horizontal').fadeIn();
+		} else {
+			$('.ase-gallery-opts--horizontal').fadeOut();
 		}
 	}
 

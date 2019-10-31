@@ -168,7 +168,8 @@ class AesopGalleryComponentAdmin {
 		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="photoset" <?php checked( $type, 'photoset' ); ?> ><?php _e( 'Photoset', 'aesop-core' );?></label>
 		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="stacked" <?php checked( $type, 'stacked' ); ?> ><?php _e( 'Parallax', 'aesop-core' );?></label>
 		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="hero" <?php checked( $type, 'hero' ); ?> ><?php _e( 'Hero', 'aesop-core' );?></label>
- 
+		<label class="ase-gallery-layout-label"><input class="ase-gallery-type-radio" type="radio" name="aesop_gallery_type" value="horizontal" <?php checked( $type, 'horizontal' ); ?> >Horizontal</label>
+
 		
         <?php do_action( 'aesop_add_gallery_type' );
 
@@ -225,6 +226,10 @@ class AesopGalleryComponentAdmin {
 		$hero_enable_nav  = get_post_meta( $id, 'aesop_hero_gallery_enable_nav', true );
 		$hero_enable_full  = get_post_meta( $id, 'aesop_hero_gallery_enable_full', true );
 		$aesop_hero_image_text = get_post_meta( $id, 'aesop_hero_image_text', true );
+		
+		//parallax
+		$horizontal_direction = get_post_meta( $id, 'aesop_horizontal_gallery_direction', true );
+		$horizontal_behavior = get_post_meta( $id, 'aesop_horizontal_gallery_behavior', true );
 
 ?>
 		<div class="ase-gallery-opts--global">
@@ -417,6 +422,29 @@ class AesopGalleryComponentAdmin {
 				<label for="aesop_hero_gallery_enable_full"><?php _e( 'Enable Full Screen', 'aesop-core' );?></label>
 			</div>
 		</div>
+		
+		<div class="ase-gallery-opts ase-gallery-opts--horizontal" style="display:none;">
+			<h3><?php _e( 'Horizontal Gallery Options', 'aesop-core' );?></h3>
+
+
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_horizontal_gallery_direction"><?php _e( 'Direction', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Direction to move the gallery.', 'aesop-core' );?></p>
+			   	<select name="aesop_horizontal_gallery_direction">
+				  <option value="righttoleft" <?php selected( $horizontal_direction, 'righttoleft' ); ?>><?php _e( 'Right to Left', 'aesop-core' );?></option>
+				  <option value="lefttoright" <?php selected( $horizontal_direction, 'lefttoright' ); ?>><?php _e( 'Left to Right', 'aesop-core' );?></option>			      
+			    </select>
+			</div>
+			<div class="ase-gallery-opts--single">
+				<label for="aesop_horizontal_gallery_behavior"><?php _e( 'Behavior', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( '', 'aesop-core' );?></p>
+			   	<select name="aesop_horizontal_gallery_behavior">
+				  <option value="scroll" <?php selected( $horizontal_behavior, 'scroll' ); ?>><?php _e( 'Scroll', 'aesop-core' );?></option>
+				  <option value="parallax" <?php selected( $horizontal_behavior, 'parallax' ); ?>><?php _e( 'Parallax', 'aesop-core' );?></option>			      
+			    </select>
+			</div>
+
+		</div>
 		<?php
 
 	}
@@ -485,6 +513,10 @@ class AesopGalleryComponentAdmin {
 		$hero_enable_nav   = isset( $_POST['aesop_hero_gallery_enable_nav'] ) ? $_POST['aesop_hero_gallery_enable_nav'] : false;
 		$hero_enable_full   = isset( $_POST['aesop_hero_gallery_enable_full'] ) ? $_POST['aesop_hero_gallery_enable_full'] : false;
 		$aesop_hero_image_text = isset( $_POST['aesop_hero_image_text'] ) ? $_POST['aesop_hero_image_text'] : 'none';
+		
+		// horizontal
+		$horizontal_direction   = isset( $_POST['aesop_horizontal_gallery_direction'] ) ? $_POST['aesop_horizontal_gallery_direction'] : false;
+		$horizontal_behavior   = isset( $_POST['aesop_horizontal_gallery_behavior'] ) ? $_POST['aesop_horizontal_gallery_behavior'] : false;
 	
 
 		// safe to proceed
@@ -538,6 +570,10 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, 'aesop_hero_gallery_enable_nav', sanitize_text_field( $hero_enable_nav ) );
 		update_post_meta( $post_id, 'aesop_hero_gallery_enable_full', sanitize_text_field( $hero_enable_full ) );
 		update_post_meta( $post_id, 'aesop_hero_image_text', $aesop_hero_image_text );
+		
+		// horizontal	
+		update_post_meta( $post_id, 'aesop_horizontal_gallery_direction', $horizontal_direction );
+		update_post_meta( $post_id, 'aesop_horizontal_gallery_behavior', $horizontal_behavior );
 	
 
 	}
