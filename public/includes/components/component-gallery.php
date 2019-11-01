@@ -581,50 +581,46 @@ class AesopCoreGallery {
 		// lazy loader class
 		$lazy_holder = AI_CORE_URL.'/public/assets/img/aesop-lazy-holder.png';
 		
-		$c = count($image_ids);
+		$img_count = count($image_ids);
 		
 		?>
 		
-		<figure class="aesop-horizontal-gallery" id="aesop-horizontal-gallery-<?php echo esc_attr( $unique );?>" style="height:300vh;">
-		    <div id="aesop-horizontal-gallery-row-wrapper-<?php echo esc_attr( $unique );?>" class="aesop-horizontal-gallery-row-wrapper" style="width:100%;height:100vh;position:sticky;position:-webkit-sticky;top:0;">
+		<div class="aesop-horizontal-gallery" id="aesop-horizontal-gallery-<?php echo esc_attr( $unique );?>" style="height:100vh;">
+		    <div id="aesop-horizontal-gallery-row-wrapper-<?php echo esc_attr( $unique );?>" class="aesop-horizontal-gallery-row-wrapper" style="width:100%;height:100vh;position:sticky;position:-webkit-sticky;overflow:hidden;top:0;">
 
-			  <div id="aesop-horizontal-gallery-row-<?php echo esc_attr( $unique );?>" class="aesop-horizontal-gallery-row" style="position:absolute;width:<?php echo $c;?>00vw;height:100vh;<?php if ($direction=='lefttoright') {echo 'right:0px;';}?>">
+			  <div id="aesop-horizontal-gallery-row-<?php echo esc_attr( $unique );?>" class="aesop-horizontal-gallery-row" style="position:absolute;width:<?php echo $img_count;?>00vw;height:100vh;<?php if ($direction=='lefttoright') {echo 'right:0px;';}?>">
 			  <script>
 			jQuery(document).ready(function($){
-
 				const obj = document.querySelector('#aesop-horizontal-gallery-<?php echo esc_attr( $unique );?>');
 				const obj2 = document.querySelector('#aesop-horizontal-gallery-row-<?php echo esc_attr( $unique );?>');
-				const imgWidth = obj2.getBoundingClientRect().width/<?php echo $c;?>;
-				const objTop = obj.style.top;		
-				const maxScrollX = obj2.getBoundingClientRect().width- obj.getBoundingClientRect().width + (imgWidth/2);
+				var oneImageScroll = obj.getBoundingClientRect().width;		
+				const imgWidth = obj2.getBoundingClientRect().width/<?php echo $img_count;?>;
 				
-				obj.style.height = (obj2.getBoundingClientRect().width+ (imgWidth)) +"px";
-				
+				if (obj.getBoundingClientRect().width < obj.getBoundingClientRect().height) {
+					oneImageScroll = obj.getBoundingClientRect().height
+				}
+				obj.style.height = (oneImageScroll*(<?php echo $img_count+1;?>)) +"px";
+				const maxScroll = (oneImageScroll*(<?php echo $img_count-0.5;?>));	
 
 				document.addEventListener('scroll', () => {
 					var rect = obj.getBoundingClientRect();
-					var scrollY = 0;
-					var scrollX = 0;
 					 
 					if (rect.top<0) {
-						if (-rect.top>=maxScrollX) {
-							scrollX = -maxScrollX+(imgWidth/2);;
-						} else if (-rect.top<=(imgWidth/2)) {
-							scrollX = 0;
-						} else {
-							scrollX =rect.top+(imgWidth/2);
+						var scroll = 0;
+						if (-rect.top>=maxScroll) {
+							scroll = -maxScroll+(oneImageScroll/2);;
+						} else if (-rect.top>(oneImageScroll/2)) {
+							scroll =rect.top+(oneImageScroll/2);
 						}
-						scrollY = rect.top;
 						<?php
 						if ($direction=='lefttoright') {
 						?>
-							obj2.style.right = scrollX+"px";
+							obj2.style.right = (scroll*imgWidth/oneImageScroll)+"px";
 						<?php 
 						} else {?>
-							obj2.style.left = scrollX+"px";
+							obj2.style.left = (scroll*imgWidth/oneImageScroll)+"px";
 						<?php 
 						}?>
-						//obj2.style.top = objTop-scrollY+"px";
 					}			
 				});
 			}); // end jquery doc ready
@@ -642,7 +638,7 @@ class AesopCoreGallery {
 			$lazy = sprintf( 'src="%s" class="aesop-sequence-img" ', esc_url( $img[0] ) );
 
 			?>
-			     <div class = "aesop-horizontal-gallery-image" style="background-image:url('<?php echo esc_url( $img[0] );?>');<?php if ($behavior=='parallax') {echo 'background-attachment:fixed;';}?>;background-size:cover;height:100vh;width:100vw;display: inline-block;float: <?php echo $float;?>;">
+			     <div class = "aesop-horizontal-gallery-image" style="background-image:url('<?php echo esc_url( $img[0] );?>');<?php if ($behavior=='parallax') {echo 'background-attachment:fixed;';}?>;background-size:cover;background-position:center center;height:100vh;width:100vw;display: inline-block;float: <?php echo $float;?>;">
 				 <?php if ( $caption ) { ?>
 						<figcaption class="aesop-content aesop-component-caption"><?php echo aesop_component_media_filter( $caption );?></figcaption>
 				 <?php } ?>
@@ -656,7 +652,7 @@ class AesopCoreGallery {
 		  </div>
 		  <div style="height:100vh;">
 		  </div>
-		</figure>
+		</div>
 		
 		<?php
 
