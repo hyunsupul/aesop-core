@@ -33,7 +33,8 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
             'background'        => '#222222',
             'disable_bgshading' => 'off',
             'revealfx'          => '',
-            'overlay_revealfx'  => ''
+            'overlay_revealfx'  => '',
+            'className'=>''
         );
 
         $atts = apply_filters( 'aesop_cbox_defaults', shortcode_atts( $defaults, $atts, 'aesop_content' ) );
@@ -77,7 +78,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
         $itemstyle              = $imgstyle !== false || $txtcolor !== false || $height !== false ? 'style="'.esc_attr(sprintf( '%s%s%s%s', $imgstyle, $txtcolor, $bgcolor, $height )).'"' : false;
 
         // custom classes
-        $classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'content', '' ) : false;
+        $classes = $atts['className'].' '.(function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'content', '' ) : false);
 
         // has image class
         $has_img = $atts['img'] ? 'aesop-content-has-img' : false;

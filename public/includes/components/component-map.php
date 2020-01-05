@@ -5,7 +5,8 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
 
         $defaults = array(
             'height' => 500,
-            'sticky' => 'off'
+            'sticky' => 'off',
+            'className'=>''
         );
 
         // TODO - move these elsewhere
@@ -22,7 +23,7 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
         $height     = $get_height ? sprintf( 'style="height:%spx;"', $get_height ) : null;
 
         // custom classes
-        $classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'map', '' ) : null;
+        $classes = $atts['className'].' '.(function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'map', '' ) : null);
 
         // get markers - since 1.3
         $markers = get_post_meta( get_the_ID(), 'ase_map_component_locations', false );

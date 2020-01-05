@@ -74,7 +74,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		$show_subtitles  = 'on' == $atts['show_subtitles'] ? true : false;
 
 		// custom classes
-		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'video', $atts['className'] ) : null;
+		$classes = $atts['className'].' '.(function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'video', $atts['className'] ) : null);
 
 		// waypoint filter
 		$point   = 'bottom-in-view';

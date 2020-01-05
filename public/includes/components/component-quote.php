@@ -22,7 +22,8 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
             'quote'      => __( 'People are made of stories, not atoms.', 'aesop-core' ),
             'cite'       => '',
             'type'       => 'block',
-            'revealfx'   => ''
+            'revealfx'   => '',
+            'className'=>''
         );
 
         $atts     = apply_filters( 'aesop_quote_defaults', shortcode_atts( $defaults, $atts, 'aesop_quote' ) );
@@ -103,7 +104,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
         }
 
         // core/custom classes
-        $core_classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'quote' ) : null;
+        $core_classes = $atts['className'].' '.(function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'quote' ) : null);
 
         // cite
         $cite = $atts['cite'] ? apply_filters( 'aesop_quote_component_cite', sprintf( '<cite class="aesop-quote-component-cite">%s</cite>', aesop_component_media_filter( $atts['cite'] ) ) ) : null;

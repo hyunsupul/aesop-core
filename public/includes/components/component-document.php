@@ -14,7 +14,8 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 			'src'  		=> '',
 			'caption' 	=> '',
 			'title' 	=> '',
-			'download'  => ''
+			'download'  => '',
+            'className'=>''
 		);
 		$atts = apply_filters( 'aesop_document_defaults', shortcode_atts( $defaults, $atts, 'aesop_document' ) );
 
@@ -32,7 +33,7 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 		$showpdflink = ($atts['type'] =='pdf' && wp_is_mobile());
 
 		// custom classes
-		$classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'document', '' ) : null;
+		$classes = $atts['className'].' '.(function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'document', '' ) : null);
 
 		switch ( $atts['type'] ) {
 		case 'pdf':

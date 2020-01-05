@@ -570,6 +570,7 @@ class AesopCoreGallery {
 
 		$direction= get_post_meta( $gallery_id, 'aesop_horizontal_gallery_direction', true ) ? get_post_meta( $gallery_id, 'aesop_horizontal_gallery_direction', true) : false;
 		$behavior= get_post_meta( $gallery_id, 'aesop_horizontal_gallery_behavior', true ) ? get_post_meta( $gallery_id, 'aesop_horizontal_gallery_behavior', true) : false;
+		$showlabel= get_post_meta( $gallery_id, 'aesop_horizontal_gallery_behavior', true ) ? get_post_meta( $gallery_id, 'aesop_horizontal_gallery_show_label', true) : false;
 		// image size
 		$size    = apply_filters( 'aesop_sequence_gallery_size', 'large' );
 		
@@ -588,7 +589,7 @@ class AesopCoreGallery {
 		<div class="aesop-horizontal-gallery" id="aesop-horizontal-gallery-<?php echo esc_attr( $unique );?>" style="height:100vh;">
 		    <div id="aesop-horizontal-gallery-row-wrapper-<?php echo esc_attr( $unique );?>" class="aesop-horizontal-gallery-row-wrapper" style="width:100%;height:100vh;position:sticky;position:-webkit-sticky;overflow:hidden;top:0;">
 
-			  <div id="aesop-horizontal-gallery-row-<?php echo esc_attr( $unique );?>" class="aesop-horizontal-gallery-row" style="position:absolute;width:<?php echo $img_count;?>00vw;height:100vh;<?php if ($direction=='lefttoright') {echo 'right:0px;';}?>">
+			  <div id="aesop-horizontal-gallery-row-<?php echo esc_attr( $unique );?>" class="aesop-horizontal-gallery-row" style="position:absolute;width:<?php echo $img_count;?>00%;height:100vh;<?php if ($direction=='lefttoright') {echo 'right:0px;';}?>">
 			  <script>
 			jQuery(document).ready(function($){
 				const obj = document.querySelector('#aesop-horizontal-gallery-<?php echo esc_attr( $unique );?>');
@@ -627,18 +628,29 @@ class AesopCoreGallery {
 				
 			</script>
 		<?php
+		
+		$new_bis = new BIS(); //ClassBackgroundImageStyle
+		
 		foreach ( $image_ids as $image_id ):
 
 			$img     = wp_get_attachment_image_src( $image_id, $size, false, '' );
 			$alt     = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 			$caption = get_post( $image_id )->post_excerpt;
+			
+			$new_bis->setAttachmentID($image_id);
+            $new_bis->setSelector( 'aesop-horizontal-img-' . $image_id );
+            $arr_push_size = array(
+                            'pushXS' => 'medium_large',
+                            'pushMD' => 'aesop-cover-img',
+                            'pushXL' => 'full'
+            );
 
 			// lazy loading disabled for now
 			//$lazy   = class_exists( 'AesopLazyLoader' ) ? sprintf( 'src="%s" data-src="%s" class="aesop-sequence-img aesop-lazy-img"', $lazy_holder, esc_url( $img[0] ) ) : sprintf( 'src="%s" class="aesop-sequence-img" ', esc_url( $img[0] ) );
 			$lazy = sprintf( 'src="%s" class="aesop-sequence-img" ', esc_url( $img[0] ) );
 
 			?>
-			     <div class = "aesop-horizontal-gallery-image" style="background-image:url('<?php echo esc_url( $img[0] );?>');<?php if ($behavior=='parallax') {echo 'background-attachment:fixed;';}?>;background-size:cover;background-position:center center;height:100vh;width:100vw;display: inline-block;float: <?php echo $float;?>;">
+			     <div id="aesop-horizontal-img-<?php echo esc_attr($image_id) ?>" class = "aesop-horizontal-gallery-image" style="background-image:url('<?php echo esc_url( $img[0] );?>');<?php if ($behavior=='parallax') {echo 'background-attachment:fixed;';}?>;background-size:cover;background-position:center center;height:100%;width:100vw;display: inline-block;float: <?php echo $float;?>;">
 				 <?php if ( $caption ) { ?>
 						<figcaption class="aesop-content aesop-component-caption"><?php echo aesop_component_media_filter( $caption );?></figcaption>
 				 <?php } ?>
@@ -647,6 +659,9 @@ class AesopCoreGallery {
 			<?php
 
 		endforeach;
+		
+		$new_bis->getStyle( true );
+		
 		?>
 			</div>
 		  </div>

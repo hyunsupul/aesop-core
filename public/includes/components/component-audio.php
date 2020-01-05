@@ -14,7 +14,8 @@ if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
             'viewstart' => 'off',
             'viewend'   => 'off',
             'loop'      => 'off',
-            'hidden'    => ''
+            'hidden'    => '',
+            'className'=>''
         );
 
         $atts     = apply_filters( 'aesop_audio_defaults', shortcode_atts( $defaults, $atts, 'aesop_audio' ) );
@@ -25,7 +26,7 @@ if ( ! function_exists( 'aesop_audio_shortcode' ) ) {
         $unique = sprintf( '%s-%s', get_the_ID(), $instance );
 
         // custom classes
-        $classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'audio', '' ) : null;
+        $classes = $atts['className'].' '.(function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'audio', '' ) : null);
 
         // hidden
         $hidden = ( ( 'on' == $atts['hidden'] ) && ! wp_is_mobile() ) ? 'style=height:0;z-index:-1;position:absolute;opacity:0;' : null;

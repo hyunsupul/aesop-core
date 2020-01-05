@@ -18,7 +18,8 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
             'loadmore'    => 'off',
             'showexcerpt' => 'on',
             'order'       => 'default',
-            'revealfx'    => ''
+            'revealfx'    => '',
+            'className'=>''
         );
 
         $atts     = apply_filters( 'aesop_collection_defaults', shortcode_atts( $defaults, $atts, 'aesop_collection' ) );
@@ -35,7 +36,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
         $splash_class = 'on' == $atts['splash'] ? 'aesop-collection-splash' : null;
 
         // custom classes
-        $classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'collections', '' ) : null;
+        $classes = $atts['className'].' '.(function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'collections', '' ) : null);
 
         $hidden = "";
         if ( aesop_revealfx_set( $atts ) ) {

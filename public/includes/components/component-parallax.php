@@ -24,7 +24,8 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 			'lightbox'			=> false,
 			'floaterdistance'   => '',
 			'overlay_revealfx'  => '',
-			'floaterspeed'		=> 1 // not used
+			'floaterspeed'		=> 1, // not used,
+            'className'=>''
 		);
 
 		$atts = apply_filters( 'aesop_parallax_defaults', shortcode_atts( $defaults, $atts, 'aesop_parallax' ) );
@@ -64,7 +65,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 		
 
 		// add custom css classes through our utility function
-		$classes = aesop_component_classes( 'parallax', '' );
+		$classes = $atts['className'].' '.(aesop_component_classes( 'parallax', '' ));
 
 		// automatically provide an alt tag for the image based on the name of the image file
 		$auto_alt  = $atts['img'] ? basename( $atts['img'] ) : null;

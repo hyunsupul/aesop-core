@@ -23,7 +23,8 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
             'force_fullwidth'  => 'off',
             'overlay_content'  => '',
             'revealfx'         => '',
-            'overlay_revealfx' => ''
+            'overlay_revealfx' => '',
+            'className'=>''
         );
 
         $atts = apply_filters( 'aesop_image_defaults', shortcode_atts( $defaults, $atts, 'aesop_image' ) );
@@ -56,7 +57,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
         $offsetstyle = $atts['offset'] && ( 'left' == $atts['align'] || 'right' == $atts['align'] ) ? sprintf( 'style=margin-%s:%s;width:%s;', $atts['align'], $atts['offset'], $atts['imgwidth'] ) : 'style=max-width:' . $atts['imgwidth'] . ';';
 
         // custom classes
-        $classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'image', '' ) : null;
+        $classes = $atts['className'].' '.(function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'image', '' ) : null);
 
         // let this be used multiple times
         static $instance = 0;

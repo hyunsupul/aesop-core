@@ -12,7 +12,8 @@ if ( ! function_exists( 'aesop_timeline_stop_shortcode' ) ) {
 
         $defaults = array(
             'num'   => '2007',
-            'title' => ''
+            'title' => '',
+            'className'=>''
         );
         $atts     = apply_filters( 'aesop_timeline_defaults', shortcode_atts( $defaults, $atts ) );
 

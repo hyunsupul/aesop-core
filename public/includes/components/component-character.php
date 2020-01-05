@@ -26,6 +26,7 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
             'force_circle' => 'off',
             'revealfx'     => '',
             'link'         => '',
+            'className'=>''
         );
 
         // let this be used multiple times
@@ -36,7 +37,7 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
         $atts = apply_filters( 'aesop_character_defaults', shortcode_atts( $defaults, $atts, 'aesop_character' ) );
 
         // custom classes
-        $classes = function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'character', '' ) : null;
+        $classes = $atts['className'].' '.(function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'character', '' ) : null);
 
         // width styles
         $styles = $atts['width'] ? sprintf( 'style="width:%s;"', esc_attr( $atts['width'] ) ) : null;
