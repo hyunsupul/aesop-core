@@ -602,6 +602,7 @@ class AesopCoreGallery {
 				}
 				obj.style.height = (oneImageScroll*(<?php echo $img_count+1;?>)) +"px";
 				const maxScroll = (oneImageScroll*(<?php echo $img_count-0.5;?>));	
+                removeOverflowHidden();
 
 				document.addEventListener('scroll', () => {
 					var rect = obj.getBoundingClientRect();
@@ -624,6 +625,16 @@ class AesopCoreGallery {
 						}?>
 					}			
 				});
+                
+                function removeOverflowHidden()
+                {
+                    $('#aesop-horizontal-gallery-<?php echo esc_attr( $unique );?>').parents().filter(function() {
+
+                        if ($(this).css('overflow') === 'hidden') {
+                            $(this).css('overflow','visible');
+                        }
+                    });
+                }
 			}); // end jquery doc ready
 				
 			</script>
@@ -650,7 +661,7 @@ class AesopCoreGallery {
 			$lazy = sprintf( 'src="%s" class="aesop-sequence-img" ', esc_url( $img[0] ) );
 
 			?>
-			     <div id="aesop-horizontal-img-<?php echo esc_attr($image_id) ?>" class = "aesop-horizontal-gallery-image" style="background-image:url('<?php echo esc_url( $img[0] );?>');<?php if ($behavior=='parallax') {echo 'background-attachment:fixed;';}?>;background-size:cover;background-position:center center;height:100%;width:100vw;display: inline-block;float: <?php echo $float;?>;">
+			     <div id="aesop-horizontal-img-<?php echo esc_attr($image_id) ?>" class = "aesop-horizontal-gallery-image" style="background-image:url('<?php echo esc_url( $img[0] );?>');<?php if ($behavior=='parallax') {echo 'background-attachment:fixed;';}?>;background-size:cover;background-position:center center;height:100vh;width:<?php echo 100/$img_count;?>%;display: inline-block;float: <?php echo $float;?>;">
 				 <?php if ( $caption ) { ?>
 						<figcaption class="aesop-content aesop-component-caption"><?php echo aesop_component_media_filter( $caption );?></figcaption>
 				 <?php } ?>

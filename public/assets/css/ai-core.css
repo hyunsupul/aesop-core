@@ -1275,9 +1275,16 @@
   display: none;
 }
 .aesop-horizontal-gallery-image .aesop-component-caption {
-  margin-top: 10vh;
-  margin-left: 30px;
-  margin-right: 30px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 0;
+  color: #333;
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  -webkit-transition: all 0.75s ease-in-out;
+  transition: all 0.75s ease-in-out;
 }
 .aesop-horizontal-gallery-row-wrapper {
   width: 100%;
