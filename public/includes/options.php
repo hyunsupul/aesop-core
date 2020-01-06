@@ -64,7 +64,7 @@ function AesopStoryEngineOptions_register( $wp_customize ) {
 				'label'   => __( 'Mapbox Map ID', 'aesop-core' ),
 				'section'   => 'aesop_story_engine',
 				'settings'   => 'ase_mapbox_id',
-				'description' => __( 'Refer to the documentation located <a href="http://aesopstoryengine.com/help/map-component" target="_blank">here</a> for option descriptions.', 'aesop-core' ),
+				'description' => __( 'Refer to the documentation located <a href="https://aesopstoryengine.com/help/map-component" target="_blank">here</a> for option descriptions.', 'aesop-core' ),
 				'type'    => 'text'
 			) );
 		

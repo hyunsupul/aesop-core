@@ -11,11 +11,11 @@
  *
  * @wordpress-plugin
  *  Plugin Name:       Aesop Story Engine
- *  Plugin URI:        http://aesopstoryengine.com
+ *  Plugin URI:        https://aesopstoryengine.com
  *  Description:       Open-sourced suite of components that empower interactive storytelling.
- *  Version:           2.0.14
+ *  Version:           2.1.0
  *  Author:            Aesopinteractive 
- *  Author URI:        http://aesopstoryengine.com
+ *  Author URI:        https://aesopstoryengine.com
  *  Text Domain:       aesop-core
  *  License:           GPL-2.0+
  *  License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set some constants
-define( 'AI_CORE_VERSION', '2.0.13' );
+define( 'AI_CORE_VERSION', '2.1.0' );
 define( 'AI_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AI_CORE_URL', plugins_url( '', __FILE__ ) );
 

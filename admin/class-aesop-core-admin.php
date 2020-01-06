@@ -252,11 +252,11 @@ class Aesop_Core_Admin {
 	private function messages() {
 
 		$message = array(
-			__( 'Product of <span><a href="http://aesopstoryengine.com">AESOP INTERACTIVE</a></span>',
+			__( 'Product of <span><a href="https://aesopstoryengine.com">AESOP INTERACTIVE</a></span>',
 				'aesop-core' ),
-			__( '<span><a href="http://aesopstoryengine.com/donate">Support new features and bug fixes</a></span> of Aesop Story Engine',
+			__( '<span><a href="https://aesopstoryengine.com/donate">Support new features and bug fixes</a></span> of Aesop Story Engine',
 				'aesop-core' ),
-			__( 'Story Beautiful? <span><a href="http://aesopstoryengine.com/donate">Thank the developer</a></span>.',
+			__( 'Story Beautiful? <span><a href="https://aesopstoryengine.com/donate">Thank the developer</a></span>.',
 				'aesop-core' )
 		);
 
@@ -318,8 +318,8 @@ class Aesop_Core_Admin {
 		if ( strpos( $file, 'aesop-core.php' ) !== false ) {
 
 			$new_links = array(
-				'<a href="http://aesopstoryengine.com/" target="_blank">Visit Plugin Site</a>',
-				'<a href="http://aesopstoryengine.com/donate" target="_blank">Donate</a>'
+				'<a href="https://aesopstoryengine.com/" target="_blank">Visit Plugin Site</a>',
+				'<a href="https://aesopstoryengine.com/donate" target="_blank">Donate</a>'
 			);
 
 			$links = array_merge( $links, $new_links );

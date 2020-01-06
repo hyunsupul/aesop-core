@@ -107,14 +107,14 @@ if ( ! function_exists( 'aesop_character_shortcode' ) ) {
                             <p class="aesop-character-cap"><?php echo aesop_component_media_filter( $atts['caption'] ); ?></p>
                         <?php } ?>
 
-                        <?php do_action( 'aesop_character_inner_inside_bottom', $atts, $unique ); // action  ?>
+                        <?php do_action( 'aesop_character_inner_inside_bottom', $atts, $unique );   ?>
 
                     </div>
                 </div>
 
                 <?php
             }
-            do_action( 'aesop_character_inside_bottom', $atts, $unique ); // action ?>
+            do_action( 'aesop_character_inside_bottom', $atts, $unique ); ?>
 
         </aside>
         <?php

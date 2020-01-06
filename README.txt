@@ -6,7 +6,7 @@ Donate link: http://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 5.2.4
-Stable tag: 2.0.13
+Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -185,6 +185,10 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 2.1.0 =
+* NEW New Gallery Type: Horizontal Gallery
+* FIX You can add custom class name using the block editor
+
 = 2.0.13 =
 * NEW Title and Add Download Link options for the Document Component
 

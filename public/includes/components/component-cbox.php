@@ -185,7 +185,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
 
             <?php } // end if === false
 
-            echo do_action( 'aesop_cbox_inside_bottom', $atts, $unique ); // action ?>
+            echo do_action( 'aesop_cbox_inside_bottom', $atts, $unique );  ?>
 
         </div>
         <?php

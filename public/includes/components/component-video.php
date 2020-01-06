@@ -447,7 +447,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 
 	   	 	<?php echo $caption;
 
-		do_action( 'aesop_video_inside_bottom', $atts, $unique ); // action ?>
+		do_action( 'aesop_video_inside_bottom', $atts, $unique ); ?>
 		</div>
 
 		<?php }
