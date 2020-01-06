@@ -1,11 +1,11 @@
 === Aesop Story Engine ===
 Contributors: nphaskins, etcio, michaelbeil, hyunster, peiche
-Author URI:  http://aesopstoryengine.com
-Plugin URI: http://aesopstoryengine.com
-Donate link: http://aesopstoryengine.com/donate
+Author URI:  https://aesopstoryengine.com
+Plugin URI: https://aesopstoryengine.com
+Donate link: https://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 5.2.4
+Tested up to: 5.3.2
 Stable tag: 2.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +16,7 @@ Suite of components that enables the creation of interactive longform stories in
 
 Aesop Story Engine is a suite of open-sourced tools and components that empower developers and writers to build feature-rich, interactive, long-form storytelling themes for WordPress. At the heart of ASE are the suite of storytelling multimedia components, which are created on the fly while crafting posts within WordPress.
 
-[http://aesopstoryengine.com](http://aesopstoryengine.com)
+[https://aesopstoryengine.com](https://aesopstoryengine.com)
 
 [youtube http://www.youtube.com/watch?v=84BFGxkHby0]
 
@@ -26,25 +26,28 @@ Utilizing these components, writers and developers can build feature-rich, visua
 
 **Demos and More Info**
 
-[http://aesopstoryengine.com/about/](http://aesopstoryengine.com/about/)
+[https://aesopstoryengine.com/about/](https://aesopstoryengine.com/about/)
 
 ** Check the latest new features of Aesop Story Engine **
 
-[http://aesopstoryengine.com/blog/](http://aesopstoryengine.com/blog/)
+[https://aesopstoryengine.com/blog/](http://aesopstoryengine.com/blog/)
+
+Horizontal Gallery:
+[https://aesopstoryengine.com/uncategorized/new-aesop-gallery-type-horizontal-gallery/] (https://aesopstoryengine.com/uncategorized/new-aesop-gallery-type-horizontal-gallery/)
 
 Gutenberg Support: New Feature for v 1.10.0 
 Aesop blocks are found under the category "Aesop Story Engine"
 
 Panorama Mode: New features  v 1.9.10   
-[http://aesopstoryengine.com/releases/new-aesop-feature-panorama-image/](http://aesopstoryengine.com/releases/new-aesop-feature-panorama-image/)
+[https://aesopstoryengine.com/releases/new-aesop-feature-panorama-image/](https://aesopstoryengine.com/releases/new-aesop-feature-panorama-image/)
 
 Chapter Styles: New features  v 1.9.9   
 
-[http://aesopstoryengine.com/releases/new-chapter-styles-aesop-1-9-9-features/](http://aesopstoryengine.com/releases/new-chapter-styles-aesop-1-9-9-features/)
+[https://aesopstoryengine.com/releases/new-chapter-styles-aesop-1-9-9-features/](https://aesopstoryengine.com/releases/new-chapter-styles-aesop-1-9-9-features/)
 
 Reveal Animation: New features of Aesop Story Engine v 1.9.6 
 
-[http://aesopstoryengine.com/releases/aesop-story-engine-1-9-6-new-features/](http://aesopstoryengine.com/releases/aesop-story-engine-1-9-6-new-features/)
+[https://aesopstoryengine.com/releases/aesop-story-engine-1-9-6-new-features/](https://aesopstoryengine.com/releases/aesop-story-engine-1-9-6-new-features/)
 
 
 **Audio** -
