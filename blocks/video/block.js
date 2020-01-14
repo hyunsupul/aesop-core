@@ -67,6 +67,7 @@
 				type : 'string'
 			},
 			controls:{
+                default: 'on',
 				type : 'string'
 			},
 			viewstart:{
@@ -101,6 +102,7 @@
 		edit	( { attributes, setAttributes, isSelected, className }) {
 			
 			var onSelectMedia = ( media ) => {
+                
 				return setAttributes({                       
 										hosted:media.url
                                 });
@@ -165,7 +167,7 @@
 						},
 					}
 				),
-				(attributes.src == 'youtube' )
+				(attributes.src == 'youtube' || attributes.src == 'self')
 				&& el(
 				wp.components.ToggleControl,
 				{
@@ -376,8 +378,8 @@
 								],
 					}
 				),
-				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Video ID') ),
-				attributes.src != 'self' && el( wp.components.TextControl, {
+				attributes.src != 'self' && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Video ID') ),
+				 el( wp.components.TextControl, {
 						label: __( 'The video ID can be found within the video URL and typically looks something like s8J2Ge4. For Viddler videos, enter the full URL instead.' ),
 						value: attributes.id,
 						onChange: function( content ) {
@@ -385,6 +387,7 @@
 						},
 					} 
 				),
+                attributes.src == 'self' && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Video URL') ),
 				attributes.src == 'self' && el(
 					wp.editor.MediaUpload,
 					{
@@ -400,7 +403,14 @@
 									 __( 'Set Video File' ) 
 								); }
 					}
-				)
+				),
+                attributes.src == 'self' && el( wp.components.TextControl, {
+						value: attributes.hosted,
+						onChange: function( content ) {
+							setAttributes( { hosted: content } );
+						},
+					} 
+				),
 			);
 			var label = el(
 						'div', 

@@ -6,7 +6,7 @@ Donate link: https://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 5.3.2
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -188,6 +188,9 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 2.1.1 =
+* FIX Restored the controls option to the Video Block when the source is set to Self-Hosted
+
 = 2.1.0 =
 * NEW New Gallery Type: Horizontal Gallery
 * FIX You can add custom class name using the block editor

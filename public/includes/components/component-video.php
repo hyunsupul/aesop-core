@@ -20,7 +20,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 			'disable_for_mobile'  => 'on',
 			'loop'  	=> 'on',
 			'autoplay' 	=> 'off',
-			'controls' 	=> 'off',
+			'controls' 	=> 'on',
 			'viewstart' => 'off',
 			'viewend'   => 'off',
 			'caption'  	=> '',
