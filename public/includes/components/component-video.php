@@ -86,8 +86,6 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 		
 
 		ob_start();
-		
-		echo $mute;
 
 
 		do_action( 'aesop_video_before', $atts, $unique ); // action

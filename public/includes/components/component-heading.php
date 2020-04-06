@@ -219,21 +219,29 @@ class AesopChapterHeadingComponent {
                     topLinkText: '<?php echo esc_attr( $top );?>',
                     scrollOffset: <?php echo absint( $chapterOffset );?>,
                     onRender: function () {
+                        var prevTitle="";
                         jQuery('.scroll-nav__section').each(function () {
                             var id = jQuery(this).attr('id');
                             var title = jQuery(this).find('.aesop-article-chapter-wrap').attr('data-title');
+                            
 
-                            jQuery('.scroll-nav__link').each(function () {
-                                var match = jQuery(this).attr('href');
+                                jQuery('.scroll-nav__link').each(function () {
+                                    var match = jQuery(this).attr('href');
 
-                                if (match == '#' + id) {
-                                    if (title) {
-                                        jQuery(this).html("<span>" + title + "</span>");
-                                    } else if (id == 'scrollNav-1') {
-                                        jQuery(this).html("<span>" + '<?php echo esc_attr( $top );?>' + "</span>");
+                                    if (match == '#' + id) {
+                                        if (title != prevTitle) { 
+                                            if (title) {
+                                                jQuery(this).html("<span>" + title + "</span>");
+                                            } else if (id == 'scrollNav-1') {
+                                                jQuery(this).html("<span>" + '<?php echo esc_attr( $top );?>' + "</span>");
+                                            }
+                                        } else if (id != 'scrollNav-1') {
+                                            jQuery(this).remove();
+                                        }
                                     }
-                                }
-                            });
+                                });
+                             
+                            prevTitle = title;
 
                         });
                     }

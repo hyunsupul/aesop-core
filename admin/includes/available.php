@@ -1238,7 +1238,7 @@ if ( ! function_exists( 'aesop_shortcodes' ) ) {
 									jQuery(".aesop-video-hosted,.aesop-video-controls,.aesop-video-show_subtitles,.aesop-video-lang_pref").slideUp();
 								}
 								else if (src=="self") {
-									jQuery("#aesop-generator-settings").children().slideDown();
+                                    jQuery(".aesop-video-hosted").parent().children().slideDown();
 									jQuery(".aesop-video-id,.aesop-video-show_subtitles,.aesop-video-lang_pref").slideUp();
 								}
 								disableMobileSetting(jQuery( "#aesop-generator-attr-disable_for_mobile" ).val());

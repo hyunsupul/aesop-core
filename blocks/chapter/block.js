@@ -244,13 +244,14 @@
 				el( wp.components.TextControl, {
 								label: __( 'Title' ),
 								value: attributes.title,
+                                style: { fontSize:"20px" },
 								onChange: function( newVal ) {
 									setAttributes( { title : newVal } );
 								},
 							} 
 				),
 				el( wp.components.TextControl, {
-								label: __( 'Subtitle: Ooptionally display a subtitle after the Chapter Title text.' ),
+								label: __( 'Subtitle: Optionally display a subtitle after the Chapter Title text.' ),
 								value: attributes.subtitle,
 								onChange: function( newVal ) {
 									setAttributes( { subtitle : newVal } );
