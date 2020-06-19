@@ -77,6 +77,9 @@
 							img:media.url
                        });
 			};
+            var backColor = {
+                backgroundColor: attributes.bgcolor,
+            };
 			
 			
 			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
@@ -128,8 +131,9 @@
 									},
 									 __( 'Remove Media' ) 
 				),	
-				attributes.bgtype == 'color' && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Color') ),
-				attributes.bgtype == 'color' && el( wp.components.ColorPalette,{
+				attributes.bgtype == 'color' && el( 'span', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Color') ),
+                attributes.bgtype == 'color' && el( 'div', { className: 'wp-block-aesop-story-engine-color' , style: backColor} ),
+				attributes.bgtype == 'color' && el( wp.editor.ColorPalette,{
 					        label: __( 'Background Color' ),
                             value: attributes.bgcolor, 
                             onChange: function(newVal){

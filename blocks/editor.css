@@ -31,6 +31,14 @@
 	margin-left:10px;
 }
 
+.wp-block-aesop-story-engine-color {
+  float: left;
+  width: 20px;
+  height: 15px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
 .components-panel .wp-block-aesop-story-engine-option-label {
 	font-weight:600;
 }

@@ -67,6 +67,14 @@
 			
 			
 			var revealfx = attributes.revealfx;
+            
+            // form color
+            var textColor = {
+                backgroundColor: attributes.text,
+            };
+            var backColor = {
+                backgroundColor: attributes.background,
+            };
 			
 			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
 				
@@ -138,21 +146,21 @@
 								],
 					}
 				),
-				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Text Color') ),
-				el( wp.components.ColorPalette,{
+				el( 'span', { className: 'wp-block-aesop-story-engine-option-label' },__('Text Color') ),
+                el( 'div', { className: 'wp-block-aesop-story-engine-color' , style: textColor} ),
+				el( wp.editor.ColorPalette,{
 					        label: __( 'Select a color for the quote text.' ),
                             value: attributes.text, 
-                            //colors: ['#282828'], 
                             onChange: function(newVal){
 								value = newVal;
                                 setAttributes( { text: newVal } );
                             }
                 }),
-				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Color') ),
-				el( wp.components.ColorPalette,{
+				el( 'span', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Color') ),
+                el( 'div', { className: 'wp-block-aesop-story-engine-color' , style: backColor} ),
+				el( wp.editor.ColorPalette,{
 					        label: __( 'Background Color' ),
                             value: attributes.background, 
-                            //colors: ['#282828'], 
                             onChange: function(newVal){
 								value = newVal;
                                 setAttributes( { background: newVal } );
