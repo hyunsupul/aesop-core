@@ -256,7 +256,7 @@
 				{
 								label: __( 'Content' ),
 								value: attributes.content,
-								style: { color: attributes.color },
+								//style: { color: attributes.color },
 								onChange: function( newVal ) {
 									setAttributes( { content : newVal } );
 								},
