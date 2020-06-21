@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set some constants
-define( 'AI_CORE_VERSION', '2.1.5' );
+define( 'AI_CORE_VERSION', '2.1.6' );
 define( 'AI_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AI_CORE_URL', plugins_url( '', __FILE__ ) );
 

@@ -1,7 +1,6 @@
 /**
  * BLOCK: Content
  *
- * Registering a basic block with Gutenberg.
  *
  * Styles:
  *        editor.css — Editor styles for the block.
@@ -249,7 +248,7 @@
 				
 			);
 			
-			const controls = el( 'div', { className: 'wp-block-aesop-story-engine-bg',style: { backgroundImage: 'url("'+attributes.img+'")' }, }
+			const controls = el( 'div', { className: 'wp-block-aesop-story-engine-bg',style: { backgroundImage: 'url("'+attributes.img+'")' , color:attributes.color, backgroundColor: attributes.background} }
 				,
 				
 				el(  wp.components.TextareaControl, //todo: replace with wp.blocks.RichText, 

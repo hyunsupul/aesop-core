@@ -1,7 +1,6 @@
 /**
  * BLOCK: Quote
  *
- * Registering a basic block with Gutenberg.
  *
  * Styles:
  *        editor.css — Editor styles for the block.
@@ -213,7 +212,7 @@
 				)
 			);
 			
-			const controls = el( 'div', { className: 'wp-block-aesop-story-engine-bg',style: { backgroundImage: 'url("'+attributes.img+'")'  }}
+			const controls = el( 'div', { className: 'wp-block-aesop-story-engine-bg',style: { backgroundImage: 'url("'+attributes.img+'")', color: attributes.text, backgroundColor: attributes.background  }}
 				,
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Quote') ),
 				el( wp.components.TextControl, {

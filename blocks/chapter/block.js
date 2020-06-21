@@ -1,7 +1,7 @@
 /**
  * BLOCK: Chapter
  *
- * Gutenberg Block for Aesop Audio.
+ * Gutenberg Block for Aesop Chapter Component.
  *
  */
 ( function() {
@@ -243,7 +243,7 @@
 				
 			);
 			
-			const controls = el( 'div', { className: 'wp-block-aesop-story-engine-bg',style: { backgroundImage: 'url("'+attributes.img+'")' }}
+			const controls = el( 'div', { className: 'wp-block-aesop-story-engine-bg',style: { backgroundImage: 'url("'+attributes.img+'")', backgroundColor: attributes.bgcolor }}
 				,
 				el( wp.components.TextControl, {
 								label: __( 'Title' ),

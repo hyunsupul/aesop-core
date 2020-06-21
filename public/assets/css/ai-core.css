@@ -1384,9 +1384,6 @@ html.swipebox {
   height: 50px;
   width: 100%;
 }
-#swipebox-action {
-  bottom: -50px;
-}
 #swipebox-action.visible-bars {
   bottom: 0;
 }
