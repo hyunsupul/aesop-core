@@ -35,7 +35,7 @@
 			isTouch = isMobile !== null || document.createTouch !== undefined || ( 'ontouchstart' in window ) || ( 'onmsgesturechange' in window ) || navigator.msMaxTouchPoints,
 			supportSVG = !! document.createElementNS && !! document.createElementNS( 'http://www.w3.org/2000/svg', 'svg').createSVGRect,
 			winWidth = window.innerWidth ? window.innerWidth : $( window ).width(),
-			winHeight = window.innerHeight ? window.innerHeight : $( window ).height(),
+			winHeight =  $( window ).height(),//window.innerHeight ? window.innerHeight : $( window ).height(),
 			currentX = 0,
 			/* jshint multistr: true */
 			html = '<div id="swipebox-overlay">\
@@ -233,7 +233,7 @@
 				} else {
 
 					width = window.innerWidth ? window.innerWidth : $( window ).width();
-					height = window.innerHeight ? window.innerHeight : $( window ).height();
+					height = $( window ).height();//window.innerHeight ? window.innerHeight : $( window ).height();
 				}
 
 				sliderCss = {
@@ -595,6 +595,8 @@
 				}
 
 				$( '#swipebox-close' ).bind( action, function() {
+                    event.preventDefault();
+                    event.stopPropagation();
 					$this.closeSlide();
 				} );
 			},

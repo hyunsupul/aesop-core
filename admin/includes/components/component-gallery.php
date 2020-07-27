@@ -212,6 +212,7 @@ class AesopGalleryComponentAdmin {
 		
 		//parallax
 		$parallax_mobile_panorama = get_post_meta( $id, 'aesop_parallax_gallery_mobile_panorama', true );
+        $parallax_fit_vertical = get_post_meta( $id, 'aesop_parallax_gallery_fit_vertical', true );
 		
 		//hero
 		$hero_content = get_post_meta( $id, 'aesop_hero_gallery_content', true );
@@ -350,6 +351,12 @@ class AesopGalleryComponentAdmin {
 				<input type="checkbox" name="aesop_parallax_gallery_mobile_panorama" <?php if ( $parallax_mobile_panorama == true ) { ?>checked="checked"<?php } ?>>
 				<label for="aesop_parallax_gallery_mobile_panorama"><?php _e( 'Panorama Mode for Mobile', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Use Panorama Images for Mobile Devices', 'aesop-core' );?></p>
+
+			</div>
+            <div class="ase-gallery-opts--single">
+				<input type="checkbox" name="aesop_parallax_gallery_fit_vertical" <?php if ( $parallax_fit_vertical == true ) { ?>checked="checked"<?php } ?>>
+				<label for="aesop_parallax_gallery_fit_vertical"><?php _e( 'Fit Image Vertically', 'aesop-core' );?></label>
+				<p class="aesop-gallery-opts--desc"><?php _e( 'Prevent cutting the top and bottom of the first image. Will reduce the width of image window if the screen is too wide compared to the image.', 'aesop-core' );?></p>
 
 			</div>
 
@@ -503,6 +510,7 @@ class AesopGalleryComponentAdmin {
 		
 		// parallax
 		$parallax_mobile_panorama   = isset( $_POST['aesop_parallax_gallery_mobile_panorama'] ) ? $_POST['aesop_parallax_gallery_mobile_panorama'] : false;
+        $parallax_fit_vertical   = isset( $_POST['aesop_parallax_gallery_fit_vertical'] ) ? $_POST['aesop_parallax_gallery_fit_vertical'] : false;
 
 		// hero
 		$hero_content = isset( $_POST['aesop_hero_gallery_content'] ) ? $_POST['aesop_hero_gallery_content'] : false;
@@ -560,6 +568,7 @@ class AesopGalleryComponentAdmin {
 		
 		// parallax
 		update_post_meta( $post_id, 'aesop_parallax_gallery_mobile_panorama', $parallax_mobile_panorama );
+        update_post_meta( $post_id, 'aesop_parallax_gallery_fit_vertical', $parallax_fit_vertical );
 		
 		// hero width_to_height_ratio
 		update_post_meta( $post_id, 'aesop_hero_gallery_content', aesop_component_media_filter( $hero_content ) );

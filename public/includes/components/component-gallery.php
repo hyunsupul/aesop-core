@@ -352,7 +352,7 @@ class AesopCoreGallery {
 	 * @param string $unique
 	 */
 	public function aesop_stacked_gallery( $gallery_id, $image_ids, $unique ) {
-
+        $fit_vertical  = get_post_meta( $gallery_id, 'aesop_parallax_gallery_fit_vertical', true ) == 'on';
 		/**
 		 * AMP Plugin compatability. Checks to see if we're at an AMP
 		 * endpoint and, if so, output <img> instead of <div> with
@@ -388,6 +388,7 @@ class AesopCoreGallery {
 				
 				// image size
 				$size    = apply_filters( 'aesop_stacked_gallery_size', 'full' );
+                $atts = $this->get_orig_ratio($atts,$image_ids);
 				
 				?>
 				<!-- Aesop Stacked Gallery Desktop -->
@@ -397,6 +398,19 @@ class AesopCoreGallery {
 
 							var stackedResizer = function(){
 								$('.aesop-stacked-img').css({'height':($(window).height())+'px'});
+                                
+                            <?php if ($fit_vertical=='on') {?>
+                                var objGallery = document.querySelector('#aesop-gallery-<?php echo esc_attr( $unique );?>');
+                                var windowRatio = objGallery.offsetWidth/$(window).height();
+                                
+                                var imgRatio = <?php echo $atts['orig_ratio'];?>;
+                                if (imgRatio) {  
+                                    if (windowRatio>imgRatio) {
+                                        objGallery.style.width = $(window).height()*imgRatio+"px";
+                                        objGallery.style.margin = "auto";
+                                    }
+                                }
+                            <?php }?>
 							}
 							stackedResizer();
 
@@ -889,6 +903,22 @@ class AesopCoreGallery {
 		</div>
 
 		</div><?php
+	}
+    
+    
+    function get_orig_ratio($atts,$image_ids)
+	{
+		$id1 =  $image_ids[0] ;
+        
+		$atts['orig_ratio'] = '';
+		
+		if ($id1 !=0) {
+            $image_attributes = wp_get_attachment_image_src( $id1,'full' );
+            $atts['orig_width'] = $image_attributes[1];
+            $atts['orig_height'] = $image_attributes[2];
+            $atts['orig_ratio'] = floatval($image_attributes[1])/floatval($image_attributes[2]);
+		}
+		return $atts;
 	}
 
 
