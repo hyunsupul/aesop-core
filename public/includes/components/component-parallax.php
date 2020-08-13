@@ -77,7 +77,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 		do_action( 'aesop_parallax_before', $atts, $unique ); // action
 		$nowebkitxform = ('fixed' == $atts['parallaxbg']) ? '-webkit-transform: none;':'';
 
-		?><div id="aesop-parallax-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'parallax', $unique, $atts );?> class="aesop-component aesop-parallax-component <?php echo sanitize_html_class( $classes );?>"><?php
+		?><div id="aesop-parallax-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'parallax', $unique, $atts );?> class="aesop-component aesop-parallax-component alignfull <?php echo sanitize_html_class( $classes );?>"><?php
 
 			do_action( 'aesop_parallax_inside_top', $atts, $unique ); // action
 

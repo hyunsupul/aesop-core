@@ -105,6 +105,9 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
 
         // core/custom classes
         $core_classes = $atts['className'].' '.(function_exists( 'aesop_component_classes' ) ? aesop_component_classes( 'quote' ) : null);
+        if ( 'block' == $atts['type'] ) {
+            $core_classes = $core_classes.' alignfull';
+        }
 
         // cite
         $cite = $atts['cite'] ? apply_filters( 'aesop_quote_component_cite', sprintf( '<cite class="aesop-quote-component-cite">%s</cite>', aesop_component_media_filter( $atts['cite'] ) ) ) : null;

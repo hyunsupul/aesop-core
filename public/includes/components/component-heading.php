@@ -76,7 +76,7 @@ if ( ! function_exists( 'aesop_chapter_shortcode' ) ) {
 
         ?>
     <div id="chapter-unique-<?php echo $unique; ?>" <?php echo aesop_component_data_atts( 'chapter', $unique, $atts ); ?>
-         class="aesop-article-chapter-wrap default-cover <?php echo $video_chapter_class; ?> aesop-component <?php echo $img_style_class; ?> <?php echo $full_class; ?> <?php echo $atts['className']; ?>"
+         class="aesop-article-chapter-wrap default-cover <?php echo $video_chapter_class; ?> aesop-component alignfull <?php echo $img_style_class; ?> <?php echo $full_class; ?> <?php echo $atts['className']; ?>"
         <?php echo aesop_revealfx_set( $atts ) ? 'style="visibility:hidden;"' : null ?>
          data-title="<?php echo esc_attr( $atts['title'] ); ?>"
     >

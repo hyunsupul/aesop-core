@@ -94,7 +94,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
         // hide the component initially if revealfx is set
         ?>
         <div id="aesop-image-component-<?php echo esc_html( $unique ); ?>" <?php echo aesop_component_data_atts( 'image', $unique, $atts ); ?>
-             class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes ) ?>"
+             class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes ) ?> alignfull"
             <?php echo aesop_revealfx_set( $atts ) ? 'style="visibility:hidden;"' : null ?>
         >
 

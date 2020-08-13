@@ -48,7 +48,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
         ?>
         <!-- Collections -->
         <div <?php echo aesop_component_data_atts( 'collection', $unique, $atts ); ?>
-                class="aesop-story-collection aesop-component <?php echo sanitize_html_class( $classes ); ?>">
+                class="aesop-story-collection alignfull aesop-component <?php echo sanitize_html_class( $classes ); ?>">
 
             <?php do_action( 'aesop_collection_inside_top', $atts, $unique ); // action
 
