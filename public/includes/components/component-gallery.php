@@ -762,7 +762,7 @@ class AesopCoreGallery {
 
 		<?php if ( $style !== null ) { echo '<div class="aesop-gallery-photoset-width" '.$style.' >'; }
 
-		?><div class="aesop-gallery-photoset" data-layout="<?php echo absint( $layout );?>" ><?php
+		?><div class="aesop-gallery-photoset" data-layout="<?php echo $layout;?>" ><?php
 
 		foreach ( $image_ids as $image_id ) {
 

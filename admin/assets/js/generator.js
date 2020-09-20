@@ -335,30 +335,31 @@ jQuery(document).on('click', '#aesop-upload-img', function (e) {
             /(msie) ([\w.]+)/.exec( ua ) ||
             ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec( ua ) || [];
         return {
-            browser: match[ 1 ] || "",
+            browser_: match[ 1 ] || "",
             version: match[ 2 ] || "0"
         };
     };
     
-    if ( !$.browser ) {
+    //if ( !$.browser ) 
+    {
         var 
         matched = jQuery.uaMatch( navigator.userAgent ),
-        browser = {};
-        if ( matched.browser ) {
-            browser[ matched.browser ] = true;
-            browser.version = matched.version;
+        browser_ = {};
+        if ( matched.browser_ ) {
+            browser_[ matched.browser_ ] = true;
+            browser_.version = matched.version;
         }
         // Chrome is Webkit, but Webkit is also Safari.
-        if ( browser.chrome ) {
-            browser.webkit = true;
-        } else if ( browser.webkit ) {
-            browser.safari = true;
+        if ( browser_.chrome ) {
+            browser_.webkit = true;
+        } else if ( browser_.webkit ) {
+            browser_.safari = true;
         }
-        $.browser = browser;
+        $.browser_ = browser_;
     }
 
     // Help prevent flashes of unstyled content
-    if ($.browser.msie && $.browser.version.substr(0, 1) < 7) {
+    if ($.browser_.msie && $.browser_.version.substr(0, 1) < 7) {
         ie6 = true;
     } else {
         document.documentElement.className = document.documentElement.className + ' dk_fouc';
@@ -707,7 +708,7 @@ jQuery(document).on('click', '#aesop-upload-img', function (e) {
 
         // Handle click events on individual dropdown options
         //$('.dk_options a').live(($.browser.msie ? 'mousedown' : 'click'), function (e) {
-        jQuery(document).on(($.browser.msie ? 'mousedown' : 'click'), '.dk_options a', function (e) {
+        jQuery(document).on(($.browser_.msie ? 'mousedown' : 'click'), '.dk_options a', function (e) {
             var
                 $option = $(this),
                 $dk = $option.parents('.dk_container').first(),

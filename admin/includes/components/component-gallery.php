@@ -321,7 +321,7 @@ class AesopGalleryComponentAdmin {
 			<div class="ase-gallery-opts--single">
 				<label for="aesop-photoset-gallery-layout"><?php _e( 'Gallery Layout', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Let\'s say you have 4 images in this gallery. If you enter 121 you will have one image on the top row, two images on the second row, and one image on the third row.', 'aesop-core' );?></p>
-				<input type="text" name="aesop_photoset_gallery_layout" value="<?php echo (int) $photoset_layout;?>">
+				<input type="text" name="aesop_photoset_gallery_layout" value="<?php echo  $photoset_layout;?>">
 			</div>
 
 			<div class="ase-gallery-opts--single">
@@ -563,7 +563,7 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, 'aesop_sequence_gallery_panorama_height', $sequence_panorama_height );
 
 		// photoset
-		update_post_meta( $post_id, 'aesop_photoset_gallery_layout', absint( $photoset_layout ) );
+		update_post_meta( $post_id, 'aesop_photoset_gallery_layout', $photoset_layout );
 		update_post_meta( $post_id, 'aesop_photoset_gallery_lightbox', $photoset_lb );
 		
 		// parallax

@@ -1,21 +1,19 @@
 {
-  "name": "aesop-core",
-  "version": "1.6.8",
-  "private": true,
+  "name": "lasso",
+  "version": "0.9.4",
   "dependencies": {
-    "load-grunt-tasks": "^3.2.0"
+    "load-grunt-tasks": "~0.2.1"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-checktextdomain": "^1.0.0",
-    "grunt-contrib-jshint": "^0.11.2",
-    "grunt-contrib-less": "^1.0.1",
-    "grunt-contrib-uglify": "^0.9.1",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-cssjanus": "^0.2.4",
-    "grunt-exec": "^0.4.6",
-    "grunt-phplint": "^0.0.5",
-    "grunt-potomo": "^3.3.3",
-    "grunt-wp-i18n": "^0.5.2"
+    "grunt": "~0.4.2",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-less": "~0.9.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-phplint": "~0.0.5",
+    "grunt-cssjanus": "~0.2.2",
+    "grunt-wp-i18n": "~0.4.9",
+    "grunt-potomo": "~2.1.0"
   }
 }

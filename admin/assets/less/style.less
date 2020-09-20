@@ -1,10 +1,127 @@
-@import 'source/variables.less';
-@import 'source/mixins.less';
-@import 'source/tooltips.less';
-@import 'source/modal.less';
-@import 'source/generator.less';
-@import 'source/global.less';
-@import 'source/maps.less';
-@import 'source/galleries.less';
-@import 'source/welcome.less';
-@import 'source/responsive.less';
+@import '../../../public/assets/less/source/mixins.less';
+@import 'welcome.less';
+
+@main:    #fff;
+@border:    #cdcdcd;
+@desc-color:  #888;
+@main-width:  500px;
+@admin-bar-width: 160px;
+.lasso--form-settings{
+
+    * { .box-sizing(border-box); }
+    max-width:@main-width;
+    padding:20px;
+    background:@main;
+    border-radius:5px;
+    border:1px solid @border;
+    position: relative;
+    .clearfix();
+
+    .iris-picker {
+        box-sizing: initial;
+
+        * {
+            box-sizing: inherit;
+        }
+    }
+
+    .lasso-editor-settings--option-wrap {
+        margin-bottom:25px;
+
+        &.last .lasso-editor-settings--option-inner{
+            border-bottom: none;
+            padding-bottom:0;
+        }
+    }
+
+    .lasso-editor-settings--option-inner {
+        border-bottom:1px solid lighten(@border,10);
+        padding-bottom:25px;
+    }
+
+    label {
+        font-weight:bold;
+        font-size:110%;
+        display:block;
+    }
+
+    textarea,
+    input[type="text"] {
+        border-radius:3px;
+        width:240px;
+		background-color: #f8f8f8;
+		color: #000;
+        .box-shadow(inset 1px 1px 1px rgba(0,0,0,0.1));
+    }
+
+    input[type="checkbox"] {
+        float: left;
+        & ~ label {
+            float: left;
+            position: relative;
+            top:-4px;
+            left:4px;
+        }
+    }
+
+    input[type="submit"]{
+        &:active {
+            outline:none;
+        }
+        &:disabled {
+            .opacity(0.4);
+        }
+    }
+
+    .lasso--setting-description {
+        display:block;
+        margin:5px 0 10px;
+        max-width:400px;
+        color:@desc-color;
+        line-height: 1.3;
+        clear:left;
+    }
+
+    // sunmit
+    .lasso-editor-settings--submit {
+        position: fixed;
+        top:88px;
+        left: @main-width + @admin-bar-width + 100;
+
+    }
+
+    .lasso-editor-settings--confirm {
+        background: @main;
+        border:1px solid @border;
+        border-radius:3px;
+        padding:10px 20px 14px 12px;
+        margin-top:10px;
+        .transition(all .2s linear);
+
+        &.success:before,
+        &.error:before {
+            font-family: 'Dashicons';
+            speak: none;
+            font-size:18px;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            top:4px;
+            right:3px;
+
+        }
+
+        &.success:before { content:'\f147'; color:#5CB85C; }
+        &.error:before { content: '\f158'; color:#d9534f; }
+
+    }
+
+}
+#wpbody #lasso-editor-settings-form .button-primary.saved {
+    background: #5CB85C !important;
+}
