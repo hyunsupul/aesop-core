@@ -10,11 +10,12 @@ class AesopContextualHelp {
 
 	public function __construct() {
 
-		add_filter( 'contextual_help', array( $this, 'aesop_help' ), 10, 3 );
-
+        add_filter('admin_head', array( $this, 'aesop_help' ));
 	}
 
-	public function aesop_help( $contextual_help, $screen_id, $screen ) {
+	public function aesop_help( ) {
+        
+        $screen = get_current_screen();
 
 		if ( 'edit-post' == $screen->id || 'post' == $screen->id ) {
 

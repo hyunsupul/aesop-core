@@ -563,7 +563,7 @@ class AesopGalleryComponentAdmin {
 		update_post_meta( $post_id, 'aesop_sequence_gallery_panorama_height', $sequence_panorama_height );
 
 		// photoset
-		update_post_meta( $post_id, 'aesop_photoset_gallery_layout', $photoset_layout );
+		update_post_meta( $post_id, 'aesop_photoset_gallery_layout', sanitize_text_field($photoset_layout ));
 		update_post_meta( $post_id, 'aesop_photoset_gallery_lightbox', $photoset_lb );
 		
 		// parallax
