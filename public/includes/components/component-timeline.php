@@ -95,8 +95,9 @@ class AesopTimelineComponent {
 
         // filterable target class
         $appendTo = apply_filters( 'aesop_timeline_scroll_nav', '.aesop-timeline' );
-        
-        $use_chapter = (aesop_component_exists( 'chapter' ) && get_post_meta(get_the_ID(), 'ase_chapter_enable_timeline', true));
+
+        $post_meta = get_post_meta(get_the_ID(), 'ase_chapter_enable_timeline', true);
+        $use_chapter = (aesop_component_exists( 'chapter' ) && ( $post_meta === true || $post_meta === 'on' ) ) ;
         
         $stop_class =  !$use_chapter ?  '.aesop-timeline-stop'  : '.aesop-article-chapter';
         
