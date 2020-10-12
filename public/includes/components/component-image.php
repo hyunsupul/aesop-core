@@ -50,7 +50,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
             //$image_id = aesop_get_image_id($atts['img']);
 
-            add_action( 'wp_footer', aesop_panorama, 20 );
+            add_action( 'wp_footer', 'aesop_panorama', 20 );
         }
 
         // offset styles

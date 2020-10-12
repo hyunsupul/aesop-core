@@ -22,6 +22,7 @@ function AesopStoryEngineOptions_register( $wp_customize ) {
 				$content = '
 				<label>
 				<span class="customize-control-title">'.esc_html( $this->label ).'</span>
+                <span class="description customize-control-description">'.$this->description.'</span>
 				<select '.$this->get_link().'>
 					<option value="" '.$def_selected.'>'.__( 'Default', 'aesop-core' ).'</option>
 					<option value="left_dots" '.$left_dots.'>'.__( 'Left Dots', 'aesop-core' ).'</option>
@@ -48,6 +49,26 @@ function AesopStoryEngineOptions_register( $wp_customize ) {
 				echo $content;
 			} //render_content()
 		} //Select_Control()
+        
+        class MapStyle_Control extends WP_Customize_Control {
+			public $type = 'select';
+			public function render_content() { ?>
+				<label>
+					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+                    <span class="description customize-control-description"></span>
+					<select <?php $this->link(); ?>>
+						<option value="v1/mapbox/streets-v11" <?php if($this->value() == 'v1/mapbox/streets-v11') echo 'selected="selected"'; ?>><?php echo __('Streets', 'aesop-core');?></option>
+						<option value="v1/mapbox/outdoors-v11" <?php if($this->value() == 'v1/mapbox/outdoors-v11') echo 'selected="selected"'; ?>><?php echo __('Outdoors', 'aesop-core');?></option>
+						<option value="v1/mapbox/satellite-streets-v11" <?php if($this->value() == 'v1/mapbox/satellite-streets-v11') echo 'selected="selected"'; ?>><?php echo __('Satelite', 'aesop-core');?></option>
+                        <option value="v1/mapbox/satellite-v9" <?php if($this->value() == 'v1/mapbox/satellite-streets-v11') echo 'selected="selected"'; ?>><?php echo __('Satelite Only', 'aesop-core');?></option>
+                        <option value="v1/mapbox/dark-v10" <?php if($this->value() == 'v1/mapbox/dark-v10') echo 'selected="selected"'; ?>><?php echo __('Dark', 'aesop-core');?></option>
+                        <option value="v1/mapbox/light-v10" <?php if($this->value() == 'v1/mapbox/light-v10') echo 'selected="selected"'; ?>><?php echo __('Light', 'aesop-core');?></option>
+					</select>				
+				</label>
+				<?php
+			} //render_content()
+		} 
+		
 
 		$wp_customize->add_section( 'aesop_story_engine', array(
 				'title'   => __( 'Aesop Story Engine', 'aesop-core' ),
@@ -55,18 +76,34 @@ function AesopStoryEngineOptions_register( $wp_customize ) {
 
 
 
-		$wp_customize->add_setting( 'ase_mapbox_id', array(
-				'default'   => '',
+		/*
+        Not supported as of 2.2.2 Maybe supported in future versions
+        $wp_customize->add_setting( 'ase_mapbox_id', array(
+				'default'   => 'v1/mapbox/streets-v11',
 				'type'    => 'option',
 				'sanitize_callback' => AesopStoryEngineOptions_sanitize_text_field()
 			) );
 		$wp_customize->add_control( 'ase_mapbox_id', array(
-				'label'   => __( 'Mapbox Map ID', 'aesop-core' ),
+				'label'   => __( 'Mapbox Map Style', 'aesop-core' ),
 				'section'   => 'aesop_story_engine',
 				'settings'   => 'ase_mapbox_id',
-				'description' => __( 'Refer to the documentation located <a href="https://aesopstoryengine.com/help/map-component" target="_blank">here</a> for option descriptions.', 'aesop-core' ),
+				//'description' => __( 'Refer to the documentation located <a href="https://aesopstoryengine.com/help/map-component" target="_blank">here</a> for option descriptions.', 'aesop-core' ),
 				'type'    => 'text'
-			) );
+			) );*/
+            
+        // map style
+		$wp_customize->add_setting( 'ase_mapbox_style', array(
+			'type' 		=> 'option',
+			'default'	=> 'v1/mapbox/streets-v11',
+			'label'		=> __('Map Visual Style.', 'aesop-core')
+		) );
+		$wp_customize->add_control( new MapStyle_Control($wp_customize, 'ase_mapbox_style', array(
+			'label' 	=> __('Map Visual Style.', 'aesop-core'),
+			'section' 	=> 'aesop_story_engine',
+			'settings' 	=> 'ase_mapbox_style',
+			//'description' => __('','aesop-core'),
+			//'transport' => 'refresh'
+		) ));
 		
 		$wp_customize->add_setting( 'ase_mapbox_apikey', array(
 				'default'   => 'AIzaSyDguxUeZr9LUPe9ImgYwXPTqPwQbsUFAJo',
@@ -80,28 +117,31 @@ function AesopStoryEngineOptions_register( $wp_customize ) {
 				'settings'   => 'ase_mapbox_apikey',
 				'type'    => 'text'
 			) );
+            
+        $wp_customize->add_setting( 'ase_mapbox_token', array(
+				'default'   => 'pk.eyJ1IjoiaHl1bnN0ZXIiLCJhIjoiY2lrd3Jjb2NkMDBsM3U0bTNjbDd6c2liYSJ9.4R-XjaHyC3xbdTpHp_v1Ag',
+				'type'    => 'option',
+				'sanitize_callback' => AesopStoryEngineOptions_sanitize_text_field()
+			) );
+		$wp_customize->add_control( 'ase_mapbox_token', array(
+				'label'   => __( 'Mapbox Access Token.', 'aesop-core'),
+                'description' => __('Recommended: Visit <a href="https://www.mapbox.com/">here</a> to get your own Mapbox <a href="https://docs.mapbox.com/help/how-mapbox-works/access-tokens/">access token</a>.', 'aesop-core' ),
+				'section'   => 'aesop_story_engine',
+				'settings'   => 'ase_mapbox_token',
+				'type'    => 'text'
+			) );
 			
 		$wp_customize->add_setting('ase_chapter_ui_style', array('default'=>'','type'    => 'option'));
 		
 		$wp_customize->add_control( new ChapterUI_Select_Control($wp_customize, 'ase_chapter_ui_style', array(
-			'label' => __( 'Chapter Component UI', 'aesop-core'),
+			'label' => __( 'Chapter Component UI Style', 'aesop-core'),
 			'section' => 'aesop_story_engine',
 			'settings' => 'ase_chapter_ui_style',
+            'description' => __( 'Refer to the demo located <a href="https://aesopstoryengine.com/aesop-chapter-component-demo/" target="_blank">here</a> for option descriptions.', 'aesop-core' ),
 			'transport' => 'refresh'
 		) ) );
 		
-		$wp_customize->add_setting( 'ase_chapter_content_class', array(
-				'default'   => '.entry-content',
-				'type'    => 'option',
-				'sanitize_callback' => AesopStoryEngineOptions_sanitize_text_field()
-			) );
-		$wp_customize->add_control( 'ase_chapter_content_class', array(
-				'label'   => __( 'Selector for the Post Content.', 'aesop-core'),
-                'description' => __('ASE Chapter Component uses this information to search the chapters. The default should work for most themes.', 'aesop-core' ),
-				'section'   => 'aesop_story_engine',
-				'settings'   => 'ase_chapter_content_class',
-				'type'    => 'text'
-			) );
+		
 		
 
 			
@@ -178,6 +218,20 @@ function AesopStoryEngineOptions_register( $wp_customize ) {
 			'settings' 	=> 'ase_chapter_active_hover_color',
 			'transport' => 'postMessage'
 		) ) );
+        
+        
+        $wp_customize->add_setting( 'ase_chapter_content_class', array(
+				'default'   => '.entry-content',
+				'type'    => 'option',
+				'sanitize_callback' => AesopStoryEngineOptions_sanitize_text_field()
+			) );
+		$wp_customize->add_control( 'ase_chapter_content_class', array(
+				'label'   => __( 'Selector for the Post Content.', 'aesop-core'),
+                'description' => __('ASE Chapter Component uses this information to search the chapters. The default should work for most themes.', 'aesop-core' ),
+				'section'   => 'aesop_story_engine',
+				'settings'   => 'ase_chapter_content_class',
+				'type'    => 'text'
+			) );
 }
 
 function AesopStoryEngineOptions_sanitize_text_field( $input = ''  ) {
