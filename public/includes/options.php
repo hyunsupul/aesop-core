@@ -57,6 +57,11 @@ function AesopStoryEngineOptions_register( $wp_customize ) {
 					<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
                     <span class="description customize-control-description"></span>
 					<select <?php $this->link(); ?>>
+                        <option value="openstreet" <?php if($value == 'openstreet') echo 'selected="selected"'; ?>><?php echo __('OpenStreetMap', 'aesop-core');?></option>
+                        <option value="open-topo" <?php if($value == 'open-topo') echo 'selected="selected"'; ?>><?php echo __('OpenTopology', 'aesop-core');?></option>
+                        <option value="stamen-terrain" <?php if($value == 'stamen-terrain') echo 'selected="selected"'; ?>><?php echo __('Stamen Terrain', 'aesop-core');?></option>
+                        <option value="stamen-toner" <?php if($value == 'stamen-toner') echo 'selected="selected"'; ?>><?php echo __('Stamen Toner', 'aesop-core');?></option>
+                        <option value="stamen-watercolor" <?php if($value == 'stamen-watercolor') echo 'selected="selected"'; ?>><?php echo __('Stamen Watercolor', 'aesop-core');?></option>
 						<option value="v1/mapbox/streets-v11" <?php if($this->value() == 'v1/mapbox/streets-v11') echo 'selected="selected"'; ?>><?php echo __('Streets', 'aesop-core');?></option>
 						<option value="v1/mapbox/outdoors-v11" <?php if($this->value() == 'v1/mapbox/outdoors-v11') echo 'selected="selected"'; ?>><?php echo __('Outdoors', 'aesop-core');?></option>
 						<option value="v1/mapbox/satellite-streets-v11" <?php if($this->value() == 'v1/mapbox/satellite-streets-v11') echo 'selected="selected"'; ?>><?php echo __('Satelite', 'aesop-core');?></option>

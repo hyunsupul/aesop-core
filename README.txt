@@ -5,8 +5,8 @@ Plugin URI: https://aesopstoryengine.com
 Donate link: https://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 5.5.1
-Stable tag: 2.2.2
+Tested up to: 5.5.3
+Stable tag: 2.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,8 +32,11 @@ Utilizing these components, writers and developers can build feature-rich, visua
 
 [https://aesopstoryengine.com/blog/](http://aesopstoryengine.com/blog/)
 
+New Map Styles:
+[https://aesopstoryengine.com/updates/new-feature-map-style/] (https://aesopstoryengine.com/updates/new-feature-map-style/)
+
 Horizontal Gallery:
-[https://aesopstoryengine.com/uncategorized/new-aesop-gallery-type-horizontal-gallery/] (https://aesopstoryengine.com/uncategorized/new-aesop-gallery-type-horizontal-gallery/)
+[https://aesopstoryengine.com/releases/new-aesop-gallery-type-horizontal-gallery/] (https://aesopstoryengine.com/releases/new-aesop-gallery-type-horizontal-gallery/)
 
 Gutenberg Support: New Feature for v 1.10.0 
 Aesop blocks are found under the category "Aesop Story Engine"
@@ -188,7 +191,7 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
-= 2.2.2 =
+= 2.2.3 =
 * New map options
 
 = 2.2.1 =

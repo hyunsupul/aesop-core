@@ -224,30 +224,54 @@ function aesop_component_media_filter( $input = '' ) {
  * @since 1.3
  */
 function aesop_map_tile_provider( $postid = 0 ) {
-
-	$mapbox_style  = get_option( 'ase_mapbox_style', 'v1/mapbox/streets-v11' );
+    $mapbox_style  = get_post_meta( $postid, 'ase_mapbox_style' ,true);
 	if (empty($mapbox_style)) {
-		$mapbox_style  = 'v1/mapbox/streets-v11';
+        $mapbox_style  = get_option( 'ase_mapbox_style', 'openstreet' );
+        if (empty($mapbox_style)) {
+            $mapbox_style  = 'openstreet';   //'v1/mapbox/streets-v11';
+        }
+    }
+    
+    switch ( $mapbox_style ) {
+    case 'openstreet':
+        $out = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        break;
+    case 'open-topo':
+        $out = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png';
+        break;
+    case 'stamen-toner-lite':
+		$out = '//{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png';
+		break;
+	case 'stamen-toner':
+		$out = '//{s}.tile.stamen.com/toner/{z}/{x}/{y}.png';
+		break;
+	case 'stamen-watercolor':
+		$out = '//{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.png';
+		break;
+    case 'stamen-terrain':
+		$out = 'https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.png';
+		break;
+    case 'stamen-terrain':
+		$out = 'https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}{r}.png';
+		break;
+    default:
+        //mapbox api
+        // mapbox api now requires a public token
+        //$token     = apply_filters( 'aesop_map_token', 'pk.eyJ1IjoiYWVzb3BpbnRlcmFjdGl2ZSIsImEiOiJ3TjJ4M0hJIn0.LwbGC9U8iKT_saX8c6v_4Q' );
+        $token = get_option( 'ase_mapbox_token', 'pk.eyJ1IjoiaHl1bnN0ZXIiLCJhIjoiY2lrd3Jjb2NkMDBsM3U0bTNjbDd6c2liYSJ9.4R-XjaHyC3xbdTpHp_v1Ag' );
+        $token = apply_filters( 'aesop_map_token', $token  );
+
+        // mapbox map path
+        $mapbox_upgraded = get_option( 'ase_mapbox_upgraded' );
+        $out =  'https://api.mapbox.com/styles/'.$mapbox_style .'/tiles/512/{z}/{x}/{y}?title=true&access_token='.$token;
+        break;
     }
 
-
-	// mapbox api now requires a public token
-	//$token     = apply_filters( 'aesop_map_token', 'pk.eyJ1IjoiYWVzb3BpbnRlcmFjdGl2ZSIsImEiOiJ3TjJ4M0hJIn0.LwbGC9U8iKT_saX8c6v_4Q' );
-	$token = get_option( 'ase_mapbox_token', 'pk.eyJ1IjoiaHl1bnN0ZXIiLCJhIjoiY2lrd3Jjb2NkMDBsM3U0bTNjbDd6c2liYSJ9.4R-XjaHyC3xbdTpHp_v1Ag' );
-    $token = apply_filters( 'aesop_map_token', $token  );
-
 	// setup a filter to change the provider
-	$provider = apply_filters( 'aesop_map_tile_provider', 'mapbox', $postid );
-
-	// mapbox map path
-	$mapbox_upgraded = get_option( 'ase_mapbox_upgraded' );
-    $path =  'https://api.mapbox.com/styles/'.$mapbox_style .'/tiles/256/{z}/{x}/{y}?title=true&access_token='.$token;
+    $provider = apply_filters( 'aesop_map_tile_provider', '', $postid );
 
 
 	switch ( $provider ) {
-	case 'mapbox':
-		$out = sprintf( '%s', $path );
-		break;
 	case 'stamen-toner-lite':
 		$out = '//{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png';
 		break;
@@ -267,7 +291,6 @@ function aesop_map_tile_provider( $postid = 0 ) {
 		$out = '//{s}.tile.openstreetmap.se/hydda/full/{z}/{x}/{y}.png';
 		break;
 	default:
-		$out = sprintf( '//{s}.tiles.mapbox.com/v3/%s/{z}/{x}/{y}.png', esc_attr( $mapboxid ) );
 		break;
 	}
     

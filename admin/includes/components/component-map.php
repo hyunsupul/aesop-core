@@ -12,6 +12,7 @@ class AesopMapComponentAdmin {
 		add_action( 'add_meta_boxes',      array( $this, 'new_map_box' ) );
 		add_action( 'admin_enqueue_scripts',    array( $this, 'new_map_assets' ) );
 		add_action( 'save_post',      array( $this, 'save_map_box' ) );
+        add_action( 'save_post',      array( $this, 'save_map_style_box' ) );
 
 		// admin notice for upgrading
 		add_action( 'admin_notices',      array( $this, 'upgrade_map_notice' ) );
@@ -120,9 +121,36 @@ class AesopMapComponentAdmin {
 		$screens = apply_filters( 'aesop_map_meta_location', array( 'post','page' ) );
 
 		foreach ( $screens as $screen ) {
+            add_meta_box( 'ase_map_component_style', __( 'Map Style', 'aesop-core' ), array( $this, 'render_map_style' ), $screen );
 			add_meta_box( 'ase_map_component', __( 'Map Locations', 'aesop-core' ), array( $this, 'render_map_box' ), $screen );
-
 		}
+	}
+    
+    /**
+	 *  Render Meta Box content.
+	 *
+	 *
+	 */
+	public function render_map_style( $post ) {
+        $value = get_post_meta($post->ID, 'ase_mapbox_style', true);
+        ?>
+        <label for="ase_mapbox_style"><?php echo __( 'Map Tile Style', 'aesop-core' );?></label>
+        
+        <select name="ase_mapbox_style" id="ase_mapbox_style">
+            <option value="openstreet" <?php if($value == 'openstreet') echo 'selected="selected"'; ?>><?php echo __('OpenStreetMap', 'aesop-core');?></option>
+            <option value="open-topo" <?php if($value == 'open-topo') echo 'selected="selected"'; ?>><?php echo __('OpenTopology', 'aesop-core');?></option>
+            <option value="stamen-terrain" <?php if($value == 'stamen-terrain') echo 'selected="selected"'; ?>><?php echo __('Stamen Terrain', 'aesop-core');?></option>
+            <option value="stamen-toner" <?php if($value == 'stamen-toner') echo 'selected="selected"'; ?>><?php echo __('Stamen Toner', 'aesop-core');?></option>
+            <option value="stamen-watercolor" <?php if($value == 'stamen-watercolor') echo 'selected="selected"'; ?>><?php echo __('Stamen Watercolor', 'aesop-core');?></option>
+            <option value="v1/mapbox/streets-v11" <?php if($value == 'v1/mapbox/streets-v11') echo 'selected="selected"'; ?>><?php echo __('MapBox Streets', 'aesop-core');?></option>
+			<option value="v1/mapbox/outdoors-v11" <?php if($value == 'v1/mapbox/outdoors-v11') echo 'selected="selected"'; ?>><?php echo __('MapBox Outdoors', 'aesop-core');?></option>
+			<option value="v1/mapbox/satellite-streets-v11" <?php if($value == 'v1/mapbox/satellite-streets-v11') echo 'selected="selected"'; ?>><?php echo __('MapBox Satelite', 'aesop-core');?></option>
+            <option value="v1/mapbox/satellite-v9" <?php if($value == 'v1/mapbox/satellite-streets-v11') echo 'selected="selected"'; ?>><?php echo __('MapBox Satelite Only', 'aesop-core');?></option>
+            <option value="v1/mapbox/dark-v10" <?php if($value == 'v1/mapbox/dark-v10') echo 'selected="selected"'; ?>><?php echo __('MapBox Dark', 'aesop-core');?></option>
+            <option value="v1/mapbox/light-v10" <?php if($value == 'v1/mapbox/light-v10') echo 'selected="selected"'; ?>><?php echo __('MapBox Light', 'aesop-core');?></option>
+        </select>
+        <span><?php echo __( 'Save the post and reload to the see different tile styles.', 'aesop-core' );?></span>
+        <?php
 	}
 
 	/**
@@ -225,7 +253,7 @@ class AesopMapComponentAdmin {
 					}
 
 					function onMapZoom(e) {
-						setMapZoom(e.target.getZoom());
+						setMapZoom(e.target.getZoom()-1);
 					}
 
 					function rnd(n) {
@@ -403,6 +431,25 @@ class AesopMapComponentAdmin {
 			$zoom = json_decode( urldecode( $_POST['ase-map-component-zoom'] ), true );
 			update_post_meta( $post_id, 'ase_map_component_zoom', $zoom );
 		}
+
+	}
+    
+    /**
+	 *  Save the meta when the post is saved.
+	 *
+	 * @param integer $post_id The ID of the post being saved.
+	 *
+	 */
+	public function save_map_style_box( $post_id ) {
+        delete_post_meta( $post_id, 'ase_mapbox_style' );
+		if (isset( $_POST['ase_mapbox_style'] )) {
+            
+            update_post_meta(
+                $post_id,
+                'ase_mapbox_style',
+                $_POST['ase_mapbox_style']
+            );
+        }
 
 	}
 
