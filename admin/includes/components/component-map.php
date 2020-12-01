@@ -121,8 +121,8 @@ class AesopMapComponentAdmin {
 		$screens = apply_filters( 'aesop_map_meta_location', array( 'post','page' ) );
 
 		foreach ( $screens as $screen ) {
-            add_meta_box( 'ase_map_component_style', __( 'Map Style', 'aesop-core' ), array( $this, 'render_map_style' ), $screen );
-			add_meta_box( 'ase_map_component', __( 'Map Locations', 'aesop-core' ), array( $this, 'render_map_box' ), $screen );
+            add_meta_box( 'ase_map_component_style', __( 'Aesop Map Style', 'aesop-core' ), array( $this, 'render_map_style' ), $screen );
+			add_meta_box( 'ase_map_component', __( 'Aesop Map Locations', 'aesop-core' ), array( $this, 'render_map_box' ), $screen );
 		}
 	}
     
@@ -149,7 +149,7 @@ class AesopMapComponentAdmin {
             <option value="v1/mapbox/dark-v10" <?php if($value == 'v1/mapbox/dark-v10') echo 'selected="selected"'; ?>><?php echo __('MapBox Dark', 'aesop-core');?></option>
             <option value="v1/mapbox/light-v10" <?php if($value == 'v1/mapbox/light-v10') echo 'selected="selected"'; ?>><?php echo __('MapBox Light', 'aesop-core');?></option>
         </select>
-        <span><?php echo __( 'Save the post and reload to the see different tile styles.', 'aesop-core' );?></span>
+        <span><?php echo __( 'Save the post and reload to the see different tile styles. For more information, <a href="https://aesopstoryengine.com/updates/new-feature-map-style/">visit</a>', 'aesop-core' );?></span>
         <?php
 	}
 
