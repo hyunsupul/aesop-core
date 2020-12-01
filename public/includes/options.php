@@ -62,12 +62,12 @@ function AesopStoryEngineOptions_register( $wp_customize ) {
                         <option value="stamen-terrain" <?php if($value == 'stamen-terrain') echo 'selected="selected"'; ?>><?php echo __('Stamen Terrain', 'aesop-core');?></option>
                         <option value="stamen-toner" <?php if($value == 'stamen-toner') echo 'selected="selected"'; ?>><?php echo __('Stamen Toner', 'aesop-core');?></option>
                         <option value="stamen-watercolor" <?php if($value == 'stamen-watercolor') echo 'selected="selected"'; ?>><?php echo __('Stamen Watercolor', 'aesop-core');?></option>
-						<option value="v1/mapbox/streets-v11" <?php if($this->value() == 'v1/mapbox/streets-v11') echo 'selected="selected"'; ?>><?php echo __('Streets', 'aesop-core');?></option>
-						<option value="v1/mapbox/outdoors-v11" <?php if($this->value() == 'v1/mapbox/outdoors-v11') echo 'selected="selected"'; ?>><?php echo __('Outdoors', 'aesop-core');?></option>
-						<option value="v1/mapbox/satellite-streets-v11" <?php if($this->value() == 'v1/mapbox/satellite-streets-v11') echo 'selected="selected"'; ?>><?php echo __('Satelite', 'aesop-core');?></option>
-                        <option value="v1/mapbox/satellite-v9" <?php if($this->value() == 'v1/mapbox/satellite-streets-v11') echo 'selected="selected"'; ?>><?php echo __('Satelite Only', 'aesop-core');?></option>
-                        <option value="v1/mapbox/dark-v10" <?php if($this->value() == 'v1/mapbox/dark-v10') echo 'selected="selected"'; ?>><?php echo __('Dark', 'aesop-core');?></option>
-                        <option value="v1/mapbox/light-v10" <?php if($this->value() == 'v1/mapbox/light-v10') echo 'selected="selected"'; ?>><?php echo __('Light', 'aesop-core');?></option>
+						<option value="v1/mapbox/streets-v11" <?php if($this->value() == 'v1/mapbox/streets-v11') echo 'selected="selected"'; ?>><?php echo __('Mapbox Streets', 'aesop-core');?></option>
+						<option value="v1/mapbox/outdoors-v11" <?php if($this->value() == 'v1/mapbox/outdoors-v11') echo 'selected="selected"'; ?>><?php echo __('Mapbox Outdoors', 'aesop-core');?></option>
+						<option value="v1/mapbox/satellite-streets-v11" <?php if($this->value() == 'v1/mapbox/satellite-streets-v11') echo 'selected="selected"'; ?>><?php echo __('Mapbox Satelite', 'aesop-core');?></option>
+                        <option value="v1/mapbox/satellite-v9" <?php if($this->value() == 'v1/mapbox/satellite-v9') echo 'selected="selected"'; ?>><?php echo __('Mapbox Satelite Only', 'aesop-core');?></option>
+                        <option value="v1/mapbox/dark-v10" <?php if($this->value() == 'v1/mapbox/dark-v10') echo 'selected="selected"'; ?>><?php echo __('Mapbox Dark', 'aesop-core');?></option>
+                        <option value="v1/mapbox/light-v10" <?php if($this->value() == 'v1/mapbox/light-v10') echo 'selected="selected"'; ?>><?php echo __('Mapbox Light', 'aesop-core');?></option>
 					</select>				
 				</label>
 				<?php

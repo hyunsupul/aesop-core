@@ -263,7 +263,7 @@ function aesop_map_tile_provider( $postid = 0 ) {
 
         // mapbox map path
         $mapbox_upgraded = get_option( 'ase_mapbox_upgraded' );
-        $out =  'https://api.mapbox.com/styles/'.$mapbox_style .'/tiles/512/{z}/{x}/{y}?title=true&access_token='.$token;
+        $out =  'https://api.mapbox.com/styles/'.$mapbox_style .'/tiles/256/{z}/{x}/{y}?title=true&access_token='.$token;
         break;
     }
 

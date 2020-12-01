@@ -145,7 +145,7 @@ class AesopMapComponentAdmin {
             <option value="v1/mapbox/streets-v11" <?php if($value == 'v1/mapbox/streets-v11') echo 'selected="selected"'; ?>><?php echo __('MapBox Streets', 'aesop-core');?></option>
 			<option value="v1/mapbox/outdoors-v11" <?php if($value == 'v1/mapbox/outdoors-v11') echo 'selected="selected"'; ?>><?php echo __('MapBox Outdoors', 'aesop-core');?></option>
 			<option value="v1/mapbox/satellite-streets-v11" <?php if($value == 'v1/mapbox/satellite-streets-v11') echo 'selected="selected"'; ?>><?php echo __('MapBox Satelite', 'aesop-core');?></option>
-            <option value="v1/mapbox/satellite-v9" <?php if($value == 'v1/mapbox/satellite-streets-v11') echo 'selected="selected"'; ?>><?php echo __('MapBox Satelite Only', 'aesop-core');?></option>
+            <option value="v1/mapbox/satellite-v9" <?php if($value == 'v1/mapbox/satellite-v9') echo 'selected="selected"'; ?>><?php echo __('MapBox Satelite Only', 'aesop-core');?></option>
             <option value="v1/mapbox/dark-v10" <?php if($value == 'v1/mapbox/dark-v10') echo 'selected="selected"'; ?>><?php echo __('MapBox Dark', 'aesop-core');?></option>
             <option value="v1/mapbox/light-v10" <?php if($value == 'v1/mapbox/light-v10') echo 'selected="selected"'; ?>><?php echo __('MapBox Light', 'aesop-core');?></option>
         </select>
