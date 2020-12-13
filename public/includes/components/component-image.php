@@ -128,7 +128,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
                         if ( 'on' == $atts['lightbox'] ) { ?>
 
-                            <a class="aesop-lightbox"
+                            <a class="aesop-lightbox"  data-lightbox="image-<?php echo $unique;?>" data-title="<?php echo sanitize_html_class($atts['caption']); ?>"
                                href="<?php echo $atts['img']; ?>"
                                title="<?php echo $atts['caption']; ?>">
                                 <p class="aesop-img-enlarge"><i

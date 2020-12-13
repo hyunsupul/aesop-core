@@ -191,7 +191,7 @@ class AesopGalleryComponentAdmin {
 
 		// grid
 		$grid_item_width = get_post_meta( $id, 'aesop_grid_gallery_width', true );
-		$aesop_lightbox_text = get_post_meta( $id, 'aesop_lightbox_text', true );
+		$aesop_grid_lightbox_text = get_post_meta( $id, 'aesop_grid_lightbox_text', true );
 
 		// thumbnail
 		$thumb_trans  = get_post_meta( $id, 'aesop_thumb_gallery_transition', true );
@@ -209,6 +209,7 @@ class AesopGalleryComponentAdmin {
 		// photoset
 		$photoset_layout = get_post_meta( $id, 'aesop_photoset_gallery_layout', true );
 		$photoset_lb   = get_post_meta( $id, 'aesop_photoset_gallery_lightbox', true );
+        $aesop_lightbox_text = get_post_meta( $id, 'aesop_lightbox_text', true );
 		
 		//parallax
 		$parallax_mobile_panorama = get_post_meta( $id, 'aesop_parallax_gallery_mobile_panorama', true );
@@ -257,14 +258,14 @@ class AesopGalleryComponentAdmin {
 			</div>
 			
 			<div class="ase-gallery-opts--single">
-				<label for="aesop_lightbox_text"><?php _e( 'Lightbox Text', 'aesop-core' );?></label>
+				<label for="aesop_grid_lightbox_text"><?php _e( 'Lightbox Text', 'aesop-core' );?></label>
 				<p class="aesop-gallery-opts--desc"><?php _e( 'Text to display when the lightbox is open. The texts are read from the image property.', 'aesop-core' );?></p>
-			   	<select name="aesop_lightbox_text">
-			      <option value="title" <?php selected( $aesop_lightbox_text, 'title' ); ?>><?php _e( 'Title', 'aesop-core' );?></option>
-			      <option value="caption" <?php selected( $aesop_lightbox_text, 'caption' ); ?>><?php _e( 'Caption', 'aesop-core' );?></option>
-			      <option value="title_caption" <?php selected( $aesop_lightbox_text, 'title_caption' ); ?>><?php _e( 'Title+Caption', 'aesop-core' );?></option>
-				  <option value="description" <?php selected( $aesop_lightbox_text, 'description' ); ?>><?php _e( 'Description', 'aesop-core' );?></option>
-				  <option value="none" <?php selected( $aesop_lightbox_text, 'none' ); ?>><?php _e( 'None', 'aesop-core' );?></option>
+			   	<select name="aesop_grid_lightbox_text">
+			      <option value="title" <?php selected( $aesop_grid_lightbox_text, 'title' ); ?>><?php _e( 'Title', 'aesop-core' );?></option>
+			      <option value="caption" <?php selected( $aesop_grid_lightbox_text, 'caption' ); ?>><?php _e( 'Caption', 'aesop-core' );?></option>
+			      <option value="title_caption" <?php selected( $aesop_grid_lightbox_text, 'title_caption' ); ?>><?php _e( 'Title+Caption', 'aesop-core' );?></option>
+				  <option value="description" <?php selected( $aesop_grid_lightbox_text, 'description' ); ?>><?php _e( 'Description', 'aesop-core' );?></option>
+				  <option value="none" <?php selected( $aesop_grid_lightbox_text, 'none' ); ?>><?php _e( 'None', 'aesop-core' );?></option>
 			    </select>
 			</div>
 			
@@ -488,7 +489,7 @@ class AesopGalleryComponentAdmin {
 
 		// grid
 		$grid_item_width = isset( $_POST['aesop_grid_gallery_width'] ) ? $_POST['aesop_grid_gallery_width'] : false;
-		$aesop_lightbox_text = isset( $_POST['aesop_lightbox_text'] ) ? $_POST['aesop_lightbox_text'] : false;
+		$aesop_grid_lightbox_text = isset( $_POST['aesop_grid_lightbox_text'] ) ? $_POST['aesop_grid_lightbox_text'] : false;
 
 		// thumbnail
 		$thumb_trans  = isset( $_POST['aesop_thumb_gallery_transition'] ) ? $_POST['aesop_thumb_gallery_transition'] : false;
@@ -507,6 +508,7 @@ class AesopGalleryComponentAdmin {
 		// photoset
 		$photoset_layout = isset( $_POST['aesop_photoset_gallery_layout'] ) ? $_POST['aesop_photoset_gallery_layout'] : false;
 		$photoset_lb   = isset( $_POST['aesop_photoset_gallery_lightbox'] ) ? $_POST['aesop_photoset_gallery_lightbox'] : false;
+        $aesop_lightbox_text = isset( $_POST['aesop_lightbox_text'] ) ? $_POST['aesop_lightbox_text'] : false;
 		
 		// parallax
 		$parallax_mobile_panorama   = isset( $_POST['aesop_parallax_gallery_mobile_panorama'] ) ? $_POST['aesop_parallax_gallery_mobile_panorama'] : false;
@@ -548,7 +550,7 @@ class AesopGalleryComponentAdmin {
 
 		// grid
 		update_post_meta( $post_id, 'aesop_grid_gallery_width', absint( $grid_item_width ) );
-		update_post_meta( $post_id, 'aesop_lightbox_text', $aesop_lightbox_text );
+		update_post_meta( $post_id, 'aesop_grid_lightbox_text', $aesop_grid_lightbox_text );
 
 		// thumbnail
 		update_post_meta( $post_id, 'aesop_thumb_gallery_transition', sanitize_text_field( $thumb_trans ) );
@@ -561,6 +563,7 @@ class AesopGalleryComponentAdmin {
 		// sequence
 		update_post_meta( $post_id, 'aesop_sequence_gallery_panorama', $sequence_panorama );
 		update_post_meta( $post_id, 'aesop_sequence_gallery_panorama_height', $sequence_panorama_height );
+        update_post_meta( $post_id, 'aesop_lightbox_text', $aesop_lightbox_text );
 
 		// photoset
 		update_post_meta( $post_id, 'aesop_photoset_gallery_layout', sanitize_text_field($photoset_layout ));

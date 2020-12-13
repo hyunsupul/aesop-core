@@ -12,9 +12,23 @@
 	border: 0.2rem solid blue;
 	padding: 1rem;
 }
+.wp-block-aesop-story-engine select{
+    line-height:normal !important;
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+    min-width:300px;
+}
+.wp-block-aesop-story-engine .components-input-control__container  {
+    width:auto;
+}
 
 .wp-block-aesop-story-engine-label {
 	background: #bbddff;
+}
+
+.wp-block-aesop-story-engine-image {
+	margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 

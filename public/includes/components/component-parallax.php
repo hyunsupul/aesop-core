@@ -232,7 +232,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 				<?php } ?>
 
 				<?php if ( 'on' == $atts['lightbox'] ) {?>
-					<a class="aesop-lb-link aesop-lightbox" rel="lightbox" title="<?php echo esc_attr( $atts['caption'] );?>" href="<?php echo esc_url( $atts['img'] );?>"><i class="aesopicon aesopicon-search-plus"></i></a>
+					<a class="aesop-lb-link aesop-lightbox" data-lightbox="parallax-<?php echo $unique;?>" rel="lightbox" title="<?php echo esc_attr( $atts['caption'] );?>"  data-title="<?php echo esc_attr( $atts['caption'] );?>" href="<?php echo esc_url( $atts['img'] );?>"><i class="aesopicon aesopicon-search-plus"></i></a>
 				<?php } 
 
 				if ('fixed' == $atts['parallaxbg']) {

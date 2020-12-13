@@ -320,7 +320,7 @@ class Aesop_Core {
 	 *
 	 */
 	public function scripts() {
-
+		global $wp_version;
 		wp_enqueue_script( 'jquery' );
 
 		// if the define for unstyled all of aesop isn't set, continue
@@ -337,8 +337,8 @@ class Aesop_Core {
 		}
 
 		// core script
+        wp_enqueue_style( 'ai-lightbox-style', AI_CORE_URL.'/public/assets/css/lightbox.css', AI_CORE_VERSION, true );
 		wp_enqueue_script( 'ai-core', AI_CORE_URL.'/public/assets/js/ai-core.min.js', array( 'jquery' ), AI_CORE_VERSION, true );
-
 	}
 
 	/**

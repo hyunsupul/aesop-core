@@ -201,26 +201,7 @@
 								],
 					}
 				),
-				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Lightbox') ),
-				el(
-					wp.components.ToggleControl,
-					{
-						label: __( 'Choose on and the image will open up the full-size version in a lightbox.' ),
-						checked: attributes.lightbox =='on',
-						onChange: function( newVal ) {										
-										if (newVal) {
-											setAttributes({
-												lightbox: 'on'
-											});
-										} else {
-											setAttributes({
-												lightbox: 'off'
-											});
-										}
-									
-								},
-					}
-				),
+				
 				
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Image Alt') ),
 				el( wp.components.TextControl, {
@@ -305,8 +286,28 @@
 				attributes.img && el(
 					'img', // Tag type.
 				{ 
+                    className: 'wp-block-aesop-story-engine-image',
 					src: attributes.img}
-				)
+				),
+				el(
+					wp.components.ToggleControl,
+					{
+						label: __( 'Lightbox: Choose on and the image will open up the full-size version when clicked.' ),
+						checked: attributes.lightbox =='on',
+						onChange: function( newVal ) {										
+										if (newVal) {
+											setAttributes({
+												lightbox: 'on'
+											});
+										} else {
+											setAttributes({
+												lightbox: 'off'
+											});
+										}
+									
+								},
+					}
+				),
 			);
 			var label = el(
 						'div', 

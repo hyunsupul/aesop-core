@@ -5,8 +5,8 @@ Plugin URI: https://aesopstoryengine.com
 Donate link: https://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
-Tested up to: 5.5.3
-Stable tag: 2.2.3
+Tested up to: 5.6
+Stable tag: 2.2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,18 +30,21 @@ Utilizing these components, writers and developers can build feature-rich, visua
 
 ** Check the latest new features of Aesop Story Engine **
 
-[https://aesopstoryengine.com/blog/](http://aesopstoryengine.com/blog/)
+[https://aesopstoryengine.com/blog/](https://aesopstoryengine.com/blog/)
 
-New Map Styles:
-[https://aesopstoryengine.com/updates/new-feature-map-style/] (https://aesopstoryengine.com/updates/new-feature-map-style/)
+New Map Styles: New Feature
 
-Horizontal Gallery:
-[https://aesopstoryengine.com/releases/new-aesop-gallery-type-horizontal-gallery/] (https://aesopstoryengine.com/releases/new-aesop-gallery-type-horizontal-gallery/)
+[https://aesopstoryengine.com/updates/new-feature-map-style/](https://aesopstoryengine.com/updates/new-feature-map-style/)
+
+Horizontal Gallery: New Feature
+
+[https://aesopstoryengine.com/releases/new-aesop-gallery-type-horizontal-gallery/](https://aesopstoryengine.com/releases/new-aesop-gallery-type-horizontal-gallery/)
 
 Gutenberg Support: New Feature for v 1.10.0 
 Aesop blocks are found under the category "Aesop Story Engine"
 
-Panorama Mode: New features  v 1.9.10   
+Panorama Mode: New feature  v 1.9.10   
+
 [https://aesopstoryengine.com/releases/new-aesop-feature-panorama-image/](https://aesopstoryengine.com/releases/new-aesop-feature-panorama-image/)
 
 Chapter Styles: New features  v 1.9.9   
@@ -191,6 +194,13 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 2.2.5 =
+* Lightbox has been updated with Lokesh Dakar's Lightbox2 codes
+  https://lokeshdhakar.com/projects/lightbox2/#license
+
+= 2.2.4 =
+* Grid and Photoset Gallery Lightbox option fix
+
 = 2.2.3 =
 * New map options
 
