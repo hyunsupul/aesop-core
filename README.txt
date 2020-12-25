@@ -6,7 +6,7 @@ Donate link: https://aesopstoryengine.com/donate
 Tags: aesop, story, business, education, parallax, interactive, shortcode, gallery, grid gallery, thumbnail gallery,
 Requires at least: 3.8
 Tested up to: 5.6
-Stable tag: 2.2.5
+Stable tag: 2.2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -194,6 +194,9 @@ Full documentation can be found here: [http://aesopstoryengine.com/developers](h
 * Initial Release
 
 == Changelog ==
+= 2.2.6 =
+* Fixed an issue with Classic Editor
+
 = 2.2.5 =
 * Lightbox has been updated with Lokesh Dakar's Lightbox2 codes
   https://lokeshdhakar.com/projects/lightbox2/#license
