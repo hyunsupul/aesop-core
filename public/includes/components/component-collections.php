@@ -48,7 +48,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
         ?>
         <!-- Collections -->
         <div <?php echo aesop_component_data_atts( 'collection', $unique, $atts ); ?>
-                class="aesop-story-collection alignfull aesop-component <?php echo sanitize_html_class( $classes ); ?>">
+                class="aesop-story-collection alignfull aesop-component <?php echo sanitize_html_classes( $classes ); ?>">
 
             <?php do_action( 'aesop_collection_inside_top', $atts, $unique ); // action
 
@@ -75,7 +75,7 @@ if ( ! function_exists( 'aesop_collection_shortcode' ) ) {
             <?php } ?>
 
                 <div id="aesop-collection-<?php echo $unique; ?>"
-                     class="aesop-collection-grid clearfix aesop-collection-grid-<?php echo absint( $col ); ?>col <?php echo sanitize_html_class( $splash_class ); ?>">
+                     class="aesop-collection-grid clearfix aesop-collection-grid-<?php echo absint( $col ); ?>col <?php echo sanitize_html_classes( $splash_class ); ?>">
 
                     <?php
 

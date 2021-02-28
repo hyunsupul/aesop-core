@@ -98,7 +98,7 @@ if ( ! function_exists( 'aesop_content_shortcode' ) ) {
         do_action( 'aesop_cbox_before', $atts, $unique ); // action
         ?>
         <div <?php echo aesop_component_data_atts( 'content', $unique, $atts, true ); ?>
-                class="aesop-component aesop-content-component alignfull <?php echo sanitize_html_class( $classes ) . ' ' . $has_img . ' ' . $has_floater; ?>"
+                class="aesop-component aesop-content-component alignfull <?php echo sanitize_html_classes( $classes ) . ' ' . $has_img . ' ' . $has_floater; ?>"
                 style="<?php echo $height;
                 echo $widthComponentStyle ?>;<?php echo aesop_revealfx_set( $atts ) ? '"visibility:hidden;"' : null ?>">
 

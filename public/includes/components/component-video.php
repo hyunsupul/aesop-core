@@ -90,7 +90,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 
 		do_action( 'aesop_video_before', $atts, $unique ); // action
 ?>
-	    <div id="aesop-video-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'video', $unique, $atts );?> class="aesop-component aesop-video-component alignfull aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $classes );?> <?php echo sanitize_html_class( $controlstatus );?> <?php echo sanitize_html_class( $contentwidth );?> <?php echo sanitize_html_class( $vineStagramClass );?> <?php echo sanitize_html_class( $vineStagramAlign );?>"
+	    <div id="aesop-video-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'video', $unique, $atts );?> class="aesop-component aesop-video-component alignfull aesop-component-align-<?php echo sanitize_html_classes( $atts['align'] );?> <?php echo sanitize_html_classes( $classes );?> <?php echo sanitize_html_classes( $controlstatus );?> <?php echo sanitize_html_classes( $contentwidth );?> <?php echo sanitize_html_classes( $vineStagramClass );?> <?php echo sanitize_html_classes( $vineStagramAlign );?>"
 		    <?php echo aesop_revealfx_set($atts) ? 'style="visibility:hidden;"': null ?>
 		>
 
@@ -121,7 +121,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 
         ?>
 
-	    	<div class="aesop-video-container aesop-video-container-<?php echo esc_attr( $unique );?> aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> <?php echo sanitize_html_class( $atts['src'] );?>" <?php echo $widthstyle;?> >
+	    	<div class="aesop-video-container aesop-video-container-<?php echo esc_attr( $unique );?> aesop-component-align-<?php echo sanitize_html_classes( $atts['align'] );?> <?php echo sanitize_html_classes( $atts['src'] );?>" <?php echo $widthstyle;?> >
 
 			<?php
 			if ($disable_for_mobile && wp_is_mobile() && $atts['poster_frame']!=='' ) {
@@ -129,7 +129,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 					$lazy   = class_exists( 'AesopLazyLoader' ) && ! is_user_logged_in() ? sprintf( 'src="%s" data-src="%s" class="aesop-lazy-img"', $lazy_holder, esc_url( $atts['poster_frame'] ) ) : sprintf( 'src="%s"',  $atts['poster_frame']  );
 					//
 					?>
-					 <div class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> " <?php echo $widthstyle;?>>
+					 <div class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_classes( $atts['align'] );?> " <?php echo $widthstyle;?>>
 					 <img <?php echo $lazy;?> >
 					 </div>
 					 
@@ -425,7 +425,7 @@ if ( ! function_exists( 'aesop_video_shortcode' ) ) {
 								$lazy   = class_exists( 'AesopLazyLoader' ) && ! is_user_logged_in() ? sprintf( 'src="%s" data-src="%s" class="aesop-lazy-img"', $lazy_holder, esc_url( $atts['poster_frame'] ) ) : sprintf( 'src="%s"',  $atts['poster_frame']  );
 								//
 								?>
-								 <div class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_class( $atts['align'] );?> ">
+								 <div class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_classes( $atts['align'] );?> ">
 								 <img <?php echo $lazy;?> >
 								 </div>
 								 

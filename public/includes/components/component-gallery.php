@@ -232,7 +232,7 @@ class AesopCoreGallery {
 			        };
 			        var handler = $('#aesop-grid-gallery-<?php echo esc_attr( $gallery_id );?> li');
 			        handler.wookmark(options);
-					$('aesop-grid-gallery-<?php echo esc_attr( $gallery_id );?>').attr('id','the_new_id');
+					$('aesop-grid-gallery-<?php echo esc_attr( $gallery_id );?>').prop('id','the_new_id');
 					$(window).trigger("lookup2");
 					<?php 
 					global $revealcode;
@@ -738,7 +738,7 @@ class AesopCoreGallery {
                             jQuery('#aesop-gallery-<?php echo esc_attr( $unique );?> .aesop-gallery-photoset a').attr('data-lightbox',"gallery-<?php echo esc_attr( $unique );?>");
 				  		<?php } ?>
 
-					   	 	jQuery('.aesop-gallery-photoset').attr('style', '');
+					   	 	jQuery('.aesop-gallery-photoset').prop('style', '');
 					    	jQuery(".photoset-cell img").each(function(){
 
                                 caption = jQuery(this).attr('data-caption');
@@ -749,7 +749,7 @@ class AesopCoreGallery {
                                     jQuery('.aesop-photoset-caption').hide().fadeIn();
                                 }
                                 lbtitle = jQuery(this).attr('title');
-                                jQuery(this).closest('a').attr('title',lbtitle);
+                                jQuery(this).closest('a').prop('title',lbtitle);
                                 <?php 
                                 global $revealcode;
                                 if ($revealcode && $revealcode[$unique]) { echo $revealcode[$unique];}

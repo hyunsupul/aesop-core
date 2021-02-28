@@ -302,6 +302,46 @@ class Aesop_Core {
 
 
 		register_post_type( 'ai_galleries', apply_filters( 'ai_gallery_args', $args ) );
+        
+        //Creates an Aesop Story Collection custom post type
+		$labels = array(
+			'name'                  => _x( 'Story Collections', 'aesop-core' ),
+			'singular_name'         => _x( 'Story Collection', 'aesop-core' ),
+			'menu_name'             => __( 'Story Collections', 'aesop-core' ),
+			'parent_item_colon'     => __( 'Parent Gallery:', 'aesop-core' ),
+			'all_items'             => __( 'All Story Collections', 'aesop-core' ),
+			'view_item'             => __( 'View Story Collection', 'aesop-core' ),
+			'add_new_item'          => __( 'Add New Story Collection', 'aesop-core' ),
+			'add_new'               => __( 'New Story Collection', 'aesop-core' ),
+			'edit_item'             => __( 'Edit Story Collection', 'aesop-core' ),
+			'update_item'           => __( 'Update Story Collection', 'aesop-core' ),
+			'search_items'          => __( 'Search Story Collections', 'aesop-core' ),
+			'not_found'             => __( 'No Story Collection found', 'aesop-core' ),
+			'not_found_in_trash'    => __( 'No Story Collection found in Trash', 'aesop-core' ),
+		);
+		$args = array(
+			'label'					=> __( 'Story Collections', 'aesop-core' ),
+			'description'			=> __( 'Create Story Collection.', 'aesop-core' ),
+			'menu_icon'				=> AI_CORE_URL.'/admin/assets/img/icon.png',  // Icon Path
+			'menu_position'			=> 15,
+			'labels'				=> $labels,
+			'supports'				=> array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields' ),
+			'hierarchical'			=> false,
+			'public'				=> true,
+			'show_ui'				=> true,
+			'exclude_from_search'	=> true,
+			'query_var'				=> true,
+            'publicly_queryable'  => true,
+			'can_export'			=> true,
+            'has_archive'   => true,
+			'capability_type'		=> 'post',
+			'show_in_rest'       => true,
+			'rest_base'          => 'ai-story-collection',
+			'rest_controller_class' => 'WP_REST_Posts_Controller',
+		);
+
+
+		register_post_type( 'ai_story_collection', apply_filters( 'ai_story_collection_args', $args ) );
 
 		$out = load_textdomain( $domain, trailingslashit( AI_CORE_DIR ). 'languages/' . $domain . '-' . $locale . '.mo' );
 
@@ -428,4 +468,15 @@ class Aesop_Core {
 
 		return $clean_content;
 	}
+    
+    
 }
+
+add_action( 'pre_get_posts', 'add_story_collection_to_query' );
+ 
+    function add_story_collection_to_query( $query ) {
+        if ( is_home() && $query->is_main_query() )
+            $query->set( 'post_type', array( 'post', 'ai_story_collection' ) );
+        return $query;
+    }
+    

@@ -199,7 +199,7 @@ if ( ! function_exists( 'aesop_quote_shortcode' ) ) {
         if ( $bool_custom === false ) {
             ?>
 
-            <blockquote class="<?php echo sanitize_html_class( $align ); ?>"
+            <blockquote class="<?php echo sanitize_html_classes( $align ); ?>"
                         style="font-size:<?php echo esc_attr( $size ); ?>;<?php echo $fgcolor ?>">
                 <span><?php echo aesop_component_media_filter( $atts['quote'] ); ?></span>
                 <?php echo $cite; ?>

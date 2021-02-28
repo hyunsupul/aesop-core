@@ -1,10 +1,26 @@
 // General
+
+//jQuery.fn.extend({
+ //           swipebox: function () {
+ //           }
+ //       });
+        
+        
+if(jQuery.swipebox == undefined) {
+    jQuery.swipebox = function(  ) {};
+    
+    if (jQuery.fn) {
+        jQuery.fn.extend({
+            swipebox: function () {
+            }
+        });
+        jQuery.fn.swipebox = function(  ) {};
+    }
+}
+
 jQuery(document).ready(function(){
 
 	// swipebox.js removed
-	//if (!aiCoreParms.disableLightBox ) {
-	    //jQuery(".fdsfsdfsdfsdfdsf").swipebox();
-	//} 
 
 	//Fitvids
 	jQuery('.aesop-video-container').fitVids();

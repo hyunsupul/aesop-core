@@ -464,3 +464,22 @@ function aesop_gallery_component_data_atts( $postid = '' ) {
 		return $size;
 	}
 }
+
+
+if( ! function_exists("sanitize_html_classes") ){
+    function sanitize_html_classes($classes, $sep = " "){
+        $return = "";
+ 
+        if(!is_array($classes)) {
+            $classes = explode($sep, $classes);
+        }
+ 
+        if(!empty($classes)){
+            foreach($classes as $class){
+                $return .= sanitize_html_class($class) . " ";
+            }
+        }
+ 
+        return $return;
+    }
+}

@@ -94,7 +94,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
         // hide the component initially if revealfx is set
         ?>
         <div id="aesop-image-component-<?php echo esc_html( $unique ); ?>" <?php echo aesop_component_data_atts( 'image', $unique, $atts ); ?>
-             class="aesop-component aesop-image-component <?php echo sanitize_html_class( $classes ) ?> alignfull"
+             class="aesop-component aesop-image-component <?php echo sanitize_html_classes( $classes ) ?> alignfull"
             <?php echo aesop_revealfx_set( $atts ) ? 'style="visibility:hidden;"' : null ?>
         >
 
@@ -120,7 +120,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
                 ?>
 
                 <div>
-                    <figure class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_class( $atts['align'] ); ?> aesop-image-component-caption-<?php echo sanitize_html_class( $atts['captionposition'] ); ?>" <?php echo esc_attr( $offsetstyle ); ?>>
+                    <figure class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_classes( $atts['align'] ); ?> aesop-image-component-caption-<?php echo sanitize_html_classes( $atts['captionposition'] ); ?>" <?php echo esc_attr( $offsetstyle ); ?>>
                         <?php
 
                         do_action( 'aesop_image_inner_inside_top', $atts, $unique ); // action
@@ -128,7 +128,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
                         if ( 'on' == $atts['lightbox'] ) { ?>
 
-                            <a class="aesop-lightbox"  data-lightbox="image-<?php echo $unique;?>" data-title="<?php echo sanitize_html_class($atts['caption']); ?>"
+                            <a class="aesop-lightbox"  data-lightbox="image-<?php echo $unique;?>" data-title="<?php echo sanitize_html_classes($atts['caption']); ?>"
                                href="<?php echo $atts['img']; ?>"
                                title="<?php echo $atts['caption']; ?>">
                                 <p class="aesop-img-enlarge"><i

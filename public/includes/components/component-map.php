@@ -74,7 +74,7 @@ if ( ! function_exists( 'aesop_map_shortcode' ) ) {
             ?>
 
         <div id="aesop-map-component" <?php echo aesop_component_data_atts( 'map', $unique, $atts ); ?>
-             class="aesop-component aesop-map-component alignfull <?php echo sanitize_html_class( $classes ); ?> " <?php echo $height; ?>>
+             class="aesop-component aesop-map-component alignfull <?php echo sanitize_html_classes( $classes ); ?> " <?php echo $height; ?>>
 
             <?php
             /**

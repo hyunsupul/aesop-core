@@ -77,7 +77,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 		do_action( 'aesop_parallax_before', $atts, $unique ); // action
 		$nowebkitxform = ('fixed' == $atts['parallaxbg']) ? '-webkit-transform: none;':'';
 
-		?><div id="aesop-parallax-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'parallax', $unique, $atts );?> class="aesop-component aesop-parallax-component alignfull <?php echo sanitize_html_class( $classes );?>"><?php
+		?><div id="aesop-parallax-component-<?php echo esc_attr( $unique );?>" <?php echo aesop_component_data_atts( 'parallax', $unique, $atts );?> class="aesop-component aesop-parallax-component alignfull <?php echo sanitize_html_classes( $classes );?>"><?php
 
 			do_action( 'aesop_parallax_inside_top', $atts, $unique ); // action
 
@@ -226,7 +226,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 				<?php do_action( 'aesop_parallax_inner_inside_top', $atts, $unique ); // action ?>
 
 				<?php if ( 'on' == $atts['floater'] ) {?>
-					<div class="aesop-parallax-sc-floater floater-<?php echo sanitize_html_class( $atts['floaterposition'] );?>" data-speed="10">
+					<div class="aesop-parallax-sc-floater floater-<?php echo sanitize_html_classes( $atts['floaterposition'] );?>" data-speed="10">
 						<?php echo aesop_component_media_filter( $atts['floatermedia'] );?>
 					</div>
 				<?php } ?>
@@ -257,7 +257,7 @@ if ( ! function_exists( 'aesop_parallax_shortcode' ) ) {
 				
 
 				if ( $atts['caption'] ) { ?>
-					<figcaption class="aesop-parallax-sc-caption-wrap <?php echo sanitize_html_class( $atts['captionposition'] );?>">
+					<figcaption class="aesop-parallax-sc-caption-wrap <?php echo sanitize_html_classes( $atts['captionposition'] );?>">
 						<?php echo aesop_component_media_filter( trim( $atts['caption'] ) );?>
 					</figcaption>
 				<?php } ?>
