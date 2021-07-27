@@ -81,7 +81,7 @@ class AesopBrowserClasses {
 	public function browser_body_class( $classes ) {
 
 		global $is_gecko, $is_IE, $is_opera, $is_safari, $is_chrome, $is_iphone;
-		if (!array_key_exists('HTTP_USER_AGENT', $_SERVER)) return false;
+		if (!array_key_exists('HTTP_USER_AGENT', $_SERVER)) return $classes;
 		if ( ! wp_is_mobile() ) {
 			if ( $is_gecko ) { $classes[] = 'browser-gecko'; }
 			elseif ( $is_opera ) $classes[] = 'browser-opera';

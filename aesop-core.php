@@ -4,16 +4,16 @@
  *
  *
  * @package   Aesop_Core
- * @author    Nick Haskins <nick@aesopinteractive.com>
+ * @author    Nick Haskins <nick@aesopinteractive.com>, Hyun Supul <hyunsupul@gmail.com>
  * @license   GPL-2.0+
  * @link      http://aesopinteractive.com
- * @copyright 2016-2020 Hyun Supul <hyun@aesopinteractive.com>
+ * @copyright 2016-2021 Hyun Supul <hyun@aesopinteractive.com>
  *
  * @wordpress-plugin
  *  Plugin Name:       Aesop Story Engine
  *  Plugin URI:        https://aesopstoryengine.com
  *  Description:       Open-sourced suite of components that empower interactive storytelling.
- *  Version:           2.2.7
+ *  Version:           2.2.8
  *  Author:            Aesopinteractive 
  *  Author URI:        https://aesopstoryengine.com
  *  Text Domain:       aesop-core
@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set some constants
-define( 'AI_CORE_VERSION', '2.2.7' );
+define( 'AI_CORE_VERSION', '2.2.8' );
 define( 'AI_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AI_CORE_URL', plugins_url( '', __FILE__ ) );
 
