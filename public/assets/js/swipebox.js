@@ -258,10 +258,12 @@
     // Position Lightbox
     var top  = $window.scrollTop() + this.options.positionFromTop;
     var left = $window.scrollLeft();
-    this.$lightbox.css({
-      top: top + 'px',
-      left: left + 'px'
-    }).fadeIn(this.options.fadeDuration);
+    if (this.$lightbox) {
+        this.$lightbox.css({
+            top: top + 'px',
+            left: left + 'px'
+        }).fadeIn(this.options.fadeDuration);
+    }
 
     // Disable scrolling of the page while open
     if (this.options.disableScrolling) {
@@ -276,6 +278,8 @@
     var self = this;
     var filename = this.album[imageNumber].link;
     var filetype = filename.split('.').slice(-1)[0];
+    if (!this.$lightbox) return;
+
     var $image = this.$lightbox.find('.lb-image');
 
     // Disable keyboard nav during transitions
@@ -375,9 +379,11 @@
     number.
     */
     setTimeout(function() {
-      self.$overlay
+        if (self.$overlay) {
+        self.$overlay
         .width($(document).width())
         .height($(document).height());
+        }
 
     }, 0);
   };

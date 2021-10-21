@@ -120,7 +120,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
                 ?>
 
                 <div>
-                    <figure class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_classes( $atts['align'] ); ?> aesop-image-component-caption-<?php echo sanitize_html_classes( $atts['captionposition'] ); ?>" <?php echo esc_attr( $offsetstyle ); ?>>
+                    <figure class="aesop-image-component-image aesop-component-align-<?php echo sanitize_html_classes( $atts['align'] ); ?> align<?php echo sanitize_html_classes( $atts['align'] );?>  aesop-image-component-caption-<?php echo sanitize_html_classes( $atts['captionposition'] ); ?>" <?php echo esc_attr( $offsetstyle ); ?>>
                         <?php
 
                         do_action( 'aesop_image_inner_inside_top', $atts, $unique ); // action
@@ -128,7 +128,7 @@ if ( ! function_exists( 'aesop_image_shortcode' ) ) {
 
                         if ( 'on' == $atts['lightbox'] ) { ?>
 
-                            <a class="aesop-lightbox"  data-lightbox="image-<?php echo $unique;?>" data-title="<?php echo sanitize_html_classes($atts['caption']); ?>"
+                            <a class="aesop-lightbox"  data-lightbox="image-aesop" data-title="<?php echo sanitize_html_classes($atts['caption']); ?>"
                                href="<?php echo $atts['img']; ?>"
                                title="<?php echo $atts['caption']; ?>">
                                 <p class="aesop-img-enlarge"><i
