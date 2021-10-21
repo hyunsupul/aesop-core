@@ -185,13 +185,10 @@ class AesopChapterHeadingComponent {
         $top = apply_filters( 'aesop_chapter_top_text', __( 'Top', 'aesop-core' ) );
 
         // filterable content class
-        $postClass = get_post_class();
-        if ( in_array( 'aesop-entry-content', $postClass ) ) {
-            $contentClass = '.aesop-entry-content';
-        } else {
-            $content_selector = get_option( 'ase_chapter_content_class' );
-            $contentClass     = apply_filters( 'aesop_chapter_scroll_container', $content_selector );
-        }
+        
+        $content_selector = get_option( 'ase_chapter_content_class' );
+        $content_selector = $content_selector ? $content_selector : '.entry-content,.aesop-entry-content';
+        $contentClass     = apply_filters( 'aesop_chapter_scroll_container', $content_selector );
 
         $animate = get_option( 'ase_chapter_no_animate_scroll' ) ? 'false' : 'true';
 
