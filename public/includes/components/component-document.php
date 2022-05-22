@@ -43,7 +43,7 @@ if ( ! function_exists( 'aesop_document_shortcode' ) ) {
 			$source = sprintf( '<img src="%s"', esc_url( $atts['src'] ) );
 			break;
 		case 'ms':
-		    $source = sprintf( '<iframe class="aesop-ms-doc" src="http://docs.google.com/viewer?url=%s&embedded=true" ></iframe>', esc_url( $atts['src'] )  );
+            $source = sprintf( '<iframe class="aesop-ms-doc" src="https://view.officeapps.live.com/op/embed.aspx?src=%s"> </iframe>', esc_url( $atts['src'] ) );
 		    break;
 		case 'download':
 		    $source = sprintf( '<a href="%s" download>'.__('Download','aesop-core' ).'</a>', esc_url( $atts['src'] ) );

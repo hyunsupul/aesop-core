@@ -37,7 +37,7 @@
 
 		// The "edit" property must be a valid function.			
 		edit	( { attributes, setAttributes, isSelected, className }) {		
-			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.blockEditor.InspectorControls, {},
 			el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Height') ),
 				el( wp.components.TextControl, {
 						label: __( 'The height of the map component. By default this is set to 500px. Avoid using percentages with this option.' ),

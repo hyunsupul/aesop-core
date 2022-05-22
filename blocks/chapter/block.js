@@ -82,7 +82,7 @@
             };
 			
 			
-			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.blockEditor.InspectorControls, {},
 				
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Type') ),
 				el(
@@ -107,7 +107,7 @@
 				attributes.bgtype != 'image' && el( 'img', {src: attributes.img} ),
 				attributes.bgtype != 'color' && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Chapter Image or Video URL') ),
 				attributes.bgtype != 'color' && el(
-					wp.editor.MediaUpload,
+					wp.blockEditor.MediaUpload,
 					{
 							title: __( 'Chapter Image or Video URL' ),
 							onSelect: onSelectMedia,
@@ -133,7 +133,7 @@
 				),	
 				attributes.bgtype == 'color' && el( 'span', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Color') ),
                 attributes.bgtype == 'color' && el( 'div', { className: 'wp-block-aesop-story-engine-color' , style: backColor} ),
-				attributes.bgtype == 'color' && el( wp.editor.ColorPalette,{
+				attributes.bgtype == 'color' && el( wp.blockEditor.ColorPalette,{
 					        label: __( 'Background Color' ),
                             value: attributes.bgcolor, 
                             onChange: function(newVal){
@@ -143,7 +143,7 @@
                 }),
 				attributes.bgtype == 'video' && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Alternate Image for Mobile') ),
 				attributes.bgtype == 'video' && el(
-					wp.editor.MediaUpload,
+					wp.blockEditor.MediaUpload,
 					{
 							title: __( 'Used only on a mobile device and if the Background Type is set to Video.' ),
 							onSelect: onSelectMedia,

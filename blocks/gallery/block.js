@@ -111,7 +111,7 @@
 					}
 				),
 			);
-			const advcontrols = props.isSelected && el( wp.editor.InspectorControls, {},
+			const advcontrols = props.isSelected && el( wp.blockEditor.InspectorControls, {},
 				el(
 					wp.components.SelectControl, 
 					{ 
@@ -132,6 +132,8 @@
 								  { value: 'fromright', label: __('From Right') },
 								],
 					},
+                ),
+                el(
 					wp.components.SelectControl, 
 					{ 
 								type: 'string',

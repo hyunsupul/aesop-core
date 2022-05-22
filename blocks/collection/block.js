@@ -112,7 +112,7 @@
 					}
 				),
 			);
-			const advcontrols = props.isSelected && el( wp.editor.InspectorControls, {},
+			const advcontrols = props.isSelected && el( wp.blockEditor.InspectorControls, {},
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Title') ),
 				el( wp.components.TextControl, {
 						label: __( 'Display an optional heading to be used within the Collection component.' ),

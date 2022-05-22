@@ -46,18 +46,7 @@
 			};
 			
 			
-			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
-				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Navigation Menu Item Label') ),
-				el( wp.components.TextControl, {
-						label: __( 'This is what is displayed for the timeline navigation menu item label. Example usage includes dates, years, colors, locations, and names.' ),
-						value: attributes.num,
-						onChange: function( content ) {
-							setAttributes( { num: content } );
-						},
-					} 
-				)
-				
-			);
+			const advcontrols =  null;
 			
 			var controls = el( 'div', { className: '' }
 				,
@@ -67,6 +56,15 @@
 						value: attributes.title,
 						onChange: function( content ) {
 							setAttributes( { title: content } );
+						},
+					} 
+				),
+                el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Navigation Menu Item Label') ),
+				el( wp.components.TextControl, {
+						label: __( 'This is what is displayed for the timeline navigation menu item label. Example usage includes dates, years, colors, locations, and names.' ),
+						value: attributes.num,
+						onChange: function( content ) {
+							setAttributes( { num: content } );
 						},
 					} 
 				)

@@ -75,7 +75,7 @@
                 backgroundColor: attributes.background,
             };
 			
-			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.blockEditor.InspectorControls, {},
 				
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Quote Styles') ),
 				el(
@@ -98,7 +98,7 @@
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Image') ),
 				attributes.img && el( 'img', {src: attributes.img} ),
 				el(
-					wp.editor.MediaUpload,
+					wp.blockEditor.MediaUpload,
 					{
 							title: __( 'Optionally add a background image to the quote area.' ),
 							onSelect: function(value){
@@ -147,7 +147,7 @@
 				),
 				el( 'span', { className: 'wp-block-aesop-story-engine-option-label' },__('Text Color') ),
                 el( 'div', { className: 'wp-block-aesop-story-engine-color' , style: textColor} ),
-				el( wp.editor.ColorPalette,{
+				el( wp.blockEditor.ColorPalette,{
 					        label: __( 'Select a color for the quote text.' ),
                             value: attributes.text, 
                             onChange: function(newVal){
@@ -157,7 +157,7 @@
                 }),
 				el( 'span', { className: 'wp-block-aesop-story-engine-option-label' },__('Background Color') ),
                 el( 'div', { className: 'wp-block-aesop-story-engine-color' , style: backColor} ),
-				el( wp.editor.ColorPalette,{
+				el( wp.blockEditor.ColorPalette,{
 					        label: __( 'Background Color' ),
                             value: attributes.background, 
                             onChange: function(newVal){

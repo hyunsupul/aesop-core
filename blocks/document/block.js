@@ -56,26 +56,8 @@
 			};
 			
 			
-			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
-				el(
-					wp.components.SelectControl, 
-					{ 
-								type: 'string',
-								label: __( 'Document Type' ),
-								value: attributes.type,
-								onChange: function( newVal ) {
-										setAttributes({
-												type: newVal
-										});
-								},
-								options: [
-								  { value: 'pdf', label:  'PDF'  },
-								  { value: 'image', label: 'Image'  },
-								  { value: 'ms', label:  'Microsoft'  },
-								  { value: 'download', label: 'Download Link'  }
-								],
-					}
-				),
+			const advcontrols = isSelected && el( wp.blockEditor.InspectorControls, {},
+				
 				el( wp.components.TextControl, {
 						label: __( 'Title' ),
 						value: attributes.title,
@@ -117,8 +99,27 @@
 			
 			var controls = el( 'div', { className: '' }
 				,
+                el(
+					wp.components.SelectControl, 
+					{ 
+								type: 'string',
+								label: __( 'Document Type' ),
+								value: attributes.type,
+								onChange: function( newVal ) {
+										setAttributes({
+												type: newVal
+										});
+								},
+								options: [
+								  { value: 'pdf', label:  'PDF'  },
+								  { value: 'image', label: 'Image'  },
+								  { value: 'ms', label:  'Microsoft'  },
+								  { value: 'download', label: 'Download Link'  }
+								],
+					}
+				),
 				isSelected &&  el(
-					wp.editor.MediaUpload,
+					wp.blockEditor.MediaUpload,
 					{
 							title: __( 'Select File' ),
 							onSelect: onSelectMedia,

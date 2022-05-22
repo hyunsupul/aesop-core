@@ -61,7 +61,7 @@
 			};
 			
 			
-			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.blockEditor.InspectorControls, {},
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Caption') ),
 				el( wp.components.TextControl, {
 						label: __( 'Optional caption for the character. If you do not enter a caption, it will not show.' ),
@@ -137,7 +137,7 @@
 			var controls = el( 'div', { className: '' }
 				,
 				isSelected &&  el(
-					wp.editor.MediaUpload,
+					wp.blockEditor.MediaUpload,
 					{
 							title: __( 'Select Image' ),
 							onSelect: onSelectMedia,

@@ -124,7 +124,7 @@
 				}
 			}
 
-			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.blockEditor.InspectorControls, {},
 				
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Caption') ),
 				el( wp.components.TextControl, {
@@ -272,7 +272,7 @@
 				),
 				el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Poster Frame.') ),
 				el(
-					wp.editor.MediaUpload,
+					wp.blockEditor.MediaUpload,
 					{
 							title: __( 'Image to display before the video plays if the target is self. Or the image to display if the video is disabled for mobile. Click <em>Select Media</em> to open the WordPress Media Library.' ),
 							onSelect: function( content ) {
@@ -389,7 +389,7 @@
 				),
                 attributes.src == 'self' && el( 'div', { className: 'wp-block-aesop-story-engine-option-label' },__('Video URL') ),
 				attributes.src == 'self' && el(
-					wp.editor.MediaUpload,
+					wp.blockEditor.MediaUpload,
 					{
 							title: __( 'Select Video File' ),
 							onSelect: onSelectMedia,

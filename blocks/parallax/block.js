@@ -80,7 +80,7 @@
 			};
 			
 			
-			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.blockEditor.InspectorControls, {},
 				el(
 					wp.components.SelectControl, 
 					{ 
@@ -191,7 +191,7 @@
 			var controls = el( 'div', { className: '' }
 				,
 				isSelected &&  el(
-					wp.editor.MediaUpload,
+					wp.blockEditor.MediaUpload,
 					{
 							title: __( 'Select Image' ),
 							onSelect: onSelectMedia,

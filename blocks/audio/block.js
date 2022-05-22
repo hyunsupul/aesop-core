@@ -84,7 +84,7 @@
                                 });
 			};
 			
-			const advcontrols = isSelected && el( wp.editor.InspectorControls, {},
+			const advcontrols = isSelected && el( wp.blockEditor.InspectorControls, {},
 				el( wp.components.TextControl, {
 						label: __( 'Optional Title' ),
 						value: attributes.title,
@@ -130,7 +130,7 @@
 			var controls = el( 'div', { className: '' }
 				,
 				isSelected &&  el(
-					wp.editor.MediaUpload,
+					wp.blockEditor.MediaUpload,
 					{
 							title: __( 'Select Audio' ),
 							onSelect: onSelectMedia,
