@@ -78,7 +78,7 @@ if ( is_admin() ) {
  */
 require_once( AI_CORE_DIR . 'blocks/index.php' );
 
-add_filter( 'block_categories', function( $categories, $post ) {
+add_filter( 'block_categories_all', function( $categories, $post ) {
 	/*if ( $post->post_type !== 'post' ) {
 		return $categories;
 	}*/
