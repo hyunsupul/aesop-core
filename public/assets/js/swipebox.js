@@ -380,7 +380,7 @@
     */
     setTimeout(function() {
         if (self.$overlay) {
-        self.$overlay
+      self.$overlay
         .width($(document).width())
         .height($(document).height());
         }

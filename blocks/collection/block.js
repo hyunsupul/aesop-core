@@ -59,18 +59,17 @@
 		},
 
 		edit: withSelect( function( select ) {
-			const { getCategories, isRequestingCategories } = select( 'core' );
+			//const { getCategories, isRequestingCategories } = select( 'core' );
 			return {
-				categories: select("core").getEntityRecords('taxonomy', 'category', { per_page: -1 }), 
+				categories: select("core").getEntityRecords('taxonomy', 'category', { per_page: -1 }) , 
 				isRequesting: wp.data.select("core/data").isResolving('core', 'getEntityRecords', [ 'taxonomy', 'category', { per_page: -1 } ]), 
 			};
 		}
 		)( function( props ) {
-			
 			if (  props.isRequesting ) {
 				return __('loading !');
 			}
-			if ( props.categories.length === 0 ) {
+			if ( props.categories == null || props.categories.length === 0 ) {
 				return __('No Categories');
 			}
 			var cats = [];
@@ -108,6 +107,7 @@
 												collection: newVal.join(',')
 										});
 								},
+								style: { height:"100px" },
 								options: cats,
 					}
 				),

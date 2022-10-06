@@ -13,7 +13,7 @@
  *  Plugin Name:       Aesop Story Engine
  *  Plugin URI:        https://aesopstoryengine.com
  *  Description:       Open-sourced suite of components that empower interactive storytelling.
- *  Version:           2.3.0
+ *  Version:           2.3.1
  *  Author:            Aesopinteractive 
  *  Author URI:        https://aesopstoryengine.com
  *  Text Domain:       aesop-core
@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Set some constants
-define( 'AI_CORE_VERSION', '2.3.0' );
+define( 'AI_CORE_VERSION', '2.3.1' );
 define( 'AI_CORE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'AI_CORE_URL', plugins_url( '', __FILE__ ) );
 
@@ -78,7 +78,7 @@ if ( is_admin() ) {
  */
 require_once( AI_CORE_DIR . 'blocks/index.php' );
 
-add_filter( 'block_categories_all', function( $categories, $post ) {
+add_filter( 'block_categories', function( $categories, $post ) {
 	/*if ( $post->post_type !== 'post' ) {
 		return $categories;
 	}*/

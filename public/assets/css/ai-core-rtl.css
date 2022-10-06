@@ -1,4 +1,21 @@
 @import "ai-core.css";
+
+/* BORAY ERIS*/
+.aesop-cover-title {
+    right: 10% !important;
+    left: auto !important;
+}
+#swipebox-overlay{
+    direction: ltr !important; /*ON RTL LIGHTBOX IS NOT WORKING PROPERLY*/
+}
+#swipebox-caption {
+    direction: rtl; /* ADDED BY BORAY ERIS */
+}
+body.rtl > * {
+    direction: rtl;
+}
+
+
 .aesop-component {
     position: relative;
     margin: 2rem auto;

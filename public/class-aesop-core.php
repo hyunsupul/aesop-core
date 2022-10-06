@@ -341,7 +341,7 @@ class Aesop_Core {
 		);
 
 
-		register_post_type( 'ai_story_collection', apply_filters( 'ai_story_collection_args', $args ) );
+		//register_post_type( 'ai_story_collection', apply_filters( 'ai_story_collection_args', $args ) );
 
 		$out = load_textdomain( $domain, trailingslashit( AI_CORE_DIR ). 'languages/' . $domain . '-' . $locale . '.mo' );
 

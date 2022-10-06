@@ -1,0 +1,148 @@
+
+
+.aesop-close-chapter-menu {
+	display:none;
+}
+ #aesop-chapter-menu {
+	position: fixed;
+    top: 0px;
+    height: 100vh;
+    display: block;
+ }
+ 
+#aesop-chapter-menu.aesop-chapter-menu-left {
+	left:0px !important;
+	background:none;
+	width:0px;
+}
+
+.aesop-chapter-menu .aesop-chapter-menu--inner{
+   position:absolute;
+	top: 50%;
+	padding:0px;
+	transform: translateY(-50%);
+}
+
+.aesop-chapter-menu li {
+	margin-bottom:1px;
+	min-height:34px;
+}
+.aesop-chapter-menu .scroll-nav__link {
+	padding:0px !important;
+}
+
+.aesop-chapter-menu-left .scroll-nav__list {
+	text-align:left;
+}
+
+.aesop-chapter-menu-left .scroll-nav__item a{
+	white-space: nowrap;
+	-webkit-transition: color 0.5s;
+}
+
+.aesop-chapter-menu .scroll-nav__item a:link{
+	text-decoration:none;
+}
+
+
+
+
+.aesop-chapter-menu .scroll-nav__item a span  {
+	display:none;
+	border-radius: 4px;
+	color:black;
+  background:rgba(255,255,255,0.5);
+}
+
+
+.aesop-chapter-menu-left .scroll-nav__item a:before,
+.aesop-chapter-menu-right .scroll-nav__item a:after{
+	content:"";
+	display: inline-block;
+    width: 8px;
+    height: 8px;
+	left:0px;
+	top:0px;
+	 
+    position: relative;
+    border-radius: 4px;
+	-webkit-transition: width 0.3s, height 0.3s, left 0.3s, top 0.3s;
+}
+
+
+.aesop-chapter-menu-left .scroll-nav__item:hover a:before,
+.aesop-chapter-menu-left .scroll-nav__item.active.in-view  a:before {
+	left:-5px;
+	top:5px;
+    width: 18px;
+    height: 18px;
+	border-radius: 9px;
+}
+
+.aesop-chapter-menu-left .scroll-nav__item.in-view  a:before {
+	left:-2px;
+	top:2px;
+    width: 12px;
+    height: 12px;
+	border-radius: 6px;
+}
+
+
+
+.aesop-chapter-menu .scroll-nav__item:before {
+	  display:none;
+}
+.aesop-chapter-menu .scroll-nav__item {
+    list-style-type: none;
+}
+
+
+
+
+
+
+#aesop-chapter-menu.aesop-chapter-menu-right {
+	right:0px !important;
+	background:none;
+	width:0px;
+}
+
+.aesop-chapter-menu-right .aesop-chapter-menu--inner {
+	right:0px;
+}
+
+
+.aesop-chapter-menu-right .scroll-nav__list {
+	text-align:right;
+}
+
+.aesop-chapter-menu-right .scroll-nav__item a{
+	white-space: nowrap;
+	float:right;
+	-webkit-transition: color 0.5s;
+}
+
+.aesop-chapter-menu-right li {
+	padding-right:15px;
+}
+
+
+
+.aesop-chapter-menu-right .scroll-nav__item:hover a:after,
+.aesop-chapter-menu-right .scroll-nav__item.active.in-view a:after {
+	left:5px;
+	top:5px;
+    width: 18px;
+    height: 18px;
+	border-radius: 9px;
+}
+
+
+.aesop-chapter-menu-right .scroll-nav__item.in-view a:after {
+	left:2px;
+	top:2px;
+    width: 12px;
+    height: 12px;
+	border-radius: 6px;
+}
+
